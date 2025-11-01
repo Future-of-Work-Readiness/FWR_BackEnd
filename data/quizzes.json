@@ -1,0 +1,361 @@
+{
+  "quizzes": [
+    {
+      "title": "Frontend Development Basics - Level 1",
+      "description": "Fundamental concepts of frontend development including HTML, CSS, and JavaScript basics",
+      "specialization": "Frontend Development",
+      "difficulty_level": 1,
+      "time_limit_minutes": 30,
+      "passing_score": 70.0,
+      "questions": [
+        {
+          "question_text": "What does HTML stand for?",
+          "question_type": "multiple_choice",
+          "points": 1,
+          "explanation": "HTML stands for HyperText Markup Language, which is the standard markup language for creating web pages.",
+          "options": [
+            {"text": "HyperText Markup Language", "is_correct": true},
+            {"text": "High-level Text Markup Language", "is_correct": false},
+            {"text": "Hyperlink and Text Markup Language", "is_correct": false},
+            {"text": "Home Tool Markup Language", "is_correct": false}
+          ]
+        },
+        {
+          "question_text": "Which CSS property is used to change the text color?",
+          "question_type": "multiple_choice",
+          "points": 1,
+          "explanation": "The 'color' property is used to set the color of text in CSS.",
+          "options": [
+            {"text": "text-color", "is_correct": false},
+            {"text": "font-color", "is_correct": false},
+            {"text": "color", "is_correct": true},
+            {"text": "text-style", "is_correct": false}
+          ]
+        },
+        {
+          "question_text": "Which JavaScript method is used to add an element to the end of an array?",
+          "question_type": "multiple_choice",
+          "points": 1,
+          "explanation": "The push() method adds one or more elements to the end of an array and returns the new length.",
+          "options": [
+            {"text": "push()", "is_correct": true},
+            {"text": "pop()", "is_correct": false},
+            {"text": "shift()", "is_correct": false},
+            {"text": "unshift()", "is_correct": false}
+          ]
+        },
+        {
+          "question_text": "What is the purpose of CSS?",
+          "question_type": "multiple_choice",
+          "points": 1,
+          "explanation": "CSS (Cascading Style Sheets) is used to style and layout web pages, controlling the visual appearance.",
+          "options": [
+            {"text": "To structure web pages", "is_correct": false},
+            {"text": "To style and layout web pages", "is_correct": true},
+            {"text": "To add interactivity to web pages", "is_correct": false},
+            {"text": "To connect to databases", "is_correct": false}
+          ]
+        },
+        {
+          "question_text": "Which HTML tag is used to create a hyperlink?",
+          "question_type": "multiple_choice",
+          "points": 1,
+          "explanation": "The <a> tag (anchor tag) is used to create hyperlinks in HTML.",
+          "options": [
+            {"text": "<link>", "is_correct": false},
+            {"text": "<a>", "is_correct": true},
+            {"text": "<href>", "is_correct": false},
+            {"text": "<url>", "is_correct": false}
+          ]
+        },
+        {
+          "question_text": "What is React primarily used for?",
+          "question_type": "multiple_choice",
+          "points": 1,
+          "explanation": "React is a JavaScript library primarily used for building user interfaces, especially for single-page applications.",
+          "options": [
+            {"text": "Styling web pages", "is_correct": false},
+            {"text": "Building user interfaces", "is_correct": true},
+            {"text": "Managing databases", "is_correct": false},
+            {"text": "Server-side rendering only", "is_correct": false}
+          ]
+        },
+        {
+          "question_text": "Which CSS property is used to make text bold?",
+          "question_type": "multiple_choice",
+          "points": 1,
+          "explanation": "The font-weight property is used to set the thickness/boldness of text in CSS.",
+          "options": [
+            {"text": "text-weight", "is_correct": false},
+            {"text": "font-weight", "is_correct": true},
+            {"text": "text-style", "is_correct": false},
+            {"text": "bold", "is_correct": false}
+          ]
+        },
+        {
+          "question_text": "What is the purpose of the <script> tag in HTML?",
+          "question_type": "multiple_choice",
+          "points": 1,
+          "explanation": "The <script> tag is used to embed or reference JavaScript code in an HTML document.",
+          "options": [
+            {"text": "To link external CSS files", "is_correct": false},
+            {"text": "To embed or reference JavaScript code", "is_correct": true},
+            {"text": "To create a script element", "is_correct": false},
+            {"text": "To add metadata", "is_correct": false}
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Frontend Development Intermediate - Level 2",
+      "description": "Intermediate frontend concepts including React, state management, and advanced CSS",
+      "specialization": "Frontend Development",
+      "difficulty_level": 2,
+      "time_limit_minutes": 45,
+      "passing_score": 75.0,
+      "questions": [
+        {
+          "question_text": "What is a React Hook?",
+          "question_type": "multiple_choice",
+          "points": 2,
+          "explanation": "React Hooks are functions that let you use state and other React features in functional components.",
+          "options": [
+            {"text": "A way to connect to external APIs", "is_correct": false},
+            {"text": "A function that lets you use state and lifecycle features", "is_correct": true},
+            {"text": "A CSS styling technique", "is_correct": false},
+            {"text": "A database query method", "is_correct": false}
+          ]
+        },
+        {
+          "question_text": "What is CSS Grid primarily used for?",
+          "question_type": "multiple_choice",
+          "points": 2,
+          "explanation": "CSS Grid is a layout system designed for creating two-dimensional layouts with rows and columns.",
+          "options": [
+            {"text": "Animating elements", "is_correct": false},
+            {"text": "Creating two-dimensional layouts", "is_correct": true},
+            {"text": "Styling text", "is_correct": false},
+            {"text": "Adding colors", "is_correct": false}
+          ]
+        },
+        {
+          "question_text": "What is the difference between let and const in JavaScript?",
+          "question_type": "multiple_choice",
+          "points": 2,
+          "explanation": "let allows reassignment, while const prevents reassignment after initialization.",
+          "options": [
+            {"text": "let allows reassignment, const does not", "is_correct": true},
+            {"text": "const allows reassignment, let does not", "is_correct": false},
+            {"text": "There is no difference", "is_correct": false},
+            {"text": "let is for functions, const is for variables", "is_correct": false}
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Data Science Fundamentals",
+      "description": "Core concepts of data science, statistics, and machine learning",
+      "specialization": "Data Science",
+      "difficulty_level": 1,
+      "time_limit_minutes": 35,
+      "passing_score": 70.0,
+      "questions": [
+        {
+          "question_text": "Which Python library is primarily used for data manipulation and analysis?",
+          "question_type": "multiple_choice",
+          "points": 1,
+          "explanation": "Pandas is the primary library for data manipulation and analysis in Python, built on top of NumPy.",
+          "options": [
+            {"text": "NumPy", "is_correct": false},
+            {"text": "Pandas", "is_correct": true},
+            {"text": "Matplotlib", "is_correct": false},
+            {"text": "Scikit-learn", "is_correct": false}
+          ]
+        },
+        {
+          "question_text": "What does 'overfitting' mean in machine learning?",
+          "question_type": "multiple_choice",
+          "points": 2,
+          "explanation": "Overfitting occurs when a model learns the training data too well, including noise, making it perform poorly on unseen data.",
+          "options": [
+            {"text": "Model performs well on training data but poorly on new data", "is_correct": true},
+            {"text": "Model performs poorly on all data", "is_correct": false},
+            {"text": "Model is too simple to capture patterns", "is_correct": false},
+            {"text": "Model training takes too long", "is_correct": false}
+          ]
+        },
+        {
+          "question_text": "What is cross-validation used for?",
+          "question_type": "multiple_choice",
+          "points": 1,
+          "explanation": "Cross-validation is a technique to evaluate model performance by training and testing on different subsets of data.",
+          "options": [
+            {"text": "To assess how well a model will generalize to unseen data", "is_correct": true},
+            {"text": "To speed up model training", "is_correct": false},
+            {"text": "To reduce overfitting directly", "is_correct": false},
+            {"text": "To visualize data", "is_correct": false}
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Cybersecurity Basics",
+      "description": "Fundamental concepts of cybersecurity, threats, and protection methods",
+      "specialization": "Cybersecurity Analyst / InfoSec Analyst",
+      "difficulty_level": 1,
+      "time_limit_minutes": 30,
+      "passing_score": 70.0,
+      "questions": [
+        {
+          "question_text": "What is a phishing attack?",
+          "question_type": "multiple_choice",
+          "points": 1,
+          "explanation": "Phishing is a social engineering attack where attackers trick users into revealing sensitive information.",
+          "options": [
+            {"text": "A physical security breach", "is_correct": false},
+            {"text": "A social engineering attack via email or messaging", "is_correct": true},
+            {"text": "A network routing issue", "is_correct": false},
+            {"text": "A software bug", "is_correct": false}
+          ]
+        },
+        {
+          "question_text": "What does HTTPS provide that HTTP does not?",
+          "question_type": "multiple_choice",
+          "points": 1,
+          "explanation": "HTTPS provides encryption and authentication, securing data transmission between client and server.",
+          "options": [
+            {"text": "Faster connection speed", "is_correct": false},
+            {"text": "Encryption and authentication", "is_correct": true},
+            {"text": "Better website design", "is_correct": false},
+            {"text": "Larger file transfers", "is_correct": false}
+          ]
+        },
+        {
+          "question_text": "What is a firewall used for?",
+          "question_type": "multiple_choice",
+          "points": 1,
+          "explanation": "A firewall monitors and controls network traffic based on predefined security rules.",
+          "options": [
+            {"text": "To speed up internet connections", "is_correct": false},
+            {"text": "To monitor and control network traffic", "is_correct": true},
+            {"text": "To store backup data", "is_correct": false},
+            {"text": "To format hard drives", "is_correct": false}
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Healthcare Administration Basics",
+      "description": "Introduction to healthcare administration, medical terminology, and healthcare systems",
+      "specialization": "Healthcare Administrator",
+      "difficulty_level": 1,
+      "time_limit_minutes": 25,
+      "passing_score": 65.0,
+      "questions": [
+        {
+          "question_text": "What is HIPAA?",
+          "question_type": "multiple_choice",
+          "points": 1,
+          "explanation": "HIPAA (Health Insurance Portability and Accountability Act) protects patient health information privacy.",
+          "options": [
+            {"text": "A hospital accreditation program", "is_correct": false},
+            {"text": "A law protecting patient health information privacy", "is_correct": true},
+            {"text": "A type of medical insurance", "is_correct": false},
+            {"text": "A medical procedure code", "is_correct": false}
+          ]
+        },
+        {
+          "question_text": "What does EMR stand for?",
+          "question_type": "multiple_choice",
+          "points": 1,
+          "explanation": "EMR stands for Electronic Medical Record, a digital version of a patient's paper chart.",
+          "options": [
+            {"text": "Electronic Medical Record", "is_correct": true},
+            {"text": "Emergency Medical Response", "is_correct": false},
+            {"text": "External Medical Report", "is_correct": false},
+            {"text": "Extended Medical Review", "is_correct": false}
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Accounting Fundamentals",
+      "description": "Basic accounting principles, financial statements, and bookkeeping",
+      "specialization": "Certified Public Accountant (CPA)",
+      "difficulty_level": 1,
+      "time_limit_minutes": 30,
+      "passing_score": 70.0,
+      "questions": [
+        {
+          "question_text": "What is the accounting equation?",
+          "question_type": "multiple_choice",
+          "points": 1,
+          "explanation": "The fundamental accounting equation is Assets = Liabilities + Equity.",
+          "options": [
+            {"text": "Assets = Liabilities + Equity", "is_correct": true},
+            {"text": "Revenue = Expenses + Profit", "is_correct": false},
+            {"text": "Income = Expenses - Loss", "is_correct": false},
+            {"text": "Assets = Revenue - Expenses", "is_correct": false}
+          ]
+        },
+        {
+          "question_text": "What is double-entry bookkeeping?",
+          "question_type": "multiple_choice",
+          "points": 2,
+          "explanation": "Double-entry bookkeeping requires every transaction to have equal debits and credits.",
+          "options": [
+            {"text": "Recording transactions twice", "is_correct": false},
+            {"text": "Every transaction has equal debits and credits", "is_correct": true},
+            {"text": "Using two separate ledgers", "is_correct": false},
+            {"text": "Recording both cash and credit sales", "is_correct": false}
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Teaching Fundamentals",
+      "description": "Basic principles of teaching, classroom management, and educational methodologies",
+      "specialization": "Elementary School Teacher",
+      "difficulty_level": 1,
+      "time_limit_minutes": 25,
+      "passing_score": 65.0,
+      "questions": [
+        {
+          "question_text": "What is differentiated instruction?",
+          "question_type": "multiple_choice",
+          "points": 1,
+          "explanation": "Differentiated instruction involves tailoring teaching methods to meet individual student needs and learning styles.",
+          "options": [
+            {"text": "Teaching the same way to all students", "is_correct": false},
+            {"text": "Tailoring teaching to individual student needs", "is_correct": true},
+            {"text": "Separating students by ability", "is_correct": false},
+            {"text": "Using only one teaching method", "is_correct": false}
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Retail Sales Basics",
+      "description": "Fundamental skills for retail sales, customer service, and product knowledge",
+      "specialization": "Retail Sales Associate",
+      "difficulty_level": 1,
+      "time_limit_minutes": 20,
+      "passing_score": 60.0,
+      "questions": [
+        {
+          "question_text": "What is the first step in the sales process?",
+          "question_type": "multiple_choice",
+          "points": 1,
+          "explanation": "The first step is typically greeting the customer and establishing rapport.",
+          "options": [
+            {"text": "Making a sale", "is_correct": false},
+            {"text": "Greeting and establishing rapport", "is_correct": true},
+            {"text": "Processing payment", "is_correct": false},
+            {"text": "Restocking inventory", "is_correct": false}
+          ]
+        }
+      ]
+    }
+  ]
+}
+

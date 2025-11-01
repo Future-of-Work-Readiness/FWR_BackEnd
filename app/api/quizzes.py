@@ -48,10 +48,23 @@ def get_quiz(quiz_id: int, db: Session = Depends(get_db)):
     }
     
     for question in questions:
+        # Get all options with their correct status
+        options = []
+        correct_index = None
+        for idx, option in enumerate(question.options):
+            options.append({
+                "text": option.option_text,
+                "is_correct": option.is_correct
+            })
+            if option.is_correct:
+                correct_index = idx
+        
         quiz_data["questions"].append({
             "id": question.id,
             "question": question.question_text,
-            "options": [option.option_text for option in question.options]
+            "options": options,
+            "correct_index": correct_index,
+            "explanation": question.explanation
         })
     
     return quiz_data
