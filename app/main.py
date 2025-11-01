@@ -8,8 +8,10 @@ from .db_init import auto_populate_if_empty
 # Create all tables using hierarchical models
 Base.metadata.create_all(bind=engine)
 
-# Auto-populate data if database is empty (runs on startup)
-auto_populate_if_empty()
+# Note: Auto-population now runs in entrypoint.sh after DB is ready
+# This allows proper sequencing: DB ready → populate → start server
+# If running locally without Docker, uncomment the line below:
+# auto_populate_if_empty()
 
 app = FastAPI(
     title="Future Work Readiness API",

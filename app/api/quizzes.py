@@ -28,8 +28,9 @@ def get_all_quizzes(db: Session = Depends(get_db)):
     
     return {"quizzes": quiz_list}
 
-@router.get("/quizzes/{quiz_id}", response_model=schemas.Quiz)
+@router.get("/quizzes/{quiz_id}")
 def get_quiz(quiz_id: int, db: Session = Depends(get_db)):
+    """Get a quiz with all questions and options - returns custom format"""
     quiz = crud.get_quiz_by_id(db, quiz_id)
     
     if not quiz:
@@ -37,6 +38,7 @@ def get_quiz(quiz_id: int, db: Session = Depends(get_db)):
     
     questions = crud.get_quiz_questions(db, quiz_id)
     
+    # Build response matching frontend expectations
     quiz_data = {
         "id": quiz.id,
         "title": quiz.title,
@@ -44,6 +46,7 @@ def get_quiz(quiz_id: int, db: Session = Depends(get_db)):
         "duration": quiz.time_limit_minutes,
         "question_count": len(questions),
         "difficulty": quiz.difficulty_level,
+        "specialization_id": quiz.specialization_id,
         "questions": []
     }
     

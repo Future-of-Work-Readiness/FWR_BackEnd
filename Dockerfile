@@ -9,12 +9,15 @@ WORKDIR /app
 COPY ./app/requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
-COPY ./app /app
+# Copy application code (use . to copy contents, not directory itself)
+COPY ./app/. /app/
 
 # Copy data files for population (must be in Backend/data relative to app directory)
 COPY ./data /app/data
 
-# The auto_populate_if_empty() runs automatically in main.py on startup
-# Population happens after tables are created and database connection is established
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+# Copy and make entrypoint script executable (ensure it's in the right location)
+COPY ./app/entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
+
+# Use entrypoint script that waits for DB and runs population
+CMD ["/app/entrypoint.sh"]
