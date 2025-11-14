@@ -10,8 +10,16 @@ router = APIRouter()
 
 # ENDPOINTS
 @router.get("/quizzes", response_model=schemas.QuizzesResponse)
-def get_all_quizzes(db: Session = Depends(get_db)):
+def get_all_quizzes(specialization_id: int = None, db: Session = Depends(get_db)):
+    """
+    Get all quizzes, optionally filtered by specialization_id
+    If specialization_id is provided, only return quizzes for that specialization
+    """
     quizzes = crud.get_all_quizzes(db)
+    
+    # Filter by specialization if provided
+    if specialization_id:
+        quizzes = [q for q in quizzes if q.specialization_id == specialization_id]
     
     quiz_list = []
     for quiz in quizzes:
@@ -101,6 +109,16 @@ def submit_quiz(attempt_id: int, data: schemas.QuizSubmission, db: Session = Dep
     # Recompute readiness for the attempt's user
     attempt = crud.get_quiz_attempt(db, attempt_id)
     readiness = crud.recompute_user_readiness(db, attempt.user_id) if attempt else {"overall": 0.0, "technical": 0.0, "soft": 0.0}
+    
+    # Update peer benchmarks for the user's specialization
+    if attempt:
+        user = db.query(crud.models.User).filter(crud.models.User.id == attempt.user_id).first()
+        if user and user.preferred_specialization_id:
+            try:
+                crud.calculate_peer_benchmarks(db, user.preferred_specialization_id)
+                print(f"Peer benchmarks updated for specialization {user.preferred_specialization_id}")
+            except Exception as e:
+                print(f"Failed to update peer benchmarks: {e}")
     
     # Return all the detailed data from submit_quiz_answers
     return {

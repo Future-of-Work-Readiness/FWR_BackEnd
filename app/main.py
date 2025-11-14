@@ -1,9 +1,17 @@
-from fastapi import FastAPI
+import logging
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from .api import users, quizzes, sectors, admin, goals
 from .models_hierarchical import Base
 from .database import engine
 from .db_init import auto_populate_if_empty
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 # Create all tables using hierarchical models
 Base.metadata.create_all(bind=engine)
@@ -45,3 +53,11 @@ def root():
 @app.get("/health")
 def health_check():
     return {"status": "healthy", "version": "1.0.0"}
+
+@app.get("/welcome")
+def welcome(request: Request):
+    """
+    Welcome endpoint that logs requests and returns a welcome message
+    """
+    logger.info(f"Request received: {request.method} {request.url.path}")
+    return {"message": "Welcome to the Future Work Readiness API"}

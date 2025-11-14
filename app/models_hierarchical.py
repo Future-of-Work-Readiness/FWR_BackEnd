@@ -1,11 +1,11 @@
 """
-Updated Database models for the Future of Work Readiness platform
-With proper 3-level hierarchy: Sectors → Branches → Specializations
+Extended models for hierarchical data and peer benchmarking
+Complete model definitions including all entities from models.py plus extensions
 """
-from datetime import datetime
-from sqlalchemy import Column, Integer, String, DateTime, Boolean, Text, ForeignKey, Float
+from sqlalchemy import Column, Integer, String, DateTime, Boolean, Text, ForeignKey, Float, UniqueConstraint
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
+from datetime import datetime
 from .database import Base
 
 
@@ -142,8 +142,7 @@ class User(Base):
     # Relationships
     preferred_specialization = relationship("Specialization")
     quiz_attempts = relationship("QuizAttempt", back_populates="user")
-    goals = relationship("Goal", back_populates="user")
-    journal_entries = relationship("JournalEntry", back_populates="user")
+    user_badges = relationship("UserBadge", back_populates="user")
 
 
 class QuizAttempt(Base):
@@ -167,67 +166,63 @@ class QuizAttempt(Base):
     quiz = relationship("Quiz", back_populates="attempts")
 
 
-class Goal(Base):
-    """User development goals"""
-    __tablename__ = "goals"
-    
-    id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
-    title = Column(String(200), nullable=False)
-    description = Column(Text, nullable=True)
-    category = Column(String(50), nullable=False)  # e.g., "readiness", "technical", "soft_skills", "leadership"
-    target_value = Column(Float, nullable=False)  # Target score/percentage
-    current_value = Column(Float, default=0.0)  # Current progress
-    is_completed = Column(Boolean, default=False)
-    target_date = Column(DateTime(timezone=True), nullable=True)
-    created_at = Column(DateTime(timezone=True), server_default=func.now())
-    updated_at = Column(DateTime(timezone=True), onupdate=func.now())
-    
-    # Relationships
-    user = relationship("User", back_populates="goals")
-
-
-class JournalEntry(Base):
-    """User self-reflection journal entries"""
-    __tablename__ = "journal_entries"
-    
-    id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
-    prompt = Column(String(200), nullable=True)  # Optional prompt/question
-    content = Column(Text, nullable=False)
-    entry_date = Column(DateTime(timezone=True), server_default=func.now())
-    created_at = Column(DateTime(timezone=True), server_default=func.now())
-    updated_at = Column(DateTime(timezone=True), onupdate=func.now())
-    
-    # Relationships
-    user = relationship("User", back_populates="journal_entries")
-
 class PeerBenchmark(Base):
-    """
-    Stores aggregated peer statistics by specialization
-    Updated periodically (e.g., daily) to avoid recalculating on every request
-    """
+    """Stores peer benchmarking statistics for each specialization"""
     __tablename__ = "peer_benchmarks"
     
     id = Column(Integer, primary_key=True, index=True)
-    specialization_id = Column(Integer, ForeignKey("specializations.id"))
+    specialization_id = Column(Integer, ForeignKey("specializations.id"), nullable=False)
+    avg_readiness_score = Column(Float, nullable=False, default=0.0)
+    avg_technical_score = Column(Float, nullable=False, default=0.0)
+    avg_soft_skills_score = Column(Float, nullable=False, default=0.0)
+    avg_leadership_score = Column(Float, nullable=False, default=0.0)
+    total_users = Column(Integer, nullable=False, default=0)
+    median_readiness_score = Column(Float, nullable=False, default=0.0)
+    common_strengths = Column(Text, nullable=True)  # JSON string
+    common_gaps = Column(Text, nullable=True)  # JSON string
+    last_updated = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
     
-    # Average scores
-    avg_readiness = Column(Float, default=0.0)
-    avg_technical = Column(Float, default=0.0)
-    avg_soft_skills = Column(Float, default=0.0)
-    avg_leadership = Column(Float, default=0.0)
-    
-    # Statistics
-    total_users = Column(Integer, default=0)
-    median_readiness = Column(Float, default=0.0)
-    
-    # Most common strengths and weaknesses (stored as JSON)
-    common_strengths = Column(Text)  # JSON string
-    common_gaps = Column(Text)  # JSON string
-    
-    # Metadata
-    last_updated = Column(DateTime, default=datetime.utcnow)
-    
-    # Relationship
+    # Relationships
     specialization = relationship("Specialization")
+
+
+class Badge(Base):
+    """Microcredentials and badges that users can earn"""
+    __tablename__ = "badges"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String(200), nullable=False, unique=True)
+    description = Column(Text, nullable=True)
+    criteria = Column(Text, nullable=False)  # JSON string describing earning criteria
+    icon_url = Column(String(500), nullable=True)  # URL to badge icon
+    category = Column(String(50), nullable=False)  # e.g., 'readiness', 'technical', 'soft_skills', 'leadership'
+    required_score = Column(Float, nullable=False)  # Minimum score required
+    is_active = Column(Boolean, default=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    
+    # Relationships
+    user_badges = relationship("UserBadge", back_populates="badge")
+
+
+class UserBadge(Base):
+    """Tracks which badges a user has earned"""
+    __tablename__ = "user_badges"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    badge_id = Column(Integer, ForeignKey("badges.id"), nullable=False)
+    earned_date = Column(DateTime(timezone=True), server_default=func.now())
+    shared = Column(Boolean, default=False)  # Whether user has shared this badge
+    
+    # Relationships
+    user = relationship("User", back_populates="user_badges")
+    badge = relationship("Badge", back_populates="user_badges")
+    
+    # Unique constraint to prevent duplicate badges per user
+    __table_args__ = (
+        UniqueConstraint('user_id', 'badge_id', name='unique_user_badge'),
+    )
+
+
+# Add relationship to User model
+User.user_badges = relationship("UserBadge", back_populates="user")
