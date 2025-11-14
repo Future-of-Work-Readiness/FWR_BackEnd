@@ -2,6 +2,7 @@
 Updated Database models for the Future of Work Readiness platform
 With proper 3-level hierarchy: Sectors → Branches → Specializations
 """
+from datetime import datetime
 from sqlalchemy import Column, Integer, String, DateTime, Boolean, Text, ForeignKey, Float
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
@@ -200,3 +201,33 @@ class JournalEntry(Base):
     
     # Relationships
     user = relationship("User", back_populates="journal_entries")
+
+class PeerBenchmark(Base):
+    """
+    Stores aggregated peer statistics by specialization
+    Updated periodically (e.g., daily) to avoid recalculating on every request
+    """
+    __tablename__ = "peer_benchmarks"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    specialization_id = Column(Integer, ForeignKey("specializations.id"))
+    
+    # Average scores
+    avg_readiness = Column(Float, default=0.0)
+    avg_technical = Column(Float, default=0.0)
+    avg_soft_skills = Column(Float, default=0.0)
+    avg_leadership = Column(Float, default=0.0)
+    
+    # Statistics
+    total_users = Column(Integer, default=0)
+    median_readiness = Column(Float, default=0.0)
+    
+    # Most common strengths and weaknesses (stored as JSON)
+    common_strengths = Column(Text)  # JSON string
+    common_gaps = Column(Text)  # JSON string
+    
+    # Metadata
+    last_updated = Column(DateTime, default=datetime.utcnow)
+    
+    # Relationship
+    specialization = relationship("Specialization")

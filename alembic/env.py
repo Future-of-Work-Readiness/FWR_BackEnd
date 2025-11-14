@@ -16,9 +16,14 @@ if config.config_file_name is not None:
 
 # add your model's MetaData object here
 # for 'autogenerate' support
-# from myapp import mymodel
-# target_metadata = mymodel.Base.metadata
-target_metadata = None
+import sys
+import os
+sys.path.insert(0, os.path.realpath(os.path.join(os.path.dirname(__file__), '..')))
+
+from app.database import Base
+from app.models_hierarchical import *  # Import all models
+
+target_metadata = Base.metadata
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
@@ -57,8 +62,15 @@ def run_migrations_online() -> None:
     and associate a connection with the context.
 
     """
+    # Use environment variables or fallback to alembic.ini
+    import os
+    database_url = os.getenv("DATABASE_URL", config.get_main_option("sqlalchemy.url"))
+    
+    configuration = config.get_section(config.config_ini_section, {})
+    configuration["sqlalchemy.url"] = database_url
+    
     connectable = engine_from_config(
-        config.get_section(config.config_ini_section, {}),
+        configuration,
         prefix="sqlalchemy.",
         poolclass=pool.NullPool,
     )

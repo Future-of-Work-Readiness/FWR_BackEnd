@@ -257,3 +257,31 @@ class QuizStartResponse(BaseModel):
     attempt_id: int
     quiz_id: int
     message: str
+
+
+# Peer Benchmarking Schemas
+class PeerComparison(BaseModel):
+    category: str
+    your_score: float
+    peer_average: float
+    difference: float
+    percentile: int  # e.g., 75 means "better than 75% of peers"
+    status: str  # "above", "average", "below"
+
+class CommonInsight(BaseModel):
+    area: str
+    percentage: float
+    description: str
+
+class PeerBenchmarkData(BaseModel):
+    specialization_name: str
+    total_peers: int
+    comparisons: List[PeerComparison]
+    overall_percentile: int
+    common_strengths: List[CommonInsight]
+    common_gaps: List[CommonInsight]
+    last_updated: str
+
+class PeerBenchmarkResponse(BaseModel):
+    success: bool
+    data: PeerBenchmarkData
