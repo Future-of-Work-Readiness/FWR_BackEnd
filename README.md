@@ -157,3 +157,230 @@ python3 -c "from app.db_init import auto_populate_if_empty; auto_populate_if_emp
 cd app
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
+
+### Frontend Setup
+
+```bash
+# Navigate to frontend directory (in a new terminal)
+cd Frontend
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+The frontend will be available at http://localhost:3000
+
+## 📁 Project Structure
+
+```
+Future_of_work_readiness/
+├── Backend/
+│   ├── app/
+│   │   ├── main.py              # FastAPI application entry point
+│   │   ├── models.py            # SQLAlchemy database models
+│   │   ├── database.py          # Database connection setup
+│   │   ├── schemas.py           # Pydantic schemas
+│   │   ├── crud.py              # Database operations
+│   │   ├── db_init.py           # Database initialization
+│   │   ├── generate_quiz.py     # AI quiz generation (Gemini API)
+│   │   ├── replace_frontend_questions.py  # DB integration script
+│   │   └── api/                 # API route handlers
+│   │       ├── auth.py
+│   │       ├── quizzes.py
+│   │       └── users.py
+│   ├── data/                    # Initial data (sectors, quizzes)
+│   ├── alembic/                 # Database migrations
+│   ├── Dockerfile
+│   └── requirements.txt
+├── Frontend/
+│   ├── src/
+│   │   ├── main.jsx            # React app entry point
+│   │   ├── App.jsx             # Main app component
+│   │   └── index.css           # Global styles
+│   ├── pages/                  # Page components
+│   ├── components/             # Reusable components
+│   ├── utils/                  # API utilities
+│   ├── package.json
+│   └── vite.config.js
+├── docker-compose.yml          # Docker orchestration
+└── README.md                   # This file
+```
+
+## 🔧 Common Commands
+
+### Docker Commands
+
+```bash
+# Start all services
+docker-compose up -d
+
+# Stop all services
+docker-compose down
+
+# Rebuild containers after code changes
+docker-compose up -d --build
+
+# View logs
+docker-compose logs -f [service-name]
+
+# Access backend container shell
+docker exec -it futurework_backend bash
+
+# Access database
+docker exec -it futurework_db psql -U fw_user -d futurework
+
+# Restart a specific service
+docker-compose restart backend
+```
+
+### Database Commands
+
+```bash
+# Inside backend container or with local setup
+cd Backend
+
+# Create new migration
+alembic revision --autogenerate -m "description"
+
+# Run migrations
+alembic upgrade head
+
+# Rollback migration
+alembic downgrade -1
+
+# Populate database with initial data
+python3 -c "from app.db_init import auto_populate_if_empty; auto_populate_if_empty()"
+```
+
+### AI Quiz Generation
+
+```bash
+# Generate sample quiz questions
+cd Backend
+python3 -m app.generate_quiz
+
+# Replace Frontend Development questions with AI-generated ones
+python3 -m app.replace_frontend_questions
+```
+
+## Testing the Application
+
+### Test Backend API
+
+```bash
+# Get all specializations
+curl http://localhost:8000/api/specializations
+
+# Get quizzes for a specialization
+curl http://localhost:8000/api/specializations/1/quizzes
+
+# Get quiz by ID
+curl http://localhost:8000/api/quizzes/20
+```
+
+### Test Frontend
+
+1. Open http://localhost:3000
+2. Sign up or log in
+3. Complete the onboarding to select your specialization
+4. Take a quiz and view results
+
+
+## Troubleshooting
+
+### Port Already in Use
+
+```bash
+# Find process using port 8000
+lsof -i :8000
+
+# Kill the process
+kill -9 <PID>
+
+# Or change the port in docker-compose.yml
+```
+
+### Database Connection Issues
+
+```bash
+# Check if PostgreSQL container is running
+docker ps | grep futurework_db
+
+# Check database logs
+docker logs futurework_db
+
+# Restart database
+docker-compose restart postgres
+```
+
+### Frontend Not Loading
+
+```bash
+# Clear npm cache and reinstall
+cd Frontend
+rm -rf node_modules package-lock.json
+npm install
+
+# Rebuild frontend container
+docker-compose up -d --build frontend
+```
+
+### Permission Issues (Linux)
+
+```bash
+# Fix Docker permissions
+sudo usermod -aG docker $USER
+newgrp docker
+
+# Fix file permissions
+sudo chown -R $USER:$USER .
+```
+
+## Database Schema
+
+The platform uses a hierarchical structure:
+
+- **Sectors** (e.g., Technology, Healthcare)
+  - **Branches** (e.g., Software Development, Data Science)
+    - **Specializations** (e.g., Frontend Development, Machine Learning)
+      - **Quizzes** (difficulty levels 1-4)
+        - **Questions** (multiple choice, with explanations)
+          - **QuestionOptions** (A, B, C, D)
+
+## Security Notes
+
+- Change the `SECRET_KEY` in production
+- Use environment variables for sensitive data
+- Keep your Gemini API key secure (don't commit to Git)
+- Use HTTPS in production
+- Implement rate limiting for API endpoints
+
+## Future Enhancements
+
+- [ ] Add more assessment types (coding challenges, projects)
+- [ ] Implement skill gap analysis
+- [ ] Add learning resources recommendations
+- [ ] Create mobile app version
+- [ ] Add social features (leaderboards, peer comparison)
+- [ ] Integrate with job market data APIs
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License.
+
+
+
+## Support
+
+For issues and questions:
+- Create an issue on GitHub
+- Contact: hebachokri7@gmail.com
+
+---
