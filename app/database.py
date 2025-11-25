@@ -6,11 +6,13 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-# Database URL - can be overridden by environment variable
-DATABASE_URL = os.getenv(
-    "DATABASE_URL", 
-    "postgresql://fw_user:fw_password_123@localhost:5432/futurework"
-)
+# Database URL - must be set via environment variable
+DATABASE_URL = os.getenv("DATABASE_URL")
+if not DATABASE_URL:
+    raise ValueError(
+        "DATABASE_URL environment variable is required. "
+        "Please set it before running the application."
+    )
 
 # Create SQLAlchemy engine
 engine = create_engine(DATABASE_URL)

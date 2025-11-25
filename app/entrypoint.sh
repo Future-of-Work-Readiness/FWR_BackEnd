@@ -6,7 +6,11 @@ echo "================================================"
 
 # Wait for database to be ready
 echo "⏳ Waiting for database to be ready..."
-until PGPASSWORD=fw_password_123 psql -h postgres -U fw_user -d futurework -c "SELECT 1" > /dev/null 2>&1; do
+if [ -z "$DATABASE_URL" ]; then
+  echo "❌ ERROR: DATABASE_URL environment variable is not set!"
+  exit 1
+fi
+until psql "$DATABASE_URL" -c "SELECT 1" > /dev/null 2>&1; do
   echo "  Database is unavailable - sleeping..."
   sleep 2
 done
