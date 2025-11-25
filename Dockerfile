@@ -9,8 +9,8 @@ WORKDIR /app
 COPY ./app/requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code (use . to copy contents, not directory itself)
-COPY ./app/. /app/
+# Copy application code (maintain package structure)
+COPY ./app /app/app
 
 # Copy data files for population (must be in Backend/data relative to app directory)
 COPY ./data /app/data
