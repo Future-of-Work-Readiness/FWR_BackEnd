@@ -1,4 +1,4 @@
-# Future of Work Readiness Platform
+# Future of Work Readiness Platform - Backend
 
 A comprehensive career readiness assessment platform that helps users evaluate their skills and prepare for the future of work across various technology sectors and specializations.
 
@@ -8,137 +8,93 @@ A comprehensive career readiness assessment platform that helps users evaluate t
 - **Adaptive Assessments**: Multi-level difficulty quizzes for various specializations
 - **User Progress Tracking**: Track readiness scores and quiz attempts
 - **RESTful API**: FastAPI backend with full CRUD operations
-- **Modern UI**: React frontend with responsive design
+- **Peer Benchmarking**: Compare your progress with peers
+- **Goals & Journal**: Set goals and track your learning journey
+- **Versioned API**: Clean `/api/v1` prefix for all endpoints
 
-##Prerequisites
+## Prerequisites
 
-Before you begin, ensure you have the following installed:
-
-- **Docker** (version 20.10+) and **Docker Compose** (version 2.0+)
-- **Node.js** (version 18+) and **npm** (version 9+)
+- **Python 3.9+** (3.11 recommended)
+- **PostgreSQL 15+** (or Docker)
 - **Git**
-- **(Optional) Python 3.9+** if you want to run backend locally without Docker
 
-## Installation & Setup
+---
 
-### 1. Clone the Repository
+## 🚀 Quick Start (Docker - Recommended)
+
+The easiest way to run the project is with Docker:
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/FutureWorkReadiness/FWR_BackEnd.git
+cd FWR_BackEnd
+
+# 2. Start all services
+docker-compose up -d --build
+
+# 3. Check status
+docker-compose ps
+
+# 4. View logs
+docker-compose logs -f backend
+```
+
+**Access the API:**
+
+- API Documentation: http://localhost:8000/docs
+- Health Check: http://localhost:8000/health
+- API v1 endpoints: http://localhost:8000/api/v1/...
+
+**Stop services:**
+
+```bash
+docker-compose down        # Stop containers
+docker-compose down -v     # Stop and remove volumes (clean slate)
+```
+
+---
+
+## 🔧 Local Development Setup (Without Docker)
+
+Follow these steps to run the project locally from scratch.
+
+### Step 1: Clone the Repository
 
 ```bash
 git clone https://github.com/FutureWorkReadiness/FWR_BackEnd.git
 cd FWR_BackEnd
 ```
 
-### 2. Configure Environment Variables
-
-#### Backend Configuration
-
-Create a `.env` file in the root directory:
+### Step 2: Create and Activate Virtual Environment
 
 ```bash
-touch .env
-```
-
-Add the following content to `/.env`:
-
-```env
-# Database Configuration
-DATABASE_URL=postgresql://fw_user:fw_password_123@localhost:5432/futurework
-
-
-### 3. Start the Application with Docker
-
-#### Option A: Using Docker Compose (Recommended)
-
-This will start all services (Database, Backend, Frontend) in containers:
-
-```bash
-# From the project root directory
-docker-compose up -d
-```
-
-**What this does:**
-- Starts PostgreSQL database on port 5432
--  Builds and starts FastAPI backend on port 8000
-- Builds and starts React frontend on port 3000
-- Automatically creates database tables and populates initial data
-
-**Check container status:**
-```bash
-docker-compose ps
-```
-
-**View logs:**
-```bash
-# All services
-docker-compose logs -f
-
-# Specific service
-docker-compose logs -f backend
-docker-compose logs -f frontend
-```
-
-**Stop services:**
-```bash
-docker-compose down
-```
-
-**Stop and remove volumes (clean slate):**
-```bash
-docker-compose down -v
-```
-
-#### Option B: Run Services Individually
-
-If you prefer more control:
-
-```bash
-# Start only the database
-docker-compose up -d postgres
-
-# Start backend (in a new terminal)
-docker-compose up backend
-
-# Start frontend (in another terminal)
-docker-compose up frontend
-```
-
-### 4. Verify Installation
-
-After starting the services, verify everything is running:
-
-1. **Backend API Documentation**: http://localhost:8000/docs
-2. **Frontend Application**: http://localhost:3000
-3. **Database**: localhost:5432 (use any PostgreSQL client)
-
-**Test the backend API:**
-```bash
-curl http://localhost:8000/api/health
-```
-
-**Expected response:**
-```json
-{"status": "healthy", "database": "connected"}
-```
-
-## Running Locally (Without Docker)
-
-### Backend Setup
-
-```bash
-# Navigate to backend directory
-cd Backend
-
 # Create virtual environment
 python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install dependencies
-pip install -r app/requirements.txt
+# Activate virtual environment
+# On macOS/Linux:
+source venv/bin/activate
 
-# Install additional dependencies for quiz generation
-pip install python-dotenv google-generativeai
+# On Windows (Command Prompt):
+venv\Scripts\activate
 
-# Ensure PostgreSQL is running (either via Docker or locally)
+# On Windows (PowerShell):
+.\venv\Scripts\Activate.ps1
+```
+
+### Step 3: Install Dependencies
+
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+### Step 4: Set Up PostgreSQL Database
+
+**Option A: Using Docker for PostgreSQL only (Recommended)**
+
+```bash
+# Start PostgreSQL container
 docker run -d \
   --name futurework_db \
   -e POSTGRES_USER=fw_user \
@@ -147,84 +103,215 @@ docker run -d \
   -p 5432:5432 \
   postgres:15
 
-# Create database tables
-python3 -c "from app.models import Base; from app.database import engine; Base.metadata.create_all(bind=engine)"
-
-# Populate initial data
-python3 -c "from app.db_init import auto_populate_if_empty; auto_populate_if_empty()"
-
-# Start the FastAPI server
-cd app
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
+# Verify it's running
+docker ps | grep futurework_db
 ```
 
-### Frontend Setup
+**Option B: Using Local PostgreSQL Installation**
 
 ```bash
-# Navigate to frontend directory (in a new terminal)
-cd Frontend
+# Install PostgreSQL (macOS with Homebrew)
+brew install postgresql@15
+brew services start postgresql@15
 
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
+# Create database and user
+psql postgres << EOF
+CREATE USER fw_user WITH PASSWORD 'fw_password_123';
+CREATE DATABASE futurework OWNER fw_user;
+GRANT ALL PRIVILEGES ON DATABASE futurework TO fw_user;
+EOF
 ```
 
-The frontend will be available at http://localhost:3000
+**Option B (continued): Linux (Ubuntu/Debian)**
+
+```bash
+# Install PostgreSQL
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+
+# Start PostgreSQL
+sudo systemctl start postgresql
+
+# Create database and user
+sudo -u postgres psql << EOF
+CREATE USER fw_user WITH PASSWORD 'fw_password_123';
+CREATE DATABASE futurework OWNER fw_user;
+GRANT ALL PRIVILEGES ON DATABASE futurework TO fw_user;
+EOF
+```
+
+### Step 5: Configure Environment Variables
+
+```bash
+# Copy example environment file
+cp .env.example .env
+
+# Edit .env file (optional - defaults work for local development)
+# The default DATABASE_URL is: postgresql://fw_user:fw_password_123@localhost:5432/futurework
+```
+
+**Verify your `.env` file contains:**
+
+```env
+DATABASE_URL=postgresql://fw_user:fw_password_123@localhost:5432/futurework
+SECRET_KEY=dev-secret-key-change-in-production
+ENVIRONMENT=development
+DEBUG=true
+```
+
+### Step 6: Create Database Tables
+
+```bash
+# Run Alembic migrations
+alembic upgrade head
+
+# Or create tables directly
+python3 -c "from app.core.database import Base, engine; from app.models import *; Base.metadata.create_all(bind=engine); print('✅ Tables created')"
+```
+
+> **⚠️ Note about UUID Migration**: The database uses UUID primary keys for all tables. If upgrading from an older version with integer IDs, you must drop all existing tables first:
+> ```bash
+> # WARNING: This will delete ALL data
+> alembic downgrade base
+> alembic upgrade head
+> python3 seed_database.py --force
+> ```
+
+### Step 7: Seed the Database
+
+```bash
+# Auto-seed with initial data from data/*.json files
+python3 seed_database.py
+
+# Or seed specific data
+python3 seed_database.py sectors    # Seed sectors only
+python3 seed_database.py quizzes    # Seed quizzes only
+python3 seed_database.py --force    # Force re-seed (add missing data)
+```
+
+### Step 8: Start the Development Server
+
+```bash
+# Start FastAPI with hot reload
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+### Step 9: Verify Installation
+
+Open your browser and visit:
+
+- **API Documentation**: http://localhost:8000/docs
+- **Health Check**: http://localhost:8000/health
+- **Root Endpoint**: http://localhost:8000/
+
+**Test with curl:**
+
+```bash
+# Health check
+curl http://localhost:8000/health
+
+# Get all sectors
+curl http://localhost:8000/api/v1/sectors
+
+# Get all quizzes
+curl http://localhost:8000/api/v1/quizzes
+```
+
+---
 
 ## 📁 Project Structure
 
 ```
-Future_of_work_readiness/
-├── Backend/
-│   ├── app/
-│   │   ├── main.py              # FastAPI application entry point
-│   │   ├── models.py            # SQLAlchemy database models
-│   │   ├── database.py          # Database connection setup
-│   │   ├── schemas.py           # Pydantic schemas
-│   │   ├── crud.py              # Database operations
-│   │   ├── db_init.py           # Database initialization
-│   │   ├── generate_quiz.py     # AI quiz generation (Gemini API)
-│   │   ├── replace_frontend_questions.py  # DB integration script
-│   │   └── api/                 # API route handlers
-│   │       ├── auth.py
-│   │       ├── quizzes.py
-│   │       └── users.py
-│   ├── data/                    # Initial data (sectors, quizzes)
-│   ├── alembic/                 # Database migrations
-│   ├── Dockerfile
-│   └── requirements.txt
-├── Frontend/
-│   ├── src/
-│   │   ├── main.jsx            # React app entry point
-│   │   ├── App.jsx             # Main app component
-│   │   └── index.css           # Global styles
-│   ├── pages/                  # Page components
-│   ├── components/             # Reusable components
-│   ├── utils/                  # API utilities
-│   ├── package.json
-│   └── vite.config.js
-├── docker-compose.yml          # Docker orchestration
-└── README.md                   # This file
+FWR_BackEnd/
+├── app/
+│   ├── api/                      # API endpoints
+│   │   └── v1/                   # Version 1 API
+│   │       ├── __init__.py       # Exports api_router
+│   │       ├── router.py         # API router aggregator
+│   │       ├── users.py          # User authentication & profiles
+│   │       ├── quizzes.py        # Quiz management & attempts
+│   │       ├── sectors.py        # Sector hierarchy endpoints
+│   │       ├── goals.py          # Goals & journal entries
+│   │       └── admin.py          # Admin management endpoints
+│   ├── core/                     # Core infrastructure
+│   │   ├── config.py             # Application settings (env vars)
+│   │   └── database.py           # SQLAlchemy engine & sessions
+│   ├── models/                   # SQLAlchemy ORM models
+│   │   ├── __init__.py           # Exports all models
+│   │   ├── user.py               # User model
+│   │   ├── sector.py             # Sector, Branch, Specialization
+│   │   ├── quiz.py               # Quiz, Question, QuestionOption
+│   │   ├── goal.py               # Goal, JournalEntry
+│   │   ├── badge.py              # Badge, UserBadge
+│   │   └── benchmark.py          # PeerBenchmark
+│   ├── schemas/                  # Pydantic request/response schemas
+│   │   ├── __init__.py           # Exports all schemas
+│   │   ├── user.py
+│   │   ├── sector.py
+│   │   ├── quiz.py
+│   │   ├── goal.py
+│   │   ├── benchmark.py
+│   │   └── common.py
+│   ├── services/                 # Business logic layer
+│   │   ├── __init__.py           # Exports all services
+│   │   ├── user_service.py
+│   │   ├── quiz_service.py
+│   │   ├── sector_service.py
+│   │   ├── goal_service.py
+│   │   └── benchmark_service.py
+│   ├── seeds/                    # Database seeding
+│   │   ├── base.py               # Seed utilities & auto-seed
+│   │   ├── seed_sectors.py       # Seed sectors from JSON
+│   │   └── seed_quizzes.py       # Seed quizzes from JSON
+│   ├── main.py                   # FastAPI app entry point
+│   └── entrypoint.sh             # Docker entrypoint script
+├── data/                         # Source data (JSON files)
+│   ├── sectors.json              # Sector hierarchy data
+│   └── quizzes.json              # Quiz questions data
+├── alembic/                      # Database migrations
+│   ├── versions/                 # Migration scripts
+│   └── env.py                    # Alembic configuration
+├── seed_database.py              # CLI tool for manual seeding
+├── docker-compose.yml            # Docker orchestration
+├── Dockerfile                    # Docker build configuration
+├── requirements.txt              # Python dependencies
+└── README.md
 ```
 
+---
+
 ## 🔧 Common Commands
+
+### Local Development
+
+```bash
+# Start server with hot reload
+uvicorn app.main:app --reload --port 8000
+
+# Run database migrations
+alembic upgrade head
+
+# Create new migration
+alembic revision --autogenerate -m "description"
+
+# Seed database
+python3 seed_database.py
+
+# Run tests
+pytest
+```
 
 ### Docker Commands
 
 ```bash
 # Start all services
-docker-compose up -d
+docker-compose up -d --build
 
 # Stop all services
 docker-compose down
 
-# Rebuild containers after code changes
-docker-compose up -d --build
-
 # View logs
-docker-compose logs -f [service-name]
+docker-compose logs -f backend
 
 # Access backend container shell
 docker exec -it futurework_backend bash
@@ -232,64 +319,61 @@ docker exec -it futurework_backend bash
 # Access database
 docker exec -it futurework_db psql -U fw_user -d futurework
 
-# Restart a specific service
-docker-compose restart backend
+# Rebuild after code changes
+docker-compose up -d --build
 ```
 
-### Database Commands
+---
+
+## 🌐 API Endpoints
+
+### API Version 1 (`/api/v1`)
+
+| Endpoint                               | Method   | Description             |
+| -------------------------------------- | -------- | ----------------------- |
+| `/api/v1/users/register`               | POST     | Register new user       |
+| `/api/v1/users/login`                  | POST     | User login              |
+| `/api/v1/users/{id}`                   | GET      | Get user by ID          |
+| `/api/v1/users/{id}/dashboard`         | GET      | Get user dashboard      |
+| `/api/v1/sectors`                      | GET      | Get all sectors         |
+| `/api/v1/sectors/hierarchy`            | GET      | Get full hierarchy      |
+| `/api/v1/quizzes`                      | GET      | Get all quizzes         |
+| `/api/v1/quizzes/{id}`                 | GET      | Get quiz with questions |
+| `/api/v1/quizzes/{id}/start`           | POST     | Start quiz attempt      |
+| `/api/v1/quizzes/attempts/{id}/submit` | POST     | Submit answers          |
+| `/api/v1/goals`                        | GET/POST | User goals              |
+| `/api/v1/goals/journal`                | GET/POST | Journal entries         |
+| `/api/v1/admin/stats`                  | GET      | Database statistics     |
+
+**Full API documentation available at:** http://localhost:8000/docs
+
+---
+
+## 🔒 Environment Variables
+
+| Variable       | Description                  | Default             |
+| -------------- | ---------------------------- | ------------------- |
+| `DATABASE_URL` | PostgreSQL connection string | Required            |
+| `SECRET_KEY`   | JWT signing key              | `dev-secret-key...` |
+| `ENVIRONMENT`  | Environment name             | `development`       |
+| `DEBUG`        | Enable debug mode            | `true`              |
+
+---
+
+## 🐛 Troubleshooting
+
+### Database Connection Issues
 
 ```bash
-# Inside backend container or with local setup
-cd Backend
+# Check if PostgreSQL is running (Docker)
+docker ps | grep futurework_db
 
-# Create new migration
-alembic revision --autogenerate -m "description"
+# Check PostgreSQL logs
+docker logs futurework_db
 
-# Run migrations
-alembic upgrade head
-
-# Rollback migration
-alembic downgrade -1
-
-# Populate database with initial data
-python3 -c "from app.db_init import auto_populate_if_empty; auto_populate_if_empty()"
+# Test connection
+PGPASSWORD=fw_password_123 psql -h localhost -U fw_user -d futurework -c "SELECT 1"
 ```
-
-### AI Quiz Generation
-
-```bash
-# Generate sample quiz questions
-cd Backend
-python3 -m app.generate_quiz
-
-# Replace Frontend Development questions with AI-generated ones
-python3 -m app.replace_frontend_questions
-```
-
-## Testing the Application
-
-### Test Backend API
-
-```bash
-# Get all specializations
-curl http://localhost:8000/api/specializations
-
-# Get quizzes for a specialization
-curl http://localhost:8000/api/specializations/1/quizzes
-
-# Get quiz by ID
-curl http://localhost:8000/api/quizzes/20
-```
-
-### Test Frontend
-
-1. Open http://localhost:3000
-2. Sign up or log in
-3. Complete the onboarding to select your specialization
-4. Take a quiz and view results
-
-
-## Troubleshooting
 
 ### Port Already in Use
 
@@ -299,88 +383,76 @@ lsof -i :8000
 
 # Kill the process
 kill -9 <PID>
-
-# Or change the port in docker-compose.yml
 ```
 
-### Database Connection Issues
+### Module Import Errors
 
 ```bash
-# Check if PostgreSQL container is running
-docker ps | grep futurework_db
+# Ensure you're in the project root
+cd /path/to/FWR_BackEnd
 
-# Check database logs
-docker logs futurework_db
+# Ensure virtual environment is activated
+source venv/bin/activate
 
-# Restart database
-docker-compose restart postgres
+# Reinstall dependencies
+pip install -r requirements.txt
 ```
 
-### Frontend Not Loading
+### Database Reset
 
 ```bash
-# Clear npm cache and reinstall
-cd Frontend
-rm -rf node_modules package-lock.json
-npm install
+# Stop containers and remove volumes
+docker-compose down -v
 
-# Rebuild frontend container
-docker-compose up -d --build frontend
+# Restart fresh
+docker-compose up -d --build
 ```
 
-### Permission Issues (Linux)
+---
 
-```bash
-# Fix Docker permissions
-sudo usermod -aG docker $USER
-newgrp docker
-
-# Fix file permissions
-sudo chown -R $USER:$USER .
-```
-
-## Database Schema
+## 📊 Database Schema
 
 The platform uses a hierarchical structure:
 
-- **Sectors** (e.g., Technology, Healthcare)
-  - **Branches** (e.g., Software Development, Data Science)
-    - **Specializations** (e.g., Frontend Development, Machine Learning)
-      - **Quizzes** (difficulty levels 1-4)
-        - **Questions** (multiple choice, with explanations)
-          - **QuestionOptions** (A, B, C, D)
-
-## Security Notes
-
-- Change the `SECRET_KEY` in production
-- Use environment variables for sensitive data
-- Keep your Gemini API key secure (don't commit to Git)
-- Use HTTPS in production
-- Implement rate limiting for API endpoints
-
-## Future Enhancements
-
-- [ ] Add more assessment types (coding challenges, projects)
-- [ ] Implement skill gap analysis
-- [ ] Add learning resources recommendations
-- [ ] Create mobile app version
-- [ ] Add social features (leaderboards, peer comparison)
-- [ ] Integrate with job market data APIs
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License.
-
-
-
-## Support
-
-For issues and questions:
-- Create an issue on GitHub
-- Contact: hebachokri7@gmail.com
+```
+Sectors (e.g., Technology)
+└── Branches (e.g., Software Development)
+    └── Specializations (e.g., Frontend Development)
+        └── Quizzes (difficulty levels 1-5)
+            └── Questions (multiple choice)
+                └── Options (A, B, C, D)
+```
 
 ---
+
+## 🚀 Production Deployment
+
+For production:
+
+1. Change `SECRET_KEY` to a secure random value
+2. Set `DEBUG=false`
+3. Set `ENVIRONMENT=production`
+4. Use a production-grade PostgreSQL instance
+5. Set up SSL/HTTPS
+6. Configure proper CORS origins
+7. Use gunicorn instead of uvicorn:
+
+```bash
+gunicorn app.main:app -w 4 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000
+```
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests
+5. Submit a pull request
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License.

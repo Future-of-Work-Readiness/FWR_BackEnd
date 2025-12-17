@@ -1,66 +1,136 @@
+"""
+Future Work Readiness API
+Main FastAPI application entry point
+"""
+
 import logging
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from .api import users, quizzes, sectors, admin, goals
-from .models_hierarchical import Base
-from .database import engine
-from .db_init import auto_populate_if_empty
+
+# Import core configuration and database
+from app.core.config import settings
+from app.core.database import engine, Base
+
+# Import versioned API router
+from app.api.v1 import api_router
 
 # Configure logging
 logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
+    level=logging.INFO if settings.DEBUG else logging.WARNING,
+    format="%(asctime)s - %(levelname)s - %(message)s",
 )
 logger = logging.getLogger(__name__)
 
-# Create all tables using hierarchical models
-Base.metadata.create_all(bind=engine)
 
-# Note: Auto-population now runs in entrypoint.sh after DB is ready
-# This allows proper sequencing: DB ready → populate → start server
-# If running locally without Docker, uncomment the line below:
-# auto_populate_if_empty()
+def create_application() -> FastAPI:
+    """
+    Application factory function.
+    Creates and configures the FastAPI application.
+    """
+    application = FastAPI(
+        title=settings.PROJECT_NAME,
+        description=settings.DESCRIPTION,
+        version=settings.VERSION,
+        openapi_url=f"{settings.API_V1_PREFIX}/openapi.json",
+        docs_url="/docs",
+        redoc_url="/redoc",
+    )
 
-app = FastAPI(
-    title="Future Work Readiness API",
-    description="API for the Future of Work Readiness Platform",
-    version="1.0.0"
-)
+    # CORS Middleware - Allow frontend to communicate with backend
+    application.add_middleware(
+        CORSMiddleware,
+        allow_origins=settings.CORS_ORIGINS,
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
-# CORS - Allow frontend to talk to backend
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000", "http://localhost:3001", "http://localhost:3002", "http://localhost:3003", "http://localhost:3004", "http://localhost:3005", "http://localhost:3006", "http://localhost:3007", "http://localhost:3008", "http://localhost:3009", "http://localhost:3010", "http://localhost:3011", "http://localhost:3012", "http://localhost:3013", "http://localhost:5173",  # React dev server
-        "https://fwr-front-end.vercel.app",  # Production frontend
-    ],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+    # Include v1 API router
+    application.include_router(api_router, prefix=settings.API_V1_PREFIX)
 
-# Include routers
-app.include_router(users.router, prefix="/api/users", tags=["Users"])
-app.include_router(quizzes.router, prefix="/api", tags=["Quizzes"])
-app.include_router(sectors.router, prefix="/api", tags=["Sectors"])
-app.include_router(admin.router, prefix="/api", tags=["Admin"])
-app.include_router(goals.router, prefix="/api", tags=["Goals"])
+    return application
 
-@app.get("/")
+
+# Create the application instance
+app = create_application()
+
+
+@app.on_event("startup")
+async def startup_event():
+    """
+    Runs on application startup.
+    Creates database tables if they don't exist and seeds initial data.
+    """
+    logger.info(f"Starting {settings.PROJECT_NAME} v{settings.VERSION}")
+    logger.info(f"Environment: {settings.ENVIRONMENT}")
+    logger.info(f"API available at: {settings.API_V1_PREFIX}")
+
+    # Import all models to register them with Base
+    from app.models import (
+        Sector,
+        Branch,
+        Specialization,
+        Quiz,
+        Question,
+        QuestionOption,
+        QuizAttempt,
+        User,
+        PeerBenchmark,
+        Badge,
+        UserBadge,
+        Goal,
+        JournalEntry,
+    )
+
+    # Create all tables
+    Base.metadata.create_all(bind=engine)
+    logger.info("Database tables created/verified")
+
+    # Auto-seed database if empty
+    from app.seeds.base import auto_seed_if_empty
+
+    auto_seed_if_empty()
+
+
+@app.on_event("shutdown")
+async def shutdown_event():
+    """
+    Runs on application shutdown.
+    """
+    logger.info("Application shutting down")
+
+
+# Root endpoints
+@app.get("/", tags=["Root"])
 def root():
+    """
+    Root endpoint - Welcome message
+    """
     return {
-        "message": "Welcome to Future Work Readiness API",
-        "docs": "Visit /docs for API documentation"
+        "message": f"Welcome to {settings.PROJECT_NAME}",
+        "version": settings.VERSION,
+        "api": settings.API_V1_PREFIX,
+        "docs": "/docs",
+        "redoc": "/redoc",
     }
 
-@app.get("/health")
-def health_check():
-    return {"status": "healthy", "version": "1.0.0"}
 
-@app.get("/welcome")
+@app.get("/health", tags=["Health"])
+def health_check():
+    """
+    Health check endpoint for container orchestration
+    """
+    return {
+        "status": "healthy",
+        "version": settings.VERSION,
+        "environment": settings.ENVIRONMENT,
+    }
+
+
+@app.get("/welcome", tags=["Root"])
 def welcome(request: Request):
     """
     Welcome endpoint that logs requests and returns a welcome message
     """
     logger.info(f"Request received: {request.method} {request.url.path}")
-    return {"message": "Welcome to the Future Work Readiness API"}
+    return {"message": f"Welcome to the {settings.PROJECT_NAME}"}

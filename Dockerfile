@@ -5,19 +5,24 @@ RUN apt-get update && apt-get install -y postgresql-client && rm -rf /var/lib/ap
 
 WORKDIR /app
 
-# Copy requirements and install dependencies
-COPY ./app/requirements.txt /app/requirements.txt
+# Copy requirements and install dependencies (requirements.txt is in root)
+COPY ./requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code (maintain package structure)
 COPY ./app /app/app
 
-# Copy data files for population (must be in Backend/data relative to app directory)
+# Copy data files for seeding
 COPY ./data /app/data
+
+# Copy alembic for migrations
 COPY ./alembic /app/alembic
 COPY ./alembic.ini /app/alembic.ini
 
-# Copy and make entrypoint script executable (ensure it's in the right location)
+# Copy seed database script
+COPY ./seed_database.py /app/seed_database.py
+
+# Copy and make entrypoint script executable
 COPY ./app/entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
 
