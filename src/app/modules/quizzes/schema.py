@@ -145,8 +145,8 @@ class QuizAttempt(QuizAttemptBase):
 class QuizStartResponse(BaseModel):
     """Response schema for starting a quiz."""
 
-    attempt_id: UUID
-    quiz_id: UUID
+    attempt_id: str
+    quiz_id: str
     message: str
 
 
@@ -200,3 +200,112 @@ class QuizResultExtended(QuizResult):
     raw_score: Optional[float] = None
     max_score: Optional[float] = None
 
+
+# ============================================================
+# RESPONSE SCHEMAS FOR ENDPOINTS
+# ============================================================
+
+
+class QuizListItem(BaseModel):
+    """Individual quiz item in list responses."""
+
+    quiz_id: str
+    title: str
+    description: Optional[str] = None
+    specialization_id: str
+    specialization_name: Optional[str] = None
+    duration: Optional[int] = None
+    question_count: int
+    difficulty: Optional[int] = None
+
+
+class QuizListResponse(BaseModel):
+    """Response schema for GET /quizzes/."""
+
+    quizzes: List[QuizListItem]
+
+
+class QuestionOptionResponse(BaseModel):
+    """Option in a quiz question."""
+
+    text: str
+    is_correct: bool
+
+
+class QuizQuestionResponse(BaseModel):
+    """Question in quiz detail response."""
+
+    question_id: str
+    question: str
+    options: List[QuestionOptionResponse]
+    correct_index: Optional[int] = None
+    explanation: Optional[str] = None
+
+
+class QuizDetailResponse(BaseModel):
+    """Response schema for GET /quizzes/{quiz_id}."""
+
+    quiz_id: str
+    title: str
+    description: Optional[str] = None
+    duration: Optional[int] = None
+    question_count: int
+    difficulty: Optional[int] = None
+    specialization_id: str
+    questions: List[QuizQuestionResponse]
+
+
+class UpdatedGoalItem(BaseModel):
+    """Auto-updated goal after quiz submission."""
+
+    goal_id: str
+    title: str
+    old_value: float
+    new_value: float
+    is_completed: bool
+
+
+class QuizSubmitResponse(BaseModel):
+    """Response schema for POST /quizzes/attempts/{attempt_id}/submit."""
+
+    success: bool
+    score: float
+    correct: int
+    total: int
+    passed: bool
+    message: str
+    readiness: ReadinessSnapshot
+    feedback: Optional[FeedbackDetail] = None
+    question_results: Optional[List[Dict[str, Any]]] = None
+    score_impact: Optional[Dict[str, Any]] = None
+    quiz_title: Optional[str] = None
+    passing_score: Optional[float] = None
+    raw_score: Optional[float] = None
+    max_score: Optional[float] = None
+    updated_goals: List[UpdatedGoalItem] = []
+
+
+class AttemptInfo(BaseModel):
+    """Attempt information in result response."""
+
+    attempt_id: str
+    quiz_id: str
+    score: Optional[float] = None
+    passed: Optional[bool] = None
+    completed_at: Optional[str] = None
+
+
+class QuizInfo(BaseModel):
+    """Quiz information in result response."""
+
+    quiz_id: str
+    title: str
+    description: Optional[str] = None
+
+
+class AttemptResultResponse(BaseModel):
+    """Response schema for GET /quizzes/attempts/{attempt_id}/results."""
+
+    attempt: AttemptInfo
+    quiz: QuizInfo
+    readiness: ReadinessSnapshot

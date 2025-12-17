@@ -29,6 +29,13 @@ class Settings(BaseSettings):
     SECRET_KEY: str = "dev-secret-key-change-in-production"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 7  # 7 days
 
+    # JWT Configuration
+    JWT_SECRET: str = "jwt-secret-key-change-in-production"
+    JWT_REFRESH_SECRET: str = "jwt-refresh-secret-key-change-in-production"
+    JWT_ALGORITHM: str = "HS256"
+    JWT_EXPIRES_IN: int = 60 * 24  # 24 hours in minutes
+    JWT_REFRESH_EXPIRES_IN: int = 60 * 24 * 7  # 7 days in minutes
+
     # CORS - Origins that can access the API
     CORS_ORIGINS: List[str] = [
         "http://localhost:3000",

@@ -154,3 +154,63 @@ class HierarchyResponse(BaseModel):
 
     sectors: List[SectorWithBranches]
 
+
+# ============================================================
+# ENDPOINT RESPONSE SCHEMAS
+# ============================================================
+
+
+class SectorListItem(BaseModel):
+    """Individual sector item in list response."""
+
+    sector_id: str
+    name: str
+    description: Optional[str] = None
+    created_at: Optional[str] = None
+
+
+class BranchListItem(BaseModel):
+    """Individual branch item in list response."""
+
+    branch_id: str
+    name: str
+    description: Optional[str] = None
+    sector_id: str
+    created_at: Optional[str] = None
+
+
+class SpecializationListItem(BaseModel):
+    """Individual specialization item in list response."""
+
+    specialization_id: str
+    name: str
+    description: Optional[str] = None
+    branch_id: str
+    created_at: Optional[str] = None
+
+
+class SpecializationInHierarchy(BaseModel):
+    """Specialization in hierarchy response."""
+
+    specialization_id: str
+    name: str
+    description: Optional[str] = None
+
+
+class BranchInHierarchy(BaseModel):
+    """Branch with specializations in hierarchy response."""
+
+    branch_id: str
+    name: str
+    description: Optional[str] = None
+    specializations: List[SpecializationInHierarchy] = []
+
+
+class SectorHierarchyResponse(BaseModel):
+    """Sector with full hierarchy (branches and specializations)."""
+
+    sector_id: str
+    name: str
+    description: Optional[str] = None
+    branches: List[BranchInHierarchy] = []
+

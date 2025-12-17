@@ -10,6 +10,12 @@ from uuid import UUID
 
 from src.app.db.session import get_db
 from src.app.modules.sectors.service import SectorService
+from src.app.modules.sectors.schema import (
+    SectorListItem,
+    BranchListItem,
+    SpecializationListItem,
+    SectorHierarchyResponse,
+)
 
 router = APIRouter()
 
@@ -19,7 +25,7 @@ router = APIRouter()
 # ============================================================
 
 
-@router.get("/", response_model=List[dict])
+@router.get("/", response_model=List[SectorListItem])
 def get_sectors(db: Session = Depends(get_db)):
     """Get all sectors."""
     try:
@@ -41,7 +47,7 @@ def get_sectors(db: Session = Depends(get_db)):
         raise HTTPException(status_code=500, detail=f"Error fetching sectors: {str(e)}")
 
 
-@router.get("/hierarchy", response_model=List[dict])
+@router.get("/hierarchy", response_model=List[SectorHierarchyResponse])
 def get_complete_hierarchy(db: Session = Depends(get_db)):
     """Get the complete hierarchy for all sectors."""
     try:
@@ -51,7 +57,7 @@ def get_complete_hierarchy(db: Session = Depends(get_db)):
         raise HTTPException(status_code=500, detail=f"Error fetching complete hierarchy: {str(e)}")
 
 
-@router.get("/{sector_id}", response_model=dict)
+@router.get("/{sector_id}", response_model=SectorListItem)
 def get_sector_by_id(sector_id: UUID, db: Session = Depends(get_db)):
     """Get a specific sector by ID."""
     try:
@@ -72,7 +78,7 @@ def get_sector_by_id(sector_id: UUID, db: Session = Depends(get_db)):
         raise HTTPException(status_code=500, detail=f"Error fetching sector: {str(e)}")
 
 
-@router.get("/{sector_id}/branches", response_model=List[dict])
+@router.get("/{sector_id}/branches", response_model=List[BranchListItem])
 def get_branches_by_sector(sector_id: UUID, db: Session = Depends(get_db)):
     """Get all branches for a specific sector."""
     try:
@@ -101,7 +107,7 @@ def get_branches_by_sector(sector_id: UUID, db: Session = Depends(get_db)):
         raise HTTPException(status_code=500, detail=f"Error fetching branches: {str(e)}")
 
 
-@router.get("/{sector_id}/hierarchy", response_model=dict)
+@router.get("/{sector_id}/hierarchy", response_model=SectorHierarchyResponse)
 def get_sector_full_hierarchy(sector_id: UUID, db: Session = Depends(get_db)):
     """Get the complete hierarchy for a sector (sector -> branches -> specializations)."""
     try:
@@ -122,7 +128,7 @@ def get_sector_full_hierarchy(sector_id: UUID, db: Session = Depends(get_db)):
 # ============================================================
 
 
-@router.get("/branches/{branch_id}", response_model=dict)
+@router.get("/branches/{branch_id}", response_model=BranchListItem)
 def get_branch_by_id(branch_id: UUID, db: Session = Depends(get_db)):
     """Get a specific branch by ID."""
     try:
@@ -144,7 +150,7 @@ def get_branch_by_id(branch_id: UUID, db: Session = Depends(get_db)):
         raise HTTPException(status_code=500, detail=f"Error fetching branch: {str(e)}")
 
 
-@router.get("/branches/{branch_id}/specializations", response_model=List[dict])
+@router.get("/branches/{branch_id}/specializations", response_model=List[SpecializationListItem])
 def get_specializations_by_branch(branch_id: UUID, db: Session = Depends(get_db)):
     """Get all specializations for a specific branch."""
     try:
@@ -178,7 +184,7 @@ def get_specializations_by_branch(branch_id: UUID, db: Session = Depends(get_db)
 # ============================================================
 
 
-@router.get("/specializations/{specialization_id}", response_model=dict)
+@router.get("/specializations/{specialization_id}", response_model=SpecializationListItem)
 def get_specialization_by_id(specialization_id: UUID, db: Session = Depends(get_db)):
     """Get a specific specialization by ID."""
     try:

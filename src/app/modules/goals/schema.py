@@ -4,9 +4,12 @@ Pydantic models for user goals and journal.
 """
 
 from pydantic import BaseModel
-from typing import Optional
+from typing import Optional, List
 from datetime import datetime
 from uuid import UUID
+
+# Import common response schemas from utils
+from src.app.utils.schema import SuccessResponse
 
 
 # Goal schemas
@@ -71,4 +74,56 @@ class JournalEntryUpdate(BaseModel):
     """Schema for updating a JournalEntry."""
 
     content: str
+
+
+# ============================================================
+# ENDPOINT RESPONSE SCHEMAS
+# ============================================================
+
+
+class GoalResponse(BaseModel):
+    """Response schema for a single goal."""
+
+    goal_id: str
+    user_id: str
+    title: str
+    description: Optional[str] = None
+    category: str
+    target_value: float
+    current_value: float
+    is_completed: bool
+    target_date: Optional[str] = None
+    created_at: Optional[str] = None
+    updated_at: Optional[str] = None
+
+
+class GoalProgressResponse(BaseModel):
+    """Response schema for goal progress update."""
+
+    goal_id: str
+    user_id: str
+    title: str
+    current_value: float
+    target_value: float
+    is_completed: bool
+
+
+# Use SuccessResponse from utils for delete operations
+GoalDeleteResponse = SuccessResponse
+
+
+class JournalEntryResponse(BaseModel):
+    """Response schema for a single journal entry."""
+
+    entry_id: str
+    user_id: str
+    content: str
+    prompt: Optional[str] = None
+    entry_date: Optional[str] = None
+    created_at: Optional[str] = None
+    updated_at: Optional[str] = None
+
+
+# Use SuccessResponse from utils for delete operations
+JournalEntryDeleteResponse = SuccessResponse
 

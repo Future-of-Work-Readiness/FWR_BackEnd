@@ -9,7 +9,14 @@ from typing import Optional
 
 from src.app.db.session import get_db
 from src.app.modules.quizzes.service import QuizService
-from src.app.modules.quizzes.schema import QuizSubmission
+from src.app.modules.quizzes.schema import (
+    QuizSubmission,
+    QuizListResponse,
+    QuizDetailResponse,
+    QuizStartResponse,
+    QuizSubmitResponse,
+    AttemptResultResponse,
+)
 from src.app.modules.goals.service import GoalService
 from src.app.modules.benchmarks.service import BenchmarkService
 from src.app.modules.users.service import UserService
@@ -24,7 +31,7 @@ router = APIRouter()
 # ============================================================
 
 
-@router.get("/")
+@router.get("/", response_model=QuizListResponse)
 def get_all_quizzes(specialization_id: Optional[UUID] = None, db: Session = Depends(get_db)):
     """
     Get all quizzes, optionally filtered by specialization_id.
@@ -52,7 +59,7 @@ def get_all_quizzes(specialization_id: Optional[UUID] = None, db: Session = Depe
     return {"quizzes": quiz_list}
 
 
-@router.get("/by-specialization/{specialization_id}")
+@router.get("/by-specialization/{specialization_id}", response_model=QuizListResponse)
 def get_quizzes_by_specialization(specialization_id: UUID, db: Session = Depends(get_db)):
     """Get all quizzes for a specific specialization."""
     quizzes = QuizService.get_quizzes_by_specialization(db, specialization_id)
@@ -80,7 +87,7 @@ def get_quizzes_by_specialization(specialization_id: UUID, db: Session = Depends
     }
 
 
-@router.get("/{quiz_id}")
+@router.get("/{quiz_id}", response_model=QuizDetailResponse)
 def get_quiz(quiz_id: UUID, db: Session = Depends(get_db)):
     """Get a quiz with all questions and options."""
     quiz = QuizService.get_quiz_by_id(db, quiz_id)
@@ -121,7 +128,7 @@ def get_quiz(quiz_id: UUID, db: Session = Depends(get_db)):
     return quiz_data
 
 
-@router.post("/{quiz_id}/start")
+@router.post("/{quiz_id}/start", response_model=QuizStartResponse)
 def start_quiz(quiz_id: UUID, user_id: UUID, db: Session = Depends(get_db)):
     """Start a quiz attempt."""
     quiz = QuizService.get_quiz_by_id(db, quiz_id)
@@ -146,7 +153,7 @@ def start_quiz(quiz_id: UUID, user_id: UUID, db: Session = Depends(get_db)):
 # ============================================================
 
 
-@router.post("/attempts/{attempt_id}/submit")
+@router.post("/attempts/{attempt_id}/submit", response_model=QuizSubmitResponse)
 def submit_quiz(attempt_id: UUID, data: QuizSubmission, db: Session = Depends(get_db)):
     """Submit quiz answers and get results."""
     result = QuizService.submit_quiz_answers(db, attempt_id, data.answers)
@@ -198,7 +205,7 @@ def submit_quiz(attempt_id: UUID, data: QuizSubmission, db: Session = Depends(ge
     }
 
 
-@router.get("/attempts/{attempt_id}/results")
+@router.get("/attempts/{attempt_id}/results", response_model=AttemptResultResponse)
 def get_attempt_result(attempt_id: UUID, db: Session = Depends(get_db)):
     """Get results for a specific quiz attempt."""
     data = QuizService.get_attempt_with_quiz(db, attempt_id)

@@ -4,11 +4,20 @@ Goal and Journal Entry API endpoints.
 
 from fastapi import APIRouter, HTTPException, Depends, Query
 from sqlalchemy.orm import Session
+from typing import List
 from uuid import UUID
 
 from src.app.db.session import get_db
 from src.app.modules.goals.service import GoalService
-from src.app.modules.goals.schema import GoalCreate, JournalEntryCreate, JournalEntryUpdate
+from src.app.modules.goals.schema import (
+    GoalCreate,
+    JournalEntryCreate,
+    JournalEntryUpdate,
+    GoalResponse,
+    GoalProgressResponse,
+    JournalEntryResponse,
+)
+from src.app.utils.schema import SuccessResponse
 
 router = APIRouter()
 
@@ -18,7 +27,7 @@ router = APIRouter()
 # ============================================================
 
 
-@router.post("/")
+@router.post("/", response_model=GoalResponse)
 def create_goal(goal: GoalCreate, user_id: UUID = Query(...), db: Session = Depends(get_db)):
     """Create a new goal for a user."""
     db_goal = GoalService.create_goal(
@@ -45,7 +54,7 @@ def create_goal(goal: GoalCreate, user_id: UUID = Query(...), db: Session = Depe
     }
 
 
-@router.get("/")
+@router.get("/", response_model=List[GoalResponse])
 def get_goals(user_id: UUID = Query(...), db: Session = Depends(get_db)):
     """Get all goals for a user."""
     goals = GoalService.get_user_goals(db, user_id)
@@ -67,7 +76,7 @@ def get_goals(user_id: UUID = Query(...), db: Session = Depends(get_db)):
     ]
 
 
-@router.put("/{goal_id}")
+@router.put("/{goal_id}", response_model=GoalResponse)
 def update_goal(
     goal_id: UUID,
     goal_update: GoalCreate,
@@ -102,7 +111,7 @@ def update_goal(
     }
 
 
-@router.patch("/{goal_id}/progress")
+@router.patch("/{goal_id}/progress", response_model=GoalProgressResponse)
 def update_goal_progress(
     goal_id: UUID,
     current_value: float = Query(...),
@@ -123,13 +132,13 @@ def update_goal_progress(
     }
 
 
-@router.delete("/{goal_id}")
+@router.delete("/{goal_id}", response_model=SuccessResponse)
 def delete_goal(goal_id: UUID, user_id: UUID = Query(...), db: Session = Depends(get_db)):
     """Delete a goal."""
     success = GoalService.delete_goal(db, goal_id, user_id)
     if not success:
         raise HTTPException(status_code=404, detail="Goal not found")
-    return {"success": True, "message": "Goal deleted"}
+    return SuccessResponse(message="Goal deleted successfully")
 
 
 # ============================================================
@@ -137,7 +146,7 @@ def delete_goal(goal_id: UUID, user_id: UUID = Query(...), db: Session = Depends
 # ============================================================
 
 
-@router.post("/journal")
+@router.post("/journal", response_model=JournalEntryResponse)
 def create_journal_entry(
     entry: JournalEntryCreate,
     user_id: UUID = Query(...),
@@ -156,7 +165,7 @@ def create_journal_entry(
     }
 
 
-@router.get("/journal")
+@router.get("/journal", response_model=List[JournalEntryResponse])
 def get_journal_entries(user_id: UUID = Query(...), limit: int = Query(20), db: Session = Depends(get_db)):
     """Get journal entries for a user."""
     entries = GoalService.get_user_journal_entries(db, user_id, limit)
@@ -174,7 +183,7 @@ def get_journal_entries(user_id: UUID = Query(...), limit: int = Query(20), db: 
     ]
 
 
-@router.put("/journal/{entry_id}")
+@router.put("/journal/{entry_id}", response_model=JournalEntryResponse)
 def update_journal_entry(
     entry_id: UUID,
     entry_update: JournalEntryUpdate,
@@ -196,11 +205,11 @@ def update_journal_entry(
     }
 
 
-@router.delete("/journal/{entry_id}")
+@router.delete("/journal/{entry_id}", response_model=SuccessResponse)
 def delete_journal_entry(entry_id: UUID, user_id: UUID = Query(...), db: Session = Depends(get_db)):
     """Delete a journal entry."""
     success = GoalService.delete_journal_entry(db, entry_id, user_id)
     if not success:
         raise HTTPException(status_code=404, detail="Journal entry not found")
-    return {"success": True, "message": "Journal entry deleted"}
+    return SuccessResponse(message="Journal entry deleted successfully")
 

@@ -11,6 +11,15 @@ from uuid import UUID
 from src.app.db.session import get_db
 from src.app.modules.users.service import UserService
 from src.app.modules.benchmarks.service import BenchmarkService
+from src.app.modules.users.schema import (
+    UserResponse,
+    LoginResponse,
+    UserSpecializationUpdateResponse,
+    UserProfileResponse,
+    PeerBenchmarkResponse,
+    DashboardSummary,
+)
+from src.app.utils.tokens import create_tokens
 
 router = APIRouter()
 
@@ -36,23 +45,28 @@ class UserUpdateRequest(BaseModel):
 # ============================================================
 
 
-@router.post("/register")
+@router.post("/register", response_model=UserResponse)
 def register(data: UserRegisterRequest, db: Session = Depends(get_db)):
     """Register a new user."""
     existing_user = UserService.get_user_by_email(db, data.email)
     if existing_user:
         raise HTTPException(status_code=400, detail="Email already registered")
 
-    new_user = UserService.create_user(db=db, email=data.email, password=data.password, name=data.name)
+    new_user = UserService.create_user(
+        db=db, email=data.email, password=data.password, name=data.name
+    )
 
     return {
         "success": True,
+        "message": "User registered successfully",
         "user": {
             "user_id": str(new_user.user_id),
             "email": new_user.email,
             "name": new_user.name,
             "preferred_specialization_id": (
-                str(new_user.preferred_specialization_id) if new_user.preferred_specialization_id else None
+                str(new_user.preferred_specialization_id)
+                if new_user.preferred_specialization_id
+                else None
             ),
             "readiness_score": new_user.readiness_score,
             "technical_score": new_user.technical_score,
@@ -63,22 +77,28 @@ def register(data: UserRegisterRequest, db: Session = Depends(get_db)):
     }
 
 
-@router.post("/login")
+@router.post("/login", response_model=LoginResponse)
 def login(data: UserLoginRequest, db: Session = Depends(get_db)):
-    """Login a user."""
+    """Login a user and return JWT tokens."""
     user = UserService.get_user_by_email(db, data.email)
 
     if not user or user.password_hash != data.password:
         raise HTTPException(status_code=401, detail="Invalid email or password")
 
+    # Generate JWT tokens
+    tokens = create_tokens(str(user.user_id))
+
     return {
         "success": True,
+        "message": "Login successful",
         "user": {
             "user_id": str(user.user_id),
             "email": user.email,
             "name": user.name,
             "preferred_specialization_id": (
-                str(user.preferred_specialization_id) if user.preferred_specialization_id else None
+                str(user.preferred_specialization_id)
+                if user.preferred_specialization_id
+                else None
             ),
             "readiness_score": user.readiness_score,
             "technical_score": user.technical_score,
@@ -86,16 +106,23 @@ def login(data: UserLoginRequest, db: Session = Depends(get_db)):
             "leadership_score": user.leadership_score,
             "created_at": str(user.created_at),
         },
+        "tokens": tokens,
     }
 
 
-@router.patch("/{user_id}/specialization")
-def update_specialization(user_id: UUID, data: UserUpdateRequest, db: Session = Depends(get_db)):
+@router.patch(
+    "/{user_id}/specialization", response_model=UserSpecializationUpdateResponse
+)
+def update_specialization(
+    user_id: UUID, data: UserUpdateRequest, db: Session = Depends(get_db)
+):
     """Update user's specialization."""
     if data.preferred_specialization_id is None:
         raise HTTPException(status_code=400, detail="Specialization ID is required")
 
-    user = UserService.update_user_specialization(db, user_id, data.preferred_specialization_id)
+    user = UserService.update_user_specialization(
+        db, user_id, data.preferred_specialization_id
+    )
 
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
@@ -107,13 +134,15 @@ def update_specialization(user_id: UUID, data: UserUpdateRequest, db: Session = 
             "email": user.email,
             "name": user.name,
             "preferred_specialization_id": (
-                str(user.preferred_specialization_id) if user.preferred_specialization_id else None
+                str(user.preferred_specialization_id)
+                if user.preferred_specialization_id
+                else None
             ),
         },
     }
 
 
-@router.get("/{user_id}")
+@router.get("/{user_id}", response_model=UserProfileResponse)
 def get_user(user_id: UUID, db: Session = Depends(get_db)):
     """Get user by ID."""
     user = UserService.get_user_by_id(db, user_id)
@@ -126,7 +155,9 @@ def get_user(user_id: UUID, db: Session = Depends(get_db)):
         "email": user.email,
         "name": user.name,
         "preferred_specialization_id": (
-            str(user.preferred_specialization_id) if user.preferred_specialization_id else None
+            str(user.preferred_specialization_id)
+            if user.preferred_specialization_id
+            else None
         ),
         "readiness_score": user.readiness_score,
         "technical_score": user.technical_score,
@@ -136,7 +167,7 @@ def get_user(user_id: UUID, db: Session = Depends(get_db)):
     }
 
 
-@router.get("/{user_id}/peer-benchmark")
+@router.get("/{user_id}/peer-benchmark", response_model=PeerBenchmarkResponse)
 def get_peer_benchmark_endpoint(user_id: UUID, db: Session = Depends(get_db)):
     """Get peer benchmarking data comparing user's scores with peers in their specialization."""
     data = BenchmarkService.get_peer_benchmark(db, user_id)
@@ -168,7 +199,7 @@ def get_peer_benchmark_endpoint(user_id: UUID, db: Session = Depends(get_db)):
     }
 
 
-@router.get("/{user_id}/dashboard")
+@router.get("/{user_id}/dashboard", response_model=DashboardSummary)
 def get_user_dashboard(user_id: UUID, db: Session = Depends(get_db)):
     """Get dashboard summary for a user."""
     from src.app.modules.quizzes.service import QuizService
@@ -177,4 +208,3 @@ def get_user_dashboard(user_id: UUID, db: Session = Depends(get_db)):
     if not summary:
         raise HTTPException(status_code=404, detail="User not found")
     return summary
-

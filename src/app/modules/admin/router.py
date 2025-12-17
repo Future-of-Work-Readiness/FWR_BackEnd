@@ -6,7 +6,7 @@ Database management via browser.
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy import func
-from typing import Optional
+from typing import Optional, List
 from pydantic import BaseModel
 from uuid import UUID
 
@@ -17,12 +17,23 @@ from src.app.modules.users.service import UserService
 from src.app.modules.users.models import User
 from src.app.modules.quizzes.service import QuizService
 from src.app.modules.quizzes.models import Quiz
+from src.app.modules.admin.schema import (
+    AdminStatsResponse,
+    AdminSectorItem,
+    AdminSectorCreateResponse,
+    AdminBranchItem,
+    AdminBranchCreateResponse,
+    AdminSpecializationItem,
+    AdminSpecializationCreateResponse,
+    AdminUserItem,
+)
+from src.app.utils.schema import SuccessResponse
 
 router = APIRouter()
 
 
 # ============================================================
-# REQUEST/RESPONSE MODELS
+# REQUEST MODELS
 # ============================================================
 
 
@@ -77,7 +88,7 @@ class UserUpdate(BaseModel):
 # ============================================================
 
 
-@router.get("/stats")
+@router.get("/stats", response_model=AdminStatsResponse)
 def get_statistics(db: Session = Depends(get_db)):
     """Get database statistics."""
     return {
@@ -100,7 +111,7 @@ def get_statistics(db: Session = Depends(get_db)):
 # ============================================================
 
 
-@router.get("/sectors")
+@router.get("/sectors", response_model=List[AdminSectorItem])
 def get_all_sectors(db: Session = Depends(get_db)):
     """Get all sectors with branch counts."""
     sectors = SectorService.get_all_sectors(db, active_only=False)
@@ -118,7 +129,7 @@ def get_all_sectors(db: Session = Depends(get_db)):
     return result
 
 
-@router.post("/sectors")
+@router.post("/sectors", response_model=AdminSectorCreateResponse)
 def create_sector(sector: SectorCreate, db: Session = Depends(get_db)):
     """Create a new sector."""
     existing = db.query(Sector).filter(Sector.name == sector.name).first()
@@ -129,7 +140,7 @@ def create_sector(sector: SectorCreate, db: Session = Depends(get_db)):
     return {"success": True, "sector_id": str(new_sector.sector_id), "message": "Sector created"}
 
 
-@router.put("/sectors/{sector_id}")
+@router.put("/sectors/{sector_id}", response_model=SuccessResponse)
 def update_sector(sector_id: UUID, sector: SectorUpdate, db: Session = Depends(get_db)):
     """Update a sector."""
     updated = SectorService.update_sector(
@@ -141,16 +152,16 @@ def update_sector(sector_id: UUID, sector: SectorUpdate, db: Session = Depends(g
     )
     if not updated:
         raise HTTPException(status_code=404, detail="Sector not found")
-    return {"success": True, "message": "Sector updated"}
+    return SuccessResponse(message="Sector updated successfully")
 
 
-@router.delete("/sectors/{sector_id}")
+@router.delete("/sectors/{sector_id}", response_model=SuccessResponse)
 def delete_sector(sector_id: UUID, db: Session = Depends(get_db)):
     """Delete a sector (soft delete by setting is_active=False)."""
     success = SectorService.delete_sector(db, sector_id, soft_delete=True)
     if not success:
         raise HTTPException(status_code=404, detail="Sector not found")
-    return {"success": True, "message": "Sector deactivated"}
+    return SuccessResponse(message="Sector deactivated successfully")
 
 
 # ============================================================
@@ -158,7 +169,7 @@ def delete_sector(sector_id: UUID, db: Session = Depends(get_db)):
 # ============================================================
 
 
-@router.get("/branches")
+@router.get("/branches", response_model=List[AdminBranchItem])
 def get_all_branches(sector_id: Optional[UUID] = None, db: Session = Depends(get_db)):
     """Get all branches, optionally filtered by sector."""
     branches = SectorService.get_all_branches(db, sector_id=sector_id, active_only=False)
@@ -179,7 +190,7 @@ def get_all_branches(sector_id: Optional[UUID] = None, db: Session = Depends(get
     return result
 
 
-@router.post("/branches")
+@router.post("/branches", response_model=AdminBranchCreateResponse)
 def create_branch(branch: BranchCreate, db: Session = Depends(get_db)):
     """Create a new branch."""
     sector = SectorService.get_sector_by_id(db, branch.sector_id, active_only=False)
@@ -190,7 +201,7 @@ def create_branch(branch: BranchCreate, db: Session = Depends(get_db)):
     return {"success": True, "branch_id": str(new_branch.branch_id), "message": "Branch created"}
 
 
-@router.put("/branches/{branch_id}")
+@router.put("/branches/{branch_id}", response_model=SuccessResponse)
 def update_branch(branch_id: UUID, branch: BranchUpdate, db: Session = Depends(get_db)):
     """Update a branch."""
     updated = SectorService.update_branch(
@@ -203,16 +214,16 @@ def update_branch(branch_id: UUID, branch: BranchUpdate, db: Session = Depends(g
     )
     if not updated:
         raise HTTPException(status_code=404, detail="Branch not found")
-    return {"success": True, "message": "Branch updated"}
+    return SuccessResponse(message="Branch updated successfully")
 
 
-@router.delete("/branches/{branch_id}")
+@router.delete("/branches/{branch_id}", response_model=SuccessResponse)
 def delete_branch(branch_id: UUID, db: Session = Depends(get_db)):
     """Delete a branch."""
     success = SectorService.delete_branch(db, branch_id, soft_delete=True)
     if not success:
         raise HTTPException(status_code=404, detail="Branch not found")
-    return {"success": True, "message": "Branch deactivated"}
+    return SuccessResponse(message="Branch deactivated successfully")
 
 
 # ============================================================
@@ -220,7 +231,7 @@ def delete_branch(branch_id: UUID, db: Session = Depends(get_db)):
 # ============================================================
 
 
-@router.get("/specializations")
+@router.get("/specializations", response_model=List[AdminSpecializationItem])
 def get_all_specializations(branch_id: Optional[UUID] = None, db: Session = Depends(get_db)):
     """Get all specializations, optionally filtered by branch."""
     specializations = SectorService.get_all_specializations(db, branch_id=branch_id, active_only=False)
@@ -243,7 +254,7 @@ def get_all_specializations(branch_id: Optional[UUID] = None, db: Session = Depe
     return result
 
 
-@router.post("/specializations")
+@router.post("/specializations", response_model=AdminSpecializationCreateResponse)
 def create_specialization(spec: SpecializationCreate, db: Session = Depends(get_db)):
     """Create a new specialization."""
     branch = SectorService.get_branch_by_id(db, spec.branch_id, active_only=False)
@@ -254,7 +265,7 @@ def create_specialization(spec: SpecializationCreate, db: Session = Depends(get_
     return {"success": True, "specialization_id": str(new_spec.specialization_id), "message": "Specialization created"}
 
 
-@router.put("/specializations/{spec_id}")
+@router.put("/specializations/{spec_id}", response_model=SuccessResponse)
 def update_specialization(spec_id: UUID, spec: SpecializationUpdate, db: Session = Depends(get_db)):
     """Update a specialization."""
     updated = SectorService.update_specialization(
@@ -267,16 +278,16 @@ def update_specialization(spec_id: UUID, spec: SpecializationUpdate, db: Session
     )
     if not updated:
         raise HTTPException(status_code=404, detail="Specialization not found")
-    return {"success": True, "message": "Specialization updated"}
+    return SuccessResponse(message="Specialization updated successfully")
 
 
-@router.delete("/specializations/{spec_id}")
+@router.delete("/specializations/{spec_id}", response_model=SuccessResponse)
 def delete_specialization(spec_id: UUID, db: Session = Depends(get_db)):
     """Delete a specialization."""
     success = SectorService.delete_specialization(db, spec_id, soft_delete=True)
     if not success:
         raise HTTPException(status_code=404, detail="Specialization not found")
-    return {"success": True, "message": "Specialization deactivated"}
+    return SuccessResponse(message="Specialization deactivated successfully")
 
 
 # ============================================================
@@ -284,7 +295,7 @@ def delete_specialization(spec_id: UUID, db: Session = Depends(get_db)):
 # ============================================================
 
 
-@router.get("/users")
+@router.get("/users", response_model=List[AdminUserItem])
 def get_all_users(db: Session = Depends(get_db)):
     """Get all users."""
     users = UserService.get_all_users(db)
@@ -311,7 +322,7 @@ def get_all_users(db: Session = Depends(get_db)):
     return result
 
 
-@router.put("/users/{user_id}")
+@router.put("/users/{user_id}", response_model=SuccessResponse)
 def update_user(user_id: UUID, user: UserUpdate, db: Session = Depends(get_db)):
     """Update a user."""
     updated = UserService.update_user(
@@ -326,5 +337,5 @@ def update_user(user_id: UUID, user: UserUpdate, db: Session = Depends(get_db)):
     )
     if not updated:
         raise HTTPException(status_code=404, detail="User not found")
-    return {"success": True, "message": "User updated"}
+    return SuccessResponse(message="User updated successfully")
 
