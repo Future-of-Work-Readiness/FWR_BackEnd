@@ -49,7 +49,9 @@ def seed_quizzes(force: bool = False) -> None:
         for quiz_data in quizzes_data:
             # Find specialization by name
             specialization = (
-                db.query(Specialization).filter(Specialization.name == quiz_data["specialization"]).first()
+                db.query(Specialization)
+                .filter(Specialization.name == quiz_data["specialization"])
+                .first()
             )
 
             if not specialization:
@@ -89,7 +91,9 @@ def seed_quizzes(force: bool = False) -> None:
             print(f"  ✅ Created quiz: {quiz.title}")
 
             # Create questions
-            questions_added = _seed_quiz_questions(db, quiz.quiz_id, quiz_data.get("questions", []))
+            questions_added = _seed_quiz_questions(
+                db, quiz.quiz_id, quiz_data.get("questions", [])
+            )
             added_questions += questions_added
 
         print(f"✅ Quiz seeding complete!")
@@ -108,7 +112,9 @@ def seed_quizzes(force: bool = False) -> None:
         db.close()
 
 
-def _seed_quiz_questions(db: Session, quiz_id: UUID, questions_data: List[Dict[str, Any]]) -> int:
+def _seed_quiz_questions(
+    db: Session, quiz_id: UUID, questions_data: List[Dict[str, Any]]
+) -> int:
     """
     Seed questions for a quiz.
 
@@ -145,68 +151,5 @@ def _seed_quiz_questions(db: Session, quiz_id: UUID, questions_data: List[Dict[s
     return added
 
 
-def seed_expanded_quizzes() -> None:
-    """
-    Seed additional quizzes from expanded_quizzes.json.
-    This can be called separately to add more quiz content.
-    """
-    db = get_db_session()
-
-    try:
-        data = load_json_file("expanded_quizzes.json")
-        if not data:
-            print("❌ Could not load expanded_quizzes.json")
-            return
-
-        quizzes_data = data.get("quizzes", [])
-        print(f"📝 Seeding {len(quizzes_data)} expanded quiz(zes)...")
-
-        added_quizzes = 0
-
-        for quiz_data in quizzes_data:
-            specialization = (
-                db.query(Specialization).filter(Specialization.name == quiz_data["specialization"]).first()
-            )
-
-            if not specialization:
-                continue
-
-            existing_quiz = (
-                db.query(Quiz)
-                .filter(
-                    Quiz.title == quiz_data["title"],
-                    Quiz.specialization_id == specialization.specialization_id,
-                )
-                .first()
-            )
-
-            if existing_quiz:
-                continue
-
-            quiz = Quiz(
-                title=quiz_data["title"],
-                description=quiz_data.get("description", ""),
-                specialization_id=specialization.specialization_id,
-                difficulty_level=quiz_data.get("difficulty_level", 1),
-                time_limit_minutes=quiz_data.get("time_limit_minutes", 30),
-                passing_score=quiz_data.get("passing_score", 70.0),
-            )
-            db.add(quiz)
-            db.commit()
-            db.refresh(quiz)
-
-            _seed_quiz_questions(db, quiz.quiz_id, quiz_data.get("questions", []))
-            added_quizzes += 1
-
-        print(f"✅ Expanded quiz seeding complete! Added {added_quizzes} quiz(zes)")
-
-    except Exception as e:
-        print(f"❌ Error seeding expanded quizzes: {e}")
-        db.rollback()
-    finally:
-        db.close()
-
-
 if __name__ == "__main__":
     seed_quizzes(force=False)
-

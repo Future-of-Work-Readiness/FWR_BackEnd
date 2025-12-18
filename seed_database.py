@@ -20,10 +20,12 @@ def main():
         "target",
         nargs="?",
         default="all",
-        choices=["all", "sectors", "quizzes", "expanded"],
+        choices=["all", "sectors", "quizzes"],
         help="What to seed (default: all)",
     )
-    parser.add_argument("--force", action="store_true", help="Force seeding even if data exists")
+    parser.add_argument(
+        "--force", action="store_true", help="Force seeding even if data exists"
+    )
 
     args = parser.parse_args()
 
@@ -45,11 +47,6 @@ def main():
         from seeds.seed_quizzes import seed_quizzes
 
         seed_quizzes(force=args.force)
-
-    elif args.target == "expanded":
-        from seeds.seed_quizzes import seed_expanded_quizzes
-
-        seed_expanded_quizzes()
 
     print("=" * 50)
 
