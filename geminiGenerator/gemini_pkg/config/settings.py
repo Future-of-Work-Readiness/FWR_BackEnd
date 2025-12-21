@@ -41,6 +41,10 @@ RESULTS_LOGS_DIR = os.path.join(RESULTS_BASE_DIR, "logs")
 RAW_OUTPUT_DIR = os.path.join(_PACKAGE_DIR, "raw_responses_gemini_v2.5")
 CLEAN_OUTPUT_DIR = os.path.join(_PACKAGE_DIR, "clean_quiz_chunks_gemini_v2.5")
 
+# Flag to enable/disable saving raw and clean intermediate files
+# Set to False to disable creating raw_responses and clean_quiz_chunks folders
+SAVE_DEBUG_OUTPUT = os.getenv("GEMINI_SAVE_DEBUG_OUTPUT", "false").lower() == "true"
+
 # Main output files (intermediate)
 DEFAULT_OUTPUT_FILE = os.path.join(RESULTS_COMBINED_DIR, "all_sectors_quiz_bank.json")
 CHECKPOINT_FILE = os.path.join(RESULTS_LOGS_DIR, "generation_checkpoint.json")
@@ -685,25 +689,48 @@ class GracefulShutdown:
 
     Catches SIGINT (Ctrl+C) and SIGTERM, sets a flag, and allows
     the generator to save state before exiting.
+
+    Note: Signal handlers can only be set up in the main thread.
+    When running in a background thread (e.g., FastAPI BackgroundTasks),
+    this context manager will simply skip signal handling but still work.
     """
 
     def __init__(self):
         self.shutdown_requested = False
         self._original_sigint = None
         self._original_sigterm = None
+        self._in_main_thread = False
+
+    def _is_main_thread(self) -> bool:
+        """Check if we're running in the main thread."""
+        import threading
+
+        return threading.current_thread() is threading.main_thread()
 
     def __enter__(self):
-        self._original_sigint = signal.getsignal(signal.SIGINT)
-        self._original_sigterm = signal.getsignal(signal.SIGTERM)
+        # Only set up signal handlers if we're in the main thread
+        if self._is_main_thread():
+            self._in_main_thread = True
+            self._original_sigint = signal.getsignal(signal.SIGINT)
+            self._original_sigterm = signal.getsignal(signal.SIGTERM)
 
-        signal.signal(signal.SIGINT, self._handler)
-        signal.signal(signal.SIGTERM, self._handler)
+            signal.signal(signal.SIGINT, self._handler)
+            signal.signal(signal.SIGTERM, self._handler)
+        else:
+            # Running in background thread - signal handling not available
+            self._in_main_thread = False
+            logging.debug(
+                "GracefulShutdown: Running in background thread, "
+                "signal handling disabled"
+            )
 
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        signal.signal(signal.SIGINT, self._original_sigint)
-        signal.signal(signal.SIGTERM, self._original_sigterm)
+        # Only restore signal handlers if we set them up
+        if self._in_main_thread:
+            signal.signal(signal.SIGINT, self._original_sigint)
+            signal.signal(signal.SIGTERM, self._original_sigterm)
 
     def _handler(self, signum, frame):
         if self.shutdown_requested:

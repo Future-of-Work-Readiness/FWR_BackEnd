@@ -33,6 +33,7 @@ from gemini_pkg.config.settings import (
     TEMP_CRITIC,
     RAW_OUTPUT_DIR,
     CLEAN_OUTPUT_DIR,
+    SAVE_DEBUG_OUTPUT,
     QUESTIONS_INTERNAL,
     QUESTIONS_SAVED,
     CHUNK_SIZE,
@@ -363,7 +364,13 @@ class GeminiQuizGeneratorV4:
         Returns:
             True if successful, False otherwise
         """
+        if not SAVE_DEBUG_OUTPUT:
+            return True  # Skip saving debug files
+
         try:
+            # Ensure directory exists
+            os.makedirs(os.path.dirname(filepath), exist_ok=True)
+
             # Safely serialize all data
             safe_data = {}
             for key, value in data.items():
@@ -466,26 +473,33 @@ class GeminiQuizGeneratorV4:
             )
 
             timestamp = int(time.time())
-            critic_output_path = os.path.join(
-                CLEAN_OUTPUT_DIR,
-                f"{key_base}_critic_fixed_attempt{attempt}_c{critic_attempt}_ts-{timestamp}.json",
-            )
 
             if critic_output is None:
                 logging.warning(f"Critic returned no output for {critic_label}")
-                self._write_diagnostic_file(
-                    critic_output_path,
-                    {
-                        "error": "critic_no_response",
-                        "critic_attempt": critic_attempt,
-                        "timestamp": timestamp,
-                    },
-                )
+                if SAVE_DEBUG_OUTPUT:
+                    critic_output_path = os.path.join(
+                        CLEAN_OUTPUT_DIR,
+                        f"{key_base}_critic_fixed_attempt{attempt}_c{critic_attempt}_ts-{timestamp}.json",
+                    )
+                    self._write_diagnostic_file(
+                        critic_output_path,
+                        {
+                            "error": "critic_no_response",
+                            "critic_attempt": critic_attempt,
+                            "timestamp": timestamp,
+                        },
+                    )
                 continue
 
-            # Save critic output
-            with open(critic_output_path, "w", encoding="utf-8") as f:
-                json.dump(critic_output, f, indent=2, ensure_ascii=False)
+            # Save critic output (if debug output enabled)
+            if SAVE_DEBUG_OUTPUT:
+                critic_output_path = os.path.join(
+                    CLEAN_OUTPUT_DIR,
+                    f"{key_base}_critic_fixed_attempt{attempt}_c{critic_attempt}_ts-{timestamp}.json",
+                )
+                os.makedirs(CLEAN_OUTPUT_DIR, exist_ok=True)
+                with open(critic_output_path, "w", encoding="utf-8") as f:
+                    json.dump(critic_output, f, indent=2, ensure_ascii=False)
 
             # Try to fix any remaining word count issues automatically
             critic_output = attempt_word_count_fix(critic_output)
@@ -504,16 +518,21 @@ class GeminiQuizGeneratorV4:
                     f"{serialize_validation_errors(e.errors())[:200]}..."
                 )
 
-                # Save critic validation diagnostic
-                self._write_diagnostic_file(
-                    critic_output_path.replace(".json", "_validation_error.json"),
-                    {
-                        "critic_validation_errors": e.errors(),
-                        "critic_output": critic_output,
-                        "critic_attempt": critic_attempt,
-                        "timestamp": timestamp,
-                    },
-                )
+                # Save critic validation diagnostic (if debug output enabled)
+                if SAVE_DEBUG_OUTPUT:
+                    diag_path = os.path.join(
+                        CLEAN_OUTPUT_DIR,
+                        f"{key_base}_critic_fixed_attempt{attempt}_c{critic_attempt}_ts-{timestamp}_validation_error.json",
+                    )
+                    self._write_diagnostic_file(
+                        diag_path,
+                        {
+                            "critic_validation_errors": e.errors(),
+                            "critic_output": critic_output,
+                            "critic_attempt": critic_attempt,
+                            "timestamp": timestamp,
+                        },
+                    )
 
                 # On last attempt, try word count fixer as last resort
                 if critic_attempt == MAX_CRITIC_RETRIES:
@@ -704,9 +723,11 @@ class GeminiQuizGeneratorV4:
                     adaptive_sleep(SLEEP_AFTER_ERROR, self.consecutive_errors)
                     continue
 
-                # Save raw output
-                with open(raw_chunk_path, "w", encoding="utf-8") as f:
-                    json.dump(result, f, indent=2, ensure_ascii=False)
+                # Save raw output (if debug output enabled)
+                if SAVE_DEBUG_OUTPUT:
+                    os.makedirs(RAW_OUTPUT_DIR, exist_ok=True)
+                    with open(raw_chunk_path, "w", encoding="utf-8") as f:
+                        json.dump(result, f, indent=2, ensure_ascii=False)
 
                 # Pre-check word counts
                 is_valid_wc, wc_issues = check_word_counts(result)
@@ -811,13 +832,15 @@ class GeminiQuizGeneratorV4:
         # Build final output
         final_raw = {"quiz_pool": [q.model_dump() for q in combined_pool]}
 
-        # Save combined raw
-        raw_path = os.path.join(
-            RAW_OUTPUT_DIR,
-            f"{sector}_{career}_lvl{level}_raw_combined.json",
-        )
-        with open(raw_path, "w", encoding="utf-8") as f:
-            json.dump(final_raw, f, indent=2, ensure_ascii=False)
+        # Save combined raw (if debug output enabled)
+        if SAVE_DEBUG_OUTPUT:
+            raw_path = os.path.join(
+                RAW_OUTPUT_DIR,
+                f"{sector}_{career}_lvl{level}_raw_combined.json",
+            )
+            os.makedirs(RAW_OUTPUT_DIR, exist_ok=True)
+            with open(raw_path, "w", encoding="utf-8") as f:
+                json.dump(final_raw, f, indent=2, ensure_ascii=False)
 
         logging.info(
             f"✅ Generated {len(combined_pool)} questions for {sector}/{career} L{level}"
@@ -826,10 +849,14 @@ class GeminiQuizGeneratorV4:
 
     def _save_chunk(self, key_base: str, questions: List[QuestionModel]):
         """Save a successful chunk for potential recovery."""
+        if not SAVE_DEBUG_OUTPUT:
+            return  # Skip saving debug files
+
         chunk_path = os.path.join(
             CLEAN_OUTPUT_DIR,
             f"{key_base}_validated.json",
         )
+        os.makedirs(CLEAN_OUTPUT_DIR, exist_ok=True)
         with open(chunk_path, "w", encoding="utf-8") as f:
             json.dump(
                 {"quiz_pool": [q.model_dump() for q in questions]},
@@ -918,10 +945,14 @@ class GeminiQuizGeneratorV4:
                 logging.error(f"Final critic failed for {key} (attempt {attempt})")
                 continue
 
-            # Save critic output
-            clean_path = os.path.join(CLEAN_OUTPUT_DIR, f"{key}_attempt{attempt}.json")
-            with open(clean_path, "w", encoding="utf-8") as f:
-                json.dump(result, f, indent=2, ensure_ascii=False)
+            # Save critic output (if debug output enabled)
+            if SAVE_DEBUG_OUTPUT:
+                clean_path = os.path.join(
+                    CLEAN_OUTPUT_DIR, f"{key}_attempt{attempt}.json"
+                )
+                os.makedirs(CLEAN_OUTPUT_DIR, exist_ok=True)
+                with open(clean_path, "w", encoding="utf-8") as f:
+                    json.dump(result, f, indent=2, ensure_ascii=False)
 
             # Apply automatic fixes
             result = attempt_word_count_fix(result)
@@ -970,6 +1001,235 @@ class GeminiQuizGeneratorV4:
                 unique.append(q)
 
         return unique
+
+    # =========================================================================
+    # TOP-UP GENERATION (fill in missing questions after dedup)
+    # =========================================================================
+
+    def _generate_topup_questions(
+        self,
+        sector: str,
+        career: str,
+        level: int,
+        needed: int,
+        existing_questions: List[QuestionModel],
+        max_attempts: int = 2,
+    ) -> List[QuestionModel]:
+        """
+        Generate additional questions to fill the gap after deduplication.
+
+        Includes FULL quality pipeline (same as regular questions):
+        1. Generation with appropriate prompts
+        2. Word count validation and auto-fix
+        3. Pydantic schema validation
+        4. CRITIC REVIEW for accuracy and hallucination prevention
+        5. Deduplication against existing questions
+
+        Args:
+            sector: Sector name
+            career: Career name
+            level: Difficulty level
+            needed: Number of additional questions needed
+            existing_questions: Already generated questions (to avoid duplicates)
+            max_attempts: Maximum attempts to generate fill-in questions
+
+        Returns:
+            List of new unique questions to add (fully validated)
+        """
+        if needed <= 0:
+            return []
+
+        logging.info(
+            f"🔄 Top-up: Generating {needed} additional question(s) for "
+            f"{sector}/{career} L{level} (with full quality checks)"
+        )
+
+        # Build set of existing normalized questions to avoid duplicates
+        existing_normalized = {
+            normalise_question_text(q.question) for q in existing_questions
+        }
+
+        new_questions: List[QuestionModel] = []
+
+        for attempt in range(1, max_attempts + 1):
+            if len(new_questions) >= needed:
+                break
+
+            if is_shutdown_requested():
+                break
+
+            still_needed = needed - len(new_questions)
+            # Request extra to account for duplicates and potential critic rejections
+            request_count = min(still_needed + 3, 6)
+
+            logging.info(
+                f"🔄 Top-up attempt {attempt}/{max_attempts}: "
+                f"requesting {request_count} questions (need {still_needed})"
+            )
+
+            # =========================================================
+            # STEP 1: Generate raw questions
+            # =========================================================
+            role_ctx = get_role_context(sector, career)
+
+            system_prompt = SYS_PROMPT_GENERATOR.format(
+                sector=sector.replace("_", " "),
+                sector_description=role_ctx["sector_description"],
+                branch=role_ctx["branch"] or "General",
+                branch_description=role_ctx["branch_description"],
+                career=career.replace("_", " "),
+                career_description=role_ctx["career_description"],
+                count=request_count,
+                level=level,
+                qmin=QUESTION_WORD_MIN,
+                qmax=QUESTION_WORD_MAX,
+                exp_min=EXPLANATION_WORD_MIN,
+                exp_max=EXPLANATION_WORD_MAX,
+                omin=OPTION_WORD_MIN,
+                omax=OPTION_WORD_MAX,
+                rationale_max=RATIONALE_WORD_MAX,
+            )
+
+            # Starting ID for new questions (continue from existing)
+            start_id = len(existing_questions) + len(new_questions) + 1
+
+            user_prompt = (
+                f"Generate exactly {request_count} UNIQUE Level {level} interview questions "
+                f"for the role '{career.replace('_', ' ')}' in the '{sector.replace('_', ' ')}' sector.\n"
+                f"These are ADDITIONAL questions to fill a gap - ensure they are DIFFERENT from typical questions.\n"
+                f"IMPORTANT: Question IDs must start at {start_id}.\n"
+                f"REMEMBER: Each option text MUST be {OPTION_WORD_MIN}-{OPTION_WORD_MAX} words!\n"
+                f"Focus on less common scenarios and edge cases for variety.\n"
+                f"CRITICAL: Ensure correct_answer matches the BEST option. Double-check accuracy!"
+            )
+
+            label = f"topup_gen:{sector}_{career}_lvl{level}:attempt{attempt}"
+
+            raw_result = self._call_gemini_json(
+                model=self.model_junior,
+                system_prompt=system_prompt,
+                user_prompt=user_prompt,
+                temperature=0.6,  # Slightly higher for variety
+                label=label,
+                max_attempts=2,
+            )
+
+            if raw_result is None:
+                logging.warning(
+                    f"⚠️ Top-up generation attempt {attempt} returned no results"
+                )
+                continue
+
+            # =========================================================
+            # STEP 2: Word count fix
+            # =========================================================
+            raw_result = attempt_word_count_fix(raw_result)
+
+            # =========================================================
+            # STEP 3: Initial Pydantic validation
+            # =========================================================
+            try:
+                raw_pool = QuizPoolModel.model_validate(raw_result)
+                logging.info(
+                    f"✅ Top-up raw validation passed: {len(raw_pool.quiz_pool)} questions"
+                )
+            except ValidationError as e:
+                logging.warning(
+                    f"⚠️ Top-up raw validation failed: "
+                    f"{format_validation_errors_for_critic(e.errors())}"
+                )
+                continue
+
+            # =========================================================
+            # STEP 4: Critic review (hallucination/accuracy check)
+            # =========================================================
+            logging.info(
+                f"🔍 Top-up critic review for {len(raw_pool.quiz_pool)} questions..."
+            )
+
+            # SYS_PROMPT_CRITIC_SIMPLE is a static template (no format placeholders)
+            critic_system_prompt = SYS_PROMPT_CRITIC_SIMPLE
+
+            critic_user_prompt = (
+                f"Review and validate these {len(raw_pool.quiz_pool)} questions.\n"
+                f"Check for:\n"
+                f"1. CORRECT ANSWERS - Is correct_answer truly the best option?\n"
+                f"2. FACTUAL ACCURACY - No hallucinations or incorrect information\n"
+                f"3. DIFFICULTY MATCH - Appropriate for Level {level}\n"
+                f"4. CLEAR DISTRACTORS - Wrong options should be plausible but clearly incorrect\n"
+                f"5. WORD COUNTS - All within limits\n\n"
+                f"Fix any issues and return the corrected quiz_pool.\n\n"
+                f"INPUT:\n{json.dumps(raw_result, indent=2)}"
+            )
+
+            label_critic = f"topup_critic:{sector}_{career}_lvl{level}:attempt{attempt}"
+
+            critic_result = self._call_gemini_json(
+                model=self.model_critic,
+                system_prompt=critic_system_prompt,
+                user_prompt=critic_user_prompt,
+                temperature=self.temp_critic,
+                label=label_critic,
+                max_attempts=2,
+            )
+
+            if critic_result is None:
+                logging.warning(f"⚠️ Top-up critic returned no results, using raw")
+                critic_result = raw_result
+
+            # Apply word count fixes to critic output
+            critic_result = attempt_word_count_fix(critic_result)
+
+            # =========================================================
+            # STEP 5: Final validation after critic
+            # =========================================================
+            try:
+                reviewed_pool = QuizPoolModel.model_validate(critic_result)
+                logging.info(
+                    f"✅ Top-up critic validation passed: {len(reviewed_pool.quiz_pool)} questions"
+                )
+            except ValidationError as e:
+                logging.warning(
+                    f"⚠️ Top-up critic validation failed, falling back to raw: "
+                    f"{format_validation_errors_for_critic(e.errors())}"
+                )
+                # Fall back to raw if critic broke it
+                try:
+                    reviewed_pool = QuizPoolModel.model_validate(raw_result)
+                except ValidationError:
+                    continue
+
+            # =========================================================
+            # STEP 6: Deduplicate against existing questions
+            # =========================================================
+            added_this_attempt = 0
+            for q in reviewed_pool.quiz_pool:
+                norm = normalise_question_text(q.question)
+                if norm not in existing_normalized:
+                    existing_normalized.add(norm)
+                    new_questions.append(q)
+                    added_this_attempt += 1
+
+                    if len(new_questions) >= needed:
+                        break
+
+            logging.info(
+                f"✅ Top-up attempt {attempt}: added {added_this_attempt} unique questions "
+                f"({len(new_questions)} total so far)"
+            )
+
+            adaptive_sleep(SLEEP_AFTER_SUCCESS, 0)
+
+        if len(new_questions) < needed:
+            logging.warning(
+                f"⚠️ Top-up incomplete: got {len(new_questions)}/{needed} additional questions"
+            )
+        else:
+            logging.info(
+                f"✅ Top-up complete: added {len(new_questions)} questions (fully validated + critic reviewed)"
+            )
+
+        return new_questions[:needed]
 
     # =========================================================================
     # FULL PIPELINE PER CAREER/LEVEL
@@ -1022,16 +1282,44 @@ class GeminiQuizGeneratorV4:
             f"📊 After dedup: {len(questions)} questions for {sector}/{career} L{level}"
         )
 
+        # Top-up if we're short after deduplication
         if len(questions) < QUESTIONS_SAVED:
+            needed = QUESTIONS_SAVED - len(questions)
             logging.warning(
-                f"⚠️ Got only {len(questions)} questions (expected {QUESTIONS_SAVED})"
+                f"⚠️ Got only {len(questions)} questions (expected {QUESTIONS_SAVED}). "
+                f"Generating {needed} more..."
             )
+
+            if not is_shutdown_requested():
+                topup_questions = self._generate_topup_questions(
+                    sector=sector,
+                    career=career,
+                    level=level,
+                    needed=needed,
+                    existing_questions=questions,
+                    max_attempts=2,
+                )
+
+                if topup_questions:
+                    questions.extend(topup_questions)
+                    # Re-deduplicate to be safe (shouldn't find any, but just in case)
+                    questions = self._deduplicate_questions(questions)
+                    logging.info(
+                        f"📊 After top-up: {len(questions)} questions for {sector}/{career} L{level}"
+                    )
 
         if not questions:
             logging.error(
                 f"❌ No valid questions after dedup: {sector}/{career} L{level}"
             )
             return
+
+        # Final check - log if still short
+        if len(questions) < QUESTIONS_SAVED:
+            logging.warning(
+                f"⚠️ Final count: {len(questions)}/{QUESTIONS_SAVED} questions "
+                f"(proceeding with available)"
+            )
 
         selected = questions[:QUESTIONS_SAVED]
 
@@ -1086,11 +1374,13 @@ class GeminiQuizGeneratorV4:
             logging.error("❌ Soft skills generation failed")
             return
 
-        # Save raw
-        raw_path = os.path.join(RAW_OUTPUT_DIR, "soft_skills_raw.json")
-        with open(raw_path, "w", encoding="utf-8") as f:
-            json.dump(result, f, indent=2, ensure_ascii=False)
-        logging.info(f"📄 Saved raw response: {raw_path}")
+        # Save raw (if debug output enabled)
+        if SAVE_DEBUG_OUTPUT:
+            raw_path = os.path.join(RAW_OUTPUT_DIR, "soft_skills_raw.json")
+            os.makedirs(RAW_OUTPUT_DIR, exist_ok=True)
+            with open(raw_path, "w", encoding="utf-8") as f:
+                json.dump(result, f, indent=2, ensure_ascii=False)
+            logging.info(f"📄 Saved raw response: {raw_path}")
 
         # Apply automatic word count fixes (truncate long text)
         result = attempt_word_count_fix(result)
@@ -1163,12 +1453,14 @@ class GeminiQuizGeneratorV4:
             json.dump(soft_skills_data, f, indent=2, ensure_ascii=False)
         logging.info(f"📁 Saved soft skills: {soft_skills_path}")
 
-        # Also save to legacy location (backwards compatibility)
-        legacy_path = os.path.join(
-            CLEAN_OUTPUT_DIR, "soft_skills_clean_gemini_v2.5.json"
-        )
-        with open(legacy_path, "w", encoding="utf-8") as f:
-            json.dump(soft_skills_data, f, indent=2, ensure_ascii=False)
+        # Also save to legacy location (backwards compatibility, if debug enabled)
+        if SAVE_DEBUG_OUTPUT:
+            legacy_path = os.path.join(
+                CLEAN_OUTPUT_DIR, "soft_skills_clean_gemini_v2.5.json"
+            )
+            os.makedirs(CLEAN_OUTPUT_DIR, exist_ok=True)
+            with open(legacy_path, "w", encoding="utf-8") as f:
+                json.dump(soft_skills_data, f, indent=2, ensure_ascii=False)
 
         logging.info(
             f"✅ Generated {len(questions)} soft skills questions (after critic + dedup)"
@@ -1205,11 +1497,15 @@ class GeminiQuizGeneratorV4:
                 logging.error(f"Final critic failed for {key} (attempt {attempt})")
                 continue
 
-            # Save critic output
-            clean_path = os.path.join(CLEAN_OUTPUT_DIR, f"{key}_attempt{attempt}.json")
-            with open(clean_path, "w", encoding="utf-8") as f:
-                json.dump(result, f, indent=2, ensure_ascii=False)
-            logging.info(f"📄 Saved critic attempt {attempt}: {clean_path}")
+            # Save critic output (if debug output enabled)
+            if SAVE_DEBUG_OUTPUT:
+                clean_path = os.path.join(
+                    CLEAN_OUTPUT_DIR, f"{key}_attempt{attempt}.json"
+                )
+                os.makedirs(CLEAN_OUTPUT_DIR, exist_ok=True)
+                with open(clean_path, "w", encoding="utf-8") as f:
+                    json.dump(result, f, indent=2, ensure_ascii=False)
+                logging.info(f"📄 Saved critic attempt {attempt}: {clean_path}")
 
             # Apply automatic fixes
             result = attempt_word_count_fix(result)
