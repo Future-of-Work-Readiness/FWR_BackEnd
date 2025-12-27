@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "When analyzing user engagement data, which SQL window function is most appropriate for calculating a cumulative running total of daily active users over time?",
+      "explanation": "The `SUM() OVER()` window function is specifically designed to compute cumulative aggregates like running totals. This is essential for tracking growth and trends over a specified period, such as daily user activity.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using `ROW_NUMBER()` is best because it assigns a unique integer to each row, which can be used to track user counts.",
+          "is_correct": false,
+          "rationale": "ROW_NUMBER() assigns sequential integers to rows; it does not calculate a cumulative sum of a value."
+        },
+        {
+          "key": "B",
+          "text": "The `LAG()` function should be used to access data from a previous day's row to calculate the daily increase.",
+          "is_correct": false,
+          "rationale": "LAG() retrieves a value from a preceding row, which is useful for period-over-period change, not a running total."
+        },
+        {
+          "key": "C",
+          "text": "Employing `SUM(daily_users) OVER (ORDER BY date)` correctly computes the cumulative sum, creating a running total for each day.",
+          "is_correct": true,
+          "rationale": "This syntax correctly defines a window to sum values cumulatively based on the date order, creating a running total."
+        },
+        {
+          "key": "D",
+          "text": "The `NTILE(100)` function is the most suitable as it divides the dataset into percentiles for detailed trend analysis.",
+          "is_correct": false,
+          "rationale": "NTILE() divides rows into a specified number of ranked groups; it does not perform aggregation for a running total."
+        },
+        {
+          "key": "E",
+          "text": "Applying `RANK()` will assign a rank to each day based on user count, which is equivalent to a running total.",
+          "is_correct": false,
+          "rationale": "RANK() assigns a rank based on a value, which is different from calculating a cumulative sum of that value."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "In an A/B test for a new feature, the resulting p-value is 0.04. What is the most accurate interpretation for business stakeholders?",
+      "explanation": "A p-value of 0.04 is less than the common significance level (alpha) of 0.05. This means we can reject the null hypothesis, suggesting the observed difference is unlikely due to random chance.",
+      "options": [
+        {
+          "key": "A",
+          "text": "This result means the new feature caused a 4% improvement in the key metric being measured by the experiment.",
+          "is_correct": false,
+          "rationale": "The p-value is a measure of statistical significance, not the magnitude of the effect or percentage improvement."
+        },
+        {
+          "key": "B",
+          "text": "There is a 96% probability that the new feature is genuinely better than the original version and should be launched.",
+          "is_correct": false,
+          "rationale": "A p-value does not directly represent the probability of the alternative hypothesis being true; this is a common misinterpretation."
+        },
+        {
+          "key": "C",
+          "text": "The test is inconclusive because the p-value is very close to the standard 0.05 threshold for statistical significance.",
+          "is_correct": false,
+          "rationale": "A result is considered statistically significant if the p-value is below the threshold, not inconclusive for being close."
+        },
+        {
+          "key": "D",
+          "text": "The result is statistically significant at an α=0.05 level, suggesting the observed effect is likely not due to random variation.",
+          "is_correct": true,
+          "rationale": "This is the correct technical interpretation: the p-value is below the significance level, allowing rejection of the null hypothesis."
+        },
+        {
+          "key": "E",
+          "text": "It indicates that if the experiment were repeated, there is only a 4% chance of observing a similar result again.",
+          "is_correct": false,
+          "rationale": "The p-value represents the probability of observing the current result (or more extreme) if the null hypothesis were true."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "You discover a critical 'customer_signup_date' column contains multiple formats (e.g., 'MM/DD/YYYY', 'YYYY-MM-DD'). What is the best initial data cleaning step?",
+      "explanation": "The best practice is to create a new, standardized column. This preserves the original data for auditing while creating a clean, usable feature for analysis, avoiding data loss or risky direct database manipulation.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately delete all rows that do not conform to the most common date format to ensure data consistency going forward.",
+          "is_correct": false,
+          "rationale": "Deleting rows leads to data loss and is a destructive action that should be avoided as an initial step."
+        },
+        {
+          "key": "B",
+          "text": "Create a new column and use a script to parse and standardize all dates into a single, consistent ISO 8601 format.",
+          "is_correct": true,
+          "rationale": "This is a non-destructive, scalable, and reversible approach that preserves original data while creating a clean, standardized version."
+        },
+        {
+          "key": "C",
+          "text": "Report the issue to the engineering team and halt all analysis until they have fixed the data source directly.",
+          "is_correct": false,
+          "rationale": "While reporting is good, halting analysis is often impractical; analysts are expected to handle common data cleaning tasks."
+        },
+        {
+          "key": "D",
+          "text": "Manually correct each incorrect date entry directly in the production database to fix the problem as quickly as possible.",
+          "is_correct": false,
+          "rationale": "Directly modifying a production database is risky, not scalable, and bypasses proper data governance and change control procedures."
+        },
+        {
+          "key": "E",
+          "text": "Ignore the inconsistent formats and let the visualization or modeling tool attempt to interpret the different date strings automatically.",
+          "is_correct": false,
+          "rationale": "This approach is unreliable, can lead to silent errors in analysis, and fails to address the root data quality issue."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "To effectively visualize the distribution of customer ages and identify potential outliers in a large dataset, which chart type is most suitable?",
+      "explanation": "A box plot is specifically designed to summarize a dataset's distribution. It clearly shows the median, interquartile range (IQR), and uses 'whiskers' to highlight data points that fall outside the typical range, making it ideal for outlier detection.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A pie chart is best for showing the proportional breakdown of different discrete age groups within the entire customer base.",
+          "is_correct": false,
+          "rationale": "Pie charts are poor for showing distributions of continuous variables and are not designed to identify outliers effectively."
+        },
+        {
+          "key": "B",
+          "text": "A line chart is ideal for tracking the average customer age over a specific period of several years or months.",
+          "is_correct": false,
+          "rationale": "Line charts are used to show trends over time, not the statistical distribution of a single variable at one point."
+        },
+        {
+          "key": "C",
+          "text": "A scatter plot should be used to compare the relationship between customer age and another continuous variable like total purchase amount.",
+          "is_correct": false,
+          "rationale": "Scatter plots show relationships between two variables, not the distribution of a single variable like age."
+        },
+        {
+          "key": "D",
+          "text": "A box plot (or box-and-whisker plot) provides a clear summary of the distribution, median, quartiles, and potential outliers.",
+          "is_correct": true,
+          "rationale": "This chart type is explicitly designed to visualize statistical distribution and easily identify outliers based on the interquartile range."
+        },
+        {
+          "key": "E",
+          "text": "A stacked bar chart would be effective for comparing the number of customers in discrete age brackets across different regions.",
+          "is_correct": false,
+          "rationale": "This is useful for comparing categorical data but does not show the distribution or identify outliers for a continuous variable."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "When designing a data model for sales analytics, what is the primary advantage of using a star schema with a central fact table?",
+      "explanation": "The star schema's main benefit is its simplicity and performance for analytical queries. The denormalized dimension tables reduce the number of joins required, making queries faster to execute and easier for analysts to write and understand.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It minimizes data redundancy by normalizing all tables to the third normal form, which saves significant storage space on disk.",
+          "is_correct": false,
+          "rationale": "This describes a snowflake schema or normalized OLTP model; star schemas are intentionally denormalized to improve query performance."
+        },
+        {
+          "key": "B",
+          "text": "It simplifies queries and improves performance by joining a central fact table with fewer, denormalized dimension tables for analysis.",
+          "is_correct": true,
+          "rationale": "This is the core principle of a star schema: fewer joins and a simple structure lead to faster analytical queries."
+        },
+        {
+          "key": "C",
+          "text": "It is optimized for transactional write operations, ensuring high data integrity for real-time data entry systems like point-of-sale terminals.",
+          "is_correct": false,
+          "rationale": "Star schemas are optimized for read-heavy analytical workloads (OLAP), not write-heavy transactional workloads (OLTP)."
+        },
+        {
+          "key": "D",
+          "text": "It allows for unstructured data like customer reviews and social media posts to be stored alongside structured transactional data.",
+          "is_correct": false,
+          "rationale": "Star schemas are designed for structured data; handling unstructured data typically requires different data storage solutions like data lakes."
+        },
+        {
+          "key": "E",
+          "text": "It enforces a strict, hierarchical data structure that prevents analysts from creating ad-hoc queries on the underlying dataset.",
+          "is_correct": false,
+          "rationale": "On the contrary, the simple structure of a star schema is designed to facilitate and encourage ad-hoc analytical queries."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "When analyzing user session data, which SQL window function is most appropriate for calculating the time difference between consecutive user actions within each session?",
+      "explanation": "The LAG() or LEAD() functions are specifically designed to access data from a preceding or succeeding row within the same partition, making them ideal for calculating differences between consecutive events like user actions.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The LAG() function, which allows you to access data from a previous row in the result set without a self-join.",
+          "is_correct": true,
+          "rationale": "LAG() is designed to compare a row with the previous row, which is perfect for this use case."
+        },
+        {
+          "key": "B",
+          "text": "The RANK() function, which assigns a unique rank to each row based on the ordering of a specific column.",
+          "is_correct": false,
+          "rationale": "RANK() is for ordering and does not help in calculating differences between row values."
+        },
+        {
+          "key": "C",
+          "text": "The SUM() OVER() function, which calculates a cumulative total of a value across the rows in the partition.",
+          "is_correct": false,
+          "rationale": "This function is for aggregation and cumulative sums, not for comparing consecutive rows."
+        },
+        {
+          "key": "D",
+          "text": "The NTILE(n) function, which distributes the rows in an ordered partition into a specified number of ranked groups.",
+          "is_correct": false,
+          "rationale": "NTILE() is for bucketing data into quantiles and is not suitable for this calculation."
+        },
+        {
+          "key": "E",
+          "text": "The ROW_NUMBER() function, which simply assigns a sequential integer to each row starting from one for each partition.",
+          "is_correct": false,
+          "rationale": "ROW_NUMBER() provides a sequence but does not access values from other rows for calculations."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "In an A/B test for a new website feature, you obtain a p-value of 0.04. What is the correct statistical interpretation of this result?",
+      "explanation": "The p-value represents the probability of observing the collected data, or something more extreme, assuming the null hypothesis (that there is no difference between the groups) is true. A low p-value suggests the observation is unlikely under the null hypothesis.",
+      "options": [
+        {
+          "key": "A",
+          "text": "There is a 96% probability that the new feature is more effective than the original control version.",
+          "is_correct": false,
+          "rationale": "This incorrectly interprets 1-p as the probability of the alternative hypothesis being true."
+        },
+        {
+          "key": "B",
+          "text": "There is a 4% chance of observing the measured difference if the new feature actually had no effect.",
+          "is_correct": true,
+          "rationale": "This is the correct definition of a p-value in the context of the null hypothesis."
+        },
+        {
+          "key": "C",
+          "text": "The new feature caused a 4% improvement in the target metric compared to the control group.",
+          "is_correct": false,
+          "rationale": "This confuses the p-value with the effect size or the magnitude of the change."
+        },
+        {
+          "key": "D",
+          "text": "The result is inconclusive, and the experiment must be run again with a much larger sample size.",
+          "is_correct": false,
+          "rationale": "While more data is often useful, a p-value of 0.04 is typically considered statistically significant."
+        },
+        {
+          "key": "E",
+          "text": "We can be 96% confident that the result is not due to random chance or sampling error.",
+          "is_correct": false,
+          "rationale": "This is a misinterpretation of confidence levels and their relationship with the p-value."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "When designing a database schema for an e-commerce data warehouse, what is the primary advantage of implementing a star schema over a normalized schema?",
+      "explanation": "A star schema's simple, denormalized structure with a central fact table and surrounding dimension tables is optimized for fast read operations, aggregations, and slicing/dicing data, which are common in analytical and BI workloads.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It minimizes data storage costs by eliminating all redundant data through third normal form (3NF) principles.",
+          "is_correct": false,
+          "rationale": "This describes a highly normalized schema (OLTP), not a star schema, which intentionally includes redundancy."
+        },
+        {
+          "key": "B",
+          "text": "It is optimized for high-frequency write operations and transactional consistency, which is critical for order processing.",
+          "is_correct": false,
+          "rationale": "This is the primary advantage of a normalized OLTP schema, not a star schema for analytics."
+        },
+        {
+          "key": "C",
+          "text": "It enforces complex data integrity rules through a web of interconnected tables, preventing data entry anomalies.",
+          "is_correct": false,
+          "rationale": "Complex relationships are characteristic of normalized schemas; star schemas have simpler relationships."
+        },
+        {
+          "key": "D",
+          "text": "It simplifies analytical queries and improves read performance by reducing the number of complex joins required for reporting.",
+          "is_correct": true,
+          "rationale": "The main goal of a star schema is to simplify and speed up analytical queries."
+        },
+        {
+          "key": "E",
+          "text": "It allows for flexible, unstructured data storage, making it easy to add new data sources without schema changes.",
+          "is_correct": false,
+          "rationale": "This describes a data lake or NoSQL database, not a structured star schema."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "You discover a critical 'customer_signup_date' column has 15% null values. What is the most appropriate initial step to handle this data quality issue?",
+      "explanation": "Before applying any correction technique like deletion or imputation, it is crucial to understand the root cause. The reason for the missing data (e.g., ETL error, system change) dictates the correct handling strategy.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately delete all rows with null signup dates to ensure the dataset is perfectly clean for analysis.",
+          "is_correct": false,
+          "rationale": "This can introduce significant bias by removing a potentially non-random subset of data."
+        },
+        {
+          "key": "B",
+          "text": "Impute the missing values by replacing them with the median signup date from the non-null records.",
+          "is_correct": false,
+          "rationale": "Imputation is a valid step, but it should not be the first one without understanding the cause."
+        },
+        {
+          "key": "C",
+          "text": "Investigate the data source and ETL process to understand why these values are missing in the first place.",
+          "is_correct": true,
+          "rationale": "Root cause analysis is the most critical first step in addressing any data quality issue."
+        },
+        {
+          "key": "D",
+          "text": "Use a machine learning model to predict the missing dates based on other available customer attributes.",
+          "is_correct": false,
+          "rationale": "This is an advanced technique that is premature without first investigating the root cause."
+        },
+        {
+          "key": "E",
+          "text": "Replace all the null values with the earliest date in the dataset to avoid data type errors.",
+          "is_correct": false,
+          "rationale": "This would introduce incorrect data and heavily skew any time-based analysis."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "When presenting user engagement trends to a non-technical executive audience, which visualization is generally most effective for showing a continuous change over time?",
+      "explanation": "Line charts are exceptionally effective at illustrating trends and changes in a data series over a continuous interval like time. Their simplicity makes them easily digestible for non-technical audiences who need to see the overall pattern.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A scatter plot with a regression line to show the correlation between engagement and another variable.",
+          "is_correct": false,
+          "rationale": "Scatter plots are for showing relationships between two variables, not primarily for time-series trends."
+        },
+        {
+          "key": "B",
+          "text": "A pie chart for each month, showing the proportional breakdown of different user segments.",
+          "is_correct": false,
+          "rationale": "Pie charts are poor for showing changes over time and are best for part-to-whole comparisons."
+        },
+        {
+          "key": "C",
+          "text": "A detailed data table with raw numbers to provide the highest level of precision to stakeholders.",
+          "is_correct": false,
+          "rationale": "Tables lack visual impact and make it difficult for executives to quickly grasp trends."
+        },
+        {
+          "key": "D",
+          "text": "A stacked bar chart showing the composition of total engagement from different feature interactions.",
+          "is_correct": false,
+          "rationale": "While useful, this focuses on composition rather than the simple, clear trend of a single metric."
+        },
+        {
+          "key": "E",
+          "text": "A simple line chart that clearly plots the key engagement metric on the y-axis against time on the x-axis.",
+          "is_correct": true,
+          "rationale": "A line chart is the standard and most intuitive visualization for showing trends over time."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "A product team runs an A/B test on a new feature, and the resulting p-value is 0.06. What is the most appropriate interpretation?",
+      "explanation": "A p-value of 0.06 is greater than the conventional alpha level of 0.05, meaning the result is not statistically significant. The correct action is to acknowledge this without manipulating standards or overstating the findings, while considering if more data is needed.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately declare the test a major success because the p-value is extremely close to the standard 0.05 threshold.",
+          "is_correct": false,
+          "rationale": "This is an incorrect interpretation; 0.06 is not less than 0.05, so the result is not statistically significant."
+        },
+        {
+          "key": "B",
+          "text": "Conclude the result is not statistically significant at the 5% level and suggest that more data may be needed for a conclusive result.",
+          "is_correct": true,
+          "rationale": "This correctly interprets the p-value and suggests a sound next step for the product team to consider."
+        },
+        {
+          "key": "C",
+          "text": "Adjust the alpha level to 0.10 after seeing the result, which would make the test statistically significant for the final report.",
+          "is_correct": false,
+          "rationale": "Changing the significance level after seeing the results, known as p-hacking, is a poor and unethical scientific practice."
+        },
+        {
+          "key": "D",
+          "text": "Discard the results entirely and start a new test with a different hypothesis because this one has definitively failed to show any effect.",
+          "is_correct": false,
+          "rationale": "The result is inconclusive, not a definitive failure; the data is still useful for informing future experiments."
+        },
+        {
+          "key": "E",
+          "text": "Roll out the new feature to all users, as the small difference is likely a positive business indicator worth pursuing immediately.",
+          "is_correct": false,
+          "rationale": "Making a business decision based on a non-significant result is risky and not supported by the data."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "When preparing a dataset with European Union customer data for analysis, what is a critical step to ensure compliance with GDPR principles?",
+      "explanation": "GDPR's core principles include data minimization and purpose limitation. Anonymizing or pseudonymizing Personally Identifiable Information (PII) is a fundamental technique to protect user privacy and meet compliance requirements unless a specific legal basis exists for processing it.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Transfer the data to a cloud provider located outside the EU to take advantage of more lenient data privacy laws.",
+          "is_correct": false,
+          "rationale": "This action would likely violate GDPR's strict regulations regarding international data transfers to countries without an adequacy decision."
+        },
+        {
+          "key": "B",
+          "text": "Only remove the customer's full name from the dataset, as other personal details are not considered sensitive under GDPR.",
+          "is_correct": false,
+          "rationale": "GDPR defines PII broadly, including emails, addresses, and IP addresses, all of which must be protected."
+        },
+        {
+          "key": "C",
+          "text": "Keep the data in its raw format for maximum analytical accuracy, assuming the company's general privacy policy covers it.",
+          "is_correct": false,
+          "rationale": "A general policy may not be sufficient; explicit consent or another clear legal basis is required for processing PII."
+        },
+        {
+          "key": "D",
+          "text": "Anonymize or pseudonymize all personally identifiable information unless there is a clear legal basis or explicit consent for its processing.",
+          "is_correct": true,
+          "rationale": "This aligns with the core GDPR principles of data minimization and purpose limitation, which are key for compliance."
+        },
+        {
+          "key": "E",
+          "text": "Convert all text fields to numerical codes without a key, which is a sufficient method of data protection for analysis.",
+          "is_correct": false,
+          "rationale": "This is obfuscation, not proper anonymization, and can often be reversed, failing to meet GDPR standards for protection."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "You present a dashboard showing a 15% drop in user engagement, but a senior stakeholder challenges the data's validity. What is your best initial response?",
+      "explanation": "This response is collaborative and non-defensive. It respects the stakeholder's perspective, seeks to understand the root of their skepticism, and builds trust by offering transparency into the analytical process and data sources used for the dashboard.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately defend your analysis by listing all the technical steps you took to prove your methodology is robust and correct.",
+          "is_correct": false,
+          "rationale": "This can come across as defensive and may not address the stakeholder's actual underlying business concern or question."
+        },
+        {
+          "key": "B",
+          "text": "Suggest that their anecdotal experience might not align with the broader trend shown by the comprehensive dataset you have analyzed.",
+          "is_correct": false,
+          "rationale": "This response dismisses the stakeholder's valuable perspective and can create a confrontational, unproductive dynamic for future collaborations."
+        },
+        {
+          "key": "C",
+          "text": "Acknowledge their concern, ask clarifying questions to understand their specific doubts, and offer to walk through the data sources and methodology.",
+          "is_correct": true,
+          "rationale": "This collaborative approach builds trust, shows respect for their expertise, and helps get to the root of the concern."
+        },
+        {
+          "key": "D",
+          "text": "Promise to re-run the entire analysis from scratch immediately to see if you can produce a different, more favorable result.",
+          "is_correct": false,
+          "rationale": "This undermines your own work and implies you will search for a desired answer, eroding your credibility as an analyst."
+        },
+        {
+          "key": "E",
+          "text": "Politely state that the data is accurate and the stakeholder should focus on the business implications of the engagement drop.",
+          "is_correct": false,
+          "rationale": "This response is confrontational and shuts down important dialogue, damaging the trust between the analyst and the stakeholder."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "When designing a star schema for a data warehouse, what is the primary function of the central fact table within the model?",
+      "explanation": "The fact table is the core of a star schema. It holds the numerical metrics (facts) that are the subject of analysis, and it connects to dimension tables via foreign keys, allowing for slicing and dicing of the data.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It stores descriptive, non-numerical attributes about business entities like customers and products, which provides context for analysis.",
+          "is_correct": false,
+          "rationale": "This describes the function of dimension tables, which provide context, not the central fact table which holds metrics."
+        },
+        {
+          "key": "B",
+          "text": "It contains the quantitative, additive measures of business processes and foreign keys that link to the surrounding dimension tables.",
+          "is_correct": true,
+          "rationale": "This correctly defines the role of a fact table, which is to store the numerical measures for analysis."
+        },
+        {
+          "key": "C",
+          "text": "It serves as a staging area for raw, unstructured data before it is cleaned, transformed, and loaded into dimension tables.",
+          "is_correct": false,
+          "rationale": "This describes a staging area in an ETL process, which is a separate concept from the final fact table."
+        },
+        {
+          "key": "D",
+          "text": "It exclusively holds metadata about the data warehouse, including table definitions, user permissions, and data lineage information.",
+          "is_correct": false,
+          "rationale": "This describes a metadata repository or data catalog, not a fact table used for business intelligence queries."
+        },
+        {
+          "key": "E",
+          "text": "It is designed to hold slowly changing dimensions that track historical changes in attribute values over a long period.",
+          "is_correct": false,
+          "rationale": "Slowly changing dimensions (SCDs) are a technique used to manage historical data within dimension tables, not fact tables."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Which SQL window function is most suitable for calculating the cumulative total of sales for each product category over time in a single query?",
+      "explanation": "The SUM() window function with an OVER clause is specifically designed to calculate cumulative sums (running totals) across a set of rows, partitioned and ordered as needed, without collapsing the rows like a traditional GROUP BY clause would.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The RANK() function, which assigns a unique rank to each row within a partition based on a specified ordering criteria.",
+          "is_correct": false,
+          "rationale": "RANK() is used for ordering and ranking rows based on a value, not for performing cumulative aggregation."
+        },
+        {
+          "key": "B",
+          "text": "The LAG() function, which provides access to a row at a specified physical offset that comes before the current row.",
+          "is_correct": false,
+          "rationale": "LAG() is used for comparing a row with a previous row, not for summing values across multiple rows."
+        },
+        {
+          "key": "C",
+          "text": "The NTILE(n) function, which divides the rows in an ordered partition into a specified number of ranked groups or buckets.",
+          "is_correct": false,
+          "rationale": "NTILE(n) is used for creating percentiles or other ranked groups and does not perform any kind of summation."
+        },
+        {
+          "key": "D",
+          "text": "The AVG() aggregate function with a GROUP BY clause, which calculates the average sales but not a running cumulative total.",
+          "is_correct": false,
+          "rationale": "GROUP BY aggregates rows into a single output row per group, which prevents the calculation of a running total."
+        },
+        {
+          "key": "E",
+          "text": "The SUM() OVER (PARTITION BY ... ORDER BY ...) function, which computes a running total within each defined partition.",
+          "is_correct": true,
+          "rationale": "This is the precise function and syntax for calculating a running or cumulative total across a specified window."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "When analyzing user session data, which SQL window function is most appropriate for calculating the time difference between consecutive events for each user?",
+      "explanation": "The LAG() and LEAD() functions are specifically designed to access data from preceding or succeeding rows within the same partition, making them ideal for calculating differences between consecutive records like event timestamps.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using LAG() or LEAD() to access data from a previous or subsequent row within the same result set without a self-join.",
+          "is_correct": true,
+          "rationale": "These functions are specifically designed for inter-row calculations, making them perfect for finding differences between consecutive events."
+        },
+        {
+          "key": "B",
+          "text": "Applying ROW_NUMBER() to assign a unique integer to each row, which helps in ordering the events chronologically for analysis.",
+          "is_correct": false,
+          "rationale": "This function only numbers rows sequentially; it does not provide access to data values from other rows for calculations."
+        },
+        {
+          "key": "C",
+          "text": "Calculating a cumulative total with SUM() OVER() to understand the total time spent up to each specific event in the session.",
+          "is_correct": false,
+          "rationale": "The SUM() window function is used for aggregation and running totals, not for calculating the interval between two points."
+        },
+        {
+          "key": "D",
+          "text": "Using NTILE(4) to distribute all user events into quartiles based on their timestamp to identify event distribution patterns.",
+          "is_correct": false,
+          "rationale": "NTILE is for bucketing data into ranked groups and is not suitable for calculating time differences between individual events."
+        },
+        {
+          "key": "E",
+          "text": "Employing RANK() to assign a rank based on the event timestamp, which is useful for identifying the order of actions.",
+          "is_correct": false,
+          "rationale": "The RANK() function provides the order of events but does not allow for direct calculations between consecutive timestamps."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "When evaluating an A/B test result, what does a p-value of 0.04 indicate when the significance level (alpha) is set at 0.05?",
+      "explanation": "A p-value less than the chosen significance level (alpha) indicates that the observed result is statistically significant. This means it is unlikely to have occurred by random chance, so we reject the null hypothesis.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The result is statistically significant, allowing you to confidently reject the null hypothesis and conclude there is a real performance difference.",
+          "is_correct": true,
+          "rationale": "A p-value of 0.04 is less than the 0.05 alpha threshold, indicating a statistically significant result."
+        },
+        {
+          "key": "B",
+          "text": "The result is not statistically significant, meaning you must fail to reject the null hypothesis due to insufficient evidence.",
+          "is_correct": false,
+          "rationale": "The p-value is below the significance level, so the result is considered significant, not the other way around."
+        },
+        {
+          "key": "C",
+          "text": "The test is inconclusive because the p-value is too close to the alpha level, requiring a larger sample size for a decision.",
+          "is_correct": false,
+          "rationale": "A clear decision boundary is set by alpha before the test; closeness to the threshold does not mean it's inconclusive."
+        },
+        {
+          "key": "D",
+          "text": "There is a 4% probability that the alternative hypothesis is correct, confirming the new feature's positive impact on key metrics.",
+          "is_correct": false,
+          "rationale": "The p-value is not the probability of the alternative hypothesis being true; this is a common misinterpretation."
+        },
+        {
+          "key": "E",
+          "text": "The control group performed 4% better than the treatment group, indicating a negative outcome that should be investigated further.",
+          "is_correct": false,
+          "rationale": "The p-value measures statistical significance, not the magnitude or direction of the effect, which is the effect size."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "Under GDPR regulations, what is the most critical consideration when handling personally identifiable information (PII) for analytics purposes within the European Union?",
+      "explanation": "GDPR's core principle is user control and lawful basis for processing. Obtaining explicit, informed, and unambiguous consent for a specified purpose is the foundational legal requirement before any PII can be processed for analytics.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ensuring all PII is stored exclusively on servers located physically within the EU to comply with data residency requirements.",
+          "is_correct": false,
+          "rationale": "While data residency is a factor, establishing a legal basis like consent is a more fundamental and critical requirement."
+        },
+        {
+          "key": "B",
+          "text": "Obtaining explicit, unambiguous user consent for data processing and clearly defining the specific purpose for which the data will be used.",
+          "is_correct": true,
+          "rationale": "Consent and purpose limitation are foundational GDPR principles, forming the primary legal basis for most PII processing activities."
+        },
+        {
+          "key": "C",
+          "text": "Converting all personally identifiable information into a hashed format using SHA-256 to ensure it is fully anonymized.",
+          "is_correct": false,
+          "rationale": "Hashing is a form of pseudonymization, not anonymization, and the resulting data is still regulated as PII under GDPR."
+        },
+        {
+          "key": "D",
+          "text": "Implementing a strict policy that automatically deletes all user data after a fixed retention period of exactly one calendar year.",
+          "is_correct": false,
+          "rationale": "Data retention policies are required, but the period must be justified by the purpose, not an arbitrary fixed duration."
+        },
+        {
+          "key": "E",
+          "text": "Anonymizing the data by removing only direct identifiers like names, while retaining indirect identifiers like IP addresses for analysis.",
+          "is_correct": false,
+          "rationale": "Indirect identifiers like IP addresses, location data, and cookies are still considered personally identifiable information under GDPR."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "You need to visualize the distribution of customer ages and identify potential outliers in the dataset. Which chart type is most effective for this specific task?",
+      "explanation": "A box plot is specifically designed to summarize a dataset's distribution through its five-number summary (minimum, first quartile, median, third quartile, and maximum). This structure makes it exceptionally effective at visually highlighting outliers beyond the whiskers.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A pie chart is best for showing the proportional breakdown of different pre-defined age groups within the total customer base.",
+          "is_correct": false,
+          "rationale": "Pie charts show proportions of a whole and are not suitable for visualizing distributions or identifying statistical outliers."
+        },
+        {
+          "key": "B",
+          "text": "A line chart is ideal for tracking the average customer age over a specific period of time to see trends.",
+          "is_correct": false,
+          "rationale": "Line charts are designed for visualizing trends over a continuous interval, not for showing the statistical distribution of a variable."
+        },
+        {
+          "key": "C",
+          "text": "A box plot effectively displays the median, quartiles, and range, making it excellent for showing the data's distribution and identifying outliers.",
+          "is_correct": true,
+          "rationale": "This chart type is specifically designed to visualize statistical distribution and easily identify any data points considered outliers."
+        },
+        {
+          "key": "D",
+          "text": "A stacked bar chart can compare the number of customers in defined age brackets across different geographical regions or segments.",
+          "is_correct": false,
+          "rationale": "This chart is used for comparing categorical data across segments, not showing a single variable's statistical distribution."
+        },
+        {
+          "key": "E",
+          "text": "A scatter plot is used to show the relationship between two different numerical variables, not the distribution of a single one.",
+          "is_correct": false,
+          "rationale": "Scatter plots are used for exploring the correlation between two variables, not for analyzing the distribution of a single variable."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "A product manager requests an urgent, complex analysis with a very tight deadline. What is the most professional first step to take?",
+      "explanation": "The best approach is collaborative and communicative. Acknowledging the request, clarifying the core business question, and negotiating the scope ensures that expectations are managed and the final output is both valuable and delivered realistically.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately start working on the analysis to show proactivity and attempt to meet the requested deadline without asking any clarifying questions.",
+          "is_correct": false,
+          "rationale": "This approach risks delivering an incorrect or irrelevant analysis and can lead to burnout without managing stakeholder expectations."
+        },
+        {
+          "key": "B",
+          "text": "Decline the request immediately by stating that the deadline is completely unrealistic and that it cannot be done in time.",
+          "is_correct": false,
+          "rationale": "This response is confrontational and not collaborative, damaging the working relationship instead of finding a practical solution."
+        },
+        {
+          "key": "C",
+          "text": "Acknowledge the request, clarify the core business question, and discuss potential trade-offs between speed, scope, and analytical depth.",
+          "is_correct": true,
+          "rationale": "This collaborative approach effectively manages expectations and ensures the final deliverable provides the most critical business value."
+        },
+        {
+          "key": "D",
+          "text": "Escalate the request to your manager, explaining that the product manager is making an unreasonable demand on your available time.",
+          "is_correct": false,
+          "rationale": "Escalation should not be the first step; direct communication and negotiation are more professional initial actions to take."
+        },
+        {
+          "key": "E",
+          "text": "Promise to deliver the full analysis by the deadline but secretly plan to provide a simplified version without informing the stakeholder.",
+          "is_correct": false,
+          "rationale": "This approach is dishonest and will ultimately erode the trust and credibility you have with the stakeholder and your team."
+        }
+      ]
+    }
+  ]
+}

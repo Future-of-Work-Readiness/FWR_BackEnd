@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "Your team must introduce a breaking change to a widely used public API. What is the most effective strategy to manage this transition for your users?",
+      "explanation": "Versioning the API allows developers to migrate at their own pace during a defined deprecation window, preventing service disruptions. This approach respects existing integrations while enabling necessary platform evolution.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately deploy the new version and update the documentation, expecting all users to adapt quickly to the necessary changes.",
+          "is_correct": false,
+          "rationale": "This is disruptive and leads to broken integrations for clients."
+        },
+        {
+          "key": "B",
+          "text": "Introduce the new functionality in a separate, versioned endpoint while maintaining the old one for a planned deprecation period.",
+          "is_correct": true,
+          "rationale": "This provides a stable transition path for all consumers."
+        },
+        {
+          "key": "C",
+          "text": "Create a new API from scratch with a different name and slowly migrate only the most important clients over.",
+          "is_correct": false,
+          "rationale": "This abandons the existing user base and brand recognition."
+        },
+        {
+          "key": "D",
+          "text": "Bundle the breaking change with several other non-breaking updates to minimize the number of total releases for the quarter.",
+          "is_correct": false,
+          "rationale": "This conflates issues and makes troubleshooting difficult for users."
+        },
+        {
+          "key": "E",
+          "text": "Send a single email announcement to all registered developers one week before the mandatory cutover to the new version.",
+          "is_correct": false,
+          "rationale": "One week is an insufficient amount of time for developers."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "An engineering lead proposes dedicating an entire sprint to refactoring a core service to reduce technical debt, delaying a planned feature. What is your best response?",
+      "explanation": "A TPM's role is to facilitate trade-off discussions. Quantifying the cost of technical debt (e.g., slower development, more bugs) allows for an informed, data-driven decision against the feature's expected ROI.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Reject the proposal immediately because feature delivery is always the top priority for meeting quarterly business goals and satisfying stakeholders.",
+          "is_correct": false,
+          "rationale": "Ignoring technical debt leads to long-term product degradation."
+        },
+        {
+          "key": "B",
+          "text": "Agree to the refactoring sprint without question, trusting the engineering lead's judgment completely on all technical matters without further discussion.",
+          "is_correct": false,
+          "rationale": "A TPM must understand the business impact of technical decisions."
+        },
+        {
+          "key": "C",
+          "text": "Ask the lead to quantify the impact of the technical debt on velocity and stability to weigh it against the feature's business value.",
+          "is_correct": true,
+          "rationale": "This facilitates a data-driven trade-off discussion."
+        },
+        {
+          "key": "D",
+          "text": "Suggest addressing the technical debt incrementally over several sprints instead of dedicating an entire sprint to the refactoring work.",
+          "is_correct": false,
+          "rationale": "This might be a solution, but it's premature without analysis."
+        },
+        {
+          "key": "E",
+          "text": "Escalate the decision to senior management to have them decide between the technical work and the new feature delivery.",
+          "is_correct": false,
+          "rationale": "This is abdicating the product manager's core responsibility."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What is the most significant architectural trade-off a team accepts when choosing a microservices architecture over a traditional monolith for a new product?",
+      "explanation": "Microservices introduce significant operational complexity (deployment, monitoring, networking) upfront. The primary benefit is enabling independent team velocity and service scaling, which pays off as the product and organization grow.",
+      "options": [
+        {
+          "key": "A",
+          "text": "They sacrifice faster initial development speed and simpler deployment processes for improved long-term scalability and team autonomy.",
+          "is_correct": true,
+          "rationale": "This correctly identifies the core trade-off of operational complexity for scalability."
+        },
+        {
+          "key": "B",
+          "text": "They gain enhanced data consistency and simpler transaction management at the cost of much tighter coupling between different components.",
+          "is_correct": false,
+          "rationale": "This describes the benefits of a monolith, not microservices."
+        },
+        {
+          "key": "C",
+          "text": "They achieve lower infrastructure costs due to resource sharing, but face challenges in adopting diverse technology stacks for services.",
+          "is_correct": false,
+          "rationale": "Microservices often increase infrastructure costs and allow diverse stacks."
+        },
+        {
+          "key": "D",
+          "text": "They simplify the debugging and end-to-end testing processes but must enforce a single programming language across all services.",
+          "is_correct": false,
+          "rationale": "Debugging and testing become significantly more complex in microservices."
+        },
+        {
+          "key": "E",
+          "text": "They reduce the need for robust monitoring and logging systems because each service operates in complete isolation from the others.",
+          "is_correct": false,
+          "rationale": "Distributed systems require much more sophisticated monitoring and logging."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "After launching a new collaborative document editing feature, which key performance indicator (KPI) would best measure its adoption and deep user engagement?",
+      "explanation": "This KPI specifically measures the core collaborative value proposition. It tracks not just usage (creation) but the depth of engagement (multiple contributors), which directly indicates if the feature is solving the intended problem.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The total number of unique users who have clicked the button to open the new feature's main user interface.",
+          "is_correct": false,
+          "rationale": "This is a vanity metric that only measures initial curiosity."
+        },
+        {
+          "key": "B",
+          "text": "The daily active users (DAU) of the entire application, as this shows overall platform health and potential feature visibility.",
+          "is_correct": false,
+          "rationale": "This metric is not specific enough to measure the new feature's success."
+        },
+        {
+          "key": "C",
+          "text": "The number of documents created per user per week where at least two different users have made significant contributions.",
+          "is_correct": true,
+          "rationale": "This measures both adoption and the core collaborative action."
+        },
+        {
+          "key": "D",
+          "text": "The average time it takes for the collaborative editing feature's user interface to load for the first time.",
+          "is_correct": false,
+          "rationale": "This is a performance metric, not an engagement or adoption KPI."
+        },
+        {
+          "key": "E",
+          "text": "The volume of positive mentions of the new feature on social media platforms and in various app store reviews.",
+          "is_correct": false,
+          "rationale": "This is qualitative feedback, not a quantitative KPI for engagement."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "During a sprint planning meeting, what is the technical product manager's primary responsibility to ensure the team commits to a successful sprint?",
+      "explanation": "The TPM is the voice of the customer and business. Their key role in sprint planning is to clarify the 'what' and 'why' of the work, enabling the engineering team to determine the 'how' and commit confidently.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To assign specific user stories and technical tasks directly to each individual engineer based on their known skill sets.",
+          "is_correct": false,
+          "rationale": "Agile teams are self-organizing; this is the team's responsibility."
+        },
+        {
+          "key": "B",
+          "text": "To provide clear, prioritized user stories with well-defined acceptance criteria and answer clarifying questions about business value.",
+          "is_correct": true,
+          "rationale": "This empowers the team to understand scope and make a commitment."
+        },
+        {
+          "key": "C",
+          "text": "To determine the technical implementation details for each story, including the specific database schemas and API endpoints to be used.",
+          "is_correct": false,
+          "rationale": "This is the responsibility of the engineering team, not the TPM."
+        },
+        {
+          "key": "D",
+          "text": "To set a strict deadline for the sprint's completion and hold the team accountable for delivering all forecasted work.",
+          "is_correct": false,
+          "rationale": "The sprint commitment is a forecast, not a fixed deadline contract."
+        },
+        {
+          "key": "E",
+          "text": "To document the meeting minutes and distribute a summary of the team's capacity and velocity calculations to all stakeholders.",
+          "is_correct": false,
+          "rationale": "This is typically a task for the Scrum Master or project manager."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "When managing a public API, what is the most significant advantage of using URI path versioning (e.g., /api/v2/users) over header-based versioning?",
+      "explanation": "URI path versioning makes API versions explicit and easy to access for developers using simple tools like a web browser. This improves discoverability and simplifies testing, which is a major advantage for public-facing APIs and developer experience.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It provides clear, bookmarkable URLs for developers, simplifying exploration and debugging of different API versions directly in the browser.",
+          "is_correct": true,
+          "rationale": "This method enhances developer experience by making versions explicit and easy to test."
+        },
+        {
+          "key": "B",
+          "text": "It completely eliminates the need for developers to update their client-side code when a new API version is released.",
+          "is_correct": false,
+          "rationale": "Client code must always be updated to consume a new API version, regardless of the versioning scheme."
+        },
+        {
+          "key": "C",
+          "text": "It allows for more granular control over individual endpoint versions without affecting the entire API namespace.",
+          "is_correct": false,
+          "rationale": "Header or media type versioning typically offers more granular control than path versioning."
+        },
+        {
+          "key": "D",
+          "text": "It is inherently more secure because it hides version information from network sniffers and unauthorized users.",
+          "is_correct": false,
+          "rationale": "The version is public in the URL, so this method does not offer any additional security benefits."
+        },
+        {
+          "key": "E",
+          "text": "It reduces server-side routing complexity by consolidating all version logic into a single middleware layer.",
+          "is_correct": false,
+          "rationale": "This approach can actually increase routing complexity by creating more distinct API paths to manage."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Your engineering team reports significant technical debt is slowing down feature development. Which framework is most appropriate for prioritizing which debt to address first?",
+      "explanation": "Technical debt is best prioritized by understanding its cost (engineering effort) and its benefit (faster future development, reduced bugs, lower risk). A cost-benefit analysis provides a rational, data-informed approach to making these trade-offs against new feature work.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A cost-benefit analysis that weighs the engineering effort to fix the debt against the projected velocity improvement and risk reduction.",
+          "is_correct": true,
+          "rationale": "This correctly balances the investment required against the expected return in productivity and stability."
+        },
+        {
+          "key": "B",
+          "text": "The RICE framework, focusing solely on the reach and impact of new features that would be enabled by fixing the debt.",
+          "is_correct": false,
+          "rationale": "RICE is designed for prioritizing user-facing features, not internal technical debt."
+        },
+        {
+          "key": "C",
+          "text": "The Kano model, by categorizing the technical debt items as basic, performance, or excitement features for internal developers.",
+          "is_correct": false,
+          "rationale": "The Kano model is for assessing customer satisfaction with features, which is not applicable to technical debt."
+        },
+        {
+          "key": "D",
+          "text": "A simple stack ranking based on which components the most senior engineer believes are the most poorly written or outdated.",
+          "is_correct": false,
+          "rationale": "This method is highly subjective and lacks a clear connection to business or product impact."
+        },
+        {
+          "key": "E",
+          "text": "The MoSCoW method, classifying all debt as \"Must,\" \"Should,\" \"Could,\" or \"Won't\" based on immediate customer requests.",
+          "is_correct": false,
+          "rationale": "Customers do not request technical debt fixes, making MoSCoW an inappropriate framework for this context."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "When would you advocate for a monolithic architecture over a microservices approach for a new product development project?",
+      "explanation": "Monoliths are simpler to build, test, and deploy initially. For a small team exploring a new product idea (MVP), this speed and simplicity often outweigh the long-term scalability and organizational benefits of microservices, enabling faster iteration.",
+      "options": [
+        {
+          "key": "A",
+          "text": "When the team is small and the initial product scope is uncertain, prioritizing rapid iteration and simple deployment over scalability.",
+          "is_correct": true,
+          "rationale": "Monoliths excel in early-stage projects by reducing complexity and accelerating initial development."
+        },
+        {
+          "key": "B",
+          "text": "When the product requires extremely high availability and fault tolerance, as monoliths have fewer network points of failure.",
+          "is_correct": false,
+          "rationale": "In a monolith, a single component failure can bring down the entire application, reducing fault tolerance."
+        },
+        {
+          "key": "C",
+          "text": "When different components of the application need to be scaled independently to handle varying loads from user traffic.",
+          "is_correct": false,
+          "rationale": "Independent scaling of components is a primary advantage of a microservices architecture, not a monolith."
+        },
+        {
+          "key": "D",
+          "text": "When the product will be developed by multiple, independent teams that need to deploy their work on separate schedules.",
+          "is_correct": false,
+          "rationale": "Microservices are ideal for enabling autonomous teams to develop and deploy independently."
+        },
+        {
+          "key": "E",
+          "text": "When the application requires a diverse technology stack, with different services written in different programming languages.",
+          "is_correct": false,
+          "rationale": "Using multiple programming languages (polyglot architecture) is a key benefit of microservices."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Your product requires adding a new, non-nullable field to a production database table with millions of records. What is the safest approach?",
+      "explanation": "This multi-step approach avoids locking the table for an extended period, which can cause downtime. By making it nullable first, the schema change is fast. The backfill can happen in the background, and the constraint is added later, ensuring zero-downtime deployment.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Add the new field as nullable, backfill the data for existing records, then add a non-nullable constraint in a separate deployment.",
+          "is_correct": true,
+          "rationale": "This phased approach is the industry standard for safe, zero-downtime migrations on large tables."
+        },
+        {
+          "key": "B",
+          "text": "Directly add the new non-nullable field with a default value in a single database migration script to update all records.",
+          "is_correct": false,
+          "rationale": "This can cause a long-running table lock on large datasets, leading to production downtime."
+        },
+        {
+          "key": "C",
+          "text": "Create a new table with the desired schema and slowly migrate all the data from the old table to the new one.",
+          "is_correct": false,
+          "rationale": "This is overly complex and risky for simply adding a single field to an existing table."
+        },
+        {
+          "key": "D",
+          "text": "Take the application offline for maintenance, run a script to add the field, and then bring the application back online.",
+          "is_correct": false,
+          "rationale": "This involves planned downtime, which is highly undesirable and often unacceptable for modern applications."
+        },
+        {
+          "key": "E",
+          "text": "Ask the engineering team to handle it during the next sprint without a specific rollout plan, trusting their expertise.",
+          "is_correct": false,
+          "rationale": "This abdicates product management responsibility for a high-risk change impacting the product."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "An A/B test for a new feature shows a 2% conversion lift, but the p-value is 0.25. What is the correct product decision?",
+      "explanation": "A high p-value (typically > 0.05) indicates that the observed result is not statistically significant. This means you cannot confidently reject the null hypothesis, and the 2% lift is likely due to random variation, not the feature itself.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Conclude the results are not statistically significant and the observed lift is likely due to random chance, so do not ship.",
+          "is_correct": true,
+          "rationale": "A p-value of 0.25 is far above the typical 0.05 threshold for statistical significance."
+        },
+        {
+          "key": "B",
+          "text": "Ship the feature immediately because any positive conversion lift, no matter how small, is a clear win for the business.",
+          "is_correct": false,
+          "rationale": "This is 'chasing noise' and leads to shipping features that have no real impact."
+        },
+        {
+          "key": "C",
+          "text": "Rerun the exact same experiment for a longer duration until the p-value drops below the standard 0.05 threshold.",
+          "is_correct": false,
+          "rationale": "This is a poor practice known as 'p-hacking' and invalidates the statistical results of the test."
+        },
+        {
+          "key": "D",
+          "text": "Discard the quantitative results and rely on qualitative user feedback to make the final decision about shipping the feature.",
+          "is_correct": false,
+          "rationale": "Qualitative data is valuable but should not override clear statistical evidence of no effect."
+        },
+        {
+          "key": "E",
+          "text": "Ship the feature to 50% of users permanently, as the test shows it benefits at least a portion of the user base.",
+          "is_correct": false,
+          "rationale": "The test does not show a real benefit; this would be a partial rollout based on inconclusive data."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When launching a new major version of a public API, what is the most effective strategy for managing the transition for existing clients?",
+      "explanation": "A structured deprecation policy minimizes disruption for existing clients. It provides a clear path forward with migration guides and allows time for adoption, balancing engineering needs with customer stability and preventing sudden breaking changes.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Implement a deprecation policy with a clear timeline, providing migration guides and maintaining the old version in parallel for a limited period.",
+          "is_correct": true,
+          "rationale": "This approach minimizes client disruption and provides a smooth, predictable transition path."
+        },
+        {
+          "key": "B",
+          "text": "Immediately decommission the old API version to force all clients to upgrade, which reduces long-term maintenance costs for the engineering team.",
+          "is_correct": false,
+          "rationale": "This is overly aggressive and would break client integrations, damaging trust."
+        },
+        {
+          "key": "C",
+          "text": "Offer the new API version only to new clients, while allowing existing clients to use the old version indefinitely without support.",
+          "is_correct": false,
+          "rationale": "This creates a fragmented ecosystem and increases long-term maintenance burden."
+        },
+        {
+          "key": "D",
+          "text": "Use feature flags to gradually roll out new API endpoints to a small subset of clients before a full public launch.",
+          "is_correct": false,
+          "rationale": "This is a feature rollout technique, not a strategy for managing a major version migration."
+        },
+        {
+          "key": "E",
+          "text": "Automatically re-route all traffic from the old API endpoints to the new ones without informing clients of the breaking changes.",
+          "is_correct": false,
+          "rationale": "This would cause widespread, unexpected failures for all existing API consumers."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Your team needs to introduce a breaking change to a database schema used by multiple microservices. What is the safest deployment approach?",
+      "explanation": "The expand-and-contract pattern is the safest method for evolving schemas in a distributed system. It ensures zero downtime by making changes in stages, maintaining backward compatibility throughout the process until all dependent services are updated.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Employ an expand-and-contract pattern, adding new schema elements first, migrating services, and then removing the old elements later.",
+          "is_correct": true,
+          "rationale": "This phased approach ensures zero downtime and backward compatibility during migration."
+        },
+        {
+          "key": "B",
+          "text": "Schedule a maintenance window to take the system offline, apply the schema change, and deploy all updated services simultaneously.",
+          "is_correct": false,
+          "rationale": "This approach introduces downtime, which is often unacceptable for modern applications."
+        },
+        {
+          "key": "C",
+          "text": "Create a completely new database instance with the new schema and perform a one-time bulk data migration from the old database.",
+          "is_correct": false,
+          "rationale": "This is a high-risk, complex operation that can lead to data loss or inconsistency."
+        },
+        {
+          "key": "D",
+          "text": "Push the schema change directly to production and have each microservice team fix resulting errors as they occur in real-time.",
+          "is_correct": false,
+          "rationale": "This is a chaotic and irresponsible approach that guarantees production incidents."
+        },
+        {
+          "key": "E",
+          "text": "Use a database abstraction layer that automatically translates old queries to the new schema without requiring service code changes.",
+          "is_correct": false,
+          "rationale": "This is often not feasible for significant breaking changes and adds complexity."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "How should a Technical Product Manager best advocate for prioritizing technical debt against pressure to deliver new, revenue-generating features?",
+      "explanation": "Stakeholders respond to business impact. By translating technical debt into concrete risks like slower feature delivery, higher bug counts, or system instability, a TPM can make a compelling case that aligns engineering needs with business goals.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Frame the technical debt work in terms of business impact, such as reduced development velocity, increased bug rates, or future scalability risks.",
+          "is_correct": true,
+          "rationale": "This connects technical issues to business outcomes, which is essential for stakeholder buy-in."
+        },
+        {
+          "key": "B",
+          "text": "Insist that a fixed percentage of every sprint, like 20%, must be allocated exclusively to technical debt tasks, regardless of other priorities.",
+          "is_correct": false,
+          "rationale": "This approach can be too rigid and may not address the most impactful debt first."
+        },
+        {
+          "key": "C",
+          "text": "Only prioritize technical debt when a critical production outage occurs, using the incident as justification for the necessary engineering work.",
+          "is_correct": false,
+          "rationale": "This is a reactive and dangerous strategy that waits for failure to happen."
+        },
+        {
+          "key": "D",
+          "text": "Create a separate backlog for technical debt that is only worked on by a dedicated sub-team when they have available capacity.",
+          "is_correct": false,
+          "rationale": "This can devalue the work and lead to it being perpetually ignored."
+        },
+        {
+          "key": "E",
+          "text": "Argue that engineers should address technical debt in their own time outside of planned sprint work to avoid impacting feature velocity.",
+          "is_correct": false,
+          "rationale": "This is unrealistic, promotes burnout, and hides the true cost of development."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "When designing a system for frequently accessed but rarely updated data, which caching strategy provides the best performance with minimal complexity?",
+      "explanation": "Cache-aside is a standard, effective pattern for read-heavy workloads. The application logic explicitly controls cache interaction, which is simple to implement and avoids the complexities and potential data consistency issues of write-through or write-back strategies.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A cache-aside (lazy loading) strategy where the application checks the cache first and loads from the database only on a cache miss.",
+          "is_correct": true,
+          "rationale": "This is a simple, common, and effective pattern for read-heavy systems."
+        },
+        {
+          "key": "B",
+          "text": "A write-through caching strategy where data is written to both the cache and the database simultaneously for maximum data consistency.",
+          "is_correct": false,
+          "rationale": "This adds latency to writes and is overly complex for rarely updated data."
+        },
+        {
+          "key": "C",
+          "text": "A write-back strategy where data is written to the cache first and then asynchronously to the database, which risks data loss.",
+          "is_correct": false,
+          "rationale": "This is complex and risky, making it unsuitable unless write performance is critical."
+        },
+        {
+          "key": "D",
+          "text": "A refresh-ahead strategy that pre-emptively reloads cached items before they expire, which adds significant implementation complexity for minimal gain here.",
+          "is_correct": false,
+          "rationale": "This is overly complex for this use case and better for predictable access patterns."
+        },
+        {
+          "key": "E",
+          "text": "Avoiding a cache entirely and relying on database query optimization and indexing to ensure acceptable performance for all read operations.",
+          "is_correct": false,
+          "rationale": "This approach often fails to scale for frequently accessed data, leading to performance bottlenecks."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "What is the most critical technical consideration when evaluating a third-party service for integration into your product's core workflow?",
+      "explanation": "For a core workflow integration, your product's stability becomes dependent on the third-party service. Therefore, the API's reliability, performance, and documentation are paramount, as any failure in these areas will directly translate into failures in your own product.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The quality and reliability of its API, including documentation, rate limits, error handling, and uptime SLAs, as this directly impacts your product's stability.",
+          "is_correct": true,
+          "rationale": "A poor API makes the integration unreliable, directly impacting your product's performance."
+        },
+        {
+          "key": "B",
+          "text": "The total cost of the service's licensing fees, as this will have the most significant and direct impact on the product's profit margin.",
+          "is_correct": false,
+          "rationale": "Cost is important, but technical reliability is more critical for a core workflow."
+        },
+        {
+          "key": "C",
+          "text": "The visual design and user interface of the third-party service's administrative console, as this affects your internal team's operational efficiency.",
+          "is_correct": false,
+          "rationale": "This is a secondary concern compared to the API's direct impact on the product."
+        },
+        {
+          "key": "D",
+          "text": "The number of other well-known companies that are currently using the same third-party service for their own products.",
+          "is_correct": false,
+          "rationale": "Social proof is not a substitute for rigorous technical due diligence."
+        },
+        {
+          "key": "E",
+          "text": "The programming language the third-party service is built with, to ensure it matches your own company's primary technology stack.",
+          "is_correct": false,
+          "rationale": "A well-designed API is language-agnostic; the underlying tech stack is irrelevant."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "When planning a major, backward-incompatible update to a public API, what is the most effective versioning strategy to minimize disruption for existing clients?",
+      "explanation": "URI path versioning is a clear, explicit method for managing major, backward-incompatible API changes. It allows clients to migrate at their own pace during a defined deprecation window, preventing service disruptions.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Update the API in place and publish detailed migration guides, forcing all clients to upgrade their systems immediately.",
+          "is_correct": false,
+          "rationale": "This approach is highly disruptive and can break client integrations without warning, leading to poor developer experience."
+        },
+        {
+          "key": "B",
+          "text": "Introduce the new functionality using a new URI path, such as `/v2/`, and maintain the old version for a defined deprecation period.",
+          "is_correct": true,
+          "rationale": "This is a standard, clear method that allows clients to opt-in to the new version while the old one remains stable."
+        },
+        {
+          "key": "C",
+          "text": "Add optional parameters to existing endpoints to support the new features, keeping the same version number to avoid confusion.",
+          "is_correct": false,
+          "rationale": "This is not suitable for backward-incompatible changes, as it can bloat endpoints and lead to confusing logic."
+        },
+        {
+          "key": "D",
+          "text": "Use custom request headers to allow clients to specify which version of the API they want to interact with for each call.",
+          "is_correct": false,
+          "rationale": "While a valid strategy, it is less explicit than URI path versioning and can be harder for clients to discover and debug."
+        },
+        {
+          "key": "E",
+          "text": "Automatically migrate all client integrations to the new API version overnight without notifying them to ensure a seamless transition.",
+          "is_correct": false,
+          "rationale": "This would cause widespread, unexpected breakages for all clients and is considered extremely poor practice for API management."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "How should a Technical Product Manager best advocate for prioritizing work on technical debt against pressure for new revenue-generating features?",
+      "explanation": "The most effective way to gain buy-in for addressing technical debt is to translate its impact into business terms. This helps stakeholders understand the long-term costs of ignoring it, such as slower feature delivery or increased operational risk.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Insist that all new feature development must be halted until the entire technical debt backlog is completely cleared by the team.",
+          "is_correct": false,
+          "rationale": "This is an unrealistic and business-unfriendly approach that ignores the need for continuous value delivery to customers."
+        },
+        {
+          "key": "B",
+          "text": "Frame the technical debt work in terms of business impact, such as reduced development velocity, higher bug rates, or system instability risks.",
+          "is_correct": true,
+          "rationale": "This connects technical problems to business outcomes, which helps stakeholders understand the value of the investment."
+        },
+        {
+          "key": "C",
+          "text": "Leave the decision entirely to the engineering team, as they are the ones who best understand the codebase and its issues.",
+          "is_correct": false,
+          "rationale": "The PM must be involved in all prioritization decisions to ensure alignment with the overall product strategy and business goals."
+        },
+        {
+          "key": "D",
+          "text": "Only prioritize technical debt when a major system outage occurs, using the incident as justification for the necessary work.",
+          "is_correct": false,
+          "rationale": "This is a reactive, high-risk strategy that waits for failure instead of proactively maintaining system health and stability."
+        },
+        {
+          "key": "E",
+          "text": "Create a separate, isolated team that works exclusively on technical debt without interfering with the feature development roadmap.",
+          "is_correct": false,
+          "rationale": "This can create silos and misaligned priorities, as tech debt is often best addressed within the context of feature work."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "When designing a new feature that processes user data for an EU audience, what is the most critical GDPR principle to incorporate early?",
+      "explanation": "Data minimization is a fundamental principle of GDPR (Article 5(1)(c)). Integrating it early ensures the product design is privacy-centric from the start, reducing compliance risks and building user trust by collecting only essential information.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Data minimization, ensuring that only data strictly necessary for the feature's specific purpose is collected and processed from the user.",
+          "is_correct": true,
+          "rationale": "This is a core, foundational GDPR principle that should guide all data processing design decisions from the very beginning."
+        },
+        {
+          "key": "B",
+          "text": "Data portability, allowing users to download all their data in a machine-readable format at any time they choose.",
+          "is_correct": false,
+          "rationale": "While an important user right under GDPR, it is a functional requirement that follows the decision of what data to collect."
+        },
+        {
+          "key": "C",
+          "text": "Data monetization, which involves creating a strategy to sell aggregated, anonymized user data to third-party advertisers for revenue.",
+          "is_correct": false,
+          "rationale": "This is not a GDPR principle and often runs contrary to privacy-by-design, requiring careful legal and ethical consideration."
+        },
+        {
+          "key": "D",
+          "text": "Data retention for an indefinite period, ensuring that no user information is ever lost or deleted from the system.",
+          "is_correct": false,
+          "rationale": "This directly violates the GDPR principle of storage limitation, which requires data to be deleted when no longer necessary."
+        },
+        {
+          "key": "E",
+          "text": "Data encryption at rest only, as data in transit is generally considered secure by modern network protocols.",
+          "is_correct": false,
+          "rationale": "GDPR's security principle requires appropriate measures, which typically includes strong encryption for data both at rest and in transit."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "Your team is evaluating a third-party service for a critical function. What technical factor is most important to investigate before committing to integration?",
+      "explanation": "When integrating a critical third-party service, its reliability, performance (SLAs), and security posture are paramount. A failure in the third-party service can directly impact your own product's availability and trustworthiness, making these technical factors essential to vet.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The aesthetic design and user interface of the third-party service's marketing website and promotional materials.",
+          "is_correct": false,
+          "rationale": "Marketing materials are superficial and have no bearing on the technical performance or reliability of the underlying service API."
+        },
+        {
+          "key": "B",
+          "text": "The service's documented API reliability, rate limits, latency SLAs, and clear data security and compliance certifications.",
+          "is_correct": true,
+          "rationale": "These factors directly impact your product's performance, availability, and security, making them critical for due diligence."
+        },
+        {
+          "key": "C",
+          "text": "The number of followers the third-party company has on its social media accounts like Twitter and LinkedIn.",
+          "is_correct": false,
+          "rationale": "Social media popularity is a vanity metric that does not correlate with the technical quality or support of a service."
+        },
+        {
+          "key": "D",
+          "text": "Whether the service is built using the exact same programming language and framework as your team's existing technology stack.",
+          "is_correct": false,
+          "rationale": "The underlying technology is irrelevant for an API-based integration; only the interface contract and performance matter."
+        },
+        {
+          "key": "E",
+          "text": "The availability of a free tier that allows for unlimited, permanent usage without any cost to your company.",
+          "is_correct": false,
+          "rationale": "A free tier does not guarantee production-level reliability, support, or SLAs, which are essential for a critical function."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "You want to A/B test a new backend recommendation algorithm. What is the most effective way to structure this experiment for valid results?",
+      "explanation": "Randomly assigning users to control and variant groups is the cornerstone of valid A/B testing. Sticky assignment ensures a consistent user experience and prevents contamination of results, allowing for an unbiased comparison of the algorithms' performance.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Deploy the new algorithm to all users in a specific geographic region and compare their metrics to users in another region.",
+          "is_correct": false,
+          "rationale": "This introduces significant geographic and demographic bias, making it impossible to attribute changes solely to the algorithm."
+        },
+        {
+          "key": "B",
+          "text": "Randomly assign users to either the control (old algorithm) or variant (new algorithm) group, ensuring the assignment is sticky.",
+          "is_correct": true,
+          "rationale": "This is the gold standard for A/B testing, as it minimizes bias and ensures a valid comparison between the two groups."
+        },
+        {
+          "key": "C",
+          "text": "Run the old algorithm during the day and switch to the new algorithm at night to compare the performance between them.",
+          "is_correct": false,
+          "rationale": "This introduces time-of-day bias, as user behavior often differs significantly between daytime and nighttime hours."
+        },
+        {
+          "key": "D",
+          "text": "Ask users to voluntarily opt-in to try the new algorithm and then compare their behavior to those who did not.",
+          "is_correct": false,
+          "rationale": "This introduces self-selection bias, as users who opt-in are likely different from the general user population."
+        },
+        {
+          "key": "E",
+          "text": "Release the new algorithm to all new users who sign up, while keeping the old algorithm for all existing users.",
+          "is_correct": false,
+          "rationale": "This introduces bias, as the behavior of new users is often fundamentally different from that of tenured, existing users."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "What is the fundamental accounting equation that forms the basis of all financial reporting activities?",
+      "explanation": "The accounting equation (Assets = Liabilities + Owner's Equity) is the bedrock of the double-entry accounting system. It must always balance, reflecting the company's financial position at any given time.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Assets equal the sum of Liabilities and Owner's Equity, representing the company's financial position accurately.",
+          "is_correct": true,
+          "rationale": "This equation is the foundation of the balance sheet and double-entry accounting."
+        },
+        {
+          "key": "B",
+          "text": "Revenue minus Expenses equals Net Income, which indicates the profitability of business operations over a period.",
+          "is_correct": false,
+          "rationale": "This describes the income statement equation, not the fundamental accounting equation."
+        },
+        {
+          "key": "C",
+          "text": "Cash flow from operating activities plus investing and financing activities equals net change in cash.",
+          "is_correct": false,
+          "rationale": "This describes the statement of cash flows, which tracks cash movements."
+        },
+        {
+          "key": "D",
+          "text": "Current assets divided by current liabilities provides a measure of short-term liquidity, showing the ability to meet obligations.",
+          "is_correct": false,
+          "rationale": "This is the current ratio, which is a liquidity metric, not the core equation."
+        },
+        {
+          "key": "E",
+          "text": "Gross profit minus operating expenses results in operating income, reflecting core business performance before taxes.",
+          "is_correct": false,
+          "rationale": "This is part of the income statement calculation for operating performance."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What is the primary purpose of a balance sheet in providing a company's financial information?",
+      "explanation": "The balance sheet provides a snapshot of a company's financial position at a specific point in time. It lists assets, liabilities, and equity, showing what the company owns and owes.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It summarizes the company's revenues, expenses, and net income over a specific accounting period, showing profitability.",
+          "is_correct": false,
+          "rationale": "This describes the income statement, which measures performance over a period."
+        },
+        {
+          "key": "B",
+          "text": "It details the cash inflows and outflows from operating, investing, and financing activities during a period.",
+          "is_correct": false,
+          "rationale": "This describes the statement of cash flows, not the balance sheet."
+        },
+        {
+          "key": "C",
+          "text": "It presents a snapshot of the company's assets, liabilities, and owner's equity at a specific point in time.",
+          "is_correct": true,
+          "rationale": "The balance sheet provides a financial snapshot of assets, liabilities, and equity."
+        },
+        {
+          "key": "D",
+          "text": "It projects future financial performance and cash flow, aiding in strategic planning and budgeting decisions for management.",
+          "is_correct": false,
+          "rationale": "Financial projections and forecasts are separate from the historical balance sheet."
+        },
+        {
+          "key": "E",
+          "text": "It tracks the changes in owner's equity over a period, including investments, withdrawals, and net income.",
+          "is_correct": false,
+          "rationale": "This describes the statement of owner's equity, a different financial report."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "In double-entry accounting, what is the general effect of a debit entry on asset and expense accounts?",
+      "explanation": "Debits increase asset and expense accounts, while credits decrease them. Conversely, debits decrease liability, equity, and revenue accounts, while credits increase them. This ensures the accounting equation remains balanced.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A debit entry increases the balance of asset accounts and also increases the balance of expense accounts.",
+          "is_correct": true,
+          "rationale": "Debits increase assets and expenses, which are on the left side of the equation."
+        },
+        {
+          "key": "B",
+          "text": "A debit entry decreases the balance of asset accounts and increases the balance of liability accounts.",
+          "is_correct": false,
+          "rationale": "This is incorrect; debits increase assets and decrease liabilities, not the other way around."
+        },
+        {
+          "key": "C",
+          "text": "A debit entry increases the balance of revenue accounts and decreases the balance of equity accounts.",
+          "is_correct": false,
+          "rationale": "This is incorrect because debits decrease revenue and equity accounts, not increase them."
+        },
+        {
+          "key": "D",
+          "text": "A debit entry decreases the balance of expense accounts and increases the balance of owner's equity.",
+          "is_correct": false,
+          "rationale": "This is incorrect as debits increase expenses and decrease equity accounts."
+        },
+        {
+          "key": "E",
+          "text": "A debit entry has no direct effect on asset accounts but significantly increases the balance of revenue accounts.",
+          "is_correct": false,
+          "rationale": "This is incorrect because debits directly affect assets and decrease revenue accounts."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Which of the following best describes Accounts Payable on a company's balance sheet?",
+      "explanation": "Accounts Payable represents the money a company owes to its suppliers for goods or services purchased on credit. It is a current liability because these obligations are typically due within one year.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Money owed to the company by its customers for goods or services already delivered on credit terms.",
+          "is_correct": false,
+          "rationale": "This describes Accounts Receivable, which is an asset, not Accounts Payable."
+        },
+        {
+          "key": "B",
+          "text": "Payments received in advance from customers for goods or services that have not yet been provided.",
+          "is_correct": false,
+          "rationale": "This describes Unearned Revenue, which is a liability but distinct from Accounts Payable."
+        },
+        {
+          "key": "C",
+          "text": "Short-term obligations a company owes to its suppliers for purchases made on credit, usually due soon.",
+          "is_correct": true,
+          "rationale": "Accounts Payable are short-term debts owed to suppliers for credit purchases."
+        },
+        {
+          "key": "D",
+          "text": "The total amount of cash and cash equivalents readily available for immediate use in business operations.",
+          "is_correct": false,
+          "rationale": "This describes Cash and Cash Equivalents, which is an asset account."
+        },
+        {
+          "key": "E",
+          "text": "Long-term debts or borrowings that the company expects to repay over a period exceeding one year.",
+          "is_correct": false,
+          "rationale": "This describes long-term debt, which has a longer repayment period than Accounts Payable."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What is the primary objective of performing a bank reconciliation process regularly?",
+      "explanation": "Bank reconciliation ensures that the cash balance in the company's accounting records matches the balance reported by the bank. This process helps identify discrepancies, errors, or unrecorded transactions, maintaining accurate cash management.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To determine the company's overall profitability by comparing total revenues with all incurred expenses for a period.",
+          "is_correct": false,
+          "rationale": "Profitability is assessed via the income statement, not a bank reconciliation."
+        },
+        {
+          "key": "B",
+          "text": "To prepare the annual financial statements for submission to regulatory bodies and external auditors for review.",
+          "is_correct": false,
+          "rationale": "This is a broader accounting task; reconciliation is just one step in ensuring accuracy."
+        },
+        {
+          "key": "C",
+          "text": "To match the cash balance in the company's books with the balance shown on the bank statement.",
+          "is_correct": true,
+          "rationale": "Bank reconciliation aims to align internal and bank cash records for accuracy."
+        },
+        {
+          "key": "D",
+          "text": "To calculate the exact amount of income tax owed to the government based on the company's earnings.",
+          "is_correct": false,
+          "rationale": "Tax calculation is a separate process from bank reconciliation and uses different data."
+        },
+        {
+          "key": "E",
+          "text": "To forecast future cash inflows and outflows, assisting in the development of an effective operating budget.",
+          "is_correct": false,
+          "rationale": "Forecasting is part of budgeting, not the historical process of bank reconciliation."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Which fundamental accounting equation correctly represents the relationship between a company's financial components?",
+      "explanation": "The accounting equation, Assets = Liabilities + Equity, is the foundation of the balance sheet. It ensures that all assets are financed by either debt (liabilities) or owner's contributions (equity), maintaining financial equilibrium.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Assets are always equal to the sum of liabilities and owner's equity, reflecting the company's financial position.",
+          "is_correct": true,
+          "rationale": "This equation is the fundamental principle of double-entry accounting and the balance sheet."
+        },
+        {
+          "key": "B",
+          "text": "Revenue minus expenses equals net income, showing profitability over a specific period of time for the business.",
+          "is_correct": false,
+          "rationale": "This describes the income statement, not the fundamental accounting equation."
+        },
+        {
+          "key": "C",
+          "text": "Cash flow from operations plus investing and financing activities determines the net change in cash.",
+          "is_correct": false,
+          "rationale": "This describes the statement of cash flows, not the accounting equation."
+        },
+        {
+          "key": "D",
+          "text": "Total debits must always equal total credits in every journal entry, maintaining the accounting balance.",
+          "is_correct": false,
+          "rationale": "This describes the mechanism of the double-entry system, not the core equation itself."
+        },
+        {
+          "key": "E",
+          "text": "Current assets divided by current liabilities measures a company's short-term liquidity, indicating its solvency.",
+          "is_correct": false,
+          "rationale": "This describes a liquidity ratio used for analysis, not the fundamental equation."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "What is the primary purpose of preparing a balance sheet for a financial organization?",
+      "explanation": "The balance sheet offers a static view of a company's financial health at a precise moment. It lists what the company owns (assets), what it owes (liabilities), and the owner's stake (equity).",
+      "options": [
+        {
+          "key": "A",
+          "text": "It summarizes a company's revenues, expenses, and net income over a specific accounting period to show profit.",
+          "is_correct": false,
+          "rationale": "This describes the income statement, which shows performance over a period."
+        },
+        {
+          "key": "B",
+          "text": "It presents a snapshot of the company's assets, liabilities, and owner's equity at a specific point in time.",
+          "is_correct": true,
+          "rationale": "The balance sheet shows financial position at a specific point in time."
+        },
+        {
+          "key": "C",
+          "text": "It details the cash inflows and outflows from operating, investing, and financing activities for a period.",
+          "is_correct": false,
+          "rationale": "This describes the statement of cash flows, not the balance sheet."
+        },
+        {
+          "key": "D",
+          "text": "It provides information about changes in owner's equity, including investments and withdrawals, over time.",
+          "is_correct": false,
+          "rationale": "This describes the statement of owner's equity, not the balance sheet."
+        },
+        {
+          "key": "E",
+          "text": "It helps in calculating the gross profit margin by comparing sales revenue with the cost of goods sold.",
+          "is_correct": false,
+          "rationale": "This is an income statement calculation, not the balance sheet's primary purpose."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Which of the following best describes an asset in the context of financial accounting principles?",
+      "explanation": "Assets are valuable resources owned or controlled by a company that are expected to provide future economic benefits. These can be current (e.g., cash, inventory) or non-current (e.g., property, equipment).",
+      "options": [
+        {
+          "key": "A",
+          "text": "An asset represents an economic resource controlled by the company, expected to provide future economic benefits.",
+          "is_correct": true,
+          "rationale": "Assets are resources that are controlled and provide future economic benefits to the company."
+        },
+        {
+          "key": "B",
+          "text": "It is an obligation of the company to transfer economic benefits to other entities in the future.",
+          "is_correct": false,
+          "rationale": "This describes a liability, which is an obligation, not an asset."
+        },
+        {
+          "key": "C",
+          "text": "It refers to the residual interest in the assets of the entity after deducting all of its liabilities.",
+          "is_correct": false,
+          "rationale": "This describes owner's equity, which is the residual interest, not an asset."
+        },
+        {
+          "key": "D",
+          "text": "It is the total amount of money earned by a company from its primary operations during a period.",
+          "is_correct": false,
+          "rationale": "This describes revenue, which is income earned, not an asset."
+        },
+        {
+          "key": "E",
+          "text": "It signifies the costs incurred by a business in its efforts to generate revenue over an accounting period.",
+          "is_correct": false,
+          "rationale": "This describes an expense, which is a cost incurred, not an asset."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "In accounting, what does the term 'liability' primarily refer to for a business entity?",
+      "explanation": "A liability is an obligation to an outside party that must be settled in the future by transferring economic benefits. Examples include accounts payable, loans, and unearned revenue.",
+      "options": [
+        {
+          "key": "A",
+          "text": "An asset represents an economic resource controlled by the company, expected to provide future economic benefits.",
+          "is_correct": false,
+          "rationale": "This describes an asset, which is a resource, not a liability."
+        },
+        {
+          "key": "B",
+          "text": "It is a present obligation of the company arising from past events, requiring an outflow of resources.",
+          "is_correct": true,
+          "rationale": "Liabilities are present obligations requiring a future outflow of economic benefits."
+        },
+        {
+          "key": "C",
+          "text": "It refers to the residual interest in the assets of the entity after deducting all of its liabilities.",
+          "is_correct": false,
+          "rationale": "This describes owner's equity, which is the residual interest, not a liability."
+        },
+        {
+          "key": "D",
+          "text": "It is the total amount of money earned by a company from its primary operations during a period.",
+          "is_correct": false,
+          "rationale": "This describes revenue, which is income earned, not a liability."
+        },
+        {
+          "key": "E",
+          "text": "It signifies the costs incurred by a business in its efforts to generate revenue over an accounting period.",
+          "is_correct": false,
+          "rationale": "This describes an expense, which is a cost incurred, not a liability."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "What is the fundamental role of debits and credits in the double-entry accounting system?",
+      "explanation": "Debits and credits are the core of double-entry accounting. Every transaction affects at least two accounts, with total debits always equaling total credits, thereby maintaining the balance of the accounting equation.",
+      "options": [
+        {
+          "key": "A",
+          "text": "They are used to record increases and decreases in specific accounts, ensuring the accounting equation remains balanced.",
+          "is_correct": true,
+          "rationale": "Debits and credits balance the accounting equation for every single transaction."
+        },
+        {
+          "key": "B",
+          "text": "They primarily track the flow of cash within a business, distinguishing between operating and investing activities.",
+          "is_correct": false,
+          "rationale": "This is related to the cash flow statement, not the primary role of debits/credits."
+        },
+        {
+          "key": "C",
+          "text": "They help in calculating the net profit or loss by comparing total revenues with total expenses for a period.",
+          "is_correct": false,
+          "rationale": "This is related to the income statement, not the primary role of debits/credits."
+        },
+        {
+          "key": "D",
+          "text": "They indicate the market value of a company's shares and its overall financial performance to investors.",
+          "is_correct": false,
+          "rationale": "This is related to market analysis, not the primary role of debits/credits."
+        },
+        {
+          "key": "E",
+          "text": "They categorize financial transactions into current and non-current items for reporting on the balance sheet.",
+          "is_correct": false,
+          "rationale": "This is related to classification, not the primary role of debits/credits."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "What does the fundamental accounting equation represent regarding a company's financial position at a specific point in time?",
+      "explanation": "The accounting equation, Assets = Liabilities + Equity, is the foundation of double-entry bookkeeping. It shows how all company resources are financed, either by debt or owner investment, maintaining balance.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It illustrates that a company's total assets are always equal to the sum of its liabilities and owner's equity.",
+          "is_correct": true,
+          "rationale": "This equation is the core of the balance sheet and must always balance."
+        },
+        {
+          "key": "B",
+          "text": "It shows the total revenue generated minus all expenses incurred over a specific accounting period for the business.",
+          "is_correct": false,
+          "rationale": "This describes the income statement, not the fundamental accounting equation."
+        },
+        {
+          "key": "C",
+          "text": "It calculates the net cash flow from operating, investing, and financing activities for the entire year.",
+          "is_correct": false,
+          "rationale": "This describes the statement of cash flows, not the accounting equation."
+        },
+        {
+          "key": "D",
+          "text": "It determines the market value of all outstanding shares multiplied by the current stock price of the company.",
+          "is_correct": false,
+          "rationale": "This describes market capitalization, not the accounting equation."
+        },
+        {
+          "key": "E",
+          "text": "It balances the total amount of money owed by customers against the total money owed to suppliers.",
+          "is_correct": false,
+          "rationale": "This relates to specific ledger accounts, not the fundamental equation."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "In double-entry accounting, what is the effect of a debit entry on an asset account and a liability account?",
+      "explanation": "Debits increase asset and expense accounts, while decreasing liability, equity, and revenue accounts. Credits have the opposite effect, ensuring the accounting equation always remains in balance after every transaction.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A debit increases an asset account balance and decreases a liability account balance, maintaining the overall balance.",
+          "is_correct": true,
+          "rationale": "This is the fundamental rule for debits and credits on assets and liabilities."
+        },
+        {
+          "key": "B",
+          "text": "A debit decreases an asset account balance and also decreases a liability account balance simultaneously in the ledger.",
+          "is_correct": false,
+          "rationale": "This is incorrect; debits increase assets, they do not decrease them."
+        },
+        {
+          "key": "C",
+          "text": "A debit increases an asset account balance and simultaneously increases a liability account balance in the books.",
+          "is_correct": false,
+          "rationale": "This is incorrect; debits decrease liabilities, they do not increase them."
+        },
+        {
+          "key": "D",
+          "text": "A debit decreases an asset account balance but increases a liability account balance for proper recording.",
+          "is_correct": false,
+          "rationale": "This is incorrect; debits increase assets and decrease liabilities."
+        },
+        {
+          "key": "E",
+          "text": "A debit has no effect on an asset account but increases a liability account balance significantly.",
+          "is_correct": false,
+          "rationale": "This is incorrect; debits always affect asset accounts by increasing them."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "What is the primary function of a general ledger within an accounting system for recording financial transactions?",
+      "explanation": "The general ledger is the main record-keeping system for a company's financial data. It provides a complete record of all financial transactions over the life of the company, organized by account.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It serves as a comprehensive record of all financial transactions, organized by account, providing balances for financial statements.",
+          "is_correct": true,
+          "rationale": "The general ledger aggregates all transactions by account to provide final balances."
+        },
+        {
+          "key": "B",
+          "text": "It is used solely for tracking customer invoices and ensuring timely collection of accounts receivable amounts.",
+          "is_correct": false,
+          "rationale": "This describes an accounts receivable subsidiary ledger, not the general ledger."
+        },
+        {
+          "key": "C",
+          "text": "It compiles all payroll information for employees, including wages, deductions, and tax withholdings accurately.",
+          "is_correct": false,
+          "rationale": "This describes a payroll system or payroll ledger, not the general ledger."
+        },
+        {
+          "key": "D",
+          "text": "It manages inventory levels, tracks goods movement, and calculates the cost of goods sold efficiently.",
+          "is_correct": false,
+          "rationale": "This describes an inventory management system, not the general ledger."
+        },
+        {
+          "key": "E",
+          "text": "It provides a detailed breakdown of all fixed assets, their depreciation schedules, and current book values.",
+          "is_correct": false,
+          "rationale": "This describes a fixed asset register or subsidiary ledger, not the general ledger."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Why is performing a bank reconciliation a crucial monthly task for an accountant in a financial department?",
+      "explanation": "Bank reconciliation helps detect errors, omissions, or fraud by comparing the company's cash records with the bank's records. This process ensures accurate cash reporting and internal control over cash.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It identifies and explains differences between the cash balance in the company's books and the bank statement balance.",
+          "is_correct": true,
+          "rationale": "This is the primary goal of bank reconciliation: to align two sets of records."
+        },
+        {
+          "key": "B",
+          "text": "It calculates the total amount of outstanding checks that have not yet cleared the bank account.",
+          "is_correct": false,
+          "rationale": "This is a step within the reconciliation process, not its sole purpose."
+        },
+        {
+          "key": "C",
+          "text": "It ensures that all customer payments are deposited into the correct bank account without any discrepancies.",
+          "is_correct": false,
+          "rationale": "This is part of cash management, not the main purpose of reconciliation."
+        },
+        {
+          "key": "D",
+          "text": "It prepares the company's annual tax returns by reconciling all income and expense items for the year.",
+          "is_correct": false,
+          "rationale": "This is a tax preparation activity, distinct from bank reconciliation."
+        },
+        {
+          "key": "E",
+          "text": "It verifies the accuracy of all credit card transactions processed by the company during the previous month.",
+          "is_correct": false,
+          "rationale": "This describes credit card reconciliation, which is a different process."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "According to the revenue recognition principle, when should revenue generally be recognized in a company's financial statements?",
+      "explanation": "The revenue recognition principle dictates that revenue is recognized when goods or services are delivered and the earning process is substantially complete, regardless of when cash is actually received.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Revenue should be recognized when it is earned and realized or realizable, regardless of when cash is received.",
+          "is_correct": true,
+          "rationale": "This aligns with the accrual basis of accounting and the core principle."
+        },
+        {
+          "key": "B",
+          "text": "Revenue is recognized only when the cash payment from the customer has been physically received by the company.",
+          "is_correct": false,
+          "rationale": "This describes the cash basis of accounting, not the accrual-based revenue recognition principle."
+        },
+        {
+          "key": "C",
+          "text": "Revenue is recognized at the beginning of the accounting period when the sales order is initially placed.",
+          "is_correct": false,
+          "rationale": "This is too early; the revenue has not been earned at this point."
+        },
+        {
+          "key": "D",
+          "text": "Revenue should be recognized when the goods are manufactured, even if they have not yet been delivered.",
+          "is_correct": false,
+          "rationale": "This is too early; transfer of control to the customer has not occurred."
+        },
+        {
+          "key": "E",
+          "text": "Revenue can be recognized only after all related expenses for that specific sale have been fully paid.",
+          "is_correct": false,
+          "rationale": "This incorrectly confuses revenue recognition with the matching principle for expenses."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "Which of the following statements accurately describes the fundamental accounting equation, a core principle in financial reporting?",
+      "explanation": "The accounting equation, Assets = Liabilities + Equity, is the foundation of the double-entry accounting system. It demonstrates that all assets are financed by either debt (liabilities) or owner's contributions (equity).",
+      "options": [
+        {
+          "key": "A",
+          "text": "Assets are always equal to the sum of liabilities and owner's equity, representing the company's financial position.",
+          "is_correct": true,
+          "rationale": "This correctly defines the fundamental accounting equation, which is the basis of the balance sheet."
+        },
+        {
+          "key": "B",
+          "text": "Revenue must always exceed expenses to ensure the business generates a positive net income for the period.",
+          "is_correct": false,
+          "rationale": "This describes profitability, which is a goal, not the fundamental accounting equation."
+        },
+        {
+          "key": "C",
+          "text": "Cash inflows should consistently be greater than cash outflows to maintain liquidity and operational solvency.",
+          "is_correct": false,
+          "rationale": "This relates to cash flow management, not the core accounting equation."
+        },
+        {
+          "key": "D",
+          "text": "The total of all debits must always equal the total of all credits in the general ledger accounts.",
+          "is_correct": false,
+          "rationale": "This describes the mechanism of double-entry bookkeeping, not the accounting equation itself."
+        },
+        {
+          "key": "E",
+          "text": "Net income is calculated by subtracting all operating expenses from the total sales revenue generated.",
+          "is_correct": false,
+          "rationale": "This describes an income statement calculation, not the fundamental accounting equation."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "What is the primary purpose of preparing a trial balance at the end of an accounting period for a business?",
+      "explanation": "A trial balance lists all ledger accounts and their balances to ensure that the total debits equal the total credits. This verifies the mathematical accuracy of the entries before financial statements are prepared.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It ensures that the total debits equal the total credits, verifying the mathematical accuracy of the ledger accounts.",
+          "is_correct": true,
+          "rationale": "The trial balance checks the mathematical equality of debits and credits."
+        },
+        {
+          "key": "B",
+          "text": "It summarizes all cash inflows and outflows to determine the net change in cash for the period.",
+          "is_correct": false,
+          "rationale": "This describes the Statement of Cash Flows, not the trial balance."
+        },
+        {
+          "key": "C",
+          "text": "It presents a comprehensive overview of the company's assets, liabilities, and owner's equity at a specific point.",
+          "is_correct": false,
+          "rationale": "This describes the Balance Sheet, not the trial balance."
+        },
+        {
+          "key": "D",
+          "text": "It calculates the net income or loss by matching revenues with expenses over a specific accounting period.",
+          "is_correct": false,
+          "rationale": "This describes the Income Statement, not the trial balance."
+        },
+        {
+          "key": "E",
+          "text": "It provides detailed information about changes in owner's equity, including investments and withdrawals during the period.",
+          "is_correct": false,
+          "rationale": "This describes the Statement of Owner's Equity, not the trial balance."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "In accounting, what does the term 'Accounts Payable' primarily refer to for a business operating in the finance sector?",
+      "explanation": "Accounts Payable represents the short-term liabilities a company owes to its suppliers for goods or services purchased on credit. These are typically due within a year and are a key current liability.",
+      "options": [
+        {
+          "key": "A",
+          "text": "These are short-term liabilities representing amounts owed by the company to its suppliers for goods or services purchased on credit.",
+          "is_correct": true,
+          "rationale": "Accounts Payable are amounts owed to suppliers for credit purchases."
+        },
+        {
+          "key": "B",
+          "text": "These are amounts of money owed to the company by its customers for goods or services already delivered.",
+          "is_correct": false,
+          "rationale": "This describes Accounts Receivable, which is an asset, not a liability."
+        },
+        {
+          "key": "C",
+          "text": "These are long-term debts, such as bank loans or bonds, that the company needs to repay over several years.",
+          "is_correct": false,
+          "rationale": "This describes long-term debt, not the short-term nature of Accounts Payable."
+        },
+        {
+          "key": "D",
+          "text": "This refers to the cash available in the company's bank accounts for immediate operational expenses.",
+          "is_correct": false,
+          "rationale": "This describes Cash or Cash Equivalents, which is a current asset."
+        },
+        {
+          "key": "E",
+          "text": "This represents the total value of inventory that the company currently holds for future sale to customers.",
+          "is_correct": false,
+          "rationale": "This describes Inventory, which is an asset, not a liability."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "How does an increase in a company's sales revenue typically impact its financial statements, assuming all other factors remain constant?",
+      "explanation": "An increase in sales revenue directly boosts a company's gross profit and, subsequently, its net income on the income statement. This positive change also increases owner's equity on the balance sheet.",
+      "options": [
+        {
+          "key": "A",
+          "text": "An increase in sales revenue generally leads to higher net income, improving profitability and owner's equity.",
+          "is_correct": true,
+          "rationale": "Higher revenue increases net income, which in turn increases owner's equity."
+        },
+        {
+          "key": "B",
+          "text": "It primarily increases the company's liabilities, as more goods are purchased on credit to support the sales.",
+          "is_correct": false,
+          "rationale": "Increased sales primarily boost assets and equity, not liabilities, as the main effect."
+        },
+        {
+          "key": "C",
+          "text": "It causes a decrease in the company's total assets, as inventory is sold off to generate the revenue.",
+          "is_correct": false,
+          "rationale": "While inventory decreases, cash or receivables increase, usually leading to higher total assets."
+        },
+        {
+          "key": "D",
+          "text": "It reduces the overall cash flow from operating activities due to increased production costs and expenses.",
+          "is_correct": false,
+          "rationale": "Increased sales generally improve cash flow from operations, assuming collections are timely."
+        },
+        {
+          "key": "E",
+          "text": "It typically results in a decrease in owner's equity, as more profits are distributed to shareholders.",
+          "is_correct": false,
+          "rationale": "Increased net income from sales increases owner's equity, not decreases it."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "What is the main reason an accountant records depreciation expense for a fixed asset, such as office equipment or machinery?",
+      "explanation": "Depreciation is an accounting method used to allocate the cost of a tangible asset over its useful life. This matches the expense of using the asset with the revenue it helps generate over multiple periods.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It systematically allocates the cost of a tangible asset over its useful life, matching expense with revenue generated.",
+          "is_correct": true,
+          "rationale": "Depreciation allocates an asset's cost over its useful life, following the matching principle."
+        },
+        {
+          "key": "B",
+          "text": "It reflects the actual market value decrease of the asset each year due to wear and tear.",
+          "is_correct": false,
+          "rationale": "Depreciation is a cost allocation method, not a market valuation method."
+        },
+        {
+          "key": "C",
+          "text": "It provides a cash reserve for the eventual replacement of the asset when it becomes fully depreciated.",
+          "is_correct": false,
+          "rationale": "Depreciation is a non-cash expense and does not create a cash reserve."
+        },
+        {
+          "key": "D",
+          "text": "It is a legal requirement to ensure that the company pays the correct amount of property taxes annually.",
+          "is_correct": false,
+          "rationale": "Depreciation is for financial and income tax reporting, not property tax directly."
+        },
+        {
+          "key": "E",
+          "text": "It helps to accurately determine the resale value of the asset at any given point in time.",
+          "is_correct": false,
+          "rationale": "Depreciation does not determine an asset's resale value, which is market-driven."
+        }
+      ]
+    }
+  ]
+}

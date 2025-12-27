@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "Under IFRS 15, how should a company recognize revenue from a contract that includes multiple distinct performance obligations?",
+      "explanation": "IFRS 15 requires revenue to be allocated to each distinct performance obligation based on its standalone selling price and recognized only as each specific obligation is satisfied by the company.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The total contract revenue should be recognized upfront at the moment the contract is initially signed by all parties.",
+          "is_correct": false,
+          "rationale": "This is incorrect; revenue recognition is tied to performance, not contract signing."
+        },
+        {
+          "key": "B",
+          "text": "Revenue should be allocated to each performance obligation and recognized as each one is satisfied over time or at a point in time.",
+          "is_correct": true,
+          "rationale": "This correctly describes the core principle of allocating and recognizing revenue per obligation."
+        },
+        {
+          "key": "C",
+          "text": "Revenue recognition must be deferred until all performance obligations specified within the entire contract have been fully completed.",
+          "is_correct": false,
+          "rationale": "This is too conservative; revenue is recognized as obligations are met, not at the very end."
+        },
+        {
+          "key": "D",
+          "text": "The company should recognize all revenue on a straight-line basis over the entire duration of the contract term.",
+          "is_correct": false,
+          "rationale": "This method is only appropriate if performance obligations are satisfied evenly over time."
+        },
+        {
+          "key": "E",
+          "text": "Revenue is only recognized after the final cash payment for the entire contract has been received from the customer.",
+          "is_correct": false,
+          "rationale": "This describes cash-basis accounting, not the accrual method required by IFRS 15."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What is the primary reason for the creation of a deferred tax liability on a company's balance sheet?",
+      "explanation": "A deferred tax liability arises from temporary differences where accounting income is greater than taxable income, meaning the company will have to pay more tax in a future period.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It is created when a company incurs a significant net operating loss that can be carried forward to future periods.",
+          "is_correct": false,
+          "rationale": "A net operating loss typically creates a deferred tax asset, not a liability."
+        },
+        {
+          "key": "B",
+          "text": "The liability represents an estimate of sales taxes collected from customers that have not yet been remitted to the government.",
+          "is_correct": false,
+          "rationale": "This describes a sales tax payable liability, not a deferred income tax liability."
+        },
+        {
+          "key": "C",
+          "text": "It results from temporary differences where accounting income is greater than the taxable income reported to tax authorities.",
+          "is_correct": true,
+          "rationale": "This is the correct definition, as it represents future tax payments on current profits."
+        },
+        {
+          "key": "D",
+          "text": "It is recorded to account for potential penalties and interest from a future, uncertain tax audit by authorities.",
+          "is_correct": false,
+          "rationale": "This would be a contingent liability or provision, not a deferred tax liability."
+        },
+        {
+          "key": "E",
+          "text": "It represents income taxes that have been overpaid in the current period and are expected to be refunded next year.",
+          "is_correct": false,
+          "rationale": "An overpayment of taxes would result in a deferred tax asset or a receivable."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "In an economic environment with consistently rising inventory costs, which valuation method typically results in the highest reported net income?",
+      "explanation": "The FIFO method assumes the first units purchased are the first ones sold. In a rising cost environment, this matches older, lower costs against revenue, resulting in a higher gross profit.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Last-In, First-Out (LIFO) method, because it expenses the most recently purchased, higher-cost items against revenue first.",
+          "is_correct": false,
+          "rationale": "LIFO would result in the lowest net income in a rising cost environment."
+        },
+        {
+          "key": "B",
+          "text": "The First-In, First-Out (FIFO) method, as it matches older, lower-cost inventory against the current period's revenues.",
+          "is_correct": true,
+          "rationale": "Matching lower historical costs with current revenue maximizes reported net income."
+        },
+        {
+          "key": "C",
+          "text": "The weighted-average cost method, as it smooths out price fluctuations by using an average cost for all goods.",
+          "is_correct": false,
+          "rationale": "The weighted-average method would produce a net income between FIFO and LIFO."
+        },
+        {
+          "key": "D",
+          "text": "The specific identification method, which always maximizes income by selecting the lowest cost items for sale each time.",
+          "is_correct": false,
+          "rationale": "This method's result depends on which specific items are sold, not a consistent rule."
+        },
+        {
+          "key": "E",
+          "text": "The retail inventory method, because it estimates ending inventory value based on the cost-to-retail price ratio.",
+          "is_correct": false,
+          "rationale": "This is an estimation technique, not a cost flow assumption that directly impacts income."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "A company sells a piece of equipment for cash at a gain. How is this transaction correctly reported on the statement of cash flows?",
+      "explanation": "The full cash proceeds from the sale are an inflow from investing activities. The non-cash gain must be subtracted from net income in the operating section (indirect method) to avoid double-counting.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The entire cash amount received is reported as a cash inflow from operating activities because it generated a gain.",
+          "is_correct": false,
+          "rationale": "The sale of a long-term asset is an investing activity, not an operating one."
+        },
+        {
+          "key": "B",
+          "text": "The gain on the sale is reported as a cash inflow from investing activities, while the asset's book value is ignored.",
+          "is_correct": false,
+          "rationale": "The full cash proceeds are reported, not just the gain component of the transaction."
+        },
+        {
+          "key": "C",
+          "text": "The cash proceeds are reported as a cash inflow from financing activities, and the gain is added to net income.",
+          "is_correct": false,
+          "rationale": "Financing activities relate to debt and equity, not the sale of company assets."
+        },
+        {
+          "key": "D",
+          "text": "The full cash proceeds are an inflow from investing activities, and the gain is subtracted from net income under operating activities.",
+          "is_correct": true,
+          "rationale": "This correctly classifies the cash flow and adjusts for the non-cash gain in operations."
+        },
+        {
+          "key": "E",
+          "text": "Only the gain on the sale is reported as a cash inflow, which is classified under other comprehensive income on the statement.",
+          "is_correct": false,
+          "rationale": "The gain is part of net income, and the full cash proceeds are reported."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Which of the following scenarios best exemplifies a significant violation of the internal control principle of segregation of duties?",
+      "explanation": "A fundamental principle of internal control is separating authorization, custody of assets, and record-keeping. Allowing one person to handle payment approval and bank reconciliation creates a high risk of undetected fraud.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A senior accountant is required to review and approve the journal entries that were prepared by a junior accountant.",
+          "is_correct": false,
+          "rationale": "This is a proper control, representing independent review and approval, not a violation."
+        },
+        {
+          "key": "B",
+          "text": "The purchasing department initiates purchase orders, while the receiving department is responsible for confirming the delivery of goods.",
+          "is_correct": false,
+          "rationale": "This is a correct application of segregation of duties between ordering and receiving."
+        },
+        {
+          "key": "C",
+          "text": "An employee in accounts receivable records customer payments, but a different employee deposits the cash into the bank.",
+          "is_correct": false,
+          "rationale": "This correctly separates record-keeping from asset custody."
+        },
+        {
+          "key": "D",
+          "text": "The CFO must provide final approval for any capital expenditures that exceed a pre-determined company threshold amount.",
+          "is_correct": false,
+          "rationale": "This is a proper authorization control, not a violation of segregation of duties."
+        },
+        {
+          "key": "E",
+          "text": "The same employee who approves vendor payments is also responsible for reconciling the company's bank statements each month.",
+          "is_correct": true,
+          "rationale": "This violates segregation of duties by combining authorization with verification."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "A company signs a multi-year contract with variable consideration. Under ASC 606, when should this variable consideration be included in the transaction price?",
+      "explanation": "ASC 606 requires that variable consideration is estimated and included in the transaction price only to the extent that it is probable a significant reversal will not occur later.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It should be included in full at the beginning of the contract, regardless of any future performance uncertainties.",
+          "is_correct": false,
+          "rationale": "This is incorrect; ASC 606 requires an assessment of probability."
+        },
+        {
+          "key": "B",
+          "text": "It is only recognized after the performance obligation has been fully satisfied and all cash is collected from the customer.",
+          "is_correct": false,
+          "rationale": "This describes cash-basis accounting, not the accrual method required by ASC 606."
+        },
+        {
+          "key": "C",
+          "text": "When it is probable that a significant reversal in the amount of cumulative revenue recognized will not occur in the future.",
+          "is_correct": true,
+          "rationale": "This is the core constraint for recognizing variable consideration."
+        },
+        {
+          "key": "D",
+          "text": "At the end of each fiscal year, based on a simple average of all potential outcome scenarios for the contract.",
+          "is_correct": false,
+          "rationale": "The method must be the most predictive, not a simple average."
+        },
+        {
+          "key": "E",
+          "text": "The variable portion must be excluded entirely from the transaction price until all uncertainty is fully resolved completely.",
+          "is_correct": false,
+          "rationale": "This is too conservative; estimation is required under the standard."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Under ASC 842, how should a lessee account for a new finance lease on its balance sheet at the commencement date?",
+      "explanation": "ASC 842 mandates that for both finance and operating leases, the lessee must recognize a right-of-use (ROU) asset and a corresponding lease liability on the balance sheet.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The lessee should only disclose the future lease payments in the footnotes of the financial statements, not on the balance sheet.",
+          "is_correct": false,
+          "rationale": "This was the old standard for operating leases, not ASC 842."
+        },
+        {
+          "key": "B",
+          "text": "A right-of-use asset and a corresponding lease liability are recognized for the present value of lease payments.",
+          "is_correct": true,
+          "rationale": "This is the correct balance sheet treatment under ASC 842."
+        },
+        {
+          "key": "C",
+          "text": "The lessee must recognize the total undiscounted value of all future lease payments as a liability on the balance sheet.",
+          "is_correct": false,
+          "rationale": "Lease payments must be discounted to their present value."
+        },
+        {
+          "key": "D",
+          "text": "Only the first year's lease payment is recorded as a liability, with subsequent payments expensed as incurred over time.",
+          "is_correct": false,
+          "rationale": "This is incorrect; the entire liability must be recognized upfront."
+        },
+        {
+          "key": "E",
+          "text": "The leased asset is recorded at its fair market value, with no liability recognized until payments are actually due.",
+          "is_correct": false,
+          "rationale": "A corresponding liability must be recognized at commencement."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "An accountant discovers a material weakness in internal controls over financial reporting. What is the most appropriate immediate action to take?",
+      "explanation": "Proper protocol for internal control deficiencies requires immediate documentation and escalation to the appropriate channels, such as a direct supervisor and the internal audit function, to ensure timely remediation.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Wait until the end of the quarter to see if the weakness corrects itself through normal business operations.",
+          "is_correct": false,
+          "rationale": "Delaying action is irresponsible and significantly increases risk."
+        },
+        {
+          "key": "B",
+          "text": "Immediately document the finding and report it to their direct supervisor and the internal audit department for review.",
+          "is_correct": true,
+          "rationale": "This follows proper escalation and communication protocols."
+        },
+        {
+          "key": "C",
+          "text": "Attempt to fix the weakness independently without informing anyone to avoid causing unnecessary alarm or concern to management.",
+          "is_correct": false,
+          "rationale": "This bypasses necessary oversight and documentation procedures."
+        },
+        {
+          "key": "D",
+          "text": "Discuss the issue informally with colleagues in other departments to see if they have experienced similar problems.",
+          "is_correct": false,
+          "rationale": "This is not a formal or effective way to address the issue."
+        },
+        {
+          "key": "E",
+          "text": "Only report the weakness if it results in an actual financial misstatement that has already occurred in the books.",
+          "is_correct": false,
+          "rationale": "Control weaknesses must be reported proactively, before misstatements occur."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "A deferred tax liability is created due to a temporary difference between book and tax accounting. This typically occurs when what happens?",
+      "explanation": "A deferred tax liability arises when accounting income is greater than taxable income. This means the company has recognized income for book purposes that it will pay taxes on later.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The company's taxable income is permanently higher than its financial accounting income for the current period, creating a liability.",
+          "is_correct": false,
+          "rationale": "Permanent differences do not create deferred tax items."
+        },
+        {
+          "key": "B",
+          "text": "Financial accounting income is temporarily greater than the taxable income reported for the same accounting period.",
+          "is_correct": true,
+          "rationale": "This creates a future tax obligation, hence a deferred tax liability."
+        },
+        {
+          "key": "C",
+          "text": "The company's taxable income is consistently and exactly equal to its reported financial accounting income each year.",
+          "is_correct": false,
+          "rationale": "If they are equal, no temporary differences exist."
+        },
+        {
+          "key": "D",
+          "text": "Financial accounting income is temporarily less than the taxable income reported for the same accounting period.",
+          "is_correct": false,
+          "rationale": "This scenario creates a deferred tax asset, not a liability."
+        },
+        {
+          "key": "E",
+          "text": "The company has significant net operating loss carryforwards that it expects to utilize in future years to reduce taxes.",
+          "is_correct": false,
+          "rationale": "Net operating loss carryforwards typically create deferred tax assets."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "A company's current ratio has significantly increased over the past year, but its quick ratio has decreased. What does this combination most likely indicate?",
+      "explanation": "The primary difference between the current ratio and the quick ratio is inventory. If the current ratio rises while the quick ratio falls, it implies a significant buildup of inventory.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The company has improved its overall liquidity position by efficiently managing all of its current assets and liabilities.",
+          "is_correct": false,
+          "rationale": "A decreasing quick ratio indicates a worsening of liquidity."
+        },
+        {
+          "key": "B",
+          "text": "The company has paid down a significant amount of its accounts payable using its available cash reserves.",
+          "is_correct": false,
+          "rationale": "This would likely cause both ratios to increase, not diverge."
+        },
+        {
+          "key": "C",
+          "text": "The company has likely accumulated a large amount of inventory that is not selling through quickly to customers.",
+          "is_correct": true,
+          "rationale": "Inventory is in the current ratio but not the quick ratio."
+        },
+        {
+          "key": "D",
+          "text": "The company has successfully collected a large portion of its outstanding accounts receivable from its customers.",
+          "is_correct": false,
+          "rationale": "This would improve the quick ratio, not decrease it."
+        },
+        {
+          "key": "E",
+          "text": "The company has issued new long-term debt to finance its short-term operational funding needs for the year.",
+          "is_correct": false,
+          "rationale": "Long-term debt does not directly impact these current ratios."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When accounting for a contract with variable consideration under IFRS 15, what is the primary constraint on recognizing the estimated amount as revenue?",
+      "explanation": "IFRS 15 imposes a constraint on recognizing variable consideration. The estimated amount is included in the transaction price only to the extent that it is highly probable a significant reversal will not occur when the uncertainty is resolved.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The variable consideration can only be included if it is highly probable that a significant reversal in cumulative revenue will not occur.",
+          "is_correct": true,
+          "rationale": "This correctly states the 'constraint' principle in IFRS 15 for including variable consideration in the transaction price."
+        },
+        {
+          "key": "B",
+          "text": "Revenue from variable consideration must be deferred until the uncertainty is fully resolved and the final cash amount has been received.",
+          "is_correct": false,
+          "rationale": "This approach is too conservative and not aligned with the estimation principles outlined in the IFRS 15 standard."
+        },
+        {
+          "key": "C",
+          "text": "The full amount of the variable consideration should be recognized immediately if the performance obligation has been substantially satisfied.",
+          "is_correct": false,
+          "rationale": "This ignores the critical constraint related to the probability of a future significant revenue reversal, which is a key component."
+        },
+        {
+          "key": "D",
+          "text": "Management's best estimate of the variable amount is recognized, regardless of the probability of a future revenue reversal ever occurring.",
+          "is_correct": false,
+          "rationale": "This directly contradicts the explicit constraint within IFRS 15, which limits the amount of revenue that can be recognized."
+        },
+        {
+          "key": "E",
+          "text": "Only the fixed portion of the contract price is recognized as revenue, with all variable amounts treated as a contingent asset.",
+          "is_correct": false,
+          "rationale": "This is incorrect as IFRS 15 requires an estimation of variable consideration, subject to the constraint, rather than ignoring it."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Under the IFRS 9 expected credit loss (ECL) model, what event triggers the recognition of lifetime expected credit losses for a financial asset?",
+      "explanation": "IFRS 9 uses a three-stage model. An asset moves from Stage 1 (12-month ECL) to Stage 2 (lifetime ECL) when its credit risk has increased significantly since initial recognition, which is a forward-looking assessment before an actual default occurs.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The recognition of lifetime ECL is required only when the financial asset has officially defaulted on a scheduled payment obligation.",
+          "is_correct": false,
+          "rationale": "This describes Stage 3 (credit-impaired assets), not the trigger for moving from Stage 1 to Stage 2."
+        },
+        {
+          "key": "B",
+          "text": "Lifetime ECL must be recognized for all financial assets from the moment of their initial recognition on the company's balance sheet.",
+          "is_correct": false,
+          "rationale": "This is incorrect; at initial recognition (Stage 1), only 12-month expected credit losses are typically recognized by the entity."
+        },
+        {
+          "key": "C",
+          "text": "A significant increase in the credit risk of the financial asset since its initial recognition triggers lifetime ECL recognition.",
+          "is_correct": true,
+          "rationale": "This is the correct trigger for moving a financial asset from Stage 1 to Stage 2 under the IFRS 9 model."
+        },
+        {
+          "key": "D",
+          "text": "The entity must recognize lifetime ECL when general economic conditions in the market begin to show clear signs of a downturn.",
+          "is_correct": false,
+          "rationale": "While economic conditions are a factor, the trigger is a significant increase in credit risk for the specific asset."
+        },
+        {
+          "key": "E",
+          "text": "Lifetime ECL is recognized when the asset's fair value drops below its amortized cost for three consecutive reporting periods.",
+          "is_correct": false,
+          "rationale": "Fair value changes are not the direct trigger for ECL staging; the assessment is based on changes in credit risk."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "You discover a material error in the previous year's audited financial statements. What is the correct immediate course of action according to accounting standards?",
+      "explanation": "IAS 8 requires that material prior period errors are corrected retrospectively. This involves restating the comparative information for the prior period(s) presented and disclosing the nature of the error and its financial impact to ensure comparability and transparency.",
+      "options": [
+        {
+          "key": "A",
+          "text": "You should immediately correct the error in the current period's income statement as a one-time adjustment without any specific disclosure.",
+          "is_correct": false,
+          "rationale": "This is incorrect as it misrepresents the current period's performance and lacks the required transparency for a material error."
+        },
+        {
+          "key": "B",
+          "text": "The error should be corrected by restating the comparative amounts for the prior period presented and disclosing the error's nature.",
+          "is_correct": true,
+          "rationale": "This describes the correct retrospective restatement approach required by IAS 8 for correcting material prior period errors."
+        },
+        {
+          "key": "C",
+          "text": "You must inform the external auditors but wait for their explicit instructions before making any adjustments to the financial records.",
+          "is_correct": false,
+          "rationale": "While informing auditors is crucial, management is responsible for applying accounting standards, which mandate retrospective restatement."
+        },
+        {
+          "key": "D",
+          "text": "The error should be prospectively corrected by adjusting the opening balance of retained earnings in the next financial reporting period.",
+          "is_correct": false,
+          "rationale": "This describes prospective application, which is incorrect for errors; retrospective application is required to correct the historical record."
+        },
+        {
+          "key": "E",
+          "text": "A formal report should be filed with regulatory bodies first, before any internal accounting adjustments are made to the statements.",
+          "is_correct": false,
+          "rationale": "The primary accounting action is restatement; regulatory filings may be required but do not precede the accounting correction itself."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "How should a company initially account for a convertible bond issued at par value that contains both a liability and an equity component?",
+      "explanation": "Under IFRS, compound financial instruments like convertible bonds must be split. The fair value of the liability component (the bond without the conversion option) is determined first, and the residual amount of the proceeds is allocated to the equity component.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The entire proceeds from the bond issuance should be classified as a non-current liability on the statement of financial position.",
+          "is_correct": false,
+          "rationale": "This is incorrect because it completely ignores the existence of the valuable equity conversion feature within the instrument."
+        },
+        {
+          "key": "B",
+          "text": "The proceeds must be allocated between the liability and equity components, with the liability measured first at its fair value.",
+          "is_correct": true,
+          "rationale": "This correctly describes the 'split accounting' method required for compound financial instruments under IFRS, using the residual method."
+        },
+        {
+          "key": "C",
+          "text": "The bond is recognized entirely as equity because the holder has the option to convert it into the company's shares.",
+          "is_correct": false,
+          "rationale": "This is incorrect as it ignores the company's contractual obligation to pay cash if the conversion option is not exercised."
+        },
+        {
+          "key": "D",
+          "text": "The company should bifurcate the instrument, recognizing the liability at par value and the equity component as a negative value.",
+          "is_correct": false,
+          "rationale": "This is an incorrect application; the liability is measured at fair value, and the equity component is a positive residual."
+        },
+        {
+          "key": "E",
+          "text": "The entire value of the bond is recorded as a liability, with the conversion feature disclosed only in the financial statement notes.",
+          "is_correct": false,
+          "rationale": "Disclosure alone is insufficient; IFRS requires recognition of both the liability and equity components on the balance sheet."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "What is the primary objective of applying cash flow hedge accounting for a derivative instrument under IFRS 9 financial reporting standards?",
+      "explanation": "The goal of cash flow hedge accounting is to manage earnings volatility. Gains or losses on the effective portion of the hedging instrument are deferred in Other Comprehensive Income (OCI) and reclassified to profit or loss when the hedged cash flows occur.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To speculate on future interest rate movements in order to generate additional profits for the reporting entity from market changes.",
+          "is_correct": false,
+          "rationale": "This describes speculation, which is the opposite of hedging. Hedging is intended to reduce risk, not take on more."
+        },
+        {
+          "key": "B",
+          "text": "To offset the volatility in profit or loss by recognizing gains or losses on the hedging instrument in other comprehensive income.",
+          "is_correct": true,
+          "rationale": "This correctly states the purpose: deferring gains/losses in OCI to match them with the hedged item's impact on profit/loss."
+        },
+        {
+          "key": "C",
+          "text": "To eliminate all potential financial risks associated with future cash flows by using a perfectly matched derivative instrument against the exposure.",
+          "is_correct": false,
+          "rationale": "Hedging aims to mitigate, not completely eliminate, risk. A perfect hedge is rare, and some ineffectiveness often exists."
+        },
+        {
+          "key": "D",
+          "text": "To reclassify a non-derivative financial liability as an equity instrument to improve the company's overall debt-to-equity ratio.",
+          "is_correct": false,
+          "rationale": "Hedge accounting is a presentation standard for derivatives and hedged items; it does not permit reclassification of liabilities to equity."
+        },
+        {
+          "key": "E",
+          "text": "To immediately recognize all fair value changes of the derivative directly in the income statement for the current reporting period.",
+          "is_correct": false,
+          "rationale": "This describes the accounting for a derivative that does not qualify for hedge accounting, which creates profit and loss volatility."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "A company enters a complex contract with multiple performance obligations. Under IFRS 15, how should the transaction price be allocated across these obligations?",
+      "explanation": "IFRS 15 requires allocating the transaction price based on the relative standalone selling prices of each distinct performance obligation. This method ensures revenue is recognized in a way that depicts the transfer of promised goods or services.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The total transaction price should be allocated to each distinct performance obligation based on their relative standalone selling prices.",
+          "is_correct": true,
+          "rationale": "This follows the core principle of IFRS 15 for allocating transaction prices."
+        },
+        {
+          "key": "B",
+          "text": "The price should be allocated equally among all performance obligations, regardless of their individual market values or complexity.",
+          "is_correct": false,
+          "rationale": "Equal allocation is incorrect as it ignores the varying values of different obligations."
+        },
+        {
+          "key": "C",
+          "text": "The entire transaction price should be recognized as revenue immediately upon signing the contract with the customer.",
+          "is_correct": false,
+          "rationale": "Revenue is recognized as obligations are satisfied, not upon contract signing."
+        },
+        {
+          "key": "D",
+          "text": "The allocation should be based on the cost incurred to fulfill each performance obligation, plus a standard profit margin.",
+          "is_correct": false,
+          "rationale": "This describes a cost-plus model, not the standalone selling price allocation method."
+        },
+        {
+          "key": "E",
+          "text": "Revenue should be allocated based on the order in which the performance obligations are delivered to the customer.",
+          "is_correct": false,
+          "rationale": "Allocation is based on value, not the sequence of delivery."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "When would a company recognize a deferred tax asset on its balance sheet according to IAS 12 Income Taxes?",
+      "explanation": "A deferred tax asset arises from deductible temporary differences or tax loss carryforwards. It represents a future tax benefit and is recognized only when it's probable that future taxable profit will be available against which it can be utilized.",
+      "options": [
+        {
+          "key": "A",
+          "text": "When there are deductible temporary differences that are expected to reverse in future periods, creating future tax savings.",
+          "is_correct": true,
+          "rationale": "This correctly defines the basis for recognizing a deferred tax asset."
+        },
+        {
+          "key": "B",
+          "text": "When the company has paid more in taxes during the current period than what was actually calculated as its tax liability.",
+          "is_correct": false,
+          "rationale": "This describes a tax receivable or overpayment, not a deferred tax asset."
+        },
+        {
+          "key": "C",
+          "text": "When the company anticipates significant future profits, regardless of any existing temporary differences in accounting treatment.",
+          "is_correct": false,
+          "rationale": "Future profits are a condition for utilization, not the primary reason for creation."
+        },
+        {
+          "key": "D",
+          "text": "When there are taxable temporary differences that will result in higher tax payments in subsequent accounting periods.",
+          "is_correct": false,
+          "rationale": "Taxable temporary differences result in a deferred tax liability, not an asset."
+        },
+        {
+          "key": "E",
+          "text": "A deferred tax asset is only recognized when the company has a history of consistent net operating losses.",
+          "is_correct": false,
+          "rationale": "A history of losses may actually prevent recognition due to probability concerns."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "During a routine review, you notice a series of unusual, consistently rounded-sum payments to a new vendor. What is your most appropriate initial action?",
+      "explanation": "The correct professional conduct is to document suspicious findings and escalate them through the proper internal channels, such as a supervisor or internal audit. This avoids premature accusations and ensures a formal investigation can be conducted if necessary.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Document the findings meticulously and escalate the matter to your direct supervisor or the internal audit department for further investigation.",
+          "is_correct": true,
+          "rationale": "This follows proper procedure for handling potential irregularities by escalating internally."
+        },
+        {
+          "key": "B",
+          "text": "Immediately contact the vendor directly to inquire about the nature of the payments and request additional supporting documentation.",
+          "is_correct": false,
+          "rationale": "This could alert a fraudulent party and compromise a potential investigation."
+        },
+        {
+          "key": "C",
+          "text": "Ignore the transactions as they are immaterial to the overall financial statements and likely a coincidence in payment amounts.",
+          "is_correct": false,
+          "rationale": "Ignoring potential red flags for fraud is a breach of professional duty."
+        },
+        {
+          "key": "D",
+          "text": "Make a direct accusation of potential fraud to the employee responsible for approving these specific vendor payments.",
+          "is_correct": false,
+          "rationale": "Making direct accusations is unprofessional and can lead to legal complications."
+        },
+        {
+          "key": "E",
+          "text": "Adjust the accounting entries to make them appear less suspicious before the external auditors review the records.",
+          "is_correct": false,
+          "rationale": "Altering records is unethical, illegal, and constitutes fraudulent activity itself."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "What is the primary objective of applying cash flow hedge accounting for a derivative financial instrument under IFRS 9?",
+      "explanation": "Cash flow hedge accounting aims to match the timing of gain or loss recognition on the hedging instrument with the earnings impact of the hedged cash flows. This reduces profit or loss volatility by deferring gains/losses in other comprehensive income.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To offset the volatility in profit or loss arising from changes in the cash flows of a hedged item.",
+          "is_correct": true,
+          "rationale": "This correctly states the main purpose of cash flow hedge accounting."
+        },
+        {
+          "key": "B",
+          "text": "To speculate on future interest rate movements in order to generate additional income for the company's investment portfolio.",
+          "is_correct": false,
+          "rationale": "Hedge accounting is for risk mitigation, not speculation."
+        },
+        {
+          "key": "C",
+          "text": "To reclassify all gains and losses on the derivative instrument directly to the income statement in the current period.",
+          "is_correct": false,
+          "rationale": "This is the opposite of hedge accounting's goal, which defers recognition."
+        },
+        {
+          "key": "D",
+          "text": "To ensure the fair value of the derivative is always equal to the fair value of the underlying hedged asset.",
+          "is_correct": false,
+          "rationale": "Perfect effectiveness is the goal but not always achieved or the primary objective."
+        },
+        {
+          "key": "E",
+          "text": "To eliminate the need to recognize the derivative instrument on the balance sheet until the hedging relationship is terminated.",
+          "is_correct": false,
+          "rationale": "Derivatives must always be recognized on the balance sheet at fair value."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "Which of the following scenarios represents the most significant violation of the principle of segregation of duties in an accounting department?",
+      "explanation": "Combining the authorization of payments (custody/execution) with bank reconciliation (record-keeping/verification) gives one individual end-to-end control over a cash process. This creates a significant opportunity for undetected fraud or error, violating a core principle of internal control.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The same employee is responsible for authorizing payments to vendors and also reconciling the company's bank statements each month.",
+          "is_correct": true,
+          "rationale": "This combines authorization with reconciliation, a critical control weakness."
+        },
+        {
+          "key": "B",
+          "text": "One employee is responsible for preparing journal entries while another employee is responsible for posting them to the general ledger.",
+          "is_correct": false,
+          "rationale": "This is an example of proper segregation of duties, not a violation."
+        },
+        {
+          "key": "C",
+          "text": "The accounts receivable clerk is responsible for invoicing customers but is not permitted to handle cash receipts from them.",
+          "is_correct": false,
+          "rationale": "This demonstrates effective segregation between record-keeping and asset custody."
+        },
+        {
+          "key": "D",
+          "text": "An employee who processes payroll is required to have their calculations reviewed and approved by the finance manager.",
+          "is_correct": false,
+          "rationale": "This describes a review and approval process, which is a good internal control."
+        },
+        {
+          "key": "E",
+          "text": "The purchasing department initiates purchase orders, but the accounts payable department is responsible for processing the final vendor invoices.",
+          "is_correct": false,
+          "rationale": "This is a standard and correct segregation of duties between procurement and payment."
+        }
+      ]
+    }
+  ]
+}

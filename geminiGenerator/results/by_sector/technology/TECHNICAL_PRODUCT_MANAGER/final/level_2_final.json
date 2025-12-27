@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "What is the most effective approach for a Technical Product Manager to translate high-level business requirements into actionable engineering tasks?",
+      "explanation": "A TPM must bridge the gap between business and engineering. Creating detailed user stories with acceptance criteria ensures clarity and provides engineers with the necessary context for implementation, minimizing ambiguity and rework.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Directly assign high-level business requirements to individual engineers, expecting them to interpret the technical implications independently.",
+          "is_correct": false,
+          "rationale": "This approach lacks clarity and can lead to misinterpretations and rework."
+        },
+        {
+          "key": "B",
+          "text": "Develop comprehensive user stories, including clear acceptance criteria and technical considerations, for the engineering team to implement.",
+          "is_correct": true,
+          "rationale": "User stories with acceptance criteria provide clear, actionable tasks for engineers."
+        },
+        {
+          "key": "C",
+          "text": "Present only the desired business outcomes to the development team, allowing them full autonomy in defining all technical solutions.",
+          "is_correct": false,
+          "rationale": "This lacks the necessary product guidance and technical alignment from the TPM."
+        },
+        {
+          "key": "D",
+          "text": "Create extensive technical architecture diagrams and database schemas before any business requirements are fully finalized.",
+          "is_correct": false,
+          "rationale": "This is premature and may lead to wasted effort if requirements change."
+        },
+        {
+          "key": "E",
+          "text": "Hold weekly verbal communication sessions for all requirements, intentionally avoiding written documentation for faster iteration cycles.",
+          "is_correct": false,
+          "rationale": "Verbal communication alone is insufficient for complex technical requirements and traceability."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "When managing a product backlog, how should a Technical Product Manager prioritize addressing technical debt alongside new feature development?",
+      "explanation": "Technical debt can significantly hinder future development velocity and product stability. Prioritizing it strategically, often by dedicating a percentage of sprint capacity, ensures long-term product health and reduces future risks.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Always prioritize new revenue-generating features over any technical debt, regardless of its severity or potential impact.",
+          "is_correct": false,
+          "rationale": "Ignoring technical debt leads to slower development and increased risk over time."
+        },
+        {
+          "key": "B",
+          "text": "Allocate a dedicated percentage of development capacity each sprint to address high-priority technical debt items proactively.",
+          "is_correct": true,
+          "rationale": "Proactive technical debt management improves long-term product health and reduces future risks."
+        },
+        {
+          "key": "C",
+          "text": "Only address technical debt when it directly causes a critical production outage or a major system failure.",
+          "is_correct": false,
+          "rationale": "This reactive approach is costly and disruptive, waiting for failures to occur."
+        },
+        {
+          "key": "D",
+          "text": "Delegate all technical debt decisions and prioritization solely to the engineering lead without any product input.",
+          "is_correct": false,
+          "rationale": "Technical debt impacts product delivery, requiring TPM involvement in prioritization."
+        },
+        {
+          "key": "E",
+          "text": "Create a separate, isolated backlog for technical debt, never mixing it with feature development for simplicity.",
+          "is_correct": false,
+          "rationale": "Technical debt should be integrated into the main backlog for holistic prioritization."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "A new third-party integration requires significant API changes. What is the Technical Product Manager's primary responsibility regarding these changes?",
+      "explanation": "The TPM ensures that API changes align with product strategy, meet business needs, and are well-documented for both internal and external consumers. This includes defining clear requirements and managing communication.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Write all the code for the API endpoints and integration logic personally, ensuring technical accuracy and efficiency.",
+          "is_correct": false,
+          "rationale": "Writing code is typically an engineering responsibility, not the TPM's primary role."
+        },
+        {
+          "key": "B",
+          "text": "Define the functional and non-functional requirements for the API, ensuring it meets product needs and is well-documented.",
+          "is_correct": true,
+          "rationale": "TPMs define API requirements and documentation, bridging business and technical needs."
+        },
+        {
+          "key": "C",
+          "text": "Exclusively manage the deployment pipeline for the API changes to all production environments without engineering oversight.",
+          "is_correct": false,
+          "rationale": "Deployment management is a shared responsibility, not solely the TPM's, and requires engineering."
+        },
+        {
+          "key": "D",
+          "text": "Negotiate the commercial terms of the third-party partnership agreement with legal and business development teams.",
+          "is_correct": false,
+          "rationale": "Commercial negotiation falls under business development or legal, not primarily the TPM."
+        },
+        {
+          "key": "E",
+          "text": "Conduct comprehensive penetration testing and security audits on the new API integration personally.",
+          "is_correct": false,
+          "rationale": "Security testing is a specialized role, usually performed by dedicated security engineers."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "When evaluating the success of a newly launched product feature, what is the most important data point for a Technical Product Manager to analyze?",
+      "explanation": "User engagement metrics directly reflect whether a feature is solving a user problem and providing value. While other metrics are important, engagement is key to understanding adoption and utility for continuous improvement.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The total number of lines of code written for the feature by the engineering team during development.",
+          "is_correct": false,
+          "rationale": "Lines of code do not indicate user value or product success."
+        },
+        {
+          "key": "B",
+          "text": "The number of new user sign-ups directly attributable to the specific feature launch campaign.",
+          "is_correct": false,
+          "rationale": "While important, this measures acquisition, not ongoing feature value or usage."
+        },
+        {
+          "key": "C",
+          "text": "User engagement metrics, such as daily active users (DAU) or feature usage frequency and duration.",
+          "is_correct": true,
+          "rationale": "Engagement metrics directly measure user adoption and value derived from the feature."
+        },
+        {
+          "key": "D",
+          "text": "The overall server uptime percentage of the entire product platform immediately after the feature launch.",
+          "is_correct": false,
+          "rationale": "Server uptime indicates system reliability, not specific feature success or user value."
+        },
+        {
+          "key": "E",
+          "text": "The average salary of the engineering team members who worked on the feature development project.",
+          "is_correct": false,
+          "rationale": "Team salaries are a cost metric, irrelevant to feature success evaluation."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "A key stakeholder proposes a technically complex feature with limited user research. How should a Technical Product Manager respond?",
+      "explanation": "A TPM must balance stakeholder requests with product strategy and technical feasibility. Advocating for user research and assessing technical complexity before committing is crucial to avoid wasteful development efforts.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately approve the feature for development to maintain positive stakeholder relations and avoid conflict.",
+          "is_correct": false,
+          "rationale": "Approving without validation risks building the wrong product or incurring significant rework."
+        },
+        {
+          "key": "B",
+          "text": "Advocate for user research to validate the problem, then work with engineering to assess technical feasibility and effort.",
+          "is_correct": true,
+          "rationale": "Validating with users and assessing technical feasibility reduces risk and ensures value."
+        },
+        {
+          "key": "C",
+          "text": "Inform the stakeholder that the feature is impossible to build due to its inherent technical complexity.",
+          "is_correct": false,
+          "rationale": "Dismissing it outright without investigation lacks due diligence and collaboration."
+        },
+        {
+          "key": "D",
+          "text": "Prioritize the feature immediately, assuming the stakeholder's request represents a critical business need.",
+          "is_correct": false,
+          "rationale": "Assumption without data or technical assessment can lead to misallocated resources."
+        },
+        {
+          "key": "E",
+          "text": "Delegate the entire decision-making process for this complex feature solely to the engineering team.",
+          "is_correct": false,
+          "rationale": "The TPM owns product decisions, collaborating with engineering on technical aspects."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "What is the primary output a Technical Product Manager delivers to engineering teams for feature development?",
+      "explanation": "Technical Product Managers translate business requirements into detailed technical specifications, user stories, and acceptance criteria that engineering teams use for implementation. This ensures clarity and alignment.",
+      "options": [
+        {
+          "key": "A",
+          "text": "High-level business strategy documents outlining market opportunities and potential revenue projections.",
+          "is_correct": false,
+          "rationale": "This is too high-level; TPMs provide more granular detail."
+        },
+        {
+          "key": "B",
+          "text": "Detailed technical specifications, including API contracts and data models, enabling precise implementation.",
+          "is_correct": true,
+          "rationale": "TPMs provide technical details for engineers to build features."
+        },
+        {
+          "key": "C",
+          "text": "User journey maps illustrating customer pain points and desired product experiences for design teams.",
+          "is_correct": false,
+          "rationale": "User journey maps are for design and high-level product understanding."
+        },
+        {
+          "key": "D",
+          "text": "Competitive analysis reports evaluating competitor features and their market positioning strategies.",
+          "is_correct": false,
+          "rationale": "Competitive analysis informs strategy, not direct engineering output."
+        },
+        {
+          "key": "E",
+          "text": "Marketing plans detailing product launch campaigns and target audience segmentation for public relations.",
+          "is_correct": false,
+          "rationale": "Marketing plans are for GTM strategy, not engineering delivery."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Which agile artifact is crucial for a Technical Product Manager to prioritize and refine ongoing development work?",
+      "explanation": "The product backlog is the single source of truth for all work to be done on the product. The TPM is responsible for its content, prioritization, and refinement to ensure value delivery.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The sprint retrospective meeting, used to discuss process improvements and team dynamics after each iteration.",
+          "is_correct": false,
+          "rationale": "Retrospectives focus on process improvement, not work prioritization."
+        },
+        {
+          "key": "B",
+          "text": "The product backlog, containing ordered user stories and technical tasks for future development sprints.",
+          "is_correct": true,
+          "rationale": "The product backlog is where TPMs prioritize and refine work."
+        },
+        {
+          "key": "C",
+          "text": "The daily stand-up, where team members synchronize on progress and any impediments they are facing.",
+          "is_correct": false,
+          "rationale": "Daily stand-ups are for daily synchronization, not backlog refinement."
+        },
+        {
+          "key": "D",
+          "text": "The sprint burn-down chart, tracking remaining work within the current development iteration towards completion.",
+          "is_correct": false,
+          "rationale": "Burn-down charts track progress, not prioritize future work."
+        },
+        {
+          "key": "E",
+          "text": "The release notes document, summarizing new features and bug fixes for external users post-launch.",
+          "is_correct": false,
+          "rationale": "Release notes are a post-development communication artifact."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "How should a Technical Product Manager typically address accumulated technical debt within a product roadmap?",
+      "explanation": "Technical debt must be managed proactively to prevent long-term negative impacts on development velocity and system stability. Allocating dedicated capacity ensures it's addressed systematically.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ignore technical debt entirely, focusing solely on shipping new user-facing features as quickly as possible.",
+          "is_correct": false,
+          "rationale": "Ignoring technical debt leads to long-term instability and slower development."
+        },
+        {
+          "key": "B",
+          "text": "Allocate dedicated capacity within sprints to refactor code and improve underlying system architecture proactively.",
+          "is_correct": true,
+          "rationale": "Dedicated capacity ensures technical debt is addressed systematically."
+        },
+        {
+          "key": "C",
+          "text": "Delegate all technical debt decisions to the engineering lead without any product or business input.",
+          "is_correct": false,
+          "rationale": "TPMs must collaborate with engineering on debt, considering business impact."
+        },
+        {
+          "key": "D",
+          "text": "Implement a complete system rewrite every two years to eliminate all legacy components and start fresh.",
+          "is_correct": false,
+          "rationale": "Complete rewrites are usually costly and risky, not a regular solution."
+        },
+        {
+          "key": "E",
+          "text": "Document all technical debt in a separate spreadsheet, never integrating it into the main product backlog.",
+          "is_correct": false,
+          "rationale": "Technical debt should be integrated into the main backlog for visibility and prioritization."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "What is a key principle for designing robust and developer-friendly APIs, especially for external consumption?",
+      "explanation": "External APIs must be easy to understand and use. Consistency, clear documentation, and predictable behavior (including error handling) are paramount for developer adoption and satisfaction.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Expose all internal database schemas directly to external developers for maximum flexibility and control.",
+          "is_correct": false,
+          "rationale": "Exposing internal schemas creates security risks and tight coupling."
+        },
+        {
+          "key": "B",
+          "text": "Ensure the API is intuitive, consistent, and well-documented with clear error handling and predictable responses.",
+          "is_correct": true,
+          "rationale": "Intuitive, consistent, and well-documented APIs are developer-friendly."
+        },
+        {
+          "key": "C",
+          "text": "Prioritize raw performance over all other considerations, even if it results in complex usage patterns.",
+          "is_correct": false,
+          "rationale": "Usability and consistency are often more important than raw performance for external APIs."
+        },
+        {
+          "key": "D",
+          "text": "Change API endpoints and data structures frequently to prevent third-party developers from relying on them.",
+          "is_correct": false,
+          "rationale": "Frequent API changes break integrations and frustrate developers."
+        },
+        {
+          "key": "E",
+          "text": "Only provide synchronous API calls, strictly avoiding asynchronous operations to simplify implementation for users.",
+          "is_correct": false,
+          "rationale": "Asynchronous operations are often necessary for long-running tasks."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Which regulatory framework most directly impacts a Technical Product Manager overseeing customer data in Europe?",
+      "explanation": "The General Data Protection Regulation (GDPR) is a comprehensive data privacy law in the European Union. TPMs must ensure products handling EU customer data comply with its strict requirements.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Sarbanes-Oxley Act (SOX), primarily focusing on financial reporting and corporate governance in the United States.",
+          "is_correct": false,
+          "rationale": "SOX is for financial reporting, not general data privacy in Europe."
+        },
+        {
+          "key": "B",
+          "text": "The Health Insurance Portability and Accountability Act (HIPAA), specific to US healthcare data privacy and security.",
+          "is_correct": false,
+          "rationale": "HIPAA is for US healthcare data, not general European data."
+        },
+        {
+          "key": "C",
+          "text": "The Payment Card Industry Data Security Standard (PCI DSS), for secure handling of credit card information globally.",
+          "is_correct": false,
+          "rationale": "PCI DSS is for payment card data, not general customer data in Europe."
+        },
+        {
+          "key": "D",
+          "text": "The General Data Protection Regulation (GDPR), establishing strict rules for data privacy and protection within the EU.",
+          "is_correct": true,
+          "rationale": "GDPR is the primary data privacy regulation for EU customer data."
+        },
+        {
+          "key": "E",
+          "text": "The California Consumer Privacy Act (CCPA), focused on consumer data rights within the state of California.",
+          "is_correct": false,
+          "rationale": "CCPA is for California residents, not the broader European context."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When translating business requirements into technical specifications, what is a crucial responsibility for a Technical Product Manager?",
+      "explanation": "A core responsibility of a TPM is to bridge the gap between business needs and technical implementation. This involves ensuring that the engineering team clearly understands the functional and non-functional requirements.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Designing the complete user interface and user experience flows for the development team to implement precisely.",
+          "is_correct": false,
+          "rationale": "This is typically the role of a UI/UX designer, not a TPM."
+        },
+        {
+          "key": "B",
+          "text": "Clearly articulating functional and non-functional requirements to the engineering team for successful implementation and understanding.",
+          "is_correct": true,
+          "rationale": "TPMs must define clear requirements for engineering execution."
+        },
+        {
+          "key": "C",
+          "text": "Writing the actual code modules and providing prototypes to illustrate the desired technical solution.",
+          "is_correct": false,
+          "rationale": "This is an engineering task, not a TPM's primary role."
+        },
+        {
+          "key": "D",
+          "text": "Estimating the exact person-hours required for each development task without consulting the engineering team.",
+          "is_correct": false,
+          "rationale": "Effort estimation should be collaborative with the engineering team."
+        },
+        {
+          "key": "E",
+          "text": "Focusing solely on immediate market trends and customer feedback, disregarding any technical feasibility constraints.",
+          "is_correct": false,
+          "rationale": "TPMs must balance market needs with technical feasibility."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "In an Agile Scrum framework, what is a key responsibility of the Technical Product Manager during sprint planning?",
+      "explanation": "During sprint planning, the TPM (often acting as Product Owner) is responsible for ensuring the development team understands the highest priority items from the backlog and their value.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Assigning individual tasks to developers and monitoring their daily progress throughout the sprint execution.",
+          "is_correct": false,
+          "rationale": "Task assignment and monitoring are typically team-managed or Scrum Master roles."
+        },
+        {
+          "key": "B",
+          "text": "Facilitating the daily stand-up meeting and resolving all technical impediments for the development team.",
+          "is_correct": false,
+          "rationale": "This is primarily the Scrum Master's responsibility."
+        },
+        {
+          "key": "C",
+          "text": "Ensuring the product backlog is prioritized, refined, and clearly understood by the development team for the upcoming sprint.",
+          "is_correct": true,
+          "rationale": "TPMs ensure the team understands the prioritized backlog for the sprint."
+        },
+        {
+          "key": "D",
+          "text": "Conducting thorough code reviews and approving all pull requests before merging them into the main branch.",
+          "is_correct": false,
+          "rationale": "Code reviews are an engineering responsibility, often by a tech lead."
+        },
+        {
+          "key": "E",
+          "text": "Designing the detailed technical architecture for all new features planned for the entire product roadmap.",
+          "is_correct": false,
+          "rationale": "Architectural design is a collaborative engineering effort, not solely the TPM's."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "When designing an API for a new product feature, which technical consideration is paramount for a Technical Product Manager?",
+      "explanation": "A well-designed API is crucial for its adoption and maintainability. Consistency, clear documentation, and intuitive design significantly reduce integration friction for consumers.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Maximizing the number of data fields returned in every API response, regardless of the specific request.",
+          "is_correct": false,
+          "rationale": "This can lead to over-fetching and inefficient API usage."
+        },
+        {
+          "key": "B",
+          "text": "Ensuring the API endpoints are intuitive, consistent, and well-documented for easy developer adoption and integration.",
+          "is_correct": true,
+          "rationale": "Usability and clarity are critical for API adoption and maintenance."
+        },
+        {
+          "key": "C",
+          "text": "Implementing a highly complex custom authentication scheme to enhance security at all costs.",
+          "is_correct": false,
+          "rationale": "Complexity can hinder adoption; standard, robust methods are preferred."
+        },
+        {
+          "key": "D",
+          "text": "Exposing the internal database schema directly through the API to simplify data access for consumers.",
+          "is_correct": false,
+          "rationale": "This creates tight coupling, security risks, and limits future flexibility."
+        },
+        {
+          "key": "E",
+          "text": "Prioritizing the use of custom, proprietary data formats over industry-standard JSON or XML formats.",
+          "is_correct": false,
+          "rationale": "Standard formats improve interoperability and reduce integration effort."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "How should a Technical Product Manager effectively communicate a significant technical debt reduction initiative to non-technical stakeholders?",
+      "explanation": "Non-technical stakeholders are primarily concerned with business outcomes. Framing technical debt reduction in terms of improved reliability, faster feature delivery, and reduced costs makes the value clear.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Presenting detailed architectural diagrams and explaining the intricate code refactoring processes involved.",
+          "is_correct": false,
+          "rationale": "This approach is too technical and likely to confuse non-technical stakeholders."
+        },
+        {
+          "key": "B",
+          "text": "Focusing on the business value, such as improved system stability, faster feature delivery, and reduced operational costs.",
+          "is_correct": true,
+          "rationale": "Highlighting business benefits resonates best with non-technical audiences."
+        },
+        {
+          "key": "C",
+          "text": "Sending a comprehensive email with links to all relevant technical design documents for their review.",
+          "is_correct": false,
+          "rationale": "This is passive and likely to be ignored due to its technical depth."
+        },
+        {
+          "key": "D",
+          "text": "Scheduling a peer-to-peer technical deep-dive session with each individual business stakeholder separately.",
+          "is_correct": false,
+          "rationale": "This is inefficient and still too technical for non-technical stakeholders."
+        },
+        {
+          "key": "E",
+          "text": "Using highly specialized engineering jargon to demonstrate the complexity and necessity of the technical work.",
+          "is_correct": false,
+          "rationale": "Using jargon alienates and confuses non-technical audiences."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "To make data-driven decisions for product iteration and improvement, what key action should a Technical Product Manager prioritize?",
+      "explanation": "A/B testing allows for controlled experimentation to validate hypotheses about product changes. Analyzing metrics provides objective data to inform future product development and iteration.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Relying solely on anecdotal user feedback from customer support tickets without any quantitative analysis.",
+          "is_correct": false,
+          "rationale": "Anecdotal feedback is valuable but insufficient for data-driven decisions alone."
+        },
+        {
+          "key": "B",
+          "text": "Implementing A/B tests and analyzing metrics like conversion rates, engagement, and retention to validate hypotheses.",
+          "is_correct": true,
+          "rationale": "A/B testing with key metrics provides objective data for product decisions."
+        },
+        {
+          "key": "C",
+          "text": "Regularly conducting brainstorming sessions with the engineering team to generate new feature ideas.",
+          "is_correct": false,
+          "rationale": "Brainstorming is for idea generation, not directly for data-driven decision-making."
+        },
+        {
+          "key": "D",
+          "text": "Requesting the development team to build every feature suggested by the sales team immediately.",
+          "is_correct": false,
+          "rationale": "This is reactive and not based on objective data or strategic prioritization."
+        },
+        {
+          "key": "E",
+          "text": "Reviewing competitor product features and attempting to replicate their successful functionalities directly.",
+          "is_correct": false,
+          "rationale": "Competitor analysis is useful, but internal data is crucial for own product decisions."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "When defining technical requirements for a new feature, what is the most critical aspect for a Technical Product Manager?",
+      "explanation": "For a TPM, translating business needs into actionable technical requirements is paramount. Well-defined user stories with clear acceptance criteria provide engineers with the necessary detail to build the feature correctly and efficiently.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ensuring detailed user stories are written with clear acceptance criteria for the engineering team.",
+          "is_correct": true,
+          "rationale": "User stories with acceptance criteria directly translate business needs to technical tasks."
+        },
+        {
+          "key": "B",
+          "text": "Developing a comprehensive project plan including resource allocation and strict timeline adherence.",
+          "is_correct": false,
+          "rationale": "This is project management, not the core of technical requirements."
+        },
+        {
+          "key": "C",
+          "text": "Conducting extensive market research to validate the feature's competitive positioning and pricing strategy.",
+          "is_correct": false,
+          "rationale": "This is strategic product management, not technical requirement definition."
+        },
+        {
+          "key": "D",
+          "text": "Designing the user interface (UI) mockups and prototypes to visualize the end-user experience.",
+          "is_correct": false,
+          "rationale": "This is UX/UI design, a separate but related discipline."
+        },
+        {
+          "key": "E",
+          "text": "Performing thorough quality assurance testing to identify and resolve all bugs before release.",
+          "is_correct": false,
+          "rationale": "This is a QA function, occurring after requirements are defined."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "What is a primary consideration for a Technical Product Manager when defining external API specifications?",
+      "explanation": "External APIs are products themselves. A TPM must ensure they are easy to understand, use, and integrate, which requires excellent documentation and intuitive design. This drives adoption and reduces support overhead.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ensuring the API is intuitive, well-documented, and provides a consistent experience for developers using it.",
+          "is_correct": true,
+          "rationale": "Good API design prioritizes developer experience for widespread adoption and ease of use."
+        },
+        {
+          "key": "B",
+          "text": "Prioritizing the use of the latest cutting-edge programming languages for optimal performance.",
+          "is_correct": false,
+          "rationale": "Language choice is an implementation detail, not a primary API spec concern."
+        },
+        {
+          "key": "C",
+          "text": "Limiting the number of endpoints to simplify the internal backend architecture and reduce complexity.",
+          "is_correct": false,
+          "rationale": "API design focuses on functionality, not just endpoint count."
+        },
+        {
+          "key": "D",
+          "text": "Implementing a strict rate-limiting policy to prevent potential abuse from external third-party integrators.",
+          "is_correct": false,
+          "rationale": "Rate limiting is a security/operational concern, not the core API specification."
+        },
+        {
+          "key": "E",
+          "text": "Focusing solely on the internal technical implementation details rather than external developer experience.",
+          "is_correct": false,
+          "rationale": "External APIs require an external-facing, developer-centric view."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "When prioritizing product backlog items, how should a Technical Product Manager balance new feature development with technical debt?",
+      "explanation": "A balanced approach is crucial. Ignoring technical debt leads to slower development, increased bugs, and higher operational costs. Dedicating consistent capacity ensures product health and future agility.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Allocate a dedicated percentage of engineering capacity towards addressing critical technical debt regularly.",
+          "is_correct": true,
+          "rationale": "Regular allocation for technical debt prevents accumulation and ensures product health."
+        },
+        {
+          "key": "B",
+          "text": "Always prioritize new revenue-generating features over any existing technical debt remediation efforts.",
+          "is_correct": false,
+          "rationale": "Ignoring technical debt leads to long-term issues and slows future development."
+        },
+        {
+          "key": "C",
+          "text": "Address technical debt only when it directly causes severe production outages or performance degradation.",
+          "is_correct": false,
+          "rationale": "This reactive approach is costly and disruptive; proactive management is better."
+        },
+        {
+          "key": "D",
+          "text": "Delegate all technical debt decisions to the engineering lead without any product management input.",
+          "is_correct": false,
+          "rationale": "TPMs must collaborate with engineering on technical debt prioritization."
+        },
+        {
+          "key": "E",
+          "text": "Postpone all technical debt until a major re-platforming project is eventually initiated.",
+          "is_correct": false,
+          "rationale": "This approach allows debt to grow unmanageably, increasing future risks."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "Which metric is most crucial for a Technical Product Manager to track when evaluating the success of a new feature launch?",
+      "explanation": "The success of a new feature is ultimately measured by its adoption and impact on users. Tracking active usage and engagement provides direct evidence of its value and whether it solves a real user problem.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The number of active users engaging with the new feature and their frequency of use.",
+          "is_correct": true,
+          "rationale": "User engagement directly indicates if a feature provides value and meets user needs."
+        },
+        {
+          "key": "B",
+          "text": "The total number of lines of code written by the engineering team during development.",
+          "is_correct": false,
+          "rationale": "Lines of code is a poor measure of product success or value."
+        },
+        {
+          "key": "C",
+          "text": "The cost per user acquisition for marketing campaigns related to the new feature.",
+          "is_correct": false,
+          "rationale": "This is a marketing metric, not directly measuring feature success."
+        },
+        {
+          "key": "D",
+          "text": "The overall server uptime percentage across all production environments after release.",
+          "is_correct": false,
+          "rationale": "Server uptime indicates system reliability, not feature adoption or value."
+        },
+        {
+          "key": "E",
+          "text": "The number of internal meetings held to discuss the feature's progress and challenges.",
+          "is_correct": false,
+          "rationale": "Meeting count is an activity metric, not a measure of product success."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "What is a key responsibility of a Technical Product Manager regarding product security and compliance requirements?",
+      "explanation": "A TPM's role involves ensuring that security and compliance are built into the product from the design phase. This includes understanding and incorporating relevant standards and regulations into the product roadmap and requirements.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ensuring the product design and implementation adhere to relevant industry security standards and privacy regulations.",
+          "is_correct": true,
+          "rationale": "TPMs ensure product design incorporates security and compliance from the outset."
+        },
+        {
+          "key": "B",
+          "text": "Performing detailed penetration testing and vulnerability assessments on the deployed production systems.",
+          "is_correct": false,
+          "rationale": "This is typically a security engineering or QA function."
+        },
+        {
+          "key": "C",
+          "text": "Managing the incident response plan for security breaches and coordinating communication with affected users.",
+          "is_correct": false,
+          "rationale": "This is an incident management or security operations responsibility."
+        },
+        {
+          "key": "D",
+          "text": "Developing and maintaining the firewall rules and network security configurations for the infrastructure.",
+          "is_correct": false,
+          "rationale": "This falls under infrastructure or network engineering."
+        },
+        {
+          "key": "E",
+          "text": "Training all employees on best practices for password management and phishing attack recognition.",
+          "is_correct": false,
+          "rationale": "This is an internal IT security awareness or training function."
+        }
+      ]
+    }
+  ]
+}

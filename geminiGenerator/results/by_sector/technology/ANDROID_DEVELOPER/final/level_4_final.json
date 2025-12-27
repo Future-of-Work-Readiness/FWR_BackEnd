@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "How does the LeakCanary library primarily detect potential memory leaks in an Android application during the development phase?",
+      "explanation": "LeakCanary works by installing an ObjectWatcher that holds weak references to destroyed objects. After a delay, it checks if the garbage collector has cleared these references. If not, it dumps the heap and analyzes it to find the leak.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It installs a watcher for objects that should be garbage collected and verifies their removal from memory after a set delay.",
+          "is_correct": true,
+          "rationale": "This accurately describes LeakCanary's core mechanism of watching weakly referenced objects."
+        },
+        {
+          "key": "B",
+          "text": "It performs a static analysis of the source code to identify potential circular references before the application is compiled.",
+          "is_correct": false,
+          "rationale": "This describes a static analysis tool, whereas LeakCanary operates at runtime."
+        },
+        {
+          "key": "C",
+          "text": "It hooks directly into the Android Profiler's memory allocation tracker to flag objects that are never deallocated.",
+          "is_correct": false,
+          "rationale": "LeakCanary is a standalone library and does not directly hook into the Android Profiler."
+        },
+        {
+          "key": "D",
+          "text": "It forces a full garbage collection on every Activity's `onDestroy` and then compares heap dumps to find discrepancies.",
+          "is_correct": false,
+          "rationale": "While it does trigger GC and heap dumps, it's more targeted than on every `onDestroy`."
+        },
+        {
+          "key": "E",
+          "text": "It overrides the `finalize()` method on all objects to log their destruction and reports those that are never logged.",
+          "is_correct": false,
+          "rationale": "Overriding `finalize()` is an unreliable anti-pattern and not how the library functions."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "In Kotlin Coroutines, what is the primary role of a `CoroutineScope` in the context of structured concurrency?",
+      "explanation": "A CoroutineScope is central to structured concurrency. It keeps track of all coroutines launched within it. Cancelling the scope ensures that all its child coroutines are also cancelled, preventing work leaks and simplifying lifecycle management.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It defines the lifecycle and context of coroutines, enabling collective cancellation and preventing coroutines from outliving their intended lifespan.",
+          "is_correct": true,
+          "rationale": "This correctly identifies the scope's role in lifecycle management and cancellation."
+        },
+        {
+          "key": "B",
+          "text": "It provides a dedicated, single-threaded execution context to ensure that all coroutines run sequentially in a predictable order.",
+          "is_correct": false,
+          "rationale": "This describes a single-threaded dispatcher, not the primary function of a scope."
+        },
+        {
+          "key": "C",
+          "text": "It automatically serializes access to shared mutable state between different coroutines, preventing potential race conditions without using mutexes.",
+          "is_correct": false,
+          "rationale": "A scope does not handle state synchronization; that requires explicit mechanisms like Mutex."
+        },
+        {
+          "key": "D",
+          "text": "It is responsible for allocating and managing the memory for all coroutine objects created within its boundary.",
+          "is_correct": false,
+          "rationale": "Memory management is handled by the Kotlin runtime and JVM, not the CoroutineScope."
+        },
+        {
+          "key": "E",
+          "text": "It exclusively determines the priority of coroutines, ensuring that high-priority tasks are always executed before lower-priority ones.",
+          "is_correct": false,
+          "rationale": "Coroutine execution order is managed by the Dispatcher, not the scope itself."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "When configuring an Android project with multiple product flavors, what is the main purpose of using `flavorDimensions` in Gradle?",
+      "explanation": "`flavorDimensions` allows you to create groups or categories for your product flavors. Gradle then combines one flavor from each dimension to create all possible build variants, such as 'demo-paid' or 'full-free', enabling complex build configurations.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It allows the combination of flavors from different categories to create complex build variants, like 'demo-paid' or 'full-free'.",
+          "is_correct": true,
+          "rationale": "This correctly explains that dimensions are for creating combinatorial build variants."
+        },
+        {
+          "key": "B",
+          "text": "It specifies the target screen density for each product flavor, ensuring that only appropriate resources are bundled in the APK.",
+          "is_correct": false,
+          "rationale": "Screen density is handled by resource qualifiers and APK splits, not flavor dimensions."
+        },
+        {
+          "key": "C",
+          "text": "It defines a unique `applicationIdSuffix` for each flavor dimension, which helps in installing different variants on the same device.",
+          "is_correct": false,
+          "rationale": "The `applicationIdSuffix` is configured within the product flavor block itself, not the dimension."
+        },
+        {
+          "key": "D",
+          "text": "It isolates the source code of each flavor into a separate Gradle module, enforcing a multi-module project architecture.",
+          "is_correct": false,
+          "rationale": "Source sets (`src/demo/java`) handle code isolation, not the `flavorDimensions` property."
+        },
+        {
+          "key": "E",
+          "text": "It directly controls which signing configuration is used for each group of flavors during the release build process.",
+          "is_correct": false,
+          "rationale": "Signing configurations are assigned to build types or specific flavors, not dimensions."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "In Jetpack Compose, what is the key difference between using `remember` and `rememberSaveable` to manage a composable's state?",
+      "explanation": "The `remember` function preserves state across recompositions but not across configuration changes (like rotation). `rememberSaveable` extends this by also preserving state across configuration changes and even process death by saving it to the instance state Bundle.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`rememberSaveable` persists state across configuration changes and process death, while `remember` only survives recompositions within the same activity instance.",
+          "is_correct": true,
+          "rationale": "This accurately describes the core difference in persistence across lifecycle events."
+        },
+        {
+          "key": "B",
+          "text": "`remember` can only be used for primitive data types, whereas `rememberSaveable` is specifically designed to handle complex custom objects.",
+          "is_correct": false,
+          "rationale": "Both can handle objects, but `rememberSaveable` may require a custom `Saver`."
+        },
+        {
+          "key": "C",
+          "text": "`rememberSaveable` automatically saves the state to `SharedPreferences`, making it persistent across application launches, unlike `remember`.",
+          "is_correct": false,
+          "rationale": "It saves to the instance state `Bundle`, not `SharedPreferences`, so it doesn't persist across app kills."
+        },
+        {
+          "key": "D",
+          "text": "Using `remember` is considered a performance anti-pattern in modern Compose, and `rememberSaveable` should always be used in its place.",
+          "is_correct": false,
+          "rationale": "Both have valid and distinct use cases; `remember` is essential and not an anti-pattern."
+        },
+        {
+          "key": "E",
+          "text": "`remember` stores its state directly on the heap, while `rememberSaveable` offloads its state to a background thread for processing.",
+          "is_correct": false,
+          "rationale": "Both store state in the composition; `rememberSaveable` just has an extra mechanism for saving/restoring."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What is the primary security function of the `keystore.jks` file when preparing an Android application for a release build?",
+      "explanation": "The keystore file is a secure container for cryptographic keys. For Android releases, it holds the private key that is used to sign the app. This digital signature proves the app's origin and ensures that any updates come from the same developer.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It securely holds the private key used to cryptographically sign the app bundle, which verifies the developer's identity and app integrity.",
+          "is_correct": true,
+          "rationale": "This correctly states the keystore's role in holding the private signing key."
+        },
+        {
+          "key": "B",
+          "text": "It contains the complete set of ProGuard or R8 rules that are used for code shrinking, obfuscation, and optimization.",
+          "is_correct": false,
+          "rationale": "ProGuard/R8 rules are stored in `.pro` files, not in the keystore."
+        },
+        {
+          "key": "C",
+          "text": "It stores all the sensitive API keys and secrets that are injected into the build configuration during the CI/CD pipeline.",
+          "is_correct": false,
+          "rationale": "API keys are typically managed in `gradle.properties` or other secret management tools."
+        },
+        {
+          "key": "D",
+          "text": "It is an encrypted database file that is bundled with the app to store user data securely on the device.",
+          "is_correct": false,
+          "rationale": "This describes a secure local database, not the purpose of the build keystore."
+        },
+        {
+          "key": "E",
+          "text": "It defines the network security configuration, specifying which domains the application is permitted to communicate with over TLS.",
+          "is_correct": false,
+          "rationale": "This is defined in a `network_security_config.xml` file, not the keystore."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "In a Dagger Hilt application, what is the precise lifecycle of a dependency provided with the `@ActivityScoped` annotation?",
+      "explanation": "An `@ActivityScoped` component is tied directly to an Activity's lifecycle. It is created on the first injection request within that Activity and is destroyed when the Activity is destroyed, surviving configuration changes.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It is created the first time it's requested within an Activity and is destroyed only when that Activity is destroyed.",
+          "is_correct": true,
+          "rationale": "This correctly describes the one-instance-per-Activity lifecycle, which is the exact behavior of the `@ActivityScoped` annotation."
+        },
+        {
+          "key": "B",
+          "text": "It persists across the entire application's lifecycle, from launch until the process is killed by the operating system.",
+          "is_correct": false,
+          "rationale": "This describes the `@Singleton` scope, which lasts for the entire application lifecycle, not just a single activity's."
+        },
+        {
+          "key": "C",
+          "text": "It is created for a specific Fragment and is destroyed when that Fragment's view is completely destroyed.",
+          "is_correct": false,
+          "rationale": "This describes the `@FragmentScoped` or `@ViewScoped` lifecycles, which are tied to a Fragment or View, not an Activity."
+        },
+        {
+          "key": "D",
+          "text": "It is tied to the lifecycle of a ViewModel and survives configuration changes just like the ViewModel itself.",
+          "is_correct": false,
+          "rationale": "This correctly describes the `@ViewModelScoped` annotation's behavior, which is a different lifecycle tied to a ViewModel."
+        },
+        {
+          "key": "E",
+          "text": "It is created as a new instance every single time it is injected into a class, offering no shared state.",
+          "is_correct": false,
+          "rationale": "This describes an unscoped dependency, which creates a new instance on every injection, unlike a scoped dependency."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "When choosing between `StateFlow` and `SharedFlow` for UI state management, what is the key advantage of using `StateFlow`?",
+      "explanation": "`StateFlow` is specifically designed for representing state. It must have an initial value and always replays its most recent value to new collectors, ensuring the UI always has a state to render.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It always holds a current value, which is immediately emitted to new collectors, making it ideal for representing state.",
+          "is_correct": true,
+          "rationale": "`StateFlow` is a state-holder by design, which means it always has a value and replays it to new collectors."
+        },
+        {
+          "key": "B",
+          "text": "It allows for a configurable replay cache, enabling new subscribers to receive multiple past events upon their collection.",
+          "is_correct": false,
+          "rationale": "Configurable replay cache is a feature of `SharedFlow`, not `StateFlow`."
+        },
+        {
+          "key": "C",
+          "text": "It does not require an initial value upon creation, making it more flexible for representing one-time transient events.",
+          "is_correct": false,
+          "rationale": "`StateFlow` must be initialized with a value, whereas `SharedFlow` can be created without one, making it better for events."
+        },
+        {
+          "key": "D",
+          "text": "It supports multiple concurrent collectors without dropping any emitted values, ensuring every event is processed by all subscribers.",
+          "is_correct": false,
+          "rationale": "This describes a `SharedFlow` with a sufficient buffer, not `StateFlow`."
+        },
+        {
+          "key": "E",
+          "text": "It is a cold flow that only begins emitting its values once a terminal operator is applied by a collector.",
+          "is_correct": false,
+          "rationale": "Both `StateFlow` and `SharedFlow` are hot flows, meaning they can emit values even without active collectors."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "When creating a custom Android View, what is the primary responsibility of overriding the `onMeasure` method in the view's lifecycle?",
+      "explanation": "The `onMeasure` method is a critical part of the view rendering pipeline. Its sole purpose is to determine the view's size requirements based on constraints from its parent and then report those dimensions back.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To calculate and set the view's final dimensions by calling `setMeasuredDimension()` based on the provided `MeasureSpec` constraints.",
+          "is_correct": true,
+          "rationale": "`onMeasure` is the lifecycle method specifically responsible for calculating and setting the view's dimensions using `setMeasuredDimension()`."
+        },
+        {
+          "key": "B",
+          "text": "To draw the view's content onto the canvas, including shapes, text, and bitmaps, using the provided Paint object.",
+          "is_correct": false,
+          "rationale": "This describes the `onDraw` method, which is called after `onMeasure` and `onLayout` to render the view's content."
+        },
+        {
+          "key": "C",
+          "text": "To assign a specific size and position to each of the child views contained within this custom view group.",
+          "is_correct": false,
+          "rationale": "This is the responsibility of the `onLayout` method, which positions the child views after they have been measured."
+        },
+        {
+          "key": "D",
+          "text": "To handle user touch events, such as taps and gestures, and then update the view's internal state accordingly.",
+          "is_correct": false,
+          "rationale": "This describes the `onTouchEvent` method, which is part of the input handling system, not the layout process."
+        },
+        {
+          "key": "E",
+          "text": "To inflate the view's layout from an XML file and initialize references to its various child components.",
+          "is_correct": false,
+          "rationale": "This is typically done in the view's constructor or the `onFinishInflate` callback, not during the measurement pass."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "You are preparing a release build and notice that R8 obfuscation is breaking functionality. What is the most common cause?",
+      "explanation": "Obfuscation renames code elements. If your code uses reflection (e.g., with libraries like Gson or Moshi) to access classes or methods by their original string names, R8's renaming will cause `ClassNotFoundException` or similar runtime errors.",
+      "options": [
+        {
+          "key": "A",
+          "text": "R8 is renaming classes, methods, or fields that are being accessed through reflection, such as with serialization libraries.",
+          "is_correct": true,
+          "rationale": "Reflection relies on original string names for classes and methods, which are changed by the obfuscation process, causing errors."
+        },
+        {
+          "key": "B",
+          "text": "The build process is incorrectly removing unused resources, causing `Resources.NotFoundException` at runtime for valid assets.",
+          "is_correct": false,
+          "rationale": "This issue is caused by resource shrinking, a separate R8 feature, not the code obfuscation step itself."
+        },
+        {
+          "key": "C",
+          "text": "The application's `minSdkVersion` is set too high, preventing the code from running on older Android versions.",
+          "is_correct": false,
+          "rationale": "This is a build configuration issue related to API levels and is completely unrelated to R8's code transformation process."
+        },
+        {
+          "key": "D",
+          "text": "A third-party library is missing from the `dependencies` block in the `build.gradle` file, causing a `NoClassDefFoundError`.",
+          "is_correct": false,
+          "rationale": "This is a dependency management problem that would typically cause a build failure, not a runtime issue specific to R8."
+        },
+        {
+          "key": "E",
+          "text": "The Android Gradle Plugin is outdated and incompatible with the version of Kotlin used in the project.",
+          "is_correct": false,
+          "rationale": "This would cause a build-time failure, not a runtime obfuscation error."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "When implementing a `ContentProvider` to share data with other applications, what is the best practice for ensuring secure, granular access?",
+      "explanation": "The most secure and flexible way to protect a ContentProvider is by defining custom permissions. This allows you to grant access on a per-app basis, ensuring only trusted applications can read or write data.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Define and enforce custom permissions in the manifest and check them programmatically within the provider's methods.",
+          "is_correct": true,
+          "rationale": "Custom permissions provide the most granular and secure control, allowing you to grant access on a per-application basis."
+        },
+        {
+          "key": "B",
+          "text": "Rely solely on the `android:exported=\"false\"` attribute in the manifest to prevent any external access.",
+          "is_correct": false,
+          "rationale": "This disables sharing entirely, which defeats the primary purpose of using a `ContentProvider` to share data with other apps."
+        },
+        {
+          "key": "C",
+          "text": "Store the shared data in an encrypted database file that only the provider can decrypt with a hardcoded key.",
+          "is_correct": false,
+          "rationale": "Hardcoding keys is insecure and doesn't control which app can access data."
+        },
+        {
+          "key": "D",
+          "text": "Require all consuming applications to use the same `sharedUserId` to gain access to the provider's data.",
+          "is_correct": false,
+          "rationale": "The `sharedUserId` mechanism is deprecated and considered insecure, as it creates unintended permissions and complicates app updates."
+        },
+        {
+          "key": "E",
+          "text": "Expose the data through a public, unauthenticated REST API hosted within the application for other apps to consume.",
+          "is_correct": false,
+          "rationale": "This is highly insecure and not how ContentProviders are designed to work."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When designing a large multi-module Android application, what is the primary advantage of adopting a feature-based modularization strategy over a layer-based one?",
+      "explanation": "Feature-based modularization encapsulates all code related to a single feature (UI, logic, data) into one module. This improves team autonomy, allows for parallel development, and enables dynamic feature delivery more easily.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It enhances team autonomy and enables parallel development by encapsulating all code for a specific feature within a single, self-contained module.",
+          "is_correct": true,
+          "rationale": "Feature modules group code by functionality, improving team independence and parallel work streams."
+        },
+        {
+          "key": "B",
+          "text": "It strictly enforces separation of concerns by creating distinct modules for UI, domain, and data layers across the entire application codebase.",
+          "is_correct": false,
+          "rationale": "This describes a layer-based modularization strategy, which organizes code by technical layer rather than by user-facing feature."
+        },
+        {
+          "key": "C",
+          "text": "It significantly reduces the initial application download size by compiling all features into a single monolithic base application module for users.",
+          "is_correct": false,
+          "rationale": "This is incorrect; feature modules can be made dynamic to reduce initial app size."
+        },
+        {
+          "key": "D",
+          "text": "It simplifies dependency management by centralizing all third-party library declarations within a shared 'core' module used by every other module.",
+          "is_correct": false,
+          "rationale": "This is a common practice in modularization but not the primary advantage of feature modules."
+        },
+        {
+          "key": "E",
+          "text": "It guarantees faster clean builds because Gradle can skip compiling modules that have not undergone any recent code or resource changes.",
+          "is_correct": false,
+          "rationale": "This is a general benefit of modularization, not specific to feature vs. layer."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "In Jetpack Compose, what is the most effective strategy to prevent unnecessary recompositions of a complex list item that depends on frequently changing state?",
+      "explanation": "Wrapping the state read in a `derivedStateOf` lambda ensures that consumers only recompose when the result of the lambda's calculation actually changes, not every time the underlying state objects are updated.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using the `remember(key)` function with all state variables to ensure the composable is only redrawn when the key's value changes.",
+          "is_correct": false,
+          "rationale": "This is helpful but less efficient than `derivedStateOf` for computed state."
+        },
+        {
+          "key": "B",
+          "text": "Extracting the complex list item into a separate composable function that accepts all required data as immutable parameters for stability.",
+          "is_correct": false,
+          "rationale": "This is good practice but doesn't solve the issue of derived state changing too often."
+        },
+        {
+          "key": "C",
+          "text": "Wrapping the state calculation within a `derivedStateOf` block to ensure recomposition only occurs when the derived result actually changes.",
+          "is_correct": true,
+          "rationale": "`derivedStateOf` efficiently computes state and triggers recomposition only when the result changes."
+        },
+        {
+          "key": "D",
+          "text": "Moving all state observation logic into a `LaunchedEffect` that manually triggers a recomposition using a mutable state flag when needed.",
+          "is_correct": false,
+          "rationale": "This is an anti-pattern that works against Compose's declarative nature by introducing imperative, manual recomposition triggers."
+        },
+        {
+          "key": "E",
+          "text": "Annotating the composable function with `@Stable` to signal to the compiler that its parameters will not change during its lifecycle.",
+          "is_correct": false,
+          "rationale": "The `@Stable` annotation is for classes, not functions, and the compiler infers stability."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "What is the key principle of structured concurrency in Kotlin Coroutines, and how does using a `CoroutineScope` enforce this principle effectively?",
+      "explanation": "Structured concurrency ensures that coroutines launched within a scope cannot outlive that scope. A `CoroutineScope` enforces this by automatically cancelling all its child coroutines when the scope itself is cancelled, preventing work and resource leaks.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It ensures that all coroutines run on the main thread by default, preventing race conditions without requiring explicit dispatcher management.",
+          "is_correct": false,
+          "rationale": "Coroutines can run on any dispatcher; this is not related to structured concurrency."
+        },
+        {
+          "key": "B",
+          "text": "It guarantees that child coroutines cannot outlive their parent scope, ensuring proper cleanup and preventing resource leaks when the scope is cancelled.",
+          "is_correct": true,
+          "rationale": "This defines the core benefit of structured concurrency: contained and predictable lifecycles."
+        },
+        {
+          "key": "C",
+          "text": "It automatically retries failed network operations by re-launching the coroutine within the same scope until a successful result is achieved.",
+          "is_correct": false,
+          "rationale": "Retry logic is a separate concern and not a fundamental principle of structured concurrency."
+        },
+        {
+          "key": "D",
+          "text": "It links the lifecycle of all coroutines to the application process, ensuring they continue running even if the originating Activity is destroyed.",
+          "is_correct": false,
+          "rationale": "This is the opposite of structured concurrency and a common source of memory leaks."
+        },
+        {
+          "key": "E",
+          "text": "It prioritizes coroutines based on their dispatcher, allowing `Dispatchers.IO` tasks to interrupt tasks running on `Dispatchers.Main` for better performance.",
+          "is_correct": false,
+          "rationale": "This describes job scheduling and dispatching, not the lifecycle management of structured concurrency."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Your team is experiencing slow Android build times in a large multi-module project. Which Gradle feature is most crucial to enable for significant incremental build improvements?",
+      "explanation": "The Gradle build cache stores outputs from previous builds. When enabled, it allows Gradle to reuse these outputs for unchanged modules, dramatically speeding up incremental builds by avoiding redundant compilation and processing tasks.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Enabling ProGuard or R8 for all build variants, including debug, to shrink the codebase and reduce the overall compilation workload.",
+          "is_correct": false,
+          "rationale": "Running code shrinkers on debug builds typically slows them down, it is meant for release."
+        },
+        {
+          "key": "B",
+          "text": "Activating the Gradle build cache, which allows the reuse of task outputs from previous builds, avoiding redundant work for unchanged modules.",
+          "is_correct": true,
+          "rationale": "The build cache provides the most significant speed improvement for incremental builds."
+        },
+        {
+          "key": "C",
+          "text": "Increasing the JVM heap size allocated to the Gradle Daemon to provide more memory for compilation and other build-related tasks.",
+          "is_correct": false,
+          "rationale": "This can prevent out-of-memory errors but has less impact on speed than caching."
+        },
+        {
+          "key": "D",
+          "text": "Using the `--parallel` flag to execute tasks in different modules concurrently, which is more effective for clean builds than incremental ones.",
+          "is_correct": false,
+          "rationale": "Parallel execution helps, but the build cache is more critical for incremental changes."
+        },
+        {
+          "key": "E",
+          "text": "Migrating all `build.gradle` files from Groovy to the Kotlin DSL, as Kotlin scripts offer superior performance during the configuration phase.",
+          "is_correct": false,
+          "rationale": "Kotlin DSL offers benefits like type safety but provides only marginal performance gains."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "You are debugging a memory leak related to a `ViewModel` in your application. Which of the following scenarios is the most likely cause?",
+      "explanation": "ViewModels are designed to outlive configuration changes. If a ViewModel holds a direct or indirect reference to a view-related Context (like an Activity), it will prevent that Activity from being garbage collected, causing a significant memory leak.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The `ViewModel` is holding a strong reference to an `Application` context obtained via `getApplication()` to access system services.",
+          "is_correct": false,
+          "rationale": "Holding an Application context is safe as it lives for the entire app lifecycle."
+        },
+        {
+          "key": "B",
+          "text": "A coroutine launched from `viewModelScope` is performing a long-running background task that continues after the screen is closed.",
+          "is_correct": false,
+          "rationale": "`viewModelScope` is automatically cancelled when the ViewModel is cleared, preventing this leak."
+        },
+        {
+          "key": "C",
+          "text": "The `ViewModel` is holding a direct reference to an `Activity` or `Fragment` context, preventing it from being garbage collected.",
+          "is_correct": true,
+          "rationale": "This is a classic memory leak pattern, as the ViewModel outlives the Activity."
+        },
+        {
+          "key": "D",
+          "text": "A `LiveData` object within the `ViewModel` is being observed by a UI component using the `observeForever` method without proper removal.",
+          "is_correct": false,
+          "rationale": "This leaks the observer, but the primary cause of a ViewModel leak is holding a Context."
+        },
+        {
+          "key": "E",
+          "text": "The `ViewModel` is being created using a `ViewModelProvider` without a custom `Factory` to handle its constructor dependencies.",
+          "is_correct": false,
+          "rationale": "This would cause a runtime crash (InstantiationException), not a memory leak."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "When implementing a feature requiring a user-specific scope in a Hilt-based app, what is the correct architectural approach?",
+      "explanation": "Custom components with custom scopes are the standard Hilt pattern for managing lifecycles not tied to default Android components, such as a user session. This ensures proper encapsulation and lifecycle management.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Define a custom component with a custom scope annotation, creating it on login and destroying it on logout.",
+          "is_correct": true,
+          "rationale": "This correctly isolates the user-scoped dependencies, tying their lifecycle to the user session rather than an Android component."
+        },
+        {
+          "key": "B",
+          "text": "Use the standard `@Singleton` scope for all user data to ensure it is always available throughout the application's lifecycle.",
+          "is_correct": false,
+          "rationale": "This would leak sensitive user data after logout and is incorrect because the singleton lives for the entire application process."
+        },
+        {
+          "key": "C",
+          "text": "Rely on the `@ActivityScoped` annotation, binding the user data lifecycle directly to the main user activity.",
+          "is_correct": false,
+          "rationale": "The user session lifecycle is not always tied to a single activity."
+        },
+        {
+          "key": "D",
+          "text": "Create a global static singleton object outside of Hilt to manually manage all user-specific dependencies and instances.",
+          "is_correct": false,
+          "rationale": "This is an anti-pattern that bypasses the benefits of dependency injection, such as testability and lifecycle management."
+        },
+        {
+          "key": "E",
+          "text": "Store all user-specific objects in a ViewModel that is shared across all fragments of the user flow.",
+          "is_correct": false,
+          "rationale": "This couples data to UI components and is not a scalable scoping solution."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "When using Android's Profiler to debug UI jank, what is the primary function of the `Choreographer` within the rendering process?",
+      "explanation": "The Choreographer is a crucial timing mechanism. It synchronizes rendering work with the display's refresh rate (vsync), preventing tearing and ensuring smooth animations by posting callbacks to run at the start of a new frame.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It directly executes low-level drawing commands on the GPU to render pixels for each frame of the animation.",
+          "is_correct": false,
+          "rationale": "This describes the role of the GPU and rendering pipeline, not Choreographer."
+        },
+        {
+          "key": "B",
+          "text": "It is responsible for inflating XML layout files into their corresponding View objects in the application's memory.",
+          "is_correct": false,
+          "rationale": "This is handled by the `LayoutInflater` service, which is part of the view creation process, not the rendering loop."
+        },
+        {
+          "key": "C",
+          "text": "It coordinates the timing of drawing, animations, and input processing to occur on the vertical sync (vsync) signal.",
+          "is_correct": true,
+          "rationale": "Choreographer's main role is to synchronize rendering work with the display's vsync signal to ensure smooth, tear-free animations."
+        },
+        {
+          "key": "D",
+          "text": "It manages the allocation and garbage collection of memory specifically for Bitmaps and other large graphical assets.",
+          "is_correct": false,
+          "rationale": "This is the responsibility of the Android memory management system and garbage collector, not a rendering timing mechanism."
+        },
+        {
+          "key": "E",
+          "text": "It serializes the entire View hierarchy state into a Bundle during configuration changes like screen rotation.",
+          "is_correct": false,
+          "rationale": "This state-saving mechanism is part of the standard Activity/Fragment lifecycle."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "What is the most secure and modern industry-standard method for storing sensitive data like API keys on an Android device?",
+      "explanation": "The Android Keystore provides hardware-backed, containerized key storage, making it extremely difficult to extract keys from the device. This is the recommended practice for securing credentials needed by an application.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Placing the keys directly into `SharedPreferences` as plain text strings for easy and quick application-wide access.",
+          "is_correct": false,
+          "rationale": "SharedPreferences stores data in an unencrypted XML file on the device, making it completely insecure for sensitive information."
+        },
+        {
+          "key": "B",
+          "text": "Hardcoding the sensitive keys as string constants directly inside of a Kotlin or Java source code file.",
+          "is_correct": false,
+          "rationale": "This is highly insecure as keys can be extracted from decompiled code."
+        },
+        {
+          "key": "C",
+          "text": "Using the Android Keystore to generate cryptographic keys and then using them to encrypt the sensitive data.",
+          "is_correct": true,
+          "rationale": "This is the most secure method available on the platform, leveraging hardware-backed key storage to protect cryptographic keys."
+        },
+        {
+          "key": "D",
+          "text": "Storing the keys in the `local.properties` file and accessing them through the generated `BuildConfig` class.",
+          "is_correct": false,
+          "rationale": "This is insecure as BuildConfig fields are compiled as plain text constants."
+        },
+        {
+          "key": "E",
+          "text": "Obfuscating the keys using a simple Base64 encoding and storing them in a raw resource text file.",
+          "is_correct": false,
+          "rationale": "Base64 is an encoding, not encryption, and provides no real security."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "In a multi-module Gradle project, what is the key implication of declaring a dependency using the `api` configuration?",
+      "explanation": "Using `api` exposes a module's dependencies to its consumers. This is necessary when types from the dependency are used in the public interface of your module, but it can increase build times if overused.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The dependency is made transitively available to any downstream modules that depend on the module declaring it.",
+          "is_correct": true,
+          "rationale": "This correctly describes transitive dependency exposure, which is the exact purpose of the `api` configuration in Gradle."
+        },
+        {
+          "key": "B",
+          "text": "It ensures the dependency is only used during compilation and is not included in the final packaged APK.",
+          "is_correct": false,
+          "rationale": "This describes the `compileOnly` configuration, which provides the dependency at compile time but not at runtime."
+        },
+        {
+          "key": "C",
+          "text": "This configuration significantly reduces the overall build time by enabling more aggressive parallel execution for that library.",
+          "is_correct": false,
+          "rationale": "Using `api` can actually increase build times by breaking compilation avoidance."
+        },
+        {
+          "key": "D",
+          "text": "It forces Gradle to download the dependency from a private, company-controlled repository instead of a public one.",
+          "is_correct": false,
+          "rationale": "The repository source is defined in the `repositories` block, not by `api`."
+        },
+        {
+          "key": "E",
+          "text": "The dependency's ProGuard or R8 rules are automatically ignored by the application module during the release build.",
+          "is_correct": false,
+          "rationale": "This is incorrect, as `consumerProguardRules` from a dependency are always applied, regardless of the `api` or `implementation` configuration."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "When building a custom layout in Jetpack Compose, which composable is the fundamental building block for custom measurement and placement logic?",
+      "explanation": "The `Layout` composable is the core primitive for custom layouts. Its `measurePolicy` gives you direct control over the two main phases of layout: measuring each child and then placing each child within the layout's bounds.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The `Canvas` composable, which is primarily used for drawing custom shapes, lines, and paths directly onto the screen.",
+          "is_correct": false,
+          "rationale": "Canvas is for custom drawing, not for laying out other composables."
+        },
+        {
+          "key": "B",
+          "text": "The `SubcomposeLayout` composable, which is a specialized tool for when measurement depends on the content of a slot.",
+          "is_correct": false,
+          "rationale": "This is a more advanced layout primitive used for cases like `LazyColumn`, not the fundamental building block for all custom layouts."
+        },
+        {
+          "key": "C",
+          "text": "A `BoxWithConstraints` composable, which provides the min and max constraints but does not directly place multiple children.",
+          "is_correct": false,
+          "rationale": "This provides constraints but is not the primitive for custom placement."
+        },
+        {
+          "key": "D",
+          "text": "The `Layout` composable, which provides a `measurePolicy` lambda to control how children are measured and positioned.",
+          "is_correct": true,
+          "rationale": "The `Layout` composable is the lowest-level primitive provided for implementing completely custom measurement and placement logic for children."
+        },
+        {
+          "key": "E",
+          "text": "A custom `Modifier` that uses the `onGloballyPositioned` callback to reactively adjust the positions of other elements.",
+          "is_correct": false,
+          "rationale": "This is for reacting to layout changes, not defining the layout itself."
+        }
+      ]
+    }
+  ]
+}

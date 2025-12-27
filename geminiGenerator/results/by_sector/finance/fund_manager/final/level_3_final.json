@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "When integrating ESG factors into a growth-oriented equity fund, which approach is most likely to maintain the fund's primary investment objective?",
+      "explanation": "The 'best-in-class' approach allows for diversification across sectors while tilting the portfolio towards ESG leaders, aligning with a growth objective without overly restrictive exclusions that could harm performance.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Applying a 'best-in-class' screening approach that selects companies with the strongest ESG performance relative to their industry peers.",
+          "is_correct": true,
+          "rationale": "This approach balances ESG objectives with the need for broad market exposure, which is crucial for a growth-oriented fund."
+        },
+        {
+          "key": "B",
+          "text": "Implementing a strict negative screening that excludes entire sectors like energy and industrials, regardless of individual company performance.",
+          "is_correct": false,
+          "rationale": "Excluding entire sectors can severely limit the investment universe, harm diversification, and potentially miss out on growth opportunities."
+        },
+        {
+          "key": "C",
+          "text": "Focusing exclusively on impact investing in private companies dedicated to solving specific environmental or social problems.",
+          "is_correct": false,
+          "rationale": "This changes the fund's mandate from public growth equity to private impact investing."
+        },
+        {
+          "key": "D",
+          "text": "Divesting from any company that has experienced any level of ESG-related controversy within the last five fiscal years.",
+          "is_correct": false,
+          "rationale": "This is an overly reactive strategy that may force sales at inopportune times."
+        },
+        {
+          "key": "E",
+          "text": "Prioritizing companies with the highest dividend yields, assuming they have sufficient capital to invest in ESG initiatives.",
+          "is_correct": false,
+          "rationale": "This incorrectly conflates a value strategy (high dividend yield) with a growth objective."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What is a significant limitation of using Value at Risk (VaR) as the primary tool for managing portfolio risk during a crisis?",
+      "explanation": "VaR's reliance on historical data and assumptions of normal distribution makes it poor at predicting the magnitude of losses during rare, extreme market events (tail risk), which is when risk management is most critical.",
+      "options": [
+        {
+          "key": "A",
+          "text": "VaR models often fail to capture tail risk and extreme market events because they are based on normal distribution assumptions.",
+          "is_correct": true,
+          "rationale": "Because it assumes normal distributions, VaR significantly underestimates the probability and severity of extreme negative events found in the 'tails'."
+        },
+        {
+          "key": "B",
+          "text": "VaR calculations are overly complex and require proprietary software that is inaccessible to most mid-sized asset management firms.",
+          "is_correct": false,
+          "rationale": "VaR models are widely available and can be implemented with standard software."
+        },
+        {
+          "key": "C",
+          "text": "Regulatory bodies like the SEC have prohibited the use of VaR for official client reporting due to its unreliability.",
+          "is_correct": false,
+          "rationale": "Regulators often mandate VaR or similar risk metrics, despite its known limitations."
+        },
+        {
+          "key": "D",
+          "text": "It primarily measures upside potential and does not provide any meaningful insight into potential downside losses for the portfolio.",
+          "is_correct": false,
+          "rationale": "VaR is specifically designed to measure potential downside loss, not upside."
+        },
+        {
+          "key": "E",
+          "text": "VaR can only be calculated on a monthly basis, making it unsuitable for the daily risk management of active funds.",
+          "is_correct": false,
+          "rationale": "VaR can be, and often is, calculated on a daily basis for active risk management."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "A fund's performance attribution analysis shows a large positive allocation effect but a negative contribution from selection effect. What does this imply?",
+      "explanation": "A positive allocation effect means the manager correctly identified and overweighted the best-performing sectors. A negative selection effect means the specific stocks chosen within those sectors underperformed the sector benchmark, indicating poor stock-picking skill.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The manager successfully overweighted outperforming sectors but chose underperforming individual stocks within those same sectors compared to the benchmark.",
+          "is_correct": true,
+          "rationale": "This answer correctly defines the two separate components: positive allocation (good sector bets) and negative selection (poor stock picking)."
+        },
+        {
+          "key": "B",
+          "text": "The manager selected excellent individual stocks, but these were unfortunately concentrated in sectors that underperformed the overall market benchmark.",
+          "is_correct": false,
+          "rationale": "This describes a negative allocation effect and a positive selection effect."
+        },
+        {
+          "key": "C",
+          "text": "The fund's overall performance was primarily driven by favorable currency movements rather than any specific equity-related management decisions.",
+          "is_correct": false,
+          "rationale": "This describes currency effect, which is a separate component of attribution analysis."
+        },
+        {
+          "key": "D",
+          "text": "The manager maintained a sector allocation identical to the benchmark, with all performance deviation coming from individual stock choices.",
+          "is_correct": false,
+          "rationale": "This would result in a zero allocation effect, which contradicts the premise."
+        },
+        {
+          "key": "E",
+          "text": "The fund benefited from high market beta during a bull run, which masked poor decisions in both sector and stock selection.",
+          "is_correct": false,
+          "rationale": "Market beta is a factor but doesn't explain the specific allocation/selection breakdown."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "During a sudden 15% market correction, what is the most prudent initial action for a manager of a long-only equity fund?",
+      "explanation": "A disciplined re-evaluation is the most professional response. It avoids panic selling while actively seeking opportunities created by the dislocation, such as rebalancing to strategic weights or realizing tax losses, which adds value.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Re-evaluating portfolio holdings against their original investment theses to identify opportunities for tactical rebalancing or tax-loss harvesting.",
+          "is_correct": true,
+          "rationale": "This is a disciplined, value-added approach that avoids emotional decision-making."
+        },
+        {
+          "key": "B",
+          "text": "Immediately liquidating all positions and moving the entire fund into cash to await a clear market recovery signal.",
+          "is_correct": false,
+          "rationale": "This is a panic reaction that crystallizes losses and violates the fund's mandate."
+        },
+        {
+          "key": "C",
+          "text": "Increasing leverage significantly to buy oversold assets at a discount, aiming for a sharp rebound in fund performance.",
+          "is_correct": false,
+          "rationale": "This is an overly aggressive move that dramatically increases risk during high volatility."
+        },
+        {
+          "key": "D",
+          "text": "Issuing a press release blaming macroeconomic factors and assuring investors that no portfolio changes will be made at all.",
+          "is_correct": false,
+          "rationale": "This is a passive and unaccountable response that fails to manage the portfolio actively."
+        },
+        {
+          "key": "E",
+          "text": "Selling the fund's highest-quality, most liquid holdings first to meet potential redemption requests from panicked institutional investors.",
+          "is_correct": false,
+          "rationale": "Selling the best assets first degrades the overall quality of the portfolio, which is detrimental to the remaining long-term investors."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "You overhear a credible, non-public rumor about a potential merger. What is the most appropriate action to take under market conduct regulations?",
+      "explanation": "Trading on material non-public information (MNPI) is illegal insider trading. The correct procedure is to refrain from trading and immediately escalate the situation to the compliance department to manage the information barrier and legal risk.",
+      "options": [
+        {
+          "key": "A",
+          "text": "You must not trade on the information and should report the communication to your firm's compliance department immediately.",
+          "is_correct": true,
+          "rationale": "This is the only legally and ethically compliant course of action."
+        },
+        {
+          "key": "B",
+          "text": "You should immediately execute trades for your fund to capitalize on the information before it becomes publicly available knowledge.",
+          "is_correct": false,
+          "rationale": "This is the definition of illegal insider trading and carries severe penalties."
+        },
+        {
+          "key": "C",
+          "text": "You can share the information with a few trusted clients so they can benefit from the potential market movement.",
+          "is_correct": false,
+          "rationale": "Sharing material non-public information with others, known as 'tipping', is also a serious violation of insider trading laws."
+        },
+        {
+          "key": "D",
+          "text": "You should verify the rumor through independent research and then make trading decisions based on your confirmed findings.",
+          "is_correct": false,
+          "rationale": "Even if the information is later verified, acting on it before it is public constitutes illegal insider trading."
+        },
+        {
+          "key": "E",
+          "text": "You must ignore the information completely and are not required to take any further action or report the incident.",
+          "is_correct": false,
+          "rationale": "Ignoring the issue creates risk; reporting it to compliance is mandatory."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "A hedge fund has a high-water mark of $110 per share. What must happen before the manager can collect performance fees?",
+      "explanation": "The high-water mark ensures managers are only paid for generating new profits above the fund's previous peak value. This aligns their interests with investors by preventing them from earning fees on recovered losses.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The fund's Net Asset Value (NAV) must exceed the previous high of $110 per share before fees are charged.",
+          "is_correct": true,
+          "rationale": "Performance fees are only earned on new profits above the highest previous NAV."
+        },
+        {
+          "key": "B",
+          "text": "The fund must outperform its stated benchmark index, such as the S&P 500, for two consecutive quarters.",
+          "is_correct": false,
+          "rationale": "This describes outperformance criteria, not the function of a high-water mark."
+        },
+        {
+          "key": "C",
+          "text": "The total assets under management (AUM) must grow by at least 10% from the previous fiscal year.",
+          "is_correct": false,
+          "rationale": "AUM growth is different from per-share NAV performance required by a high-water mark."
+        },
+        {
+          "key": "D",
+          "text": "The fund's management fee must be reduced to offset any recent losses before performance fees can be charged.",
+          "is_correct": false,
+          "rationale": "Management fees and performance fees are typically calculated independently of each other."
+        },
+        {
+          "key": "E",
+          "text": "The fund must distribute all realized capital gains to investors before any new performance fees are calculated.",
+          "is_correct": false,
+          "rationale": "Capital gain distributions are separate from the calculation of performance fees based on NAV."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "When evaluating two funds with similar returns, what does a significantly higher Sharpe ratio for Fund A indicate about its performance?",
+      "explanation": "The Sharpe ratio measures risk-adjusted return by calculating the excess return per unit of deviation (risk), typically standard deviation. A higher ratio indicates better performance for the amount of risk taken.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Fund A has a much higher concentration in a few high-growth technology stocks, leading to better returns.",
+          "is_correct": false,
+          "rationale": "Higher concentration would likely increase volatility, which would lower the Sharpe ratio."
+        },
+        {
+          "key": "B",
+          "text": "Fund A's manager has a longer tenure and more experience managing assets through different market cycles.",
+          "is_correct": false,
+          "rationale": "Manager tenure is not a direct input for the Sharpe ratio calculation."
+        },
+        {
+          "key": "C",
+          "text": "Fund A achieved its returns with considerably less volatility and risk compared to the other fund.",
+          "is_correct": true,
+          "rationale": "A higher Sharpe ratio signifies better risk-adjusted returns, meaning less volatility for the same return."
+        },
+        {
+          "key": "D",
+          "text": "Fund A has lower management and operational fees, which directly increases the net return passed to investors.",
+          "is_correct": false,
+          "rationale": "While lower fees improve net returns, the Sharpe ratio specifically measures risk-adjusted performance."
+        },
+        {
+          "key": "E",
+          "text": "Fund A's portfolio is more closely correlated with its benchmark index, indicating superior tracking ability.",
+          "is_correct": false,
+          "rationale": "This describes a low tracking error, which is a different metric from the Sharpe ratio."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "During a sudden market downturn, what is the most prudent initial step for managing portfolio liquidity and mitigating further losses?",
+      "explanation": "A disciplined approach starts with assessment. Understanding the liquidity profile and potential redemption demands allows for strategic, informed decisions rather than reactive trades that could crystallize losses or incur high transaction costs.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately sell all high-beta stocks to reduce overall portfolio volatility and raise cash for defensive positions.",
+          "is_correct": false,
+          "rationale": "A blanket sale could realize unnecessary losses without a full liquidity assessment."
+        },
+        {
+          "key": "B",
+          "text": "Use derivative instruments like put options to hedge the entire portfolio against further downside market movements.",
+          "is_correct": false,
+          "rationale": "Hedging can be expensive and may be too late once a downturn is underway."
+        },
+        {
+          "key": "C",
+          "text": "Increase leverage by borrowing to purchase undervalued assets that have been oversold during the market panic.",
+          "is_correct": false,
+          "rationale": "Increasing leverage during a downturn is extremely risky and heightens potential losses."
+        },
+        {
+          "key": "D",
+          "text": "Review the portfolio's liquidity profile, stress test redemption scenarios, and identify assets that can be sold with minimal impact.",
+          "is_correct": true,
+          "rationale": "This analytical step is crucial for making informed decisions before taking any trading action."
+        },
+        {
+          "key": "E",
+          "text": "Announce a temporary suspension of redemptions to prevent a run on the fund and preserve remaining capital.",
+          "is_correct": false,
+          "rationale": "This is an extreme measure (gating) used only in severe crises and damages investor confidence."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "What is the primary risk associated with \"style drift\" in an investment fund's management over time?",
+      "explanation": "Style drift is a significant concern because it means the fund is no longer behaving as promised in its prospectus. This misaligns investor expectations with the fund's actual risk and return characteristics.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It can lead to higher-than-expected trading commissions and operational costs due to increased portfolio turnover.",
+          "is_correct": false,
+          "rationale": "While this can be a side effect, it is not the primary risk."
+        },
+        {
+          "key": "B",
+          "text": "It may cause the fund to deviate from its stated investment mandate, surprising investors and altering its risk profile.",
+          "is_correct": true,
+          "rationale": "The core issue is the mismatch between the fund's promised strategy and its actual holdings."
+        },
+        {
+          "key": "C",
+          "text": "It often results in the fund becoming too concentrated in a single industry, violating internal diversification rules.",
+          "is_correct": false,
+          "rationale": "This is a potential outcome of style drift, but not the fundamental risk itself."
+        },
+        {
+          "key": "D",
+          "text": "It forces the fund manager to use complex derivatives that are not fully understood by the compliance team.",
+          "is_correct": false,
+          "rationale": "Style drift does not necessarily involve derivatives; it can be a simple shift in asset allocation."
+        },
+        {
+          "key": "E",
+          "text": "It guarantees underperformance against the fund's designated benchmark index because the strategy is no longer aligned.",
+          "is_correct": false,
+          "rationale": "Style drift could lead to outperformance or underperformance; the main risk is the strategy violation."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Under current regulations like MiFID II, what is the most compliant way to handle \"soft dollar\" arrangements for research services?",
+      "explanation": "Regulations like MiFID II require the \"unbundling\" of research and execution costs to improve transparency. Funds must pay for research directly from their own P&L or via a dedicated, pre-funded Research Payment Account (RPA).",
+      "options": [
+        {
+          "key": "A",
+          "text": "Continue using soft dollars generated from trading commissions to pay for any type of third-party research services.",
+          "is_correct": false,
+          "rationale": "This practice of bundling is what regulations like MiFID II specifically restrict."
+        },
+        {
+          "key": "B",
+          "text": "Bundle research costs with execution fees, ensuring the broker provides a discount on trading to cover the research.",
+          "is_correct": false,
+          "rationale": "Bundling is explicitly prohibited to avoid conflicts of interest and improve cost transparency."
+        },
+        {
+          "key": "C",
+          "text": "Increase the fund's management fee slightly to cover the cost of research without explicit disclosure to investors.",
+          "is_correct": false,
+          "rationale": "Lack of explicit disclosure for research costs would violate transparency requirements."
+        },
+        {
+          "key": "D",
+          "text": "Only use proprietary, in-house research to completely avoid any conflicts of interest with external brokers.",
+          "is_correct": false,
+          "rationale": "While compliant, this is a business choice, not the only compliant way to handle external research."
+        },
+        {
+          "key": "E",
+          "text": "Pay for investment research directly from the fund's own revenues or through a specific Research Payment Account (RPA).",
+          "is_correct": true,
+          "rationale": "This unbundling approach is the core requirement for compliance under modern regulations."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "How should a fund manager primarily adjust a long-only equity portfolio in immediate response to an unforeseen 'black swan' event causing market-wide panic?",
+      "explanation": "In a black swan event, immediate risk mitigation is paramount. Reducing high-beta stocks, raising cash, and using hedges protects capital from further downside while providing liquidity for future opportunities, which is a prudent defensive strategy.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately implement defensive positioning by reducing high-beta exposures, increasing cash reserves, and potentially using derivatives for hedging purposes.",
+          "is_correct": true,
+          "rationale": "This represents a prudent and active risk management response designed to protect capital from further significant downside during extreme uncertainty."
+        },
+        {
+          "key": "B",
+          "text": "Double down on high-conviction stocks, viewing the panic as a significant long-term buying opportunity without any immediate changes.",
+          "is_correct": false,
+          "rationale": "This approach recklessly ignores the immediate, severe short-term risk and the high potential for further substantial portfolio losses."
+        },
+        {
+          "key": "C",
+          "text": "Liquidate the entire portfolio to cash and wait for market volatility to completely subside before re-entering the market.",
+          "is_correct": false,
+          "rationale": "This extreme reaction crystallizes losses and creates the significant risk of missing a potential market recovery while waiting on the sidelines."
+        },
+        {
+          "key": "D",
+          "text": "Shift the entire portfolio into government bonds, as they are the only truly safe asset during such an event.",
+          "is_correct": false,
+          "rationale": "This is an overly defensive move that likely violates the fund's equity mandate and abandons the long-term investment strategy."
+        },
+        {
+          "key": "E",
+          "text": "Maintain the existing portfolio structure without any changes, adhering strictly to the original long-term investment thesis despite the event.",
+          "is_correct": false,
+          "rationale": "Failing to adapt the portfolio in response to a major, unforeseen market event is a passive and poor risk management strategy."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Under MiFID II regulations, what is the primary requirement regarding the unbundling of research and execution costs for asset managers?",
+      "explanation": "MiFID II's unbundling rule mandates that payments for research and execution be separated. This enhances transparency and ensures managers act in their clients' best interests, rather than directing trades simply to receive bundled research services.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Asset managers must pay for investment research separately from execution fees to eliminate conflicts of interest and improve transparency.",
+          "is_correct": true,
+          "rationale": "This correctly states the core principle of unbundling under MiFID II."
+        },
+        {
+          "key": "B",
+          "text": "Research costs can be bundled with execution fees as long as the total commission is disclosed to the end client.",
+          "is_correct": false,
+          "rationale": "This directly contradicts the fundamental 'unbundling' requirement of the regulation, which explicitly prohibits combining these two distinct costs."
+        },
+        {
+          "key": "C",
+          "text": "Only research produced by independent, third-party providers must be paid for separately from any brokerage execution services.",
+          "is_correct": false,
+          "rationale": "The unbundling rule applies to all external research, whether from large investment banks or independent third-party providers, without distinction."
+        },
+        {
+          "key": "D",
+          "text": "The regulation allows asset managers to receive 'free' research from brokers in exchange for a specified volume of trades.",
+          "is_correct": false,
+          "rationale": "This is the 'soft dollar' arrangement that MiFID II aims to stop."
+        },
+        {
+          "key": "E",
+          "text": "MiFID II requires that all research payments be made directly from the fund's assets, not from the manager's own P&L.",
+          "is_correct": false,
+          "rationale": "Managers can pay from their own P&L or a research payment account."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "When conducting a Brinson-style performance attribution analysis, what does a positive allocation effect for a specific sector indicate about portfolio positioning?",
+      "explanation": "The allocation effect in Brinson attribution measures the impact of a manager's active bets on sectors or asset classes relative to the benchmark. A positive effect comes from overweighting outperforming sectors or underweighting underperforming ones.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The fund was overweight in a sector that outperformed the benchmark, or underweight in a sector that underperformed the benchmark.",
+          "is_correct": true,
+          "rationale": "This is the precise definition of a positive allocation effect: correctly weighting sectors relative to the benchmark's performance."
+        },
+        {
+          "key": "B",
+          "text": "The specific stocks selected within that sector performed better than the average stock in the sector's benchmark index.",
+          "is_correct": false,
+          "rationale": "This describes the stock selection effect, which measures the value added from picking individual securities within a sector."
+        },
+        {
+          "key": "C",
+          "text": "The fund manager successfully timed the market by increasing overall equity exposure just before a broad market rally occurred.",
+          "is_correct": false,
+          "rationale": "This describes market timing, which is a different component of attribution."
+        },
+        {
+          "key": "D",
+          "text": "The combination of both stock selection and sector allocation within that specific sector contributed positively to the fund's performance.",
+          "is_correct": false,
+          "rationale": "This describes the interaction effect, which captures the combined result of allocation and selection decisions within the analysis."
+        },
+        {
+          "key": "E",
+          "text": "The fund's overall transaction costs for that particular sector were significantly lower than the benchmark's assumed trading costs.",
+          "is_correct": false,
+          "rationale": "Transaction costs are an important factor in overall performance but are typically analyzed separately from Brinson model attribution."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "What key advantage does Conditional Value at Risk (CVaR) offer over the standard Value at Risk (VaR) metric for portfolio risk management?",
+      "explanation": "While VaR indicates the maximum loss at a certain confidence level, it doesn't describe the magnitude of losses beyond that point. CVaR, or Expected Shortfall, quantifies the average loss in the tail, offering a better measure of extreme risk.",
+      "options": [
+        {
+          "key": "A",
+          "text": "CVaR measures the expected loss in the tail of the distribution, providing a more comprehensive view of extreme downside risk.",
+          "is_correct": true,
+          "rationale": "Unlike VaR, which is a threshold, CVaR (Expected Shortfall) quantifies the average severity of losses that occur beyond that point."
+        },
+        {
+          "key": "B",
+          "text": "VaR is a more forward-looking metric, while CVaR is based purely on historical price volatility and past performance.",
+          "is_correct": false,
+          "rationale": "Both VaR and CVaR are flexible metrics that can be calculated using either historical data or forward-looking model inputs."
+        },
+        {
+          "key": "C",
+          "text": "CVaR is significantly easier and less computationally intensive to calculate for portfolios with complex, non-normal return distributions.",
+          "is_correct": false,
+          "rationale": "CVaR is actually more computationally intensive than VaR because it requires calculating the average of all losses in the tail."
+        },
+        {
+          "key": "D",
+          "text": "Regulatory bodies like the SEC and ESMA have mandated the exclusive use of CVaR, completely replacing the VaR metric.",
+          "is_correct": false,
+          "rationale": "While its use is encouraged (e.g., Basel III), VaR is not completely replaced."
+        },
+        {
+          "key": "E",
+          "text": "VaR provides the exact maximum loss possible, whereas CVaR only gives a probabilistic estimate of potential downside scenarios.",
+          "is_correct": false,
+          "rationale": "Neither metric provides the exact maximum loss; they are statistical measures."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "What is a primary challenge a fund manager faces when integrating Environmental, Social, and Governance (ESG) factors into their investment process?",
+      "explanation": "A major hurdle in ESG integration is the inconsistency and lack of standardization in data. Different providers use different methodologies and metrics, making it challenging for managers to compare companies accurately and build robust, data-driven investment theses.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The lack of standardized, consistent, and comparable ESG data from third-party rating agencies and corporate disclosures makes analysis difficult.",
+          "is_correct": true,
+          "rationale": "The lack of a single, universally accepted standard for ESG data is a widely recognized primary challenge for investment managers."
+        },
+        {
+          "key": "B",
+          "text": "ESG factors have been empirically proven to consistently lead to significant portfolio underperformance across all market cycles and sectors.",
+          "is_correct": false,
+          "rationale": "Academic research on ESG's performance impact is mixed and often positive."
+        },
+        {
+          "key": "C",
+          "text": "Integrating ESG criteria is prohibited by most fund mandates and prospectuses due to strict fiduciary duty regulations.",
+          "is_correct": false,
+          "rationale": "Regulators increasingly view ESG as part of fiduciary duty, not a violation."
+        },
+        {
+          "key": "D",
+          "text": "There is a complete absence of analytical tools or frameworks available to help managers assess a company's ESG performance.",
+          "is_correct": false,
+          "rationale": "Numerous tools and frameworks from various providers exist, but the core problem is their lack of standardization and comparability."
+        },
+        {
+          "key": "E",
+          "text": "Client demand for ESG-focused investment products has been declining sharply, making it a commercially unviable strategy for most funds.",
+          "is_correct": false,
+          "rationale": "Client demand and asset flows into ESG products have been growing."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "A fund manager, historically focused on value stocks, begins heavily investing in high-growth technology companies. What is this deviation from the stated investment strategy called?",
+      "explanation": "Style drift occurs when a fund manager strays from their described investment style. This can mislead investors who chose the fund for its specific strategy and risk profile, potentially altering the fund's characteristics.",
+      "options": [
+        {
+          "key": "A",
+          "text": "This is known as style drift, where a manager deviates from their stated investment philosophy or objective.",
+          "is_correct": true,
+          "rationale": "Style drift is the term for deviating from a fund's stated investment strategy, which is what is described."
+        },
+        {
+          "key": "B",
+          "text": "This is referred to as portfolio rebalancing, which involves adjusting asset weights back to their original targets.",
+          "is_correct": false,
+          "rationale": "Rebalancing restores original allocations, whereas this is a fundamental change in strategy."
+        },
+        {
+          "key": "C",
+          "text": "This represents tactical asset allocation, a short-term strategy to capitalize on specific market opportunities.",
+          "is_correct": false,
+          "rationale": "Tactical allocation is typically a temporary shift, not a fundamental change in investment style."
+        },
+        {
+          "key": "D",
+          "text": "This action is called sector rotation, which involves shifting investments between different economic sectors.",
+          "is_correct": false,
+          "rationale": "While it involves a sector change, the core issue is the deviation from the 'value' style itself."
+        },
+        {
+          "key": "E",
+          "text": "This is simply alpha generation, the process of creating returns in excess of the benchmark.",
+          "is_correct": false,
+          "rationale": "Alpha generation is the goal of active management, not the term for deviating from a stated strategy."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "What is the primary objective of the Global Investment Performance Standards (GIPS) that investment management firms are encouraged to adopt?",
+      "explanation": "The GIPS standards are voluntary ethical principles designed to ensure fair representation and full disclosure of investment performance. This allows for accurate, apples-to-apples comparisons between investment management firms by prospective clients.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To guarantee that all client portfolios will achieve positive investment returns regardless of market conditions.",
+          "is_correct": false,
+          "rationale": "GIPS is about performance presentation and ethics, not guaranteeing returns, which is impossible."
+        },
+        {
+          "key": "B",
+          "text": "To provide a standardized, ethical framework for calculating and presenting historical investment performance data to clients.",
+          "is_correct": true,
+          "rationale": "GIPS standards focus on the ethical and standardized presentation of performance data for comparability."
+        },
+        {
+          "key": "C",
+          "text": "To mandate the specific types of securities and asset classes that a compliant firm is allowed to hold.",
+          "is_correct": false,
+          "rationale": "GIPS does not dictate investment strategy or permissible holdings; it focuses solely on performance reporting."
+        },
+        {
+          "key": "D",
+          "text": "To eliminate all forms of systematic and unsystematic risk from the firm's managed investment portfolios.",
+          "is_correct": false,
+          "rationale": "Risk management is a core function of a fund manager, but GIPS does not prescribe how to eliminate risk."
+        },
+        {
+          "key": "E",
+          "text": "To act as a global regulatory authority with the power to penalize firms for poor investment decisions.",
+          "is_correct": false,
+          "rationale": "GIPS is a set of voluntary standards sponsored by the CFA Institute, not a government regulatory body."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "During a severe market downturn, your fund experiences an unexpectedly high volume of redemption requests. What is the most prudent initial action to manage liquidity?",
+      "explanation": "The priority is to meet redemption obligations without causing a fire sale of illiquid assets. Selling the most liquid holdings is the standard, most effective way to raise cash quickly with minimal price impact.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately halt all redemptions by 'gating' the fund to prevent a run on its assets.",
+          "is_correct": false,
+          "rationale": "Gating is an extreme measure of last resort and can severely damage investor confidence."
+        },
+        {
+          "key": "B",
+          "text": "Systematically sell the most liquid holdings, like government bonds or large-cap stocks, to raise necessary cash.",
+          "is_correct": true,
+          "rationale": "Selling liquid assets is the standard practice to meet redemptions while minimizing portfolio disruption."
+        },
+        {
+          "key": "C",
+          "text": "Utilize leverage and borrow heavily against the fund's assets to meet redemption requests without selling positions.",
+          "is_correct": false,
+          "rationale": "Borrowing to meet redemptions significantly increases the fund's risk profile during a volatile period."
+        },
+        {
+          "key": "D",
+          "text": "Attempt to sell the fund's illiquid assets first to offload the positions with the highest risk.",
+          "is_correct": false,
+          "rationale": "Selling illiquid assets in a downturn would likely lead to deep discounts and large losses."
+        },
+        {
+          "key": "E",
+          "text": "Issue a press release reassuring investors that the fund's long-term strategy remains strong and unchanged.",
+          "is_correct": false,
+          "rationale": "Communication is important, but it does not solve the immediate need to generate cash for redemptions."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "Under regulations like MiFID II, when is the use of 'soft dollars' generated from client trade commissions generally considered an acceptable practice for a fund manager?",
+      "explanation": "Soft dollars must be used for services that benefit clients, primarily through providing substantive research that aids the investment decision-making process. Using them for the firm's operational overhead is strictly prohibited.",
+      "options": [
+        {
+          "key": "A",
+          "text": "They can be used to pay for general operational overhead, such as office space or employee salaries.",
+          "is_correct": false,
+          "rationale": "These are firm expenses and do not directly benefit the clients whose commissions generated the funds."
+        },
+        {
+          "key": "B",
+          "text": "They are permissible for acquiring substantive research services that directly benefit clients by improving investment decisions.",
+          "is_correct": true,
+          "rationale": "This is the primary acceptable use, as the research directly aids in managing client assets."
+        },
+        {
+          "key": "C",
+          "text": "They may be used to purchase computer hardware or standard software not specifically related to research.",
+          "is_correct": false,
+          "rationale": "General hardware and software are considered operational overhead and not a direct client benefit."
+        },
+        {
+          "key": "D",
+          "text": "They can be allocated to cover the firm's marketing and client acquisition campaign expenses.",
+          "is_correct": false,
+          "rationale": "Marketing benefits the firm, not the existing clients who are paying the commissions."
+        },
+        {
+          "key": "E",
+          "text": "They are acceptable for covering the fund manager's personal expenses, such as travel and entertainment.",
+          "is_correct": false,
+          "rationale": "This is a clear violation of fiduciary duty and professional ethics."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "A fund manager continues holding a significantly underperforming stock, ignoring new negative data, because selling would realize a loss. Which behavioral bias is most clearly demonstrated?",
+      "explanation": "The disposition effect is the specific bias where investors are reluctant to realize losses, causing them to hold onto losing positions longer than is rational, hoping for a rebound, while often selling winners too soon.",
+      "options": [
+        {
+          "key": "A",
+          "text": "This is confirmation bias, where the manager only seeks out information that supports their initial investment thesis.",
+          "is_correct": false,
+          "rationale": "Confirmation bias is about seeking affirming data, not the act of refusing to sell a loser."
+        },
+        {
+          "key": "B",
+          "text": "This exemplifies anchoring bias, where the manager is overly reliant on the original purchase price of the stock.",
+          "is_correct": false,
+          "rationale": "While related to the purchase price, the specific act of holding losers is better described by another term."
+        },
+        {
+          "key": "C",
+          "text": "This is a classic example of the disposition effect, the tendency to hold losing investments too long.",
+          "is_correct": true,
+          "rationale": "The disposition effect specifically describes the reluctance to sell losing assets, matching the scenario."
+        },
+        {
+          "key": "D",
+          "text": "This represents herding behavior, where the manager is simply following the actions of other market participants.",
+          "is_correct": false,
+          "rationale": "The scenario describes an individual decision to hold, not an action based on following a crowd."
+        },
+        {
+          "key": "E",
+          "text": "This shows overconfidence bias, where the manager has an exaggerated belief in their own analytical abilities.",
+          "is_correct": false,
+          "rationale": "While overconfidence might be a factor, the disposition effect is the more precise description of the action."
+        }
+      ]
+    }
+  ]
+}

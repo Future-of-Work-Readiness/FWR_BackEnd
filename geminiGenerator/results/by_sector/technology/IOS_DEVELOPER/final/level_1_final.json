@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "What keyword is used to declare a constant value in Swift that cannot be changed after its initial assignment?",
+      "explanation": "In Swift, the `let` keyword is used to declare constants, which are values that cannot be changed once they are set. This promotes safer code by preventing accidental modifications.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The `var` keyword is specifically used for declaring mutable variables whose values can be modified later.",
+          "is_correct": false,
+          "rationale": "The `var` keyword declares mutable variables."
+        },
+        {
+          "key": "B",
+          "text": "The `let` keyword is correctly used for declaring constants, ensuring their values remain fixed after initialization.",
+          "is_correct": true,
+          "rationale": "The `let` keyword declares constant values in Swift."
+        },
+        {
+          "key": "C",
+          "text": "The `static` keyword is primarily used for type properties or methods, not for declaring local constants.",
+          "is_correct": false,
+          "rationale": "The `static` keyword defines type-level properties."
+        },
+        {
+          "key": "D",
+          "text": "The `func` keyword is exclusively used to define functions and methods within a Swift program's structure.",
+          "is_correct": false,
+          "rationale": "The `func` keyword is used for defining functions."
+        },
+        {
+          "key": "E",
+          "text": "The `class` keyword is used for defining custom classes, which are blueprints for creating objects.",
+          "is_correct": false,
+          "rationale": "The `class` keyword defines new custom classes."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Which UIKit component is commonly used to display a list of scrollable data, like contacts or settings options?",
+      "explanation": "`UITableView` is a fundamental UIKit component for displaying scrollable lists of data. It efficiently manages rows and sections, making it ideal for displaying dynamic content.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`UILabel` is primarily designed for displaying single lines or blocks of static, uneditable text content.",
+          "is_correct": false,
+          "rationale": "`UILabel` displays static text content."
+        },
+        {
+          "key": "B",
+          "text": "`UIButton` is specifically engineered for user interaction, allowing users to tap and trigger specific actions.",
+          "is_correct": false,
+          "rationale": "`UIButton` handles user taps and actions."
+        },
+        {
+          "key": "C",
+          "text": "`UIImageView` is used to display images or animations within an application's user interface effectively.",
+          "is_correct": false,
+          "rationale": "`UIImageView` displays images or animations."
+        },
+        {
+          "key": "D",
+          "text": "`UITableView` is the standard component for presenting scrollable lists of data in a structured, organized manner.",
+          "is_correct": true,
+          "rationale": "`UITableView` displays scrollable lists of data."
+        },
+        {
+          "key": "E",
+          "text": "`UITextField` enables users to input and edit single lines of text, typically for forms or search bars.",
+          "is_correct": false,
+          "rationale": "`UITextField` allows single-line text input."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "In Xcode, what is the main purpose of a storyboard file (.storyboard) in an iOS application project?",
+      "explanation": "A storyboard provides a visual canvas for designing the user interface of an iOS app. It allows developers to lay out views, view controllers, and define segues between screens graphically.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It defines the application's data models and business logic, separating presentation from core functionality.",
+          "is_correct": false,
+          "rationale": "This describes data models and business logic."
+        },
+        {
+          "key": "B",
+          "text": "It provides a visual representation of the application's user interface, including screens and transitions between them.",
+          "is_correct": true,
+          "rationale": "Storyboards visually design the app's UI flow."
+        },
+        {
+          "key": "C",
+          "text": "It manages external third-party dependencies and libraries used within the iOS project's build process.",
+          "is_correct": false,
+          "rationale": "This describes dependency managers like CocoaPods."
+        },
+        {
+          "key": "D",
+          "text": "It contains all the application's localization strings and assets for different language support.",
+          "is_correct": false,
+          "rationale": "This describes `.strings` files and asset catalogs."
+        },
+        {
+          "key": "E",
+          "text": "It is used for writing unit tests and UI tests to ensure the application's stability and correctness.",
+          "is_correct": false,
+          "rationale": "This describes test files within an Xcode project."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What mechanism does Swift use to automatically manage memory for objects, preventing memory leaks and dangling pointers?",
+      "explanation": "Swift uses Automatic Reference Counting (ARC) to manage memory automatically. ARC tracks and counts strong references to class instances, deallocating an instance when its reference count drops to zero.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Manual Reference Counting (MRC) requires developers to explicitly retain and release objects, which is error-prone.",
+          "is_correct": false,
+          "rationale": "MRC is a manual memory management approach."
+        },
+        {
+          "key": "B",
+          "text": "Garbage Collection automatically identifies and deallocates unused objects, common in other programming languages.",
+          "is_correct": false,
+          "rationale": "Garbage Collection is not Swift's memory mechanism."
+        },
+        {
+          "key": "C",
+          "text": "Automatic Reference Counting (ARC) automatically inserts retain and release calls at compile time, managing memory efficiently.",
+          "is_correct": true,
+          "rationale": "ARC automatically manages memory in Swift applications."
+        },
+        {
+          "key": "D",
+          "text": "Weak References alone are insufficient for complete memory management; they prevent strong reference cycles.",
+          "is_correct": false,
+          "rationale": "Weak references prevent retain cycles, not full management."
+        },
+        {
+          "key": "E",
+          "text": "Memory pools pre-allocate memory blocks for faster object creation, but do not manage deallocation automatically.",
+          "is_correct": false,
+          "rationale": "Memory pools optimize allocation, not deallocation."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Which method is called first when an iOS application launches and finishes setting up its initial state?",
+      "explanation": "The `application(_:didFinishLaunchingWithOptions:)` method in the `AppDelegate` is the first significant method called when an app finishes launching, allowing for initial setup and configuration.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`viewWillAppear(_:)` is called just before a view controller's view is added to the view hierarchy.",
+          "is_correct": false,
+          "rationale": "`viewWillAppear` is a view controller lifecycle method."
+        },
+        {
+          "key": "B",
+          "text": "`applicationDidBecomeActive(_:)` is invoked when the app transitions from an inactive to an active state.",
+          "is_correct": false,
+          "rationale": "This method indicates the app becoming active."
+        },
+        {
+          "key": "C",
+          "text": "`application(_:didFinishLaunchingWithOptions:)` is the primary entry point for initial app setup upon launch.",
+          "is_correct": true,
+          "rationale": "This is the primary entry point for app launch setup."
+        },
+        {
+          "key": "D",
+          "text": "`viewDidLoad()` is called after the view controller's view has been loaded into memory.",
+          "is_correct": false,
+          "rationale": "`viewDidLoad` is for a view controller's view."
+        },
+        {
+          "key": "E",
+          "text": "`applicationWillResignActive(_:)` is called when the app is about to move from an active to an inactive state.",
+          "is_correct": false,
+          "rationale": "This method indicates the app becoming inactive."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Which Swift keyword is correctly used to declare a constant whose value cannot be changed after its initial assignment?",
+      "explanation": "In Swift, the `let` keyword is used to declare constants, meaning their value cannot be changed after they are initially set. This promotes safer code by preventing accidental modifications.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`var` is used for declaring mutable variables whose values can be modified later in the program's execution.",
+          "is_correct": false,
+          "rationale": "`var` declares mutable variables, not constants."
+        },
+        {
+          "key": "B",
+          "text": "`let` is specifically designed for declaring constants, ensuring their value remains fixed once assigned, promoting immutability.",
+          "is_correct": true,
+          "rationale": "`let` declares constants, ensuring their value remains fixed after initialization."
+        },
+        {
+          "key": "C",
+          "text": "`static` is primarily used for type properties or methods that belong to the type itself, not instances.",
+          "is_correct": false,
+          "rationale": "`static` is for type properties/methods, not constant declaration."
+        },
+        {
+          "key": "D",
+          "text": "`func` is utilized to define functions or methods, encapsulating blocks of code for reusability and organized program flow.",
+          "is_correct": false,
+          "rationale": "`func` is for defining functions, not constant declaration."
+        },
+        {
+          "key": "E",
+          "text": "`class` is employed to define a class, which is a blueprint for creating objects that encapsulate data and behavior.",
+          "is_correct": false,
+          "rationale": "`class` defines a class, not a constant."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "What is the primary purpose of a `UILabel` in an iOS application's user interface design?",
+      "explanation": "A `UILabel` is a fundamental UIKit component used to display static, read-only text on the screen. It is essential for providing information to the user.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It is used for receiving user input through text entry, allowing users to type information into the application.",
+          "is_correct": false,
+          "rationale": "This describes `UITextField` or `UITextView`."
+        },
+        {
+          "key": "B",
+          "text": "It displays static, read-only text on the screen, providing information or descriptions to the application user.",
+          "is_correct": true,
+          "rationale": "`UILabel` displays static text, offering information to the user."
+        },
+        {
+          "key": "C",
+          "text": "It allows users to select a single option from a list of choices, typically presented in a pop-up menu.",
+          "is_correct": false,
+          "rationale": "This describes `UIPickerView` or similar selection controls."
+        },
+        {
+          "key": "D",
+          "text": "It enables users to trigger an action or event when tapped, usually by displaying a title or an image.",
+          "is_correct": false,
+          "rationale": "This describes `UIButton`."
+        },
+        {
+          "key": "E",
+          "text": "It organizes and presents collections of data in a scrollable list, often displaying rows of custom content.",
+          "is_correct": false,
+          "rationale": "This describes `UITableView` or `UICollectionView`."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Which file in an Xcode project typically contains the main entry point for an iOS application written in Swift?",
+      "explanation": "The `AppDelegate.swift` file traditionally contains the `AppDelegate` class, which conforms to `UIApplicationDelegate` and acts as the entry point for handling application-level events and lifecycle methods.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The `ViewController.swift` file manages a single screen's user interface and its associated logic, not the app's entry.",
+          "is_correct": false,
+          "rationale": "`ViewController.swift` manages a single screen, not the app entry point."
+        },
+        {
+          "key": "B",
+          "text": "The `Info.plist` file stores configuration data for the application, such as permissions and bundle identifiers.",
+          "is_correct": false,
+          "rationale": "`Info.plist` stores configuration, not the app's executable entry point."
+        },
+        {
+          "key": "C",
+          "text": "The `AppDelegate.swift` file contains the `AppDelegate` class, which handles application lifecycle events and serves as the main entry point.",
+          "is_correct": true,
+          "rationale": "`AppDelegate.swift` contains the `AppDelegate` class, handling app lifecycle and acting as entry point."
+        },
+        {
+          "key": "D",
+          "text": "The `Main.storyboard` file visually defines the user interface flows and screen layouts using Interface Builder.",
+          "is_correct": false,
+          "rationale": "`Main.storyboard` defines UI layout, not the app's code entry point."
+        },
+        {
+          "key": "E",
+          "text": "The `Assets.xcassets` folder stores all image resources, app icons, and other media assets for the application.",
+          "is_correct": false,
+          "rationale": "`Assets.xcassets` stores media assets, not the app's code entry point."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "When an iOS application transitions from the background to the foreground, which `AppDelegate` method is typically called?",
+      "explanation": "When an application moves from the background to the foreground but is not terminated, the `applicationWillEnterForeground` method is called. This is a key part of the app's lifecycle.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`applicationDidFinishLaunchingWithOptions` is called once when the application has finished launching successfully.",
+          "is_correct": false,
+          "rationale": "This method is called at launch, not when entering the foreground."
+        },
+        {
+          "key": "B",
+          "text": "`applicationWillResignActive` is called when the application is about to move from active to inactive state.",
+          "is_correct": false,
+          "rationale": "This method is called when resigning active state, not entering foreground."
+        },
+        {
+          "key": "C",
+          "text": "`applicationDidEnterBackground` is invoked when the application transitions from an active state to the background.",
+          "is_correct": false,
+          "rationale": "This method is called when entering the background, not the foreground."
+        },
+        {
+          "key": "D",
+          "text": "`applicationWillEnterForeground` is called as the application is about to move from the background to the foreground.",
+          "is_correct": true,
+          "rationale": "`applicationWillEnterForeground` is specifically called when the app moves from background to foreground."
+        },
+        {
+          "key": "E",
+          "text": "`applicationWillTerminate` is called when the application is about to be terminated and purged from memory.",
+          "is_correct": false,
+          "rationale": "This method is called when the app is about to terminate, not when entering the foreground."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Which of the following Swift data types is best suited for storing a collection of unique, unordered values?",
+      "explanation": "A `Set` in Swift is designed to store distinct values of the same type in an unordered collection. It's ideal when uniqueness and fast membership testing are important.",
+      "options": [
+        {
+          "key": "A",
+          "text": "An `Array` stores an ordered collection of values, allowing duplicate elements and maintaining their insertion order.",
+          "is_correct": false,
+          "rationale": "`Array` allows duplicates and is ordered, unlike the requirement."
+        },
+        {
+          "key": "B",
+          "text": "A `Dictionary` stores key-value pairs, where each key must be unique, but the order of elements is not guaranteed.",
+          "is_correct": false,
+          "rationale": "`Dictionary` stores key-value pairs, not just unique values in a collection."
+        },
+        {
+          "key": "C",
+          "text": "A `Set` stores distinct values of the same type in an unordered collection, ensuring that each element is unique.",
+          "is_correct": true,
+          "rationale": "`Set` stores unique, unordered values, perfectly matching the description."
+        },
+        {
+          "key": "D",
+          "text": "A `Tuple` groups multiple values into a single compound value, but it is not a collection type for unique items.",
+          "is_correct": false,
+          "rationale": "`Tuple` is a compound value, not a collection of unique, unordered values."
+        },
+        {
+          "key": "E",
+          "text": "An `Optional` is used to handle the absence of a value, indicating that a variable might or might not contain a value.",
+          "is_correct": false,
+          "rationale": "`Optional` handles nil values, not a collection of unique items."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "Which fundamental UIKit component is typically used to display static, read-only text content within an iOS application's user interface?",
+      "explanation": "UILabel is the standard UIKit class for displaying static text. It is a fundamental component for presenting information to the user without allowing direct interaction for editing.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A UILabel is specifically designed for rendering single or multi-line static text on the screen.",
+          "is_correct": true,
+          "rationale": "UILabel displays static text in iOS apps."
+        },
+        {
+          "key": "B",
+          "text": "A UITextField is primarily used for allowing users to input and edit various forms of text data.",
+          "is_correct": false,
+          "rationale": "UITextField is for user input, not static display."
+        },
+        {
+          "key": "C",
+          "text": "A UIButton enables users to trigger specific actions or events when they interact with the control.",
+          "is_correct": false,
+          "rationale": "UIButton is for user interaction, not text display."
+        },
+        {
+          "key": "D",
+          "text": "A UIImageView is exclusively utilized for displaying image assets and visual graphics within the application.",
+          "is_correct": false,
+          "rationale": "UIImageView displays images, not text."
+        },
+        {
+          "key": "E",
+          "text": "A UISwitch provides a binary on/off control for users to toggle between two distinct states.",
+          "is_correct": false,
+          "rationale": "UISwitch is a toggle control, not for text display."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "In Swift programming, what is the fundamental difference in purpose when choosing between `let` and `var` to declare a value?",
+      "explanation": "`let` is used for constants, meaning their value cannot change after initialization. `var` is used for variables, allowing their value to be modified throughout the program's execution. This distinction is crucial for managing data mutability.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The `let` keyword declares a constant whose value remains fixed and cannot be modified after its initial assignment.",
+          "is_correct": true,
+          "rationale": "`let` declares immutable constants; `var` declares mutable variables."
+        },
+        {
+          "key": "B",
+          "text": "A `var` declaration indicates a value that must be initialized at compile time, unlike constants which can be runtime.",
+          "is_correct": false,
+          "rationale": "Initialization timing is not the primary distinction here."
+        },
+        {
+          "key": "C",
+          "text": "The `let` keyword is exclusively used for declaring optional types, while `var` is for non-optional types.",
+          "is_correct": false,
+          "rationale": "Both `let` and `var` can declare optionals."
+        },
+        {
+          "key": "D",
+          "text": "Using `var` mandates type inference, whereas `let` declarations always require explicit type annotations for clarity.",
+          "is_correct": false,
+          "rationale": "Both `let` and `var` support type inference."
+        },
+        {
+          "key": "E",
+          "text": "Constants declared with `let` are always stored on the stack, whereas variables with `var` are on the heap.",
+          "is_correct": false,
+          "rationale": "Storage location depends on context, not just `let`/`var`."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "Where would an iOS developer typically navigate in Xcode to modify the target's bundle identifier or deployment target?",
+      "explanation": "The bundle identifier and deployment target are crucial project settings found within the target's 'General' tab in Xcode's project editor. This is where developers manage core application properties.",
+      "options": [
+        {
+          "key": "A",
+          "text": "These settings are usually found in the Project Navigator's 'General' tab after selecting the specific target.",
+          "is_correct": true,
+          "rationale": "Target settings in the 'General' tab manage bundle ID and deployment target."
+        },
+        {
+          "key": "B",
+          "text": "The scheme editor is where you configure these fundamental project-level build and run settings.",
+          "is_correct": false,
+          "rationale": "The scheme editor configures build/run behavior, not target properties."
+        },
+        {
+          "key": "C",
+          "text": "You would access these specific configurations within the 'Build Phases' section of the project editor.",
+          "is_correct": false,
+          "rationale": "Build Phases manage build steps, not general target settings."
+        },
+        {
+          "key": "D",
+          "text": "The 'Info.plist' file directly contains all the necessary entries for modifying these crucial attributes.",
+          "is_correct": false,
+          "rationale": "Info.plist holds values, but the target settings GUI modifies them."
+        },
+        {
+          "key": "E",
+          "text": "Accessing the 'Capabilities' tab for the selected project allows you to adjust these core application properties.",
+          "is_correct": false,
+          "rationale": "Capabilities manage app services like Push Notifications, not bundle ID."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "What is the initial method called by the operating system when an iOS application successfully launches and begins its execution?",
+      "explanation": "`application(_:didFinishLaunchingWithOptions:)` in `AppDelegate` is the primary entry point for application-level setup when an iOS app launches. It allows for initial configuration and data loading.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The `application(_:didFinishLaunchingWithOptions:)` method in the `AppDelegate` is invoked first upon launch.",
+          "is_correct": true,
+          "rationale": "`didFinishLaunchingWithOptions` is the first `AppDelegate` method called upon app launch."
+        },
+        {
+          "key": "B",
+          "text": "The `viewDidLoad()` method of the initial view controller is the very first entry point.",
+          "is_correct": false,
+          "rationale": "`viewDidLoad` is called later, after the app has launched."
+        },
+        {
+          "key": "C",
+          "text": "The `main()` function within the application's main.swift file is the first method to execute.",
+          "is_correct": false,
+          "rationale": "`main` sets up the app, but `didFinishLaunchingWithOptions` is the first `AppDelegate` method."
+        },
+        {
+          "key": "D",
+          "text": "The `scene(_:willConnectTo:options:)` method is always called first for scene-based applications.",
+          "is_correct": false,
+          "rationale": "This is for scene setup, not the initial application launch."
+        },
+        {
+          "key": "E",
+          "text": "The `applicationWillEnterForeground(_:)` method is the initial call when the app starts up.",
+          "is_correct": false,
+          "rationale": "`applicationWillEnterForeground` is for resuming from background."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "When designing a user interface in Xcode's Interface Builder, how do you visually connect a UI element to an outlet in your Swift code?",
+      "explanation": "Control-dragging from a UI element to a code property in Interface Builder is the standard visual method for creating an outlet. This establishes a connection for programmatic access.",
+      "options": [
+        {
+          "key": "A",
+          "text": "You would Control-drag from the UI element on the canvas directly to the corresponding property in your source code editor.",
+          "is_correct": true,
+          "rationale": "Control-dragging from UI element to code creates an outlet in Interface Builder."
+        },
+        {
+          "key": "B",
+          "text": "By right-clicking the UI element and selecting 'Connect to Outlet' from the contextual menu that appears.",
+          "is_correct": false,
+          "rationale": "This is not the primary or standard visual method for creating outlets."
+        },
+        {
+          "key": "C",
+          "text": "Manually typing the name of the outlet property into the 'Identity Inspector' for the selected UI element.",
+          "is_correct": false,
+          "rationale": "Outlets are not connected by typing names in the Identity Inspector."
+        },
+        {
+          "key": "D",
+          "text": "Dragging the UI element from the Object Library directly onto the desired outlet property in the code.",
+          "is_correct": false,
+          "rationale": "Dragging from Object Library places elements, not connects outlets."
+        },
+        {
+          "key": "E",
+          "text": "Using the 'Connections Inspector' to link the UI element by typing the outlet's exact variable name.",
+          "is_correct": false,
+          "rationale": "Connections Inspector shows connections, but doesn't create them by typing names."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "Which keyword is correctly used to declare a constant variable in Swift, whose value cannot be changed after initialization?",
+      "explanation": "In Swift, the `let` keyword is used to declare constants, meaning their value cannot be changed after they are initialized. This promotes safer and more predictable code by ensuring data immutability.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The `var` keyword is used for declaring variables whose values can be modified later in the program.",
+          "is_correct": false,
+          "rationale": "The `var` keyword declares mutable variables."
+        },
+        {
+          "key": "B",
+          "text": "The `let` keyword is specifically designed for declaring constants that remain immutable once set.",
+          "is_correct": true,
+          "rationale": "The `let` keyword is used to declare constants in Swift, ensuring their immutability."
+        },
+        {
+          "key": "C",
+          "text": "The `const` keyword is not a valid declaration keyword in the Swift programming language syntax.",
+          "is_correct": false,
+          "rationale": "Swift does not use the `const` keyword for declarations."
+        },
+        {
+          "key": "D",
+          "text": "The `static` keyword is primarily used for type properties or methods, not for local constants.",
+          "is_correct": false,
+          "rationale": "The `static` keyword applies to type members, not local constants."
+        },
+        {
+          "key": "E",
+          "text": "The `final` keyword prevents overriding methods or classes, but does not declare a constant variable.",
+          "is_correct": false,
+          "rationale": "The `final` keyword prevents inheritance or method overriding."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "What is the primary purpose of a `UILabel` in an iOS application user interface design?",
+      "explanation": "A `UILabel` is a fundamental UIKit component used to display static text. It allows developers to present read-only information, such as titles, descriptions, or messages, to the user.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A `UILabel` is used for displaying static, read-only text content to the user on the screen.",
+          "is_correct": true,
+          "rationale": "UILabel displays static text, providing read-only information to the user."
+        },
+        {
+          "key": "B",
+          "text": "It is primarily used to create interactive buttons that respond to user touch events and actions.",
+          "is_correct": false,
+          "rationale": "Buttons are created using `UIButton`, not `UILabel`."
+        },
+        {
+          "key": "C",
+          "text": "This component is designed for presenting scrollable collections of images or other media content.",
+          "is_correct": false,
+          "rationale": "`UIImageView` or `UICollectionView` are used for images."
+        },
+        {
+          "key": "D",
+          "text": "Its main function is to allow users to input and edit text using the on-screen keyboard.",
+          "is_correct": false,
+          "rationale": "Text input is handled by `UITextField` or `UITextView`."
+        },
+        {
+          "key": "E",
+          "text": "A `UILabel` is typically utilized for playing audio files or managing sound playback within the application.",
+          "is_correct": false,
+          "rationale": "Audio playback uses frameworks like AVFoundation, not `UILabel`."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "Which file typically serves as the primary entry point for an iOS application when it first launches on a device?",
+      "explanation": "The `AppDelegate.swift` file is crucial as it contains methods that respond to significant application-level events, such as launch, termination, and background transitions, making it the primary entry point.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`AppDelegate.swift` contains methods for handling app lifecycle events, making it the initial entry point.",
+          "is_correct": true,
+          "rationale": "`AppDelegate.swift` handles app lifecycle events, serving as the primary launch point."
+        },
+        {
+          "key": "B",
+          "text": "`ViewController.swift` defines the behavior of a single view, but it is not the application's root.",
+          "is_correct": false,
+          "rationale": "ViewController manages a single view's logic, not app launch."
+        },
+        {
+          "key": "C",
+          "text": "`Info.plist` stores configuration data about the app, not executable code for launching.",
+          "is_correct": false,
+          "rationale": "`Info.plist` stores app configuration, not the entry point."
+        },
+        {
+          "key": "D",
+          "text": "`Assets.xcassets` manages image and color assets, which are not involved in the app's launch sequence.",
+          "is_correct": false,
+          "rationale": "Assets.xcassets manages resources like images, not app launch."
+        },
+        {
+          "key": "E",
+          "text": "`Main.storyboard` defines the initial UI layout, but `AppDelegate` orchestrates the loading process.",
+          "is_correct": false,
+          "rationale": "Main.storyboard defines UI, but AppDelegate controls the app lifecycle."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "What system helps define the size and position of user interface elements dynamically across different iOS device screens?",
+      "explanation": "Auto Layout is a powerful constraint-based layout system in iOS that allows developers to define rules for how UI elements should be positioned and sized relative to each other and their superviews, adapting to various screen sizes and orientations.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Core Data is a framework for managing and persisting application data, unrelated to UI layout.",
+          "is_correct": false,
+          "rationale": "Core Data is for data persistence, not UI layout."
+        },
+        {
+          "key": "B",
+          "text": "Grand Central Dispatch manages concurrent operations and tasks, not the visual arrangement of UI.",
+          "is_correct": false,
+          "rationale": "Grand Central Dispatch handles concurrency, not UI layout."
+        },
+        {
+          "key": "C",
+          "text": "Auto Layout is a constraint-based system that dynamically adjusts UI element positions and sizes.",
+          "is_correct": true,
+          "rationale": "Auto Layout dynamically adjusts UI element sizes and positions based on defined constraints."
+        },
+        {
+          "key": "D",
+          "text": "User Defaults provides a way to store small amounts of user-specific data, not for UI positioning.",
+          "is_correct": false,
+          "rationale": "User Defaults stores small user preferences, not UI layout."
+        },
+        {
+          "key": "E",
+          "text": "Core Animation is used for creating fluid visual animations, not for the static layout of components.",
+          "is_correct": false,
+          "rationale": "Core Animation is for visual effects and animations, not layout."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "Which fundamental Swift data type is used to store whole numbers without any fractional components?",
+      "explanation": "The `Int` data type in Swift is specifically designed to store whole numbers, meaning values without any decimal or fractional parts. It is commonly used for counts, indices, and discrete quantities.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`String` is used to represent sequences of characters, like text, not numerical values.",
+          "is_correct": false,
+          "rationale": "`String` stores text, not whole numbers."
+        },
+        {
+          "key": "B",
+          "text": "`Double` is a floating-point type, used for numbers with decimal components, not whole numbers.",
+          "is_correct": false,
+          "rationale": "`Double` stores floating-point numbers with decimals."
+        },
+        {
+          "key": "C",
+          "text": "`Bool` is a boolean type, used to represent truth values (true or false), not numbers.",
+          "is_correct": false,
+          "rationale": "`Bool` stores true/false values, not numbers."
+        },
+        {
+          "key": "D",
+          "text": "`Int` is the primary integer type in Swift, specifically designed for storing whole numbers.",
+          "is_correct": true,
+          "rationale": "`Int` is Swift's primary type for storing whole numbers without fractional components."
+        },
+        {
+          "key": "E",
+          "text": "`Array` is a collection type used to store an ordered list of elements, not a single number.",
+          "is_correct": false,
+          "rationale": "`Array` is a collection, not a single numerical type."
+        }
+      ]
+    }
+  ]
+}

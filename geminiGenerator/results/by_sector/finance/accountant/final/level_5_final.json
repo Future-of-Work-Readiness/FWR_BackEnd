@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "Under IFRS 9, how should a complex embedded derivative within a hybrid contract be accounted for if its economic characteristics are not closely related?",
+      "explanation": "IFRS 9 mandates that embedded derivatives not closely related to the host contract must be separated and measured at fair value through profit or loss (FVTPL) to reflect their distinct economic risk profile.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It must be bifurcated from the host contract and accounted for separately as a derivative at fair value through profit or loss.",
+          "is_correct": true,
+          "rationale": "This is the required treatment for non-closely related embedded derivatives."
+        },
+        {
+          "key": "B",
+          "text": "The entire hybrid contract must be designated at fair value through profit or loss to avoid the complexity of separation.",
+          "is_correct": false,
+          "rationale": "This is an option (the fair value option), but it is not mandatory."
+        },
+        {
+          "key": "C",
+          "text": "It should be measured at amortized cost along with the host contract, effectively ignoring its derivative features entirely.",
+          "is_correct": false,
+          "rationale": "This is incorrect as it misrepresents the instrument's risk."
+        },
+        {
+          "key": "D",
+          "text": "The derivative's value changes should be recognized directly in other comprehensive income until the host contract is settled.",
+          "is_correct": false,
+          "rationale": "This applies to specific hedge accounting or equity investments, not this scenario."
+        },
+        {
+          "key": "E",
+          "text": "It requires immediate impairment testing and recognition of any loss in the current period's income statement.",
+          "is_correct": false,
+          "rationale": "Impairment models do not apply to derivatives measured at fair value."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "A wealth management firm offers a bundled service including investment advice, transaction execution, and custody. How should revenue be recognized under IFRS 15?",
+      "explanation": "IFRS 15's five-step model requires an entity to identify distinct performance obligations within a contract and allocate the transaction price to each, recognizing revenue as each obligation is satisfied over time or at a point in time.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The firm must identify separate performance obligations and allocate the transaction price to each based on their standalone selling prices.",
+          "is_correct": true,
+          "rationale": "This follows the core principle of IFRS 15 for multi-element arrangements."
+        },
+        {
+          "key": "B",
+          "text": "All revenue should be recognized upfront when the client signs the initial service agreement for the bundled package.",
+          "is_correct": false,
+          "rationale": "This violates the principle of recognizing revenue as services are rendered."
+        },
+        {
+          "key": "C",
+          "text": "Revenue should be recognized on a straight-line basis over the contract term, ignoring the timing of specific service delivery.",
+          "is_correct": false,
+          "rationale": "This is too simplistic if performance obligations are satisfied at different times."
+        },
+        {
+          "key": "D",
+          "text": "The entire fee should be recognized only after all services in the bundle have been fully delivered to the client.",
+          "is_correct": false,
+          "rationale": "This improperly defers revenue for services already provided to the client."
+        },
+        {
+          "key": "E",
+          "text": "Revenue is recognized based on the cash received from the client, following a simplified cash-basis accounting method.",
+          "is_correct": false,
+          "rationale": "IFRS 15 is an accrual-based standard, not cash-based."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "When preparing regulatory capital reports under Basel III, what is the correct treatment for deferred tax assets (DTAs) arising from temporary differences?",
+      "explanation": "Basel III regulations require the deduction of significant DTAs from Common Equity Tier 1 (CET1) capital because their realization is uncertain, especially during a stress event, thus they lack true loss-absorbing capacity.",
+      "options": [
+        {
+          "key": "A",
+          "text": "They are generally deducted from Common Equity Tier 1 (CET1) capital, subject to certain thresholds and specific limitations.",
+          "is_correct": true,
+          "rationale": "This is the standard prudential treatment to ensure capital quality."
+        },
+        {
+          "key": "B",
+          "text": "These assets are included as a component of Tier 2 capital without any deduction from the primary CET1 base.",
+          "is_correct": false,
+          "rationale": "This is an incorrect classification; DTAs are not Tier 2 capital instruments."
+        },
+        {
+          "key": "C",
+          "text": "DTAs are fully recognized as high-quality liquid assets for the purpose of the Liquidity Coverage Ratio (LCR) calculation.",
+          "is_correct": false,
+          "rationale": "DTAs are not liquid assets and are ineligible for LCR purposes."
+        },
+        {
+          "key": "D",
+          "text": "They are ignored entirely for regulatory capital calculations but must be disclosed in the financial statement footnotes.",
+          "is_correct": false,
+          "rationale": "They are not ignored; they are a significant regulatory adjustment."
+        },
+        {
+          "key": "E",
+          "text": "The value of these assets is added to the firm's total risk-weighted assets to increase capital requirements.",
+          "is_correct": false,
+          "rationale": "This is incorrect; they are deducted from capital, not added to RWA."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "A bank uses an interest rate swap to hedge fair value risk of a fixed-rate bond portfolio. What is a critical requirement for applying hedge accounting?",
+      "explanation": "To qualify for hedge accounting under IFRS 9 or ASC 815, the entity must formally document the hedging relationship, its objective, and strategy, and must assess hedge effectiveness on an ongoing basis to ensure it remains valid.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The hedge must be formally documented at inception, and its effectiveness must be prospectively and retrospectively assessed on an ongoing basis.",
+          "is_correct": true,
+          "rationale": "Documentation and effectiveness testing are fundamental prerequisites for hedge accounting."
+        },
+        {
+          "key": "B",
+          "text": "The notional amount of the swap must exactly match the principal amount of the bond portfolio being hedged.",
+          "is_correct": false,
+          "rationale": "An exact match is not required; the economic relationship is what matters."
+        },
+        {
+          "key": "C",
+          "text": "The hedge relationship must result in a perfect offset of gains and losses between the swap and the bonds.",
+          "is_correct": false,
+          "rationale": "Perfect effectiveness is not required, only a high degree of effectiveness."
+        },
+        {
+          "key": "D",
+          "text": "The swap's counterparty must have a credit rating of AAA to ensure the hedge is considered fully effective.",
+          "is_correct": false,
+          "rationale": "Counterparty credit risk is considered but a specific rating is not required."
+        },
+        {
+          "key": "E",
+          "text": "The bank must obtain pre-approval from regulatory authorities before designating any new fair value hedge relationship.",
+          "is_correct": false,
+          "rationale": "Regulatory pre-approval is not a standard requirement for hedge designation."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Under ASC 810, what is the primary determinant for a financial institution to consolidate a variable interest entity (VIE) it is involved with?",
+      "explanation": "The VIE consolidation model focuses on control through economic interests rather than voting rights. The primary beneficiary, which has both the power to direct significant activities and significant economic exposure, must consolidate the VIE.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The institution is the primary beneficiary, having power to direct the VIE's significant activities and absorb its losses or receive its benefits.",
+          "is_correct": true,
+          "rationale": "This correctly defines the primary beneficiary, which is the trigger for consolidation."
+        },
+        {
+          "key": "B",
+          "text": "The institution holds more than fifty percent of the VIE's voting equity interests, which is the standard consolidation trigger.",
+          "is_correct": false,
+          "rationale": "This describes the voting interest model, not the VIE model."
+        },
+        {
+          "key": "C",
+          "text": "The financial institution provides the majority of the VIE's debt financing, regardless of its control over the entity's operations.",
+          "is_correct": false,
+          "rationale": "Being a primary lender does not automatically make an entity the primary beneficiary."
+        },
+        {
+          "key": "D",
+          "text": "The institution's name is legally associated with the VIE's formation documents, indicating a direct legal link between them.",
+          "is_correct": false,
+          "rationale": "Legal association is not the primary determinant for VIE consolidation."
+        },
+        {
+          "key": "E",
+          "text": "The VIE was created for the exclusive purpose of executing transactions on behalf of the financial institution.",
+          "is_correct": false,
+          "rationale": "Purpose is a factor, but the primary beneficiary test is decisive."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "When applying IFRS 9 hedge accounting for a cash flow hedge, what is the correct treatment for the effective portion of the hedging instrument's gain or loss?",
+      "explanation": "IFRS 9 requires the effective portion of a cash flow hedge's gain or loss to be recognized in OCI and held in the cash flow hedge reserve. This amount is later reclassified to profit or loss when the hedged item affects earnings.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It is recognized immediately in the profit or loss statement in the same period that the gain or loss occurs.",
+          "is_correct": false,
+          "rationale": "This describes the treatment for hedges not qualifying for hedge accounting."
+        },
+        {
+          "key": "B",
+          "text": "It is initially recognized in other comprehensive income and accumulated in a separate component of equity called the cash flow hedge reserve.",
+          "is_correct": true,
+          "rationale": "This is the correct treatment for the effective portion under IFRS 9."
+        },
+        {
+          "key": "C",
+          "text": "It is deferred on the balance sheet as a separate asset or liability until the hedged transaction is fully settled.",
+          "is_correct": false,
+          "rationale": "Gains and losses are recognized in equity (OCI), not as a separate balance sheet item."
+        },
+        {
+          "key": "D",
+          "text": "It is used to directly adjust the carrying amount of the non-financial asset or liability that is being hedged.",
+          "is_correct": false,
+          "rationale": "This describes basis adjustment, an option but not the primary initial treatment."
+        },
+        {
+          "key": "E",
+          "text": "It is ignored for accounting purposes until the hedge is terminated, at which point the cumulative effect is recognized in profit or loss.",
+          "is_correct": false,
+          "rationale": "Gains and losses must be recognized each period, not ignored until termination."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "A financial institution holds a complex, over-the-counter interest rate swap. What is the most appropriate valuation methodology when no active market exists?",
+      "explanation": "For Level 3 fair value measurements under IFRS 13, a discounted cash flow (DCF) model using observable inputs where possible (e.g., yield curves) and unobservable inputs for factors like credit risk is the standard approach for valuing OTC derivatives.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using the initial transaction price as the fair value throughout the life of the swap, unless a significant impairment event occurs.",
+          "is_correct": false,
+          "rationale": "Initial price is not fair value over time; it must be re-measured."
+        },
+        {
+          "key": "B",
+          "text": "Valuing the swap based on the fair value of a similar, but not identical, exchange-traded derivative product available in the market.",
+          "is_correct": false,
+          "rationale": "This is a Level 2 input and may not be appropriate for a complex, unique swap."
+        },
+        {
+          "key": "C",
+          "text": "Employing a discounted cash flow model using observable inputs like yield curves and credit valuation adjustments for counterparty risk.",
+          "is_correct": true,
+          "rationale": "A DCF model with appropriate risk adjustments is the standard for Level 3 valuations."
+        },
+        {
+          "key": "D",
+          "text": "Applying the amortized cost method and only adjusting for impairment losses recognized at the end of each reporting period.",
+          "is_correct": false,
+          "rationale": "Derivatives must be measured at fair value, not amortized cost."
+        },
+        {
+          "key": "E",
+          "text": "Requesting a non-binding price indication from a single market maker without performing any independent verification of the inputs used.",
+          "is_correct": false,
+          "rationale": "Relying on a single, unverified price is insufficient for reliable fair value measurement."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Under Basel III regulations, which component is considered the highest quality of regulatory capital for a bank, absorbing losses on a going-concern basis?",
+      "explanation": "Common Equity Tier 1 (CET1) is the core measure of a bank's financial strength. It is composed of the most loss-absorbing capital, primarily common stock and retained earnings, and is critical for absorbing losses while the bank is still operating.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Common Equity Tier 1 (CET1) capital, which primarily consists of common shares and retained earnings, providing the most loss-absorbing capacity.",
+          "is_correct": true,
+          "rationale": "CET1 is the highest quality capital designed to absorb losses on a going-concern basis."
+        },
+        {
+          "key": "B",
+          "text": "Tier 2 capital, which includes subordinated debt and hybrid instruments, designed to absorb losses only in a gone-concern or liquidation scenario.",
+          "is_correct": false,
+          "rationale": "Tier 2 capital is loss-absorbing on a gone-concern basis, not going-concern."
+        },
+        {
+          "key": "C",
+          "text": "Additional Tier 1 (AT1) capital, which includes perpetual contingent convertible bonds that absorb losses before Tier 2 capital does.",
+          "is_correct": false,
+          "rationale": "While high quality, AT1 is subordinate to CET1 in the capital hierarchy."
+        },
+        {
+          "key": "D",
+          "text": "The total risk-weighted assets (RWA) of the institution, as this figure directly determines the minimum required capital levels.",
+          "is_correct": false,
+          "rationale": "RWA is the denominator in capital ratios, not a component of capital itself."
+        },
+        {
+          "key": "E",
+          "text": "The buffer of high-quality liquid assets (HQLA) maintained for the liquidity coverage ratio, which is a separate regulatory requirement.",
+          "is_correct": false,
+          "rationale": "HQLA relates to liquidity risk management, not loss-absorbing capital adequacy."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "When assessing the need for a valuation allowance against a deferred tax asset (DTA), which piece of evidence is considered the most persuasive for realization?",
+      "explanation": "Under both IFRS (IAS 12) and US GAAP, the most reliable evidence for realizing a DTA is a strong, consistent history of profitability and projections of future taxable income sufficient to utilize the asset. A history of losses is negative evidence.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The existence of significant tax-deductible temporary differences that are expected to reverse in the near future without considering profitability.",
+          "is_correct": false,
+          "rationale": "Reversing differences are useless without taxable income to offset."
+        },
+        {
+          "key": "B",
+          "text": "A recent history of significant operating losses, even if future projections show a return to profitability in the long term.",
+          "is_correct": false,
+          "rationale": "A history of losses is strong negative evidence against DTA realization."
+        },
+        {
+          "key": "C",
+          "text": "The implementation of a new tax planning strategy that has not yet been tested or proven effective in generating income.",
+          "is_correct": false,
+          "rationale": "Untested strategies are considered weak evidence for supporting a DTA."
+        },
+        {
+          "key": "D",
+          "text": "Strong evidence of future taxable income from sources other than reversing temporary differences, such as a history of profitability.",
+          "is_correct": true,
+          "rationale": "A history of profitability provides the strongest evidence of future taxable income."
+        },
+        {
+          "key": "E",
+          "text": "The expectation that statutory tax rates will increase in future periods, which would increase the nominal value of the DTA.",
+          "is_correct": false,
+          "rationale": "A higher tax rate increases the DTA's value but doesn't ensure its realization."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Under IFRS 10, which factor is most critical in determining whether a financial institution must consolidate a Special Purpose Entity (SPE)?",
+      "explanation": "IFRS 10 focuses on the concept of control, which exists when an investor has power over the investee, exposure to variable returns, and the ability to use its power to affect the amount of those returns. Legal ownership is not the sole determinant.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The legal ownership percentage of the SPE's equity, with consolidation required only if the institution holds over 50% of shares.",
+          "is_correct": false,
+          "rationale": "IFRS 10 focuses on control, not just legal ownership percentage."
+        },
+        {
+          "key": "B",
+          "text": "The institution's exposure to variable returns from the SPE and its ability to use its power to affect those returns.",
+          "is_correct": true,
+          "rationale": "This correctly defines the three elements of control under IFRS 10."
+        },
+        {
+          "key": "C",
+          "text": "Whether the institution's name is explicitly mentioned in the founding charter and legal documents of the Special Purpose Entity.",
+          "is_correct": false,
+          "rationale": "The institution's name being in documents does not determine control."
+        },
+        {
+          "key": "D",
+          "text": "The total amount of funding the institution has provided to the SPE, irrespective of the nature of the financial instruments used.",
+          "is_correct": false,
+          "rationale": "The amount of funding is a factor, but control is the decisive element."
+        },
+        {
+          "key": "E",
+          "text": "The contractual right to receive a fixed management fee for services, which indicates a primary agency relationship with the SPE.",
+          "is_correct": false,
+          "rationale": "A fixed fee often indicates an agent relationship, which implies a lack of control."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When applying hedge accounting for a cash flow hedge under IFRS 9, how should the effective portion of the hedging instrument's gain or loss be recognized?",
+      "explanation": "Under IFRS 9, the effective portion of a cash flow hedge's gain or loss is recognized in Other Comprehensive Income (OCI) to align its recognition with the hedged item's impact on profit or loss.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It is recognized directly in other comprehensive income and accumulated in the cash flow hedge reserve within equity.",
+          "is_correct": true,
+          "rationale": "This aligns with IFRS 9, which requires deferral in OCI until the hedged transaction affects profit or loss."
+        },
+        {
+          "key": "B",
+          "text": "The entire gain or loss is immediately recognized in the profit or loss statement for the current reporting period.",
+          "is_correct": false,
+          "rationale": "This is incorrect; immediate P&L recognition would defeat the purpose of hedge accounting for cash flow hedges."
+        },
+        {
+          "key": "C",
+          "text": "The gain or loss is deferred on the balance sheet as a separate liability until the hedged transaction occurs.",
+          "is_correct": false,
+          "rationale": "Gains or losses are accumulated in equity (OCI), not as a separate balance sheet liability."
+        },
+        {
+          "key": "D",
+          "text": "It is used to directly adjust the carrying amount of the non-financial asset acquired in the hedged transaction.",
+          "is_correct": false,
+          "rationale": "This describes basis adjustment, an option that is not the primary initial recognition method for all cash flow hedges."
+        },
+        {
+          "key": "E",
+          "text": "The gain or loss is amortized to profit or loss over the life of the hedging instrument.",
+          "is_correct": false,
+          "rationale": "Amortization is not the correct method; recognition is tied to when the hedged item affects P&L."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "In a business combination, how should an acquirer account for contingent consideration classified as a liability after the initial acquisition date?",
+      "explanation": "According to IFRS 3, contingent consideration classified as a liability must be remeasured to its fair value at each reporting date. Any changes in fair value are recognized in the profit or loss statement.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It is measured at its nominal value and only adjusted when the contingency is fully resolved, with the adjustment impacting goodwill.",
+          "is_correct": false,
+          "rationale": "Subsequent changes do not impact goodwill and measurement is at fair value, not nominal value."
+        },
+        {
+          "key": "B",
+          "text": "The liability is subsequently remeasured at fair value each reporting period, with changes recognized in profit or loss.",
+          "is_correct": true,
+          "rationale": "This is the correct treatment under IFRS 3, as changes in fair value are considered post-combination events."
+        },
+        {
+          "key": "C",
+          "text": "The contingent consideration is recorded at fair value initially, but all subsequent changes are adjusted against the initial goodwill amount.",
+          "is_correct": false,
+          "rationale": "Goodwill is generally not adjusted for changes in contingent consideration after the measurement period."
+        },
+        {
+          "key": "D",
+          "text": "It is ignored after the acquisition date and only recognized as an expense when the payment is actually made.",
+          "is_correct": false,
+          "rationale": "The liability must be carried on the balance sheet and remeasured until it is settled."
+        },
+        {
+          "key": "E",
+          "text": "The liability is accreted using the effective interest method, with no adjustments made for changes in fair value.",
+          "is_correct": false,
+          "rationale": "Fair value remeasurement is required; the effective interest method alone is insufficient for this type of liability."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "Under IAS 12, when can a deferred tax asset be recognized for unused tax losses carried forward by a financial institution?",
+      "explanation": "The core principle of IAS 12 for recognizing a deferred tax asset is the probability test. The entity must have convincing evidence that sufficient future taxable profits will be available to utilize the losses.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Recognition is mandatory for all unused tax losses, ensuring that the full potential tax shield is always reflected on the balance sheet.",
+          "is_correct": false,
+          "rationale": "Recognition is not mandatory; it is subject to a probability test of future profits."
+        },
+        {
+          "key": "B",
+          "text": "The deferred tax asset is only recognized if the company has been consistently profitable for the last five consecutive years.",
+          "is_correct": false,
+          "rationale": "While past profitability is an indicator, there is no strict rule about a specific number of years."
+        },
+        {
+          "key": "C",
+          "text": "It can be recognized only to the extent that it is probable future taxable profit will be available to utilize the losses.",
+          "is_correct": true,
+          "rationale": "This correctly states the 'probable future taxable profit' criterion which is central to IAS 12."
+        },
+        {
+          "key": "D",
+          "text": "It can only be recognized if there are sufficient taxable temporary differences relating to the same taxation authority and entity.",
+          "is_correct": false,
+          "rationale": "This is one source of taxable profit, but future operating profits can also support recognition."
+        },
+        {
+          "key": "E",
+          "text": "The asset is recognized but must be immediately impaired by 50% unless future profitability is guaranteed by external auditors.",
+          "is_correct": false,
+          "rationale": "There is no automatic impairment rule, and recognition is based on management's assessment, not auditor guarantees."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "A company modifies a major property lease by decreasing its scope. How should the lessee account for this specific modification under IFRS 16?",
+      "explanation": "For a lease modification that decreases scope, IFRS 16 requires the lessee to remeasure the lease liability and the right-of-use asset, with any gain or loss on the partial termination recognized in P&L.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The modification is treated as an entirely new lease, and the original lease is completely derecognized from the financial statements.",
+          "is_correct": false,
+          "rationale": "This is incorrect; it is a modification of the existing lease, not a replacement."
+        },
+        {
+          "key": "B",
+          "text": "The lessee must remeasure the liability and decrease the right-of-use asset, recognizing any resulting gain or loss in profit or loss.",
+          "is_correct": true,
+          "rationale": "This correctly describes the required steps for a decrease-in-scope modification under IFRS 16."
+        },
+        {
+          "key": "C",
+          "text": "The change is accounted for prospectively by only adjusting future lease expense, with no immediate impact on the balance sheet.",
+          "is_correct": false,
+          "rationale": "A modification requires immediate remeasurement of the balance sheet items, not just prospective expense adjustments."
+        },
+        {
+          "key": "D",
+          "text": "The original right-of-use asset is impaired for the value of the decreased scope, but the lease liability remains unchanged.",
+          "is_correct": false,
+          "rationale": "Both the lease liability and the right-of-use asset must be adjusted, not just an impairment charge."
+        },
+        {
+          "key": "E",
+          "text": "The lessee only adjusts the lease liability but continues to amortize the original right-of-use asset over its initial term.",
+          "is_correct": false,
+          "rationale": "The right-of-use asset must also be adjusted to reflect the change in scope."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Under IFRS 15, how should an entity estimate variable consideration in a long-term contract when there is significant outcome uncertainty?",
+      "explanation": "IFRS 15 requires estimating variable consideration using either the expected value or most likely amount, but it constrains the recognized amount to what is highly probable will not result in a significant future revenue reversal.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Variable consideration must always be excluded from the transaction price until all uncertainty is resolved and payment is received.",
+          "is_correct": false,
+          "rationale": "IFRS 15 requires estimation and inclusion, subject to the constraint, not complete exclusion."
+        },
+        {
+          "key": "B",
+          "text": "The entity must use the most conservative estimate possible, recognizing only the minimum guaranteed amount under the contract.",
+          "is_correct": false,
+          "rationale": "This is overly prudent; the standard requires a best estimate, not necessarily the most conservative one."
+        },
+        {
+          "key": "C",
+          "text": "The full potential amount of variable consideration should be recognized upfront and adjusted downwards in future periods if needed.",
+          "is_correct": false,
+          "rationale": "This violates the constraint on revenue reversal and would likely overstate revenue initially."
+        },
+        {
+          "key": "D",
+          "text": "The entity should use the expected value method exclusively and recognize the full estimated amount regardless of reversal probability.",
+          "is_correct": false,
+          "rationale": "The standard allows two methods and always applies the significant reversal constraint."
+        },
+        {
+          "key": "E",
+          "text": "Estimate the amount but only include it if it is highly probable that a significant reversal will not occur later.",
+          "is_correct": true,
+          "rationale": "This correctly identifies the critical constraint on including variable consideration in the transaction price."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "When accounting for a hybrid contract with an embedded derivative under IFRS 9, what is the primary condition for bifurcating the derivative?",
+      "explanation": "IFRS 9 requires bifurcation if the embedded derivative's economic risks are not closely related to the host contract, it meets the derivative definition, and the hybrid instrument isn't measured at FVTPL. The 'not closely related' criterion is primary.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The economic characteristics and risks of the embedded derivative are not closely related to the host contract.",
+          "is_correct": true,
+          "rationale": "This is the primary test for bifurcation under IFRS 9."
+        },
+        {
+          "key": "B",
+          "text": "The hybrid contract is consistently measured at fair value through profit or loss in its entirety by the entity.",
+          "is_correct": false,
+          "rationale": "If measured at FVTPL, bifurcation is not permitted."
+        },
+        {
+          "key": "C",
+          "text": "The embedded derivative would meet the definition of a standalone derivative if it were a separate instrument.",
+          "is_correct": false,
+          "rationale": "This is a necessary condition, but not the primary one."
+        },
+        {
+          "key": "D",
+          "text": "The host contract is an asset that falls within the specific scope of IFRS 9 accounting standards.",
+          "is_correct": false,
+          "rationale": "The nature of the host contract is relevant but not the primary condition."
+        },
+        {
+          "key": "E",
+          "text": "The company has a documented risk management strategy that explicitly requires separating all embedded derivatives for analysis.",
+          "is_correct": false,
+          "rationale": "Internal policy does not override IFRS 9 requirements."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "During an annual goodwill impairment test under IAS 36, how should a company determine the recoverable amount of a cash-generating unit (CGU)?",
+      "explanation": "IAS 36 defines the recoverable amount as the higher of a CGU's fair value less costs of disposal and its value in use. An impairment loss is recognized if the carrying amount exceeds this recoverable amount.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It is calculated as the higher of the CGU's fair value less costs of disposal and its value in use.",
+          "is_correct": true,
+          "rationale": "This is the explicit definition of recoverable amount per IAS 36."
+        },
+        {
+          "key": "B",
+          "text": "It is determined solely by the discounted future cash flows expected to be generated from the cash-generating unit.",
+          "is_correct": false,
+          "rationale": "This only describes value in use, one part of the calculation."
+        },
+        {
+          "key": "C",
+          "text": "It is based on the original acquisition cost of the CGU, adjusted for accumulated depreciation and subsequent expenditures.",
+          "is_correct": false,
+          "rationale": "This describes the carrying amount, not the recoverable amount."
+        },
+        {
+          "key": "D",
+          "text": "It is measured by referencing the market capitalization of comparable publicly traded companies within the same industry sector.",
+          "is_correct": false,
+          "rationale": "This is a valuation method, not the defined recoverable amount."
+        },
+        {
+          "key": "E",
+          "text": "It is calculated as the net book value of the CGU's assets minus the carrying amount of its liabilities.",
+          "is_correct": false,
+          "rationale": "This calculation does not represent the recoverable amount."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "Under IAS 12, how should a deferred tax liability be recognized for a revaluation surplus on property, plant, and equipment?",
+      "explanation": "IAS 12 requires that the tax effect of transactions recognized outside profit or loss (like a revaluation surplus in OCI) should also be recognized outside profit or loss. Therefore, the deferred tax is recognized in OCI.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It is not recognized until the asset is eventually sold, at which point the actual tax is paid.",
+          "is_correct": false,
+          "rationale": "Deferred tax must be recognized when the temporary difference arises."
+        },
+        {
+          "key": "B",
+          "text": "It should be recognized immediately within the profit or loss statement for the current accounting period.",
+          "is_correct": false,
+          "rationale": "The tax follows the underlying item, which was not in P&L."
+        },
+        {
+          "key": "C",
+          "text": "It should be recognized directly in other comprehensive income, consistent with the treatment of the underlying revaluation surplus.",
+          "is_correct": true,
+          "rationale": "The tax impact follows the accounting treatment of the transaction."
+        },
+        {
+          "key": "D",
+          "text": "It should be netted against deferred tax assets arising from other temporary differences within the financial statements.",
+          "is_correct": false,
+          "rationale": "Netting rules are separate and do not dictate initial recognition."
+        },
+        {
+          "key": "E",
+          "text": "It is disclosed only in the notes to the financial statements without creating a formal liability on the balance sheet.",
+          "is_correct": false,
+          "rationale": "A deferred tax liability must be recognized on the balance sheet."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "When investigating potential revenue recognition fraud, which forensic accounting technique is most effective for identifying fictitious sales transactions?",
+      "explanation": "Vouching provides direct evidence. By tracing a recorded sale back to source documents like shipping records and subsequent cash receipts, an auditor can confirm if the sale genuinely occurred and was collected, effectively identifying fictitious entries.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Performing a detailed analysis of sales returns and allowances immediately following the period-end to spot unusual patterns.",
+          "is_correct": false,
+          "rationale": "This is a good analytical procedure but doesn't confirm specific transactions."
+        },
+        {
+          "key": "B",
+          "text": "Comparing the company's gross margin percentage and accounts receivable turnover ratio against established industry benchmarks.",
+          "is_correct": false,
+          "rationale": "This is a high-level analysis that indicates risk, not proof."
+        },
+        {
+          "key": "C",
+          "text": "Utilizing Benford's Law to analyze the frequency distribution of digits in sales invoice amounts for anomalies.",
+          "is_correct": false,
+          "rationale": "This can detect anomalies but doesn't prove transactions are fictitious."
+        },
+        {
+          "key": "D",
+          "text": "Vouching a sample of large sales transactions recorded near year-end to subsequent cash receipts and shipping documents.",
+          "is_correct": true,
+          "rationale": "This provides direct, substantive evidence of a transaction's validity."
+        },
+        {
+          "key": "E",
+          "text": "Interviewing sales personnel about their commission structures and sales targets to identify any unusual pressures or incentives.",
+          "is_correct": false,
+          "rationale": "This assesses motive and control environment, but doesn't test transactions."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "During financial due diligence for a potential acquisition, what is a critical red flag when analyzing the target company's quality of earnings?",
+      "explanation": "A quality of earnings analysis seeks to determine the sustainability and accuracy of reported profits. Heavy reliance on aggressive accounting or non-recurring gains suggests that core operational profitability is weak, which is a major risk for an acquirer.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The company has a consistent history of meeting or slightly exceeding its quarterly earnings per share forecasts.",
+          "is_correct": false,
+          "rationale": "This can be a sign of good management, though it warrants scrutiny."
+        },
+        {
+          "key": "B",
+          "text": "A significant portion of reported net income is derived from aggressive accounting policies and one-time, non-recurring gains.",
+          "is_correct": true,
+          "rationale": "This indicates that reported earnings are not sustainable or reliable."
+        },
+        {
+          "key": "C",
+          "text": "The target company has recently invested heavily in capital expenditures to upgrade its manufacturing and operational facilities.",
+          "is_correct": false,
+          "rationale": "This is often a positive sign of investment for future growth."
+        },
+        {
+          "key": "D",
+          "text": "There is a high degree of customer concentration, with the top five customers accounting for most of the revenue.",
+          "is_correct": false,
+          "rationale": "This is a business risk, but not directly a quality of earnings issue."
+        },
+        {
+          "key": "E",
+          "text": "The company has a complex capital structure that includes multiple classes of stock and convertible debt instruments.",
+          "is_correct": false,
+          "rationale": "This complicates valuation but doesn't inherently mean earnings quality is poor."
+        }
+      ]
+    }
+  ]
+}

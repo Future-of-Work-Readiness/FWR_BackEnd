@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "When optimizing Largest Contentful Paint (LCP), which strategy is most effective for a large, above-the-fold hero image loaded from a CDN?",
+      "explanation": "Preconnect warms up the connection to the CDN, and preload tells the browser to fetch the LCP image with high priority, significantly reducing the time to render the critical element.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Deferring the image load using `loading=\"lazy\"` to ensure other critical resources are parsed first by the browser.",
+          "is_correct": false,
+          "rationale": "Lazy loading is for below-the-fold content and would delay the LCP."
+        },
+        {
+          "key": "B",
+          "text": "Using a `preconnect` resource hint for the CDN domain and a high-priority `preload` link for the specific image URL.",
+          "is_correct": true,
+          "rationale": "This combination prioritizes both the connection and the resource download."
+        },
+        {
+          "key": "C",
+          "text": "Compressing the image as a WebP file and embedding it directly into the HTML using a Base64 data URI.",
+          "is_correct": false,
+          "rationale": "Base64 encoding increases HTML size, blocking rendering and hurting performance."
+        },
+        {
+          "key": "D",
+          "text": "Implementing a service worker to cache the image aggressively after the user's very first visit to the website.",
+          "is_correct": false,
+          "rationale": "This does not optimize the critical first visit for new users."
+        },
+        {
+          "key": "E",
+          "text": "Placing the image tag at the very end of the `<body>` element to allow all DOM content to render first.",
+          "is_correct": false,
+          "rationale": "This would delay the browser's discovery of a critical LCP resource."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What is the primary advantage of using Module Federation over iframes for implementing a micro-frontend architecture in a complex application?",
+      "explanation": "Module Federation enables different builds to share code at runtime. This avoids duplicate dependencies, leading to smaller bundles and more efficient loading compared to completely isolated iframe-based solutions.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It provides complete style and script isolation, preventing any potential CSS or JavaScript global scope conflicts between micro-frontends.",
+          "is_correct": false,
+          "rationale": "Iframes offer stronger isolation, which is often their main selling point."
+        },
+        {
+          "key": "B",
+          "text": "It allows for true runtime integration and sharing of dependencies between independently deployed applications, reducing overall bundle size.",
+          "is_correct": true,
+          "rationale": "Dependency sharing at runtime is the core benefit of Module Federation."
+        },
+        {
+          "key": "C",
+          "text": "It simplifies the routing logic by allowing each micro-frontend to manage its own browser history stack independently.",
+          "is_correct": false,
+          "rationale": "This is a significant challenge to solve, not an inherent advantage."
+        },
+        {
+          "key": "D",
+          "text": "It offers the most secure sandboxing environment, effectively preventing any cross-frame scripting attacks between different frontends.",
+          "is_correct": false,
+          "rationale": "Iframes provide a more secure and restrictive sandbox by default."
+        },
+        {
+          "key": "E",
+          "text": "It is the only method that supports server-side rendering for all integrated micro-frontends out of the box.",
+          "is_correct": false,
+          "rationale": "SSR with Module Federation is complex and not an out-of-the-box feature."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "In a large-scale React application using Redux, what is the main purpose of leveraging memoized selectors with a library like Reselect?",
+      "explanation": "Memoized selectors compute derived data from the Redux store. They cache the result and only re-calculate it if the input state slices change, preventing costly re-computations and unnecessary component re-renders.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To automatically batch multiple synchronous state updates into a single render cycle, improving the application's overall responsiveness.",
+          "is_correct": false,
+          "rationale": "This describes automatic batching, a feature handled by React itself."
+        },
+        {
+          "key": "B",
+          "text": "To prevent unnecessary re-renders of components by only recomputing derived data when the relevant parts of the state have changed.",
+          "is_correct": true,
+          "rationale": "Memoization avoids expensive re-computation on every render."
+        },
+        {
+          "key": "C",
+          "text": "To enable direct mutation of the Redux state within components, simplifying the logic required for complex data updates.",
+          "is_correct": false,
+          "rationale": "This violates the core principle of immutability in Redux."
+        },
+        {
+          "key": "D",
+          "text": "To persist the entire Redux store to `localStorage`, allowing the application state to be restored across browser sessions.",
+          "is_correct": false,
+          "rationale": "This is the role of persistence libraries like `redux-persist`."
+        },
+        {
+          "key": "E",
+          "text": "To create middleware that intercepts and logs every action dispatched, providing a detailed history for debugging purposes.",
+          "is_correct": false,
+          "rationale": "This describes the function of a logger middleware, not selectors."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "How does a strict Content Security Policy (CSP) primarily mitigate the risk of Cross-Site Scripting (XSS) attacks on a modern web application?",
+      "explanation": "A strict CSP defines a whitelist of trusted sources for content like scripts. This prevents the browser from executing malicious scripts injected from untrusted domains or inline, which is a common XSS attack vector.",
+      "options": [
+        {
+          "key": "A",
+          "text": "By enforcing HTTPS on all connections, it encrypts data in transit to prevent man-in-the-middle eavesdropping attacks.",
+          "is_correct": false,
+          "rationale": "This describes HTTP Strict Transport Security (HSTS), not CSP's XSS role."
+        },
+        {
+          "key": "B",
+          "text": "It instructs the browser to only execute scripts from whitelisted sources, blocking the execution of malicious inline or externally injected scripts.",
+          "is_correct": true,
+          "rationale": "CSP's core XSS defense is controlling script execution sources."
+        },
+        {
+          "key": "C",
+          "text": "It adds the `HttpOnly` flag to session cookies, preventing client-side scripts from accessing them and sending them to attackers.",
+          "is_correct": false,
+          "rationale": "This is a cookie security attribute, separate from CSP."
+        },
+        {
+          "key": "D",
+          "text": "It validates and sanitizes all user-submitted input on the server before it is rendered back to the browser page.",
+          "is_correct": false,
+          "rationale": "This describes server-side input sanitization, a different security layer."
+        },
+        {
+          "key": "E",
+          "text": "It requires multi-factor authentication for all sensitive user actions, adding an extra layer of identity verification.",
+          "is_correct": false,
+          "rationale": "This is an authentication control, not a direct XSS mitigation."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "When configuring Webpack for a large production application, what is the primary benefit of implementing dynamic imports with magic comments for code splitting?",
+      "explanation": "Dynamic `import()` syntax, enhanced with Webpack's magic comments, creates separate bundles (chunks). These chunks are loaded lazily only when needed, which significantly improves the initial page load performance by reducing the main bundle size.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It allows for the creation of a single, monolithic JavaScript bundle that improves initial caching efficiency for returning visitors.",
+          "is_correct": false,
+          "rationale": "This is the opposite of code splitting's goal."
+        },
+        {
+          "key": "B",
+          "text": "It automatically removes all unused code and dependencies from the final bundle, a process commonly known as tree shaking.",
+          "is_correct": false,
+          "rationale": "Tree shaking is a different optimization, though often used with splitting."
+        },
+        {
+          "key": "C",
+          "text": "It generates named, on-demand JavaScript chunks for specific routes or components, which are only loaded when they are actually needed.",
+          "is_correct": true,
+          "rationale": "This accurately describes lazy loading via dynamic imports for code splitting."
+        },
+        {
+          "key": "D",
+          "text": "It enables Hot Module Replacement (HMR) during development, allowing modules to be updated without requiring a full page reload.",
+          "is_correct": false,
+          "rationale": "HMR is a development-only feature, not for production code splitting."
+        },
+        {
+          "key": "E",
+          "text": "It transpiles modern JavaScript syntax into ES5-compatible code to ensure maximum browser compatibility for all users.",
+          "is_correct": false,
+          "rationale": "This is the responsibility of a transpiler like Babel, not code splitting."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "How should a Web Worker be used to prevent UI blocking when processing a large, computationally intensive dataset in the browser?",
+      "explanation": "Web Workers run scripts in a background thread, separate from the main execution thread. This is the ideal solution for offloading heavy computations, preventing the UI from freezing while the work is being done.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The main thread offloads the dataset to a separate worker script for processing, receiving the result via a message event.",
+          "is_correct": true,
+          "rationale": "This correctly describes the standard, effective use of a Web Worker for offloading heavy tasks."
+        },
+        {
+          "key": "B",
+          "text": "The main thread uses `requestAnimationFrame` to break the computation into smaller chunks, yielding control back to the browser.",
+          "is_correct": false,
+          "rationale": "This is a main-thread technique for animation, not ideal for heavy data processing."
+        },
+        {
+          "key": "C",
+          "text": "The dataset is processed using a `setTimeout` with a zero delay, allowing the event loop to handle other tasks.",
+          "is_correct": false,
+          "rationale": "This can help with task scheduling but does not prevent blocking on a truly intensive computation."
+        },
+        {
+          "key": "D",
+          "text": "The computation is wrapped in a Promise chain to ensure it runs asynchronously without blocking the main rendering thread.",
+          "is_correct": false,
+          "rationale": "Promises manage asynchronicity but do not move execution off the main thread; it would still block."
+        },
+        {
+          "key": "E",
+          "text": "The large dataset is stored in `localStorage` and processed incrementally by a service worker during idle periods.",
+          "is_correct": false,
+          "rationale": "Service workers are for network proxies and background sync, not primarily for on-demand computation."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "When implementing a strict Content Security Policy (CSP), what is the most secure and recommended approach for handling inline scripts and styles?",
+      "explanation": "A strict CSP disallows 'unsafe-inline'. The best practice is to move all code to external files. For unavoidable exceptions, using a nonce or hash provides a secure way to allow specific inline code blocks.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use the `'unsafe-inline'` directive for both `script-src` and `style-src` to allow all inline code to execute without modification.",
+          "is_correct": false,
+          "rationale": "This directive explicitly makes the policy less secure and is what a strict CSP aims to avoid."
+        },
+        {
+          "key": "B",
+          "text": "Refactor all inline scripts and styles into external files and use hashes or nonces for any unavoidable inline code snippets.",
+          "is_correct": true,
+          "rationale": "This is the recommended best practice for maintaining a strict and secure Content Security Policy."
+        },
+        {
+          "key": "C",
+          "text": "Set the `script-src` and `style-src` directives to `'self'` which automatically permits all inline code originating from the same domain.",
+          "is_correct": false,
+          "rationale": "The 'self' directive applies to external files from the same origin, not inline code."
+        },
+        {
+          "key": "D",
+          "text": "Base64 encode all inline scripts and include them directly within the CSP header to bypass browser restrictions on inline execution.",
+          "is_correct": false,
+          "rationale": "This is not a valid or secure method for handling inline scripts within a CSP."
+        },
+        {
+          "key": "E",
+          "text": "Rely on a third-party library that automatically converts all inline scripts and styles into externally loaded, CSP-compliant resources.",
+          "is_correct": false,
+          "rationale": "While tools can help, the fundamental refactoring is the core responsibility, not relying on a magic library."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "In a micro-frontend architecture using module federation, what is the primary role of the `exposes` configuration property in a webpack configuration?",
+      "explanation": "The `exposes` property in Webpack's Module Federation Plugin configuration is used to declare which modules from the current build should be made available to other, separate builds (remotes) for consumption.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It defines the list of remote applications that the host application is allowed to consume components from during runtime.",
+          "is_correct": false,
+          "rationale": "This describes the `remotes` property, which is used for consuming other micro-frontends."
+        },
+        {
+          "key": "B",
+          "text": "It specifies the shared dependencies, like React or Vue, that will be provided by the host to all remote micro-frontends.",
+          "is_correct": false,
+          "rationale": "This is handled by the `shared` configuration property to avoid duplicate library loading."
+        },
+        {
+          "key": "C",
+          "text": "It makes the application's own components or modules available for consumption by other remote micro-frontend applications.",
+          "is_correct": true,
+          "rationale": "The `exposes` key explicitly makes modules from the current build available to other applications."
+        },
+        {
+          "key": "D",
+          "text": "It configures the network port and URL endpoint where the host application will serve its bundled JavaScript files.",
+          "is_correct": false,
+          "rationale": "This is typically configured in the `devServer` or output `publicPath` properties, not `exposes`."
+        },
+        {
+          "key": "E",
+          "text": "It lists all the third-party npm packages that must be pre-loaded by the browser before any micro-frontend code is executed.",
+          "is_correct": false,
+          "rationale": "This describes eager loading, which is configured within the `shared` property, not `exposes`."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "What is the most significant advantage of using WebAssembly (WASM) over traditional JavaScript for a complex, client-side data visualization engine?",
+      "explanation": "WebAssembly's primary benefit is performance. It provides a way to run code written in low-level languages on the web at near-native speed, making it ideal for CPU-intensive tasks like complex visualizations or physics engines.",
+      "options": [
+        {
+          "key": "A",
+          "text": "WebAssembly provides direct, unrestricted access to the user's file system for faster data loading and processing operations.",
+          "is_correct": false,
+          "rationale": "WASM runs in the same sandboxed environment as JavaScript and has no direct file system access."
+        },
+        {
+          "key": "B",
+          "text": "It allows for the use of CSS-in-JS patterns which are not natively supported by standard JavaScript rendering engines.",
+          "is_correct": false,
+          "rationale": "This is unrelated to WebAssembly's purpose; it does not interact with CSS directly."
+        },
+        {
+          "key": "C",
+          "text": "WebAssembly code is inherently more secure because it runs in a completely separate memory space from the browser's DOM.",
+          "is_correct": false,
+          "rationale": "While sandboxed, its security model is comparable to JavaScript; performance is the key advantage."
+        },
+        {
+          "key": "D",
+          "text": "It enables near-native performance by compiling languages like C++ or Rust into a compact binary format executed by the browser.",
+          "is_correct": true,
+          "rationale": "Performance for computationally intensive tasks is the primary reason for choosing WebAssembly."
+        },
+        {
+          "key": "E",
+          "text": "It simplifies state management across multiple browser tabs by providing a shared memory model accessible by all active windows.",
+          "is_correct": false,
+          "rationale": "This describes SharedArrayBuffer, which can be used with WASM but is not its primary advantage."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "When discussing the Islands Architecture pattern, what is the core principle that differentiates it from traditional Single Page Application (SPA) frameworks?",
+      "explanation": "The key idea of Islands Architecture is to avoid the monolithic JavaScript bundle of a typical SPA. Instead, it focuses on server-rendering static HTML and then \"hydrating\" small, self-contained islands of interactivity with their own scripts.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The entire application is rendered on the server, and no JavaScript is ever shipped to the client for interactivity.",
+          "is_correct": false,
+          "rationale": "This describes a static site, not Islands Architecture, which explicitly includes interactive components."
+        },
+        {
+          "key": "B",
+          "text": "It relies exclusively on Web Components to create isolated pockets of functionality that are loaded on demand by the user.",
+          "is_correct": false,
+          "rationale": "While Web Components can be used, the pattern is framework-agnostic and not exclusive to them."
+        },
+        {
+          "key": "C",
+          "text": "It ships minimal JavaScript, hydrating only isolated, interactive components within a mostly static, server-rendered HTML page.",
+          "is_correct": true,
+          "rationale": "This correctly defines the core concept of hydrating interactive 'islands' on a static page."
+        },
+        {
+          "key": "D",
+          "text": "It uses a client-side router to manage all page transitions, fetching only the necessary data chunks for each new view.",
+          "is_correct": false,
+          "rationale": "This is a characteristic of a typical SPA, which Islands Architecture aims to move away from."
+        },
+        {
+          "key": "E",
+          "text": "The application state is managed globally in a single store, which synchronizes data across all interactive islands on the page.",
+          "is_correct": false,
+          "rationale": "Islands are typically self-contained and manage their own state, avoiding a large global state."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When would you choose WebAssembly over traditional JavaScript for a complex client-side computational task in a modern web application?",
+      "explanation": "WebAssembly is designed for performance-critical tasks, providing a low-level, binary instruction format that runs at near-native speed, making it ideal for computationally heavy operations that would be too slow in JavaScript.",
+      "options": [
+        {
+          "key": "A",
+          "text": "For CPU-intensive operations like video encoding or 3D rendering where near-native performance is a critical business requirement.",
+          "is_correct": true,
+          "rationale": "WASM excels at CPU-bound tasks that require maximum performance."
+        },
+        {
+          "key": "B",
+          "text": "When you need to manipulate the DOM directly to create highly dynamic and responsive user interface animations.",
+          "is_correct": false,
+          "rationale": "DOM manipulation is a core strength of JavaScript, not WebAssembly."
+        },
+        {
+          "key": "C",
+          "text": "For handling asynchronous API calls and managing application state across many different components in a large application.",
+          "is_correct": false,
+          "rationale": "This is a standard use case for JavaScript frameworks and libraries."
+        },
+        {
+          "key": "D",
+          "text": "When building simple forms and handling user input validation that requires minimal processing power and quick feedback.",
+          "is_correct": false,
+          "rationale": "JavaScript is more than sufficient and simpler for this common task."
+        },
+        {
+          "key": "E",
+          "text": "To ensure maximum browser compatibility across legacy systems that do not support modern JavaScript ES6+ features.",
+          "is_correct": false,
+          "rationale": "Transpiling JavaScript is the standard approach for legacy browser support."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Which technique is most effective for optimizing the Critical Rendering Path in a large, complex single-page application?",
+      "explanation": "Optimizing the Critical Rendering Path involves prioritizing the display of above-the-fold content. Inlining critical CSS ensures the browser can render the visible part of the page immediately without waiting for external stylesheets to download.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Compressing all image assets using modern formats like WebP without considering their placement on the page.",
+          "is_correct": false,
+          "rationale": "Image optimization is important but doesn't directly address render-blocking resources."
+        },
+        {
+          "key": "B",
+          "text": "Inlining critical CSS for above-the-fold content and asynchronously loading the remaining stylesheets to reduce render-blocking resources.",
+          "is_correct": true,
+          "rationale": "This directly targets render-blocking CSS, a key bottleneck in the CRP."
+        },
+        {
+          "key": "C",
+          "text": "Implementing server-side rendering for the entire application to deliver a fully formed HTML document on initial load.",
+          "is_correct": false,
+          "rationale": "SSR helps First Contentful Paint but doesn't inherently optimize the CRP itself."
+        },
+        {
+          "key": "D",
+          "text": "Using a service worker to cache all static assets after the first visit to improve subsequent page loads.",
+          "is_correct": false,
+          "rationale": "Service workers optimize repeat visits, not the initial critical path."
+        },
+        {
+          "key": "E",
+          "text": "Combining all JavaScript files into a single large bundle to minimize the total number of HTTP requests.",
+          "is_correct": false,
+          "rationale": "A large bundle is render-blocking; code-splitting is the modern approach."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "In a large-scale React application with complex user flows, what is the primary advantage of using XState over Redux?",
+      "explanation": "XState's core advantage is its use of statecharts to model application flow. This formal approach prevents developers from creating invalid states, which is a common source of bugs in complex UIs managed by libraries like Redux.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It offers significantly faster state update performance by leveraging immutable data structures more efficiently than Redux does.",
+          "is_correct": false,
+          "rationale": "Performance is not the main differentiator; both are highly performant."
+        },
+        {
+          "key": "B",
+          "text": "It completely eliminates the need for middleware when handling asynchronous operations like fetching data from an external API.",
+          "is_correct": false,
+          "rationale": "Async logic is handled differently but not eliminated; XState has its own patterns."
+        },
+        {
+          "key": "C",
+          "text": "It formally defines application logic as a finite state machine, making impossible states unrepresentable and reducing bugs.",
+          "is_correct": true,
+          "rationale": "The state machine paradigm is the key benefit for complex, predictable flows."
+        },
+        {
+          "key": "D",
+          "text": "It provides a much smaller bundle size, which is critical for improving the initial load time on mobile devices.",
+          "is_correct": false,
+          "rationale": "XState can have a larger bundle size than Redux core."
+        },
+        {
+          "key": "E",
+          "text": "It integrates more seamlessly with GraphQL clients, automatically managing cache updates and optimistic UI responses without configuration.",
+          "is_correct": false,
+          "rationale": "This describes features of GraphQL clients, not a specific XState advantage."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "What is the most secure and effective Content Security Policy (CSP) directive to prevent inline script execution attacks?",
+      "explanation": "A strict CSP using `script-src` with a nonce (a random, single-use token) or a hash of the script content is the recommended approach. It allows legitimate inline scripts while preventing attackers from injecting malicious code.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Implementing the `unsafe-inline` keyword within the `script-src` directive to allow all inline scripts for legacy compatibility.",
+          "is_correct": false,
+          "rationale": "This directive explicitly allows the attack vector you are trying to prevent."
+        },
+        {
+          "key": "B",
+          "text": "Setting the `default-src` to `'self'` which restricts all resources to the same origin but doesn't block inline scripts.",
+          "is_correct": false,
+          "rationale": "This is a good practice but doesn't specifically prevent inline script execution."
+        },
+        {
+          "key": "C",
+          "text": "Using the `frame-ancestors 'none'` directive to prevent the page from being embedded in an iframe, mitigating clickjacking.",
+          "is_correct": false,
+          "rationale": "This prevents clickjacking, which is a different security vulnerability."
+        },
+        {
+          "key": "D",
+          "text": "Using a strict `script-src` directive with a nonce or hash, which whitelists specific inline scripts while blocking all others.",
+          "is_correct": true,
+          "rationale": "Nonces or hashes provide a secure mechanism to allow specific inline scripts."
+        },
+        {
+          "key": "E",
+          "text": "Relying solely on the `object-src 'none'` directive to block plugins like Flash, which were common attack vectors.",
+          "is_correct": false,
+          "rationale": "This is important for security but does not address inline script attacks."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "What is the primary architectural benefit of using Module Federation in a micro-frontend setup with Webpack?",
+      "explanation": "Module Federation's key innovation is allowing separately built applications to dynamically load code from each other at runtime. This enables a true micro-frontend architecture by sharing dependencies and components without needing to republish a shared library.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It drastically reduces the initial JavaScript bundle size by performing more aggressive tree-shaking and dead code elimination.",
+          "is_correct": false,
+          "rationale": "This describes general build optimizations, not a unique Module Federation benefit."
+        },
+        {
+          "key": "B",
+          "text": "It enables server-side rendering of micro-frontends without requiring a complex Node.js orchestration layer on the server.",
+          "is_correct": false,
+          "rationale": "SSR with micro-frontends remains complex and is not its primary purpose."
+        },
+        {
+          "key": "C",
+          "text": "It automatically converts all micro-frontend components into Web Components for framework-agnostic interoperability across different technology stacks.",
+          "is_correct": false,
+          "rationale": "It works with standard modules and does not force a Web Component conversion."
+        },
+        {
+          "key": "D",
+          "text": "It provides a centralized state management solution that synchronizes state across all loaded micro-frontends without extra libraries.",
+          "is_correct": false,
+          "rationale": "It does not provide a state management solution; this must be handled separately."
+        },
+        {
+          "key": "E",
+          "text": "It allows different, independently deployed applications to share code and dependencies at runtime, avoiding duplication and version conflicts.",
+          "is_correct": true,
+          "rationale": "This correctly describes its core purpose of runtime code sharing."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "When optimizing for Largest Contentful Paint (LCP), which advanced technique is most effective for a large, above-the-fold hero image loaded via JavaScript?",
+      "explanation": "Preloading the LCP image resource tells the browser to fetch it with high priority, ensuring it's available sooner for rendering. This directly improves the LCP metric, as the largest element is painted faster.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using a `<link rel=\"preload\">` tag in the document `<head>` to start fetching the image resource with high priority.",
+          "is_correct": true,
+          "rationale": "Preloading prioritizes the fetch, directly improving LCP."
+        },
+        {
+          "key": "B",
+          "text": "Deferring the image loading with `loading=\"lazy\"` to ensure other critical resources are loaded first, improving interactivity.",
+          "is_correct": false,
+          "rationale": "Lazy loading would delay the LCP element, worsening the score."
+        },
+        {
+          "key": "C",
+          "text": "Inlining the entire image as a Base64 string directly within the initial HTML document payload to avoid a network request.",
+          "is_correct": false,
+          "rationale": "This bloats the HTML, blocking rendering and often worsening LCP."
+        },
+        {
+          "key": "D",
+          "text": "Moving the JavaScript that loads the image to the end of the `<body>` tag to avoid any render-blocking behavior.",
+          "is_correct": false,
+          "rationale": "This delays the script that loads the image, worsening LCP."
+        },
+        {
+          "key": "E",
+          "text": "Compressing the image using a next-gen format like AVIF, but without changing the loading priority or method.",
+          "is_correct": false,
+          "rationale": "Compression helps, but preloading is more impactful for priority."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "What is the most significant architectural challenge when implementing a micro-frontend architecture using a technique like module federation or iframes?",
+      "explanation": "The primary difficulty in micro-frontends is ensuring cohesion. Managing shared state, routing, and a consistent look-and-feel across disparate, independently developed applications requires careful planning and robust communication patterns.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ensuring that the CI/CD pipelines for each micro-frontend can operate completely independently without any shared build steps.",
+          "is_correct": false,
+          "rationale": "This is a goal of the architecture, not a primary challenge."
+        },
+        {
+          "key": "B",
+          "text": "Optimizing the initial bundle size for the container application, which is often minimal in this type of architecture.",
+          "is_correct": false,
+          "rationale": "The container is usually small; the challenge lies elsewhere."
+        },
+        {
+          "key": "C",
+          "text": "Configuring the backend API gateway to correctly route requests from different micro-frontends to the appropriate services.",
+          "is_correct": false,
+          "rationale": "This is a backend concern, not a frontend architectural challenge."
+        },
+        {
+          "key": "D",
+          "text": "Maintaining a consistent user experience and managing shared state and dependencies across independently deployed frontend applications.",
+          "is_correct": true,
+          "rationale": "Consistency and state management are the hardest problems to solve."
+        },
+        {
+          "key": "E",
+          "text": "Choosing the correct JavaScript framework, as most modern frameworks do not natively support this type of architectural pattern.",
+          "is_correct": false,
+          "rationale": "Most frameworks can be adapted; this is not the main challenge."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "To prevent UI redressing attacks like clickjacking, which Content Security Policy (CSP) directive is the most direct and effective mitigation strategy?",
+      "explanation": "The `frame-ancestors` directive is specifically designed to control embedding contexts (e.g., `<iframe>`, `<frame>`). This makes it the most direct and effective defense against clickjacking, where an attacker embeds your site in a malicious one.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The `script-src 'self'` directive, which restricts where scripts can be loaded from, preventing malicious script injection.",
+          "is_correct": false,
+          "rationale": "This prevents XSS but does not stop clickjacking."
+        },
+        {
+          "key": "B",
+          "text": "The `frame-ancestors 'none'` or `frame-ancestors 'self'` directive, which explicitly controls which origins can embed the page.",
+          "is_correct": true,
+          "rationale": "This directive is specifically designed to prevent framing attacks."
+        },
+        {
+          "key": "C",
+          "text": "The `upgrade-insecure-requests` directive, which instructs browsers to treat all of the site's insecure URLs as secure.",
+          "is_correct": false,
+          "rationale": "This enforces HTTPS but has no effect on clickjacking."
+        },
+        {
+          "key": "D",
+          "text": "The `object-src 'none'` directive, which prevents plugins like Flash from being embedded, a common legacy attack vector.",
+          "is_correct": false,
+          "rationale": "This is a good security practice but not for clickjacking."
+        },
+        {
+          "key": "E",
+          "text": "The `report-uri` directive, which sends reports of CSP violations but does not actively block any attacks itself.",
+          "is_correct": false,
+          "rationale": "This directive is for reporting violations, not for prevention."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "In Webpack's Module Federation, what is the primary function of the \"host\" application in relation to the \"remotes\"?",
+      "explanation": "In Module Federation, the \"host\" is the consumer. It is the application that initializes and then dynamically loads federated modules from other separately deployed applications (the \"remotes\") at runtime to compose a single user experience.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The host exclusively builds and deploys all remote modules, acting as a centralized build orchestration server for the system.",
+          "is_correct": false,
+          "rationale": "Remotes are built and deployed independently of the host."
+        },
+        {
+          "key": "B",
+          "text": "The host defines the shared dependencies that all remote applications must use, enforcing a strict versioning policy across them.",
+          "is_correct": false,
+          "rationale": "Dependencies can be shared, but this is not the host's primary function."
+        },
+        {
+          "key": "C",
+          "text": "The host is responsible for authenticating and authorizing user access before any remote modules are allowed to execute.",
+          "is_correct": false,
+          "rationale": "Authentication is an application-level concern, not a host role."
+        },
+        {
+          "key": "D",
+          "text": "The host acts as a simple static file server, only serving the initial HTML and leaving all logic to remotes.",
+          "is_correct": false,
+          "rationale": "The host is a full application that consumes other applications."
+        },
+        {
+          "key": "E",
+          "text": "The host application consumes code from one or more remotes at runtime, dynamically loading modules it does not contain itself.",
+          "is_correct": true,
+          "rationale": "The host's main role is to consume and integrate remote modules."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "When implementing a complex, interactive data grid, which set of ARIA roles is most appropriate for ensuring proper accessibility and screen reader support?",
+      "explanation": "The `grid`, `row`, and `gridcell` roles are specifically designed for interactive table-like structures. This pattern provides screen readers with the necessary semantic context for keyboard navigation and interaction within a data grid, which a simple `<table>` cannot.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using `role=\"list\"` for the container, `role=\"listitem\"` for each row, and `aria-label` for individual cell content.",
+          "is_correct": false,
+          "rationale": "This pattern is for simple lists, not navigable grids."
+        },
+        {
+          "key": "B",
+          "text": "Using `role=\"grid\"` for the container, `role=\"row\"` for rows, and `role=\"gridcell\"` or `role=\"columnheader\"` for cells.",
+          "is_correct": true,
+          "rationale": "This is the correct semantic structure for an interactive grid."
+        },
+        {
+          "key": "C",
+          "text": "Applying `role=\"table\"` to the main container, with `role=\"row\"` and `role=\"cell\"` for the respective internal elements.",
+          "is_correct": false,
+          "rationale": "The `table` role is for static data, not interactive grids."
+        },
+        {
+          "key": "D",
+          "text": "Assigning `role=\"navigation\"` to the grid container and using simple `<div>` elements with `tabindex` for all the cells.",
+          "is_correct": false,
+          "rationale": "This provides no semantic grid context for screen readers."
+        },
+        {
+          "key": "E",
+          "text": "Implementing a `role=\"feed\"` for the container and `role=\"article\"` for each row to represent the dynamic data stream.",
+          "is_correct": false,
+          "rationale": "This pattern is for feeds like social media, not data grids."
+        }
+      ]
+    }
+  ]
+}

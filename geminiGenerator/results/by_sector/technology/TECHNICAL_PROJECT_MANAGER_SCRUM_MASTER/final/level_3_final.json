@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "A developer discovers a critical security vulnerability during a sprint. What is the most appropriate immediate action for the Scrum Master to facilitate?",
+      "explanation": "The Scrum Master's role is to facilitate communication. For a critical issue, the best approach is to bring the right people together to assess impact and agree on the next steps, respecting both urgency and the Scrum framework.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Tell the developer to create a new user story for the backlog and await prioritization from the Product Owner in the future.",
+          "is_correct": false,
+          "rationale": "This response is too slow for a critical vulnerability and fails to address the immediate risk to the product or users."
+        },
+        {
+          "key": "B",
+          "text": "Immediately add the vulnerability fix to the current sprint backlog, even if it means exceeding the sprint's original scope.",
+          "is_correct": false,
+          "rationale": "This violates sprint integrity without proper discussion and assessment of the impact on the existing sprint goal."
+        },
+        {
+          "key": "C",
+          "text": "Facilitate a discussion between the developer, Product Owner, and tech lead to assess the risk and decide on a course of action.",
+          "is_correct": true,
+          "rationale": "This promotes collaboration and informed decision-making for a critical issue, balancing urgency with the Scrum process."
+        },
+        {
+          "key": "D",
+          "text": "Instruct the developer to fix the issue immediately without logging it, to ensure the sprint goal is still met on time.",
+          "is_correct": false,
+          "rationale": "This lacks transparency, traceability, and proper quality assurance, introducing risk and hiding important work from the team."
+        },
+        {
+          "key": "E",
+          "text": "Halt the entire sprint and schedule an emergency release as soon as the single vulnerability is patched and tested by the team.",
+          "is_correct": false,
+          "rationale": "This is an overreaction and may be unnecessarily disruptive to the team's progress on other valuable features."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Your team's velocity has been consistently decreasing for three sprints. What is the most effective first step for the Scrum Master to take?",
+      "explanation": "Velocity is a diagnostic tool, not a performance metric. A drop indicates a problem that needs investigation. The retrospective is the designated Scrum event for the team to inspect and adapt its process, making it the ideal starting point.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately schedule additional technical training for the entire team to improve their skills and increase their overall output.",
+          "is_correct": false,
+          "rationale": "This assumes a skill gap is the cause without investigation, which might be incorrect and waste valuable time and resources."
+        },
+        {
+          "key": "B",
+          "text": "Report the decreasing velocity to management and ask for more resources to be added to the development team to help out.",
+          "is_correct": false,
+          "rationale": "Adding people can slow things down in the short term and does not address the potential root cause of the decrease."
+        },
+        {
+          "key": "C",
+          "text": "Facilitate a targeted retrospective to identify potential root causes, such as technical debt, changing requirements, or external impediments.",
+          "is_correct": true,
+          "rationale": "This focuses on diagnosis before prescribing a solution, empowering the team to identify and solve their own problems."
+        },
+        {
+          "key": "D",
+          "text": "Push the team to work longer hours to ensure they meet the previously established velocity baseline for the next sprint.",
+          "is_correct": false,
+          "rationale": "This is unsustainable, harmful to team morale and quality, and treats the symptom rather than the underlying cause."
+        },
+        {
+          "key": "E",
+          "text": "Recalculate all future project timelines based on the new, lower velocity without investigating the underlying reasons for the drop.",
+          "is_correct": false,
+          "rationale": "This accepts the problem without attempting to understand or solve it, potentially allowing a serious issue to worsen."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Your team has a critical dependency on another Scrum team, which is blocking progress on a key feature. What is the best approach to resolve this?",
+      "explanation": "A good Scrum Master fosters inter-team communication and collaboration. The most effective approach is to connect the people with the knowledge—the engineers—to solve the problem directly, rather than relying solely on formal processes or escalation.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Escalate the issue directly to senior management to force the other team to prioritize your team's dependency immediately.",
+          "is_correct": false,
+          "rationale": "Escalation should not be the first step; it undermines team autonomy and can damage inter-team relationships."
+        },
+        {
+          "key": "B",
+          "text": "Wait until the next Scrum of Scrums meeting to formally raise the issue with the other Scrum Master for resolution.",
+          "is_correct": false,
+          "rationale": "This approach is too passive and can cause unnecessary delays for a critical blocker affecting the sprint goal."
+        },
+        {
+          "key": "C",
+          "text": "Document the blocker in Jira and instruct your team to work on lower-priority tasks until the dependency is resolved.",
+          "is_correct": false,
+          "rationale": "This is not proactive and accepts the delay without trying to solve the problem, potentially jeopardizing the sprint goal."
+        },
+        {
+          "key": "D",
+          "text": "Facilitate a direct conversation between the engineers from both teams to find a technical solution or workaround for the blocker.",
+          "is_correct": true,
+          "rationale": "This empowers teams to solve problems directly and efficiently, fostering collaboration and quick resolution."
+        },
+        {
+          "key": "E",
+          "text": "Ask the Product Owner to de-prioritize the feature entirely and remove it from the product backlog to avoid further complications.",
+          "is_correct": false,
+          "rationale": "This gives up on delivering value prematurely without attempting to resolve the inter-team dependency first."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "During sprint planning, the team estimates a story is much larger than the Product Owner expected due to required architectural changes. What should you do?",
+      "explanation": "The Scrum Master acts as a bridge between technical and business stakeholders. Facilitating a conversation allows the team to articulate the 'why' behind the estimate, enabling the Product Owner to make an informed decision about scope or priority.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Instruct the team to reduce their estimate to align with the Product Owner's expectations and maintain the project schedule.",
+          "is_correct": false,
+          "rationale": "This undermines the team's expertise and leads to inaccurate forecasting and potential failure to deliver on commitments."
+        },
+        {
+          "key": "B",
+          "text": "Remove the story from the sprint and ask the Product Owner to find a less complex feature to work on instead.",
+          "is_correct": false,
+          "rationale": "This avoids the problem rather than seeking a collaborative solution to understand the complexities and find a path forward."
+        },
+        {
+          "key": "C",
+          "text": "Facilitate a discussion where the team explains the technical complexities to the Product Owner for collaborative re-evaluation of the story.",
+          "is_correct": true,
+          "rationale": "This fosters shared understanding and enables informed trade-off decisions about scope, priority, or technical approach."
+        },
+        {
+          "key": "D",
+          "text": "Split the story into smaller, arbitrary tasks that seem less intimidating, even if they are not independently valuable to users.",
+          "is_correct": false,
+          "rationale": "This can create technical debt and doesn't deliver value incrementally, violating a core principle of Agile development."
+        },
+        {
+          "key": "E",
+          "text": "Accept the large estimate and proceed, informing stakeholders that the release will likely be delayed as a direct result of this.",
+          "is_correct": false,
+          "rationale": "This is not proactive in exploring alternative solutions or approaches that could still meet the business objectives."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Two senior developers strongly disagree on a technical implementation, causing a backlog refinement meeting to stall. What is your most effective action?",
+      "explanation": "A key Scrum Master skill is conflict resolution. The best approach is to de-escalate the immediate situation, provide a structured forum for resolving the technical debate, and allow the rest of the team's time to be used productively.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Make an executive decision on the technical approach yourself to keep the meeting moving forward and on schedule.",
+          "is_correct": false,
+          "rationale": "The Scrum Master is a facilitator, not the technical authority, and should not make technical decisions for the team."
+        },
+        {
+          "key": "B",
+          "text": "Side with the developer who has more seniority with the system in order to resolve the conflict as quickly as possible.",
+          "is_correct": false,
+          "rationale": "This can create resentment and ignores potentially valid technical points from the other developer, damaging team dynamics."
+        },
+        {
+          "key": "C",
+          "text": "End the refinement meeting immediately and report the developers' unprofessional behavior to their functional manager for disciplinary action.",
+          "is_correct": false,
+          "rationale": "This is overly escalatory and damages psychological safety; technical disagreements are normal and should be facilitated."
+        },
+        {
+          "key": "D",
+          "text": "Table the story, acknowledge both viewpoints, and suggest a separate, time-boxed session for them to collaborate on a solution.",
+          "is_correct": true,
+          "rationale": "This respects expertise, contains the conflict, and focuses on resolution without derailing the entire refinement meeting."
+        },
+        {
+          "key": "E",
+          "text": "Ask the entire team to vote on the two proposed technical approaches to let the majority decide the path forward.",
+          "is_correct": false,
+          "rationale": "Technical decisions should be based on merit and consensus among experts, not a popularity contest among the team."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "A key stakeholder repeatedly introduces new feature requests mid-sprint, which threatens the sprint goal. What is the most effective initial action?",
+      "explanation": "The best approach is to protect the sprint goal while acknowledging the stakeholder's needs. Adding the item to the product backlog allows for proper prioritization by the Product Owner without disrupting the team's current focus and commitment.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately add the new requests to the current sprint backlog to please the stakeholder and avoid any immediate conflict.",
+          "is_correct": false,
+          "rationale": "This violates Scrum principles by disrupting the sprint goal and undermining the team's commitment and focus."
+        },
+        {
+          "key": "B",
+          "text": "Politely decline all new requests, explaining that the sprint scope is locked and cannot be changed under any circumstances.",
+          "is_correct": false,
+          "rationale": "This is too rigid and not collaborative; it damages stakeholder relationships and ignores the agile principle of responding to change."
+        },
+        {
+          "key": "C",
+          "text": "Acknowledge the request, explain the impact on the sprint goal, and offer to add it to the product backlog for future prioritization.",
+          "is_correct": true,
+          "rationale": "This respects the process, protects the team, and manages stakeholder expectations by providing a path for their request."
+        },
+        {
+          "key": "D",
+          "text": "Ask the engineering team to work overtime to accommodate the new requests without affecting the original sprint commitment.",
+          "is_correct": false,
+          "rationale": "This is an unsustainable practice that leads to team burnout, reduced quality, and hides process problems."
+        },
+        {
+          "key": "E",
+          "text": "Escalate the issue directly to senior management to have them intervene and manage the stakeholder's expectations.",
+          "is_correct": false,
+          "rationale": "Escalation should not be the first step; it undermines self-organization and the Scrum Master's role as a facilitator."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "The development team reports that accumulating technical debt is significantly slowing down new feature development. How should you address this situation?",
+      "explanation": "A sustainable approach involves dedicating a portion of each sprint's capacity to technical debt. This ensures continuous improvement of the codebase while still delivering new value, balancing long-term health with short-term business goals.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Halt all new feature development immediately and dedicate several entire sprints exclusively to paying down all existing technical debt.",
+          "is_correct": false,
+          "rationale": "This is too extreme and ignores pressing business needs for new features, which can be impractical for the organization."
+        },
+        {
+          "key": "B",
+          "text": "Instruct the team to ignore the technical debt for now and focus solely on meeting the product roadmap deadlines.",
+          "is_correct": false,
+          "rationale": "This is unsustainable and will make the problem much worse over time, eventually grinding development to a halt."
+        },
+        {
+          "key": "C",
+          "text": "Work with the Product Owner and team to allocate a consistent percentage of each sprint's capacity to addressing high-priority technical debt.",
+          "is_correct": true,
+          "rationale": "This provides a balanced, sustainable approach to managing debt and features, ensuring long-term product health."
+        },
+        {
+          "key": "D",
+          "text": "Assign the technical debt tasks only to junior developers so that senior developers can continue working on new features.",
+          "is_correct": false,
+          "rationale": "This devalues debt work and is an ineffective use of team skills, as senior experience is often needed for refactoring."
+        },
+        {
+          "key": "E",
+          "text": "Document the technical debt in a separate backlog that will be addressed only after the current major project is completed.",
+          "is_correct": false,
+          "rationale": "This delays resolution, allowing the negative impact of the debt to grow and become more costly to fix later."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Your team has a critical dependency on another team that is not meeting its commitments, blocking your sprint progress. What is your best course of action?",
+      "explanation": "The most effective initial step is direct, proactive communication and collaboration between the involved teams. Facilitating a discussion helps to understand the root cause, align priorities, and collaboratively find a solution or a viable workaround.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Wait until your daily stand-up to announce the blocker and hope the other team's Scrum Master hears about it.",
+          "is_correct": false,
+          "rationale": "This approach is too passive and not proactive in resolving the issue, wasting valuable time during the sprint."
+        },
+        {
+          "key": "B",
+          "text": "Immediately escalate the issue to the CTO, bypassing the other team's leadership to ensure a quick resolution is forced.",
+          "is_correct": false,
+          "rationale": "Escalating too quickly damages relationships and bypasses opportunities for the teams to solve the problem themselves."
+        },
+        {
+          "key": "C",
+          "text": "Document the dependency and continue working on other, lower-priority tasks until the blocking team delivers their component.",
+          "is_correct": false,
+          "rationale": "This accepts the delay without attempting to resolve the core problem, putting the sprint goal at significant risk."
+        },
+        {
+          "key": "D",
+          "text": "Proactively facilitate a meeting with the other team's Scrum Master and Product Owner to understand the delay and find a solution.",
+          "is_correct": true,
+          "rationale": "This is a collaborative, problem-solving approach that addresses the root cause and fosters better inter-team communication."
+        },
+        {
+          "key": "E",
+          "text": "Instruct your team to build a temporary, short-term solution to work around the dependency, adding to your technical debt.",
+          "is_correct": false,
+          "rationale": "This should be a last resort after communication fails, not the first course of action, as it adds complexity."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Your sprint burndown chart shows a flat line for several days, followed by a sharp drop at the end. What does this pattern typically indicate?",
+      "explanation": "This pattern, often called a \"cliff\" or \"scrummerfall,\" indicates that work is not being broken down into smaller, daily-updatable tasks. Team members are likely waiting until the end of the sprint to update their progress, which hides risk and impedes transparency.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The team is perfectly on track and is completing all work exactly as planned according to the initial sprint forecast.",
+          "is_correct": false,
+          "rationale": "This pattern indicates a problem with transparency and workflow, not a perfect sprint execution."
+        },
+        {
+          "key": "B",
+          "text": "The Product Owner has been adding a significant amount of new scope to the sprint after it has already started.",
+          "is_correct": false,
+          "rationale": "Added scope would typically cause the burndown line to go up or stay high, not stay flat before dropping."
+        },
+        {
+          "key": "C",
+          "text": "Team members are not updating their task statuses daily and are only marking work as complete just before the sprint review.",
+          "is_correct": true,
+          "rationale": "This is a classic sign of work not being updated regularly, which hides the true status of the sprint."
+        },
+        {
+          "key": "D",
+          "text": "The initial story point estimations for the sprint backlog items were significantly underestimated by the development team.",
+          "is_correct": false,
+          "rationale": "Underestimation would likely show a line consistently above the ideal trend, not a flat line followed by a cliff."
+        },
+        {
+          "key": "E",
+          "text": "The team has encountered an unexpected major technical blocker that has completely halted all progress on every single task.",
+          "is_correct": false,
+          "rationale": "A total blocker would not explain the sharp drop at the end, as no work would be completed."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "During Sprint Planning, the development team is struggling to create a realistic forecast. What is the Scrum Master's primary responsibility in this situation?",
+      "explanation": "The Scrum Master's role is not to dictate the plan but to facilitate the process. They should guide the team by ensuring they use relevant data like velocity, discuss capacity, and identify potential risks, empowering them to create their own realistic plan.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To select the highest priority backlog items for the team and assign specific tasks to each individual developer.",
+          "is_correct": false,
+          "rationale": "This is micromanagement and violates the principle of a self-organizing team, which is responsible for pulling work."
+        },
+        {
+          "key": "B",
+          "text": "To extend the duration of the Sprint Planning meeting until the team finally agrees on a complete and perfect plan.",
+          "is_correct": false,
+          "rationale": "Scrum ceremonies should be timeboxed; the goal is a good enough plan for the team to start working."
+        },
+        {
+          "key": "C",
+          "text": "To facilitate the discussion, ask probing questions, and ensure the team considers its historical velocity and any known impediments.",
+          "is_correct": true,
+          "rationale": "The Scrum Master acts as a facilitator and coach to the team, helping them use their own data to plan effectively."
+        },
+        {
+          "key": "D",
+          "text": "To consult with the Product Owner to reduce the scope of the highest priority items to make them easier to complete.",
+          "is_correct": false,
+          "rationale": "The team pulls work based on their capacity; the Scrum Master doesn't negotiate scope on their behalf."
+        },
+        {
+          "key": "E",
+          "text": "To cancel the sprint and schedule a series of technical workshops to improve the team's estimation and planning skills.",
+          "is_correct": false,
+          "rationale": "This is an overreaction that disrupts the development cadence; planning challenges should be addressed within the framework."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "A team is consistently delivering features but accumulating significant technical debt. What is the most effective long-term strategy to address this situation?",
+      "explanation": "This approach pragmatically balances the need for new value delivery with the crucial long-term health of the codebase, making it a sustainable practice. It integrates debt management into the regular workflow, preventing it from becoming unmanageable.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Work with the Product Owner to dedicate a percentage of each sprint's capacity to refactoring and addressing high-priority debt items.",
+          "is_correct": true,
+          "rationale": "This balances feature work with sustainability, making technical health a continuous, shared responsibility."
+        },
+        {
+          "key": "B",
+          "text": "Halt all new feature development for several sprints to focus exclusively on paying down the accumulated technical debt.",
+          "is_correct": false,
+          "rationale": "This is often impractical from a business perspective and stops the flow of value to customers completely."
+        },
+        {
+          "key": "C",
+          "text": "Assign a separate, dedicated team to handle all technical debt so the main development team can focus on new features.",
+          "is_correct": false,
+          "rationale": "This creates knowledge silos and ownership issues, as the feature team lacks context on the refactoring work."
+        },
+        {
+          "key": "D",
+          "text": "Document the technical debt in the backlog but only address items when they directly block a critical new feature.",
+          "is_correct": false,
+          "rationale": "This is a reactive, not proactive, strategy that allows debt to grow and slow down all future development."
+        },
+        {
+          "key": "E",
+          "text": "Increase the velocity targets for the team, encouraging them to write better code and avoid creating more debt in the future.",
+          "is_correct": false,
+          "rationale": "This adds pressure, doesn't fix existing debt, and can lead to lower quality as the team rushes to meet targets."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "When reporting project status to engineering leadership, which set of metrics provides the most insightful view of team health and technical progress?",
+      "explanation": "DORA metrics are industry-standard indicators of high-performing technology teams. They focus on the speed and stability of the software delivery process, which is highly relevant for engineering leadership to understand true delivery capability.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Story points completed per sprint (velocity), team happiness surveys, and number of features delivered to production.",
+          "is_correct": false,
+          "rationale": "Velocity is a team-specific planning metric and can be easily gamed, making it a poor indicator for leadership."
+        },
+        {
+          "key": "B",
+          "text": "Cumulative flow diagram, cycle time, lead time, and defect escape rate to show workflow efficiency and quality.",
+          "is_correct": false,
+          "rationale": "These are good flow metrics, but the DORA metrics provide a more holistic view of DevOps performance and stability."
+        },
+        {
+          "key": "C",
+          "text": "A combination of lead time for changes, deployment frequency, change failure rate, and mean time to recovery (DORA metrics).",
+          "is_correct": true,
+          "rationale": "DORA metrics are outcome-oriented, measuring both the speed and stability of the entire software delivery lifecycle."
+        },
+        {
+          "key": "D",
+          "text": "Individual developer productivity metrics, lines of code written, and number of pull requests merged per person.",
+          "is_correct": false,
+          "rationale": "Individual metrics are often misleading, counterproductive, and can harm team collaboration and psychological safety."
+        },
+        {
+          "key": "E",
+          "text": "Budget burndown charts, resource allocation reports, and adherence to the original project timeline and scope.",
+          "is_correct": false,
+          "rationale": "These are traditional project management metrics that do not reflect the realities of agile software delivery and team performance."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "During a sprint, the team discovers a critical dependency on an external API that is unreliable. What is the best immediate action?",
+      "explanation": "This action unblocks the team, allowing them to make progress toward the sprint goal without being stalled by an external factor. It isolates the dependency and maintains team momentum and focus on their own deliverables.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately remove all related stories from the current sprint and place them back into the product backlog for a future sprint.",
+          "is_correct": false,
+          "rationale": "This abandons the sprint goal prematurely without first exploring ways to mitigate the external dependency."
+        },
+        {
+          "key": "B",
+          "text": "Encourage the team to build a mock or stub of the external API to continue development and testing on their own code.",
+          "is_correct": true,
+          "rationale": "This unblocks the team, isolates the dependency, and allows progress to continue in parallel with resolving the external issue."
+        },
+        {
+          "key": "C",
+          "text": "Escalate the issue to senior management and wait for them to resolve the problem with the external API provider.",
+          "is_correct": false,
+          "rationale": "This creates a bottleneck and encourages passive waiting, rather than empowering the team to find a way to move forward."
+        },
+        {
+          "key": "D",
+          "text": "Instruct the team to work on lower-priority backlog items until the external API becomes stable and reliable again.",
+          "is_correct": false,
+          "rationale": "This disrupts the sprint goal and the planned work, reducing the value delivered in the current sprint."
+        },
+        {
+          "key": "E",
+          "text": "Have the team continue trying to integrate with the unreliable API, logging all failures for a detailed bug report.",
+          "is_correct": false,
+          "rationale": "This leads to wasted effort, team frustration, and makes it impossible to complete the planned work."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Your team is planning a major release involving multiple new microservices. What is the most crucial activity to mitigate technical integration risks?",
+      "explanation": "Continuous integration with automated end-to-end tests provides the earliest possible feedback on integration issues. This proactive approach prevents problems from compounding and being discovered late in the development cycle when they are more costly to fix.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ensure every developer has completed their unit tests with 100% code coverage before the release date is finalized.",
+          "is_correct": false,
+          "rationale": "Unit tests are essential but do not validate cross-service integration, which is the primary risk in a microservices architecture."
+        },
+        {
+          "key": "B",
+          "text": "Create a detailed Gantt chart that sequences every single development task for all microservices involved in the release.",
+          "is_correct": false,
+          "rationale": "This is a waterfall planning approach, not an agile risk management technique for complex technical integrations."
+        },
+        {
+          "key": "C",
+          "text": "Implement a continuous integration pipeline that builds and runs automated end-to-end integration tests across the services on every commit.",
+          "is_correct": true,
+          "rationale": "This provides early and continuous feedback on integration health, making issues visible and easier to fix immediately."
+        },
+        {
+          "key": "D",
+          "text": "Schedule a multi-day, manual 'integration testing phase' just before the planned release date to find and fix all bugs.",
+          "is_correct": false,
+          "rationale": "This is a high-risk, late-cycle testing approach that often leads to release delays and significant stress."
+        },
+        {
+          "key": "E",
+          "text": "Rely on the individual service owners to manually test their integrations with other services and report their status daily.",
+          "is_correct": false,
+          "rationale": "This is uncoordinated, prone to human error, and does not provide a reliable, automated view of system health."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "When your organization decides to scale agile from one team to multiple teams working on the same product, what is the most important initial step?",
+      "explanation": "The primary challenge in scaling is inter-team dependency management and alignment. A Scrum of Scrums directly addresses this by creating a forum for communication and coordination between teams, which is a foundational step for any scaling effort.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately implement the full SAFe (Scaled Agile Framework) framework with all its roles, events, and artifacts as prescribed.",
+          "is_correct": false,
+          "rationale": "This is often too heavyweight and prescriptive initially; it's better to start simple and evolve the process."
+        },
+        {
+          "key": "B",
+          "text": "Hire an external Agile Coach for each individual team to ensure they are all following Scrum rules perfectly.",
+          "is_correct": false,
+          "rationale": "This doesn't solve for inter-team coordination, which is the primary challenge when scaling agile practices."
+        },
+        {
+          "key": "C",
+          "text": "Let each team operate completely independently, choosing their own tools and processes to maximize their individual autonomy.",
+          "is_correct": false,
+          "rationale": "This leads to integration chaos and misalignment, making it impossible to deliver a cohesive product."
+        },
+        {
+          "key": "D",
+          "text": "Establish a regular, cross-team synchronization meeting, like a Scrum of Scrums, to manage dependencies and align on integration points.",
+          "is_correct": true,
+          "rationale": "This directly addresses the core scaling challenge: managing dependencies and ensuring teams are aligned."
+        },
+        {
+          "key": "E",
+          "text": "Create a single, massive product backlog for all teams to pull work from based on their available capacity.",
+          "is_correct": false,
+          "rationale": "This doesn't solve dependency management or strategic alignment and can lead to teams working on disconnected items."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "A key stakeholder introduces a significant, urgent change to a user story's requirements halfway through the current sprint. What is your most appropriate action?",
+      "explanation": "The correct approach respects Scrum principles. The Product Owner is responsible for the backlog and prioritizing work. Abruptly changing the sprint goal disrupts the team and compromises the process, so negotiation and prioritization are key.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately halt all current sprint work and direct the development team to implement the new requirement to please the stakeholder.",
+          "is_correct": false,
+          "rationale": "This action disrespects the sprint goal and team autonomy, undermining the entire Scrum process."
+        },
+        {
+          "key": "B",
+          "text": "Advise the stakeholder that no changes are allowed during a sprint under any circumstances and they must wait for sprint planning.",
+          "is_correct": false,
+          "rationale": "This is too rigid and not collaborative; Agile should respond to change, but through a structured process."
+        },
+        {
+          "key": "C",
+          "text": "Discuss the change with the Product Owner to assess its impact and value, potentially creating a new story for a future sprint.",
+          "is_correct": true,
+          "rationale": "This correctly involves the Product Owner to prioritize and protect the sprint, while still being responsive to stakeholders."
+        },
+        {
+          "key": "D",
+          "text": "Instruct the development team to work overtime to accommodate the new requirement alongside their existing sprint commitments.",
+          "is_correct": false,
+          "rationale": "This promotes burnout and is an unsustainable practice that hides underlying issues with scope management."
+        },
+        {
+          "key": "E",
+          "text": "Add the new requirement directly to the current sprint backlog without consulting the Product Owner or the development team first.",
+          "is_correct": false,
+          "rationale": "This undermines the roles of the Product Owner and the team, creating chaos and breaking the process."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "Your team's velocity has been highly unpredictable for several sprints. Which action should you prioritize to diagnose the underlying issues and improve forecast accuracy?",
+      "explanation": "Unpredictable velocity is a symptom of deeper issues. A targeted retrospective allows the team to collectively identify root causes like technical debt, external blockers, or unclear requirements, leading to actionable improvements rather than just changing metrics.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Implement stricter time tracking for all tasks to ensure developers are fully utilized throughout the entire sprint duration.",
+          "is_correct": false,
+          "rationale": "Focusing on utilization over value is an anti-pattern that does not address the root cause of unpredictability."
+        },
+        {
+          "key": "B",
+          "text": "Facilitate a detailed retrospective focused on identifying root causes of variance, such as unclear requirements or external dependencies.",
+          "is_correct": true,
+          "rationale": "This addresses the source of the problem through inspection and adaptation, which is a core principle of Scrum."
+        },
+        {
+          "key": "C",
+          "text": "Increase the number of story points committed in the next sprint to challenge the team and motivate them to perform better.",
+          "is_correct": false,
+          "rationale": "This creates undue pressure and likely leads to failure, further damaging morale and predictability."
+        },
+        {
+          "key": "D",
+          "text": "Replace story points with time-based estimates like ideal hours, as they are often perceived as being more precise.",
+          "is_correct": false,
+          "rationale": "Changing the estimation unit does not fix the underlying cause of variability and often just trades one problem for another."
+        },
+        {
+          "key": "E",
+          "text": "Report the inconsistent velocity to senior management and request that a more experienced developer be added to the team.",
+          "is_correct": false,
+          "rationale": "This is premature escalation without first attempting to resolve the issue within the team's own process."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "The engineering team reports that accumulating technical debt is significantly slowing down new feature development. How should you best address this situation?",
+      "explanation": "Integrating technical debt work into each sprint is a sustainable, proactive approach. It ensures that debt is managed continuously, preventing it from growing unmanageable while still allowing for consistent delivery of new value to customers.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Dedicate an entire upcoming sprint exclusively to refactoring and addressing all known technical debt items in the codebase.",
+          "is_correct": false,
+          "rationale": "A dedicated 'fix-it' sprint delivers no new user value and is often an anti-pattern for continuous improvement."
+        },
+        {
+          "key": "B",
+          "text": "Work with the Product Owner and team to regularly allocate a percentage of each sprint's capacity to paying down technical debt.",
+          "is_correct": true,
+          "rationale": "This is a sustainable, proactive approach to managing debt that balances short-term and long-term needs."
+        },
+        {
+          "key": "C",
+          "text": "Instruct the team to ignore the technical debt for now and focus solely on delivering the features promised on the roadmap.",
+          "is_correct": false,
+          "rationale": "Ignoring technical debt increases risk and slows future development, making it more costly to address later."
+        },
+        {
+          "key": "D",
+          "text": "Create a separate backlog for technical debt to be handled by a different team so the feature team remains focused.",
+          "is_correct": false,
+          "rationale": "This separates ownership and context, often leading to ineffective fixes and a lack of shared responsibility for quality."
+        },
+        {
+          "key": "E",
+          "text": "Ask the lead engineer to create a plan to fix the debt alone, outside of the normal sprint process.",
+          "is_correct": false,
+          "rationale": "This isolates the problem and isn't a collaborative, team-owned solution, which is essential for long-term code health."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "Two senior developers on your team have a strong disagreement about a core architectural approach, which is halting progress. What is your most effective next step?",
+      "explanation": "A Scrum Master's role is to be a facilitator. By creating a structured forum for discussion, you empower the team to analyze the options, share knowledge, and collectively own the decision, which fosters a healthier and more collaborative environment.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Make an executive decision on the architectural approach yourself to get the team moving forward as quickly as possible.",
+          "is_correct": false,
+          "rationale": "This oversteps the Scrum Master role and disempowers the team, who are the experts on the technical implementation."
+        },
+        {
+          "key": "B",
+          "text": "Escalate the disagreement to the engineering manager or technical lead and ask them to resolve the conflict for the team.",
+          "is_correct": false,
+          "rationale": "This avoids the responsibility of facilitation and is a premature escalation before the team has tried to resolve it."
+        },
+        {
+          "key": "C",
+          "text": "Facilitate a structured discussion between the developers, including the team, to explore the pros and cons of each approach.",
+          "is_correct": true,
+          "rationale": "This promotes collaboration, team ownership, and effective conflict resolution by focusing on technical merits."
+        },
+        {
+          "key": "D",
+          "text": "Tell the developers to set aside their disagreement and find a temporary compromise just to complete the current sprint's work.",
+          "is_correct": false,
+          "rationale": "This is a short-term fix that fails to address the underlying technical conflict, which will likely reappear later."
+        },
+        {
+          "key": "E",
+          "text": "Encourage the rest of the team to vote on the best approach, with the majority decision being the one implemented.",
+          "is_correct": false,
+          "rationale": "Voting can be a poor substitute for technical consensus and can alienate experts with valid minority opinions."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "During a sprint review, a stakeholder points out that a 'completed' feature is missing key quality attributes. What does this most likely indicate?",
+      "explanation": "The Definition of Done (DoD) is a shared understanding of what it means for work to be complete. If delivered work lacks expected quality, it often means the DoD is insufficient or wasn't followed, leading to a quality gap.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The development team did not work hard enough during the sprint to complete all of the assigned user story tasks.",
+          "is_correct": false,
+          "rationale": "This assumes poor intent or effort, which is rarely the root cause; it's more likely a process or alignment issue."
+        },
+        {
+          "key": "B",
+          "text": "The stakeholder's expectations are unreasonable and they should have been more involved during the sprint planning meeting.",
+          "is_correct": false,
+          "rationale": "This shifts blame rather than inspecting the team's internal processes for gaps in defining and ensuring quality."
+        },
+        {
+          "key": "C",
+          "text": "The project's Definition of Done is either weak, incomplete, or was not consistently applied by the development team.",
+          "is_correct": true,
+          "rationale": "A robust Definition of Done ensures a shared understanding of quality and completeness for every backlog item."
+        },
+        {
+          "key": "D",
+          "text": "The Product Owner failed to write user stories with sufficient detail and clear acceptance criteria for the development team.",
+          "is_correct": false,
+          "rationale": "While possible, the Definition of Done is a broader quality agreement that applies to all stories, not just one."
+        },
+        {
+          "key": "E",
+          "text": "The team's velocity is too high, indicating they are rushing through work and sacrificing the overall quality of the product.",
+          "is_correct": false,
+          "rationale": "Velocity is a measure of output, not a direct indicator of quality; high velocity does not inherently mean low quality."
+        }
+      ]
+    }
+  ]
+}

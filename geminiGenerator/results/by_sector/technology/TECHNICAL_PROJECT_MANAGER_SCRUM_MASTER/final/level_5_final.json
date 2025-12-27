@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "When managing a program with multiple interdependent teams, some using Scrum and others Kanban, what is the most effective scaling strategy to ensure alignment?",
+      "explanation": "A Scrum of Scrums is a lightweight, adaptable coordination mechanism. It facilitates communication and dependency management between different agile teams without imposing a heavyweight, prescriptive framework, respecting each team's chosen way of working.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Mandate that all teams must immediately adopt the same strict Scrum framework to ensure process uniformity across the entire program.",
+          "is_correct": false,
+          "rationale": "This is disruptive and ignores the reasons teams chose Kanban."
+        },
+        {
+          "key": "B",
+          "text": "Implement the Scaled Agile Framework (SAFe) to provide structured program increments and formal synchronization points for all teams involved.",
+          "is_correct": false,
+          "rationale": "SAFe is a heavy framework that may be overkill and too rigid."
+        },
+        {
+          "key": "C",
+          "text": "Establish a regular Scrum of Scrums meeting where representatives from each team meet to coordinate dependencies and resolve impediments.",
+          "is_correct": true,
+          "rationale": "This is a flexible, agile-native approach for cross-team coordination."
+        },
+        {
+          "key": "D",
+          "text": "Create a centralized Project Management Office (PMO) to track all dependencies manually using a master project plan or Gantt chart.",
+          "is_correct": false,
+          "rationale": "This introduces a non-agile, command-and-control layer."
+        },
+        {
+          "key": "E",
+          "text": "Use the LeSS (Large-Scale Scrum) framework, which requires restructuring into feature teams that can deliver value end-to-end with fewer dependencies.",
+          "is_correct": false,
+          "rationale": "LeSS requires significant organizational change and may not be feasible."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "A critical security vulnerability is discovered in a shared library just before a major release. What is your immediate priority as the Scrum Master?",
+      "explanation": "The immediate priority is to prevent the release of a known vulnerability. Halting the process and convening key stakeholders ensures a rapid, informed decision is made about the risk, fix, and impact on the release.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Proceed with the release to meet the deadline, but create a high-priority backlog item to address the issue in the next sprint.",
+          "is_correct": false,
+          "rationale": "This knowingly introduces a critical security risk to production."
+        },
+        {
+          "key": "B",
+          "text": "Immediately halt the release pipeline and convene an emergency meeting with the tech lead, product owner, and security team for assessment.",
+          "is_correct": true,
+          "rationale": "This correctly prioritizes risk mitigation and collaborative decision-making."
+        },
+        {
+          "key": "C",
+          "text": "Ask the quality assurance team to perform additional regression testing to see if the vulnerability can be exploited in the build.",
+          "is_correct": false,
+          "rationale": "This delays the decision and doesn't mitigate the underlying risk."
+        },
+        {
+          "key": "D",
+          "text": "Inform senior management about the potential delay and wait for their direction on how to proceed with the planned release.",
+          "is_correct": false,
+          "rationale": "This defers responsibility; the team should assess and recommend first."
+        },
+        {
+          "key": "E",
+          "text": "Roll back the codebase to a previous stable version that does not include the vulnerable shared library dependency at all.",
+          "is_correct": false,
+          "rationale": "This is a potential solution, but not the first step before assessment."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Your team's velocity has been consistently decreasing for three sprints. What is the most appropriate first step to diagnose the underlying issue effectively?",
+      "explanation": "Analyzing flow metrics provides objective, system-level data to identify where work is slowing down. This data-driven approach avoids blaming individuals and enables a targeted, evidence-based conversation about process improvements in the retrospective.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Instruct the engineering manager to conduct performance reviews for each developer to identify any individual under-performers on the team.",
+          "is_correct": false,
+          "rationale": "This is a blaming approach and harms psychological safety."
+        },
+        {
+          "key": "B",
+          "text": "Introduce stretch goals and incentives during the next sprint planning to motivate the team to increase their overall output.",
+          "is_correct": false,
+          "rationale": "This treats a symptom and can lead to lower quality or burnout."
+        },
+        {
+          "key": "C",
+          "text": "Analyze the cumulative flow diagram, cycle time, and lead time metrics to identify potential bottlenecks within the team's workflow.",
+          "is_correct": true,
+          "rationale": "This is a data-driven, non-judgmental way to diagnose system issues."
+        },
+        {
+          "key": "D",
+          "text": "Extend the length of the sprints from two weeks to three weeks to give the team more time to complete stories.",
+          "is_correct": false,
+          "rationale": "This masks the root cause and reduces feedback loop frequency."
+        },
+        {
+          "key": "E",
+          "text": "Re-estimate the entire product backlog with the team, as the original story point estimations are likely inaccurate and causing issues.",
+          "is_correct": false,
+          "rationale": "While estimation could be a factor, it's not the best first diagnostic step."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "The Product Owner insists on adding a complex new feature late in a sprint, which will jeopardize the sprint goal. How should you handle this situation?",
+      "explanation": "The Scrum Master's role is to protect the sprint and facilitate negotiation. This option makes the trade-offs transparent, respects the Product Owner's authority over the backlog, and empowers the team to make a sustainable commitment.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately accept the new feature into the sprint backlog to avoid conflict and ask the team to work overtime to complete it.",
+          "is_correct": false,
+          "rationale": "This compromises team health and sustainable pace."
+        },
+        {
+          "key": "B",
+          "text": "Explain the impact on the sprint goal and facilitate a negotiation about swapping out an existing, lower-priority item of similar effort.",
+          "is_correct": true,
+          "rationale": "This balances stakeholder needs with team capacity and process integrity."
+        },
+        {
+          "key": "C",
+          "text": "Tell the Product Owner that no changes are allowed once the sprint has started, according to strict Scrum rules and principles.",
+          "is_correct": false,
+          "rationale": "This is overly rigid; Agile values responding to change."
+        },
+        {
+          "key": "D",
+          "text": "Escalate the situation to senior management, asking them to decide whether the new feature or the sprint goal is more important.",
+          "is_correct": false,
+          "rationale": "Escalation should be a last resort, not the first action."
+        },
+        {
+          "key": "E",
+          "text": "Add the feature to the product backlog and inform the Product Owner it will be prioritized for a future sprint.",
+          "is_correct": false,
+          "rationale": "This dismisses the PO's immediate concern without exploring options."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "You observe that your mature, high-performing team is becoming complacent, and retrospectives are unproductive. Which technique would you introduce to reinvigorate them?",
+      "explanation": "Changing the retrospective format breaks the monotony and encourages team members to think from different perspectives. This can uncover new insights and action items, which is essential for continuous improvement even in high-performing teams.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Cancel the next few retrospectives since the team is already performing well and does not seem to need them anymore.",
+          "is_correct": false,
+          "rationale": "This removes a core pillar of Scrum and continuous improvement."
+        },
+        {
+          "key": "B",
+          "text": "Invite a senior executive to the retrospective to share their vision, hoping to inspire the team with business context.",
+          "is_correct": false,
+          "rationale": "This can stifle open and honest feedback due to perceived pressure."
+        },
+        {
+          "key": "C",
+          "text": "Implement a different retrospective format, such as the 'Start, Stop, Continue' or 'Sailboat' exercises to generate new discussions.",
+          "is_correct": true,
+          "rationale": "This is a direct and effective way to break routine and foster new insights."
+        },
+        {
+          "key": "D",
+          "text": "Focus the retrospective on individual performance metrics to create a sense of competition and drive for personal improvement.",
+          "is_correct": false,
+          "rationale": "This undermines team cohesion and psychological safety."
+        },
+        {
+          "key": "E",
+          "text": "Shorten the retrospective timebox from one hour to fifteen minutes to make it more focused and less of a burden.",
+          "is_correct": false,
+          "rationale": "This avoids the root cause of complacency and devalues the event."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "An organization with over 20 interdependent Scrum teams needs to scale its agile practices within a highly regulated industry. Which framework is most suitable?",
+      "explanation": "SAFe is highly prescriptive, with defined roles, processes, and planning events like Program Increment Planning. This structure is often preferred in large, regulated enterprises that require significant oversight and alignment across many teams.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Spotify Model, because it prioritizes team autonomy and an emergent culture over strict processes and hierarchical structures.",
+          "is_correct": false,
+          "rationale": "The Spotify Model is a culture, not a prescriptive framework, and lacks the necessary controls for highly regulated environments."
+        },
+        {
+          "key": "B",
+          "text": "Nexus, as it offers a lightweight exoskeleton for Scrum that is designed to integrate the work of up to nine teams.",
+          "is_correct": false,
+          "rationale": "Nexus is designed for a smaller scale (3-9 teams) and is less comprehensive than what is needed for 20+ teams."
+        },
+        {
+          "key": "C",
+          "text": "LeSS (Large-Scale Scrum), because it advocates for minimal process and focuses on scaling by de-scaling organizational complexity.",
+          "is_correct": false,
+          "rationale": "LeSS is less prescriptive and may not provide the level of governance required in a highly regulated industry."
+        },
+        {
+          "key": "D",
+          "text": "SAFe (Scaled Agile Framework), due to its structured, prescriptive approach providing clear roles, processes, and artifacts for large enterprises.",
+          "is_correct": true,
+          "rationale": "SAFe's prescriptive nature and focus on compliance and governance make it ideal for large, regulated organizations."
+        },
+        {
+          "key": "E",
+          "text": "Scrum@Scale, because it employs a scale-free architecture that allows the organization to grow organically from a core Scrum team.",
+          "is_correct": false,
+          "rationale": "Scrum@Scale is less prescriptive than SAFe and may not offer sufficient structure for a heavily regulated context."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "As a Technical Project Manager, you observe that accumulating technical debt is significantly slowing down new feature delivery. What is the most strategic approach to manage this?",
+      "explanation": "Allocating a fixed percentage of each sprint's capacity to technical debt ensures it is addressed continuously and sustainably. This prevents it from growing uncontrollably while still allowing for consistent delivery of new features.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Halt all new feature development for several sprints to focus exclusively on refactoring the entire existing codebase.",
+          "is_correct": false,
+          "rationale": "This approach is too disruptive to business value delivery and is often impractical for stakeholders to accept."
+        },
+        {
+          "key": "B",
+          "text": "Dedicate a fixed percentage of every sprint's capacity, such as 20%, specifically to addressing prioritized technical debt items.",
+          "is_correct": true,
+          "rationale": "This creates a sustainable, predictable cadence for reducing debt without stopping feature work, balancing short and long-term goals."
+        },
+        {
+          "key": "C",
+          "text": "Form a separate, dedicated 'refactoring team' to handle all technical debt while other teams build new features.",
+          "is_correct": false,
+          "rationale": "This creates knowledge silos and can lead to integration problems, as the feature team may not understand the refactored code."
+        },
+        {
+          "key": "D",
+          "text": "Only address technical debt items when they are directly blocking the implementation of a high-priority new feature.",
+          "is_correct": false,
+          "rationale": "This is a reactive, not strategic, approach that allows underlying issues to worsen over time, increasing future costs."
+        },
+        {
+          "key": "E",
+          "text": "Document all known technical debt in the backlog but defer any action until a major architectural redesign is funded.",
+          "is_correct": false,
+          "rationale": "This allows debt and its negative effects to accumulate, making the eventual redesign more complex and costly."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Your team's CI/CD pipeline is mature, but stakeholders are questioning its business value. Which set of metrics best demonstrates the pipeline's impact on agile delivery?",
+      "explanation": "These four metrics, known as the DORA metrics, are the industry standard for measuring DevOps performance. They directly correlate CI/CD capabilities with the stability and velocity of value delivery to end-users.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Code coverage percentages, static analysis warnings, and the total number of unit tests executed by the build.",
+          "is_correct": false,
+          "rationale": "These are code quality metrics, which are inputs to value, but do not directly measure the delivery performance itself."
+        },
+        {
+          "key": "B",
+          "text": "Server uptime percentages, average CPU utilization, and memory consumption metrics from production monitoring systems.",
+          "is_correct": false,
+          "rationale": "These are operational health metrics, not direct measures of the development and delivery process's effectiveness."
+        },
+        {
+          "key": "C",
+          "text": "Deployment Frequency, Lead Time for Changes, Mean Time to Restore (MTTR), and Change Failure Rate.",
+          "is_correct": true,
+          "rationale": "These are the DORA metrics, which directly measure the throughput and stability of the software delivery process."
+        },
+        {
+          "key": "D",
+          "text": "Team velocity in story points, burndown chart accuracy, and the number of user stories completed per sprint.",
+          "is_correct": false,
+          "rationale": "These are internal team process metrics that measure output, not the overall value stream's performance and stability."
+        },
+        {
+          "key": "E",
+          "text": "The total number of commits per developer and the average lines of code written each day by the team.",
+          "is_correct": false,
+          "rationale": "These are vanity metrics that measure activity, not the actual value or impact delivered to the business or customers."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "During a complex project, a critical third-party API dependency is identified as a major risk due to its instability. What is the most effective agile mitigation strategy?",
+      "explanation": "An abstraction layer (or anti-corruption layer) decouples your system from the external dependency. This isolates your codebase from the API's instability and makes it easier to swap out the dependency in the future with minimal rework.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Document the issue in the project's risk register and wait for the third-party vendor to provide a stable version.",
+          "is_correct": false,
+          "rationale": "This is a passive approach that accepts the risk rather than actively mitigating it, leaving the project vulnerable."
+        },
+        {
+          "key": "B",
+          "text": "Develop an abstraction layer or anti-corruption layer around the API to isolate your system from its instability.",
+          "is_correct": true,
+          "rationale": "This is a proactive technical solution that contains the risk and provides future flexibility for the system's architecture."
+        },
+        {
+          "key": "C",
+          "text": "Immediately pivot the project to build a proprietary in-house replacement for the entire third-party service.",
+          "is_correct": false,
+          "rationale": "This is often a costly overreaction that introduces significant new scope and risk to the project delivery timeline."
+        },
+        {
+          "key": "D",
+          "text": "Increase the story point estimates for all user stories that depend on this specific third-party API integration.",
+          "is_correct": false,
+          "rationale": "This only accounts for the risk in planning but does not do anything to actually reduce or remove the risk itself."
+        },
+        {
+          "key": "E",
+          "text": "Assign a single senior engineer to monitor the API's status daily and report any issues during the stand-up.",
+          "is_correct": false,
+          "rationale": "This is a monitoring action, not a mitigation strategy; it only helps in detecting failures after they occur."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Two senior engineers have a fundamental disagreement on an architectural approach for a new service, causing team division. What is your most appropriate first action?",
+      "explanation": "The Scrum Master's primary role in this situation is to act as a facilitator. Bringing the engineers together for a structured, data-driven discussion encourages collaboration and empowers the team to resolve its own conflicts.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Escalate the disagreement immediately to the engineering manager to make the final architectural decision for the team.",
+          "is_correct": false,
+          "rationale": "This undermines the team's self-organization and autonomy, which are core principles of an effective agile team."
+        },
+        {
+          "key": "B",
+          "text": "Mandate that the entire team must vote on the two competing approaches and then implement the majority decision.",
+          "is_correct": false,
+          "rationale": "Voting can create a win-lose dynamic and may not lead to the best technical outcome, ignoring nuanced arguments."
+        },
+        {
+          "key": "C",
+          "text": "Facilitate a structured meeting with the engineers, encouraging them to present data-driven arguments and find a collaborative compromise.",
+          "is_correct": true,
+          "rationale": "This addresses the conflict directly, promotes professional debate, and empowers the team to own the technical solution."
+        },
+        {
+          "key": "D",
+          "text": "Ask the Product Owner to decide which architectural approach best aligns with the upcoming product feature requirements.",
+          "is_correct": false,
+          "rationale": "The Product Owner is responsible for the 'what' (requirements), while the development team is responsible for the 'how' (implementation)."
+        },
+        {
+          "key": "E",
+          "text": "Immediately create a time-boxed spike for each proposed architecture to gather empirical evidence before any further discussion.",
+          "is_correct": false,
+          "rationale": "While a spike is a useful tool, the immediate priority is to address the human conflict through facilitation first."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When scaling Scrum across multiple teams working on a single complex product, which framework specifically emphasizes a single Product Owner and one Product Backlog?",
+      "explanation": "Large-Scale Scrum (LeSS) is designed to scale Scrum by keeping its core principles intact, including the central role of a single Product Owner and a unified Product Backlog to avoid fragmentation and ensure product cohesion across all teams.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Scaled Agile Framework (SAFe), which introduces multiple layers of management including Program and Portfolio levels for enterprise-wide coordination.",
+          "is_correct": false,
+          "rationale": "SAFe typically has multiple Product Owners and backlogs at the team level, coordinated by a Product Manager."
+        },
+        {
+          "key": "B",
+          "text": "The Nexus framework, which adds a Nexus Integration Team to manage dependencies and integration issues between multiple Scrum teams.",
+          "is_correct": false,
+          "rationale": "Nexus uses a single Product Backlog but not necessarily a single Product Owner for the entire Nexus."
+        },
+        {
+          "key": "C",
+          "text": "The Large-Scale Scrum (LeSS) framework, which maintains one Product Owner and one Product Backlog to ensure product cohesion and alignment.",
+          "is_correct": true,
+          "rationale": "LeSS is fundamentally built around the principle of one Product Owner and one Product Backlog for the entire product."
+        },
+        {
+          "key": "D",
+          "text": "The Scrum@Scale framework, which creates a network of Scrum teams organized into a \"Scrum of Scrums\" for effective coordination.",
+          "is_correct": false,
+          "rationale": "Scrum@Scale is a flexible framework that does not strictly mandate a single Product Owner for the entire scale."
+        },
+        {
+          "key": "E",
+          "text": "The Spotify Model, which organizes teams into Squads and Tribes to foster autonomy rather than enforcing a single Product Owner structure.",
+          "is_correct": false,
+          "rationale": "The Spotify Model is a culture-driven approach, not a prescriptive framework, and prioritizes autonomy over single-owner structures."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "What is the most effective strategy for a Scrum Master to help a team strategically manage and reduce significant, long-standing technical debt?",
+      "explanation": "Allocating a consistent percentage of sprint capacity ensures that technical debt is addressed incrementally and continuously without completely halting value delivery. This approach is sustainable and prevents debt from accumulating further while showing measurable progress to stakeholders.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Advocate for allocating a fixed percentage of each sprint's capacity specifically to address prioritized technical debt items from the backlog.",
+          "is_correct": true,
+          "rationale": "This balances debt reduction with feature delivery, creating a sustainable, long-term strategy for improving codebase health."
+        },
+        {
+          "key": "B",
+          "text": "Halt all new feature development for several sprints to focus exclusively on refactoring the entire codebase and eliminating all existing debt.",
+          "is_correct": false,
+          "rationale": "This approach stops value delivery to the customer and is often difficult to get business buy-in for."
+        },
+        {
+          "key": "C",
+          "text": "Create a separate, dedicated \"technical debt team\" that works in parallel to the main development team to fix underlying issues.",
+          "is_correct": false,
+          "rationale": "This often creates a two-tiered system, demotivates the feature team, and can lead to integration problems."
+        },
+        {
+          "key": "D",
+          "text": "Only address technical debt when it directly blocks the implementation of a high-priority feature requested by a key stakeholder.",
+          "is_correct": false,
+          "rationale": "This is a reactive, not strategic, approach that allows underlying systemic issues to worsen over time."
+        },
+        {
+          "key": "E",
+          "text": "Defer all technical debt discussions until the end of the project, planning a large \"hardening\" phase to resolve everything at once.",
+          "is_correct": false,
+          "rationale": "This violates Agile principles by delaying risk and often results in the hardening phase being cut short."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "Your team's velocity fluctuates significantly sprint over sprint. Which advanced metric provides a more reliable forecast for completing a large backlog of work?",
+      "explanation": "Monte Carlo simulations use historical throughput data to run thousands of scenarios, providing a probabilistic forecast (e.g., \"85% chance of finishing by X date\"). This is more resilient to fluctuations than single-point estimates based on an unstable average velocity.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Measuring the average cycle time for work items, as it focuses on the time from start to completion for individual tasks.",
+          "is_correct": false,
+          "rationale": "Cycle time is a diagnostic metric for process efficiency, not a primary tool for long-range forecasting of a large backlog."
+        },
+        {
+          "key": "B",
+          "text": "Tracking the total lead time from request to delivery, which gives a better end-to-end view of the delivery process.",
+          "is_correct": false,
+          "rationale": "Lead time is excellent for understanding customer value delivery time but is not a direct forecasting tool for project completion."
+        },
+        {
+          "key": "C",
+          "text": "Using a Monte Carlo simulation based on historical throughput data to generate a probabilistic forecast of completion dates.",
+          "is_correct": true,
+          "rationale": "This method embraces variability to provide a range of likely outcomes, making it superior for forecasting with inconsistent data."
+        },
+        {
+          "key": "D",
+          "text": "Relying solely on the burn-up chart, which shows work completed against total scope but is still affected by velocity fluctuations.",
+          "is_correct": false,
+          "rationale": "A burn-up chart visualizes progress but its forecast trend line is unreliable when based on fluctuating velocity."
+        },
+        {
+          "key": "E",
+          "text": "Focusing on improving the accuracy of story point estimations to stabilize velocity before attempting any long-term forecasting for the project.",
+          "is_correct": false,
+          "rationale": "This addresses a symptom but doesn't provide an immediate, reliable forecasting method while the fluctuations are still occurring."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Two senior engineers have a fundamental disagreement on an architectural approach, threatening the sprint goal. What is your most appropriate initial action?",
+      "explanation": "A Scrum Master's role is to facilitate and empower the team. Guiding a structured, data-driven discussion respects the engineers' expertise and helps the team self-organize to find the best path forward, fostering ownership and resolving conflict constructively.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately escalate the disagreement to the engineering manager or technical architect to make a final, binding decision for the team.",
+          "is_correct": false,
+          "rationale": "Escalation should be a last resort; the first step is to empower the team to resolve its own conflicts."
+        },
+        {
+          "key": "B",
+          "text": "Facilitate a time-boxed discussion where each engineer presents their approach with data and trade-offs, guiding the team toward a consensus.",
+          "is_correct": true,
+          "rationale": "This promotes self-organization and collaborative decision-making, which is a core responsibility of the Scrum Master."
+        },
+        {
+          "key": "C",
+          "text": "Ask the Product Owner to decide which architectural approach best serves the immediate business needs for the current user stories.",
+          "is_correct": false,
+          "rationale": "The Product Owner is responsible for the 'what', not the 'how'; technical implementation decisions belong to the Development Team."
+        },
+        {
+          "key": "D",
+          "text": "Implement the simpler of the two proposed solutions to avoid further delays and revisit the more complex one in a future sprint.",
+          "is_correct": false,
+          "rationale": "This prioritizes speed over quality and may lead to significant rework or technical debt without proper team buy-in."
+        },
+        {
+          "key": "E",
+          "text": "Let the two engineers continue their debate until one of them concedes, allowing the natural team dynamic to resolve the conflict.",
+          "is_correct": false,
+          "rationale": "This is passive and risks letting the conflict escalate, damage team morale, and jeopardize the sprint goal."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "How can a Scrum Master best support a team's transition to a mature Continuous Integration and Continuous Deployment (CI/CD) pipeline?",
+      "explanation": "Integrating CI/CD is a process change. The Scrum Master facilitates this by helping the team evolve their working agreements, like the Definition of Done, and by actively removing organizational or technical blockers to achieving a smoother, more automated workflow.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Mandate that every story must be deployed to production individually upon completion to strictly adhere to continuous deployment principles from day one.",
+          "is_correct": false,
+          "rationale": "This is too prescriptive and ignores the team's need to mature their practices and automation incrementally to support this."
+        },
+        {
+          "key": "B",
+          "text": "Focus solely on Scrum ceremonies, leaving all technical implementation details of the CI/CD pipeline entirely to the development team.",
+          "is_correct": false,
+          "rationale": "This is overly hands-off; the Scrum Master should help remove impediments related to the transition, even if they are technical."
+        },
+        {
+          "key": "C",
+          "text": "Help the team redefine their \"Definition of Done\" to include automated testing and successful integration, and facilitate removing impediments to automation.",
+          "is_correct": true,
+          "rationale": "This correctly focuses on evolving team practices and removing blockers, which is the core of the Scrum Master's role."
+        },
+        {
+          "key": "D",
+          "text": "Schedule a separate, multi-sprint \"CI/CD project\" to build the entire pipeline before the team can begin using it for feature development.",
+          "is_correct": false,
+          "rationale": "This creates a large batch of work and delays feedback, which is contrary to Agile principles of iterative improvement."
+        },
+        {
+          "key": "E",
+          "text": "Purchase a leading CI/CD tool and require the team to adapt their workflow to match the tool's default configuration and processes.",
+          "is_correct": false,
+          "rationale": "Tools should support processes, not dictate them. The team's process should evolve first, then be supported by appropriate tooling."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "When scaling Agile across multiple interdependent teams using a framework like SAFe, what is the most critical challenge a TPM must address first?",
+      "explanation": "In scaled environments, misaligned dependencies are the primary source of delays and integration failures. Establishing clear communication and management protocols for these dependencies is paramount to ensuring a smooth value stream and synchronized delivery across all teams.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Establishing a robust, cross-team dependency management and communication protocol to ensure synchronized delivery and integration of features.",
+          "is_correct": true,
+          "rationale": "Managing cross-team dependencies is the core challenge of scaling Agile frameworks effectively."
+        },
+        {
+          "key": "B",
+          "text": "Mandating that all teams adopt the exact same set of development tools and IDEs for the sake of consistency.",
+          "is_correct": false,
+          "rationale": "Tool standardization is helpful but secondary to managing dependencies and workflow alignment."
+        },
+        {
+          "key": "C",
+          "text": "Focusing exclusively on increasing the velocity metric for each individual team to maximize their isolated output.",
+          "is_correct": false,
+          "rationale": "This leads to local optimization and integration failures, ignoring the overall system."
+        },
+        {
+          "key": "D",
+          "text": "Immediately restructuring the entire engineering department into feature-based teams without consulting existing team structures or product backlogs.",
+          "is_correct": false,
+          "rationale": "This approach is disruptive and lacks the necessary analysis for a successful transition."
+        },
+        {
+          "key": "E",
+          "text": "Creating a single, massive product backlog for all teams to pull from without any form of prioritization or refinement.",
+          "is_correct": false,
+          "rationale": "This is an anti-pattern that creates chaos and prevents effective planning."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "An engineer identifies a significant architectural flaw that will impede future scalability, but fixing it requires a multi-sprint refactoring effort. What is your best approach?",
+      "explanation": "A senior TPM must balance technical needs with business goals. This involves quantifying the risk and impact of technical debt, then negotiating with stakeholders to allocate capacity for incremental improvements, preventing future crises without halting feature delivery.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately halt all new feature development and dedicate the entire team to fixing the architectural flaw right away.",
+          "is_correct": false,
+          "rationale": "This is an extreme reaction that ignores immediate business value and stakeholder needs."
+        },
+        {
+          "key": "B",
+          "text": "Document the issue in the backlog and defer any action until it becomes a critical production failure.",
+          "is_correct": false,
+          "rationale": "This is a reactive and irresponsible approach that allows preventable risks to grow."
+        },
+        {
+          "key": "C",
+          "text": "Work with the Product Owner and engineers to quantify the risk and impact, then negotiate allocating capacity to address the debt incrementally.",
+          "is_correct": true,
+          "rationale": "This is a balanced, proactive strategy that aligns technical and business priorities."
+        },
+        {
+          "key": "D",
+          "text": "Ask the engineer to work on the fix during their spare time so that it doesn't impact planned sprint commitments.",
+          "is_correct": false,
+          "rationale": "This devalues important technical work and leads to burnout and poor quality."
+        },
+        {
+          "key": "E",
+          "text": "Form a separate, isolated team to work on the refactoring project while the main team continues with feature development.",
+          "is_correct": false,
+          "rationale": "This creates knowledge silos and significant integration challenges down the line."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "When presenting project status to executive leadership, which set of metrics provides the most effective, high-level overview of progress and predictability?",
+      "explanation": "Executive stakeholders need to understand delivery flow, predictability, and progress toward major goals. Cumulative flow diagrams and release burn-ups visualize these concepts effectively, abstracting away the low-level details of individual sprints or tasks.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Detailed individual developer performance metrics, including lines of code written and the number of commits per day.",
+          "is_correct": false,
+          "rationale": "These are vanity metrics that are too granular and often misleading for executives."
+        },
+        {
+          "key": "B",
+          "text": "Team velocity charts and sprint burndown graphs from the past several sprints without any additional context or narrative.",
+          "is_correct": false,
+          "rationale": "These are team-level tools that lack the strategic context needed for leadership."
+        },
+        {
+          "key": "C",
+          "text": "A complete list of all user stories completed in the last sprint, along with their individual story point estimations.",
+          "is_correct": false,
+          "rationale": "This level of detail is tactical and not suitable for a strategic executive overview."
+        },
+        {
+          "key": "D",
+          "text": "A cumulative flow diagram showing work-in-progress, cycle time trends, and a release burn-up chart mapping features against a timeline.",
+          "is_correct": true,
+          "rationale": "These metrics effectively visualize flow, predictability, and progress towards strategic goals."
+        },
+        {
+          "key": "E",
+          "text": "The percentage of unit test code coverage and the number of bugs found by the quality assurance team.",
+          "is_correct": false,
+          "rationale": "While important for quality, these metrics don't show overall project progress or predictability."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "The Product Owner is pushing for new features while the engineering team insists on prioritizing technical debt and infrastructure upgrades. How do you facilitate a resolution?",
+      "explanation": "The TPM's role is to be a neutral facilitator who guides stakeholders to a data-driven decision. By framing the conversation around the business impact of both options (cost of delay vs. risk), the team can make a balanced, strategic choice.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Side with the engineering team because technical stability is always the most important long-term priority for the product.",
+          "is_correct": false,
+          "rationale": "This ignores business needs and undermines the Product Owner's role and accountability."
+        },
+        {
+          "key": "B",
+          "text": "Overrule the engineering team's concerns and direct them to focus solely on the Product Owner's feature requests.",
+          "is_correct": false,
+          "rationale": "This damages team morale, creates technical risk, and ignores valuable engineering input."
+        },
+        {
+          "key": "C",
+          "text": "Mediate a data-driven discussion on the cost of delay for features versus the risk of ignoring technical debt, aiming for a balanced backlog.",
+          "is_correct": true,
+          "rationale": "This is a collaborative, strategic approach that empowers the team to make informed decisions."
+        },
+        {
+          "key": "D",
+          "text": "Escalate the disagreement immediately to senior management and ask them to make the final decision on prioritization.",
+          "is_correct": false,
+          "rationale": "This demonstrates a lack of leadership and abdicates the team's responsibility to self-manage."
+        },
+        {
+          "key": "E",
+          "text": "Suggest splitting the team into two, one for features and one for technical debt, to avoid future conflicts.",
+          "is_correct": false,
+          "rationale": "This creates inefficient resource allocation, knowledge silos, and coordination overhead."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "Your team's daily stand-ups consistently turn into long problem-solving sessions, significantly exceeding the 15-minute timebox. What is the most effective corrective action?",
+      "explanation": "The most effective action is to address the root cause by re-educating the team on the event's purpose (synchronization, not problem-solving) and introducing a mechanism like a 'parking lot' to defer deep discussions, thereby respecting the timebox and the meeting's intent.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Extend the daily stand-up meeting time to 30 minutes to accommodate the team's detailed technical discussions.",
+          "is_correct": false,
+          "rationale": "This reinforces the anti-pattern and wastes the entire team's time."
+        },
+        {
+          "key": "B",
+          "text": "Cancel the daily stand-up meetings entirely since the team is already collaborating throughout the day on their problems.",
+          "is_correct": false,
+          "rationale": "This removes a critical ceremony for team-wide synchronization and planning."
+        },
+        {
+          "key": "C",
+          "text": "Report the issue to the engineering manager and ask them to enforce the 15-minute rule on the team.",
+          "is_correct": false,
+          "rationale": "This is a passive approach that abdicates the Scrum Master's facilitation responsibility."
+        },
+        {
+          "key": "D",
+          "text": "Re-coach the team on the stand-up's purpose, enforcing the timebox and using a 'parking lot' for deep dive discussions.",
+          "is_correct": true,
+          "rationale": "This addresses the root cause, empowers the team, and respects the process."
+        },
+        {
+          "key": "E",
+          "text": "Allow only the team lead and senior engineers to speak during the stand-up to keep the meeting concise.",
+          "is_correct": false,
+          "rationale": "This undermines the principle that the stand-up is a whole-team synchronization event."
+        }
+      ]
+    }
+  ]
+}

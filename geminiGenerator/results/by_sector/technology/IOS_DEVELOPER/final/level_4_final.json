@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "When handling multiple asynchronous network requests that must all complete before a UI update, what is the most efficient GCD approach?",
+      "explanation": "A DispatchGroup allows you to track the completion of multiple concurrent tasks. By entering the group for each task and leaving upon its completion, you can use `notify` to schedule a final block of code (like a UI update) on a specific queue once all tasks are finished.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use a `DispatchGroup`, entering before each request, leaving in its completion handler, and using `notify` for the final UI update.",
+          "is_correct": true,
+          "rationale": "This correctly uses DispatchGroup to wait for all concurrent tasks before executing the final completion block."
+        },
+        {
+          "key": "B",
+          "text": "Chain the network requests sequentially using nested completion handlers to ensure they finish in a predictable order before updating.",
+          "is_correct": false,
+          "rationale": "This is inefficient as it prevents concurrent execution, significantly increasing the total wait time for the user."
+        },
+        {
+          "key": "C",
+          "text": "Use a `DispatchSemaphore` with a value of one to serialize the requests, ensuring only one runs at any given time.",
+          "is_correct": false,
+          "rationale": "This serializes the tasks rather than running them concurrently, which is counterproductive for performance."
+        },
+        {
+          "key": "D",
+          "text": "Run all network requests on the main dispatch queue to synchronize them directly with the user interface thread.",
+          "is_correct": false,
+          "rationale": "This would block the main thread, leading to an unresponsive UI and a poor user experience."
+        },
+        {
+          "key": "E",
+          "text": "Create an `OperationQueue` with `maxConcurrentOperationCount` set to one and add a final block operation at the end.",
+          "is_correct": false,
+          "rationale": "This also serializes the network requests, failing to take advantage of concurrency for faster completion."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "In Swift, what is the most effective way to prevent a strong reference cycle between a class instance and a closure it owns?",
+      "explanation": "A strong reference cycle occurs when a class instance holds a strong reference to a closure, and the closure captures the instance strongly. Using `[weak self]` in the closure's capture list creates a weak reference to `self`, which does not increase its retain count and breaks the cycle.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Define the closure property as `private` to limit its scope and prevent any external strong references from being formed.",
+          "is_correct": false,
+          "rationale": "Access control does not affect the internal strong reference cycle between the instance and its own closure."
+        },
+        {
+          "key": "B",
+          "text": "Manually set the closure property to `nil` inside the class's `deinit` method to break the strong reference cycle.",
+          "is_correct": false,
+          "rationale": "If a retain cycle exists, `deinit` will never be called, so this code would not execute to break the cycle."
+        },
+        {
+          "key": "C",
+          "text": "Use an `[unowned self]` capture list because it is functionally similar to weak but offers better performance.",
+          "is_correct": false,
+          "rationale": "Using `unowned` is unsafe if `self` can become nil; it will cause a crash, whereas `weak` safely becomes nil."
+        },
+        {
+          "key": "D",
+          "text": "Use a `[weak self]` capture list within the closure to ensure it does not maintain a strong reference to the instance.",
+          "is_correct": true,
+          "rationale": "This is the standard, safe way to break retain cycles with closures by making the capture a weak reference."
+        },
+        {
+          "key": "E",
+          "text": "Always dispatch the closure's execution to a background queue to separate its lifecycle from the class instance's lifecycle.",
+          "is_correct": false,
+          "rationale": "The dispatch queue does not affect reference counting or the strong capture of `self` within the closure."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "When building a complex SwiftUI view, which property wrapper is best for sharing a modifiable reference type across many subviews?",
+      "explanation": "`@StateObject` is used to create and manage the lifecycle of a reference type (an `ObservableObject`) within a view. This object can then be passed down the view hierarchy directly or via the environment, allowing multiple subviews to share and modify a single source of truth.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use `@State` in the parent view and pass its value down, as this is the simplest way to manage data.",
+          "is_correct": false,
+          "rationale": "This is for value types and passing it down without a binding prevents modification by child views."
+        },
+        {
+          "key": "B",
+          "text": "Use `@ObservedObject` or `@StateObject` on a reference type model, which acts as a single source of truth for all subviews.",
+          "is_correct": true,
+          "rationale": "This is the correct pattern for sharing and modifying a reference type model across a SwiftUI view hierarchy."
+        },
+        {
+          "key": "C",
+          "text": "Declare a separate `@State` variable inside every subview that needs to access or display the shared data.",
+          "is_correct": false,
+          "rationale": "This creates multiple, disconnected sources of truth, which leads to data inconsistency and bugs."
+        },
+        {
+          "key": "D",
+          "text": "Use `@Binding` on the source of truth itself within the parent view to link it directly to its children.",
+          "is_correct": false,
+          "rationale": "`@Binding` is used in the child view to receive a mutable reference, not on the parent's source of truth."
+        },
+        {
+          "key": "E",
+          "text": "Use `@EnvironmentObject` and initialize a new instance of the object in every view that requires it.",
+          "is_correct": false,
+          "rationale": "An `@EnvironmentObject` must be injected from a single ancestor view; initializing it in children defeats its purpose."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "To optimize a Core Data fetch for a large dataset where only two attributes are needed, what is the most effective strategy?",
+      "explanation": "Fetching full `NSManagedObject` instances is memory-intensive. By setting the `resultType` to `.dictionaryResultType` and specifying only the needed attributes via `propertiesToFetch`, Core Data returns lightweight dictionaries instead, significantly reducing memory overhead and improving performance for large queries.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Set the `fetchLimit` on the `NSFetchRequest` to a small number and perform multiple fetches inside a loop.",
+          "is_correct": false,
+          "rationale": "This is very inefficient due to the overhead of executing multiple separate fetch requests against the database."
+        },
+        {
+          "key": "B",
+          "text": "Increase the `fetchBatchSize` to a very large number to ensure all objects are loaded into memory at once.",
+          "is_correct": false,
+          "rationale": "This increases memory consumption by faulting in many full objects, which is the opposite of the desired optimization."
+        },
+        {
+          "key": "C",
+          "text": "Use an `NSAsynchronousFetchRequest` to perform the operation on a background thread without any other configuration changes.",
+          "is_correct": false,
+          "rationale": "This improves UI responsiveness but still fetches the full, memory-heavy managed objects in the background."
+        },
+        {
+          "key": "D",
+          "text": "Set the `resultType` to `.dictionaryResultType` and specify the required attributes in the `propertiesToFetch` property.",
+          "is_correct": true,
+          "rationale": "This is the most efficient method, as it avoids creating managed objects and only fetches the specified data."
+        },
+        {
+          "key": "E",
+          "text": "Always use an `NSFetchedResultsController` because it is inherently optimized for handling large datasets for display.",
+          "is_correct": false,
+          "rationale": "FRC is for syncing data with a UI, not for optimizing the performance of raw data retrieval."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "You are debugging a persistent memory growth issue in your app. Which specific tool in the Instruments suite is designed to find memory leaks?",
+      "explanation": "The Leaks instrument is specifically designed to detect and diagnose memory leaks in an application. It runs a process that periodically checks the heap for memory blocks that are no longer referenced by any part of the program but have not been deallocated, indicating a leak.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Time Profiler, which is used to identify slow or CPU-intensive code paths that are blocking the main thread.",
+          "is_correct": false,
+          "rationale": "Time Profiler is for analyzing CPU usage and performance bottlenecks, not for detecting memory leaks directly."
+        },
+        {
+          "key": "B",
+          "text": "The Allocations instrument, which tracks all memory allocations but does not specifically pinpoint cyclical retain leaks on its own.",
+          "is_correct": false,
+          "rationale": "While Allocations shows memory usage, the Leaks instrument is the primary tool for automatically finding leaked objects."
+        },
+        {
+          "key": "C",
+          "text": "The Leaks instrument, which automatically detects leaked memory blocks and provides the allocation backtrace for each one.",
+          "is_correct": true,
+          "rationale": "This is the correct tool specifically designed for identifying and tracing the source of memory leaks."
+        },
+        {
+          "key": "D",
+          "text": "The Core Animation instrument, which is primarily used for debugging frame drops and optimizing rendering performance.",
+          "is_correct": false,
+          "rationale": "This tool focuses on UI and rendering performance, measuring frames per second and GPU workload."
+        },
+        {
+          "key": "E",
+          "text": "The Network instrument, which is used to monitor and analyze all incoming and outgoing network traffic from the application.",
+          "is_correct": false,
+          "rationale": "This tool is for debugging network-related issues and has no capability to detect memory leaks."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "When debugging a memory leak in a Swift application, you discover a strong reference cycle between two class instances. What is the most appropriate solution?",
+      "explanation": "Using `unowned` is the correct choice when one object's lifetime is guaranteed to be the same or longer than the other, avoiding the overhead of an optional `weak` reference while still breaking the cycle.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use `unowned` on one reference if you can guarantee the other object will always exist for its entire lifetime.",
+          "is_correct": true,
+          "rationale": "This correctly breaks the strong reference cycle for non-optional relationships where one object's lifetime is guaranteed to outlive the other's."
+        },
+        {
+          "key": "B",
+          "text": "Manually set one of the references to `nil` inside a `deinit` block to break the cycle before deallocation.",
+          "is_correct": false,
+          "rationale": "The `deinit` block will not be called if a strong reference cycle exists."
+        },
+        {
+          "key": "C",
+          "text": "Wrap both class instances inside a struct, as value types do not participate in any reference counting cycles.",
+          "is_correct": false,
+          "rationale": "This fundamentally changes the object semantics and is not a direct solution."
+        },
+        {
+          "key": "D",
+          "text": "Use `weak` on both of the references to ensure neither object maintains a strong hold on the other.",
+          "is_correct": false,
+          "rationale": "While this works, `unowned` is more appropriate for non-optional relationships."
+        },
+        {
+          "key": "E",
+          "text": "Implement the `NSCopying` protocol to create deep copies of the objects instead of referencing them directly.",
+          "is_correct": false,
+          "rationale": "Copying is a different design pattern and does not resolve the reference cycle."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "You need to perform a long-running task off the main thread and then update the UI. Which GCD pattern is the most idiomatic and safe approach?",
+      "explanation": "The standard pattern is to perform heavy work on a background queue asynchronously to avoid blocking the UI. UI updates must then be dispatched asynchronously back to the main queue for safety.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Dispatch the task asynchronously to a global queue, then dispatch the UI update synchronously back to the main queue.",
+          "is_correct": false,
+          "rationale": "Dispatching synchronously to the main queue from a background thread can cause a deadlock."
+        },
+        {
+          "key": "B",
+          "text": "Dispatch the task asynchronously to a global queue, then asynchronously dispatch the UI update back to the main queue.",
+          "is_correct": true,
+          "rationale": "This is the correct, non-blocking, and safe pattern for background work and UI updates."
+        },
+        {
+          "key": "C",
+          "text": "Create a custom serial queue and perform both the background task and the subsequent UI update on it.",
+          "is_correct": false,
+          "rationale": "UI updates must always be performed on the main queue, not a custom queue."
+        },
+        {
+          "key": "D",
+          "text": "Use `DispatchQueue.main.sync` for the background task to block the UI, ensuring data consistency before the update.",
+          "is_correct": false,
+          "rationale": "This would block the main thread and freeze the application's user interface."
+        },
+        {
+          "key": "E",
+          "text": "Dispatch the entire operation to a concurrent queue and use a `DispatchGroup` to wait for the UI update.",
+          "is_correct": false,
+          "rationale": "A DispatchGroup is for coordinating multiple tasks; UI updates must be on the main queue."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "In a complex SwiftUI view hierarchy, which property wrapper is best suited for sharing mutable state across multiple, non-related views without explicit passing?",
+      "explanation": "@EnvironmentObject is specifically designed to solve the problem of prop-drilling by making an ObservableObject available to any view within a specific view hierarchy without passing it down manually through initializers.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`@State` should be used to manage local, transient state that is owned and mutated by a single view.",
+          "is_correct": false,
+          "rationale": "This is for local state within a single view, not for sharing across a hierarchy."
+        },
+        {
+          "key": "B",
+          "text": "`@Binding` is used to create a two-way connection to a state property owned by a parent view.",
+          "is_correct": false,
+          "rationale": "This requires explicit passing from a direct ancestor, not implicit sharing."
+        },
+        {
+          "key": "C",
+          "text": "`@EnvironmentObject` allows an `ObservableObject` to be injected, making it accessible to any descendant view in the hierarchy.",
+          "is_correct": true,
+          "rationale": "This wrapper is designed for implicitly sharing state across non-related views."
+        },
+        {
+          "key": "D",
+          "text": "`@StateObject` ensures that an `ObservableObject` instance is created and owned by a specific view for its lifetime.",
+          "is_correct": false,
+          "rationale": "This is about object lifecycle and ownership, not implicit sharing with descendants."
+        },
+        {
+          "key": "E",
+          "text": "`@ObservedObject` is used for sharing a reference type that you pass explicitly from a parent to a child view.",
+          "is_correct": false,
+          "rationale": "This requires the object to be passed down manually through view initializers."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "What is a key advantage of the VIPER architecture over a more conventional MVVM implementation for a large-scale, team-based application?",
+      "explanation": "VIPER's primary strength is its granular separation of responsibilities into View, Interactor, Presenter, Entity, and Router. This makes components highly independent and testable, which is beneficial for large teams and complex projects.",
+      "options": [
+        {
+          "key": "A",
+          "text": "VIPER significantly reduces the total amount of boilerplate code required for setting up each new feature module.",
+          "is_correct": false,
+          "rationale": "VIPER is well-known for introducing more boilerplate code, not less, due to its many components."
+        },
+        {
+          "key": "B",
+          "text": "It enforces a strict separation of concerns, isolating business logic in the Interactor and navigation in the Router.",
+          "is_correct": true,
+          "rationale": "This strict separation is the core principle and primary advantage of using the VIPER pattern."
+        },
+        {
+          "key": "C",
+          "text": "MVVM provides better native support for data binding with frameworks like Combine, which VIPER does not accommodate.",
+          "is_correct": false,
+          "rationale": "VIPER can easily accommodate Combine or other reactive frameworks within its structure."
+        },
+        {
+          "key": "D",
+          "text": "VIPER is simpler to learn and implement for junior developers due to its fewer components and clear data flow.",
+          "is_correct": false,
+          "rationale": "VIPER is generally considered more complex and harder to learn than MVVM."
+        },
+        {
+          "key": "E",
+          "text": "The ViewModel in MVVM is inherently more testable than the individual components found within the VIPER architecture.",
+          "is_correct": false,
+          "rationale": "VIPER's small, single-responsibility components are typically easier to unit test than a large ViewModel."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "You are using the Instruments \"Allocations\" tool to diagnose a memory issue. What does a persistent, ever-growing high watermark indicate after repeated user actions?",
+      "explanation": "The memory high watermark in the Allocations instrument shows the peak memory usage. If this watermark continually rises and never drops after an action is completed, it strongly indicates a memory leak.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The application is experiencing CPU-bound performance issues that are unrelated to the current memory allocation patterns.",
+          "is_correct": false,
+          "rationale": "The Allocations tool specifically measures memory usage, not CPU performance."
+        },
+        {
+          "key": "B",
+          "text": "It suggests a memory leak, where objects are being allocated but are not being deallocated when no longer needed.",
+          "is_correct": true,
+          "rationale": "A continuously rising memory watermark is a classic symptom of a memory leak."
+        },
+        {
+          "key": "C",
+          "text": "This is a normal memory growth pattern for applications that use caching extensively to improve overall performance.",
+          "is_correct": false,
+          "rationale": "A cache's memory usage should eventually stabilize, not grow indefinitely with each action."
+        },
+        {
+          "key": "D",
+          "text": "The system is likely performing memory compression, which is a standard optimization and not a cause for concern.",
+          "is_correct": false,
+          "rationale": "Memory compression is a system behavior, not something reflected as a growing app allocation watermark."
+        },
+        {
+          "key": "E",
+          "text": "It indicates that the application's binary size is too large, causing excessive memory usage upon initial launch.",
+          "is_correct": false,
+          "rationale": "Binary size affects initial memory footprint, not persistent growth during runtime."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When processing a large collection of objects inside a tight loop, what is the primary benefit of using an `@autoreleasepool` block?",
+      "explanation": "The `@autoreleasepool` block drains the pool at the end of its scope, releasing autoreleased objects earlier than the end of the current run loop event. This is crucial for managing memory in tight loops with many temporary objects.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It allows temporary objects created within the loop to be deallocated sooner, preventing a significant spike in memory usage.",
+          "is_correct": true,
+          "rationale": "This is the primary benefit, as it drains temporary autoreleased objects from memory periodically within the loop's scope."
+        },
+        {
+          "key": "B",
+          "text": "It automatically converts strong references to weak references for all objects created inside its scope, preventing retain cycles.",
+          "is_correct": false,
+          "rationale": "This misrepresents the function of an autorelease pool; it does not alter reference types."
+        },
+        {
+          "key": "C",
+          "text": "It provides a dedicated memory region that is exempt from ARC, allowing for manual memory management via `retain` and `release`.",
+          "is_correct": false,
+          "rationale": "Autorelease pools work with ARC, not as an exemption from it."
+        },
+        {
+          "key": "D",
+          "text": "It pauses the main thread's run loop, ensuring that no other operations can interfere with the object processing task.",
+          "is_correct": false,
+          "rationale": "It does not pause the run loop; it manages memory within a run loop cycle."
+        },
+        {
+          "key": "E",
+          "text": "It guarantees that all objects within the pool are created on a background thread to avoid blocking the user interface.",
+          "is_correct": false,
+          "rationale": "It is a memory management tool, not a concurrency or threading mechanism."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "How should you safely perform a large data import into Core Data on a background thread to avoid blocking the UI?",
+      "explanation": "Core Data contexts are not thread-safe. The correct pattern is to use a separate private queue context for each background task and then merge the changes back to the main view context, typically using notifications or specific merge methods.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use a single `NSManagedObjectContext` on the main queue and dispatch all fetch and save operations to it asynchronously.",
+          "is_correct": false,
+          "rationale": "This would still execute on the main queue, causing UI blocking."
+        },
+        {
+          "key": "B",
+          "text": "Create a new private queue `NSManagedObjectContext` for the background task and merge its changes back to the main context upon completion.",
+          "is_correct": true,
+          "rationale": "This is the standard, thread-safe pattern for background Core Data work."
+        },
+        {
+          "key": "C",
+          "text": "Directly access the main queue context from the background thread but wrap every Core Data operation within a `DispatchQueue.sync` block.",
+          "is_correct": false,
+          "rationale": "This is unsafe and can lead to deadlocks and data corruption."
+        },
+        {
+          "key": "D",
+          "text": "Subclass `NSPersistentContainer` and override its methods to make all `NSManagedObjectContext` instances inherently thread-safe across all queues.",
+          "is_correct": false,
+          "rationale": "This is not possible; contexts are fundamentally not thread-safe by design."
+        },
+        {
+          "key": "E",
+          "text": "Use `performBackgroundTask` on the view context, which automatically handles context creation and merging without any manual setup.",
+          "is_correct": false,
+          "rationale": "The view context's `perform` methods run on its own queue, which is the main queue."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "You are using the Time Profiler instrument to diagnose a performance issue. What does a wide, flat-topped region in the call tree indicate?",
+      "explanation": "In Time Profiler, the width of a bar in the call tree represents the amount of time spent in that function and its callees. A wide, flat top signifies that the function itself, not its children, is consuming significant CPU time.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A section of code that is executing very quickly and efficiently with minimal CPU usage, representing an optimized pathway.",
+          "is_correct": false,
+          "rationale": "A wide region in the call tree indicates a high amount of CPU usage and time spent, not efficiency."
+        },
+        {
+          "key": "B",
+          "text": "A recursive function that has resulted in a stack overflow, causing the application to terminate unexpectedly during profiling.",
+          "is_correct": false,
+          "rationale": "A stack overflow would appear as a very deep, narrow call stack, not a wide region."
+        },
+        {
+          "key": "C",
+          "text": "A significant amount of time is being spent executing a specific function, suggesting it is a bottleneck and a candidate for optimization.",
+          "is_correct": true,
+          "rationale": "The width directly corresponds to execution time, indicating a potential performance bottleneck."
+        },
+        {
+          "key": "D",
+          "text": "The profiler was unable to symbolicate the stack frames for that region, so the time cannot be attributed to any specific method.",
+          "is_correct": false,
+          "rationale": "Unsymbolicated frames are shown as raw memory addresses, not a specific shape."
+        },
+        {
+          "key": "E",
+          "text": "A period where the main thread was completely idle, waiting for user input or a network response to arrive.",
+          "is_correct": false,
+          "rationale": "Idle time is typically represented by system library calls related to the run loop, not a flat-topped user function."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "What is the primary role of the `projectedValue` property when you are implementing a custom Swift property wrapper?",
+      "explanation": "The `projectedValue` allows a property wrapper to expose additional functionality beyond just the wrapped value. It is accessed by prefixing the property name with a dollar sign ($) and offers a secondary API for management or observation.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It provides a default value for the wrapped property if one is not explicitly assigned during initialization of the enclosing type.",
+          "is_correct": false,
+          "rationale": "A default value is typically provided in the wrapper's initializer, not via projectedValue."
+        },
+        {
+          "key": "B",
+          "text": "It stores the original, unmodified value of the property before any transformations from the wrapper are applied to it.",
+          "is_correct": false,
+          "rationale": "This is not a standard feature; it would need to be implemented manually within the wrapper."
+        },
+        {
+          "key": "C",
+          "text": "It defines the underlying storage mechanism for the property, determining whether it is stored as a value or reference type.",
+          "is_correct": false,
+          "rationale": "The storage mechanism is an implementation detail of the wrapper itself, not the projectedValue."
+        },
+        {
+          "key": "D",
+          "text": "It exposes an alternative or secondary interface to the wrapped property, often used for management or observation purposes.",
+          "is_correct": true,
+          "rationale": "This is the exact purpose of projectedValue, accessed via the `$` prefix."
+        },
+        {
+          "key": "E",
+          "text": "It is a mandatory static property that provides metadata about the wrapper's behavior to the Swift compiler for optimization.",
+          "is_correct": false,
+          "rationale": "ProjectedValue is an optional instance property, not a mandatory static one."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "In the VIPER architecture, which component is solely responsible for handling user interactions and passing them to the Interactor for processing?",
+      "explanation": "In VIPER, the View is passive and forwards user events to the Presenter. The Presenter acts as the intermediary, invoking methods on the Interactor to perform business logic and telling the Router when to navigate to another screen.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The View, which directly communicates with the Interactor to process user input and update the data model accordingly.",
+          "is_correct": false,
+          "rationale": "The View should only communicate with the Presenter, not the Interactor."
+        },
+        {
+          "key": "B",
+          "text": "The Router, which intercepts all UI events and navigates to different screens while also triggering business logic in the Interactor.",
+          "is_correct": false,
+          "rationale": "The Router is responsible for navigation logic, not handling user input events."
+        },
+        {
+          "key": "C",
+          "text": "The Presenter, which receives user actions from the View and translates them into requests for the Interactor to execute business logic.",
+          "is_correct": true,
+          "rationale": "This correctly describes the Presenter's role as the mediator between View and Interactor."
+        },
+        {
+          "key": "D",
+          "text": "The Entity, which contains observers that listen for UIControl events and directly trigger the necessary data manipulation methods.",
+          "is_correct": false,
+          "rationale": "Entities are plain data models and should not contain any business or UI logic."
+        },
+        {
+          "key": "E",
+          "text": "The Interactor itself, which uses target-action or closures to directly subscribe to events from UI components in the View.",
+          "is_correct": false,
+          "rationale": "The Interactor contains business logic and should not be coupled to the View."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "When is it most appropriate to use a `DispatchWorkItem` with cancellation support instead of a simple closure with `DispatchQueue.async`?",
+      "explanation": "A `DispatchWorkItem` provides an object-oriented wrapper around a block of work, offering features like cancellation and notification, which are ideal for managing long-running tasks that a user may need to abort, such as a large file download.",
+      "options": [
+        {
+          "key": "A",
+          "text": "For any short-lived background task, as it provides a universally safer way to manage asynchronous code execution.",
+          "is_correct": false,
+          "rationale": "This is overkill for short tasks where a simple closure is more efficient."
+        },
+        {
+          "key": "B",
+          "text": "When performing a long-running, cancellable operation like a network request or data processing that the user might want to abort.",
+          "is_correct": true,
+          "rationale": "DispatchWorkItem is designed for long-running tasks that need cancellation capabilities."
+        },
+        {
+          "key": "C",
+          "text": "To execute a task on the main thread after a specific delay, because it offers more precise timing controls.",
+          "is_correct": false,
+          "rationale": "`asyncAfter` is the simpler, standard API for delayed execution."
+        },
+        {
+          "key": "D",
+          "text": "For tasks that must be executed within a `DispatchGroup` to manage dependencies between multiple asynchronous operations.",
+          "is_correct": false,
+          "rationale": "DispatchGroup works perfectly well with standard closures and does not require a DispatchWorkItem."
+        },
+        {
+          "key": "E",
+          "text": "To guarantee that a task will execute exactly once, even if it is submitted multiple times to the queue.",
+          "is_correct": false,
+          "rationale": "This describes a different pattern, such as using flags or specific logic, not cancellation."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "In a Swift class, what is the primary reason for using a `[weak self]` capture list within a closure assigned to a class property?",
+      "explanation": "Using `[weak self]` in a closure capture list prevents a strong reference cycle. This occurs when an object holds a strong reference to a closure that, in turn, holds a strong reference back to the object, leading to a memory leak.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It ensures the closure is always executed on a background thread, preventing the main user interface from becoming unresponsive.",
+          "is_correct": false,
+          "rationale": "This concerns thread management, not memory cycles. The queue determines the thread."
+        },
+        {
+          "key": "B",
+          "text": "This allows the closure to modify properties of `self` even if they are declared with the `let` keyword.",
+          "is_correct": false,
+          "rationale": "`[weak self]` is a memory management tool and does not affect the mutability of class or struct properties."
+        },
+        {
+          "key": "C",
+          "text": "To prevent a strong reference cycle where the class instance holds a strong reference to the closure, which holds one back to `self`.",
+          "is_correct": true,
+          "rationale": "This is the core purpose of `[weak self]` in this context to avoid memory leaks."
+        },
+        {
+          "key": "D",
+          "text": "It reduces the memory footprint of the closure by storing a less expensive pointer to the `self` instance.",
+          "is_correct": false,
+          "rationale": "The primary reason is cycle prevention, not a minor optimization of pointer size."
+        },
+        {
+          "key": "E",
+          "text": "It signals to the compiler that the closure can be safely discarded if the system is under severe memory pressure.",
+          "is_correct": false,
+          "rationale": "This is not what `[weak self]` does; it only breaks a strong reference."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "Within the Model-View-ViewModel (MVVM) architecture, what is the most accurate description of the ViewModel's primary responsibility?",
+      "explanation": "The ViewModel's core duty is to prepare and provide data from the Model in a format that the View can easily display. It handles presentation logic and state, abstracting the View from the Model and making the View's logic simpler.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Directly manipulating UIKit or SwiftUI views to update the user interface based on changes in the model data.",
+          "is_correct": false,
+          "rationale": "This is the responsibility of the View, which observes the ViewModel."
+        },
+        {
+          "key": "B",
+          "text": "Containing all the business logic and data persistence mechanisms, such as Core Data or network API calls.",
+          "is_correct": false,
+          "rationale": "This is the responsibility of the Model layer and its associated services."
+        },
+        {
+          "key": "C",
+          "text": "Acting as a state manager that transforms model data into a presentation-ready format for the view to consume.",
+          "is_correct": true,
+          "rationale": "The ViewModel prepares data for presentation and manages the view's state."
+        },
+        {
+          "key": "D",
+          "text": "Handling all user navigation and routing logic between different screens and view controllers within the application.",
+          "is_correct": false,
+          "rationale": "This is typically handled by a Coordinator or Router pattern, not the ViewModel."
+        },
+        {
+          "key": "E",
+          "text": "Managing the application's lifecycle events, such as `applicationDidBecomeActive`, to coordinate high-level tasks and services.",
+          "is_correct": false,
+          "rationale": "This is the responsibility of the AppDelegate or SceneDelegate."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "You are using the Instruments 'Time Profiler' to diagnose a performance issue. What does a wide, flat top in the call tree's heaviest stack trace indicate?",
+      "explanation": "In the Time Profiler, a wide, flat top on a function in the call tree signifies that this specific function is consuming a large portion of CPU time itself, rather than calling other functions that are slow. This points to an optimization opportunity within that function's code.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A significant amount of time is being spent within a single function, suggesting an inefficient algorithm or a long-running loop.",
+          "is_correct": true,
+          "rationale": "This visual pattern directly points to a 'hot' function consuming significant CPU time."
+        },
+        {
+          "key": "B",
+          "text": "The application is experiencing a high number of memory leaks that are consuming available system resources over time.",
+          "is_correct": false,
+          "rationale": "Memory leaks are diagnosed with the 'Leaks' instrument, not the Time Profiler."
+        },
+        {
+          "key": "C",
+          "text": "There are too many threads being created and destroyed, leading to excessive context switching overhead for the CPU.",
+          "is_correct": false,
+          "rationale": "This would appear as time spent in thread management system calls, not one function."
+        },
+        {
+          "key": "D",
+          "text": "The main thread is blocked by synchronous network requests, causing the user interface to become completely unresponsive.",
+          "is_correct": false,
+          "rationale": "This would show time spent in networking system calls, often marked as a wait state."
+        },
+        {
+          "key": "E",
+          "text": "The application is spending most of its time waiting for I/O operations, such as reading from or writing to disk.",
+          "is_correct": false,
+          "rationale": "Time Profiler would show this as time spent in kernel/system calls for I/O."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "What is the primary use case for implementing and using a custom `PreferenceKey` in a complex SwiftUI view hierarchy?",
+      "explanation": "`PreferenceKey` is a powerful SwiftUI mechanism designed for bottom-up communication. It allows a child view to report a value, often related to its layout (like size or position), which can be collected and acted upon by a parent or ancestor view.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To store and manage global application state that can be accessed from any view, similar to a singleton object.",
+          "is_correct": false,
+          "rationale": "This is the primary use case for `@EnvironmentObject` or a custom observable object."
+        },
+        {
+          "key": "B",
+          "text": "To pass data down the view hierarchy from a parent view to a specific, deeply nested child view directly.",
+          "is_correct": false,
+          "rationale": "This describes property passing or using `@Environment` for top-down data flow."
+        },
+        {
+          "key": "C",
+          "text": "To enable a child view to communicate or pass layout information, like its size or position, up to one of its ancestor views.",
+          "is_correct": true,
+          "rationale": "PreferenceKey is the standard mechanism for passing data up the view hierarchy."
+        },
+        {
+          "key": "D",
+          "text": "To define a set of constant values or themes, such as colors and fonts, that can be applied consistently across the app.",
+          "is_correct": false,
+          "rationale": "This is better handled with asset catalogs, custom structs, or an enum."
+        },
+        {
+          "key": "E",
+          "text": "To trigger animations or transitions when a specific state variable changes its value within a single view component.",
+          "is_correct": false,
+          "rationale": "This is handled by state changes combined with the `.animation()` or `.transition()` modifiers."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "How does an unexpected increase in the Consumer Price Index (CPI) typically influence bond yields and equity markets?",
+      "explanation": "An unexpected increase in CPI signals higher inflation, leading central banks to potentially raise interest rates. This typically causes bond yields to rise and can negatively impact equity valuations due to higher borrowing costs and discount rates.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Bond yields generally decrease as investors seek safer assets, while equity markets tend to rise with inflation.",
+          "is_correct": false,
+          "rationale": "Inflation typically causes bond yields to rise, not decrease, as investors demand higher returns to compensate for inflation."
+        },
+        {
+          "key": "B",
+          "text": "Bond yields typically rise due to inflation concerns, potentially causing equity markets to experience downward pressure.",
+          "is_correct": true,
+          "rationale": "Higher CPI implies inflation, leading to higher yields and lower equity valuations due to increased discount rates."
+        },
+        {
+          "key": "C",
+          "text": "Both bond yields and equity markets usually remain unaffected, as CPI changes are often priced in by traders.",
+          "is_correct": false,
+          "rationale": "Unexpected CPI changes are, by definition, not priced in and significantly impact markets."
+        },
+        {
+          "key": "D",
+          "text": "Equity markets rally strongly, anticipating increased corporate earnings, while bond yields move sideways without significant change.",
+          "is_correct": false,
+          "rationale": "Higher inflation typically pressures equities due to higher costs and interest rates, not cause strong rallies."
+        },
+        {
+          "key": "E",
+          "text": "Bond yields decline significantly as the central bank signals rate cuts, boosting equity market valuations across sectors.",
+          "is_correct": false,
+          "rationale": "An unexpected increase in the Consumer Price Index suggests potential central bank rate hikes, not cuts."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What is the primary purpose of placing a stop-loss order in a volatile trading environment?",
+      "explanation": "A stop-loss order is a critical risk management tool designed to limit potential losses on a security position. It automatically triggers a market order when a specified price is reached, preventing further downside.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To guarantee a specific profit target is achieved once the market reaches a predetermined favorable price level.",
+          "is_correct": false,
+          "rationale": "This describes a take-profit order, which is used to lock in profits, not limit losses."
+        },
+        {
+          "key": "B",
+          "text": "To automatically sell a security when its price falls to a certain level, thereby limiting potential financial losses.",
+          "is_correct": true,
+          "rationale": "Stop-loss orders are specifically designed to cap potential losses on a position by triggering an automatic sale."
+        },
+        {
+          "key": "C",
+          "text": "To buy additional shares of a security if its price starts to fall, averaging down the overall purchase cost.",
+          "is_correct": false,
+          "rationale": "This describes a strategy known as averaging down, which is entirely different from a stop-loss order."
+        },
+        {
+          "key": "D",
+          "text": "To prevent the execution of a trade until the market price moves beyond a specified, less favorable threshold.",
+          "is_correct": false,
+          "rationale": "This is not the primary function of a stop-loss; it is designed to execute a trade to exit a position."
+        },
+        {
+          "key": "E",
+          "text": "To signal to other market participants that you are willing to exit your position at a premium price.",
+          "is_correct": false,
+          "rationale": "Stop-loss orders are private risk management tools and are not used for signaling intent to other traders."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "A trader wants to buy 100 shares of XYZ stock only if the price is $50.00 or lower. Which order type should they use?",
+      "explanation": "A limit order allows a trader to specify the maximum price they are willing to pay for a buy order or the minimum price they are willing to accept for a sell order. This ensures price control.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A market order, which guarantees immediate execution at the best available current price without any specific limit.",
+          "is_correct": false,
+          "rationale": "A market order does not guarantee a specific price and could execute at a price higher than desired."
+        },
+        {
+          "key": "B",
+          "text": "A stop order, which becomes a market order once a specified trigger price is reached, often used for risk management.",
+          "is_correct": false,
+          "rationale": "A stop order is primarily for limiting losses or entering a trade at a less favorable price."
+        },
+        {
+          "key": "C",
+          "text": "A limit order, which ensures the trade will only execute at the specified price or better, offering price control.",
+          "is_correct": true,
+          "rationale": "A limit order is the correct tool for buying at or below a specified price, ensuring price control."
+        },
+        {
+          "key": "D",
+          "text": "A stop-limit order, which combines elements of both stop and limit orders, but is more complex for this simple goal.",
+          "is_correct": false,
+          "rationale": "A stop-limit order is for conditional entry or exit, not for simple price control on a purchase."
+        },
+        {
+          "key": "E",
+          "text": "An \"all-or-none\" order, ensuring the entire quantity is traded, but not directly controlling the execution price itself.",
+          "is_correct": false,
+          "rationale": "An all-or-none order affects the fill quantity, not the guarantee of a specific execution price."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Which of the following activities is strictly prohibited by financial regulations due to its manipulative nature in capital markets?",
+      "explanation": "Spoofing involves placing large orders with no intention of executing them, creating false demand or supply to influence prices. This is a form of market manipulation and is illegal.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Engaging in high-frequency trading strategies that involve rapid buying and selling of securities for small profits.",
+          "is_correct": false,
+          "rationale": "High-frequency trading is a legal and common practice, provided it does not involve manipulative tactics."
+        },
+        {
+          "key": "B",
+          "text": "Placing large bid or offer orders with the intent to cancel them before execution, commonly known as spoofing.",
+          "is_correct": true,
+          "rationale": "Spoofing is a prohibited market manipulation technique designed to mislead other market participants about supply or demand."
+        },
+        {
+          "key": "C",
+          "text": "Utilizing advanced algorithmic trading systems to identify and exploit minute price discrepancies across different exchanges.",
+          "is_correct": false,
+          "rationale": "This describes arbitrage, which is a legitimate and legal trading activity that enhances market efficiency."
+        },
+        {
+          "key": "D",
+          "text": "Providing liquidity to the market by continuously quoting both bid and ask prices for a specific financial instrument.",
+          "is_correct": false,
+          "rationale": "This is known as market making, which provides essential liquidity and is a legitimate, encouraged activity."
+        },
+        {
+          "key": "E",
+          "text": "Executing block trades for institutional clients, which are large transactions often negotiated privately away from the public market.",
+          "is_correct": false,
+          "rationale": "Block trades are a common and legal practice for institutions to execute large orders with minimal market impact."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What is the fundamental principle behind an arbitrage trading strategy in financial markets?",
+      "explanation": "Arbitrage involves simultaneously buying and selling an asset in different markets to profit from a temporary price difference. It is a low-risk strategy that exploits market inefficiencies.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Predicting future market direction based on technical analysis patterns and indicators to anticipate price movements.",
+          "is_correct": false,
+          "rationale": "This describes speculative trading based on technical analysis, which is fundamentally different from arbitrage."
+        },
+        {
+          "key": "B",
+          "text": "Buying and selling an identical asset simultaneously in different markets to profit from a temporary price discrepancy.",
+          "is_correct": true,
+          "rationale": "Arbitrage exploits price differences for the same asset across different markets, locking in a risk-free profit."
+        },
+        {
+          "key": "C",
+          "text": "Holding a diversified portfolio of assets for the long term, aiming to benefit from overall market appreciation over time.",
+          "is_correct": false,
+          "rationale": "This describes a long-term investment strategy, which relies on market growth rather than price discrepancies."
+        },
+        {
+          "key": "D",
+          "text": "Speculating on the price movements of derivatives like options and futures, leveraging contracts for potential high returns.",
+          "is_correct": false,
+          "rationale": "This describes derivatives speculation, which involves taking on significant risk, unlike low-risk arbitrage strategies."
+        },
+        {
+          "key": "E",
+          "text": "Utilizing fundamental analysis to identify undervalued securities based on their intrinsic worth and company financials.",
+          "is_correct": false,
+          "rationale": "This describes value investing, which focuses on long-term intrinsic value, not short-term price inefficiencies."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "When executing a large order in a thinly traded stock, which order type is generally preferred to minimize market impact?",
+      "explanation": "A limit order is crucial for large trades in illiquid markets as it controls the execution price, preventing significant adverse price impact often associated with market orders, which can 'walk the book'.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A market order ensures immediate execution but may incur significant slippage in illiquid markets, increasing costs.",
+          "is_correct": false,
+          "rationale": "Market orders can cause significant price impact and slippage in illiquid markets, making them unsuitable."
+        },
+        {
+          "key": "B",
+          "text": "A limit order allows specifying a maximum purchase price, preventing adverse price movements during execution.",
+          "is_correct": true,
+          "rationale": "Limit orders control the execution price, which is crucial for minimizing market impact on large orders in illiquid stocks."
+        },
+        {
+          "key": "C",
+          "text": "A stop order is primarily used for risk management, triggering a market order when a certain price is reached.",
+          "is_correct": false,
+          "rationale": "Stop orders are for risk management or conditional entry, not for minimizing the market impact of a large order."
+        },
+        {
+          "key": "D",
+          "text": "A stop-limit order combines features of stop and limit orders, offering more control over execution price.",
+          "is_correct": false,
+          "rationale": "While offering price control, a stop-limit order is for conditional entry or exit, not direct large order execution."
+        },
+        {
+          "key": "E",
+          "text": "A trailing stop order adjusts the stop price automatically, maintaining a fixed percentage below the market price.",
+          "is_correct": false,
+          "rationale": "Trailing stops are for protecting profits or limiting losses as prices move favorably, not for initial execution."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "What does a wide bid-ask spread primarily indicate about a financial instrument in the market?",
+      "explanation": "A wide bid-ask spread typically indicates lower liquidity and less market depth for a financial instrument. This means there are fewer buyers and sellers, making it more expensive to execute trades.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It suggests high liquidity and efficient price discovery, making it easier to execute large trades quickly.",
+          "is_correct": false,
+          "rationale": "A wide spread indicates low liquidity and higher transaction costs, not high liquidity and efficiency."
+        },
+        {
+          "key": "B",
+          "text": "It signifies low trading volume and reduced market depth, leading to higher transaction costs for traders.",
+          "is_correct": true,
+          "rationale": "A wide bid-ask spread is a direct reflection of low liquidity and results in higher transaction costs."
+        },
+        {
+          "key": "C",
+          "text": "It implies a strong bullish sentiment among investors, expecting the price to increase significantly in the short term.",
+          "is_correct": false,
+          "rationale": "The width of the spread relates to market liquidity, not directly to bullish or bearish market sentiment."
+        },
+        {
+          "key": "D",
+          "text": "It indicates that the instrument is highly volatile, experiencing rapid and unpredictable price fluctuations throughout the day.",
+          "is_correct": false,
+          "rationale": "While often correlated, volatility is a measure of price movement, whereas the spread measures liquidity."
+        },
+        {
+          "key": "E",
+          "text": "It reflects a significant imbalance between buyers and sellers, often preceding a major price reversal movement.",
+          "is_correct": false,
+          "rationale": "While an imbalance can affect the spread, its primary indication is the level of market liquidity."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Why is implementing a stop-loss order considered a fundamental risk management practice for traders?",
+      "explanation": "A stop-loss order is a critical risk management tool that helps traders limit potential losses on a position. By automatically closing a trade when a predefined price threshold is breached, it prevents excessive capital erosion.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It guarantees a specific profit target will be achieved once the market price reaches a predetermined level.",
+          "is_correct": false,
+          "rationale": "Stop-loss orders are designed to limit losses, whereas take-profit orders are used to secure profits."
+        },
+        {
+          "key": "B",
+          "text": "It automatically closes a losing position when the price hits a specified level, limiting potential downside losses.",
+          "is_correct": true,
+          "rationale": "The core function of a stop-loss order is to cap potential losses on a trade by automating the exit."
+        },
+        {
+          "key": "C",
+          "text": "It allows traders to take advantage of sudden upward price movements by automatically buying more shares.",
+          "is_correct": false,
+          "rationale": "Stop-loss orders are for exiting losing positions, not for adding to winning ones or entering new trades."
+        },
+        {
+          "key": "D",
+          "text": "It helps to lock in gains by adjusting the exit price upwards as the market price of the asset rises.",
+          "is_correct": false,
+          "rationale": "This describes a trailing stop order, which is a dynamic type of stop-loss, not the fundamental concept."
+        },
+        {
+          "key": "E",
+          "text": "It provides leverage, enabling traders to control larger positions with a relatively small amount of capital.",
+          "is_correct": false,
+          "rationale": "Leverage is a separate trading mechanism provided by brokers and is not a function of stop-loss orders."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "How do unexpected positive economic data releases, like better-than-expected GDP figures, typically impact bond prices?",
+      "explanation": "Stronger economic data often signals potential inflation and prompts central banks to consider raising interest rates. Higher interest rates make new bonds more attractive, reducing the value of existing lower-yielding bonds, causing their prices to fall.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Bond prices tend to rise as investors anticipate lower interest rates due to a strengthening economy.",
+          "is_correct": false,
+          "rationale": "A stronger economy usually implies higher, not lower, interest rates, which causes bond prices to fall."
+        },
+        {
+          "key": "B",
+          "text": "Bond prices typically fall because a stronger economy often leads to expectations of higher interest rates.",
+          "is_correct": true,
+          "rationale": "Higher interest rates reduce the value of existing bonds with lower yields, causing their market prices to fall."
+        },
+        {
+          "key": "C",
+          "text": "Bond prices remain largely unaffected, as economic data primarily influences equity markets, not fixed income.",
+          "is_correct": false,
+          "rationale": "Economic data significantly impacts both equity and fixed income markets, especially regarding interest rate expectations."
+        },
+        {
+          "key": "D",
+          "text": "Bond prices become more volatile, reflecting increased uncertainty about future monetary policy decisions.",
+          "is_correct": false,
+          "rationale": "While volatility may increase, the primary and most direct impact is a directional fall in bond prices."
+        },
+        {
+          "key": "E",
+          "text": "Bond prices experience a temporary surge, followed by a quick correction as the market digests the news.",
+          "is_correct": false,
+          "rationale": "A surge in bond prices is unlikely; the typical reaction to strong economic news is a fall in prices."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Which regulatory body in the United States is primarily responsible for overseeing securities markets and protecting investors?",
+      "explanation": "The SEC is the primary federal agency responsible for regulating the securities industry, ensuring market fairness, and protecting investors from fraud and manipulation. It enforces federal securities laws and oversees exchanges.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Federal Reserve (Fed) manages monetary policy and supervises banking institutions across the country.",
+          "is_correct": false,
+          "rationale": "The Fed focuses on monetary policy and banking supervision, not the direct regulation of securities markets."
+        },
+        {
+          "key": "B",
+          "text": "The Financial Industry Regulatory Authority (FINRA) regulates brokerage firms and their registered securities representatives.",
+          "is_correct": false,
+          "rationale": "FINRA is a self-regulatory organization that operates under the ultimate oversight of the SEC."
+        },
+        {
+          "key": "C",
+          "text": "The Commodity Futures Trading Commission (CFTC) oversees the derivatives markets, including futures and options contracts.",
+          "is_correct": false,
+          "rationale": "The CFTC regulates commodities and derivatives markets, which are separate from general securities markets."
+        },
+        {
+          "key": "D",
+          "text": "The Securities and Exchange Commission (SEC) protects investors, maintains fair and orderly markets, and facilitates capital formation.",
+          "is_correct": true,
+          "rationale": "The SEC is the primary federal regulator for U.S. securities markets and has a core mission of investor protection."
+        },
+        {
+          "key": "E",
+          "text": "The Office of the Comptroller of the Currency (OCC) charters, regulates, and supervises all national banks and federal savings associations.",
+          "is_correct": false,
+          "rationale": "The OCC is a bureau within the U.S. Treasury Department that primarily regulates national banks."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When executing a large block trade, which order type generally prioritizes certainty of execution over price protection?",
+      "explanation": "Market orders execute immediately at the best available price, ensuring the trade completes even if it means accepting a less favorable price. Limit orders, conversely, prioritize price over certainty of execution.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A market order guarantees immediate execution at the current best available price, often sacrificing precise price control.",
+          "is_correct": true,
+          "rationale": "Market orders guarantee immediate execution at the best available price, prioritizing certainty over a specific price."
+        },
+        {
+          "key": "B",
+          "text": "A limit order ensures the trade only executes at a specified price or better, but execution is not guaranteed.",
+          "is_correct": false,
+          "rationale": "Limit orders prioritize a specific price, but execution is not guaranteed if the market moves away."
+        },
+        {
+          "key": "C",
+          "text": "A stop order is primarily used for risk management to limit potential losses once a certain price threshold is breached.",
+          "is_correct": false,
+          "rationale": "Stop orders are for risk management or conditional entry, not for prioritizing execution certainty on a large trade."
+        },
+        {
+          "key": "D",
+          "text": "A market-on-close order executes at the closing price of the trading session, suitable for end-of-day positions.",
+          "is_correct": false,
+          "rationale": "While it ensures execution, it's for a specific time, not general execution certainty over price protection."
+        },
+        {
+          "key": "E",
+          "text": "An all-or-none order ensures that the entire quantity is executed or none at all, without partial fills.",
+          "is_correct": false,
+          "rationale": "This order type affects the fill quantity but does not inherently prioritize execution certainty over price."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "What is the primary purpose of using a stop-loss order in a volatile trading environment?",
+      "explanation": "Stop-loss orders are crucial risk management tools designed to limit potential losses on a security position. They automatically trigger a market order when a specified price is reached, preventing further downside.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To guarantee a specific profit target is achieved once the market price reaches a predetermined level.",
+          "is_correct": false,
+          "rationale": "This describes a take-profit order, which is used to lock in gains, not to limit potential losses."
+        },
+        {
+          "key": "B",
+          "text": "To automatically limit potential losses on an open position by triggering a market order when a set price is hit.",
+          "is_correct": true,
+          "rationale": "Stop-loss orders are specifically designed to limit losses by automatically closing a losing position at a predetermined price."
+        },
+        {
+          "key": "C",
+          "text": "To enter a new long position once the market price breaks above a significant resistance level.",
+          "is_correct": false,
+          "rationale": "This describes a buy stop order used for entry, not a stop-loss order used for exiting an existing position."
+        },
+        {
+          "key": "D",
+          "text": "To short sell a security when its price falls below a key support level, anticipating further declines.",
+          "is_correct": false,
+          "rationale": "This describes a sell stop order used for entry, not a stop-loss order for managing an existing position."
+        },
+        {
+          "key": "E",
+          "text": "To place a large block order discreetly without significantly impacting the current market price.",
+          "is_correct": false,
+          "rationale": "This describes an iceberg order or dark pool trading, which are methods for executing large trades discreetly."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "How does unexpected positive economic news, such as lower unemployment rates, typically impact equity markets?",
+      "explanation": "Positive economic news often boosts investor confidence, leading to increased buying activity and higher stock prices. Lower unemployment suggests stronger corporate earnings and consumer spending, which is beneficial for equities.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It usually causes a decrease in stock prices due to fears of rising inflation and potential interest rate hikes.",
+          "is_correct": false,
+          "rationale": "While strong data can lead to rate hike fears, the initial reaction is often positive for equity markets."
+        },
+        {
+          "key": "B",
+          "text": "It generally leads to an increase in stock prices as investor confidence and corporate earnings expectations improve.",
+          "is_correct": true,
+          "rationale": "Positive economic data generally signals a healthier economy, which supports higher stock valuations and investor confidence."
+        },
+        {
+          "key": "C",
+          "text": "It has no significant immediate impact on equity markets, as such news is typically already priced in.",
+          "is_correct": false,
+          "rationale": "Unexpected news, by definition, is not priced in and can cause significant market movements upon release."
+        },
+        {
+          "key": "D",
+          "text": "It primarily affects bond markets, causing bond yields to fall as investors seek safer assets.",
+          "is_correct": false,
+          "rationale": "Bond yields typically rise with positive economic news, as it may lead to expectations of interest rate hikes."
+        },
+        {
+          "key": "E",
+          "text": "It typically results in a flight to safe-haven assets like gold, driving up their prices significantly.",
+          "is_correct": false,
+          "rationale": "A flight to safety usually occurs during periods of uncertainty or negative news, not positive economic data."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "What is the primary regulatory body overseeing trading activities and market conduct in the United States?",
+      "explanation": "The U.S. Securities and Exchange Commission (SEC) is responsible for protecting investors, maintaining fair, orderly, and efficient markets, and facilitating capital formation. It regulates securities markets and their participants.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Federal Reserve (Fed) primarily manages monetary policy and regulates the banking system, not direct trading conduct.",
+          "is_correct": false,
+          "rationale": "The Federal Reserve's mandate is focused on monetary policy and banking supervision, not securities market conduct."
+        },
+        {
+          "key": "B",
+          "text": "The Financial Industry Regulatory Authority (FINRA) regulates brokerage firms and brokers, under SEC oversight.",
+          "is_correct": false,
+          "rationale": "FINRA is a self-regulatory organization that operates under the ultimate authority and oversight of the SEC."
+        },
+        {
+          "key": "C",
+          "text": "The Securities and Exchange Commission (SEC) is the main federal agency enforcing securities laws and market rules.",
+          "is_correct": true,
+          "rationale": "The SEC is the primary federal regulator for securities markets in the U.S., with a broad mandate."
+        },
+        {
+          "key": "D",
+          "text": "The Commodity Futures Trading Commission (CFTC) regulates the U.S. futures and options markets, distinct from equities.",
+          "is_correct": false,
+          "rationale": "The CFTC has jurisdiction over derivatives markets like futures and options, not the general securities markets."
+        },
+        {
+          "key": "E",
+          "text": "The Department of the Treasury is responsible for fiscal policy and government debt, not market oversight.",
+          "is_correct": false,
+          "rationale": "The Treasury Department manages the nation's finances and fiscal policy, not the regulation of market conduct."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "In technical analysis, what does a 'support level' typically indicate about a security's price action?",
+      "explanation": "A support level is a price point where buying interest is strong enough to prevent the price from falling further. It represents a floor where demand is expected to overcome supply, suggesting a potential reversal or consolidation.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It represents a price point where buying interest is expected to be strong enough to halt a price decline.",
+          "is_correct": true,
+          "rationale": "Support levels indicate a price floor where demand is strong enough to prevent further price drops."
+        },
+        {
+          "key": "B",
+          "text": "It signifies a price point where selling pressure is likely to increase, potentially reversing an uptrend.",
+          "is_correct": false,
+          "rationale": "This describes a 'resistance level,' which is the opposite of a support level and acts as a price ceiling."
+        },
+        {
+          "key": "C",
+          "text": "It indicates the average price at which a security has traded over a specific period, smoothing out volatility.",
+          "is_correct": false,
+          "rationale": "This describes a moving average, which is a different technical indicator used for trend analysis."
+        },
+        {
+          "key": "D",
+          "text": "It suggests that the security is overbought and due for a correction, based on momentum indicators.",
+          "is_correct": false,
+          "rationale": "This describes an overbought condition, which is typically identified by oscillators like the RSI, not support levels."
+        },
+        {
+          "key": "E",
+          "text": "It shows the highest price a security has reached within a given timeframe, indicating peak valuation.",
+          "is_correct": false,
+          "rationale": "This describes a 'high' or 'peak' in the price chart, not the concept of a support level."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "When a trader wants to limit potential losses on a long position, which specific order type should they primarily utilize?",
+      "explanation": "A stop-loss order is crucial for risk management, automatically selling a security if it drops to a predetermined price. This helps mitigate significant downside exposure, protecting capital from larger market downturns.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A market order will ensure immediate execution at the prevailing price, suitable for quick entry or exit.",
+          "is_correct": false,
+          "rationale": "A market order executes immediately but offers no protection against adverse price movements to limit losses."
+        },
+        {
+          "key": "B",
+          "text": "A limit order allows buying or selling at a specified price or better, ensuring favorable execution conditions.",
+          "is_correct": false,
+          "rationale": "A limit order specifies a price but does not automatically trigger to prevent further losses on a position."
+        },
+        {
+          "key": "C",
+          "text": "A stop-loss order automatically sells the security if its price falls to a predetermined level, limiting downside risk.",
+          "is_correct": true,
+          "rationale": "Stop-loss orders are specifically designed to limit losses on a long position by triggering an automatic sale."
+        },
+        {
+          "key": "D",
+          "text": "A stop-limit order combines features, triggering a limit order once a specific stop price is reached.",
+          "is_correct": false,
+          "rationale": "A stop-limit order may not execute if the price gaps down, failing to limit the loss as intended."
+        },
+        {
+          "key": "E",
+          "text": "A trailing stop order adjusts the stop price dynamically as the security's price moves favorably.",
+          "is_correct": false,
+          "rationale": "While a type of stop-loss, the fundamental order for this purpose is the standard stop-loss order."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "What is the primary objective of calculating Value at Risk (VaR) for a trading desk's portfolio?",
+      "explanation": "VaR provides a quantitative estimate of the maximum potential loss a portfolio could incur over a specific time horizon with a given confidence level. It's a critical tool for assessing and managing market risk.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To determine the exact profit and loss for every single trade executed throughout the trading day.",
+          "is_correct": false,
+          "rationale": "Profit and loss tracking is a separate accounting function; VaR is a forward-looking risk estimate."
+        },
+        {
+          "key": "B",
+          "text": "To estimate the maximum potential loss a portfolio could experience over a defined period with a certain probability.",
+          "is_correct": true,
+          "rationale": "VaR quantifies potential loss within a specified confidence interval and time horizon, which is its core purpose."
+        },
+        {
+          "key": "C",
+          "text": "To identify specific securities that are currently undervalued by the market for potential long-term investment.",
+          "is_correct": false,
+          "rationale": "VaR is a risk management metric, not a valuation tool used for identifying undervalued investment opportunities."
+        },
+        {
+          "key": "D",
+          "text": "To ensure compliance with all regulatory capital requirements set forth by financial authorities and exchanges.",
+          "is_correct": false,
+          "rationale": "While VaR is used in regulatory reporting, its primary objective is internal risk quantification and management."
+        },
+        {
+          "key": "E",
+          "text": "To optimize the allocation of capital across various asset classes to maximize overall portfolio returns.",
+          "is_correct": false,
+          "rationale": "VaR is used to assess risk, which is a component of portfolio optimization, but not its primary objective."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "How might an unexpected interest rate hike by the central bank typically impact bond prices and yields?",
+      "explanation": "When interest rates rise, newly issued bonds offer higher yields, making existing lower-yield bonds less attractive. Consequently, the prices of existing bonds typically fall to compensate for their lower coupon rates, causing their yields to rise.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Bond prices would generally increase, while their corresponding yields would simultaneously decrease significantly.",
+          "is_correct": false,
+          "rationale": "Higher rates cause bond prices to fall and yields to rise due to their inverse relationship."
+        },
+        {
+          "key": "B",
+          "text": "Bond prices would generally decrease, leading to an increase in their effective yields to maturity.",
+          "is_correct": true,
+          "rationale": "Bond prices and yields move inversely; a rate hike causes existing bond prices to fall and their yields to rise."
+        },
+        {
+          "key": "C",
+          "text": "Both bond prices and their yields would experience a concurrent increase due to heightened market demand.",
+          "is_correct": false,
+          "rationale": "Prices and yields move inversely, not concurrently in the same direction, following an interest rate change."
+        },
+        {
+          "key": "D",
+          "text": "Both bond prices and their yields would experience a concurrent decrease as investors flee the bond market.",
+          "is_correct": false,
+          "rationale": "Prices and yields move inversely, not concurrently in the same direction, following an interest rate change."
+        },
+        {
+          "key": "E",
+          "text": "The impact on bond prices and yields would be negligible, as they are primarily driven by credit ratings.",
+          "is_correct": false,
+          "rationale": "Interest rates are a primary driver of bond prices and yields, and a rate hike has a significant impact."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "Which regulatory principle directly prohibits a trader from using non-public information for personal financial gain?",
+      "explanation": "Insider trading is strictly prohibited by financial regulations globally. It involves using material non-public information to trade securities, giving an unfair advantage and undermining market integrity. Strict penalties apply to violations.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Market manipulation, which involves creating artificial prices or activity to deceive other market participants.",
+          "is_correct": false,
+          "rationale": "Market manipulation is a different violation focused on distorting prices, not using privileged information."
+        },
+        {
+          "key": "B",
+          "text": "Front-running, where a broker executes orders on their own account before executing client orders.",
+          "is_correct": false,
+          "rationale": "Front-running is a specific type of insider trading but not the general principle covering all non-public information."
+        },
+        {
+          "key": "C",
+          "text": "Insider trading, which involves trading securities based on material non-public information obtained unfairly.",
+          "is_correct": true,
+          "rationale": "Insider trading laws directly address the illegal use of material non-public information for personal profit."
+        },
+        {
+          "key": "D",
+          "text": "Wash trading, involving simultaneous buying and selling of the same security to create misleading activity.",
+          "is_correct": false,
+          "rationale": "Wash trading is a form of market manipulation that creates artificial volume, not related to insider information."
+        },
+        {
+          "key": "E",
+          "text": "Spoofing, characterized by placing large orders with no intention of executing them, then canceling quickly.",
+          "is_correct": false,
+          "rationale": "Spoofing is a form of market manipulation intended to create a false impression of market depth."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "What does selling a 'naked call option' primarily imply for a trader's risk exposure?",
+      "explanation": "Selling a naked call option means the trader does not own the underlying asset. If the stock price rises significantly above the strike price, the potential loss is theoretically unlimited, making it a very high-risk strategy.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The trader has limited downside risk but potentially unlimited upside profit if the underlying asset falls.",
+          "is_correct": false,
+          "rationale": "Selling a naked call has theoretically unlimited risk (loss potential) if the asset's price rises."
+        },
+        {
+          "key": "B",
+          "text": "The trader has limited upside profit potential but faces theoretically unlimited downside risk if the asset rises.",
+          "is_correct": true,
+          "rationale": "A naked call option has a limited profit (the premium received) but theoretically unlimited loss potential."
+        },
+        {
+          "key": "C",
+          "text": "The trader earns a premium with no further obligations, regardless of how the underlying asset performs.",
+          "is_correct": false,
+          "rationale": "The seller has an obligation to deliver the underlying asset if the option is exercised by the buyer."
+        },
+        {
+          "key": "D",
+          "text": "The trader is fully hedged against any adverse price movements in the underlying asset's value.",
+          "is_correct": false,
+          "rationale": "A naked call is an unhedged position by definition and carries significant, unlimited risk."
+        },
+        {
+          "key": "E",
+          "text": "The trader anticipates a significant increase in the underlying asset's price and wants to profit from it.",
+          "is_correct": false,
+          "rationale": "Selling a naked call is a bearish or neutral strategy that profits if the asset's price does not rise."
+        }
+      ]
+    }
+  ]
+}

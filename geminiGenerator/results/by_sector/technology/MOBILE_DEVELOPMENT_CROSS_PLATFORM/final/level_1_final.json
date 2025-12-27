@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "What is the main advantage of using a cross-platform framework for mobile application development?",
+      "explanation": "Cross-platform frameworks allow developers to write code once and deploy it on multiple operating systems like iOS and Android, significantly reducing development time and costs compared to native development.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It enables developers to write a single codebase that can run on both iOS and Android platforms, saving significant time.",
+          "is_correct": true,
+          "rationale": "Single codebase for multiple platforms is the core advantage."
+        },
+        {
+          "key": "B",
+          "text": "It ensures that the application will always have a smaller file size compared to applications built using native development tools.",
+          "is_correct": false,
+          "rationale": "File size is not a guaranteed advantage of cross-platform."
+        },
+        {
+          "key": "C",
+          "text": "It provides direct access to every single platform-specific hardware feature without needing any special bridges or plugins.",
+          "is_correct": false,
+          "rationale": "Direct hardware access is often more limited than native."
+        },
+        {
+          "key": "D",
+          "text": "It guarantees superior performance and user interface responsiveness that is indistinguishable from fully native applications.",
+          "is_correct": false,
+          "rationale": "Native performance is often superior, though cross-platform is close."
+        },
+        {
+          "key": "E",
+          "text": "It completely eliminates the need for any platform-specific knowledge or understanding of native mobile operating systems.",
+          "is_correct": false,
+          "rationale": "Some platform knowledge is still beneficial for cross-platform."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Which of these frameworks is commonly used for building cross-platform mobile applications?",
+      "explanation": "React Native is a popular JavaScript-based framework developed by Facebook, allowing developers to build mobile applications with a native look and feel for both iOS and Android platforms.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Django, primarily used for developing robust and scalable web backend applications with Python programming language.",
+          "is_correct": false,
+          "rationale": "Django is a web backend framework, not for mobile apps."
+        },
+        {
+          "key": "B",
+          "text": "React Native, a JavaScript-based framework for writing truly native mobile applications using familiar React concepts.",
+          "is_correct": true,
+          "rationale": "React Native is a leading cross-platform mobile framework."
+        },
+        {
+          "key": "C",
+          "text": "Spring Boot, a powerful framework for creating stand-alone, production-grade Spring-based applications that you can just run.",
+          "is_correct": false,
+          "rationale": "Spring Boot is a Java-based backend framework, not for mobile."
+        },
+        {
+          "key": "D",
+          "text": "Angular, a platform and framework for building single-page client applications using HTML and TypeScript efficiently.",
+          "is_correct": false,
+          "rationale": "Angular is primarily for web applications, not mobile directly."
+        },
+        {
+          "key": "E",
+          "text": "Ruby on Rails, an efficient server-side web application framework written in Ruby, following the Model-View-Controller pattern.",
+          "is_correct": false,
+          "rationale": "Ruby on Rails is a web backend framework, not for mobile apps."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "When developing a cross-platform app, what is a fundamental component for displaying text on the screen?",
+      "explanation": "In most cross-platform frameworks, a basic `Text` or similar widget/component is used to render textual content on the user interface, serving as a fundamental building block.",
+      "options": [
+        {
+          "key": "A",
+          "text": "An `Image` widget, primarily used for displaying graphical content and visual assets within the application interface.",
+          "is_correct": false,
+          "rationale": "An Image widget displays pictures, not text directly."
+        },
+        {
+          "key": "B",
+          "text": "A `Text` widget, which is a fundamental UI component specifically designed for rendering and displaying textual information.",
+          "is_correct": true,
+          "rationale": "The Text widget is universally used to display text."
+        },
+        {
+          "key": "C",
+          "text": "A `Button` component, used to capture user interactions and trigger specific actions or navigation within the application.",
+          "is_correct": false,
+          "rationale": "A Button component is for interaction, not displaying text."
+        },
+        {
+          "key": "D",
+          "text": "A `Container` element, typically used for layout purposes and grouping other widgets together in a structured manner.",
+          "is_correct": false,
+          "rationale": "A Container is for layout, not for displaying text content."
+        },
+        {
+          "key": "E",
+          "text": "A `Scaffold` widget, providing a basic visual structure for implementing material design layout within Flutter applications.",
+          "is_correct": false,
+          "rationale": "A Scaffold provides overall app structure, not just text."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "How do cross-platform developers typically handle minor user interface differences between iOS and Android?",
+      "explanation": "Cross-platform frameworks often provide platform-specific components or conditional rendering logic to adjust UI elements, ensuring a native look and feel on each operating system.",
+      "options": [
+        {
+          "key": "A",
+          "text": "By creating entirely separate native projects for each platform, duplicating all the application logic and design.",
+          "is_correct": false,
+          "rationale": "This negates the purpose of cross-platform development."
+        },
+        {
+          "key": "B",
+          "text": "By ignoring the differences, assuming users will adapt to a single, identical user interface across all devices.",
+          "is_correct": false,
+          "rationale": "Ignoring differences leads to poor user experience."
+        },
+        {
+          "key": "C",
+          "text": "By using platform-specific style sheets or conditional rendering to adjust components based on the operating system.",
+          "is_correct": true,
+          "rationale": "Conditional rendering allows UI adaptation for each platform."
+        },
+        {
+          "key": "D",
+          "text": "By always designing for the most restrictive platform, then simply scaling up the interface for the other operating system.",
+          "is_correct": false,
+          "rationale": "This approach doesn't ensure an optimal native feel."
+        },
+        {
+          "key": "E",
+          "text": "By only developing for one platform and then using an automatic conversion tool to generate the code for the other.",
+          "is_correct": false,
+          "rationale": "Automatic conversion tools are not a common or reliable solution."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What is a common practice for finding and fixing errors in your cross-platform mobile application code?",
+      "explanation": "Debugging is a crucial process in software development where developers identify, analyze, and remove bugs or errors from their code using specialized tools and techniques.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Publishing the application directly to app stores and waiting for user reports to identify any potential issues.",
+          "is_correct": false,
+          "rationale": "Relying on user reports is not a proactive debugging strategy."
+        },
+        {
+          "key": "B",
+          "text": "Using a debugger tool to step through the code line by line, inspecting variables and understanding execution flow.",
+          "is_correct": true,
+          "rationale": "Debugging tools are essential for identifying and fixing errors."
+        },
+        {
+          "key": "C",
+          "text": "Rewriting the entire application from scratch every time an error is encountered, ensuring a fresh start.",
+          "is_correct": false,
+          "rationale": "Rewriting code for every error is inefficient and impractical."
+        },
+        {
+          "key": "D",
+          "text": "Asking a colleague to manually review every single line of code without running the application on any device.",
+          "is_correct": false,
+          "rationale": "Code review is helpful, but insufficient without execution and debugging."
+        },
+        {
+          "key": "E",
+          "text": "Continuously adding more features to the application, hoping that new code will accidentally resolve existing bugs.",
+          "is_correct": false,
+          "rationale": "Adding features without debugging often introduces more bugs."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "What is a primary advantage of using a cross-platform framework for mobile application development?",
+      "explanation": "Cross-platform frameworks allow developers to write code once and deploy it across different mobile operating systems like iOS and Android, thereby saving significant time and resources.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It significantly reduces development time and costs by writing a single codebase for multiple operating systems.",
+          "is_correct": true,
+          "rationale": "Single codebase reduces development time and costs significantly."
+        },
+        {
+          "key": "B",
+          "text": "It ensures maximum performance for graphics-intensive games by leveraging native device capabilities directly.",
+          "is_correct": false,
+          "rationale": "Native development usually offers superior performance for intensive tasks."
+        },
+        {
+          "key": "C",
+          "text": "It provides direct access to all low-level hardware features without requiring any additional bridging layers.",
+          "is_correct": false,
+          "rationale": "Cross-platform often requires bridges for low-level hardware access."
+        },
+        {
+          "key": "D",
+          "text": "It eliminates the need for any testing on actual physical devices, relying solely on emulators.",
+          "is_correct": false,
+          "rationale": "Physical device testing is always crucial for real-world scenarios."
+        },
+        {
+          "key": "E",
+          "text": "It guarantees complete UI consistency across all devices, regardless of their screen size or resolution.",
+          "is_correct": false,
+          "rationale": "UI consistency depends on design and implementation, not guaranteed by framework."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Which of the following is a widely recognized cross-platform framework used for building mobile applications?",
+      "explanation": "React Native is a popular open-source framework for building mobile applications using JavaScript, allowing developers to target both iOS and Android from a single codebase.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Swift, primarily used for developing high-performance applications specifically for Apple's iOS ecosystem.",
+          "is_correct": false,
+          "rationale": "Swift is a native iOS development language, not cross-platform."
+        },
+        {
+          "key": "B",
+          "text": "Kotlin, an officially preferred language for creating robust and scalable applications on the Android platform.",
+          "is_correct": false,
+          "rationale": "Kotlin is a native Android development language, not cross-platform."
+        },
+        {
+          "key": "C",
+          "text": "React Native, enabling developers to build native mobile apps using JavaScript and React principles.",
+          "is_correct": true,
+          "rationale": "React Native is a leading cross-platform mobile framework."
+        },
+        {
+          "key": "D",
+          "text": "C#, a versatile programming language often employed for developing desktop applications and games.",
+          "is_correct": false,
+          "rationale": "C# is used for Xamarin, but not commonly referred to as a cross-platform framework itself."
+        },
+        {
+          "key": "E",
+          "text": "Java, a powerful object-oriented language commonly utilized for enterprise-level backend systems.",
+          "is_correct": false,
+          "rationale": "Java is a native Android development language and backend, not cross-platform mobile."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "When developing a cross-platform mobile application, what typically renders the user interface components?",
+      "explanation": "Many cross-platform frameworks, like React Native, utilize native UI components for rendering, providing a native look and feel and better performance compared to web-based rendering.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The web browser engine embedded within the application displays all visual elements.",
+          "is_correct": false,
+          "rationale": "This describes hybrid apps, not all cross-platform frameworks."
+        },
+        {
+          "key": "B",
+          "text": "Native UI components provided by the underlying operating system are directly utilized.",
+          "is_correct": true,
+          "rationale": "Cross-platform frameworks often leverage native UI components for rendering."
+        },
+        {
+          "key": "C",
+          "text": "A custom rendering engine interprets the cross-platform code and draws elements on the screen.",
+          "is_correct": false,
+          "rationale": "While true for some (e.g., Flutter), it's not universally 'typical'."
+        },
+        {
+          "key": "D",
+          "text": "The application's server-side logic dynamically generates and sends UI elements to the device.",
+          "is_correct": false,
+          "rationale": "UI rendering is client-side, not typically server-side for mobile apps."
+        },
+        {
+          "key": "E",
+          "text": "A specialized graphics card within the mobile device handles all user interface rendering tasks.",
+          "is_correct": false,
+          "rationale": "The graphics card is hardware; software frameworks manage its use."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "How do cross-platform developers typically access platform-specific features like the camera or GPS?",
+      "explanation": "Cross-platform frameworks provide mechanisms, often called \"native modules\" or \"platform channels,\" to bridge between the cross-platform code and platform-specific native APIs for features like camera or GPS.",
+      "options": [
+        {
+          "key": "A",
+          "text": "By directly embedding native code modules written in Swift or Kotlin into the cross-platform project.",
+          "is_correct": true,
+          "rationale": "Native modules or platform channels bridge cross-platform code to native APIs."
+        },
+        {
+          "key": "B",
+          "text": "They use standard web APIs that automatically translate calls into native operating system functions.",
+          "is_correct": false,
+          "rationale": "Web APIs are limited and don't automatically translate to all native functions."
+        },
+        {
+          "key": "C",
+          "text": "All platform-specific functionalities are automatically handled by the cross-platform framework's core engine.",
+          "is_correct": false,
+          "rationale": "Frameworks provide tools, but manual integration for specific features is often needed."
+        },
+        {
+          "key": "D",
+          "text": "Developers must rewrite the entire application natively for each platform to support such features.",
+          "is_correct": false,
+          "rationale": "This defeats the purpose of cross-platform development."
+        },
+        {
+          "key": "E",
+          "text": "They rely on external cloud services to provide access to device hardware capabilities remotely.",
+          "is_correct": false,
+          "rationale": "Device hardware is accessed locally, not typically via remote cloud services."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "What is a common initial step for debugging an issue in a cross-platform mobile application?",
+      "explanation": "Checking console logs and debugger output is a fundamental first step in debugging any software issue. It provides immediate feedback on errors, warnings, and runtime behavior.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately rewriting the problematic code section in a completely different programming language.",
+          "is_correct": false,
+          "rationale": "Rewriting code is a drastic measure, not an initial debugging step."
+        },
+        {
+          "key": "B",
+          "text": "Checking the application's console logs or debugger output for error messages and warnings.",
+          "is_correct": true,
+          "rationale": "Console logs and debugger output provide immediate error feedback."
+        },
+        {
+          "key": "C",
+          "text": "Reinstalling the operating system on the development machine to ensure a clean environment.",
+          "is_correct": false,
+          "rationale": "Reinstalling the OS is an extreme troubleshooting step, not initial debugging."
+        },
+        {
+          "key": "D",
+          "text": "Contacting the framework's core development team directly to report a potential bug.",
+          "is_correct": false,
+          "rationale": "Reporting to the team is for confirmed bugs, not initial debugging."
+        },
+        {
+          "key": "E",
+          "text": "Waiting for the next framework update to automatically resolve any existing software glitches.",
+          "is_correct": false,
+          "rationale": "Waiting for updates is passive and doesn't actively solve the current issue."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "Which of the following is a widely recognized cross-platform mobile development framework?",
+      "explanation": "Flutter is a popular open-source UI software development kit created by Google. It is used for developing cross-platform applications for Android, iOS, Linux, macOS, Windows, and the web from a single codebase.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Flutter, developed by Google, uses Dart language to build natively compiled applications for mobile and web.",
+          "is_correct": true,
+          "rationale": "Flutter is a prominent cross-platform framework using Dart."
+        },
+        {
+          "key": "B",
+          "text": "SwiftUI, developed by Apple, is primarily used for creating user interfaces specifically for Apple's ecosystem devices.",
+          "is_correct": false,
+          "rationale": "SwiftUI is a native iOS/macOS framework, not cross-platform."
+        },
+        {
+          "key": "C",
+          "text": "Android Jetpack Compose, a modern toolkit for building native Android user interfaces declaratively and efficiently.",
+          "is_correct": false,
+          "rationale": "Jetpack Compose is a native Android UI toolkit."
+        },
+        {
+          "key": "D",
+          "text": "Objective-C, an object-oriented programming language, remains fundamental for legacy iOS application development.",
+          "is_correct": false,
+          "rationale": "Objective-C is a native iOS language, not a cross-platform framework."
+        },
+        {
+          "key": "E",
+          "text": "Java, a versatile programming language, is extensively used for developing a wide range of backend services.",
+          "is_correct": false,
+          "rationale": "Java is used for native Android and backend, not a cross-platform UI framework."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "When building a user interface in a cross-platform framework, what is the common term for reusable visual elements?",
+      "explanation": "In frameworks like Flutter and React Native, UI elements are commonly referred to as widgets or components. These are reusable pieces of UI that can be combined to build complex interfaces efficiently.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Widgets are fundamental building blocks that describe parts of the user interface and their configuration.",
+          "is_correct": true,
+          "rationale": "Widgets (or components) are the reusable UI elements in cross-platform frameworks."
+        },
+        {
+          "key": "B",
+          "text": "Modules represent self-contained units of code that perform specific functions within the application.",
+          "is_correct": false,
+          "rationale": "Modules are code organization units, not primarily visual elements."
+        },
+        {
+          "key": "C",
+          "text": "Services are background processes that perform long-running operations without a user interface.",
+          "is_correct": false,
+          "rationale": "Services handle background tasks, distinct from UI elements."
+        },
+        {
+          "key": "D",
+          "text": "Controllers manage the flow of data between the model and the view in a typical MVC architectural pattern.",
+          "is_correct": false,
+          "rationale": "Controllers are part of architectural patterns, not direct visual elements."
+        },
+        {
+          "key": "E",
+          "text": "Providers are mechanisms for managing and injecting dependencies throughout the application's lifecycle.",
+          "is_correct": false,
+          "rationale": "Providers are for state or dependency management, not visual UI elements."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "What is the initial step when encountering a bug in your cross-platform mobile application development process?",
+      "explanation": "The first step in debugging is always to consistently reproduce the issue. This helps to confirm the bug's existence, understand its trigger, and observe its behavior reliably before attempting a fix.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Reproducing the bug consistently across different devices and operating system versions to understand its scope.",
+          "is_correct": true,
+          "rationale": "Reproducing the bug is crucial for understanding and fixing it."
+        },
+        {
+          "key": "B",
+          "text": "Immediately rewriting the entire problematic code module to introduce a fresh implementation.",
+          "is_correct": false,
+          "rationale": "Rewriting without understanding the bug is inefficient and risky."
+        },
+        {
+          "key": "C",
+          "text": "Deleting all local project files and then performing a fresh clone from the remote repository.",
+          "is_correct": false,
+          "rationale": "This is an extreme measure and unlikely to solve a specific bug."
+        },
+        {
+          "key": "D",
+          "text": "Asking a senior developer to fix the issue without attempting any personal investigation first.",
+          "is_correct": false,
+          "rationale": "Attempting self-investigation is important for learning and efficiency."
+        },
+        {
+          "key": "E",
+          "text": "Ignoring the bug temporarily and proceeding with other development tasks until later.",
+          "is_correct": false,
+          "rationale": "Ignoring bugs can lead to more complex issues later in the development cycle."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "How do cross-platform frameworks typically handle features that are unique to a specific operating system, like accessing device sensors?",
+      "explanation": "Cross-platform frameworks offer ways to bridge the gap between their framework code and native platform APIs. This allows access to device-specific features using platform channels or native modules, ensuring full functionality.",
+      "options": [
+        {
+          "key": "A",
+          "text": "They provide specific mechanisms, often called 'platform channels' or 'native modules,' to communicate with native code.",
+          "is_correct": true,
+          "rationale": "Platform channels bridge cross-platform code with native functionalities."
+        },
+        {
+          "key": "B",
+          "text": "They automatically emulate all native device functionalities perfectly without requiring any extra configuration.",
+          "is_correct": false,
+          "rationale": "Full automatic emulation of all native features is not typically possible or efficient."
+        },
+        {
+          "key": "C",
+          "text": "Developers must completely abandon the cross-platform framework and rewrite that specific part natively.",
+          "is_correct": false,
+          "rationale": "This defeats the purpose of cross-platform development for minor features."
+        },
+        {
+          "key": "D",
+          "text": "Such features are generally unavailable and cannot be implemented in any cross-platform application.",
+          "is_correct": false,
+          "rationale": "Cross-platform frameworks are designed to handle most native features."
+        },
+        {
+          "key": "E",
+          "text": "A third-party plugin always handles all platform-specific integrations without any custom code.",
+          "is_correct": false,
+          "rationale": "While plugins are common, custom native code might still be needed sometimes."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "What is a primary benefit of using a cross-platform framework like React Native or Flutter for mobile app development?",
+      "explanation": "Cross-platform frameworks allow developers to write code once and deploy it on multiple platforms, significantly reducing development time and cost compared to native development.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It enables developers to write a single codebase that can be deployed across both iOS and Android platforms.",
+          "is_correct": true,
+          "rationale": "Single codebase reduces development effort and time."
+        },
+        {
+          "key": "B",
+          "text": "It automatically optimizes application performance to match the speed of natively developed applications.",
+          "is_correct": false,
+          "rationale": "Performance optimization is not automatic, often requiring specific tuning."
+        },
+        {
+          "key": "C",
+          "text": "It provides direct access to all device-specific hardware features without requiring any additional plugins or modules.",
+          "is_correct": false,
+          "rationale": "Direct access often requires plugins or native modules."
+        },
+        {
+          "key": "D",
+          "text": "It completely eliminates the need for any knowledge of native iOS or Android development languages.",
+          "is_correct": false,
+          "rationale": "Some native knowledge is often helpful or necessary for advanced features."
+        },
+        {
+          "key": "E",
+          "text": "It guarantees a smaller application bundle size compared to applications built using native development tools.",
+          "is_correct": false,
+          "rationale": "Bundle size can vary and is not always smaller with cross-platform."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "In Flutter, what widget is commonly used to create a scrollable list of items efficiently?",
+      "explanation": "The `ListView.builder` widget in Flutter is highly efficient for displaying long lists, as it only renders items visible on the screen.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The `Column` widget is primarily used to arrange multiple widgets vertically in a non-scrollable layout.",
+          "is_correct": false,
+          "rationale": "`Column` is for static vertical layouts, not scrollable lists."
+        },
+        {
+          "key": "B",
+          "text": "The `Row` widget is designed for arranging widgets horizontally and does not provide any scrolling capabilities.",
+          "is_correct": false,
+          "rationale": "`Row` is for static horizontal layouts, not scrollable lists."
+        },
+        {
+          "key": "C",
+          "text": "The `ListView.builder` widget efficiently constructs scrollable lists, rendering items only when they become visible on screen.",
+          "is_correct": true,
+          "rationale": "`ListView.builder` is optimized for long, scrollable lists."
+        },
+        {
+          "key": "D",
+          "text": "The `Container` widget is used for styling and layout, but it does not inherently support scrolling functionality.",
+          "is_correct": false,
+          "rationale": "`Container` is a general-purpose styling widget, not for lists."
+        },
+        {
+          "key": "E",
+          "text": "The `Scaffold` widget provides a basic visual structure for an app, including app bars and drawers.",
+          "is_correct": false,
+          "rationale": "`Scaffold` provides app structure, not specific list scrolling."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "How do cross-platform frameworks typically access device-specific features like the camera or GPS?",
+      "explanation": "Cross-platform frameworks use plugins or native modules to bridge the gap between JavaScript/Dart code and the native APIs of iOS and Android. These provide access to device functionalities.",
+      "options": [
+        {
+          "key": "A",
+          "text": "They utilize specific plugins or native modules that bridge to the underlying native platform APIs for functionality.",
+          "is_correct": true,
+          "rationale": "Plugins or modules are the standard way to access native features."
+        },
+        {
+          "key": "B",
+          "text": "They directly embed native Swift/Kotlin code within the cross-platform codebase without any intermediate layers.",
+          "is_correct": false,
+          "rationale": "While possible, it's not the typical direct access for common features."
+        },
+        {
+          "key": "C",
+          "text": "They rely on web APIs that are universally available across all mobile operating systems for device interaction.",
+          "is_correct": false,
+          "rationale": "Web APIs don't provide direct access to all device hardware."
+        },
+        {
+          "key": "D",
+          "text": "They simulate native device features using software emulators, which do not interact with actual hardware.",
+          "is_correct": false,
+          "rationale": "Emulators are for testing, not for production app access to hardware."
+        },
+        {
+          "key": "E",
+          "text": "They require the developer to rewrite the entire application natively for each platform to ensure full compatibility.",
+          "is_correct": false,
+          "rationale": "This defeats the purpose of cross-platform development."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "When developing a cross-platform mobile application, what is a crucial step for ensuring quality and stability?",
+      "explanation": "Thorough testing on various devices and platforms is crucial to catch bugs, ensure compatibility, and verify that the application performs as expected across different environments.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Minimizing the number of external libraries and dependencies used to reduce the overall project complexity.",
+          "is_correct": false,
+          "rationale": "While good practice, it's not the most crucial step for quality."
+        },
+        {
+          "key": "B",
+          "text": "Ensuring all application code is written using only a single programming language for consistency.",
+          "is_correct": false,
+          "rationale": "Cross-platform often involves multiple languages (e.g., Dart/Kotlin/Swift)."
+        },
+        {
+          "key": "C",
+          "text": "Performing comprehensive testing on multiple physical devices and emulators across different operating system versions.",
+          "is_correct": true,
+          "rationale": "Thorough testing ensures quality and stability on diverse platforms."
+        },
+        {
+          "key": "D",
+          "text": "Only deploying the application to a single mobile platform to simplify the maintenance and update processes.",
+          "is_correct": false,
+          "rationale": "This contradicts the goal of cross-platform development."
+        },
+        {
+          "key": "E",
+          "text": "Relying solely on automated code linters to identify and fix all potential bugs before compilation.",
+          "is_correct": false,
+          "rationale": "Linters catch style/syntax issues, not all bugs or functional errors."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "What is the primary purpose of a `package.json` file in a React Native project?",
+      "explanation": "The `package.json` file manages project metadata, scripts, and dependencies. It's essential for defining the project's structure and ensuring consistent environments.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It lists project metadata, scripts, and all third-party dependencies required for the React Native application.",
+          "is_correct": true,
+          "rationale": "`package.json` is central for managing dependencies and project info."
+        },
+        {
+          "key": "B",
+          "text": "It stores the compiled JavaScript bundle that will be executed on the mobile device during runtime.",
+          "is_correct": false,
+          "rationale": "The bundle is generated, not stored in `package.json`."
+        },
+        {
+          "key": "C",
+          "text": "It defines the user interface layout and styling components for different screen sizes and orientations.",
+          "is_correct": false,
+          "rationale": "UI layout is defined in JSX/TSX files, not `package.json`."
+        },
+        {
+          "key": "D",
+          "text": "It contains the native platform-specific code written in Objective-C or Java for iOS and Android.",
+          "is_correct": false,
+          "rationale": "Native code is in `ios/` and `android/` folders, not `package.json`."
+        },
+        {
+          "key": "E",
+          "text": "It is used for configuring continuous integration and deployment pipelines for automated builds.",
+          "is_correct": false,
+          "rationale": "CI/CD configuration is typically in separate files (e.g., `.yml`)."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "How would you manage minor visual discrepancies between iOS and Android UIs when using a cross-platform framework?",
+      "explanation": "Cross-platform frameworks allow developers to write code once and deploy on multiple platforms. For minor UI differences, using platform-specific adjustments like conditional rendering or stylesheets helps maintain a consistent user experience while respecting platform conventions.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use platform-specific stylesheets or conditional rendering based on the detected operating system to make small adjustments.",
+          "is_correct": true,
+          "rationale": "Conditional rendering or platform-specific styles adapt UI for platform conventions, improving user experience."
+        },
+        {
+          "key": "B",
+          "text": "Implement completely separate UI components for each platform within the same shared codebase for all screens.",
+          "is_correct": false,
+          "rationale": "This approach defeats the purpose of cross-platform development efficiency and is not scalable."
+        },
+        {
+          "key": "C",
+          "text": "Ignore the minor visual discrepancies, as users typically expect some platform variations between applications.",
+          "is_correct": false,
+          "rationale": "Ignoring discrepancies can lead to a poor or inconsistent user experience and look unprofessional."
+        },
+        {
+          "key": "D",
+          "text": "Adopt a design system that strictly enforces identical visual elements across both platforms without any variation.",
+          "is_correct": false,
+          "rationale": "While good, strict identicality might clash with native platform guidelines and user expectations."
+        },
+        {
+          "key": "E",
+          "text": "Revert to native development for the specific UI screens exhibiting these minor visual differences.",
+          "is_correct": false,
+          "rationale": "This is an overkill solution for minor visual differences, increasing complexity and maintenance."
+        }
+      ]
+    }
+  ]
+}

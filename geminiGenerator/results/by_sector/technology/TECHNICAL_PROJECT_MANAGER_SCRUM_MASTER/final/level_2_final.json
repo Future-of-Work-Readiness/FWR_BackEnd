@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "As a Scrum Master, what is your primary action when an engineering team member reports a significant technical impediment?",
+      "explanation": "The Scrum Master's role is to facilitate the team's self-organization and remove impediments. They should first help the team brainstorm solutions before escalating, empowering the team to solve issues.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately escalate the issue to senior management for a swift resolution and resource allocation.",
+          "is_correct": false,
+          "rationale": "Escalation is a later step, not the primary action for the Scrum Master; the team should be empowered first."
+        },
+        {
+          "key": "B",
+          "text": "Facilitate a discussion with the team to identify potential solutions and remove the blocker collaboratively.",
+          "is_correct": true,
+          "rationale": "The Scrum Master's primary role is to facilitate impediment removal by empowering the team to find solutions."
+        },
+        {
+          "key": "C",
+          "text": "Assign the impediment to a different team member to resolve independently, ensuring minimal disruption to others.",
+          "is_correct": false,
+          "rationale": "This approach bypasses team collaboration and shared ownership, which are core principles of Scrum."
+        },
+        {
+          "key": "D",
+          "text": "Document the impediment thoroughly in the project backlog and prioritize it for the next sprint review meeting.",
+          "is_correct": false,
+          "rationale": "Impediments require more immediate attention than waiting for a future review meeting to be addressed."
+        },
+        {
+          "key": "E",
+          "text": "Directly contact the relevant external vendor or department to demand an immediate fix for the reported problem.",
+          "is_correct": false,
+          "rationale": "The Scrum Master facilitates communication and collaboration, rather than dictating or demanding solutions from external parties."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What is the most effective strategy for a Scrum Master to address accumulating technical debt within a product backlog?",
+      "explanation": "Addressing technical debt requires a sustainable, ongoing strategy rather than sporadic efforts. Allocating a consistent portion of each sprint ensures continuous improvement and prevents major accumulation.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Insist the development team dedicates an entire sprint solely to resolving all identified technical debt items.",
+          "is_correct": false,
+          "rationale": "This approach is often unrealistic and can significantly disrupt the continuous delivery of new product features."
+        },
+        {
+          "key": "B",
+          "text": "Work with the Product Owner to allocate a small, consistent percentage of each sprint for technical debt reduction.",
+          "is_correct": true,
+          "rationale": "Allocating a consistent percentage is a sustainable and proactive way to manage technical debt over time."
+        },
+        {
+          "key": "C",
+          "text": "Document the technical debt but defer any action until a major refactoring project is formally approved by stakeholders.",
+          "is_correct": false,
+          "rationale": "Deferring action allows technical debt to grow, making it more complex and costly to resolve in the future."
+        },
+        {
+          "key": "D",
+          "text": "Encourage individual developers to fix technical debt whenever they have spare time between assigned feature tasks.",
+          "is_correct": false,
+          "rationale": "This is an inconsistent and unreliable approach that lacks the necessary strategic planning and prioritization."
+        },
+        {
+          "key": "E",
+          "text": "Present the technical debt to stakeholders as a critical blocker, demanding immediate resources to fix all issues.",
+          "is_correct": false,
+          "rationale": "This is an extreme approach that may not be necessary and could damage relationships with stakeholders."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "During sprint planning, how should a Scrum Master help the team manage a newly identified high-risk technical dependency?",
+      "explanation": "Proactively addressing high-risk dependencies by breaking them down and integrating mitigation into the sprint backlog allows the team to manage them effectively and maintain sprint goals.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Document the dependency in a separate risk log and review it only during the quarterly project roadmap meeting.",
+          "is_correct": false,
+          "rationale": "This is too late; risks identified during planning require immediate attention and integration into the current sprint."
+        },
+        {
+          "key": "B",
+          "text": "Advise the team to immediately stop planning other stories and focus entirely on mitigating this single dependency.",
+          "is_correct": false,
+          "rationale": "This is an overreaction that can unnecessarily disrupt the entire sprint plan and commitment."
+        },
+        {
+          "key": "C",
+          "text": "Facilitate a discussion to break down the dependency into smaller tasks and incorporate mitigation efforts into the sprint backlog.",
+          "is_correct": true,
+          "rationale": "Proactively integrating mitigation tasks into the sprint is the best approach for managing high-risk dependencies."
+        },
+        {
+          "key": "D",
+          "text": "Delegate the responsibility for resolving the dependency to the most senior developer, trusting their expertise completely.",
+          "is_correct": false,
+          "rationale": "This creates a single point of failure and undermines the principle of shared team ownership and collaboration."
+        },
+        {
+          "key": "E",
+          "text": "Suggest the Product Owner de-prioritize any stories affected by the dependency until the risk is naturally resolved.",
+          "is_correct": false,
+          "rationale": "This avoids the problem rather than actively managing or mitigating the risk in a timely manner."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What is the Scrum Master's primary role in ensuring effective and productive sprint planning meetings for the team?",
+      "explanation": "The Scrum Master ensures the sprint planning meeting achieves its purpose by facilitating clear communication, ensuring the backlog is ready, and that the team understands the sprint goal.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Dictate which backlog items the development team must commit to completing during the upcoming sprint.",
+          "is_correct": false,
+          "rationale": "The Scrum Master does not dictate work; the development team pulls work and commits to the sprint goal."
+        },
+        {
+          "key": "B",
+          "text": "Ensure the Product Owner has a clear, refined backlog and the team understands the sprint goal and scope.",
+          "is_correct": true,
+          "rationale": "The Scrum Master facilitates preparation and understanding, which are essential for an effective planning session."
+        },
+        {
+          "key": "C",
+          "text": "Solely focus on updating the project management tool with all the tasks and assigned developers for the sprint.",
+          "is_correct": false,
+          "rationale": "This is an administrative task, not the primary facilitative role of the Scrum Master during planning."
+        },
+        {
+          "key": "D",
+          "text": "Negotiate directly with stakeholders to adjust expectations regarding the number of features delivered in the sprint.",
+          "is_correct": false,
+          "rationale": "This is primarily the Product Owner's responsibility, although the Scrum Master may support the process."
+        },
+        {
+          "key": "E",
+          "text": "Take detailed notes of every discussion point, ensuring a comprehensive record is available for future reference.",
+          "is_correct": false,
+          "rationale": "While note-taking can be helpful, it is not the Scrum Master's primary role in the planning meeting."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Which metric is most valuable for a Scrum Master to track consistently to assess the development team's sprint predictability and stability?",
+      "explanation": "Sprint velocity, when tracked consistently over multiple sprints, provides a reliable indicator of a team's capacity and predictability. It helps in future sprint planning and forecasting.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The total number of lines of code committed by each individual developer over the entire sprint.",
+          "is_correct": false,
+          "rationale": "Lines of code is a poor and often misleading metric for measuring productivity or team predictability."
+        },
+        {
+          "key": "B",
+          "text": "The team's sprint velocity, comparing planned story points to completed story points across several sprints.",
+          "is_correct": true,
+          "rationale": "Velocity is a key indicator of a team's predictability and capacity, helping with future forecasting."
+        },
+        {
+          "key": "C",
+          "text": "The cumulative count of bugs reported by quality assurance after each sprint release to production.",
+          "is_correct": false,
+          "rationale": "This metric reflects the quality of the product, but not directly the team's delivery predictability."
+        },
+        {
+          "key": "D",
+          "text": "The average number of hours spent in daily stand-up meetings during the course of the entire sprint.",
+          "is_correct": false,
+          "rationale": "This metric relates to process adherence and efficiency, not directly to sprint predictability or stability."
+        },
+        {
+          "key": "E",
+          "text": "The percentage of time individual developers spend on non-development activities, like meetings or training.",
+          "is_correct": false,
+          "rationale": "This metric relates to resource allocation and capacity, but not directly to sprint delivery predictability."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Which of the following is considered a primary Scrum artifact essential for transparency and inspection within a sprint?",
+      "explanation": "Scrum defines three primary artifacts: Product Backlog, Sprint Backlog, and Increment. These artifacts ensure transparency and provide opportunities for inspection and adaptation throughout the development process.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Product Backlog, Sprint Backlog, and Increment are the three core artifacts providing transparency and key information.",
+          "is_correct": true,
+          "rationale": "These three items are explicitly defined as the official Scrum artifacts in the Scrum Guide."
+        },
+        {
+          "key": "B",
+          "text": "The Burndown Chart, Release Plan, and Definition of Done are the essential artifacts for tracking progress effectively.",
+          "is_correct": false,
+          "rationale": "These are considered helpful tools or agreements, but they are not the primary Scrum artifacts."
+        },
+        {
+          "key": "C",
+          "text": "The Stakeholder Register, Risk Log, and Project Charter are crucial documents for overall project management.",
+          "is_correct": false,
+          "rationale": "These are documents typically associated with traditional project management, not the Scrum framework."
+        },
+        {
+          "key": "D",
+          "text": "The Team Charter, Working Agreements, and Retrospective Actions are vital for team collaboration and improvement.",
+          "is_correct": false,
+          "rationale": "These are important team-level agreements or outputs, but they are not defined as core Scrum artifacts."
+        },
+        {
+          "key": "E",
+          "text": "The Impediment Log, Velocity Chart, and User Story Map are important for managing workflow and priorities.",
+          "is_correct": false,
+          "rationale": "These are supplementary tools and practices used by many Scrum teams, not core Scrum artifacts."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "A development team member reports a persistent technical blocker preventing progress; what is the Scrum Master's initial action?",
+      "explanation": "A core responsibility of the Scrum Master is to remove impediments that hinder the development team's progress. This often involves collaboration, communication, and sometimes escalation to get the necessary support.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Scrum Master should actively facilitate the removal of impediments by collaborating with relevant stakeholders or escalating as needed.",
+          "is_correct": true,
+          "rationale": "Removing impediments to the development team's progress is a primary duty of the Scrum Master."
+        },
+        {
+          "key": "B",
+          "text": "The Scrum Master should advise the team member to resolve the issue independently, reinforcing self-organizing principles.",
+          "is_correct": false,
+          "rationale": "While self-organization is encouraged, the Scrum Master is responsible for removing persistent blockers the team cannot solve."
+        },
+        {
+          "key": "C",
+          "text": "The Scrum Master should log the impediment and wait until the next Sprint Retrospective to discuss potential solutions.",
+          "is_correct": false,
+          "rationale": "Impediments that block progress should be addressed promptly and not deferred until a future meeting."
+        },
+        {
+          "key": "D",
+          "text": "The Scrum Master should immediately reassign the blocked task to another team member to maintain sprint velocity.",
+          "is_correct": false,
+          "rationale": "Reassigning the task does not address the root cause of the blocker and may not solve the problem."
+        },
+        {
+          "key": "E",
+          "text": "The Scrum Master should document the blocker and inform the Product Owner, who is responsible for all technical issues.",
+          "is_correct": false,
+          "rationale": "The Product Owner manages the product, while the Scrum Master is responsible for removing technical impediments."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "How should a Technical Project Manager Scrum Master effectively manage the accumulation of technical debt within a product?",
+      "explanation": "Technical debt needs to be managed proactively. A Scrum Master should ensure it's visible to the Product Owner and team, advocating for dedicated time to address it, preventing future slowdowns and improving quality.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Advocate for dedicating specific sprint capacity to address technical debt items, ensuring it is visible and prioritized in the Product Backlog.",
+          "is_correct": true,
+          "rationale": "Proactive management and transparent prioritization are key to effectively addressing technical debt within the Scrum framework."
+        },
+        {
+          "key": "B",
+          "text": "Ignore technical debt until it causes a critical production issue, then address it with an emergency fix.",
+          "is_correct": false,
+          "rationale": "This reactive approach leads to larger, more complex problems and increases overall product instability."
+        },
+        {
+          "key": "C",
+          "text": "Delegate all technical debt management responsibilities entirely to the development team without any oversight.",
+          "is_correct": false,
+          "rationale": "The Scrum Master facilitates the process, ensuring debt is visible and prioritized, not ignored or siloed."
+        },
+        {
+          "key": "D",
+          "text": "Create a separate, long-term project plan exclusively for technical debt, completely detached from product feature development.",
+          "is_correct": false,
+          "rationale": "Technical debt should be integrated into regular product development cycles for balanced and continuous improvement."
+        },
+        {
+          "key": "E",
+          "text": "Document all technical debt in a separate spreadsheet, but do not prioritize it against new feature development.",
+          "is_correct": false,
+          "rationale": "Documentation without prioritization is ineffective and does not properly manage the impact of the debt."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "What is the primary objective of the Sprint Planning event in an Agile Scrum framework?",
+      "explanation": "Sprint Planning focuses on defining 'what' will be done (Sprint Goal and selected items) and 'how' it will be done (plan for the Sprint Backlog). It sets the direction for the upcoming sprint, ensuring alignment.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To collaboratively define the Sprint Goal and select Product Backlog items that the development team can complete within the upcoming sprint.",
+          "is_correct": true,
+          "rationale": "Sprint Planning is specifically designed to establish the Sprint Goal and create the Sprint Backlog."
+        },
+        {
+          "key": "B",
+          "text": "To demonstrate the completed increment to stakeholders and gather feedback for future product improvements.",
+          "is_correct": false,
+          "rationale": "This description accurately defines the purpose of the Sprint Review event, not Sprint Planning."
+        },
+        {
+          "key": "C",
+          "text": "To inspect the previous sprint and identify improvements for processes, tools, and team interactions going forward.",
+          "is_correct": false,
+          "rationale": "This description accurately defines the purpose of the Sprint Retrospective event, not Sprint Planning."
+        },
+        {
+          "key": "D",
+          "text": "To refine the Product Backlog by adding details, estimates, and order to upcoming user stories effectively.",
+          "is_correct": false,
+          "rationale": "This describes the ongoing activity of Backlog Refinement, which is separate from the Sprint Planning event."
+        },
+        {
+          "key": "E",
+          "text": "To conduct daily synchronization meetings where the development team inspects progress towards the Sprint Goal.",
+          "is_correct": false,
+          "rationale": "This description accurately defines the purpose of the Daily Scrum event, not Sprint Planning."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "When multiple Scrum teams need to coordinate their work on a large, complex product, which framework is commonly considered?",
+      "explanation": "Frameworks like SAFe and LeSS provide structures, roles, and events to help multiple Scrum teams align their efforts, manage dependencies, and deliver integrated solutions effectively at scale.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Scaled Agile Framework (SAFe) or Large-Scale Scrum (LeSS) are widely used frameworks for coordinating multiple Scrum teams working on a single product.",
+          "is_correct": true,
+          "rationale": "SAFe and LeSS are two of the most prominent and widely adopted frameworks for scaling Agile."
+        },
+        {
+          "key": "B",
+          "text": "Traditional Waterfall methodology is often adapted for large-scale product development efforts involving many teams.",
+          "is_correct": false,
+          "rationale": "Waterfall is a sequential methodology and is generally not used for scaling Agile or Scrum teams."
+        },
+        {
+          "key": "C",
+          "text": "Kanban boards are sufficient for managing dependencies and synchronization across numerous independent teams.",
+          "is_correct": false,
+          "rationale": "While Kanban is good for workflow visualization, scaling frameworks add necessary structure for cross-team coordination."
+        },
+        {
+          "key": "D",
+          "text": "Each Scrum team should operate completely independently without any formal cross-team coordination mechanisms.",
+          "is_correct": false,
+          "rationale": "Independent operation is not feasible when multiple teams are working on a single, complex, integrated product."
+        },
+        {
+          "key": "E",
+          "text": "A single, overarching Project Manager should dictate all tasks and timelines to every individual team member.",
+          "is_correct": false,
+          "rationale": "This command-and-control approach contradicts the core Agile principles of self-organization and distributed leadership."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "During which Scrum event does the Development Team commit to delivering a set of features for the upcoming Sprint?",
+      "explanation": "Sprint Planning is the event where the Scrum Team collaborates to define the Sprint Goal and select Product Backlog items to be completed within the Sprint. This forms the Development Team's commitment.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Daily Scrum, where the team synchronizes activities and plans for the next 24 hours of work.",
+          "is_correct": false,
+          "rationale": "The Daily Scrum is for daily planning and synchronization, not for the overall Sprint commitment."
+        },
+        {
+          "key": "B",
+          "text": "Sprint Review, where the team demonstrates completed work to stakeholders and gathers feedback for future iterations.",
+          "is_correct": false,
+          "rationale": "The Sprint Review is for inspecting the increment and adapting the Product Backlog, not for making commitments."
+        },
+        {
+          "key": "C",
+          "text": "Sprint Planning, where the team collaboratively selects Product Backlog items to complete and defines the Sprint Goal.",
+          "is_correct": true,
+          "rationale": "Sprint Planning is the specific event where the team commits to the Sprint Goal and the work for the Sprint."
+        },
+        {
+          "key": "D",
+          "text": "Sprint Retrospective, where the team inspects its processes and identifies improvements for the next Sprint cycle.",
+          "is_correct": false,
+          "rationale": "The Sprint Retrospective focuses on process improvement for future sprints, not on committing to work."
+        },
+        {
+          "key": "E",
+          "text": "Product Backlog Refinement, where the Product Owner and Development Team detail upcoming items for clarity.",
+          "is_correct": false,
+          "rationale": "Refinement is an ongoing activity to prepare items for future sprints; it is not the commitment event."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "What is the most effective approach for a Scrum Master to manage significant technical debt within a product backlog?",
+      "explanation": "Technical debt needs to be made visible, understood, and prioritized. Integrating it into the Product Backlog allows the Product Owner to weigh its value against new features and schedule it for resolution.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Advocate for dedicated sprints solely focused on resolving all accumulated technical debt immediately.",
+          "is_correct": false,
+          "rationale": "Dedicated sprints for technical debt are often not feasible and may not represent the most balanced approach."
+        },
+        {
+          "key": "B",
+          "text": "Ensure technical debt items are clearly defined, estimated, and prioritized within the Product Backlog for regular attention.",
+          "is_correct": true,
+          "rationale": "This approach integrates technical debt into the regular planning and prioritization process, ensuring it is managed effectively."
+        },
+        {
+          "key": "C",
+          "text": "Instruct the development team to fix technical debt whenever they encounter it during feature development tasks.",
+          "is_correct": false,
+          "rationale": "This ad-hoc approach can disrupt the planned workflow and lacks strategic prioritization from the Product Owner."
+        },
+        {
+          "key": "D",
+          "text": "Create a separate, hidden backlog for technical debt to avoid confusing stakeholders with non-feature work items.",
+          "is_correct": false,
+          "rationale": "Hiding technical debt undermines transparency and prevents proper prioritization against other valuable work."
+        },
+        {
+          "key": "E",
+          "text": "Delegate the entire responsibility of technical debt management directly to the engineering lead for independent resolution.",
+          "is_correct": false,
+          "rationale": "Technical debt is a shared team responsibility that should be facilitated by the Scrum Master."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "How should a Technical Project Manager Scrum Master effectively communicate project status and impediments to external stakeholders?",
+      "explanation": "Regular, transparent communication is key. Tailoring updates to stakeholder needs, focusing on progress, risks, and next steps, and using established channels ensures everyone is informed appropriately.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Send detailed daily email updates to all stakeholders, including every minor technical challenge encountered by the team.",
+          "is_correct": false,
+          "rationale": "Daily detailed emails can quickly lead to information overload and may be ignored by busy stakeholders."
+        },
+        {
+          "key": "B",
+          "text": "Schedule weekly stakeholder meetings to review progress, discuss upcoming challenges, and gather necessary feedback efficiently.",
+          "is_correct": true,
+          "rationale": "Regular, structured meetings provide an efficient and predictable way to communicate status and gather valuable feedback."
+        },
+        {
+          "key": "C",
+          "text": "Only communicate when a major project milestone is achieved, assuming no news is generally considered good news.",
+          "is_correct": false,
+          "rationale": "Infrequent communication can lead to unpleasant surprises, misaligned expectations, and a lack of trust."
+        },
+        {
+          "key": "D",
+          "text": "Direct all stakeholders to the team's internal task board for real-time updates and detailed progress tracking information.",
+          "is_correct": false,
+          "rationale": "Internal tools may not be suitable, accessible, or easily understandable for all external stakeholders."
+        },
+        {
+          "key": "E",
+          "text": "Provide high-level progress reports only to the Product Owner, who will then disseminate information to other stakeholders.",
+          "is_correct": false,
+          "rationale": "The Scrum Master should also facilitate direct and transparent communication with relevant stakeholders when appropriate."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "What is the Scrum Master's primary role in identifying and mitigating project risks within an agile development team?",
+      "explanation": "The Scrum Master facilitates the team's ability to identify and address risks. This includes fostering transparency, encouraging proactive problem-solving, and ensuring risks are visible and discussed during Scrum events.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Take sole responsibility for identifying, documenting, and resolving all technical and non-technical project risks.",
+          "is_correct": false,
+          "rationale": "Risk management is a shared team responsibility, not a task to be owned solely by the Scrum Master."
+        },
+        {
+          "key": "B",
+          "text": "Facilitate team discussions during Scrum events to identify potential risks and encourage the team to develop mitigation strategies.",
+          "is_correct": true,
+          "rationale": "The Scrum Master facilitates the team's self-organization in identifying, assessing, and addressing potential risks."
+        },
+        {
+          "key": "C",
+          "text": "Create a comprehensive risk register and update it daily, then present it to senior management for their direct intervention.",
+          "is_correct": false,
+          "rationale": "While documentation is good, direct intervention by management isn't the primary Scrum Master role."
+        },
+        {
+          "key": "D",
+          "text": "Instruct the Product Owner to prioritize risk mitigation activities over new feature development in the Product Backlog.",
+          "is_correct": false,
+          "rationale": "The Product Owner prioritizes based on value, and risks are factored into that, not automatically prioritized above all else."
+        },
+        {
+          "key": "E",
+          "text": "Ignore minor risks, focusing only on critical path items that could severely delay the overall project timeline delivery.",
+          "is_correct": false,
+          "rationale": "All significant risks, regardless of perceived severity, should be acknowledged and assessed by the entire team."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Which metric is most valuable for a Scrum Master when assessing the consistent delivery capability and predictability of a Scrum Team?",
+      "explanation": "Velocity measures the amount of work a Scrum Team completes in a Sprint, providing insight into their capacity and predictability over time. It helps with future planning and forecasting.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Code coverage percentage, indicating the proportion of source code executed by automated tests for quality assurance.",
+          "is_correct": false,
+          "rationale": "Code coverage is a metric related to code quality, not directly to delivery capability or predictability."
+        },
+        {
+          "key": "B",
+          "text": "Team velocity, which represents the average amount of Product Backlog items completed by the team per Sprint.",
+          "is_correct": true,
+          "rationale": "Velocity is a key indicator of a team's consistent delivery capacity and predictability over multiple sprints."
+        },
+        {
+          "key": "C",
+          "text": "Number of bugs reported in production, reflecting the quality of released software after deployment to users.",
+          "is_correct": false,
+          "rationale": "The number of bugs in production relates to product quality, not directly to the team's delivery capacity."
+        },
+        {
+          "key": "D",
+          "text": "Individual team member utilization rates, showing how busy each developer is throughout the entire Sprint duration.",
+          "is_correct": false,
+          "rationale": "Utilization focuses on individuals being busy, not on the collective team's ability to deliver value predictably."
+        },
+        {
+          "key": "E",
+          "text": "Cumulative flow diagram, illustrating work in progress, cycle time, and throughput for continuous improvement insights.",
+          "is_correct": false,
+          "rationale": "While useful for process flow analysis, velocity is a more direct measure of delivery capacity per sprint."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "What is the most effective strategy for a Scrum Master to manage significant technical debt within a development team's product backlog?",
+      "explanation": "Technical debt needs to be made visible and its impact understood by stakeholders. Integrating its resolution into regular sprints ensures it is addressed incrementally, preventing larger issues and improving long-term sustainability.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Advocate for dedicated sprint capacity to address critical technical debt items, demonstrating their long-term impact on velocity.",
+          "is_correct": true,
+          "rationale": "This ensures that technical debt is prioritized and addressed systematically within the regular sprint cadence."
+        },
+        {
+          "key": "B",
+          "text": "Delegate all technical debt resolution entirely to the development team, allowing them full autonomy in its management.",
+          "is_correct": false,
+          "rationale": "The Scrum Master facilitates, but the Product Owner and team must prioritize this work collaboratively."
+        },
+        {
+          "key": "C",
+          "text": "Postpone technical debt discussions until the end of the project, focusing solely on new feature development during sprints.",
+          "is_correct": false,
+          "rationale": "Postponing debt leads to its accumulation, which increases risk and reduces future development velocity."
+        },
+        {
+          "key": "D",
+          "text": "Create a separate, independent backlog exclusively for technical debt, managed outside the regular sprint cadence.",
+          "is_correct": false,
+          "rationale": "Technical debt should be integrated into the main product backlog for transparent prioritization against features."
+        },
+        {
+          "key": "E",
+          "text": "Request additional resources and budget specifically for a new team dedicated to resolving only technical debt.",
+          "is_correct": false,
+          "rationale": "This is often an impractical solution and does not integrate debt resolution into ongoing development."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "During a Sprint Retrospective, what is the Scrum Master's primary role when the team identifies recurring process inefficiencies?",
+      "explanation": "The Scrum Master facilitates the retrospective, guiding the team to identify root causes and collaboratively decide on actionable improvements for future sprints, without dictating solutions or assigning tasks directly.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Guide the team in collaboratively identifying root causes and defining concrete, actionable improvement items for the next sprint.",
+          "is_correct": true,
+          "rationale": "The Scrum Master's role is to facilitate self-organization and a culture of continuous improvement within the team."
+        },
+        {
+          "key": "B",
+          "text": "Immediately assign specific tasks to individual team members to resolve the identified inefficiencies before the next sprint begins.",
+          "is_correct": false,
+          "rationale": "The team should collaboratively decide on actions, not have them dictated or assigned by the Scrum Master."
+        },
+        {
+          "key": "C",
+          "text": "Document all identified inefficiencies and present them to senior management for their direct intervention and resolution.",
+          "is_correct": false,
+          "rationale": "This approach bypasses team ownership and direct resolution, which is a core principle of Agile."
+        },
+        {
+          "key": "D",
+          "text": "Suggest a new set of rigid process rules and enforce their implementation in subsequent sprints to prevent recurrence.",
+          "is_correct": false,
+          "rationale": "Scrum Masters foster self-organizing teams; they do not enforce rigid rules or dictate specific processes."
+        },
+        {
+          "key": "E",
+          "text": "Dismiss the inefficiencies as minor, encouraging the team to focus only on positive aspects of the completed sprint.",
+          "is_correct": false,
+          "rationale": "Ignoring identified issues undermines the fundamental principle of continuous improvement and effective problem-solving."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "How should a Scrum Master effectively manage diverging expectations between product stakeholders and the development team regarding sprint scope?",
+      "explanation": "The Scrum Master facilitates communication and transparency, ensuring all parties understand the trade-offs and priorities. This often involves the Product Owner, but the SM ensures the dialogue happens constructively.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Facilitate a transparent discussion between stakeholders and the Product Owner to align on priorities and achievable sprint goals.",
+          "is_correct": true,
+          "rationale": "Facilitating communication and alignment between all parties is the key to managing expectations effectively."
+        },
+        {
+          "key": "B",
+          "text": "Prioritize the development team's concerns exclusively, shielding them from external stakeholder pressures and demands.",
+          "is_correct": false,
+          "rationale": "This creates a disconnect and fails to resolve the underlying issue of misaligned expectations."
+        },
+        {
+          "key": "C",
+          "text": "Inform stakeholders that the development team's capacity is fixed and no changes can be made once the sprint begins.",
+          "is_correct": false,
+          "rationale": "While true for a sprint, this approach lacks proactive expectation management and collaborative problem-solving."
+        },
+        {
+          "key": "D",
+          "text": "Independently make decisions on scope adjustments, then communicate the final changes to both the team and stakeholders.",
+          "is_correct": false,
+          "rationale": "The Scrum Master does not make content or scope decisions; the Product Owner is responsible for this."
+        },
+        {
+          "key": "E",
+          "text": "Encourage the development team to work overtime to accommodate all stakeholder requests, ensuring everyone is satisfied.",
+          "is_correct": false,
+          "rationale": "This leads to burnout and unsustainable practices, and does not address the root cause of diverging expectations."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "What is the most appropriate initial action for a Scrum Master when a critical external dependency threatens a development team's sprint goal?",
+      "explanation": "The Scrum Master's role is to remove impediments. Identifying the impact and exploring solutions with the team, then escalating to the right people, often the Product Owner or relevant external stakeholders, is crucial for resolution.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Facilitate a discussion with the team to understand the dependency's impact and explore potential mitigation strategies or alternative approaches.",
+          "is_correct": true,
+          "rationale": "Understanding the problem and exploring potential solutions with the team is the essential first step."
+        },
+        {
+          "key": "B",
+          "text": "Immediately contact the external team responsible for the dependency and demand an expedited resolution to their blocking item.",
+          "is_correct": false,
+          "rationale": "Premature demands without full understanding can be counterproductive and may damage inter-team relationships."
+        },
+        {
+          "key": "C",
+          "text": "Re-prioritize the entire sprint backlog to remove all items affected by the external dependency, focusing on unrelated tasks.",
+          "is_correct": false,
+          "rationale": "This may be a later option, but the initial action is to understand and attempt to mitigate the dependency."
+        },
+        {
+          "key": "D",
+          "text": "Report the blocking dependency to the Product Owner and await their instructions on how to proceed with the sprint.",
+          "is_correct": false,
+          "rationale": "The Scrum Master should be proactive in finding solutions and removing impediments, not just reporting them."
+        },
+        {
+          "key": "E",
+          "text": "Document the dependency and its potential impact, then wait for the daily scrum to discuss it with the entire development team.",
+          "is_correct": false,
+          "rationale": "Critical impediments often require immediate attention beyond waiting for the next daily scrum meeting."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "Which Agile metric provides the most direct insight into a development team's consistency and ability to deliver a predictable amount of work each sprint?",
+      "explanation": "Velocity measures the amount of work a team completes in a sprint. Consistent velocity indicates predictability and helps with forecasting, making it a key metric for a Scrum Master to track for team performance.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Team Velocity, as it represents the sum of story points for all completed backlog items within a sprint.",
+          "is_correct": true,
+          "rationale": "Velocity directly measures the amount of completed work per sprint, indicating consistency and predictability over time."
+        },
+        {
+          "key": "B",
+          "text": "Cycle Time, which tracks the total time taken from starting work on an item until its completion and delivery.",
+          "is_correct": false,
+          "rationale": "Cycle time measures the efficiency of flow for individual items, not the overall sprint predictability."
+        },
+        {
+          "key": "C",
+          "text": "Burn-down Chart, showing the remaining work in a sprint against the time remaining, indicating progress towards the sprint goal.",
+          "is_correct": false,
+          "rationale": "A burn-down chart shows progress within a single sprint, not consistency across multiple sprints."
+        },
+        {
+          "key": "D",
+          "text": "Lead Time, measuring the duration from a request being made until its eventual delivery to the end-user.",
+          "is_correct": false,
+          "rationale": "Lead time is a broader value stream metric, not specific to a team's sprint-level predictability."
+        },
+        {
+          "key": "E",
+          "text": "Cumulative Flow Diagram, visualizing the status of work items across different workflow states over time.",
+          "is_correct": false,
+          "rationale": "A CFD shows workflow and bottlenecks, but velocity specifically quantifies the completed work per sprint."
+        }
+      ]
+    }
+  ]
+}

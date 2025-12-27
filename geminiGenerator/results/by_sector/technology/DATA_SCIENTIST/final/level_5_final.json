@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "When an A/B test is not feasible, which causal inference method is most appropriate for estimating a new feature's impact on user engagement?",
+      "explanation": "Difference-in-Differences is a powerful quasi-experimental technique that controls for unobserved time-invariant confounders by comparing the pre-post change in a treatment group to a control group, making it ideal when randomization isn't possible.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Train a simple linear regression model with the feature as a binary independent variable to predict user engagement metrics directly.",
+          "is_correct": false,
+          "rationale": "This approach fails to control for confounding variables."
+        },
+        {
+          "key": "B",
+          "text": "Use a quasi-experimental method like Difference-in-Differences, comparing the change in the treated group to a matched control group over time.",
+          "is_correct": true,
+          "rationale": "This method effectively estimates causal effects without randomization."
+        },
+        {
+          "key": "C",
+          "text": "Apply K-means clustering to segment users and then analyze the feature's adoption rate within the most active user cluster.",
+          "is_correct": false,
+          "rationale": "This is a descriptive analysis, not a causal inference method."
+        },
+        {
+          "key": "D",
+          "text": "Implement a multi-armed bandit algorithm to dynamically allocate traffic and determine the best performing feature variant over time.",
+          "is_correct": false,
+          "rationale": "This is for optimization, not for post-hoc causal analysis."
+        },
+        {
+          "key": "E",
+          "text": "Conduct a series of user surveys to gather qualitative feedback about the new feature's perceived impact on their daily usage.",
+          "is_correct": false,
+          "rationale": "This provides qualitative insight, not a quantitative causal estimate."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "A deployed fraud detection model's performance is degrading over time. What is the most robust strategy for detecting and mitigating this concept drift?",
+      "explanation": "A robust MLOps strategy involves continuous monitoring of data and model prediction distributions. Detecting statistical drift allows for timely, targeted retraining on more recent, relevant data, effectively adapting the model to new patterns.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Manually review a random sample of recent predictions each week and update the model if the error rate appears to be increasing.",
+          "is_correct": false,
+          "rationale": "This method is not scalable, systematic, or timely."
+        },
+        {
+          "key": "B",
+          "text": "Increase the classification threshold of the model to reduce the number of false positives being flagged for manual review by analysts.",
+          "is_correct": false,
+          "rationale": "This adjusts the trade-off but doesn't fix the underlying model degradation."
+        },
+        {
+          "key": "C",
+          "text": "Implement a monitoring system that tracks input feature distributions and triggers retraining on recent data when significant drift is detected.",
+          "is_correct": true,
+          "rationale": "This is a proactive, automated, and systematic approach to handling drift."
+        },
+        {
+          "key": "D",
+          "text": "Periodically retrain the model on the entire historical dataset, including all the newly accumulated data since the last training run.",
+          "is_correct": false,
+          "rationale": "This can wash out recent trends and is slow to adapt."
+        },
+        {
+          "key": "E",
+          "text": "Replace the current model with a completely different architecture, such as switching from a gradient boosting machine to a deep neural network.",
+          "is_correct": false,
+          "rationale": "This is a drastic step that doesn't address the root cause, which is data drift."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "You are designing an A/B test for a new social feature. How should you address the potential for network effects to contaminate the results?",
+      "explanation": "Cluster-based randomization is the standard technique for A/B tests with network effects. By randomizing at the level of a social cluster, it minimizes contamination between treatment and control groups, providing a more accurate estimate.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Double the sample size of the experiment to increase statistical power, which will help to average out the noise from network effects.",
+          "is_correct": false,
+          "rationale": "This increases power but does not solve the systematic bias from contamination."
+        },
+        {
+          "key": "B",
+          "text": "Assign individual users randomly but exclude users who have connections to users in the opposite experimental group from the final analysis.",
+          "is_correct": false,
+          "rationale": "This introduces significant selection bias and invalidates the results."
+        },
+        {
+          "key": "C",
+          "text": "Run the experiment for a much longer duration to allow the network effects to stabilize across both groups before measuring the outcome.",
+          "is_correct": false,
+          "rationale": "A longer duration does not prevent contamination between groups."
+        },
+        {
+          "key": "D",
+          "text": "Use a cluster-based randomization approach, where entire user groups or communities are assigned to either the control or treatment condition.",
+          "is_correct": true,
+          "rationale": "This isolates groups and minimizes interference, providing a valid estimate."
+        },
+        {
+          "key": "E",
+          "text": "Use a pre-post analysis design, comparing user behavior before and after the feature launch without using a dedicated control group.",
+          "is_correct": false,
+          "rationale": "This is not an A/B test and cannot separate feature effects from seasonality."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "When explaining a single, high-stakes prediction from a complex black-box model to non-technical stakeholders, which technique is most appropriate and interpretable?",
+      "explanation": "Local explainability methods like LIME and SHAP are designed to explain individual predictions. They identify the features that contributed most to a particular outcome, providing a clear, instance-specific justification that is accessible to non-technical audiences.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use a local explainer like LIME or SHAP to generate a simplified view showing the key features that drove that specific prediction.",
+          "is_correct": true,
+          "rationale": "This provides a local, instance-specific, and interpretable explanation."
+        },
+        {
+          "key": "B",
+          "text": "Present the global feature importance plot for the entire model, showing which variables are most influential on average across all predictions.",
+          "is_correct": false,
+          "rationale": "This explains the model globally, not a single specific prediction."
+        },
+        {
+          "key": "C",
+          "text": "Provide the raw prediction probability score along with the model's overall accuracy, precision, and recall metrics from the test set.",
+          "is_correct": false,
+          "rationale": "Overall metrics do not explain the reasoning behind one prediction."
+        },
+        {
+          "key": "D",
+          "text": "Detail the mathematical architecture of the model, including its layers, activation functions, and the optimization algorithm used during its training phase.",
+          "is_correct": false,
+          "rationale": "This is too technical and explains 'how' not 'why' for a specific case."
+        },
+        {
+          "key": "E",
+          "text": "Show a partial dependence plot for the top three most important features to illustrate their marginal effect on the model's output.",
+          "is_correct": false,
+          "rationale": "This shows average feature effects, not their impact on one instance."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "You are asked by leadership to \"improve user retention.\" What is the most critical first step you should take before building any predictive models?",
+      "explanation": "Before any technical work, a data scientist must collaborate with stakeholders to translate a vague business goal into a specific, measurable problem. Defining the target metric and understanding the business context ensures the subsequent modeling work is relevant and impactful.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately start gathering all available user data and begin exploratory data analysis to find interesting patterns related to user activity.",
+          "is_correct": false,
+          "rationale": "This lacks focus and a clear objective before analysis begins."
+        },
+        {
+          "key": "B",
+          "text": "Research and benchmark state-of-the-art churn prediction models from recent academic papers to select the best possible algorithm for the task.",
+          "is_correct": false,
+          "rationale": "This jumps to a solution before the problem is fully defined."
+        },
+        {
+          "key": "C",
+          "text": "Work with stakeholders to define a precise, quantifiable metric for retention and identify key business levers that can be influenced.",
+          "is_correct": true,
+          "rationale": "This correctly prioritizes problem formulation and metric definition."
+        },
+        {
+          "key": "D",
+          "text": "Build a simple baseline model using logistic regression to quickly establish an initial performance benchmark for more complex future models.",
+          "is_correct": false,
+          "rationale": "Building a model is premature without a clear, defined target metric."
+        },
+        {
+          "key": "E",
+          "text": "Set up a data pipeline to stream user interaction events into a data lake for real-time feature engineering and model training.",
+          "is_correct": false,
+          "rationale": "This focuses on infrastructure before the core business problem is understood."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "How does Propensity Score Matching (PSM) primarily attempt to estimate the causal effect of a treatment in observational studies?",
+      "explanation": "PSM aims to mimic a randomized controlled trial by creating treatment and control groups that are balanced on observed covariates, thus reducing selection bias when estimating treatment effects from non-randomized data.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It uses instrumental variables that are correlated with the treatment but not the outcome, except through the treatment itself.",
+          "is_correct": false,
+          "rationale": "This describes the Instrumental Variable (IV) method, not Propensity Score Matching."
+        },
+        {
+          "key": "B",
+          "text": "It analyzes time-series data before and after an intervention to observe changes in the outcome variable over time.",
+          "is_correct": false,
+          "rationale": "This describes an Interrupted Time Series (ITS) analysis, a different causal inference technique."
+        },
+        {
+          "key": "C",
+          "text": "It creates pseudo-randomized groups by matching treated and control units with similar probabilities of receiving the treatment.",
+          "is_correct": true,
+          "rationale": "This correctly defines the core mechanism of PSM to balance covariates between groups."
+        },
+        {
+          "key": "D",
+          "text": "It models the outcome variable directly as a function of the treatment and covariates, assuming a specific functional form.",
+          "is_correct": false,
+          "rationale": "This describes standard regression modeling, which doesn't inherently create balanced comparison groups."
+        },
+        {
+          "key": "E",
+          "text": "It compares outcomes for individuals just above and below a specific cutoff point for receiving the treatment.",
+          "is_correct": false,
+          "rationale": "This describes a Regression Discontinuity Design (RDD), not Propensity Score Matching."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "When deploying a new machine learning model to production, what is the primary advantage of using a canary release strategy?",
+      "explanation": "A canary release is a risk-mitigation strategy. By exposing a new model to a small percentage of traffic, teams can detect potential issues in a live environment without impacting the entire user base.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It deploys multiple model versions in parallel and directs traffic to the best-performing one based on A/B testing results.",
+          "is_correct": false,
+          "rationale": "This describes a champion-challenger or multi-armed bandit setup, not a canary release."
+        },
+        {
+          "key": "B",
+          "text": "It gradually rolls out the new model to a small subset of users, minimizing risk by monitoring performance before a full release.",
+          "is_correct": true,
+          "rationale": "This correctly identifies the core benefit of canary releases: gradual rollout for risk mitigation."
+        },
+        {
+          "key": "C",
+          "text": "It allows for the immediate and complete replacement of the old model with the new one for all users simultaneously.",
+          "is_correct": false,
+          "rationale": "This describes a big bang or direct deployment, which is the opposite of a canary release."
+        },
+        {
+          "key": "D",
+          "text": "It automatically reverts the deployment to the previous stable version if any critical system metric exceeds predefined thresholds.",
+          "is_correct": false,
+          "rationale": "This describes an automated rollback, which is a feature often used with canary releases but not its primary advantage."
+        },
+        {
+          "key": "E",
+          "text": "It completely isolates the new model in a separate environment for extensive testing before any user traffic is directed to it.",
+          "is_correct": false,
+          "rationale": "This describes a staging or testing environment, which precedes any production deployment strategy."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "In the context of Transformer models like BERT, what is the fundamental purpose of the multi-head self-attention mechanism?",
+      "explanation": "The self-attention mechanism enables a model to create context-aware representations by looking at other words in the sequence and determining which are most relevant for understanding the current word.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It allows the model to weigh the importance of different words in the input sequence when encoding a specific word.",
+          "is_correct": true,
+          "rationale": "This is the core function of self-attention: creating context-aware word representations."
+        },
+        {
+          "key": "B",
+          "text": "It generates word embeddings by considering the local context of only adjacent words within a fixed window size.",
+          "is_correct": false,
+          "rationale": "This describes older methods like Word2Vec's CBOW or Skip-gram, not global self-attention."
+        },
+        {
+          "key": "C",
+          "text": "It uses recurrent neural network cells to process sequential data and maintain a hidden state throughout the input sequence.",
+          "is_correct": false,
+          "rationale": "Transformers were designed to replace RNNs and do not use recurrent cells for sequence processing."
+        },
+        {
+          "key": "D",
+          "text": "It applies convolutional filters of varying sizes to the input sequence to capture different n-gram patterns effectively.",
+          "is_correct": false,
+          "rationale": "This describes the architecture of a Convolutional Neural Network (CNN) for text, not a Transformer."
+        },
+        {
+          "key": "E",
+          "text": "It reduces the dimensionality of the input embeddings using principal component analysis before feeding them into the network.",
+          "is_correct": false,
+          "rationale": "This describes a preprocessing step, not the function of the self-attention mechanism itself."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "When running an online experiment with multiple variants and metrics, what is the most significant statistical issue that must be addressed?",
+      "explanation": "Testing multiple variants or metrics increases the probability of finding a statistically significant result by chance alone. Corrections like the Bonferroni correction or controlling the False Discovery Rate are needed to manage this inflated risk.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Simpson's paradox, where a trend appears in different groups of data but disappears or reverses when combined.",
+          "is_correct": false,
+          "rationale": "While a potential issue in data analysis, it's not the primary problem of multiple testing."
+        },
+        {
+          "key": "B",
+          "text": "The problem of multicollinearity, where independent variables in a model are highly correlated with each other.",
+          "is_correct": false,
+          "rationale": "This is a concern for regression modeling, not the core statistical challenge of A/B testing."
+        },
+        {
+          "key": "C",
+          "text": "The multiple comparisons problem, which inflates the Type I error rate (false positives) when testing many hypotheses simultaneously.",
+          "is_correct": true,
+          "rationale": "This is the central statistical challenge that arises from testing multiple hypotheses in one experiment."
+        },
+        {
+          "key": "D",
+          "text": "The risk of overfitting the model to the training data, leading to poor generalization on unseen test data.",
+          "is_correct": false,
+          "rationale": "Overfitting is a machine learning concept, not the primary statistical issue in hypothesis testing."
+        },
+        {
+          "key": "E",
+          "text": "The cold start problem, where the system cannot draw inferences for users about which it has not yet gathered sufficient information.",
+          "is_correct": false,
+          "rationale": "This is a common problem in recommender systems, not a statistical issue in A/B testing."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Which type of bias is introduced when the data collection process systematically excludes certain subgroups from the population being studied?",
+      "explanation": "Sampling bias occurs when the method of data collection results in a sample that does not accurately reflect the characteristics of the true population, leading to models that generalize poorly and may be unfair.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Measurement bias, which occurs when the tool used to measure a feature consistently over- or under-states the true value.",
+          "is_correct": false,
+          "rationale": "This bias relates to inaccuracies in measurement tools, not the composition of the sample."
+        },
+        {
+          "key": "B",
+          "text": "Sampling bias, which arises when the sample collected is not representative of the target population, leading to skewed results.",
+          "is_correct": true,
+          "rationale": "This correctly defines the bias resulting from a non-representative data collection process."
+        },
+        {
+          "key": "C",
+          "text": "Survivorship bias, where the analysis focuses only on successful outcomes, ignoring failures that are no longer visible.",
+          "is_correct": false,
+          "rationale": "This is a specific form of sampling bias but doesn't cover all systematic exclusions."
+        },
+        {
+          "key": "D",
+          "text": "Algorithmic bias, where a model's systematic errors create unfair outcomes for specific demographic groups after it has been trained.",
+          "is_correct": false,
+          "rationale": "This is an outcome of a biased process or data, not the data collection issue itself."
+        },
+        {
+          "key": "E",
+          "text": "Confirmation bias, which is the tendency to favor information that confirms pre-existing beliefs or hypotheses during analysis.",
+          "is_correct": false,
+          "rationale": "This is a cognitive bias in interpretation, not a flaw in the data collection process."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When estimating the causal effect of a non-randomized treatment on an outcome, what is the primary goal of using propensity score matching?",
+      "explanation": "Propensity score matching aims to create comparable groups by matching individuals with similar probabilities of receiving treatment, thereby reducing selection bias from observed confounders. This helps isolate the treatment's true effect.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To balance the distribution of observed covariates between the treatment and control groups, mimicking a randomized experiment.",
+          "is_correct": true,
+          "rationale": "This correctly describes the core purpose of balancing covariates to reduce selection bias."
+        },
+        {
+          "key": "B",
+          "text": "To increase the statistical power of the analysis by artificially inflating the sample size of the smaller group.",
+          "is_correct": false,
+          "rationale": "Matching often reduces sample size, it does not inflate it to increase power."
+        },
+        {
+          "key": "C",
+          "text": "To directly model the outcome variable as a function of the treatment, ignoring all potential confounding variables.",
+          "is_correct": false,
+          "rationale": "The entire purpose of the method is to account for confounders, not ignore them."
+        },
+        {
+          "key": "D",
+          "text": "To identify and remove all unobserved confounding variables that might be biasing the treatment effect estimate.",
+          "is_correct": false,
+          "rationale": "Propensity scores can only account for observed confounders, not unobserved ones."
+        },
+        {
+          "key": "E",
+          "text": "To transform non-linear relationships between covariates and the outcome into linear ones for easier modeling.",
+          "is_correct": false,
+          "rationale": "This describes a data transformation technique, not the goal of propensity score matching."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "A deployed machine learning model's predictive performance is degrading over time due to concept drift. What is the most effective long-term strategy?",
+      "explanation": "Concept drift requires a systematic approach. Continuous monitoring detects shifts, and an automated retraining pipeline ensures the model stays current with the evolving data distribution, maintaining performance over the long term.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately rolling back to a previous, more stable version of the model and halting all future updates indefinitely.",
+          "is_correct": false,
+          "rationale": "This is a temporary fix and does not address the underlying data evolution."
+        },
+        {
+          "key": "B",
+          "text": "Manually adjusting the model's prediction threshold on a daily basis to compensate for the observed performance degradation.",
+          "is_correct": false,
+          "rationale": "This is a reactive, unscalable approach that doesn't fix the core model."
+        },
+        {
+          "key": "C",
+          "text": "Implementing a monitoring system to detect data distribution shifts and establishing a pipeline for automated model retraining.",
+          "is_correct": true,
+          "rationale": "This provides a robust, scalable, and proactive solution to concept drift."
+        },
+        {
+          "key": "D",
+          "text": "Increasing the complexity of the model architecture, hoping it will automatically adapt to the new data patterns.",
+          "is_correct": false,
+          "rationale": "Increasing complexity without retraining on new data is unlikely to solve the problem."
+        },
+        {
+          "key": "E",
+          "text": "Discarding the current model entirely and starting a new research project to build a completely different type of model.",
+          "is_correct": false,
+          "rationale": "This is an extreme measure; an iterative retraining process is more practical."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "In the context of Transformer architectures like BERT, what is the primary mechanism that enables the model to capture long-range dependencies in text?",
+      "explanation": "The self-attention mechanism is the core innovation of Transformers. It allows every token to directly attend to every other token in the sequence, enabling the model to weigh their importance and capture dependencies regardless of their distance.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The recurrent neural network (RNN) layers that process the input sequence token by token while maintaining a hidden state.",
+          "is_correct": false,
+          "rationale": "Transformers replace recurrent layers with attention, specifically to overcome RNN limitations."
+        },
+        {
+          "key": "B",
+          "text": "The convolutional neural network (CNN) filters that slide over input embeddings to capture local n-gram patterns effectively.",
+          "is_correct": false,
+          "rationale": "CNNs are good for local patterns, not long-range dependencies like attention."
+        },
+        {
+          "key": "C",
+          "text": "The positional encoding vectors that are added to the input embeddings to give the model a sense of token order.",
+          "is_correct": false,
+          "rationale": "Positional encodings provide sequence order information but don't capture dependencies themselves."
+        },
+        {
+          "key": "D",
+          "text": "The static, pre-trained word embeddings like Word2Vec that provide initial vector representations for each individual token.",
+          "is_correct": false,
+          "rationale": "These are inputs; the architecture's mechanism is what captures the dependencies."
+        },
+        {
+          "key": "E",
+          "text": "The self-attention mechanism, which computes a weighted representation of all tokens in the sequence for each individual token.",
+          "is_correct": true,
+          "rationale": "Self-attention directly connects all tokens, allowing it to model long-range dependencies."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "When running dozens of A/B tests simultaneously on the same user base, what is the most significant statistical problem that needs to be addressed?",
+      "explanation": "Each statistical test has a chance of a false positive (Type I error). When many tests are run, the overall probability of at least one false positive increases significantly, requiring corrections like Bonferroni or FDR.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Simpson's paradox, where trends appear in different groups of data but disappear when these groups are combined.",
+          "is_correct": false,
+          "rationale": "Simpson's paradox relates to aggregation, not the number of tests being run."
+        },
+        {
+          "key": "B",
+          "text": "The multiple comparisons problem, where running many tests inflates the probability of observing a significant result by chance.",
+          "is_correct": true,
+          "rationale": "This is the key issue; more tests increase the family-wise error rate."
+        },
+        {
+          "key": "C",
+          "text": "The issue of data leakage, where information from outside the training dataset is used to create the model's features.",
+          "is_correct": false,
+          "rationale": "Data leakage is a modeling problem, not an issue specific to running multiple experiments."
+        },
+        {
+          "key": "D",
+          "text": "The cold start problem, where the system cannot draw inferences for new users about which it has no data.",
+          "is_correct": false,
+          "rationale": "The cold start problem is relevant to recommender systems, not A/B testing methodology."
+        },
+        {
+          "key": "E",
+          "text": "The problem of multicollinearity, where predictor variables in a model are highly correlated with one another.",
+          "is_correct": false,
+          "rationale": "Multicollinearity is a concern in regression modeling, not the design of multiple A/B tests."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "What fundamental principle allows distributed computing frameworks like Apache Spark to efficiently process massive datasets on a cluster of machines?",
+      "explanation": "Distributed frameworks like Spark achieve scalability by breaking down large datasets and computations into smaller pieces. These pieces are distributed across a cluster, and tasks are run in parallel, dramatically speeding up processing time.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Storing the entire dataset in the memory of a single, powerful master node to minimize disk I/O operations.",
+          "is_correct": false,
+          "rationale": "This describes a single-node, in-memory system, which is not distributed or scalable."
+        },
+        {
+          "key": "B",
+          "text": "Partitioning the data across multiple worker nodes and executing computations in parallel on these smaller, distributed data chunks.",
+          "is_correct": true,
+          "rationale": "Parallel processing on partitioned data is the core concept of distributed computing."
+        },
+        {
+          "key": "C",
+          "text": "Relying on a centralized database to manage all data transformations and aggregations through complex SQL queries.",
+          "is_correct": false,
+          "rationale": "While Spark can use SQL, its power comes from distributed execution, not a central database."
+        },
+        {
+          "key": "D",
+          "text": "Compressing the dataset using advanced algorithms before loading it, allowing it to fit into a single machine's RAM.",
+          "is_correct": false,
+          "rationale": "Compression helps, but it doesn't enable distributed processing of massive datasets."
+        },
+        {
+          "key": "E",
+          "text": "Sequentially processing each row of the dataset on one machine at a time to ensure data consistency and integrity.",
+          "is_correct": false,
+          "rationale": "This describes serial processing, which is the opposite of how Spark achieves speed."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "When evaluating the impact of a non-randomized marketing campaign on sales, what is the primary goal of using propensity score matching?",
+      "explanation": "Propensity score matching attempts to create a quasi-experimental setting by matching treated individuals with untreated individuals who have similar probabilities of receiving the treatment, thereby reducing selection bias and allowing for a more accurate causal estimate.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To create a control group that is statistically similar to the treatment group on observed covariates, thereby reducing selection bias.",
+          "is_correct": true,
+          "rationale": "This correctly identifies the core purpose of propensity score matching: to balance covariates and reduce selection bias."
+        },
+        {
+          "key": "B",
+          "text": "To directly measure the long-term revenue lift by isolating campaign effects from seasonal trends present in the sales data.",
+          "is_correct": false,
+          "rationale": "This describes time-series decomposition or other causal impact methods, not propensity score matching specifically."
+        },
+        {
+          "key": "C",
+          "text": "To increase the statistical power of the analysis by synthetically generating more data points for the smaller user cohort.",
+          "is_correct": false,
+          "rationale": "This describes data augmentation techniques like SMOTE, which is unrelated to creating a valid control group."
+        },
+        {
+          "key": "D",
+          "text": "To identify the most influential features within the dataset that predict a customer's likelihood of making a future purchase.",
+          "is_correct": false,
+          "rationale": "This is the goal of feature importance analysis within a predictive model, not the goal of matching for causal inference."
+        },
+        {
+          "key": "E",
+          "text": "To replace traditional A/B testing frameworks with a more computationally efficient method for real-time campaign performance analysis.",
+          "is_correct": false,
+          "rationale": "Propensity score matching is an observational study method, not a replacement for randomized controlled trials like A/B tests."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "Your team is responsible for a critical fraud detection model in production. What is the most robust strategy for managing concept drift?",
+      "explanation": "A robust strategy involves continuous monitoring of model performance and data distributions, with automated triggers for retraining or recalibration when significant drift is detected. This ensures the model remains accurate and adapts to changing fraud patterns over time.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Implement automated monitoring of data distributions and model performance metrics with triggers for retraining the model on new data.",
+          "is_correct": true,
+          "rationale": "This proactive approach combines monitoring with automated action, which is the most robust MLOps practice for managing drift."
+        },
+        {
+          "key": "B",
+          "text": "Schedule a mandatory full model rebuild every six months regardless of its performance to ensure it uses the latest data.",
+          "is_correct": false,
+          "rationale": "This is a reactive and inefficient strategy that may retrain too late or unnecessarily, ignoring actual performance degradation."
+        },
+        {
+          "key": "C",
+          "text": "Rely solely on user feedback and manual escalations from the operations team to identify when the model is underperforming.",
+          "is_correct": false,
+          "rationale": "This is a purely manual and unreliable method that fails to detect subtle or gradual performance degradation in a timely manner."
+        },
+        {
+          "key": "D",
+          "text": "Freeze the current model version permanently to maintain a consistent and predictable baseline for all future performance comparisons.",
+          "is_correct": false,
+          "rationale": "This ignores the dynamic nature of data and ensures the model will eventually become obsolete and perform poorly due to drift."
+        },
+        {
+          "key": "E",
+          "text": "Deploy multiple challenger models in parallel and manually select the best performing one at the end of each business quarter.",
+          "is_correct": false,
+          "rationale": "While a valid strategy, it is less robust than continuous automated monitoring and lacks the agility to respond quickly to drift."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "In the context of large transformer models like GPT, what is the primary advantage of using a multi-head attention mechanism over single-head attention?",
+      "explanation": "Multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions. This enhances its ability to focus on different aspects of the input sequence simultaneously, capturing a richer set of relationships.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It allows the model to focus on different parts of the input sequence simultaneously from different representational subspaces.",
+          "is_correct": true,
+          "rationale": "This correctly describes how multi-head attention captures diverse relationships by attending to different feature subspaces in parallel."
+        },
+        {
+          "key": "B",
+          "text": "It significantly reduces the computational cost and memory requirements during model training by simplifying the attention calculation process.",
+          "is_correct": false,
+          "rationale": "Multi-head attention actually increases computational cost compared to a single head with the same total dimension."
+        },
+        {
+          "key": "C",
+          "text": "It enables the model to process sequences of infinite length without suffering from catastrophic forgetting or vanishing gradients.",
+          "is_correct": false,
+          "rationale": "This describes a benefit of architectures like Transformers-XL or other memory-based models, not multi-head attention itself."
+        },
+        {
+          "key": "D",
+          "text": "It primarily serves as a regularization technique to prevent the model from overfitting on smaller, less diverse training datasets.",
+          "is_correct": false,
+          "rationale": "While it can have a regularizing effect, its main purpose is to improve the model's capacity to represent complex dependencies."
+        },
+        {
+          "key": "E",
+          "text": "It replaces the need for positional encodings by inherently understanding the order and structure of tokens within the input.",
+          "is_correct": false,
+          "rationale": "Positional encodings are still required in standard transformer architectures to provide sequence order information to the model."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "You are designing an A/B test for a new feature on a social media platform. How would you best address potential network interference effects?",
+      "explanation": "Network interference, or spillover, occurs when the treatment group's behavior affects the control group. Cluster-based randomization (e.g., by geography or user graph cluster) is a standard method to isolate these effects and obtain an unbiased treatment effect estimate.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Implement cluster-based randomization, where entire user groups or geographies are assigned to either the treatment or control condition.",
+          "is_correct": true,
+          "rationale": "This is the standard, correct approach to minimize contamination between treatment and control groups when network effects are present."
+        },
+        {
+          "key": "B",
+          "text": "Use a Bonferroni correction to adjust p-values, which accounts for the multiple comparisons being made across different user segments.",
+          "is_correct": false,
+          "rationale": "This addresses the multiple comparisons problem, not network interference, which is about biased effect estimates due to spillover."
+        },
+        {
+          "key": "C",
+          "text": "Shorten the duration of the experiment significantly to minimize the time available for users to influence one another's behavior.",
+          "is_correct": false,
+          "rationale": "This may reduce the magnitude of interference but also prevents measuring the true, long-term effect of the feature."
+        },
+        {
+          "key": "D",
+          "text": "Only include users who have a very small number of connections to reduce the probability of cross-group interaction.",
+          "is_correct": false,
+          "rationale": "This introduces significant selection bias and means the results would not generalize to the broader, more connected user base."
+        },
+        {
+          "key": "E",
+          "text": "Double the size of the control group to ensure it remains a stable baseline despite any potential external influence.",
+          "is_correct": false,
+          "rationale": "Increasing sample size does not fix the systematic bias introduced by interference between the treatment and control groups."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "When building a machine learning model on sensitive user data subject to GDPR, what is the primary benefit of implementing differential privacy?",
+      "explanation": "Differential privacy provides a strong, mathematical guarantee that the inclusion or exclusion of any single individual's data in the training set has a negligible effect on the model's output. This formally protects individual privacy against inference attacks.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It provides a formal mathematical guarantee of privacy by ensuring model outputs are not significantly influenced by any single individual's data.",
+          "is_correct": true,
+          "rationale": "This is the core definition and benefit of differential privacy, providing a provable privacy guarantee."
+        },
+        {
+          "key": "B",
+          "text": "It encrypts the entire dataset before training, making it impossible for data scientists to view the raw, sensitive information directly.",
+          "is_correct": false,
+          "rationale": "This describes techniques like homomorphic encryption, not differential privacy, which operates by adding calibrated noise."
+        },
+        {
+          "key": "C",
+          "text": "It completely eliminates all sources of bias from the training data, leading to a perfectly fair and equitable predictive model.",
+          "is_correct": false,
+          "rationale": "Differential privacy is a privacy technique, not a fairness technique. It does not inherently remove algorithmic bias."
+        },
+        {
+          "key": "D",
+          "text": "It accelerates the model training process by compressing the dataset into a smaller, more efficient format without losing predictive power.",
+          "is_correct": false,
+          "rationale": "Implementing differential privacy typically adds computational overhead and can slightly reduce model accuracy; it does not accelerate training."
+        },
+        {
+          "key": "E",
+          "text": "It automatically anonymizes user data by replacing personally identifiable information with generic placeholder values before any analysis is performed.",
+          "is_correct": false,
+          "rationale": "This describes simple pseudonymization or anonymization, which does not offer the formal privacy guarantees of differential privacy."
+        }
+      ]
+    }
+  ]
+}

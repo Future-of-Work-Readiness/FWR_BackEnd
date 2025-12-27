@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "A young client in a low tax bracket expects significant income growth. Which retirement plan contribution strategy is most advantageous for them?",
+      "explanation": "For a client expecting higher future income and tax rates, paying taxes now on Roth contributions is more beneficial than deferring them, as future withdrawals will be completely tax-free.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Prioritize contributions to a Roth 401(k) to pay taxes now and enjoy tax-free withdrawals in their higher-earning future.",
+          "is_correct": true,
+          "rationale": "This strategy optimizes for expected higher future tax brackets."
+        },
+        {
+          "key": "B",
+          "text": "Maximize contributions to a Traditional 401(k) to receive the largest possible immediate tax deduction on their current income.",
+          "is_correct": false,
+          "rationale": "This is less advantageous if future tax rates will be higher."
+        },
+        {
+          "key": "C",
+          "text": "Advise splitting contributions evenly between Roth and Traditional 401(k)s to diversify their future tax liabilities regardless of income.",
+          "is_correct": false,
+          "rationale": "This is a hedge, not the most advantageous strategy given the client's situation."
+        },
+        {
+          "key": "D",
+          "text": "Recommend investing solely in a taxable brokerage account to maintain maximum liquidity for future opportunities and large purchases.",
+          "is_correct": false,
+          "rationale": "This approach forgoes significant tax advantages available in retirement accounts."
+        },
+        {
+          "key": "E",
+          "text": "Suggest using a non-deductible IRA, as it provides the simplest tax reporting structure for individuals with fluctuating incomes.",
+          "is_correct": false,
+          "rationale": "A non-deductible IRA is generally a last resort and less beneficial."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "A high-net-worth client wants to reduce their taxable estate while providing for their heirs. What is the primary benefit of using an irrevocable trust?",
+      "explanation": "The primary estate planning purpose of an irrevocable trust is to transfer assets out of the grantor's estate. This transfer reduces the estate's value, thereby minimizing potential estate tax obligations.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It removes assets from the client's taxable estate, potentially reducing or eliminating federal and state estate tax liability upon death.",
+          "is_correct": true,
+          "rationale": "Irrevocable trusts are a key tool for reducing estate tax exposure."
+        },
+        {
+          "key": "B",
+          "text": "It allows the client to retain full control and make changes to the trust's terms and beneficiaries at any time.",
+          "is_correct": false,
+          "rationale": "This describes a revocable trust; irrevocable trusts relinquish grantor control."
+        },
+        {
+          "key": "C",
+          "text": "It provides a guaranteed rate of return on all assets held within the trust, ensuring wealth preservation for future generations.",
+          "is_correct": false,
+          "rationale": "Trusts do not guarantee investment returns; they are subject to market risk."
+        },
+        {
+          "key": "D",
+          "text": "It completely shields all trust assets from creditors during the grantor's lifetime, offering unparalleled protection against all legal claims.",
+          "is_correct": false,
+          "rationale": "While offering some protection, it is not absolute against all claims."
+        },
+        {
+          "key": "E",
+          "text": "It simplifies the annual income tax filing process by consolidating all investment gains into a single, simple tax form.",
+          "is_correct": false,
+          "rationale": "Trusts have their own complex tax filing requirements (Form 1041)."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "When constructing a portfolio for a 45-year-old client with a moderate risk tolerance and a 20-year retirement horizon, what asset allocation is most appropriate?",
+      "explanation": "A 60/40 stock-to-bond allocation is a classic moderate portfolio. It provides significant potential for long-term growth from equities while the bond portion adds stability and reduces overall portfolio volatility, suiting the client's profile.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A balanced allocation of approximately 60% equities and 40% fixed income to capture growth while managing downside risk.",
+          "is_correct": true,
+          "rationale": "This mix aligns well with a moderate risk profile and long time horizon."
+        },
+        {
+          "key": "B",
+          "text": "An aggressive portfolio with 95% in growth stocks and technology ETFs to maximize returns over the long investment period.",
+          "is_correct": false,
+          "rationale": "This allocation is too aggressive for a stated moderate risk tolerance."
+        },
+        {
+          "key": "C",
+          "text": "A very conservative mix of 80% government bonds and 20% blue-chip stocks to prioritize capital preservation above all else.",
+          "is_correct": false,
+          "rationale": "This is too conservative and may not generate enough growth for retirement."
+        },
+        {
+          "key": "D",
+          "text": "A portfolio concentrated entirely in international emerging market funds to capitalize on global growth opportunities and currency fluctuations.",
+          "is_correct": false,
+          "rationale": "This lacks diversification and carries excessively high risk for a moderate profile."
+        },
+        {
+          "key": "E",
+          "text": "An income-focused strategy with 100% in high-yield corporate bonds and dividend-paying stocks for immediate cash flow generation.",
+          "is_correct": false,
+          "rationale": "This client is in the accumulation phase, not the income-generation phase."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Under the SECURE Act, what is the primary rule for most non-spouse beneficiaries who inherit a traditional IRA from an owner who died after 2019?",
+      "explanation": "The SECURE Act of 2019 eliminated the 'stretch IRA' provision for most non-spouse beneficiaries, replacing it with a 10-year rule. This rule mandates the full account balance be distributed by the end of the 10th year.",
+      "options": [
+        {
+          "key": "A",
+          "text": "They must withdraw the entire balance of the inherited IRA within 10 years following the year of the original owner's death.",
+          "is_correct": true,
+          "rationale": "This correctly states the 10-year rule established by the SECURE Act."
+        },
+        {
+          "key": "B",
+          "text": "They are permitted to stretch distributions over their own life expectancy, minimizing the annual tax impact for decades.",
+          "is_correct": false,
+          "rationale": "This 'stretch IRA' provision was eliminated for most beneficiaries by the SECURE Act."
+        },
+        {
+          "key": "C",
+          "text": "They must immediately liquidate the account and pay all associated income taxes in a single lump sum distribution.",
+          "is_correct": false,
+          "rationale": "A lump-sum distribution is an option, but it is not required."
+        },
+        {
+          "key": "D",
+          "text": "They can roll the inherited IRA directly into their own existing IRA, combining the funds for simplified management.",
+          "is_correct": false,
+          "rationale": "Only a surviving spouse beneficiary has the option to do this."
+        },
+        {
+          "key": "E",
+          "text": "They are required to take annual required minimum distributions (RMDs) based on the deceased owner's original RMD schedule.",
+          "is_correct": false,
+          "rationale": "The 10-year rule applies, though some exceptions for eligible designated beneficiaries exist."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "A client insists on investing 30% of their retirement portfolio in a single, highly volatile cryptocurrency. What is your most appropriate initial action?",
+      "explanation": "The planner's fiduciary duty is to provide sound advice and ensure the client understands all associated risks. Documenting the advice and the client's decision protects both parties and upholds professional standards without terminating the relationship.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Document the client's request and your strong recommendation against it, explaining the concentration risk and potential for significant loss.",
+          "is_correct": true,
+          "rationale": "This fulfills the duty to advise and creates a clear record."
+        },
+        {
+          "key": "B",
+          "text": "Refuse to execute the trade and immediately terminate the client relationship due to their unsuitable investment choice and high risk.",
+          "is_correct": false,
+          "rationale": "This is an extreme step and may not be necessary initially."
+        },
+        {
+          "key": "C",
+          "text": "Agree to the request without question, as your primary duty is to execute the client's direct instructions regardless of suitability.",
+          "is_correct": false,
+          "rationale": "This ignores the planner's fiduciary duty to act in the client's best interest."
+        },
+        {
+          "key": "D",
+          "text": "Suggest they invest even more in the cryptocurrency to demonstrate your confidence in their judgment and build a stronger relationship.",
+          "is_correct": false,
+          "rationale": "This is unethical and violates the duty to provide suitable advice."
+        },
+        {
+          "key": "E",
+          "text": "Execute the trade but only after they sign a waiver absolving you of all future liability for any potential losses.",
+          "is_correct": false,
+          "rationale": "While a waiver may be part of the process, the primary step is advising and documenting."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Under the Uniform Prudent Investor Act (UPIA), what is the most critical factor a trustee must consider when managing trust assets?",
+      "explanation": "The UPIA emphasizes a total portfolio approach. The trustee's primary duty is to manage assets based on an overall strategy that aligns with the trust's specific goals, risk tolerance, and distribution requirements.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The overall investment strategy, considering risk and return objectives reasonably suited to the trust's specific purposes and circumstances.",
+          "is_correct": true,
+          "rationale": "UPIA mandates a total portfolio approach, not evaluation of individual assets in isolation."
+        },
+        {
+          "key": "B",
+          "text": "Maximizing short-term capital gains to provide the highest possible immediate income for all current trust beneficiaries.",
+          "is_correct": false,
+          "rationale": "This approach neglects long-term growth and the needs of remaindermen, violating prudent management."
+        },
+        {
+          "key": "C",
+          "text": "Avoiding all forms of investment risk by exclusively holding government-issued bonds and cash equivalents within the portfolio.",
+          "is_correct": false,
+          "rationale": "Prudence requires managing risk, not complete avoidance, which can lead to insufficient growth."
+        },
+        {
+          "key": "D",
+          "text": "The individual performance of each asset in isolation, rather than its contribution to the overall portfolio's performance.",
+          "is_correct": false,
+          "rationale": "This is explicitly contrary to the modern portfolio theory principles embedded in the UPIA."
+        },
+        {
+          "key": "E",
+          "text": "Prioritizing the investment preferences of the most vocal beneficiary, even if it conflicts with the trust document's stated goals.",
+          "is_correct": false,
+          "rationale": "The trustee's duty is to the trust document and all beneficiaries, not just one."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "A client wants to minimize their current taxable income. Which retirement plan contribution would provide the most immediate tax deduction for them?",
+      "explanation": "Traditional 401(k) and IRA contributions are made with pre-tax dollars. This directly reduces the contributor's adjusted gross income (AGI) for the current tax year, resulting in an immediate tax deduction.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A contribution to a traditional 401(k) or traditional IRA, as these are made with pre-tax dollars, reducing current taxable income.",
+          "is_correct": true,
+          "rationale": "Contributions are pre-tax, directly lowering the current year's adjusted gross income and tax liability."
+        },
+        {
+          "key": "B",
+          "text": "A contribution to a Roth IRA, which offers tax-free withdrawals in retirement but is funded with after-tax dollars.",
+          "is_correct": false,
+          "rationale": "Roth contributions are made after-tax and do not provide a current-year tax deduction."
+        },
+        {
+          "key": "C",
+          "text": "Purchasing a non-qualified variable annuity, which provides tax-deferred growth but no upfront tax deduction on the initial contribution.",
+          "is_correct": false,
+          "rationale": "Non-qualified annuities are funded with after-tax money and offer no immediate tax deduction."
+        },
+        {
+          "key": "D",
+          "text": "Investing in municipal bonds within a taxable brokerage account, as the interest income is federally tax-exempt.",
+          "is_correct": false,
+          "rationale": "While income may be tax-exempt, the investment itself does not generate a tax deduction."
+        },
+        {
+          "key": "E",
+          "text": "Rolling over an existing 401(k) into an IRA, which is a non-taxable event but does not count as a new contribution.",
+          "is_correct": false,
+          "rationale": "A rollover is a transfer of existing assets and does not create a new deduction."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "What is the key distinction between the fiduciary standard and the suitability standard when providing financial advice to a client?",
+      "explanation": "The fiduciary standard imposes a higher legal and ethical obligation, requiring the advisor to place the client's best interests above all else. The suitability standard simply requires that a recommendation is suitable for the client's situation.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The fiduciary standard legally requires acting in the client's absolute best interest, while the suitability standard only requires recommendations be appropriate.",
+          "is_correct": true,
+          "rationale": "This correctly identifies the core difference: 'best interest' (fiduciary) versus 'appropriate' (suitability)."
+        },
+        {
+          "key": "B",
+          "text": "The suitability standard applies only to insurance products, whereas the fiduciary standard applies exclusively to investment management services.",
+          "is_correct": false,
+          "rationale": "Both standards can apply across different products and services depending on the advisor's registration."
+        },
+        {
+          "key": "C",
+          "text": "Fiduciary advisors are compensated through commissions, while suitability advisors are always compensated with a flat fee for their services.",
+          "is_correct": false,
+          "rationale": "Compensation models are not strictly tied to the standard of care; the opposite is often true."
+        },
+        {
+          "key": "D",
+          "text": "The suitability standard mandates a more comprehensive financial plan, whereas the fiduciary standard focuses only on single investment transactions.",
+          "is_correct": false,
+          "rationale": "The fiduciary standard generally requires a more holistic and comprehensive view of the client's situation."
+        },
+        {
+          "key": "E",
+          "text": "There is no significant legal or ethical difference; the terms are used interchangeably within the financial services industry today.",
+          "is_correct": false,
+          "rationale": "There are significant, legally defined differences between these two important standards of care."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "For a high-net-worth client concerned about estate taxes, what is the primary advantage of establishing an Irrevocable Life Insurance Trust (ILIT)?",
+      "explanation": "An ILIT's main purpose is to own a life insurance policy, thereby removing the proceeds from the insured's gross estate. This helps minimize federal and state estate taxes while providing liquidity for the estate's obligations.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It removes the life insurance death benefit from the client's taxable estate, providing liquidity to heirs free of estate taxes.",
+          "is_correct": true,
+          "rationale": "This is the core function of an ILIT for estate tax planning purposes."
+        },
+        {
+          "key": "B",
+          "text": "It allows the client to change beneficiaries and policy terms at any time without needing legal or trustee approval.",
+          "is_correct": false,
+          "rationale": "The trust is irrevocable, meaning the grantor gives up control over these aspects."
+        },
+        {
+          "key": "C",
+          "text": "It provides a guaranteed stream of income for the client during their retirement years, funded by the policy's cash value.",
+          "is_correct": false,
+          "rationale": "The grantor cannot directly benefit from the trust assets without risking estate inclusion."
+        },
+        {
+          "key": "D",
+          "text": "It ensures the life insurance policy's cash value can be accessed by the client's creditors to settle outstanding debts.",
+          "is_correct": false,
+          "rationale": "A properly structured ILIT typically provides asset protection from the grantor's creditors."
+        },
+        {
+          "key": "E",
+          "text": "It simplifies the probate process by making the life insurance policy a publicly recorded asset for all heirs to view.",
+          "is_correct": false,
+          "rationale": "Trusts, including ILITs, are private documents that avoid the public probate process."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "A client is hesitant to sell a losing stock, believing it will eventually recover, despite poor fundamentals. This behavior exemplifies which cognitive bias?",
+      "explanation": "The disposition effect describes the specific reluctance to realize losses (sell losers) and the eagerness to realize gains (sell winners). This client is holding a loser, hoping for a rebound, which is a classic example.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The disposition effect, which is the tendency for investors to sell assets that have increased in value while holding losing assets.",
+          "is_correct": true,
+          "rationale": "This accurately describes the behavior of holding losers too long and selling winners too soon."
+        },
+        {
+          "key": "B",
+          "text": "Confirmation bias, where the client actively seeks out information that exclusively supports their pre-existing belief about the company's potential.",
+          "is_correct": false,
+          "rationale": "While possibly related, the core action of not selling a loser defines the disposition effect."
+        },
+        {
+          "key": "C",
+          "text": "Recency bias, which involves giving too much weight to the most recent market events when making investment decisions.",
+          "is_correct": false,
+          "rationale": "The client is ignoring recent poor performance, which is the opposite of recency bias."
+        },
+        {
+          "key": "D",
+          "text": "Anchoring bias, where the client is overly influenced by the initial purchase price of the stock when evaluating its current value.",
+          "is_correct": false,
+          "rationale": "Anchoring is a factor, but the disposition effect specifically describes the selling/holding behavior."
+        },
+        {
+          "key": "E",
+          "text": "Herding behavior, which is the tendency for an individual to follow the actions of a larger group of investors.",
+          "is_correct": false,
+          "rationale": "The client's decision is based on their own attachment to the stock, not group action."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When advising a high-net-worth client, what is the primary tax advantage of establishing an Irrevocable Life Insurance Trust (ILIT)?",
+      "explanation": "The main purpose of an ILIT is to own a life insurance policy outside of the insured's estate. This ensures the death benefit is not included in the taxable estate, preserving more wealth for heirs and providing liquidity.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The death benefit proceeds are excluded from the deceased's gross estate, thus avoiding federal and state estate taxes on the payout.",
+          "is_correct": true,
+          "rationale": "ILITs remove life insurance proceeds from the taxable estate."
+        },
+        {
+          "key": "B",
+          "text": "It allows the client to change beneficiaries at any time, providing maximum flexibility for their evolving family circumstances and needs.",
+          "is_correct": false,
+          "rationale": "The trust is irrevocable, meaning changes are very restricted."
+        },
+        {
+          "key": "C",
+          "text": "Premiums paid into the trust are immediately tax-deductible for the grantor, reducing their current annual income tax liability.",
+          "is_correct": false,
+          "rationale": "Premiums are considered gifts and are not tax-deductible."
+        },
+        {
+          "key": "D",
+          "text": "The trust's investment earnings grow on a tax-deferred basis, which is similar to a traditional Individual Retirement Account (IRA).",
+          "is_correct": false,
+          "rationale": "This describes tax deferral, not the primary estate tax benefit."
+        },
+        {
+          "key": "E",
+          "text": "It completely eliminates the need for the client to go through the probate process for any of their held assets.",
+          "is_correct": false,
+          "rationale": "An ILIT only avoids probate for the assets it holds."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "A client is comparing two mutual funds with similar historical returns. How should you correctly use the Sharpe ratio to advise them?",
+      "explanation": "The Sharpe ratio measures return per unit of risk (volatility). A higher ratio is superior, indicating that an investment generated more return for the amount of risk it assumed, compared to a risk-free asset.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Recommend the fund with the higher Sharpe ratio, as it indicates better risk-adjusted performance for each unit of volatility undertaken.",
+          "is_correct": true,
+          "rationale": "A higher Sharpe ratio indicates better risk-adjusted returns."
+        },
+        {
+          "key": "B",
+          "text": "Suggest the fund with the lower Sharpe ratio because it implies a more conservative investment strategy with less overall market exposure.",
+          "is_correct": false,
+          "rationale": "A lower ratio means worse risk-adjusted performance, not necessarily conservatism."
+        },
+        {
+          "key": "C",
+          "text": "Explain that the Sharpe ratio is irrelevant if the funds have different expense ratios, which are the primary determinant of performance.",
+          "is_correct": false,
+          "rationale": "While important, expense ratios don't make the Sharpe ratio irrelevant."
+        },
+        {
+          "key": "D",
+          "text": "Advise that the fund with the higher beta is preferable, as the Sharpe ratio doesn't account for systematic market risk.",
+          "is_correct": false,
+          "rationale": "The Sharpe ratio uses total risk (standard deviation), which includes systematic risk."
+        },
+        {
+          "key": "E",
+          "text": "Focus solely on the fund's total return over the last five years, as historical performance is the most reliable future indicator.",
+          "is_correct": false,
+          "rationale": "Past performance does not guarantee future results; risk must be considered."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "A client retiring with significant company stock in their 401(k) asks about Net Unrealized Appreciation (NUA). What is the primary benefit?",
+      "explanation": "The NUA strategy allows an employee to take a lump-sum distribution of company stock. The cost basis is taxed as ordinary income, but the appreciation (NUA) is taxed at favorable long-term capital gains rates when sold.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It allows the appreciated value of the stock to be taxed at lower long-term capital gains rates instead of higher ordinary income rates.",
+          "is_correct": true,
+          "rationale": "NUA provides preferential tax treatment on stock appreciation."
+        },
+        {
+          "key": "B",
+          "text": "It completely eliminates all income tax liability on the company stock if it is held for at least five years after distribution.",
+          "is_correct": false,
+          "rationale": "Taxes are not eliminated, only treated more favorably."
+        },
+        {
+          "key": "C",
+          "text": "The strategy permits the stock to be rolled over into a Roth IRA without triggering any immediate tax consequences for the client.",
+          "is_correct": false,
+          "rationale": "A Roth rollover would be a taxable conversion event."
+        },
+        {
+          "key": "D",
+          "text": "It provides a step-up in cost basis for the shares at retirement, reducing future capital gains taxes for the client's heirs.",
+          "is_correct": false,
+          "rationale": "Step-up in basis typically occurs at death, not retirement."
+        },
+        {
+          "key": "E",
+          "text": "NUA allows for penalty-free withdrawals from the 401(k) plan for employees who are retiring before they reach the age of 55.",
+          "is_correct": false,
+          "rationale": "This describes the 'Rule of 55', which is a separate concept."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Under the fiduciary standard, what is the most critical obligation a financial planner has when recommending an investment product to a client?",
+      "explanation": "The fiduciary duty is the highest standard of care. It legally requires a planner to prioritize the client's interests above all else, including their own, ensuring advice is impartial and solely for the client's benefit.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To act in the client's best interest, placing their financial well-being ahead of the planner's own compensation or personal interests.",
+          "is_correct": true,
+          "rationale": "The core of fiduciary duty is prioritizing the client's best interest."
+        },
+        {
+          "key": "B",
+          "text": "To recommend only the products that have the lowest possible management fees, regardless of their suitability or potential performance for the client.",
+          "is_correct": false,
+          "rationale": "Cost is a factor, but suitability and overall benefit are paramount."
+        },
+        {
+          "key": "C",
+          "text": "To ensure the recommended product is merely suitable for the client's risk tolerance, without being the absolute best option available.",
+          "is_correct": false,
+          "rationale": "This describes the suitability standard, which is less strict than fiduciary duty."
+        },
+        {
+          "key": "D",
+          "text": "To provide a guaranteed rate of return on the investment that is backed by the firm's own capital reserves and insurance.",
+          "is_correct": false,
+          "rationale": "Fiduciary duty does not require guaranteeing returns on market-based products."
+        },
+        {
+          "key": "E",
+          "text": "To disclose all potential conflicts of interest only after the client has officially signed the advisory agreement and funded their account.",
+          "is_correct": false,
+          "rationale": "Conflicts of interest must be disclosed upfront, before engagement."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "During a severe market downturn, an anxious, risk-averse client calls wanting to sell all their equity holdings. What is your most appropriate initial response?",
+      "explanation": "The best initial step is to provide behavioral coaching. A planner should calm the client, re-ground the conversation in their established long-term plan, and discuss the risks of emotional decision-making before taking any drastic action.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Acknowledge their concerns, revisit their long-term financial goals, and explain the potential consequences of selling into a panic-driven market.",
+          "is_correct": true,
+          "rationale": "This response focuses on behavioral coaching and long-term strategy."
+        },
+        {
+          "key": "B",
+          "text": "Immediately execute the sell order as requested by the client to avoid any potential liability for further investment losses they might incur.",
+          "is_correct": false,
+          "rationale": "This is reactive and fails the duty to advise."
+        },
+        {
+          "key": "C",
+          "text": "Advise them to double their investment in equities to take advantage of the lower prices, following the principle of 'buy low'.",
+          "is_correct": false,
+          "rationale": "This ignores the client's stated anxiety and risk aversion."
+        },
+        {
+          "key": "D",
+          "text": "Tell the client that you cannot legally advise them to sell during such a volatile period and suggest they call back later.",
+          "is_correct": false,
+          "rationale": "This is an abdication of the planner's advisory role."
+        },
+        {
+          "key": "E",
+          "text": "Recommend shifting all assets into high-yield corporate bonds, as they offer better returns than cash and are safer than equities.",
+          "is_correct": false,
+          "rationale": "High-yield bonds carry significant credit risk and are not a safe haven."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "A business owner client wants to transfer their company to their children while minimizing estate taxes. What is the most suitable strategy to recommend?",
+      "explanation": "A Grantor Retained Annuity Trust (GRAT) is a sophisticated estate planning tool specifically designed to transfer wealth, like business shares, to beneficiaries while minimizing gift and estate tax liability by leveraging appreciation.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Recommend an immediate outright sale of the business to the children at a discounted price, which has significant tax implications.",
+          "is_correct": false,
+          "rationale": "An outright sale, even discounted, would likely trigger immediate capital gains taxes for the owner."
+        },
+        {
+          "key": "B",
+          "text": "Establish a Grantor Retained Annuity Trust (GRAT) to transfer future appreciation of the business shares to the children tax-efficiently.",
+          "is_correct": true,
+          "rationale": "A GRAT is an advanced strategy specifically designed for this purpose, minimizing gift and estate taxes."
+        },
+        {
+          "key": "C",
+          "text": "Suggest gifting small portions of the company annually under the annual gift tax exclusion, which is an extremely slow process.",
+          "is_correct": false,
+          "rationale": "This method is too slow for transferring a significant business interest and may not be feasible."
+        },
+        {
+          "key": "D",
+          "text": "Advise the owner to purchase a large life insurance policy to cover the estate tax liability upon their death.",
+          "is_correct": false,
+          "rationale": "This addresses paying the tax but does not actively work to reduce the taxable estate itself."
+        },
+        {
+          "key": "E",
+          "text": "Propose a simple will that bequeaths the business directly, which fails to address minimizing current or future estate taxes.",
+          "is_correct": false,
+          "rationale": "A simple will offers no strategic tax advantages and exposes the full value to estate tax."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "Under FINRA Rule 2111, what is the most critical component of the \"suitability\" obligation when recommending an investment strategy to a client?",
+      "explanation": "FINRA Rule 2111 requires a firm or associated person to have a reasonable basis to believe a recommended transaction or strategy is suitable for the customer, based on their specific investment profile.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ensuring the investment has the highest possible historical return regardless of the client's financial situation or risk tolerance.",
+          "is_correct": false,
+          "rationale": "This violates suitability by ignoring the client's specific profile and focusing solely on past performance."
+        },
+        {
+          "key": "B",
+          "text": "Prioritizing investments that generate the highest commission for the planner, as long as they are publicly traded securities.",
+          "is_correct": false,
+          "rationale": "This represents a conflict of interest and is a clear violation of the suitability rule."
+        },
+        {
+          "key": "C",
+          "text": "Conducting reasonable diligence to understand the client's investment profile, including age, objectives, financial situation, and risk tolerance.",
+          "is_correct": true,
+          "rationale": "This is the core requirement of the suitability rule: knowing your customer's complete financial profile."
+        },
+        {
+          "key": "D",
+          "text": "Recommending only investments that are guaranteed by the U.S. government to eliminate any potential for principal loss.",
+          "is_correct": false,
+          "rationale": "This might be too conservative for many clients and ignores their specific growth objectives and risk capacity."
+        },
+        {
+          "key": "E",
+          "text": "Focusing exclusively on the client's stated desire for aggressive growth without considering their actual capacity for risk.",
+          "is_correct": false,
+          "rationale": "Suitability requires balancing a client's desires with their actual financial situation and ability to withstand losses."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "A client is retiring with a large amount of highly appreciated company stock in their 401(k). What is the primary benefit of using a Net Unrealized Appreciation (NUA)?",
+      "explanation": "The NUA strategy allows an employee to take a lump-sum distribution of company stock from their plan, paying ordinary income tax only on the cost basis. The appreciation is taxed at capital gains rates when sold.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It allows the client to immediately sell the stock within the 401(k) and reinvest the proceeds tax-free into a diversified portfolio.",
+          "is_correct": false,
+          "rationale": "Selling stock within a 401(k) is a non-taxable event, but this is not the NUA strategy."
+        },
+        {
+          "key": "B",
+          "text": "It completely eliminates all future tax liability on both the cost basis and the appreciated value of the company stock.",
+          "is_correct": false,
+          "rationale": "NUA does not eliminate tax; it changes the character of the tax from ordinary income to capital gains."
+        },
+        {
+          "key": "C",
+          "text": "It enables the client to defer all required minimum distributions (RMDs) from the company stock portion of their account indefinitely.",
+          "is_correct": false,
+          "rationale": "NUA involves a distribution, and the stock held outside the IRA is not subject to RMDs, but this isn't the primary benefit."
+        },
+        {
+          "key": "D",
+          "text": "It allows the appreciated value of the stock to be taxed at lower long-term capital gains rates upon sale, rather than ordinary income rates.",
+          "is_correct": true,
+          "rationale": "The main advantage is the preferential tax treatment on the appreciation, which is taxed at lower capital gains rates."
+        },
+        {
+          "key": "E",
+          "text": "It provides a guaranteed stream of income for life, similar to an annuity, using the company stock as the underlying asset.",
+          "is_correct": false,
+          "rationale": "NUA is a tax strategy related to stock distribution, not an income-generating product like an annuity."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "When using financial planning software like eMoney, what is the primary purpose of running a Monte Carlo simulation for a client's retirement plan?",
+      "explanation": "Monte Carlo analysis is a statistical method used to model the probability of different outcomes in a process that cannot easily be predicted, making it ideal for testing the resilience of a long-term financial plan.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To calculate the exact, guaranteed rate of return the client's investment portfolio will achieve each year until their life expectancy.",
+          "is_correct": false,
+          "rationale": "Simulations cannot guarantee future returns; they model probabilities based on historical volatility and assumptions."
+        },
+        {
+          "key": "B",
+          "text": "To assess the probability of a financial plan's success by running thousands of simulations with variable market returns and inflation rates.",
+          "is_correct": true,
+          "rationale": "This correctly describes the function of a Monte Carlo simulation in financial planning software."
+        },
+        {
+          "key": "C",
+          "text": "To identify specific individual stocks and bonds that are mathematically guaranteed to outperform the broader market indices over time.",
+          "is_correct": false,
+          "rationale": "Financial planning software does not perform stock-picking or guarantee outperformance of individual securities."
+        },
+        {
+          "key": "D",
+          "text": "To automatically generate a legally binding estate plan, including wills and trusts, without the need for an attorney's involvement.",
+          "is_correct": false,
+          "rationale": "This software is for financial modeling, not for drafting legal documents, which requires an attorney."
+        },
+        {
+          "key": "E",
+          "text": "To determine the precise amount of life insurance coverage a client needs based on their current income and outstanding debt obligations.",
+          "is_correct": false,
+          "rationale": "While the software can do a needs analysis, the Monte Carlo function is specifically for probability testing."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "A long-term client couple disagrees on their risk tolerance for their joint investment portfolio. How should you professionally navigate this conflict to reach a consensus?",
+      "explanation": "A financial planner's role includes facilitating difficult conversations. Using objective tools and focusing on shared goals helps mediate disagreements and find a compromise that both clients can commit to, ensuring the relationship remains strong.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Side with the more aggressive spouse to maximize potential returns, assuming the other will eventually agree with the positive results.",
+          "is_correct": false,
+          "rationale": "This ignores one client's comfort level and is a breach of fiduciary duty to that individual."
+        },
+        {
+          "key": "B",
+          "text": "Immediately split the portfolio into two separate accounts with different risk profiles, which may complicate their shared financial goals.",
+          "is_correct": false,
+          "rationale": "This is a potential solution, but it shouldn't be the first step without attempting to find a consensus."
+        },
+        {
+          "key": "C",
+          "text": "Mediate a discussion using risk tolerance questionnaires and goal-based planning to find a blended, mutually agreeable asset allocation.",
+          "is_correct": true,
+          "rationale": "This approach facilitates communication, uses objective tools, and works toward a collaborative solution."
+        },
+        {
+          "key": "D",
+          "text": "Refuse to make any changes until they can come to a complete agreement on their own without your professional guidance.",
+          "is_correct": false,
+          "rationale": "Abdicating the role of a professional advisor is unhelpful and fails to serve the clients' needs."
+        },
+        {
+          "key": "E",
+          "text": "Default to the most conservative allocation possible to avoid any potential for conflict or significant portfolio losses in the short term.",
+          "is_correct": false,
+          "rationale": "This may cause the clients to miss their long-term goals and ignores the risk tolerance of the more aggressive spouse."
+        }
+      ]
+    }
+  ]
+}

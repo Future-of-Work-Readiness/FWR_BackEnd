@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "When launching a coroutine from a ViewModel, which CoroutineScope is most appropriate to ensure it is automatically cancelled when the ViewModel is cleared?",
+      "explanation": "The viewModelScope is the recommended choice as it is integrated into the AndroidX ViewModel library. It automatically cancels all coroutines started within it when the ViewModel is destroyed, preventing memory leaks and unnecessary background work.",
+      "options": [
+        {
+          "key": "A",
+          "text": "GlobalScope, because it is tied to the application's lifecycle and will run for the entire duration of the app.",
+          "is_correct": false,
+          "rationale": "GlobalScope is not lifecycle-aware and can easily lead to memory leaks."
+        },
+        {
+          "key": "B",
+          "text": "viewModelScope, an extension property providing a scope that is automatically cancelled when the associated ViewModel is cleared.",
+          "is_correct": true,
+          "rationale": "This scope is designed specifically for ViewModels and handles cancellation automatically."
+        },
+        {
+          "key": "C",
+          "text": "A custom CoroutineScope using Dispatchers.Main, which ensures all operations are performed on the main UI thread.",
+          "is_correct": false,
+          "rationale": "This does not provide automatic cancellation tied to the ViewModel's lifecycle."
+        },
+        {
+          "key": "D",
+          "text": "lifecycleScope, which is tied to the LifecycleOwner's lifecycle, such as an Activity or Fragment, not the ViewModel.",
+          "is_correct": false,
+          "rationale": "This scope is tied to the UI component's lifecycle, not the ViewModel's."
+        },
+        {
+          "key": "E",
+          "text": "A new scope created with CoroutineScope(Job()), which requires manual cancellation within the ViewModel's onCleared() method.",
+          "is_correct": false,
+          "rationale": "This is a manual approach that is more error-prone than using viewModelScope."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "In a Hilt-based Android application, which annotation should you use to provide an instance of a class that comes from an external library?",
+      "explanation": "The @Provides annotation is used in Hilt modules to tell Hilt how to create instances of types that cannot be constructor-injected, such as classes from external libraries or those requiring complex initialization logic.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using @Inject on the constructor, which is only possible if you can directly modify the source code of the class.",
+          "is_correct": false,
+          "rationale": "You cannot use @Inject on code you do not own, like external libraries."
+        },
+        {
+          "key": "B",
+          "text": "@Provides within a Hilt module, allowing you to define a function that creates and returns an instance of the class.",
+          "is_correct": true,
+          "rationale": "This is the correct way to provide instances of external or interface types."
+        },
+        {
+          "key": "C",
+          "text": "@Singleton on the class itself, which only defines the scope but does not actually provide the instance for injection.",
+          "is_correct": false,
+          "rationale": "This annotation defines scope but doesn't instruct Hilt on how to create an instance."
+        },
+        {
+          "key": "D",
+          "text": "@AndroidEntryPoint on the class, which is used for Android framework classes like Activities and Fragments, not external libraries.",
+          "is_correct": false,
+          "rationale": "This annotation is for framework components like Activities to enable them to receive injected dependencies."
+        },
+        {
+          "key": "E",
+          "text": "@Binds within a Hilt module, which is used for providing an implementation for an interface, not for external classes.",
+          "is_correct": false,
+          "rationale": "@Binds is for binding an interface to an implementation, not creating instances."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "How does an Android ViewModel survive configuration changes, like screen rotation, while retaining its state without using onSaveInstanceState?",
+      "explanation": "ViewModel instances are managed by a ViewModelStoreOwner (like an Activity). The ViewModelStore holds the ViewModel during configuration changes, allowing the new Activity instance to reconnect to the existing ViewModel, preserving its state.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It is automatically serialized and deserialized by the Android framework into a Bundle during the configuration change process.",
+          "is_correct": false,
+          "rationale": "This describes the onSaveInstanceState mechanism, which ViewModels are designed to avoid."
+        },
+        {
+          "key": "B",
+          "text": "It is retained in memory by the ViewModelStore, which is associated with the LifecycleOwner and persists across configuration changes.",
+          "is_correct": true,
+          "rationale": "The ViewModelStore is the core mechanism that allows ViewModels to survive configuration changes."
+        },
+        {
+          "key": "C",
+          "text": "It writes its current state to a local database using Room and reloads the data after the Activity is recreated.",
+          "is_correct": false,
+          "rationale": "This is a persistence strategy, not the default mechanism for surviving configuration changes."
+        },
+        {
+          "key": "D",
+          "text": "It leverages the Application context to store its instance, making it globally accessible and independent of Activity lifecycles.",
+          "is_correct": false,
+          "rationale": "Using the Application context for this purpose is an anti-pattern that can lead to memory leaks."
+        },
+        {
+          "key": "E",
+          "text": "It is recreated with the Activity, but its init block is called with a special parameter containing the previous state.",
+          "is_correct": false,
+          "rationale": "The ViewModel instance is not recreated; the same instance is re-attached."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What is the primary benefit of using DiffUtil with a RecyclerView.Adapter when updating the list of items being displayed on screen?",
+      "explanation": "DiffUtil calculates the difference between two lists and provides a set of update operations. This allows RecyclerView to perform minimal, efficient updates with proper animations, rather than redrawing the entire list with notifyDataSetChanged().",
+      "options": [
+        {
+          "key": "A",
+          "text": "It automatically handles item click listeners and state restoration without requiring any additional boilerplate code in the adapter.",
+          "is_correct": false,
+          "rationale": "DiffUtil is not responsible for handling user interactions or state restoration."
+        },
+        {
+          "key": "B",
+          "text": "It reduces the overall memory footprint of the RecyclerView by caching ViewHolder instances more aggressively than the default implementation.",
+          "is_correct": false,
+          "rationale": "ViewHolder caching is a core feature of RecyclerView itself, not DiffUtil."
+        },
+        {
+          "key": "C",
+          "text": "It calculates the minimal set of update operations needed to convert the old list to the new list efficiently.",
+          "is_correct": true,
+          "rationale": "This is the core purpose of DiffUtil, enabling efficient and animated updates."
+        },
+        {
+          "key": "D",
+          "text": "It enables the RecyclerView to load data from a remote server in paginated chunks to improve initial load times.",
+          "is_correct": false,
+          "rationale": "This functionality is provided by the Android Paging library, not DiffUtil."
+        },
+        {
+          "key": "E",
+          "text": "It simplifies the process of creating complex layouts by allowing developers to use XML for defining item animations directly.",
+          "is_correct": false,
+          "rationale": "Item animations are defined separately and are triggered by adapter notifications."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "In the context of Gradle builds, what is the main purpose of defining multiple product flavors in an Android project?",
+      "explanation": "Product flavors allow you to create different variants of your app from the same codebase. For example, you can have 'free' and 'paid' versions with different features, resources, or application IDs, all managed within one project.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To create different versions of your app that share the same core codebase but have customized resources or logic.",
+          "is_correct": true,
+          "rationale": "This is the fundamental definition and use case for product flavors."
+        },
+        {
+          "key": "B",
+          "text": "To reduce the final APK size by automatically removing unused code and resources through the R8 code shrinker.",
+          "is_correct": false,
+          "rationale": "This describes code shrinking and resource optimization, which is a separate build feature."
+        },
+        {
+          "key": "C",
+          "text": "To manage third-party library dependencies and resolve version conflicts between different modules within the same application project.",
+          "is_correct": false,
+          "rationale": "This is the responsibility of Gradle's dependency management system, not product flavors."
+        },
+        {
+          "key": "D",
+          "text": "To define a set of automated tests that run exclusively on specific device types or different Android API levels.",
+          "is_correct": false,
+          "rationale": "While you can run tests on specific flavors, this is not their primary purpose."
+        },
+        {
+          "key": "E",
+          "text": "To enable instant run and apply changes features, allowing for faster development cycles without requiring a full application rebuild.",
+          "is_correct": false,
+          "rationale": "This describes a build optimization feature, not the purpose of product flavors."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "What is the primary advantage of using a dependency injection framework like Hilt in a large-scale Android application?",
+      "explanation": "Hilt, built on Dagger, standardizes dependency injection by providing containers for Android classes and managing their lifecycles. This reduces boilerplate, decouples components, and makes dependencies easily replaceable for testing.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It automatically optimizes database queries and network calls, significantly improving the application's overall runtime performance and responsiveness.",
+          "is_correct": false,
+          "rationale": "This describes performance optimization tools, not the primary purpose of dependency injection."
+        },
+        {
+          "key": "B",
+          "text": "It simplifies dependency management and enhances testability by decoupling components and managing their lifecycles automatically.",
+          "is_correct": true,
+          "rationale": "Hilt reduces boilerplate and makes testing easier by managing dependency creation and scope."
+        },
+        {
+          "key": "C",
+          "text": "It provides a built-in library for creating complex and responsive user interfaces without writing any XML layout files.",
+          "is_correct": false,
+          "rationale": "This describes a UI framework like Jetpack Compose, not a dependency injection tool."
+        },
+        {
+          "key": "D",
+          "text": "It manages background threading and asynchronous tasks, replacing the need for using Kotlin Coroutines or RxJava.",
+          "is_correct": false,
+          "rationale": "Dependency injection is unrelated to concurrency management, which is handled by other libraries."
+        },
+        {
+          "key": "E",
+          "text": "It directly handles user authentication and authorization, providing a secure way to manage user sessions across the app.",
+          "is_correct": false,
+          "rationale": "This describes an authentication library, not a dependency injection framework like Hilt."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "During a configuration change like screen rotation, what is the default behavior of a `ViewModel` instance associated with an Activity?",
+      "explanation": "The core purpose of a `ViewModel` is to store and manage UI-related data in a lifecycle-conscious way. It is designed to survive configuration changes, preventing data loss and redundant network calls.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The `ViewModel` is immediately destroyed and a new instance is created, requiring all data to be fetched again.",
+          "is_correct": false,
+          "rationale": "This is the behavior of an Activity, which `ViewModel` is designed to prevent for data."
+        },
+        {
+          "key": "B",
+          "text": "The `ViewModel` instance is retained in memory, allowing its data to survive the recreation of the associated Activity.",
+          "is_correct": true,
+          "rationale": "`ViewModel` objects are scoped to the UI controller's lifecycle and survive configuration changes."
+        },
+        {
+          "key": "C",
+          "text": "The `ViewModel`'s data is automatically saved to a `Bundle` and then restored in the newly created instance.",
+          "is_correct": false,
+          "rationale": "This describes the `onSaveInstanceState` mechanism, which `ViewModel` helps to avoid for complex data."
+        },
+        {
+          "key": "D",
+          "text": "The `ViewModel` is paused and its execution is moved to a background thread until the configuration change is complete.",
+          "is_correct": false,
+          "rationale": "A `ViewModel` does not have execution state that gets paused; it's a data holder."
+        },
+        {
+          "key": "E",
+          "text": "The `ViewModel` is serialized to disk storage and then deserialized after the Activity has been fully recreated.",
+          "is_correct": false,
+          "rationale": "This would be inefficient; the `ViewModel` is simply retained in memory, not serialized to disk."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "What is the key advantage of using `viewModelScope` over `GlobalScope` for launching coroutines within an Android `ViewModel`?",
+      "explanation": "`viewModelScope` is a `CoroutineScope` tied to the `ViewModel`'s lifecycle. This structured concurrency ensures that when the `ViewModel` is destroyed, any ongoing work within its scope is automatically cancelled.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Coroutines launched with `viewModelScope` are automatically cancelled when the `ViewModel` is cleared, preventing potential memory leaks.",
+          "is_correct": true,
+          "rationale": "This automatic cancellation is the core principle of structured concurrency provided by `viewModelScope`."
+        },
+        {
+          "key": "B",
+          "text": "`viewModelScope` executes coroutines with a higher priority, ensuring that critical UI-related data is loaded much faster.",
+          "is_correct": false,
+          "rationale": "Coroutine priority is managed by dispatchers, not the scope itself."
+        },
+        {
+          "key": "C",
+          "text": "`GlobalScope` is limited to running on the main thread, whereas `viewModelScope` can use any available dispatcher.",
+          "is_correct": false,
+          "rationale": "`GlobalScope` can use any dispatcher; its problem is that it's not tied to any lifecycle."
+        },
+        {
+          "key": "D",
+          "text": "Using `viewModelScope` provides more detailed exception handling and logging capabilities compared to using the `GlobalScope` singleton.",
+          "is_correct": false,
+          "rationale": "Exception handling is a feature of coroutine builders and supervisors, not the scope itself."
+        },
+        {
+          "key": "E",
+          "text": "`GlobalScope` is an experimental API, while `viewModelScope` is a stable component of the Android Jetpack library.",
+          "is_correct": false,
+          "rationale": "`GlobalScope` is not experimental, but its use is discouraged in application code for lifecycle reasons."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "When should a `SharedFlow` be preferred over a `StateFlow` for communicating events from a `ViewModel` to the UI?",
+      "explanation": "`StateFlow` is for representing state; it always has a value and emits it to new collectors. `SharedFlow` is for broadcasting events; it doesn't hold a state and is ideal for transient, one-shot actions.",
+      "options": [
+        {
+          "key": "A",
+          "text": "When you need to represent a data stream that always holds the most recent value for new collectors.",
+          "is_correct": false,
+          "rationale": "This is the exact definition and use case for a `StateFlow`, not a `SharedFlow`."
+        },
+        {
+          "key": "B",
+          "text": "When you are modeling one-time events, like showing a snackbar, that should not be replayed to new subscribers.",
+          "is_correct": true,
+          "rationale": "`SharedFlow` is designed for transient events that should be consumed once and not re-emitted."
+        },
+        {
+          "key": "C",
+          "text": "When the underlying data source is a Room database query that needs to be observed for any changes.",
+          "is_correct": false,
+          "rationale": "A Room query represents a state, making `StateFlow` the appropriate choice for this scenario."
+        },
+        {
+          "key": "D",
+          "text": "When you only expect a single observer to be collecting the flow throughout the entire application lifecycle.",
+          "is_correct": false,
+          "rationale": "Both flow types support multiple collectors; this is not a distinguishing factor between them."
+        },
+        {
+          "key": "E",
+          "text": "When the flow needs to be converted into a LiveData object for consumption by older parts of the codebase.",
+          "is_correct": false,
+          "rationale": "Both `StateFlow` and `SharedFlow` can be converted to `LiveData` using extension functions."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Which technique provides the most significant performance improvement for updating data in a `RecyclerView` with complex item layouts?",
+      "explanation": "`DiffUtil` calculates the difference between two lists and outputs a list of update operations. `ListAdapter` uses this on a background thread to efficiently update the `RecyclerView` with minimal UI work.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Calling `notifyDataSetChanged()` frequently to ensure the user interface is always synchronized with the underlying data source.",
+          "is_correct": false,
+          "rationale": "`notifyDataSetChanged()` is inefficient as it forces a redraw of the entire list."
+        },
+        {
+          "key": "B",
+          "text": "Increasing the `RecyclerView`'s item view cache size to keep more views readily available in memory for reuse.",
+          "is_correct": false,
+          "rationale": "This can help with scrolling, but it doesn't optimize the data update process itself."
+        },
+        {
+          "key": "C",
+          "text": "Using `ListAdapter` with a `DiffUtil.ItemCallback` to calculate minimal changes and perform targeted item animations.",
+          "is_correct": true,
+          "rationale": "This is the recommended, most efficient method for updating list data in a `RecyclerView`."
+        },
+        {
+          "key": "D",
+          "text": "Disabling view recycling by setting the `RecycledViewPool` to a size of zero to prevent incorrect view states.",
+          "is_correct": false,
+          "rationale": "Disabling recycling would destroy performance by forcing constant view inflation and creation."
+        },
+        {
+          "key": "E",
+          "text": "Performing all data binding operations synchronously on the main UI thread to avoid any potential threading conflicts.",
+          "is_correct": false,
+          "rationale": "Complex data binding should be done carefully to avoid blocking the UI thread, not forced onto it."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When using LeakCanary to diagnose memory leaks, what is the primary mechanism it uses to detect a retained object in a destroyed Activity?",
+      "explanation": "LeakCanary holds a weak reference to a destroyed object. After a garbage collection cycle, if the weak reference is not cleared, it signifies the object was not collected and is therefore leaked, triggering a heap dump for analysis.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It periodically scans the entire application heap dump for objects that are still referenced by the application's root views after destruction.",
+          "is_correct": false,
+          "rationale": "This is inefficient; LeakCanary targets specific objects expected to be garbage collected."
+        },
+        {
+          "key": "B",
+          "text": "It installs an `ActivityLifecycleCallbacks` and, after an Activity is destroyed, it checks if a `WeakReference` to it has been cleared after a GC.",
+          "is_correct": true,
+          "rationale": "This correctly describes LeakCanary's use of weak references and lifecycle callbacks."
+        },
+        {
+          "key": "C",
+          "text": "It overrides the `finalize()` method on every object to log when an object is about to be garbage collected by the system.",
+          "is_correct": false,
+          "rationale": "Overriding `finalize()` is unreliable and strongly discouraged for this purpose in modern Android development."
+        },
+        {
+          "key": "D",
+          "text": "It uses reflection to access private fields of the Activity class and manually nullifies them upon the `onDestroy()` callback to force collection.",
+          "is_correct": false,
+          "rationale": "LeakCanary is a detection tool, not a tool that actively modifies application code or state."
+        },
+        {
+          "key": "E",
+          "text": "It monitors the total memory usage of the application and triggers an alert when it exceeds a predefined threshold after an Activity closes.",
+          "is_correct": false,
+          "rationale": "This describes general memory profiling, not the specific object-leak detection mechanism of LeakCanary."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "What is a fundamental architectural difference between Dagger/Hilt and Koin for dependency injection that impacts build time and runtime performance?",
+      "explanation": "Dagger and Hilt use compile-time code generation via annotation processing to create the dependency graph. Koin, however, uses a service locator pattern to resolve dependencies at runtime, which avoids the build-time overhead but adds a small runtime cost.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Dagger/Hilt generates dependency injection code at compile time, whereas Koin resolves dependencies at runtime using a service locator pattern.",
+          "is_correct": true,
+          "rationale": "This accurately contrasts Dagger's compile-time generation with Koin's runtime resolution."
+        },
+        {
+          "key": "B",
+          "text": "Koin exclusively uses reflection to inject all dependencies, which makes it significantly slower than Dagger's direct constructor injection approach.",
+          "is_correct": false,
+          "rationale": "Koin does not rely on reflection; it uses functional resolution, making this statement incorrect."
+        },
+        {
+          "key": "C",
+          "text": "Dagger/Hilt requires defining all dependencies within XML files, while Koin uses a more modern Kotlin-based Domain Specific Language (DSL).",
+          "is_correct": false,
+          "rationale": "Dagger/Hilt uses annotations and modules in Kotlin/Java code, not XML configuration files."
+        },
+        {
+          "key": "D",
+          "text": "Koin is an official Google-supported library integrated into Jetpack, while Dagger/Hilt is a third-party solution with limited community support.",
+          "is_correct": false,
+          "rationale": "This is reversed; Hilt is the Google-recommended Jetpack library, built on top of Dagger."
+        },
+        {
+          "key": "E",
+          "text": "Dagger/Hilt can only be used for injecting dependencies into Activities and Fragments, while Koin supports injection into any class type.",
+          "is_correct": false,
+          "rationale": "Both frameworks are capable of injecting dependencies into various Android components and custom classes."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "In the context of optimizing Android build times, what is the primary function of the Gradle build cache feature?",
+      "explanation": "The Gradle build cache stores the outputs of tasks from previous builds. When a task is run again with the same inputs, Gradle can reuse the output from the cache instead of re-executing the task, significantly speeding up build times.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It pre-downloads all project dependencies into a local directory to avoid network requests during the compilation phase of the build.",
+          "is_correct": false,
+          "rationale": "This describes Gradle's dependency caching, which is different from the build cache for task outputs."
+        },
+        {
+          "key": "B",
+          "text": "It compiles all Kotlin and Java source code into a single intermediate file before dexing to reduce the overhead of multi-file processing.",
+          "is_correct": false,
+          "rationale": "This is not a function of the Gradle build cache; compilation is a separate task."
+        },
+        {
+          "key": "C",
+          "text": "It analyzes the dependency graph and removes unused libraries or code before the build process begins to reduce the final APK size.",
+          "is_correct": false,
+          "rationale": "This describes code shrinking and resource optimization, typically handled by R8 or ProGuard."
+        },
+        {
+          "key": "D",
+          "text": "It runs multiple Gradle tasks in parallel on different CPU cores, which is a feature completely separate from caching mechanisms.",
+          "is_correct": false,
+          "rationale": "This describes parallel execution, another Gradle optimization feature but distinct from the build cache."
+        },
+        {
+          "key": "E",
+          "text": "It stores and reuses task outputs from previous builds, avoiding redundant work when inputs have not changed between different build executions.",
+          "is_correct": true,
+          "rationale": "This is the core purpose of the build cache: reusing outputs to avoid re-running tasks."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "When using Kotlin Coroutines, how should you properly handle exceptions in a coroutine launched with `launch` that are not caught internally?",
+      "explanation": "A `CoroutineExceptionHandler` is a context element that can be installed in a CoroutineScope. It acts as a global catch block for any uncaught exceptions thrown by coroutines launched with `launch`, preventing the application from crashing.",
+      "options": [
+        {
+          "key": "A",
+          "text": "By wrapping the entire `launch` block in a standard `try-catch` block, as it behaves exactly like traditional synchronous exception handling.",
+          "is_correct": false,
+          "rationale": "`try-catch` around `launch` does not catch exceptions from within the coroutine's asynchronous execution."
+        },
+        {
+          "key": "B",
+          "text": "Exceptions are automatically propagated to the main application thread and will crash the app unless a default `UncaughtExceptionHandler` is set.",
+          "is_correct": false,
+          "rationale": "While it can crash the app, the proper coroutine way to handle this is not the thread's handler."
+        },
+        {
+          "key": "C",
+          "text": "By installing a `CoroutineExceptionHandler` in the coroutine context, which acts as a global handler for any uncaught exceptions from child coroutines.",
+          "is_correct": true,
+          "rationale": "This is the idiomatic and correct way to handle uncaught exceptions in coroutines started with `launch`."
+        },
+        {
+          "key": "D",
+          "text": "By using the `async` builder instead of `launch`, as `async` has built-in mechanisms to suppress all exceptions from ever crashing the app.",
+          "is_correct": false,
+          "rationale": "`async` holds the exception until `.await()` is called, at which point it is re-thrown."
+        },
+        {
+          "key": "E",
+          "text": "By checking the `isCancelled` property of the Job object after the coroutine completes, as exceptions will always mark the job as cancelled.",
+          "is_correct": false,
+          "rationale": "An exception causes failure, which is a form of cancellation, but this doesn't handle the exception itself."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "In Jetpack Compose, when would you prefer using `derivedStateOf` over a simple `remember` with calculations to optimize UI performance?",
+      "explanation": "`derivedStateOf` is used when a calculation depends on other state objects. It ensures the calculation only re-runs when one of the dependent states actually changes, preventing unnecessary recompositions of composables that read its value.",
+      "options": [
+        {
+          "key": "A",
+          "text": "When you need to store a simple, mutable state object that does not depend on any other state and is local to a single",
+          "is_correct": false,
+          "rationale": "This is the primary use case for `remember { mutableStateOf(...) }`, not `derivedStateOf`."
+        },
+        {
+          "key": "B",
+          "text": "When a calculation depends on one or more state objects and you want the calculation to re-execute only when the state values actually change.",
+          "is_correct": true,
+          "rationale": "This is the exact purpose of `derivedStateOf`: memoizing a calculation based on state inputs."
+        },
+        {
+          "key": "C",
+          "text": "When the value you are computing is a constant that will never change throughout the entire lifecycle of the composable function.",
+          "is_correct": false,
+          "rationale": "A simple constant value does not require `remember` or `derivedStateOf` for its calculation."
+        },
+        {
+          "key": "D",
+          "text": "When you need to perform a heavy calculation that should only run once when the composable first enters the composition and never again.",
+          "is_correct": false,
+          "rationale": "This is a use case for `remember` without any keys, which caches the result of the initial run."
+        },
+        {
+          "key": "E",
+          "text": "When you are passing a lambda function to a child composable and want to prevent it from being recreated on every single recomposition.",
+          "is_correct": false,
+          "rationale": "This is the use case for the `remember` function when it is used to cache a lambda instance."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "How does the LeakCanary library primarily detect memory leaks in an Android application during runtime debugging?",
+      "explanation": "LeakCanary works by installing a watcher to get a WeakReference to destroyed objects like Activities. It then checks if the garbage collector has cleared these references after a delay, identifying leaks if they haven't been cleared.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It statically analyzes the compiled bytecode of the application to find potential reference cycles before the app is even run.",
+          "is_correct": false,
+          "rationale": "This describes static analysis, which LeakCanary does not perform; it operates at runtime."
+        },
+        {
+          "key": "B",
+          "text": "It watches for destroyed objects, holds a weak reference to them, and then verifies if they have been garbage collected after a short delay.",
+          "is_correct": true,
+          "rationale": "This correctly describes LeakCanary's core mechanism of watching weakly-referenced destroyed objects."
+        },
+        {
+          "key": "C",
+          "text": "It periodically forces a full garbage collection cycle and then compares complete heap dumps to identify objects that should have been released.",
+          "is_correct": false,
+          "rationale": "While heap dump analysis is part of the process, its trigger is watching specific destroyed objects, not periodic checks."
+        },
+        {
+          "key": "D",
+          "text": "It intercepts all object allocations and deallocations, building a complete graph of memory references to find unreferenced objects.",
+          "is_correct": false,
+          "rationale": "This describes a more intensive profiling method, not the specific approach used by LeakCanary."
+        },
+        {
+          "key": "E",
+          "text": "It hooks into the Android framework's ActivityLifecycleCallbacks to log every onCreate and onDestroy call, looking for imbalances.",
+          "is_correct": false,
+          "rationale": "While it uses lifecycle callbacks, simply logging calls does not detect leaks; it must track object references."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "In Kotlin Coroutines, what is the key difference in behavior when a child coroutine fails within a `supervisorScope` versus a standard `coroutineScope`?",
+      "explanation": "A `supervisorScope` ensures that the failure of one child coroutine does not affect its siblings or cancel the parent scope. In contrast, a failure in a standard `coroutineScope` will cancel the entire scope, including all its children.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A failure in a `supervisorScope` child does not cancel the parent or its other children, effectively isolating the failure.",
+          "is_correct": true,
+          "rationale": "This is the defining characteristic of SupervisorJob and supervisorScope; failures are not propagated upwards or sideways."
+        },
+        {
+          "key": "B",
+          "text": "A failure within a `supervisorScope` will immediately restart the failed child coroutine, while `coroutineScope` simply crashes the application.",
+          "is_correct": false,
+          "rationale": "supervisorScope does not automatically restart children; this would require custom logic."
+        },
+        {
+          "key": "C",
+          "text": "The `supervisorScope` propagates the exception upwards to the parent's parent, skipping the immediate parent's exception handler.",
+          "is_correct": false,
+          "rationale": "This is incorrect; supervisorScope prevents upward propagation of cancellation from its children."
+        },
+        {
+          "key": "D",
+          "text": "A `supervisorScope` requires an explicit `CoroutineExceptionHandler` to be attached, whereas `coroutineScope` handles all exceptions automatically without one.",
+          "is_correct": false,
+          "rationale": "Both scopes can use a CoroutineExceptionHandler; it is especially useful with supervisorScope but not required."
+        },
+        {
+          "key": "E",
+          "text": "The `supervisorScope` is designed only for UI-related coroutines on the main thread, while `coroutineScope` is for background tasks.",
+          "is_correct": false,
+          "rationale": "Both scopes can be used on any dispatcher; their purpose relates to error handling strategy, not thread affinity."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "When configuring a Gradle build, what is the primary distinction between using `buildTypes` and `productFlavors` to manage different app versions?",
+      "explanation": "`buildTypes` define the quality and packaging settings for your app (e.g., debug, release), while `productFlavors` define different feature sets or resource configurations (e.g., free vs. paid, different branding), creating distinct app versions.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`buildTypes` are used for defining signing configurations, while `productFlavors` are exclusively used for managing application resource files like strings.",
+          "is_correct": false,
+          "rationale": "Both can influence resources and signing, so this distinction is incorrect and too restrictive."
+        },
+        {
+          "key": "B",
+          "text": "`buildTypes` are a legacy system for older Gradle versions, and `productFlavors` are the modern replacement for creating all build variations.",
+          "is_correct": false,
+          "rationale": "Both are current, actively used concepts in Gradle that serve different, complementary purposes."
+        },
+        {
+          "key": "C",
+          "text": "`productFlavors` can only change the application ID suffix, whereas `buildTypes` can modify any part of the Android manifest file.",
+          "is_correct": false,
+          "rationale": "Both can change more than just the application ID suffix and can influence the manifest."
+        },
+        {
+          "key": "D",
+          "text": "A project can only have a single `buildType` active at a time, but it can be combined with multiple `productFlavors` simultaneously.",
+          "is_correct": false,
+          "rationale": "A build variant is a combination of one build type and one (from each dimension) product flavor."
+        },
+        {
+          "key": "E",
+          "text": "`buildTypes` define build and packaging settings like debuggability, while `productFlavors` create different app versions with varying features or resources.",
+          "is_correct": true,
+          "rationale": "This correctly separates the concepts: buildType is about quality/packaging, and productFlavor is about app features/branding."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "What is the most secure and recommended method for storing sensitive API keys that are required by your Android application at runtime?",
+      "explanation": "Storing keys in native code and retrieving them via the NDK makes it significantly harder for attackers to decompile the APK and extract them, as it requires reverse engineering native binaries instead of just Java/Kotlin bytecode.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Placing the keys directly as string constants inside your `build.gradle` file and accessing them through `BuildConfig` fields.",
+          "is_correct": false,
+          "rationale": "This is insecure as the keys are easily visible in the decompiled BuildConfig class."
+        },
+        {
+          "key": "B",
+          "text": "Storing the keys in plain text within the `local.properties` file, which is excluded from version control by default.",
+          "is_correct": false,
+          "rationale": "While this keeps keys out of Git, they are still easily extracted from the compiled app."
+        },
+        {
+          "key": "C",
+          "text": "Storing the keys in C/C++ code and loading them at runtime using the Native Development Kit (NDK).",
+          "is_correct": true,
+          "rationale": "This method provides the best local security through obscurity, as reverse engineering native code is much harder."
+        },
+        {
+          "key": "D",
+          "text": "Hiding the keys within your application's resource files, such as in a raw XML or JSON file.",
+          "is_correct": false,
+          "rationale": "Resource files are easily unpacked from an APK, making this method highly insecure."
+        },
+        {
+          "key": "E",
+          "text": "Obfuscating the keys using a simple Base64 encoding and storing them as a string variable in a Kotlin object.",
+          "is_correct": false,
+          "rationale": "Base64 is an encoding, not encryption, and provides no real security as it is trivially reversible."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "When updating data in a `RecyclerView`, why is using `DiffUtil` generally preferred over calling the `notifyDataSetChanged()` method on the adapter?",
+      "explanation": "`DiffUtil` calculates the minimal set of updates required to transform one list into another. This results in more efficient updates and enables default item animations, whereas `notifyDataSetChanged()` forces a full redraw of all visible items.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It calculates precise item changes, enabling efficient updates and animations, while `notifyDataSetChanged()` redraws all visible items indiscriminately.",
+          "is_correct": true,
+          "rationale": "This correctly identifies DiffUtil's benefits: performance through minimal updates and support for animations."
+        },
+        {
+          "key": "B",
+          "text": "`notifyDataSetChanged()` is a deprecated method that will cause a runtime crash on modern versions of the Android operating system.",
+          "is_correct": false,
+          "rationale": "The method is not deprecated and does not cause crashes; it is just inefficient."
+        },
+        {
+          "key": "C",
+          "text": "`DiffUtil` is the only way to handle item clicks correctly, while `notifyDataSetChanged()` breaks all attached `OnClickListener` instances.",
+          "is_correct": false,
+          "rationale": "Item clicks work with both methods, although state preservation can be an issue with notifyDataSetChanged()."
+        },
+        {
+          "key": "D",
+          "text": "Using `DiffUtil` automatically handles all background threading for data processing, preventing UI freezes which `notifyDataSetChanged()` can cause.",
+          "is_correct": false,
+          "rationale": "DiffUtil calculations should be run on a background thread, but this is not handled automatically by the utility itself."
+        },
+        {
+          "key": "E",
+          "text": "`DiffUtil` forces the `RecyclerView` to re-bind every single item in the list, ensuring data consistency across the entire dataset.",
+          "is_correct": false,
+          "rationale": "This is the opposite of what DiffUtil does; it specifically avoids re-binding unchanged items."
+        }
+      ]
+    }
+  ]
+}

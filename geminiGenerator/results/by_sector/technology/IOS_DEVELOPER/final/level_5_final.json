@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "When optimizing a complex view controller with multiple escaping closures referencing `self`, what is the most effective strategy to prevent retain cycles?",
+      "explanation": "Using `[weak self]` is the safest way to break strong reference cycles with closures. It creates a weak reference, which doesn't increase the retain count, and allows `self` to be deallocated. Safely unwrapping it ensures the code only runs if the instance still exists.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use `[unowned self]` in all closures because it offers better performance by avoiding any reference count modifications.",
+          "is_correct": false,
+          "rationale": "Unowned is unsafe if self can become nil, which can lead to a crash. It does not offer a significant performance benefit."
+        },
+        {
+          "key": "B",
+          "text": "Consistently use `[weak self]` and then safely unwrap it inside the closure using `guard let self = self else { return }`.",
+          "is_correct": true,
+          "rationale": "This is the safest and most common practice for preventing retain cycles with escaping closures that reference self."
+        },
+        {
+          "key": "C",
+          "text": "Only apply capture lists to closures that are stored as properties, as other temporary closures are deallocated automatically.",
+          "is_correct": false,
+          "rationale": "Any escaping closure can cause a retain cycle, not just those stored directly in properties."
+        },
+        {
+          "key": "D",
+          "text": "Pass `self` as an explicit parameter into the closure's execution block to avoid capturing it implicitly from the context.",
+          "is_correct": false,
+          "rationale": "Passing self as a parameter does not prevent the closure from capturing it if it's also referenced from the outer scope."
+        },
+        {
+          "key": "E",
+          "text": "Refactor the code to use a singleton manager, which handles the operations, thus removing the need for `self`.",
+          "is_correct": false,
+          "rationale": "This avoids the problem but introduces tight coupling and global state, which is poor architectural design."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "In the Swift concurrency model, what is the primary mechanism an `actor` uses to guarantee mutually exclusive access to its mutable state?",
+      "explanation": "The actor model's core principle is serializing access to its internal state. It maintains a conceptual 'mailbox' for incoming calls and processes them one at a time, preventing data races and ensuring thread safety without manual locking.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It relies on explicit locking mechanisms like `NSLock` that developers must manually manage within each method to protect state.",
+          "is_correct": false,
+          "rationale": "Actors abstract away the need for manual locking, which is their main benefit over traditional thread-safe code."
+        },
+        {
+          "key": "B",
+          "text": "It automatically executes all of its methods and property accessors on a private, serial Grand Central Dispatch queue.",
+          "is_correct": false,
+          "rationale": "While conceptually similar, actors use a more advanced cooperative thread pool and job scheduler, not just a simple GCD queue."
+        },
+        {
+          "key": "C",
+          "text": "It serializes access to its state by processing incoming asynchronous method calls from a conceptual mailbox, one at a time.",
+          "is_correct": true,
+          "rationale": "This describes the actor model, where messages are queued and handled sequentially to ensure data integrity."
+        },
+        {
+          "key": "D",
+          "text": "It enforces that all of its properties are immutable value types, which inherently prevents any concurrent modification issues.",
+          "is_correct": false,
+          "rationale": "Actors are specifically designed to safely manage mutable state, not just immutable state."
+        },
+        {
+          "key": "E",
+          "text": "It requires all interactions to occur on the main thread, leveraging the main run loop's serial nature for safety.",
+          "is_correct": false,
+          "rationale": "This describes the `@MainActor` global actor, not the general mechanism for all custom actors."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "When designing a large-scale, modular iOS application, which architectural pattern most effectively decouples feature-level navigation and flow control from view controllers?",
+      "explanation": "The Coordinator pattern is specifically designed to manage navigation logic. It removes the responsibility of screen transitions from View Controllers, making them more reusable and testable. Coordinators encapsulate a specific user flow, promoting better separation of concerns in complex apps.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A strict Model-View-Controller (MVC) pattern where each controller is responsible for presenting the next one in the sequence.",
+          "is_correct": false,
+          "rationale": "This approach, often called 'Massive View Controller', leads to tightly coupled view controllers that are difficult to reuse or test."
+        },
+        {
+          "key": "B",
+          "text": "The Coordinator pattern, which introduces dedicated objects to manage navigation logic and control the application's user flow.",
+          "is_correct": true,
+          "rationale": "Coordinators centralize and isolate navigation logic, decoupling view controllers and improving modularity and testability."
+        },
+        {
+          "key": "C",
+          "text": "A singleton-based architecture where a global 'NavigationManager' handles all screen transitions throughout the entire application.",
+          "is_correct": false,
+          "rationale": "A global singleton creates tight coupling, makes testing difficult, and does not effectively manage distinct feature flows."
+        },
+        {
+          "key": "D",
+          "text": "The Model-View-ViewModel (MVVM) pattern, where ViewModels directly trigger segues and push new views onto the navigation stack.",
+          "is_correct": false,
+          "rationale": "This gives ViewModels too much responsibility and knowledge of the View layer, violating the principles of MVVM."
+        },
+        {
+          "key": "E",
+          "text": "Using SwiftUI's built-in navigation views and links, which automatically handle all flow control without any specific pattern.",
+          "is_correct": false,
+          "rationale": "While useful, SwiftUI's built-in navigation can become difficult to manage in large, complex apps without an overarching pattern like Coordinator."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "You've identified significant UI stuttering while scrolling a `UICollectionView`. What is the most likely cause related to main thread performance in cell rendering?",
+      "explanation": "The `cellForItemAt` method is called frequently during scrolling and must execute extremely quickly. Performing any synchronous, long-running work like file I/O or complex calculations on the main thread within this method will block rendering and cause stuttering.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Reusing collection view cells via `dequeueReusableCell`, which adds overhead from looking up and configuring existing cell instances.",
+          "is_correct": false,
+          "rationale": "Cell reuse is the primary performance optimization for table and collection views, preventing constant allocation and deallocation."
+        },
+        {
+          "key": "B",
+          "text": "Performing complex calculations, synchronous file I/O, or data parsing directly within the `cellForItemAt` delegate method.",
+          "is_correct": true,
+          "rationale": "Any long-running, synchronous task on the main thread will block the UI, and `cellForItemAt` is a critical path for scrolling."
+        },
+        {
+          "key": "C",
+          "text": "Setting the `isOpaque` property to `true` on views within the cell, forcing the GPU to perform extra blending operations.",
+          "is_correct": false,
+          "rationale": "Setting `isOpaque` to `true` is an optimization that tells the system it doesn't need to blend the view with content behind it."
+        },
+        {
+          "key": "D",
+          "text": "Using Auto Layout constraints to define cell layouts, as the constraint solver is inherently slower than manual frame calculation.",
+          "is_correct": false,
+          "rationale": "While manual frames can be faster, a well-designed Auto Layout system is highly optimized and rarely the cause of major stuttering."
+        },
+        {
+          "key": "E",
+          "text": "Loading images asynchronously in a background thread and then updating the `UIImageView` on the main thread upon completion.",
+          "is_correct": false,
+          "rationale": "This is the correct, recommended approach for loading images and would improve performance, not cause stuttering."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "In SwiftUI, what is the primary role of structural view identity, and how does it impact state preservation and performance during view updates?",
+      "explanation": "SwiftUI determines a view's identity by its type and its position within the view hierarchy. When the hierarchy changes, SwiftUI compares the new structure to the old one. If a view at a specific position has the same identity, its state is preserved, which is crucial for performance.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Identity is a unique memory address for each view struct, allowing SwiftUI to directly manipulate the underlying UI element.",
+          "is_correct": false,
+          "rationale": "View structs are ephemeral values; SwiftUI manages identity abstractly, not through memory addresses of structs."
+        },
+        {
+          "key": "B",
+          "text": "It is determined by the view's type and its position in the view hierarchy, allowing SwiftUI to preserve state across renders.",
+          "is_correct": true,
+          "rationale": "This is the definition of structural identity, which is fundamental to how SwiftUI manages state and performs efficient updates."
+        },
+        {
+          "key": "C",
+          "text": "It is explicitly defined by the developer using the `.id()` modifier, which is required for all views to maintain state.",
+          "is_correct": false,
+          "rationale": "The `.id()` modifier provides explicit identity, but SwiftUI has an implicit structural identity system that works for most cases."
+        },
+        {
+          "key": "D",
+          "text": "The identity of a view is tied to its `@State` properties, and a new identity is created whenever a state variable changes.",
+          "is_correct": false,
+          "rationale": "State changes trigger a view update, but they do not change the view's identity; the identity is what allows state to persist."
+        },
+        {
+          "key": "E",
+          "text": "Identity is determined by the hash value of the view's content, forcing a complete redraw if any part of it changes.",
+          "is_correct": false,
+          "rationale": "SwiftUI performs intelligent diffing based on the view tree structure, not by hashing the entire view content."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "When processing a large collection of objects on a background thread, what is the primary benefit of using an `@autoreleasepool` block inside the loop?",
+      "explanation": "In loops that create many temporary autoreleased objects, an `@autoreleasepool` drains the pool at the end of each iteration. This prevents memory from accumulating until the thread's own pool is drained, which is crucial for memory-intensive background tasks.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It ensures that autoreleased objects created within the loop are deallocated immediately after each iteration, preventing significant memory spikes.",
+          "is_correct": true,
+          "rationale": "The pool drains memory after each iteration, preventing large temporary allocations from accumulating."
+        },
+        {
+          "key": "B",
+          "text": "It synchronizes access to the collection, preventing race conditions when multiple threads are reading from the same data source.",
+          "is_correct": false,
+          "rationale": "This describes a lock or semaphore, not an autorelease pool, which manages memory."
+        },
+        {
+          "key": "C",
+          "text": "It automatically dispatches each iteration of the loop to a different thread in a concurrent queue for faster processing.",
+          "is_correct": false,
+          "rationale": "This describes concurrent dispatching, which is unrelated to the function of an autorelease pool."
+        },
+        {
+          "key": "D",
+          "text": "It caches the objects processed in the loop to improve performance for subsequent operations on the same data set.",
+          "is_correct": false,
+          "rationale": "This describes a caching mechanism; an autorelease pool is for memory deallocation, not storage."
+        },
+        {
+          "key": "E",
+          "text": "It provides a mechanism for handling Objective-C exceptions that might be thrown during the processing of each object.",
+          "is_correct": false,
+          "rationale": "While `@autoreleasepool` has historical ties to exception handling, its primary modern use is memory management."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "In Swift's concurrency model, what is the most accurate description of actor reentrancy and its primary implication for developers?",
+      "explanation": "Actor reentrancy means that if an actor method suspends (at an `await`), other tasks can run on the actor. When the original method resumes, the actor's state might have been changed by those other tasks, a critical detail to manage.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It allows an actor to call its own methods recursively without causing a deadlock, but state may change between `await` points.",
+          "is_correct": true,
+          "rationale": "This correctly identifies that state can change across suspension points due to reentrancy."
+        },
+        {
+          "key": "B",
+          "text": "It ensures that once a task begins executing on an actor, no other task can run on it until the first one completes.",
+          "is_correct": false,
+          "rationale": "This describes a non-reentrant or serial execution model, which is not how actors work."
+        },
+        {
+          "key": "C",
+          "text": "It prevents an actor from ever being suspended, guaranteeing that all its methods will run to completion without interruption.",
+          "is_correct": false,
+          "rationale": "Actors are designed to be suspended at `await` points to avoid blocking threads."
+        },
+        {
+          "key": "D",
+          "text": "It automatically transfers execution to the main thread whenever UI-related properties are accessed from within the actor's context.",
+          "is_correct": false,
+          "rationale": "This describes the behavior of `@MainActor`, not a general property of all actors."
+        },
+        {
+          "key": "E",
+          "text": "It isolates an actor's state completely, making it impossible for its methods to call asynchronous functions outside the actor.",
+          "is_correct": false,
+          "rationale": "Actors can freely call external async functions; reentrancy happens when they do."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "What is the critical function of a dSYM (debug symbol) file when analyzing crash reports from a released iOS application?",
+      "explanation": "A dSYM file is essential for symbolication. It allows tools like Xcode or third-party crash reporters to convert the cryptic memory addresses in a crash log into the exact source code locations where the crash happened, making debugging possible.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It contains the mapping information needed to translate memory addresses from a crash log back into human-readable function names and line numbers.",
+          "is_correct": true,
+          "rationale": "This is the core purpose of dSYM files, a process known as symbolication."
+        },
+        {
+          "key": "B",
+          "text": "It is an encrypted key that allows developers to securely access user-specific data that was present at the time of the crash.",
+          "is_correct": false,
+          "rationale": "dSYM files contain debug symbols, not encryption keys or user data access mechanisms."
+        },
+        {
+          "key": "C",
+          "text": "It bundles all third-party library source code, allowing the crash reporting service to analyze dependencies for known issues and vulnerabilities.",
+          "is_correct": false,
+          "rationale": "dSYM files contain symbols for the compiled binary, not the source code of its dependencies."
+        },
+        {
+          "key": "D",
+          "text": "It serves as a manifest file that lists all the permissions the application had at the moment the crash occurred.",
+          "is_correct": false,
+          "rationale": "Application permissions are defined in the Info.plist file, not in the dSYM."
+        },
+        {
+          "key": "E",
+          "text": "It directly contains the application's source code, which is uploaded to the App Store for automated security and performance scanning.",
+          "is_correct": false,
+          "rationale": "dSYMs contain symbols and address mappings, not the full application source code."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "When implementing a custom SwiftUI layout using the `Layout` protocol, which two methods are the most essential to provide a complete implementation?",
+      "explanation": "The `Layout` protocol requires conforming types to implement `sizeThatFits(proposal:subviews:cache:)` to report its size and `placeSubviews(in:proposal:subviews:cache:)` to arrange its subviews within the provided bounds. These two methods form the core of any custom layout.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The `sizeThatFits` and `placeSubviews` methods are required to calculate the layout's total size and position its subviews accordingly.",
+          "is_correct": true,
+          "rationale": "These two methods are the non-negotiable requirements for the Layout protocol to function correctly."
+        },
+        {
+          "key": "B",
+          "text": "The `body` and `updateUIView` methods are used to define the view hierarchy and respond to state changes from SwiftUI.",
+          "is_correct": false,
+          "rationale": "`body` is for `View` conformance, and `updateUIView` is for `UIViewRepresentable`."
+        },
+        {
+          "key": "C",
+          "text": "The `makeCache` and `updateCache` methods are necessary for storing persistent layout data between rendering updates for performance optimization.",
+          "is_correct": false,
+          "rationale": "These caching methods are optional and used for performance optimization, not basic implementation."
+        },
+        {
+          "key": "D",
+          "text": "The `alignmentGuide` and `padding` modifiers must be implemented to manage the spacing and alignment of all child views within the container.",
+          "is_correct": false,
+          "rationale": "These are view modifiers used to influence layout, not methods required by the Layout protocol."
+        },
+        {
+          "key": "E",
+          "text": "The `onAppear` and `onDisappear` methods are needed to manage the lifecycle of the layout and its associated subviews.",
+          "is_correct": false,
+          "rationale": "These are standard view lifecycle modifiers and are not part of the `Layout` protocol's requirements."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "In mobile application security, what is the primary goal of implementing SSL/TLS certificate pinning for network requests?",
+      "explanation": "Certificate pinning hardcodes the server's certificate or public key within the app. During a TLS handshake, the app compares the server's certificate to its pinned version, rejecting the connection if they don't match, thus thwarting MITM attacks.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To mitigate man-in-the-middle (MITM) attacks by ensuring the app only trusts a specific, pre-defined server certificate or public key.",
+          "is_correct": true,
+          "rationale": "This correctly identifies that pinning prevents MITM attacks by restricting trust to specific certificates."
+        },
+        {
+          "key": "B",
+          "text": "To encrypt the application's local database, preventing unauthorized access to sensitive user data stored directly on the device.",
+          "is_correct": false,
+          "rationale": "This describes on-device data encryption (e.g., using CryptoKit), not network security."
+        },
+        {
+          "key": "C",
+          "text": "To accelerate network requests by bypassing the standard certificate chain validation process performed by the operating system's trust store.",
+          "is_correct": false,
+          "rationale": "Pinning adds a security check, it does not bypass validation for speed and can add overhead."
+        },
+        {
+          "key": "D",
+          "text": "To enforce that all network communication from the application uses the most recent and secure version of the TLS protocol.",
+          "is_correct": false,
+          "rationale": "This is typically configured on the server or via App Transport Security, not pinning."
+        },
+        {
+          "key": "E",
+          "text": "To provide a fallback mechanism for network requests to succeed even if the server's SSL certificate has expired or is invalid.",
+          "is_correct": false,
+          "rationale": "Pinning does the opposite; it causes connections to fail if the certificate doesn't match."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When processing a large dataset on a background thread, what is the primary benefit of using an `@autoreleasepool` block inside a loop?",
+      "explanation": "Using an `@autoreleasepool` inside a loop on a background thread is crucial for managing memory. It ensures that temporary objects are deallocated periodically, preventing the memory footprint from growing uncontrollably and causing crashes.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It drains autoreleased objects periodically, preventing temporary memory spikes and potential memory exhaustion on the device.",
+          "is_correct": true,
+          "rationale": "This correctly identifies the pool's role in managing memory for temporary objects within a loop."
+        },
+        {
+          "key": "B",
+          "text": "It ensures that all objects created within the loop are automatically promoted to the main thread for UI updates.",
+          "is_correct": false,
+          "rationale": "This describes a UI update pattern, not the function of an autorelease pool."
+        },
+        {
+          "key": "C",
+          "text": "It synchronizes access to shared resources across multiple background threads, preventing race conditions and data corruption issues.",
+          "is_correct": false,
+          "rationale": "This describes the function of locks or semaphores, not an autorelease pool."
+        },
+        {
+          "key": "D",
+          "text": "It significantly accelerates the processing speed of the loop by leveraging Grand Central Dispatch for parallel execution.",
+          "is_correct": false,
+          "rationale": "This is unrelated; autorelease pools are for memory management, not parallel execution."
+        },
+        {
+          "key": "E",
+          "text": "It automatically handles error propagation and logging for any exceptions that might occur during the data processing loop.",
+          "is_correct": false,
+          "rationale": "This describes error handling mechanisms, which are distinct from memory management pools."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "In Swift's actor model, what is the most accurate description of actor reentrancy and its primary implication for developers?",
+      "explanation": "Actor reentrancy means an actor can handle other work while one of its async functions is suspended (e.g., awaiting). This prevents deadlocks but requires developers to be mindful that the actor's state might change during suspension.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It allows an actor's method to be suspended, letting other tasks run on the actor, which requires careful state management.",
+          "is_correct": true,
+          "rationale": "This correctly defines reentrancy and its key implication on state management during suspension points."
+        },
+        {
+          "key": "B",
+          "text": "It prevents any other task from executing on the actor until the current async method completes entirely, ensuring strict serial execution.",
+          "is_correct": false,
+          "rationale": "This describes a non-reentrant actor, which is not how Swift actors behave by default."
+        },
+        {
+          "key": "C",
+          "text": "It automatically creates a new instance of the actor for each incoming call to handle requests in parallel.",
+          "is_correct": false,
+          "rationale": "This is incorrect; actors are reference types and maintain a single instance with a serial executor."
+        },
+        {
+          "key": "D",
+          "text": "It means that actors can only be called from the main thread to prevent potential data races with UI components.",
+          "is_correct": false,
+          "rationale": "This incorrectly links actors to the main thread; they operate on their own serial executors."
+        },
+        {
+          "key": "E",
+          "text": "It guarantees that all properties of an actor are immutable after initialization, making them inherently thread-safe without locks.",
+          "is_correct": false,
+          "rationale": "Actor properties can be mutable; the actor's executor provides synchronized access, not immutability."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "When building a binary framework for distribution, what is the main purpose of enabling the \"Build Libraries for Distribution\" setting?",
+      "explanation": "The \"Build Libraries for Distribution\" setting is crucial for framework authors. It enables module stability by creating a `.swiftinterface` file, which allows the framework to be used by clients built with different versions of the Swift compiler.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It generates a Swift module interface file (`.swiftinterface`) ensuring binary compatibility across different Swift compiler versions for clients.",
+          "is_correct": true,
+          "rationale": "This correctly identifies the creation of a stable module interface for forward compatibility."
+        },
+        {
+          "key": "B",
+          "text": "It automatically strips all debugging symbols from the final binary, significantly reducing the framework's overall file size.",
+          "is_correct": false,
+          "rationale": "Symbol stripping is a separate build setting and not the primary purpose of this one."
+        },
+        {
+          "key": "C",
+          "text": "It compiles the framework into a universal binary that supports both ARM64 and x86_64 for simulators and devices.",
+          "is_correct": false,
+          "rationale": "Creating a universal binary (XCFramework) is a related but distinct process from enabling library evolution."
+        },
+        {
+          "key": "D",
+          "text": "It enforces that all public APIs are documented with proper comments, failing the build if documentation is missing.",
+          "is_correct": false,
+          "rationale": "This describes a linting or documentation generation rule, not a compiler setting for binary compatibility."
+        },
+        {
+          "key": "E",
+          "text": "It links the Swift standard libraries statically into the framework, removing the need for the client app to bundle them.",
+          "is_correct": false,
+          "rationale": "This setting does not control static versus dynamic linking of the Swift standard libraries."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "What is the critical role of a dSYM file in the context of diagnosing crashes from a released iOS application?",
+      "explanation": "A dSYM (debug symbols) file is essential for crash analysis. It maps the memory addresses from a crash log to the original source code, a process called symbolication, making the crash report understandable and actionable for developers.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It contains debugging symbols to translate memory addresses in a crash report into human-readable function names and line numbers.",
+          "is_correct": true,
+          "rationale": "This accurately describes the process of symbolication, which is the primary purpose of a dSYM file."
+        },
+        {
+          "key": "B",
+          "text": "It is an encrypted archive of the application's source code that is uploaded to App Store Connect for security analysis.",
+          "is_correct": false,
+          "rationale": "Source code is not uploaded in this manner; dSYMs contain mapping information, not the code itself."
+        },
+        {
+          "key": "C",
+          "text": "It bundles all third-party library licenses and attribution notices required for compliance with open-source software policies.",
+          "is_correct": false,
+          "rationale": "This describes a license manifest or settings bundle, not the function of a dSYM file."
+        },
+        {
+          "key": "D",
+          "text": "It serves as a manifest file for on-demand resources, allowing the App Store to deliver assets to users as needed.",
+          "is_correct": false,
+          "rationale": "On-demand resources are managed through asset catalogs and other mechanisms, not dSYM files."
+        },
+        {
+          "key": "E",
+          "text": "It is a pre-compiled binary of the application's user interface storyboards and XIB files for faster application launch times.",
+          "is_correct": false,
+          "rationale": "Compiled interface files have a `.storyboardc` or `.nib` extension and serve a different purpose."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "What is the primary function of a type annotated with the `@resultBuilder` attribute in modern Swift programming?",
+      "explanation": "Result builders are a powerful Swift feature for building up a result from a sequence of components, effectively creating a Domain-Specific Language (DSL). This is famously used in SwiftUI to construct view hierarchies from a series of view expressions.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It enables the creation of domain-specific languages (DSLs) by transforming a sequence of expressions into a single combined value.",
+          "is_correct": true,
+          "rationale": "This correctly identifies result builders as a tool for creating DSLs like SwiftUI's view builder."
+        },
+        {
+          "key": "B",
+          "text": "It automatically synthesizes conformance to protocols like `Codable` for complex, nested data structures without requiring manual implementation.",
+          "is_correct": false,
+          "rationale": "This describes compiler-synthesized protocol conformance, which is a different language feature."
+        },
+        {
+          "key": "C",
+          "text": "It provides a mechanism for creating custom property wrappers that can add logic to the getter and setter of a property.",
+          "is_correct": false,
+          "rationale": "This describes the `@propertyWrapper` attribute, which is distinct from `@resultBuilder`."
+        },
+        {
+          "key": "D",
+          "text": "It allows for the dynamic creation and modification of Swift types at runtime, similar to reflection in other languages.",
+          "is_correct": false,
+          "rationale": "Swift has limited reflection capabilities, but result builders are a compile-time feature for constructing values."
+        },
+        {
+          "key": "E",
+          "text": "It is a compiler directive that optimizes memory layout for structs to ensure maximum performance in computationally intensive tasks.",
+          "is_correct": false,
+          "rationale": "This describes attributes like `@frozen`, not the function of a result builder."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "When processing a large collection of objects within a tight loop, what is the primary benefit of using an explicit `@autoreleasepool` block?",
+      "explanation": "In loops that create many temporary autoreleased objects, an explicit `@autoreleasepool` drains the pool on each iteration. This prevents memory from spiking by releasing objects much sooner than the run loop's own pool would.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It forces immediate deallocation of all objects created within the loop, completely bypassing ARC's standard reference counting mechanisms.",
+          "is_correct": false,
+          "rationale": "This is incorrect; it works with ARC to manage autoreleased objects, not bypass it."
+        },
+        {
+          "key": "B",
+          "text": "It prevents memory spikes by draining temporary autoreleased objects at the end of each loop iteration instead of waiting for the run loop.",
+          "is_correct": true,
+          "rationale": "This correctly identifies the pool's role in managing memory for temporary objects in a loop."
+        },
+        {
+          "key": "C",
+          "text": "It synchronizes access to the objects from multiple threads, preventing potential race conditions when the collection is mutated concurrently.",
+          "is_correct": false,
+          "rationale": "This describes a synchronization primitive like a lock, not an autorelease pool's function."
+        },
+        {
+          "key": "D",
+          "text": "It automatically converts strong references to weak references for all objects inside the block to break potential retain cycles.",
+          "is_correct": false,
+          "rationale": "An autorelease pool has no effect on reference strength; retain cycles are managed differently."
+        },
+        {
+          "key": "E",
+          "text": "It pre-allocates a fixed memory region for the loop's objects, which improves performance by reducing overall heap fragmentation.",
+          "is_correct": false,
+          "rationale": "This describes a custom memory allocation strategy, not the purpose of an autorelease pool."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "In Swift's concurrency model, what is the key implication of actor reentrancy when an actor method suspends at an `await` point?",
+      "explanation": "Actor reentrancy means that while a method is suspended (awaiting), other calls to the actor can be interleaved. This prevents deadlocks but requires developers to be careful about state changes across suspension points, as invariants may be broken.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The actor's state is guaranteed to be completely frozen and immutable until the awaited function returns, preventing any state changes.",
+          "is_correct": false,
+          "rationale": "This is incorrect; reentrancy specifically allows other calls to modify state during a suspension."
+        },
+        {
+          "key": "B",
+          "text": "Other calls to the actor can be processed while the original method is suspended, potentially altering the actor's state before resumption.",
+          "is_correct": true,
+          "rationale": "This accurately describes reentrancy, where interleaved execution can occur on suspension."
+        },
+        {
+          "key": "C",
+          "text": "The actor is exclusively locked, and no other tasks can execute any of its methods until the awaited call fully completes.",
+          "is_correct": false,
+          "rationale": "This describes a non-reentrant actor or a traditional lock, which Swift actors avoid to prevent deadlocks."
+        },
+        {
+          "key": "D",
+          "text": "A new, isolated copy of the actor's state is created for the suspended task to ensure transactional consistency upon its return.",
+          "is_correct": false,
+          "rationale": "This is not how actors work; they manage access to a single, mutable state."
+        },
+        {
+          "key": "E",
+          "text": "The `await` call automatically creates a new dedicated thread to run the suspended task, isolating it from the actor's execution context.",
+          "is_correct": false,
+          "rationale": "Concurrency uses a cooperative thread pool, not a new thread per await call."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "When storing sensitive data in the Keychain, what is the primary security guarantee provided by the `kSecAttrAccessibleWhenUnlockedThisDeviceOnly` protection class?",
+      "explanation": "This attribute ensures Keychain items are only accessible when the device is unlocked. The data is encrypted and cannot be migrated to a new device or restored from a backup, tying it specifically to the current device's hardware.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The data is accessible only while the app is in the foreground and the device is currently unlocked by the user.",
+          "is_correct": false,
+          "rationale": "This is too restrictive because background access is still possible while the device is unlocked, not just when the app is in the foreground."
+        },
+        {
+          "key": "B",
+          "text": "The data can be accessed by background tasks even when the device is locked, but only after the first user unlock.",
+          "is_correct": false,
+          "rationale": "This describes `kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly`, a different, less strict protection class."
+        },
+        {
+          "key": "C",
+          "text": "The data is accessible only when the device is unlocked and is not included in any device backups to iCloud or iTunes.",
+          "is_correct": true,
+          "rationale": "This correctly identifies both the lock state requirement and the backup exclusion property."
+        },
+        {
+          "key": "D",
+          "text": "The data requires biometric authentication for every single access attempt, regardless of the device's current lock state.",
+          "is_correct": false,
+          "rationale": "This is controlled by `SecAccessControl` flags, not the protection class attribute itself."
+        },
+        {
+          "key": "E",
+          "text": "The data is stored in a shared keychain access group that is only available on the specific device it was created on.",
+          "is_correct": false,
+          "rationale": "Access groups are for sharing data between apps and are separate from protection classes."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "To optimize scrolling performance in a complex view hierarchy, what is the most effective use of the `shouldRasterize` property on a CALayer?",
+      "explanation": "Setting `shouldRasterize` to true caches a layer's rendered output as a bitmap. This is highly effective for complex, static content that is being transformed, as the GPU can reuse the bitmap instead of re-rendering the layer subtree on every frame.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Enable it for layers with frequently changing content, as it forces the GPU to re-render the layer on a background thread.",
+          "is_correct": false,
+          "rationale": "This is the opposite of the intended use; it's for static content to avoid re-rasterization overhead."
+        },
+        {
+          "key": "B",
+          "text": "Apply it to simple, static layers like solid color views to reduce the overall number of draw calls to the GPU.",
+          "is_correct": false,
+          "rationale": "This is inefficient, as the overhead of rasterization outweighs the benefit for simple layers."
+        },
+        {
+          "key": "C",
+          "text": "Set it to true for complex, static layer subtrees that are animated as a group, caching them as a single bitmap.",
+          "is_correct": true,
+          "rationale": "This is the ideal use case, trading memory for rendering performance on complex, unchanging content."
+        },
+        {
+          "key": "D",
+          "text": "Use it on the main view's layer to create a single flattened image of the entire screen, improving overall frame rate.",
+          "is_correct": false,
+          "rationale": "This is a misuse that would cause constant, expensive re-rasterization as any UI element changes."
+        },
+        {
+          "key": "E",
+          "text": "It should be enabled on all image views to ensure their decoded image data is permanently cached in VRAM for faster access.",
+          "is_correct": false,
+          "rationale": "This is not its purpose; image data is already managed and cached separately by the system."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "In a large, modular iOS app, what is a primary architectural trade-off when choosing Service Locator over Constructor Injection for managing dependencies?",
+      "explanation": "A Service Locator hides dependencies, making them implicit. While this can simplify constructor signatures, it makes the code harder to reason about and test, as a module's true dependencies are not explicitly declared in its public interface.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Service Locator makes dependencies explicit and compile-time safe, but it significantly increases the complexity of object initialization.",
+          "is_correct": false,
+          "rationale": "This is incorrect; Service Locator makes dependencies implicit and less safe at compile-time."
+        },
+        {
+          "key": "B",
+          "text": "Constructor Injection couples modules more tightly, making it impossible to replace dependencies without recompiling the entire application.",
+          "is_correct": false,
+          "rationale": "This is false; Constructor Injection promotes loose coupling and easier dependency replacement."
+        },
+        {
+          "key": "C",
+          "text": "Service Locator simplifies initializer signatures but obscures a component's true dependencies, making the dependency graph less transparent.",
+          "is_correct": true,
+          "rationale": "This correctly identifies the trade-off: simpler initializers versus hidden, implicit dependencies."
+        },
+        {
+          "key": "D",
+          "text": "Constructor Injection requires a global singleton container, which introduces global state and makes parallel testing of components difficult.",
+          "is_correct": false,
+          "rationale": "This is a common critique of the Service Locator pattern, not Constructor Injection."
+        },
+        {
+          "key": "E",
+          "text": "Service Locator is the only pattern that effectively supports resolving dependencies lazily, which is critical for improving app launch times.",
+          "is_correct": false,
+          "rationale": "Both patterns can be implemented with lazy resolution; it is not exclusive to Service Locator."
+        }
+      ]
+    }
+  ]
+}

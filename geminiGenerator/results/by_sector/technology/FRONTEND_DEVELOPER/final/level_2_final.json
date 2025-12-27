@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "When structuring a web page, which HTML5 semantic element should be used to represent a self-contained composition that could be independently distributable?",
+      "explanation": "The <article> element is specifically designed for self-contained content that makes sense on its own, like a blog post or news story. This improves accessibility and SEO.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The <section> element, typically used for grouping related content within a document or article.",
+          "is_correct": false,
+          "rationale": "Section groups related content, not necessarily self-contained."
+        },
+        {
+          "key": "B",
+          "text": "The <article> element, which is ideal for independent, self-contained content such as a blog entry or forum post.",
+          "is_correct": true,
+          "rationale": "Article is for self-contained, independently distributable content."
+        },
+        {
+          "key": "C",
+          "text": "The <aside> element, suitable for content that is tangentially related to the main content, like a sidebar.",
+          "is_correct": false,
+          "rationale": "Aside is for tangentially related content, like sidebars."
+        },
+        {
+          "key": "D",
+          "text": "The <main> element, which represents the dominant content of the <body> of a document or application.",
+          "is_correct": false,
+          "rationale": "Main defines the dominant content of the document body."
+        },
+        {
+          "key": "E",
+          "text": "The <div> element, a generic container used for styling and scripting purposes when no other semantic element is appropriate.",
+          "is_correct": false,
+          "rationale": "Div is a non-semantic container, not for specific content types."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "To dynamically change the text content of an HTML element with the ID \"myParagraph\", which JavaScript method is the most appropriate and efficient?",
+      "explanation": "`textContent` is generally preferred for setting or getting the text content of an element because it is more secure against XSS attacks compared to `innerHTML` and typically performs better.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using `element.innerHTML = \"New Text\";` to update the content, which parses HTML and can pose security risks.",
+          "is_correct": false,
+          "rationale": "innerHTML parses HTML, which can be a security risk."
+        },
+        {
+          "key": "B",
+          "text": "Employing `element.innerText = \"New Text\";` to change visible text, respecting CSS styling and layout.",
+          "is_correct": false,
+          "rationale": "innerText considers styling, which can be less efficient than textContent."
+        },
+        {
+          "key": "C",
+          "text": "Utilizing `element.textContent = \"New Text\";` to safely and efficiently set the plain text content of the element.",
+          "is_correct": true,
+          "rationale": "textContent is efficient and safe for plain text content updates."
+        },
+        {
+          "key": "D",
+          "text": "Applying `element.setAttribute('value', 'New Text');` which is primarily for form input values, not general text content.",
+          "is_correct": false,
+          "rationale": "setAttribute is for attributes, not the text content of an element."
+        },
+        {
+          "key": "E",
+          "text": "Using `appendChild` with a new text node, which adds to existing content rather than replacing it directly.",
+          "is_correct": false,
+          "rationale": "Appending a text node is less direct for simply replacing content."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Which CSS technique is primarily used to create responsive web designs that adapt layouts based on the characteristics of the viewing device?",
+      "explanation": "Media queries are fundamental to responsive design, allowing developers to apply different CSS rules based on device characteristics like screen width, height, or orientation, thus adapting the layout.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Implementing CSS Grid Layout for complex two-dimensional grid-based layouts, which can be responsive.",
+          "is_correct": false,
+          "rationale": "CSS Grid is a layout method, not the primary technique for responsiveness."
+        },
+        {
+          "key": "B",
+          "text": "Using CSS Flexbox for one-dimensional layout distribution, effectively arranging items in a row or column.",
+          "is_correct": false,
+          "rationale": "Flexbox is a layout method, not the primary technique for responsiveness."
+        },
+        {
+          "key": "C",
+          "text": "Applying CSS Transitions for smooth animated changes between different states of an element.",
+          "is_correct": false,
+          "rationale": "CSS Transitions are for animations, not adapting layouts for devices."
+        },
+        {
+          "key": "D",
+          "text": "Utilizing CSS Media Queries to apply styles conditionally based on device characteristics, like screen width.",
+          "is_correct": true,
+          "rationale": "Media queries are the core CSS technique for responsive design."
+        },
+        {
+          "key": "E",
+          "text": "Employing CSS Animations for creating complex, multi-step animated sequences on web elements.",
+          "is_correct": false,
+          "rationale": "CSS Animations are for complex animations, not adapting layouts for devices."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "When collaborating on a frontend project using Git, what is the standard command for incorporating changes from a remote repository into your current local branch?",
+      "explanation": "`git pull` is the command used to fetch changes from a remote repository and then immediately merge them into the current branch. This keeps your local branch up-to-date with the remote.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`git push`, which uploads local commits to a remote repository, sharing your changes with others.",
+          "is_correct": false,
+          "rationale": "git push sends local changes to the remote, not vice-versa."
+        },
+        {
+          "key": "B",
+          "text": "`git commit`, used to save changes to the local repository, creating a new snapshot of the project.",
+          "is_correct": false,
+          "rationale": "git commit saves changes locally, it does not interact with remote."
+        },
+        {
+          "key": "C",
+          "text": "`git merge`, which combines changes from different branches, integrating their histories together.",
+          "is_correct": false,
+          "rationale": "git merge combines branches, but git pull includes the fetch step."
+        },
+        {
+          "key": "D",
+          "text": "`git clone`, used to create a local copy of an existing remote repository onto your machine.",
+          "is_correct": false,
+          "rationale": "git clone creates an initial copy, not for subsequent updates."
+        },
+        {
+          "key": "E",
+          "text": "`git pull`, which fetches changes from a remote repository and integrates them into the current local branch.",
+          "is_correct": true,
+          "rationale": "git pull fetches and integrates remote changes into the local branch."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What is a common and effective technique for reducing the initial load time of a web page by delaying the loading of non-critical resources?",
+      "explanation": "Lazy loading defers the loading of images or other resources until they are actually needed, such as when they enter the viewport. This significantly improves initial page load speed.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Implementing server-side rendering (SSR) to generate HTML on the server, which can improve perceived load time.",
+          "is_correct": false,
+          "rationale": "SSR improves perceived load, but doesn't delay non-critical resource loading."
+        },
+        {
+          "key": "B",
+          "text": "Minifying CSS and JavaScript files to reduce their file size, thereby speeding up download times.",
+          "is_correct": false,
+          "rationale": "Minification reduces file size, but does not delay loading of resources."
+        },
+        {
+          "key": "C",
+          "text": "Using lazy loading for images and other media, deferring their download until they are within the user's viewport.",
+          "is_correct": true,
+          "rationale": "Lazy loading defers non-critical resources, improving initial page load."
+        },
+        {
+          "key": "D",
+          "text": "Employing a Content Delivery Network (CDN) to serve static assets from geographically closer servers to users.",
+          "is_correct": false,
+          "rationale": "CDNs speed up delivery, but don't delay loading of specific resources."
+        },
+        {
+          "key": "E",
+          "text": "Optimizing database queries on the backend to ensure faster data retrieval for dynamic content.",
+          "is_correct": false,
+          "rationale": "Backend database optimization is not a frontend technique for initial page load."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Which HTML5 semantic element should be used to clearly define the main content area of a webpage, excluding headers, footers, and sidebars?",
+      "explanation": "The `<main>` element is specifically designed to contain the unique, central content of a document. Using it improves accessibility and document outline, helping assistive technologies understand the page's primary purpose.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The `<section>` element is typically used for grouping related content within a document, often with a heading.",
+          "is_correct": false,
+          "rationale": "`<section>` groups related content, not necessarily the main content."
+        },
+        {
+          "key": "B",
+          "text": "The `<article>` element is suitable for self-contained content that could be distributed independently, like a blog post.",
+          "is_correct": false,
+          "rationale": "`<article>` is for independent, self-contained content units."
+        },
+        {
+          "key": "C",
+          "text": "The `<main>` element specifically represents the dominant content of the `<body>` of a document, unique to the page.",
+          "is_correct": true,
+          "rationale": "The `<main>` element defines the primary content of the page."
+        },
+        {
+          "key": "D",
+          "text": "The `<div>` element provides a generic container for flow content, commonly used for styling purposes with CSS.",
+          "is_correct": false,
+          "rationale": "`<div>` is a generic container, lacking semantic meaning."
+        },
+        {
+          "key": "E",
+          "text": "The `<aside>` element is typically used for content that is tangentially related to the content around it, like a sidebar.",
+          "is_correct": false,
+          "rationale": "`<aside>` is for content related to the main content, but separate."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "When dealing with a dynamic list of elements, what is the most efficient method for handling click events on newly added items?",
+      "explanation": "Event delegation is a highly efficient technique where a single event listener is placed on a parent element. It then listens for events bubbling up from its children, even newly added ones, improving performance.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Attach an individual event listener to each new element as it is created and inserted into the DOM structure.",
+          "is_correct": false,
+          "rationale": "Attaching many individual listeners is inefficient for dynamic lists."
+        },
+        {
+          "key": "B",
+          "text": "Use event delegation by attaching a single event listener to a common parent element, then check the event target.",
+          "is_correct": true,
+          "rationale": "Event delegation efficiently handles events for dynamic elements via a parent listener."
+        },
+        {
+          "key": "C",
+          "text": "Poll the DOM periodically to detect new elements and then manually trigger their respective click handler functions.",
+          "is_correct": false,
+          "rationale": "Polling is inefficient and reactive, not a direct event handling method."
+        },
+        {
+          "key": "D",
+          "text": "Register a global click event listener on the `document` object and filter events based on element class names.",
+          "is_correct": false,
+          "rationale": "While possible, a more specific parent is generally better than `document`."
+        },
+        {
+          "key": "E",
+          "text": "Implement a custom mutation observer to watch for DOM changes and then bind event listeners to affected nodes.",
+          "is_correct": false,
+          "rationale": "Mutation observers are powerful but often overkill for simple event handling."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "In a modern JavaScript framework like React, what is the primary purpose of component state?",
+      "explanation": "Component state holds data that is internal and mutable within a component. When this state changes, the component typically re-renders, updating the UI to reflect the new data.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To store data that is immutable and passed down from parent components, never changing within the child itself.",
+          "is_correct": false,
+          "rationale": "This describes props, which are immutable data passed from parents."
+        },
+        {
+          "key": "B",
+          "text": "To manage internal data specific to a component that can change over time, triggering re-renders when updated.",
+          "is_correct": true,
+          "rationale": "State manages internal, mutable data that causes component re-renders."
+        },
+        {
+          "key": "C",
+          "text": "To provide a global store for application-wide data, accessible by any component without prop drilling.",
+          "is_correct": false,
+          "rationale": "This describes global state management, not component-specific state."
+        },
+        {
+          "key": "D",
+          "text": "To define the component's static structure and appearance using CSS styles and HTML markup definitions.",
+          "is_correct": false,
+          "rationale": "This describes the component's template and styling, not its state."
+        },
+        {
+          "key": "E",
+          "text": "To handle asynchronous operations and API calls, ensuring data is fetched before the component renders.",
+          "is_correct": false,
+          "rationale": "This describes lifecycle methods or effects, not the state itself."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Which technique is most effective for improving page load times by optimizing image delivery on a website?",
+      "explanation": "Lazy loading ensures images are only loaded when they enter the viewport, reducing initial page weight. Serving optimized formats like WebP and using appropriate sizes further minimizes file sizes, significantly improving load times.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Converting all images to SVG format, regardless of their content or complexity, for universal scalability.",
+          "is_correct": false,
+          "rationale": "SVG is not always suitable for complex photographic images; it's for vector graphics."
+        },
+        {
+          "key": "B",
+          "text": "Using CSS background images exclusively, avoiding `<img>` tags to reduce the total number of DOM elements.",
+          "is_correct": false,
+          "rationale": "This doesn't inherently optimize image delivery or improve load times significantly."
+        },
+        {
+          "key": "C",
+          "text": "Implementing lazy loading for images below the fold and serving appropriately sized, compressed formats like WebP.",
+          "is_correct": true,
+          "rationale": "Lazy loading and optimized image formats significantly reduce page load times."
+        },
+        {
+          "key": "D",
+          "text": "Embedding all image data directly into the HTML using Base64 encoding to eliminate separate HTTP requests.",
+          "is_correct": false,
+          "rationale": "Base64 encoding increases file size, making HTML heavier and potentially slower."
+        },
+        {
+          "key": "E",
+          "text": "Storing all image assets on the local server without utilizing a Content Delivery Network (CDN) for distribution.",
+          "is_correct": false,
+          "rationale": "CDNs distribute content globally, reducing latency and improving delivery speed."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "What is the primary benefit of using Git for version control in a frontend development team?",
+      "explanation": "Git enables effective collaboration by tracking changes, allowing developers to work in parallel on different features. It provides robust mechanisms for merging code and resolving conflicts, preventing loss of work.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It automatically compiles JavaScript and CSS files into optimized bundles for production deployment.",
+          "is_correct": false,
+          "rationale": "This is a function of build tools and bundlers, not Git directly."
+        },
+        {
+          "key": "B",
+          "text": "It allows multiple developers to collaborate on the same codebase simultaneously without overwriting each other's work.",
+          "is_correct": true,
+          "rationale": "Git facilitates collaborative development, tracking changes and managing code merges efficiently."
+        },
+        {
+          "key": "C",
+          "text": "It provides a visual interface for designing user interfaces and prototyping interactive web components quickly.",
+          "is_correct": false,
+          "rationale": "This describes design tools or UI builders, not Git."
+        },
+        {
+          "key": "D",
+          "text": "It scans the codebase for security vulnerabilities and automatically fixes common coding errors before deployment.",
+          "is_correct": false,
+          "rationale": "This is a function of linters, security scanners, or static analysis tools."
+        },
+        {
+          "key": "E",
+          "text": "It manages project dependencies and installs required libraries from a central package registry efficiently.",
+          "is_correct": false,
+          "rationale": "This is the role of a package manager like npm or Yarn."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When calculating the total width of an element using the standard CSS box model, which properties are included in the final dimension?",
+      "explanation": "The standard CSS box model (content-box) calculates an element's total width by adding the content width, padding, and border. Margin is external space and does not contribute to the element's actual dimensions.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Only the content area's width is considered, excluding any padding, border, or margin values.",
+          "is_correct": false,
+          "rationale": "Incorrect, padding and border are part of the element's visual space."
+        },
+        {
+          "key": "B",
+          "text": "The content width, along with the padding and border values, contributes to the element's total width.",
+          "is_correct": true,
+          "rationale": "Standard box model includes content, padding, and border for width."
+        },
+        {
+          "key": "C",
+          "text": "The content, padding, border, and margin values are all added together to determine the element's overall width.",
+          "is_correct": false,
+          "rationale": "Incorrect, margin is external space and does not add to the element's actual width."
+        },
+        {
+          "key": "D",
+          "text": "The content width and padding are included, but the border and margin are always excluded from the calculation.",
+          "is_correct": false,
+          "rationale": "Incorrect, border is included in the standard box model calculation."
+        },
+        {
+          "key": "E",
+          "text": "Only the content and margin values define the total width, ignoring both padding and border properties.",
+          "is_correct": false,
+          "rationale": "Incorrect, padding and border are important parts of the element's calculated width."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "What is the primary benefit of using event delegation in JavaScript for handling user interactions on dynamic lists?",
+      "explanation": "Event delegation attaches a single event listener to a parent element instead of multiple listeners to individual child elements. This significantly reduces memory usage and improves performance, especially for dynamic lists.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It significantly reduces the amount of memory consumed by event listeners, improving overall application performance.",
+          "is_correct": true,
+          "rationale": "Reduces memory by using one listener for many elements."
+        },
+        {
+          "key": "B",
+          "text": "It ensures that event listeners are automatically removed from the DOM when elements are dynamically added or deleted.",
+          "is_correct": false,
+          "rationale": "Event delegation does not automatically manage listener removal for dynamic elements."
+        },
+        {
+          "key": "C",
+          "text": "It allows for more precise control over the order in which multiple event handlers are executed on a single element.",
+          "is_correct": false,
+          "rationale": "This is not the primary benefit of event delegation."
+        },
+        {
+          "key": "D",
+          "text": "It simplifies debugging by centralizing all event handling logic within a single, dedicated function for easier maintenance.",
+          "is_correct": false,
+          "rationale": "While it can centralize logic, memory reduction is the primary benefit."
+        },
+        {
+          "key": "E",
+          "text": "It enables the creation of custom event types that can be dispatched and listened for across different components seamlessly.",
+          "is_correct": false,
+          "rationale": "This describes custom events, not event delegation's primary benefit."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "Which ARIA attribute should a frontend developer use to indicate that an input field is required for form submission?",
+      "explanation": "The `aria-required=\"true\"` attribute explicitly informs assistive technologies, such as screen readers, that a specific input field must be filled out by the user before the form can be successfully submitted.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The 'aria-disabled' attribute should be set to 'true' to visually grey out the input field.",
+          "is_correct": false,
+          "rationale": "`aria-disabled` indicates an element is not interactive, preventing user input."
+        },
+        {
+          "key": "B",
+          "text": "The 'aria-required' attribute must be set to 'true' to inform assistive technologies about the requirement.",
+          "is_correct": true,
+          "rationale": "`aria-required` explicitly indicates a mandatory input field to assistive technologies."
+        },
+        {
+          "key": "C",
+          "text": "The 'aria-live' attribute should be used with a value of 'assertive' to announce changes immediately.",
+          "is_correct": false,
+          "rationale": "`aria-live` is for dynamic content updates, not field requirements."
+        },
+        {
+          "key": "D",
+          "text": "The 'aria-invalid' attribute should be set to 'true' only after the user attempts submission without filling it.",
+          "is_correct": false,
+          "rationale": "`aria-invalid` indicates a validation error, not a requirement status."
+        },
+        {
+          "key": "E",
+          "text": "The 'aria-labelledby' attribute should point to a descriptive label element for better context.",
+          "is_correct": false,
+          "rationale": "`aria-labelledby` provides a text label, not a requirement status."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "After making local changes on a feature branch, what is the most appropriate Git command to integrate these changes into the main branch?",
+      "explanation": "After completing work on a feature branch, the standard practice to integrate changes into the main branch is to first switch to the main branch, pull the latest changes, and then perform a `git merge` of the feature branch.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use `git reset --hard origin/main` to discard local changes and sync with the remote main branch.",
+          "is_correct": false,
+          "rationale": "`git reset --hard` discards changes, which is not integration."
+        },
+        {
+          "key": "B",
+          "text": "Run `git stash save \"Work in progress\"` to temporarily store changes without committing them.",
+          "is_correct": false,
+          "rationale": "`git stash` saves changes temporarily, not for integration."
+        },
+        {
+          "key": "C",
+          "text": "Perform `git merge feature-branch` into the main branch, assuming the main branch is checked out.",
+          "is_correct": true,
+          "rationale": "`git merge` is the standard command to integrate a feature branch into the main branch."
+        },
+        {
+          "key": "D",
+          "text": "Execute `git rebase main` from the feature branch to move its commits onto the main branch's tip.",
+          "is_correct": false,
+          "rationale": "`git rebase` rewrites history and is an alternative to merge, but merge is often preferred for simple integration."
+        },
+        {
+          "key": "E",
+          "text": "Use `git checkout main && git pull origin main` to update the main branch, then merge.",
+          "is_correct": false,
+          "rationale": "This is part of the process, but `git merge` is the direct integration command."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Which technique is most effective for reducing the initial load time of a web application by deferring non-critical resource loading?",
+      "explanation": "Lazy loading defers the loading of non-critical resources, such as images, videos, or components, until they are actually needed or become visible in the user's viewport. This significantly improves initial page load time.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Implementing server-side rendering (SSR) to generate HTML on the server before sending it to the browser.",
+          "is_correct": false,
+          "rationale": "SSR improves perceived performance and SEO, but doesn't defer non-critical resources."
+        },
+        {
+          "key": "B",
+          "text": "Utilizing CSS-in-JS libraries to scope styles directly within JavaScript components for better organization.",
+          "is_correct": false,
+          "rationale": "CSS-in-JS is a styling approach, not primarily for load time optimization."
+        },
+        {
+          "key": "C",
+          "text": "Employing lazy loading for images and components, so they only load when they are about to enter the viewport.",
+          "is_correct": true,
+          "rationale": "Lazy loading defers non-critical resources, improving initial page load time."
+        },
+        {
+          "key": "D",
+          "text": "Minifying and bundling all JavaScript and CSS files into a single large file to reduce HTTP requests.",
+          "is_correct": false,
+          "rationale": "While reducing requests helps, bundling all into one large file can still be heavy for initial load."
+        },
+        {
+          "key": "E",
+          "text": "Caching all static assets aggressively using a service worker to ensure faster repeat visits for users.",
+          "is_correct": false,
+          "rationale": "Caching improves *repeat* visits, not the *initial* load time for new users."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "When multiple CSS rules target the same element, which property determines which style is ultimately applied to the element?",
+      "explanation": "CSS specificity is a set of rules that determines which CSS styles are applied to an element when multiple rules could potentially apply. A higher specificity value means the rule will take precedence.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The order of declaration in the stylesheet determines the final style, with later rules overriding earlier ones.",
+          "is_correct": false,
+          "rationale": "Order matters only when specificity is equal."
+        },
+        {
+          "key": "B",
+          "text": "The selector's specificity value, calculated based on its type, class, and ID selectors, dictates the applied style.",
+          "is_correct": true,
+          "rationale": "Specificity rules determine which CSS style is applied."
+        },
+        {
+          "key": "C",
+          "text": "Only inline styles applied directly to the HTML element will always take precedence over all external stylesheets.",
+          "is_correct": false,
+          "rationale": "Inline styles have high specificity, but !important can override."
+        },
+        {
+          "key": "D",
+          "text": "The browser's default stylesheet always overrides any custom CSS rules defined by the developer.",
+          "is_correct": false,
+          "rationale": "Developer styles typically override browser defaults."
+        },
+        {
+          "key": "E",
+          "text": "Styles defined within a JavaScript file always override CSS rules, regardless of their specificity or order.",
+          "is_correct": false,
+          "rationale": "JavaScript styles are inline, following specificity rules."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "What is the primary benefit of using event delegation in JavaScript for handling user interactions?",
+      "explanation": "Event delegation involves attaching a single event listener to a parent element instead of multiple listeners to child elements. This significantly improves performance and simplifies managing events for dynamically added content.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It significantly reduces the number of event listeners attached to individual DOM elements, improving performance.",
+          "is_correct": true,
+          "rationale": "Event delegation reduces listeners and improves performance."
+        },
+        {
+          "key": "B",
+          "text": "It allows event handlers to execute synchronously, preventing any potential asynchronous behavior issues.",
+          "is_correct": false,
+          "rationale": "Event delegation doesn't control synchronous execution."
+        },
+        {
+          "key": "C",
+          "text": "It ensures that all event handlers are automatically removed from the DOM when elements are dynamically updated.",
+          "is_correct": false,
+          "rationale": "Manual removal might still be needed for parent listeners."
+        },
+        {
+          "key": "D",
+          "text": "It provides a built-in mechanism for preventing default browser actions on specific interactive elements.",
+          "is_correct": false,
+          "rationale": "`event.preventDefault()` handles default browser actions."
+        },
+        {
+          "key": "E",
+          "text": "It simplifies the process of creating custom events that can be triggered programmatically by other scripts.",
+          "is_correct": false,
+          "rationale": "Custom events use `CustomEvent` constructor, not delegation."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "Which ARIA attribute is best used to indicate that an element's content or state is dynamically updated?",
+      "explanation": "The `aria-live` attribute indicates that an element's content is likely to be updated and that assistive technologies should announce these updates to the user, thereby improving accessibility for dynamic content.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`aria-hidden` is used to hide elements from assistive technologies, making them inaccessible to users.",
+          "is_correct": false,
+          "rationale": "`aria-hidden` removes elements from the accessibility tree."
+        },
+        {
+          "key": "B",
+          "text": "`aria-live` informs assistive technologies about dynamic changes, ensuring users are aware of updates.",
+          "is_correct": true,
+          "rationale": "`aria-live` alerts users to dynamic content updates."
+        },
+        {
+          "key": "C",
+          "text": "`aria-labelledby` provides an accessible name for an element by referencing another element's ID.",
+          "is_correct": false,
+          "rationale": "`aria-labelledby` provides an element's accessible name."
+        },
+        {
+          "key": "D",
+          "text": "`aria-describedby` provides a description for an element by referencing another element's ID.",
+          "is_correct": false,
+          "rationale": "`aria-describedby` provides a description, not live updates."
+        },
+        {
+          "key": "E",
+          "text": "`aria-expanded` indicates whether a collapsible element, such as a menu or accordion, is currently open.",
+          "is_correct": false,
+          "rationale": "`aria-expanded` indicates the state of collapsible elements."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "In a typical Git workflow, what is the primary purpose of creating a separate feature branch?",
+      "explanation": "Feature branches allow developers to work on new features or bug fixes independently without affecting the main branch. This keeps the main branch stable and facilitates concurrent development among team members.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To isolate new development work from the main codebase, preventing disruption to stable features.",
+          "is_correct": true,
+          "rationale": "Feature branches isolate new work from the main codebase."
+        },
+        {
+          "key": "B",
+          "text": "To permanently delete old code versions that are no longer required for the project's functionality.",
+          "is_correct": false,
+          "rationale": "Deleting old code is done via other Git commands, not branches."
+        },
+        {
+          "key": "C",
+          "text": "To automatically deploy code changes to the production server upon successful completion of tests.",
+          "is_correct": false,
+          "rationale": "Deployment is handled by CI/CD pipelines, not branches."
+        },
+        {
+          "key": "D",
+          "text": "To merge all pending code changes from other developers into your local working directory.",
+          "is_correct": false,
+          "rationale": "Merging other changes is typically done on the main branch."
+        },
+        {
+          "key": "E",
+          "text": "To mark specific commits as release points for easier rollback in case of critical issues.",
+          "is_correct": false,
+          "rationale": "Tags are used to mark release points for easier rollback."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "Which technique is most effective for improving frontend loading performance related to images on a webpage?",
+      "explanation": "Implementing lazy loading ensures images only load when they enter the viewport, reducing initial page load time. Optimizing image file sizes and formats (e.g., WebP) further decreases bandwidth usage, significantly boosting performance.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Converting all images to a high-resolution PNG format to ensure maximum visual fidelity.",
+          "is_correct": false,
+          "rationale": "High-resolution PNGs increase file size, harming performance."
+        },
+        {
+          "key": "B",
+          "text": "Using CSS `background-image` properties for all images instead of HTML `<img>` tags.",
+          "is_correct": false,
+          "rationale": "This doesn't inherently improve loading performance of images."
+        },
+        {
+          "key": "C",
+          "text": "Implementing lazy loading for off-screen images and optimizing image file sizes and formats.",
+          "is_correct": true,
+          "rationale": "Lazy loading and optimization reduce image-related page load times."
+        },
+        {
+          "key": "D",
+          "text": "Storing all image assets directly within the JavaScript bundle to reduce the number of HTTP requests.",
+          "is_correct": false,
+          "rationale": "This increases JS bundle size, potentially slowing initial load."
+        },
+        {
+          "key": "E",
+          "text": "Embedding all small images as base64 encoded strings directly into the HTML document.",
+          "is_correct": false,
+          "rationale": "Base64 encoding increases file size and can block HTML parsing."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "Which cloud service model provides virtualized computing resources like VMs and networks, requiring users to manage operating systems?",
+      "explanation": "Infrastructure as a Service (IaaS) gives users control over the operating systems, applications, and network configuration, while the cloud provider manages the underlying physical infrastructure.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Infrastructure as a Service (IaaS) offers virtualized hardware resources, giving users control over the operating system layer.",
+          "is_correct": true,
+          "rationale": "IaaS provides virtualized hardware, with OS management falling to the user."
+        },
+        {
+          "key": "B",
+          "text": "Platform as a Service (PaaS) provides a complete development environment, abstracting away the underlying infrastructure management.",
+          "is_correct": false,
+          "rationale": "PaaS abstracts the OS layer, focusing on application development and deployment."
+        },
+        {
+          "key": "C",
+          "text": "Software as a Service (SaaS) delivers fully managed applications to end-users over the internet, requiring no local installation.",
+          "is_correct": false,
+          "rationale": "SaaS provides a complete application ready for use, with no infrastructure management."
+        },
+        {
+          "key": "D",
+          "text": "Function as a Service (FaaS) allows developers to run small, event-driven code snippets without provisioning any servers.",
+          "is_correct": false,
+          "rationale": "FaaS is a serverless model for executing code, not managing full OS instances."
+        },
+        {
+          "key": "E",
+          "text": "Database as a Service (DBaaS) manages database infrastructure, enabling users to focus solely on data and queries.",
+          "is_correct": false,
+          "rationale": "DBaaS specifically manages databases, abstracting server and OS concerns."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What is the primary benefit of using a Virtual Private Cloud (VPC) within a public cloud environment?",
+      "explanation": "A VPC creates a logically isolated section of the public cloud, allowing users to define their own network topology, IP address ranges, subnets, and network gateways for enhanced security and control.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It provides a dedicated, isolated network environment for your cloud resources, enhancing security and overall control.",
+          "is_correct": true,
+          "rationale": "VPC offers network isolation and control within a public cloud."
+        },
+        {
+          "key": "B",
+          "text": "It automatically scales your application instances up or down based on incoming traffic patterns and user demand.",
+          "is_correct": false,
+          "rationale": "This describes auto-scaling services, not the primary function of a VPC."
+        },
+        {
+          "key": "C",
+          "text": "It encrypts all data at rest and in transit within your cloud storage buckets for better regulatory compliance.",
+          "is_correct": false,
+          "rationale": "This describes encryption services, not the core function of a VPC."
+        },
+        {
+          "key": "D",
+          "text": "It distributes incoming application traffic across multiple backend servers to improve availability and system performance.",
+          "is_correct": false,
+          "rationale": "This describes a load balancer, not the primary benefit of a VPC."
+        },
+        {
+          "key": "E",
+          "text": "It manages software updates and patching for your operating systems and installed application dependencies automatically.",
+          "is_correct": false,
+          "rationale": "This describes managed services or patching tools, not the core of a VPC."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Which security principle ensures that users and services only have access to the resources absolutely necessary for their function?",
+      "explanation": "The principle of least privilege is a fundamental security concept that dictates granting users and processes only the minimum necessary permissions to perform their authorized tasks, reducing potential attack surfaces.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The principle of least privilege, which minimizes access rights to only what is essential for specific tasks.",
+          "is_correct": true,
+          "rationale": "Least privilege ensures users only get necessary permissions."
+        },
+        {
+          "key": "B",
+          "text": "The principle of shared responsibility, outlining security duties between the cloud provider and the customer.",
+          "is_correct": false,
+          "rationale": "Shared responsibility defines roles, not specific access levels."
+        },
+        {
+          "key": "C",
+          "text": "The principle of defense in depth, implementing multiple layers of security controls to protect valuable assets.",
+          "is_correct": false,
+          "rationale": "Defense in depth uses layers, not just access control."
+        },
+        {
+          "key": "D",
+          "text": "The principle of data residency, ensuring data remains within specific geographical boundaries for compliance reasons.",
+          "is_correct": false,
+          "rationale": "Data residency relates to geographic storage, not access levels."
+        },
+        {
+          "key": "E",
+          "text": "The principle of continuous monitoring, constantly observing system activity for anomalies and potential security threats.",
+          "is_correct": false,
+          "rationale": "Continuous monitoring is about observation, not defining initial access."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What is the primary function of a Content Delivery Network (CDN) in optimizing web application performance?",
+      "explanation": "A CDN caches static content closer to end-users via geographically distributed servers, reducing latency and improving page load times. This offloads traffic from origin servers, enhancing overall performance and user experience.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It caches static content at edge locations globally, delivering it faster to users based on their geographic proximity.",
+          "is_correct": true,
+          "rationale": "CDNs cache content closer to users for faster delivery."
+        },
+        {
+          "key": "B",
+          "text": "It encrypts all network traffic between the user's browser and the web server using SSL/TLS certificates.",
+          "is_correct": false,
+          "rationale": "This describes TLS/SSL, not the primary function of a CDN."
+        },
+        {
+          "key": "C",
+          "text": "It automatically scales backend servers up or down to handle fluctuating loads and maintain application availability.",
+          "is_correct": false,
+          "rationale": "This describes auto-scaling, not the core function of a CDN."
+        },
+        {
+          "key": "D",
+          "text": "It provides a centralized logging and monitoring solution for collecting and analyzing application performance metrics.",
+          "is_correct": false,
+          "rationale": "This describes monitoring and logging, not the primary function of a CDN."
+        },
+        {
+          "key": "E",
+          "text": "It secures web applications from common attacks like SQL injection and cross-site scripting (XSS) at the network edge.",
+          "is_correct": false,
+          "rationale": "This describes a Web Application Firewall (WAF), not a CDN."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Before deploying an application to the cloud, why is it important to consider its disaster recovery strategy?",
+      "explanation": "A disaster recovery strategy ensures business continuity by outlining how to recover and resume critical operations after a disruptive event. This minimizes downtime and data loss, protecting the business.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To ensure business continuity and minimize data loss or downtime in the event of an outage or failure.",
+          "is_correct": true,
+          "rationale": "Disaster recovery is crucial for business continuity and minimizing data loss."
+        },
+        {
+          "key": "B",
+          "text": "To reduce the overall monthly cloud computing costs by optimizing resource utilization and efficient scaling.",
+          "is_correct": false,
+          "rationale": "Cost optimization is separate from disaster recovery planning."
+        },
+        {
+          "key": "C",
+          "text": "To comply with data residency regulations by ensuring data is stored in specific geographic regions.",
+          "is_correct": false,
+          "rationale": "Data residency is a compliance concern, distinct from disaster recovery."
+        },
+        {
+          "key": "D",
+          "text": "To improve application performance by distributing traffic across multiple global data centers effectively.",
+          "is_correct": false,
+          "rationale": "Performance optimization is distinct from disaster recovery planning."
+        },
+        {
+          "key": "E",
+          "text": "To implement strong authentication and authorization mechanisms for all users accessing the application.",
+          "is_correct": false,
+          "rationale": "Authentication/authorization are security aspects, not disaster recovery strategy."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "What does Infrastructure as a Service (IaaS) primarily provide to cloud users and developers?",
+      "explanation": "IaaS offers fundamental computing resources like virtual machines, storage, and networks. Users manage their operating systems and applications, while the cloud provider manages the underlying infrastructure. This provides significant flexibility.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Fully managed applications ready for immediate use without any underlying infrastructure concerns or setup.",
+          "is_correct": false,
+          "rationale": "This describes Software as a Service (SaaS) or Platform as a Service (PaaS)."
+        },
+        {
+          "key": "B",
+          "text": "Virtualized computing resources, storage, and networking, giving users control over operating systems and applications.",
+          "is_correct": true,
+          "rationale": "IaaS provides raw infrastructure, allowing OS and application management."
+        },
+        {
+          "key": "C",
+          "text": "Pre-built software applications accessible over the internet, requiring no installation or complex maintenance.",
+          "is_correct": false,
+          "rationale": "This describes Software as a Service (SaaS) offerings."
+        },
+        {
+          "key": "D",
+          "text": "A complete platform for developing, running, and managing applications without building the underlying infrastructure.",
+          "is_correct": false,
+          "rationale": "This describes Platform as a Service (PaaS) offerings."
+        },
+        {
+          "key": "E",
+          "text": "Automated deployment pipelines and continuous integration tools that are designed for rapid software delivery.",
+          "is_correct": false,
+          "rationale": "This describes CI/CD tools, not the core of IaaS."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Which of the following best describes the main purpose of Amazon S3 in cloud environments?",
+      "explanation": "Amazon S3 (Simple Storage Service) is an object storage service offering industry-leading scalability, data availability, security, and performance. It is commonly used for data lakes, backups, and static website hosting.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Providing a managed relational database service for structured data and complex SQL queries.",
+          "is_correct": false,
+          "rationale": "This describes Amazon RDS or similar relational database services."
+        },
+        {
+          "key": "B",
+          "text": "Storing and retrieving large amounts of unstructured data as objects with extremely high durability.",
+          "is_correct": true,
+          "rationale": "Amazon S3 is a highly scalable and durable object storage service."
+        },
+        {
+          "key": "C",
+          "text": "Running virtual servers and compute instances designed for various compute-intensive application workloads.",
+          "is_correct": false,
+          "rationale": "This describes Amazon EC2 or similar compute services."
+        },
+        {
+          "key": "D",
+          "text": "Managing and orchestrating containerized applications at massive scale using the Kubernetes platform.",
+          "is_correct": false,
+          "rationale": "This describes container orchestration services like Amazon EKS."
+        },
+        {
+          "key": "E",
+          "text": "Delivering content quickly to users worldwide through a global network of edge locations.",
+          "is_correct": false,
+          "rationale": "This describes content delivery networks like Amazon CloudFront."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "What is the primary function of a Virtual Private Cloud (VPC) in AWS or similar cloud providers?",
+      "explanation": "A VPC allows users to provision a logically isolated section of the cloud where they can launch resources in a virtual network they define. This provides control over IP addressing, subnets, and network configuration.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To store application logs and system metrics for monitoring and troubleshooting purposes.",
+          "is_correct": false,
+          "rationale": "This describes logging and monitoring services like CloudWatch Logs."
+        },
+        {
+          "key": "B",
+          "text": "To create an isolated, private network within the cloud where resources can be securely deployed.",
+          "is_correct": true,
+          "rationale": "A VPC provides network isolation and control for cloud resources."
+        },
+        {
+          "key": "C",
+          "text": "To automatically scale computing resources up or down based on application demand fluctuations.",
+          "is_correct": false,
+          "rationale": "This describes auto-scaling services."
+        },
+        {
+          "key": "D",
+          "text": "To manage user identities and access permissions for various cloud services and resources.",
+          "is_correct": false,
+          "rationale": "This describes Identity and Access Management (IAM)."
+        },
+        {
+          "key": "E",
+          "text": "To provide a global content delivery network for caching and serving static assets efficiently.",
+          "is_correct": false,
+          "rationale": "This describes a Content Delivery Network (CDN) service."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Why is Identity and Access Management (IAM) considered a fundamental security practice in cloud computing?",
+      "explanation": "IAM is crucial because it allows administrators to securely control who is authenticated (signed in) and authorized (has permissions) to use resources. It enforces the principle of least privilege, minimizing potential security risks.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It provides centralized logging and detailed auditing of all API calls made within the cloud environment.",
+          "is_correct": false,
+          "rationale": "This describes services like AWS CloudTrail or Azure Activity Log."
+        },
+        {
+          "key": "B",
+          "text": "It encrypts all data stored at rest and in transit across different cloud regions and services.",
+          "is_correct": false,
+          "rationale": "This describes encryption services, not IAM's primary role."
+        },
+        {
+          "key": "C",
+          "text": "It ensures only authorized users and services can access specific cloud resources and perform actions.",
+          "is_correct": true,
+          "rationale": "IAM's core function is to manage and enforce access permissions securely."
+        },
+        {
+          "key": "D",
+          "text": "It automatically detects and mitigates denial-of-service (DoS) attacks that are targeting web applications.",
+          "is_correct": false,
+          "rationale": "This describes DDoS protection services like AWS Shield or Azure DDoS Protection."
+        },
+        {
+          "key": "E",
+          "text": "It manages the complete lifecycle of virtual machines, including creation, scaling, and termination processes.",
+          "is_correct": false,
+          "rationale": "This describes compute service management, not IAM's primary role."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "What is a common and effective strategy to optimize and reduce cloud computing costs?",
+      "explanation": "Rightsizing involves continuously evaluating and adjusting the size of compute instances and other resources to match actual usage requirements. This prevents over-provisioning and reduces unnecessary expenditure.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Deploying all applications onto the largest available virtual machine instances for maximum performance.",
+          "is_correct": false,
+          "rationale": "This leads to over-provisioning and significantly increases costs."
+        },
+        {
+          "key": "B",
+          "text": "Continuously monitoring resource utilization and rightsizing instances to match actual workload demands.",
+          "is_correct": true,
+          "rationale": "Rightsizing resources to actual needs is a key cost optimization strategy."
+        },
+        {
+          "key": "C",
+          "text": "Purchasing on-demand instances exclusively, avoiding any long-term commitment or reserved capacity.",
+          "is_correct": false,
+          "rationale": "Reserved instances or savings plans often offer significant discounts for stable workloads."
+        },
+        {
+          "key": "D",
+          "text": "Avoiding the use of managed services and building all infrastructure components from scratch.",
+          "is_correct": false,
+          "rationale": "Managed services often reduce operational overhead and total cost of ownership."
+        },
+        {
+          "key": "E",
+          "text": "Storing all data in the highest-performance storage tiers regardless of access frequency or criticality.",
+          "is_correct": false,
+          "rationale": "Matching data to appropriate storage tiers (e.g., archival) reduces costs."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "What is the fundamental purpose of an Amazon EC2 instance within the AWS cloud environment?",
+      "explanation": "Amazon EC2 (Elastic Compute Cloud) provides scalable virtual servers, known as instances, that users can configure and launch to run their applications and services in the cloud.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It provides scalable virtual servers in the cloud for running applications and performing various computing tasks effectively.",
+          "is_correct": true,
+          "rationale": "EC2 instances are virtual servers for compute tasks in AWS."
+        },
+        {
+          "key": "B",
+          "text": "It offers managed relational database services, simplifying setup, operation, and scaling of databases for applications.",
+          "is_correct": false,
+          "rationale": "This describes Amazon RDS, a managed database service."
+        },
+        {
+          "key": "C",
+          "text": "It provides highly durable and scalable object storage for various data types, accessible over the internet securely.",
+          "is_correct": false,
+          "rationale": "This describes Amazon S3, an object storage service."
+        },
+        {
+          "key": "D",
+          "text": "It delivers a global content delivery network service to securely deliver data, videos, applications, and APIs with low latency.",
+          "is_correct": false,
+          "rationale": "This describes Amazon CloudFront, a CDN service."
+        },
+        {
+          "key": "E",
+          "text": "It allows users to run code without provisioning or managing servers, automatically scaling with demand for efficiency.",
+          "is_correct": false,
+          "rationale": "This describes AWS Lambda, a serverless compute service."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "What is the primary function of a Virtual Private Cloud (VPC) in a public cloud platform?",
+      "explanation": "A VPC creates an isolated, private network within a public cloud, allowing users to define their own network topology, IP address ranges, subnets, and network gateways.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It creates an isolated, private network environment within a public cloud, allowing users to define their own network topology.",
+          "is_correct": true,
+          "rationale": "A VPC provides network isolation and control for cloud resources."
+        },
+        {
+          "key": "B",
+          "text": "It securely connects on-premises networks to cloud resources, extending the corporate data center into the cloud environment.",
+          "is_correct": false,
+          "rationale": "This describes VPNs or Direct Connect, not the VPC itself."
+        },
+        {
+          "key": "C",
+          "text": "It manages and distributes incoming application traffic across multiple targets, such as virtual servers, containers, and IP addresses.",
+          "is_correct": false,
+          "rationale": "This describes a load balancer, not a VPC."
+        },
+        {
+          "key": "D",
+          "text": "It provides a highly available and scalable domain name system (DNS) web service for translating domain names into IP addresses.",
+          "is_correct": false,
+          "rationale": "This describes a DNS service like Amazon Route 53."
+        },
+        {
+          "key": "E",
+          "text": "It enables automated scaling of compute capacity up or down based on predefined conditions, optimizing resource utilization.",
+          "is_correct": false,
+          "rationale": "This describes an auto-scaling service, not a VPC."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "What is the main use case for Amazon S3 (Simple Storage Service) in a cloud architecture?",
+      "explanation": "Amazon S3 is designed for highly scalable, durable, and available object storage. It's ideal for storing unstructured data, backups, archives, and hosting static websites.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It provides highly scalable, durable, and available object storage for unstructured data, backups, and static website hosting.",
+          "is_correct": true,
+          "rationale": "S3 is an object storage service for various data types and static content."
+        },
+        {
+          "key": "B",
+          "text": "It offers block storage volumes for use with EC2 instances, providing persistent storage for operating systems and applications.",
+          "is_correct": false,
+          "rationale": "This describes Amazon EBS (Elastic Block Store) volumes."
+        },
+        {
+          "key": "C",
+          "text": "It delivers fully managed, highly scalable file storage that can be accessed concurrently by multiple EC2 instances easily.",
+          "is_correct": false,
+          "rationale": "This describes Amazon EFS (Elastic File System)."
+        },
+        {
+          "key": "D",
+          "text": "It provides a data warehousing service for analyzing large datasets using SQL queries, optimizing for complex analytical workloads.",
+          "is_correct": false,
+          "rationale": "This describes Amazon Redshift, a data warehousing service."
+        },
+        {
+          "key": "E",
+          "text": "It offers a fast, in-memory data store service for caching and real-time use cases, enhancing application performance significantly.",
+          "is_correct": false,
+          "rationale": "This describes Amazon ElastiCache, a caching service."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Why is the principle of least privilege considered a fundamental security best practice in cloud environments?",
+      "explanation": "The principle of least privilege minimizes the attack surface by ensuring that users and services only have the necessary permissions to perform their tasks, reducing potential damage from compromised credentials.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It ensures that users and services are granted only the minimum permissions necessary to perform their specific tasks, reducing risk.",
+          "is_correct": true,
+          "rationale": "Least privilege limits access, reducing the impact of security breaches."
+        },
+        {
+          "key": "B",
+          "text": "It dictates that all cloud resources must be encrypted at rest and in transit, protecting data from unauthorized access universally.",
+          "is_correct": false,
+          "rationale": "This describes data encryption, a separate security practice."
+        },
+        {
+          "key": "C",
+          "text": "It requires regular security audits and vulnerability scanning of all deployed cloud resources to identify and mitigate potential weaknesses.",
+          "is_correct": false,
+          "rationale": "This describes security auditing and vulnerability management."
+        },
+        {
+          "key": "D",
+          "text": "It mandates the use of multi-factor authentication for all user accounts accessing cloud management consoles and APIs for enhanced security.",
+          "is_correct": false,
+          "rationale": "This describes multi-factor authentication (MFA), a separate control."
+        },
+        {
+          "key": "E",
+          "text": "It ensures that network access to cloud resources is restricted to specific IP ranges or virtual private clouds, enhancing perimeter security.",
+          "is_correct": false,
+          "rationale": "This describes network segmentation or firewall rules."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "A developer needs to restrict inbound traffic to a specific EC2 instance port. Which AWS networking construct is the most granular and instance-specific for this task?",
+      "explanation": "Security Groups act as virtual firewalls at the instance level, controlling inbound and outbound traffic for specific instances. Network ACLs operate at the subnet level, providing stateless packet filtering for all instances within that subnet.",
+      "options": [
+        {
+          "key": "A",
+          "text": "An AWS Network Access Control List (NACL) should be configured to allow only the required port, affecting the entire subnet.",
+          "is_correct": false,
+          "rationale": "NACLs operate at the subnet level, not instance-specific."
+        },
+        {
+          "key": "B",
+          "text": "An AWS Security Group should be configured to allow only the specific inbound port directly on the EC2 instance.",
+          "is_correct": true,
+          "rationale": "Security Groups provide instance-level, stateful traffic filtering."
+        },
+        {
+          "key": "C",
+          "text": "An AWS Virtual Private Cloud (VPC) endpoint should be used to secure traffic flow to the instance, bypassing public internet.",
+          "is_correct": false,
+          "rationale": "VPC endpoints enable private access to services, not port filtering."
+        },
+        {
+          "key": "D",
+          "text": "An AWS Route 53 DNS record must be updated to redirect traffic through a secure gateway appliance.",
+          "is_correct": false,
+          "rationale": "Route 53 manages DNS, not network port access control."
+        },
+        {
+          "key": "E",
+          "text": "An AWS Identity and Access Management (IAM) policy should be attached to the instance, defining network permissions.",
+          "is_correct": false,
+          "rationale": "IAM policies control access to AWS resources, not network traffic."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "A new cloud engineer discovers unexpected costs from an unused EC2 instance. What is the most common reason for this ongoing charge?",
+      "explanation": "Unused EC2 instances continue to incur charges as long as they are running or stopped but still have attached resources like EBS volumes. Terminating the instance completely stops these charges.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The EC2 instance was properly stopped but still has an attached Elastic Block Store (EBS) volume incurring costs.",
+          "is_correct": true,
+          "rationale": "Stopped EC2 instances with attached EBS volumes still incur storage costs."
+        },
+        {
+          "key": "B",
+          "text": "The instance was terminated, but its associated Elastic IP address was not released, leading to ongoing charges.",
+          "is_correct": false,
+          "rationale": "Unreleased Elastic IPs incur charges, but EBS is more common."
+        },
+        {
+          "key": "C",
+          "text": "The instance was accidentally provisioned in a more expensive region, leading to higher data transfer costs.",
+          "is_correct": false,
+          "rationale": "This affects running instances, not typically 'unused' ones."
+        },
+        {
+          "key": "D",
+          "text": "The application running on the instance was consuming excessive network bandwidth, resulting in high egress charges.",
+          "is_correct": false,
+          "rationale": "This applies to active instances, not 'unused' ones."
+        },
+        {
+          "key": "E",
+          "text": "An AWS Lambda function was inadvertently invoking the instance, causing it to restart and incur compute charges.",
+          "is_correct": false,
+          "rationale": "Lambda does not directly restart EC2 instances in this manner."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "A team needs durable, highly available storage for static website assets that are frequently accessed by users globally. Which AWS service is best suited?",
+      "explanation": "Amazon S3 is object storage, ideal for static website hosting, media files, and backups due to its high durability, availability, and global accessibility. EBS provides block storage for EC2 instances.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Amazon Elastic Block Store (EBS) volumes should be attached to an EC2 instance to serve the static content.",
+          "is_correct": false,
+          "rationale": "EBS is block storage for EC2 instances, not optimal for global static websites."
+        },
+        {
+          "key": "B",
+          "text": "Amazon Simple Storage Service (S3) buckets should be used to store the static website files, accessible via public URLs.",
+          "is_correct": true,
+          "rationale": "S3 is highly durable, scalable object storage perfect for static website hosting."
+        },
+        {
+          "key": "C",
+          "text": "Amazon Relational Database Service (RDS) should be configured to store the website assets within a database table.",
+          "is_correct": false,
+          "rationale": "RDS is for relational databases, not for storing static website files."
+        },
+        {
+          "key": "D",
+          "text": "AWS Glacier Deep Archive is the most cost-effective option for frequently accessed static website assets.",
+          "is_correct": false,
+          "rationale": "Glacier is for archival storage with infrequent access, not frequently accessed assets."
+        },
+        {
+          "key": "E",
+          "text": "AWS Elastic File System (EFS) should be mounted to multiple EC2 instances, providing shared file system access.",
+          "is_correct": false,
+          "rationale": "EFS is a shared file system, but S3 is better suited for global static website assets."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "To troubleshoot why a specific AWS API call failed and identify the user who initiated it, which AWS service provides this auditing capability?",
+      "explanation": "AWS CloudTrail records API calls and related events made within your AWS account, providing a detailed audit trail for security analysis and troubleshooting. CloudWatch Logs aggregates and monitors application and system logs.",
+      "options": [
+        {
+          "key": "A",
+          "text": "AWS CloudWatch Logs should be reviewed to find the specific error messages and user details for the API call.",
+          "is_correct": false,
+          "rationale": "CloudWatch Logs aggregates application/system logs, not API call history."
+        },
+        {
+          "key": "B",
+          "text": "AWS CloudTrail logs should be examined to identify the API call, its parameters, and the identity of the caller.",
+          "is_correct": true,
+          "rationale": "CloudTrail records all API calls, providing an audit trail for troubleshooting."
+        },
+        {
+          "key": "C",
+          "text": "AWS Config should be consulted to check for resource compliance rules related to the failed API call.",
+          "is_correct": false,
+          "rationale": "AWS Config tracks resource configurations and changes, not API call history."
+        },
+        {
+          "key": "D",
+          "text": "AWS Trusted Advisor will provide recommendations on how to prevent similar API call failures in the future.",
+          "is_correct": false,
+          "rationale": "Trusted Advisor offers best practice recommendations, not API call auditing."
+        },
+        {
+          "key": "E",
+          "text": "Amazon GuardDuty should be enabled to detect unusual API call patterns that indicate potential security threats.",
+          "is_correct": false,
+          "rationale": "GuardDuty is a threat detection service, not for direct API call lookup."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "A development team wants to deploy a backend function that processes image uploads without managing any underlying servers. Which AWS service is ideal?",
+      "explanation": "AWS Lambda is a serverless compute service that allows you to run code without provisioning or managing servers. It automatically scales and only charges for the compute time consumed, making it ideal for event-driven functions.",
+      "options": [
+        {
+          "key": "A",
+          "text": "An Amazon EC2 instance should be provisioned to host the function and handle the image processing workload.",
+          "is_correct": false,
+          "rationale": "EC2 requires server management, which the team wants to avoid."
+        },
+        {
+          "key": "B",
+          "text": "An AWS Lambda function should be created to execute the image processing code in a serverless environment.",
+          "is_correct": true,
+          "rationale": "Lambda is a serverless compute service, perfect for event-driven functions without server management."
+        },
+        {
+          "key": "C",
+          "text": "An AWS Fargate task should be launched to run the processing function within a containerized environment.",
+          "is_correct": false,
+          "rationale": "Fargate manages servers for containers, but Lambda offers a more 'serverless' experience for functions."
+        },
+        {
+          "key": "D",
+          "text": "An Amazon SQS queue should be implemented to store the image processing logic for later execution.",
+          "is_correct": false,
+          "rationale": "SQS is a message queuing service, not for executing code or functions directly."
+        },
+        {
+          "key": "E",
+          "text": "An AWS Step Functions workflow should orchestrate the image processing steps across multiple microservices.",
+          "is_correct": false,
+          "rationale": "Step Functions orchestrates workflows, but doesn't run the actual code itself."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "Before launching any AWS resources like EC2 instances or RDS databases, what fundamental networking component must be established first?",
+      "explanation": "A Virtual Private Cloud (VPC) is a logically isolated section of the AWS cloud where you can launch AWS resources. It provides control over your virtual networking environment, including IP address ranges, subnets, and route tables.",
+      "options": [
+        {
+          "key": "A",
+          "text": "An Internet Gateway must be created to allow communication between your VPC and the public internet.",
+          "is_correct": false,
+          "rationale": "An Internet Gateway provides internet access, but a VPC is the foundational network."
+        },
+        {
+          "key": "B",
+          "text": "A Virtual Private Cloud (VPC) must be set up to define your isolated network environment in AWS.",
+          "is_correct": true,
+          "rationale": "A VPC is the fundamental isolated network where all other resources reside."
+        },
+        {
+          "key": "C",
+          "text": "An AWS Direct Connect connection should be established to link your on-premises network to AWS.",
+          "is_correct": false,
+          "rationale": "Direct Connect is for hybrid connectivity, not a prerequisite for all AWS resources."
+        },
+        {
+          "key": "D",
+          "text": "An Amazon Route 53 hosted zone needs to be configured for domain name resolution services.",
+          "is_correct": false,
+          "rationale": "Route 53 handles DNS resolution, which is not the fundamental network component."
+        },
+        {
+          "key": "E",
+          "text": "A Network Access Control List (NACL) should be defined to control traffic at the subnet level.",
+          "is_correct": false,
+          "rationale": "NACLs are security features within a VPC, not the core network component itself."
+        }
+      ]
+    }
+  ]
+}

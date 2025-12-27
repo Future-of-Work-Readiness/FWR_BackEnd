@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "When optimizing a large Android application, what is the primary advantage of using R8's full mode over its compatibility mode with ProGuard?",
+      "explanation": "R8's full mode is more powerful than its ProGuard compatibility mode because it integrates desugaring, shrinking, obfuscating, and optimizing into a single, more efficient pass, allowing for deeper, whole-program analysis and more aggressive optimizations.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It enables more aggressive whole-program optimizations, including inlining, class merging, and dead code elimination across library boundaries.",
+          "is_correct": true,
+          "rationale": "Full mode performs deeper, more integrated optimizations than the ProGuard compatibility mode."
+        },
+        {
+          "key": "B",
+          "text": "It exclusively enables support for modern Java language features without requiring any additional desugaring configurations in the build process.",
+          "is_correct": false,
+          "rationale": "Desugaring is a separate process, although R8 handles it, it's not exclusive to full mode."
+        },
+        {
+          "key": "C",
+          "text": "It automatically generates reflection configuration files for ProGuard, eliminating the need for manual keep rules for serialized objects.",
+          "is_correct": false,
+          "rationale": "R8 does not automatically generate keep rules; they must still be manually specified."
+        },
+        {
+          "key": "D",
+          "text": "Full mode significantly reduces the initial configuration time for the Gradle build cache by pre-compiling all project dependencies.",
+          "is_correct": false,
+          "rationale": "This describes a function of build caching, not a specific feature of R8's full mode."
+        },
+        {
+          "key": "E",
+          "text": "It provides detailed, real-time performance profiling hooks directly into the Android Runtime (ART) for debugging optimized code.",
+          "is_correct": false,
+          "rationale": "R8 is a compile-time tool; it does not provide real-time runtime profiling hooks."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "To maximize rendering performance in a complex custom View, which strategy is most effective for handling frequent, localized updates without redrawing the entire canvas?",
+      "explanation": "The `invalidate(Rect dirty)` method is the most efficient approach because it informs the Android framework to only redraw the specified rectangular portion of the view, saving significant GPU and CPU cycles compared to a full redraw.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Calling `postInvalidate()` within a `synchronized` block to ensure thread-safe updates from background threads to the main thread.",
+          "is_correct": false,
+          "rationale": "This ensures thread safety but still causes a full redraw, which is inefficient."
+        },
+        {
+          "key": "B",
+          "text": "Overriding the `draw()` method instead of `onDraw()` to gain more direct control over the Canvas object's state.",
+          "is_correct": false,
+          "rationale": "Overriding draw() is generally discouraged as it bypasses standard view drawing logic."
+        },
+        {
+          "key": "C",
+          "text": "Caching the entire view as a Bitmap using `setDrawingCacheEnabled(true)` and then only updating the cached bitmap.",
+          "is_correct": false,
+          "rationale": "Drawing cache is a deprecated and often inefficient method for this purpose."
+        },
+        {
+          "key": "D",
+          "text": "Utilizing the `invalidate(Rect dirty)` method to specify the precise region of the view that requires redrawing.",
+          "is_correct": true,
+          "rationale": "This is the most performant method as it limits the redraw operation area."
+        },
+        {
+          "key": "E",
+          "text": "Forcing hardware layer rendering for the view using `setLayerType(View.LAYER_TYPE_HARDWARE, null)` for every single update.",
+          "is_correct": false,
+          "rationale": "Constantly changing layer types is inefficient and not the intended use for localized updates."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "In a reactive architecture using Kotlin Flow, what is the most appropriate backpressure strategy for a hot flow producer emitting data faster than the collector can process?",
+      "explanation": "Operators like `buffer()` (which queues emissions) and `conflate()` (which drops intermediate values to process only the latest) are the idiomatic and correct ways to handle backpressure in Kotlin Flow, preventing resource exhaustion or blocking.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Wrapping the entire flow collection logic inside a `withContext(Dispatchers.IO)` block to offload the processing to a background thread pool.",
+          "is_correct": false,
+          "rationale": "Changing the context doesn't solve the backpressure issue; it just moves the problem."
+        },
+        {
+          "key": "B",
+          "text": "Using a `SharedFlow` with a high `replay` cache value to ensure that no emitted items are ever lost by the collector.",
+          "is_correct": false,
+          "rationale": "A large replay cache can lead to memory issues and doesn't address the processing bottleneck."
+        },
+        {
+          "key": "C",
+          "text": "Applying operators like `buffer()` or `conflate()` to manage the emissions, either by queuing them or processing only the latest value.",
+          "is_correct": true,
+          "rationale": "These operators are specifically designed to manage stream rates and handle backpressure."
+        },
+        {
+          "key": "D",
+          "text": "Manually inserting `delay()` calls within the producer's emission loop to artificially slow down the rate of data production.",
+          "is_correct": false,
+          "rationale": "This is an imperative, brittle solution and not a proper reactive backpressure strategy."
+        },
+        {
+          "key": "E",
+          "text": "Increasing the thread priority of the collector's coroutine to give it more CPU time for processing the incoming data.",
+          "is_correct": false,
+          "rationale": "Manipulating thread priorities is not a reliable or recommended way to handle backpressure."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "When aiming to significantly reduce build times in a large multi-module project, what is the primary function of the Gradle configuration cache?",
+      "explanation": "The Gradle configuration cache's main purpose is to speed up builds by serializing and reusing the calculated task graph from a previous run. This avoids re-executing the time-consuming configuration phase on subsequent builds.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It pre-compiles all Kotlin and Java source code into an intermediate format that can be reused across different build variants.",
+          "is_correct": false,
+          "rationale": "This describes compilation avoidance, which is a different optimization from the configuration cache."
+        },
+        {
+          "key": "B",
+          "text": "It downloads and stores all remote dependencies in a shared global directory, preventing redundant network requests during builds.",
+          "is_correct": false,
+          "rationale": "This is the standard behavior of Gradle's dependency cache, not the configuration cache."
+        },
+        {
+          "key": "C",
+          "text": "It automatically parallelizes the execution of unrelated tasks across all available CPU cores without requiring any manual configuration.",
+          "is_correct": false,
+          "rationale": "This describes parallel execution, a separate Gradle feature enabled with a specific flag."
+        },
+        {
+          "key": "D",
+          "text": "It creates a snapshot of the final APK or AAB file, only rebuilding the specific dex files that have changed.",
+          "is_correct": false,
+          "rationale": "This is an oversimplification of incremental builds, not the function of configuration caching."
+        },
+        {
+          "key": "E",
+          "text": "It serializes the task graph and configuration state from the first build, allowing subsequent builds to skip the entire configuration phase.",
+          "is_correct": true,
+          "rationale": "Its core function is to cache the result of the configuration phase itself."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "You suspect a subtle memory leak related to a ViewModel in a single-activity architecture. What is the most likely underlying cause for this specific scenario?",
+      "explanation": "A common subtle leak occurs when a coroutine launched in `viewModelScope` captures a reference to a UI element's context (e.g., via a lambda) and continues running after the UI is destroyed, preventing garbage collection.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The ViewModel is directly storing a static reference to the Activity context, which is a well-known and obvious anti-pattern.",
+          "is_correct": false,
+          "rationale": "This is a definite leak, but it's a basic error, not a subtle one."
+        },
+        {
+          "key": "B",
+          "text": "A long-running coroutine launched in `viewModelScope` holds an implicit reference to a destroyed View or Fragment context.",
+          "is_correct": true,
+          "rationale": "This is a subtle leak where a coroutine outlives the UI it references."
+        },
+        {
+          "key": "C",
+          "text": "The `onCleared()` method of the ViewModel was not overridden to nullify all its internal LiveData observers.",
+          "is_correct": false,
+          "rationale": "LiveData automatically handles observer cleanup when the LifecycleOwner is destroyed."
+        },
+        {
+          "key": "D",
+          "text": "A dependency injected via Hilt or Dagger into the ViewModel has a singleton scope, causing the ViewModel to be retained.",
+          "is_correct": false,
+          "rationale": "A singleton dependency would be retained, but it wouldn't cause the ViewModel to leak."
+        },
+        {
+          "key": "E",
+          "text": "The ViewModel is being retained by the Application context after the associated Activity has been completely finished and destroyed.",
+          "is_correct": false,
+          "rationale": "The ViewModelProvider correctly scopes the ViewModel to the Activity/Fragment lifecycle, not the Application."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "When profiling a complex application with Perfetto, which trace event is most indicative of a memory leak caused by detached views or contexts?",
+      "explanation": "Perfetto traces memory allocations (`malloc`) and deallocations (`free`). A persistent increase in allocations for objects tied to UI components without corresponding deallocations strongly suggests a memory leak, especially across configuration changes.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A continuously increasing count of `malloc` events for specific object types without corresponding `free` events after repeated screen rotations.",
+          "is_correct": true,
+          "rationale": "This directly shows memory being allocated but not released, which is the definition of a leak in this context."
+        },
+        {
+          "key": "B",
+          "text": "A high number of `binder_transaction` events, which primarily suggests excessive inter-process communication rather than a native memory leak.",
+          "is_correct": false,
+          "rationale": "Binder transactions relate to IPC overhead, not memory leaks from detached UI components."
+        },
+        {
+          "key": "C",
+          "text": "Frequent `gfx_vsync` events, which are related to UI rendering performance and frame timing, not directly to memory allocation issues.",
+          "is_correct": false,
+          "rationale": "Vsync events are about display refresh rates and frame pacing, unrelated to memory leaks."
+        },
+        {
+          "key": "D",
+          "text": "An increase in `sched_switch` events, indicating heavy CPU contention and thread scheduling, but not necessarily a memory leak.",
+          "is_correct": false,
+          "rationale": "This indicates CPU contention or threading issues, not memory allocation problems."
+        },
+        {
+          "key": "E",
+          "text": "A large number of `activity_launch` events, which simply shows that activities are being started and is not a direct indicator of a leak.",
+          "is_correct": false,
+          "rationale": "This is a normal application lifecycle event and does not inherently point to a memory leak."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "When architecting a large-scale modular app, what is the primary strategic trade-off when choosing on-demand versus install-time dynamic feature modules?",
+      "explanation": "The core decision is between minimizing the initial download size (on-demand) versus ensuring immediate feature availability without network latency (install-time). On-demand delivery prioritizes a smaller footprint at the cost of potential user friction.",
+      "options": [
+        {
+          "key": "A",
+          "text": "On-demand modules reduce initial app size but introduce network dependency and latency for feature access, potentially harming the user experience.",
+          "is_correct": true,
+          "rationale": "This correctly identifies the trade-off between smaller initial install size and potential UX friction from on-demand downloads."
+        },
+        {
+          "key": "B",
+          "text": "Install-time modules are always included in the initial download, which completely negates any app size reduction benefits offered by modularization.",
+          "is_correct": false,
+          "rationale": "Install-time modules can be delivered based on conditions like device features, still offering size benefits."
+        },
+        {
+          "key": "C",
+          "text": "On-demand modules require using Java exclusively for their implementation, limiting the use of modern Kotlin features like coroutines and flows.",
+          "is_correct": false,
+          "rationale": "This is incorrect; on-demand modules fully support Kotlin and all its features."
+        },
+        {
+          "key": "D",
+          "text": "Install-time modules cannot share code or resources with the base module, leading to significant code duplication across the application.",
+          "is_correct": false,
+          "rationale": "This is false; install-time modules can and should depend on the base module to share code."
+        },
+        {
+          "key": "E",
+          "text": "On-demand modules are not eligible for Google Play's automatic updates, requiring a full app update for any changes to the feature.",
+          "is_correct": false,
+          "rationale": "This is incorrect; all modules, including on-demand ones, are updated with the main application."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "In a multi-module Android project, what is the most significant benefit of enabling and properly configuring the Gradle Configuration Cache?",
+      "explanation": "The Gradle Configuration Cache's main purpose is to serialize and cache the entire task graph from a build. This allows Gradle to skip the time-consuming configuration phase on subsequent runs, leading to major improvements in build speed.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It reuses the task graph from previous builds, completely skipping the configuration phase, which dramatically speeds up subsequent builds of the project.",
+          "is_correct": true,
+          "rationale": "This accurately describes the core function of the configuration cache: reusing the task graph to skip the configuration phase."
+        },
+        {
+          "key": "B",
+          "text": "It automatically converts all Groovy build scripts to Kotlin DSL, which provides better IDE support and compile-time safety for build logic.",
+          "is_correct": false,
+          "rationale": "This describes a manual migration process, not a feature of the configuration cache."
+        },
+        {
+          "key": "C",
+          "text": "It caches all remote binary dependencies locally, eliminating network requests during builds even after clearing the global Gradle cache.",
+          "is_correct": false,
+          "rationale": "This describes dependency caching, which is a separate mechanism from the configuration cache."
+        },
+        {
+          "key": "D",
+          "text": "It parallelizes the execution of all tasks by default, regardless of their dependencies, which can significantly reduce the overall build time.",
+          "is_correct": false,
+          "rationale": "Parallel execution is a separate Gradle feature; the configuration cache doesn't alter task dependencies."
+        },
+        {
+          "key": "E",
+          "text": "It provides a detailed build scan report that visualizes task execution and helps identify bottlenecks without requiring any external plugins.",
+          "is_correct": false,
+          "rationale": "Build scans are a separate feature, often provided by services like Gradle Enterprise, not the configuration cache itself."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "When implementing encrypted local storage using Jetpack Security's `EncryptedSharedPreferences`, what is the underlying mechanism providing the most robust key protection?",
+      "explanation": "Jetpack Security integrates with the Android Keystore System, which can leverage hardware security modules (like a Trusted Execution Environment) on supported devices. This ensures cryptographic keys are never exposed to the application process or OS kernel.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It utilizes the hardware-backed Android Keystore System to generate, store, and manage cryptographic keys, preventing their extraction from the device.",
+          "is_correct": true,
+          "rationale": "This is the core security principle of the library, leveraging hardware-backed storage for maximum key protection."
+        },
+        {
+          "key": "B",
+          "text": "It encrypts the master key with a user-provided password that must be entered every time the application is launched to access data.",
+          "is_correct": false,
+          "rationale": "While possible to integrate, this is not the default or primary key protection mechanism provided."
+        },
+        {
+          "key": "C",
+          "text": "It stores the encryption keys directly within the application's sandboxed data directory, relying solely on operating system file permissions.",
+          "is_correct": false,
+          "rationale": "This describes a much less secure approach that Jetpack Security is designed to avoid."
+        },
+        {
+          "key": "D",
+          "text": "It derives the encryption key from the application's unique package name and signing certificate, making it static and easily reproducible.",
+          "is_correct": false,
+          "rationale": "This would be an insecure method of key generation and is not how the library works."
+        },
+        {
+          "key": "E",
+          "text": "It sends the keys to a secure server for remote storage and retrieves them on-demand, which requires a constant network connection.",
+          "is_correct": false,
+          "rationale": "This describes a remote key management system, not the on-device protection offered by Jetpack Security."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "In Jetpack Compose, when a composable depends on a derived value from multiple state objects, what is the most efficient way to minimize recompositions?",
+      "explanation": "`derivedStateOf` is specifically designed to optimize this scenario. It creates a new state object whose value is calculated from other states, but it only notifies its consumers to recompose when the result of the calculation actually changes.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use the `derivedStateOf` API to compute the value, ensuring the composable only recomposes when the calculated result itself actually changes.",
+          "is_correct": true,
+          "rationale": "This is the most precise tool for optimizing recomposition based on a computed result from other states."
+        },
+        {
+          "key": "B",
+          "text": "Combine all state objects into a single large data class, which would cause recomposition whenever any property within it changes.",
+          "is_correct": false,
+          "rationale": "This is an anti-pattern that often leads to more, not fewer, unnecessary recompositions."
+        },
+        {
+          "key": "C",
+          "text": "Pass each state object as a separate parameter, which will cause the composable to recompose if any of the individual states change.",
+          "is_correct": false,
+          "rationale": "This is the default behavior that `derivedStateOf` is designed to optimize."
+        },
+        {
+          "key": "D",
+          "text": "Hoist the state calculation logic into the parent and pass the pre-calculated value, which still causes recomposition on any input state change.",
+          "is_correct": false,
+          "rationale": "This moves the calculation but doesn't solve the core problem of recomposing when the input changes, not the result."
+        },
+        {
+          "key": "E",
+          "text": "Wrap the entire composable in a `key` block that uses all state objects, forcing a full reset of the composable on any change.",
+          "is_correct": false,
+          "rationale": "The `key` composable is used for resetting state, not for preventing recompositions, and would be inefficient here."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When profiling a complex application with Perfetto, what is the most effective strategy for identifying and resolving subtle native memory leaks originating from JNI calls?",
+      "explanation": "Heap profiles in Perfetto, specifically using heapprofd, allow tracing native memory allocations back to their call stacks, including those from JNI. This is crucial for pinpointing leaks that standard Android profiler tools might miss, providing actionable data for resolution.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Analyzing the Java heap dump in Android Studio's profiler, as it automatically traces all memory allocations including those from native code.",
+          "is_correct": false,
+          "rationale": "The Android Studio profiler primarily focuses on the Java/Kotlin heap, not native allocations."
+        },
+        {
+          "key": "B",
+          "text": "Using `dumpsys meminfo` repeatedly and looking for increases in the PSS, as this provides the most granular view of native allocations.",
+          "is_correct": false,
+          "rationale": "This command is too high-level and does not provide the necessary call stack information to pinpoint a leak's origin."
+        },
+        {
+          "key": "C",
+          "text": "Capturing a system trace with heapprofd enabled to get detailed native allocation call stacks and track memory growth over time.",
+          "is_correct": true,
+          "rationale": "Heapprofd is the correct tool within Perfetto for tracing native memory allocations and identifying the source of leaks."
+        },
+        {
+          "key": "D",
+          "text": "Relying solely on third-party libraries like LeakCanary, which are specifically designed to detect and report all types of native memory leaks.",
+          "is_correct": false,
+          "rationale": "LeakCanary is excellent for Java heap leaks but has limited capabilities for detecting native memory leaks."
+        },
+        {
+          "key": "E",
+          "text": "Manually instrumenting every JNI function with custom logging to track the allocation and deallocation of every single native object.",
+          "is_correct": false,
+          "rationale": "This approach is highly impractical, error-prone, and not scalable for a complex application."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "In a large-scale, multi-module project, what is the primary architectural advantage of strictly enforcing a dependency rule where feature modules cannot depend on each other?",
+      "explanation": "This rule promotes high cohesion and low coupling. It forces communication through well-defined APIs in shared modules, preventing tangled dependencies, improving build parallelism, and enabling independent feature development and delivery by separate teams.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It significantly reduces the final APK size by allowing ProGuard to more aggressively remove unused code from every isolated feature module.",
+          "is_correct": false,
+          "rationale": "This is a potential secondary benefit, but the primary advantage is architectural decoupling and improved build performance."
+        },
+        {
+          "key": "B",
+          "text": "It forces all inter-feature communication to go through a shared data module, which centralizes all application state in one place.",
+          "is_correct": false,
+          "rationale": "It forces communication via shared APIs, not necessarily a single, monolithic data module, which could become a bottleneck."
+        },
+        {
+          "key": "C",
+          "text": "It prevents circular dependencies and improves build parallelism, enabling independent team development and faster overall compilation times for the project.",
+          "is_correct": true,
+          "rationale": "Decoupling features is key to build scalability, preventing dependency cycles, and allowing teams to work in parallel."
+        },
+        {
+          "key": "D",
+          "text": "It simplifies navigation logic by requiring that all navigation events are handled by the central app module which knows about all features.",
+          "is_correct": false,
+          "rationale": "Navigation can be handled via shared interfaces or a dedicated navigation module without requiring direct feature-to-feature dependencies."
+        },
+        {
+          "key": "E",
+          "text": "It completely eliminates the need for a dynamic feature module delivery system since all features are compiled independently from the start.",
+          "is_correct": false,
+          "rationale": "This dependency rule is orthogonal to the decision of whether to use dynamic feature delivery for on-demand installation."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "When designing a data synchronization feature, which Kotlin Coroutine Dispatcher is most appropriate for offloading CPU-intensive tasks like data parsing and transformation?",
+      "explanation": "`Dispatchers.Default` is specifically optimized for CPU-bound work. It uses a shared pool of threads equal to the number of CPU cores, making it ideal for intensive computations without blocking the main thread or over-subscribing I/O threads.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`Dispatchers.Main`, because it ensures that all data processing happens on the UI thread, preventing race conditions when updating the view.",
+          "is_correct": false,
+          "rationale": "This would block the UI thread and cause Application Not Responding (ANR) errors during intensive tasks."
+        },
+        {
+          "key": "B",
+          "text": "`Dispatchers.IO`, as it is designed for all types of background work including both network requests and heavy computational processing tasks.",
+          "is_correct": false,
+          "rationale": "This dispatcher is optimized for blocking I/O operations and has a larger thread pool than necessary for CPU-bound work."
+        },
+        {
+          "key": "C",
+          "text": "`Dispatchers.Unconfined`, because it starts the coroutine on the current thread but allows it to resume on any available thread.",
+          "is_correct": false,
+          "rationale": "This dispatcher has unpredictable threading behavior and is generally not recommended for managing specific workloads like CPU-intensive tasks."
+        },
+        {
+          "key": "D",
+          "text": "`Dispatchers.Default`, because it is backed by a thread pool specifically sized for CPU-intensive operations without over-allocating system resources.",
+          "is_correct": true,
+          "rationale": "This is the correct, purpose-built dispatcher for CPU-bound work, ensuring optimal performance without starving other operations."
+        },
+        {
+          "key": "E",
+          "text": "A custom `newSingleThreadContext`, as this guarantees that all parsing and transformation operations are executed serially in a predictable order.",
+          "is_correct": false,
+          "rationale": "This would unnecessarily serialize the work, creating a bottleneck if multiple transformations could otherwise run in parallel."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "To significantly reduce clean build times in a large multi-module Android project, which Gradle feature provides the most substantial and reliable performance improvement?",
+      "explanation": "The Gradle build cache is the most impactful feature for improving clean build times. It stores and reuses outputs from previous builds, avoiding redundant work for unchanged modules. A remote cache extends this benefit across a team and CI.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Enabling parallel execution, which allows Gradle to build independent modules concurrently, though its benefits are limited by project structure.",
+          "is_correct": false,
+          "rationale": "Parallel execution helps, but its impact is less than caching, especially on clean builds where tasks must still run."
+        },
+        {
+          "key": "B",
+          "text": "Utilizing the configuration cache to reuse the results of the configuration phase, which speeds up subsequent builds but not initial compilation.",
+          "is_correct": false,
+          "rationale": "The configuration cache helps incremental builds but does not avoid the compilation and test tasks that a build cache does."
+        },
+        {
+          "key": "C",
+          "text": "Implementing a local and remote build cache that allows build outputs to be shared across the entire development team and CI environment.",
+          "is_correct": true,
+          "rationale": "A build cache avoids re-running tasks entirely if inputs are unchanged, offering the largest time savings on clean builds."
+        },
+        {
+          "key": "D",
+          "text": "Increasing the Gradle daemon's heap size, which can prevent out-of-memory errors but offers diminishing returns for build speed improvement.",
+          "is_correct": false,
+          "rationale": "This is a tuning parameter for stability, not a primary feature for build speed optimization."
+        },
+        {
+          "key": "E",
+          "text": "Migrating all build scripts from Groovy to the Kotlin DSL, as it provides better IDE support and compile-time checks.",
+          "is_correct": false,
+          "rationale": "This improves maintainability and developer experience but has a negligible impact on actual build execution speed."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "In Jetpack Compose, what is the most effective architectural pattern to prevent a parent Composable from recomposing when only a child's internal state changes?",
+      "explanation": "State should be hoisted only to the lowest common ancestor that needs it. By passing stable lambdas for event callbacks, the child can manage its own state internally, and the parent remains unaware and does not recompose unnecessarily.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Wrapping the child Composable's state variables with `rememberSaveable` to ensure the state survives process death and configuration changes.",
+          "is_correct": false,
+          "rationale": "This is for state persistence across process death, not for controlling the scope of recomposition."
+        },
+        {
+          "key": "B",
+          "text": "Hoisting the child's state to the parent and passing it back down, ensuring a single source of truth for all data.",
+          "is_correct": false,
+          "rationale": "This is the opposite of the correct approach; it directly causes the parent to recompose when the state changes."
+        },
+        {
+          "key": "C",
+          "text": "Passing stable lambdas from the parent for event callbacks, allowing the child to own and manage its own state internally.",
+          "is_correct": true,
+          "rationale": "This pattern decouples the parent from the child's state, isolating recomposition to only the child Composable."
+        },
+        {
+          "key": "D",
+          "text": "Using the `derivedStateOf` function in the parent to compute derived state only when one of its dependencies has actually changed.",
+          "is_correct": false,
+          "rationale": "This optimizes calculations within a recomposing parent, but does not prevent the parent's recomposition in the first place."
+        },
+        {
+          "key": "E",
+          "text": "Marking all data classes passed as parameters to the child Composable with the `@Immutable` annotation to signal stability to the compiler.",
+          "is_correct": false,
+          "rationale": "This helps skip recomposition if inputs are identical, but doesn't solve the problem of state changes causing recomposition."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "When optimizing a large multi-module Android application, how does R8's whole-program optimization primarily improve performance beyond simple code shrinking?",
+      "explanation": "R8 performs whole-program analysis, allowing it to make aggressive optimizations like cross-module inlining and class merging. This reduces method dispatch overhead and improves code locality, leading to significant performance gains beyond just shrinking code size.",
+      "options": [
+        {
+          "key": "A",
+          "text": "By aggressively inlining functions across module boundaries and merging classes with compatible hierarchies to reduce method call overhead.",
+          "is_correct": true,
+          "rationale": "R8's whole-program analysis enables advanced optimizations like inlining and class merging across the entire application codebase."
+        },
+        {
+          "key": "B",
+          "text": "By exclusively removing unused resources from library modules, which significantly reduces the final size of the application's APK.",
+          "is_correct": false,
+          "rationale": "This describes resource shrinking, which is a separate process from R8's code optimization capabilities."
+        },
+        {
+          "key": "C",
+          "text": "By automatically converting all Java bytecode into more efficient Kotlin bytecode before the final DEX compilation process begins.",
+          "is_correct": false,
+          "rationale": "R8 operates on Java bytecode from both Java and Kotlin sources; it does not perform language conversion."
+        },
+        {
+          "key": "D",
+          "text": "By pre-compiling all XML layout files into direct view inflation code, which completely bypasses the need for runtime parsing.",
+          "is_correct": false,
+          "rationale": "This describes the function of the AAPT2 compiler and View Binding, not the R8 code optimizer."
+        },
+        {
+          "key": "E",
+          "text": "By replacing standard library collections with more memory-efficient custom implementations that are specific to the Android runtime environment.",
+          "is_correct": false,
+          "rationale": "R8 optimizes existing code but does not replace standard library implementations with entirely new custom ones."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "In a custom `ViewGroup`, how should you correctly handle a `MeasureSpec.AT_MOST` height constraint during the `onMeasure` pass?",
+      "explanation": "`AT_MOST` signifies a maximum boundary, like when `wrap_content` is used. The correct approach is to measure children to find their desired size and then use `resolveSizeAndState` to report a final dimension that respects this calculated size within the provided limit.",
+      "options": [
+        {
+          "key": "A",
+          "text": "You must calculate the total desired height of all children and use that value, capped by the `AT_MOST` size constraint.",
+          "is_correct": true,
+          "rationale": "This correctly respects the children's desired size while adhering to the parent's maximum allowed space."
+        },
+        {
+          "key": "B",
+          "text": "You should always use the maximum size provided by the `AT_MOST` constraint to ensure the layout fills all available space.",
+          "is_correct": false,
+          "rationale": "This would behave like `match_parent`, ignoring the view's intrinsic size, which is incorrect for `AT_MOST`."
+        },
+        {
+          "key": "C",
+          "text": "You should ignore the constraint and measure children with `MeasureSpec.UNSPECIFIED` to determine their natural, unconstrained dimensions first.",
+          "is_correct": false,
+          "rationale": "Ignoring the parent's constraints can lead to the view being larger than the layout allows, causing clipping."
+        },
+        {
+          "key": "D",
+          "text": "The `AT_MOST` constraint should be treated identically to `MeasureSpec.EXACTLY`, forcing the view to take the specified maximum size.",
+          "is_correct": false,
+          "rationale": "`AT_MOST` and `EXACTLY` have different meanings; treating them the same breaks `wrap_content` behavior."
+        },
+        {
+          "key": "E",
+          "text": "You must throw an `IllegalStateException` because custom `ViewGroup` implementations are not designed to handle `AT_MOST` constraints properly.",
+          "is_correct": false,
+          "rationale": "Handling `AT_MOST` is a fundamental requirement for creating a correctly behaving custom `ViewGroup`."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "You suspect a subtle memory leak in a Singleton holding a static Context reference. What is the most definitive diagnostic strategy?",
+      "explanation": "While LeakCanary is useful for automated detection, a manual heap dump analysis provides the most definitive evidence. It allows you to inspect the object reference chain and precisely identify why the Activity instance is being retained by the Singleton.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use the LeakCanary library to automatically detect and report leaks by watching for destroyed objects that are not garbage collected.",
+          "is_correct": false,
+          "rationale": "LeakCanary is a great first step, but a heap dump provides more detailed, definitive proof and analysis capabilities."
+        },
+        {
+          "key": "B",
+          "text": "Manually trigger garbage collection multiple times and then check the application's total memory usage in the Android Studio profiler.",
+          "is_correct": false,
+          "rationale": "This method is imprecise and may not reveal small or intermittent leaks, only showing aggregate memory usage."
+        },
+        {
+          "key": "C",
+          "text": "Add logging statements to the Singleton's constructor and the Activity's `onDestroy` method to track their respective lifecycle events.",
+          "is_correct": false,
+          "rationale": "Logging can show lifecycle mismatches but doesn't prove a memory leak or show the reference chain causing it."
+        },
+        {
+          "key": "D",
+          "text": "Refactor the Singleton immediately to use an `Application` context instead of an `Activity` context without confirming the leak's existence.",
+          "is_correct": false,
+          "rationale": "This is a likely solution, but it's poor practice to refactor without first confirming the root cause."
+        },
+        {
+          "key": "E",
+          "text": "Capture a heap dump using the Profiler, find the leaked Activity instance, and analyze its path to GC roots.",
+          "is_correct": true,
+          "rationale": "This is the most direct and powerful method to confirm a leak and identify the exact reference chain holding it."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "What is the primary architectural risk of launching long-running data synchronization tasks using `GlobalScope` from within a `ViewModel`?",
+      "explanation": "`GlobalScope` is not tied to any component's lifecycle. A coroutine launched from it will outlive the `ViewModel`, leading to resource waste and potential memory leaks if it holds references to UI-related components or data after the screen is gone.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It will cause the application's main thread to block, leading to an Application Not Responding (ANR) error immediately upon launch.",
+          "is_correct": false,
+          "rationale": "`GlobalScope` does not inherently block the main thread unless the coroutine's dispatcher is explicitly set to it."
+        },
+        {
+          "key": "B",
+          "text": "The coroutine will not be bound to the ViewModel's lifecycle, potentially continuing to run and waste resources after the screen is destroyed.",
+          "is_correct": true,
+          "rationale": "This violates structured concurrency, as the work is not automatically cancelled when the `ViewModel` is cleared."
+        },
+        {
+          "key": "C",
+          "text": "Coroutines launched with `GlobalScope` are unable to switch dispatchers, forcing all operations to run exclusively on the UI thread.",
+          "is_correct": false,
+          "rationale": "`GlobalScope` coroutines can use `withContext` to switch between dispatchers just like any other coroutine."
+        },
+        {
+          "key": "D",
+          "text": "Using `GlobalScope` prevents the use of structured concurrency features like `async` and `await` for parallel decomposition of work.",
+          "is_correct": false,
+          "rationale": "`async` and `await` can be used within `GlobalScope`, but they won't be part of a structured job hierarchy."
+        },
+        {
+          "key": "E",
+          "text": "It violates modern dependency injection principles by creating a tight coupling between the ViewModel and the global application state.",
+          "is_correct": false,
+          "rationale": "While not ideal, this is a concurrency issue, not a direct violation of dependency injection principles."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "When architecting an on-demand dynamic feature module, what is the most critical consideration for managing dependencies and preventing runtime crashes?",
+      "explanation": "The base module cannot depend on dynamic features, but features can depend on the base. Therefore, any shared code, interfaces, or dependency injection graphs must reside in the base module so both the base and feature can access them.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ensuring the base module explicitly depends on the dynamic feature module in the `build.gradle` file to enable direct code access.",
+          "is_correct": false,
+          "rationale": "This is fundamentally incorrect; the base module cannot have a compile-time dependency on a dynamic feature module."
+        },
+        {
+          "key": "B",
+          "text": "Placing all shared code, including Dagger components and repository interfaces, into the base application module to ensure universal availability.",
+          "is_correct": true,
+          "rationale": "Shared code must live in a common module (like `app`) that all dynamic features can depend on."
+        },
+        {
+          "key": "C",
+          "text": "Using reflection exclusively to access all classes and methods within the dynamic feature module from the base application module.",
+          "is_correct": false,
+          "rationale": "While reflection is possible, it is slow, error-prone, and not the standard or recommended architectural approach."
+        },
+        {
+          "key": "D",
+          "text": "Duplicating all necessary dependencies within each dynamic feature module to ensure they are completely isolated and self-contained units.",
+          "is_correct": false,
+          "rationale": "This would dramatically increase app size and create maintenance issues, defeating the purpose of modularization."
+        },
+        {
+          "key": "E",
+          "text": "Requiring the user to manually restart the application every time a new dynamic feature module is successfully downloaded and installed.",
+          "is_correct": false,
+          "rationale": "The framework is designed to allow seamless integration of downloaded modules without requiring a full app restart."
+        }
+      ]
+    }
+  ]
+}

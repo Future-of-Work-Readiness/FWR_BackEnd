@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "Which Android component is primarily responsible for providing a user interface and handling user interactions within a single screen?",
+      "explanation": "Activities are fundamental building blocks in Android, designed to host a single screen of the application's user interface. They manage the lifecycle of the UI and user interactions effectively.",
+      "options": [
+        {
+          "key": "A",
+          "text": "An Android Service performs operations in the background without a direct user interface, managing long-running tasks.",
+          "is_correct": false,
+          "rationale": "Services are designed to run long-running operations in the background without a user interface."
+        },
+        {
+          "key": "B",
+          "text": "A Content Provider manages access to a structured set of data, allowing secure data sharing between applications.",
+          "is_correct": false,
+          "rationale": "Content Providers are used to manage and share structured data sets between different applications."
+        },
+        {
+          "key": "C",
+          "text": "An Activity represents a single screen with a user interface, serving as the entry point for user interaction.",
+          "is_correct": true,
+          "rationale": "Activities are the primary components for displaying a user interface and handling user interactions."
+        },
+        {
+          "key": "D",
+          "text": "A Broadcast Receiver responds to system-wide broadcast announcements, handling events like battery low or network changes.",
+          "is_correct": false,
+          "rationale": "Broadcast Receivers are components that listen for and respond to system-wide broadcast announcements."
+        },
+        {
+          "key": "E",
+          "text": "An Intent facilitates communication between different components, acting as a messaging object for various operations.",
+          "is_correct": false,
+          "rationale": "Intents are messaging objects used to request an action from another application component."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "When designing a simple linear layout in Android, which XML attribute correctly controls the weight distribution among child views?",
+      "explanation": "`android:layout_weight` is specifically used within a `LinearLayout` to distribute remaining space among child views proportionally. This is crucial for responsive UI design.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The `android:layout_gravity` attribute specifies how a child view should be positioned within its parent layout's bounds.",
+          "is_correct": false,
+          "rationale": "`layout_gravity` controls the alignment of a view within its parent container's boundaries."
+        },
+        {
+          "key": "B",
+          "text": "The `android:layout_width` attribute defines the horizontal size of the view, often set to `match_parent` or `wrap_content`.",
+          "is_correct": false,
+          "rationale": "`layout_width` is used to define the specific horizontal dimension of a view element."
+        },
+        {
+          "key": "C",
+          "text": "The `android:layout_weight` attribute allocates extra space to views within a `LinearLayout` based on their specified proportions.",
+          "is_correct": true,
+          "rationale": "`layout_weight` is the correct attribute for distributing remaining space within a LinearLayout."
+        },
+        {
+          "key": "D",
+          "text": "The `android:padding` attribute applies internal spacing between the view's content and its own defined borders.",
+          "is_correct": false,
+          "rationale": "`padding` creates space inside the view's borders, between the border and the content."
+        },
+        {
+          "key": "E",
+          "text": "The `android:margin` attribute specifies external spacing around the view, separating it from adjacent sibling views.",
+          "is_correct": false,
+          "rationale": "`margin` creates space outside the view's borders, separating it from other elements."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What is the most appropriate way to store small amounts of primitive data persistently in an Android application?",
+      "explanation": "`SharedPreferences` is designed for storing small collections of primitive data types, such as user settings or preferences. It uses a simple key-value pair mechanism.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using a SQLite database is suitable for complex structured data requiring advanced querying capabilities and relationships.",
+          "is_correct": false,
+          "rationale": "SQLite is better suited for large, structured datasets that require complex querying capabilities."
+        },
+        {
+          "key": "B",
+          "text": "Employing internal storage saves private application-specific files directly on the device, often for larger data.",
+          "is_correct": false,
+          "rationale": "Internal storage is meant for saving private application files, not simple key-value pairs."
+        },
+        {
+          "key": "C",
+          "text": "Leveraging `SharedPreferences` allows saving key-value pairs of primitive data types, ideal for user preferences.",
+          "is_correct": true,
+          "rationale": "This is the ideal mechanism for storing small amounts of primitive key-value data."
+        },
+        {
+          "key": "D",
+          "text": "Storing data in external storage makes it accessible to other applications and users, typically for larger public files.",
+          "is_correct": false,
+          "rationale": "External storage is for larger, public files that can be shared with other apps."
+        },
+        {
+          "key": "E",
+          "text": "Implementing a Content Provider enables secure data sharing between different applications, managing access to data sets.",
+          "is_correct": false,
+          "rationale": "Content Providers are designed for sharing structured data between different applications, not private storage."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Which mechanism in Android is commonly used to perform long-running operations off the main UI thread to prevent Application Not Responding errors?",
+      "explanation": "Long-running operations must be executed on a background thread to avoid freezing the UI and triggering ANR errors. Kotlin Coroutines are a common modern solution.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Utilizing `RecyclerView` efficiently displays large datasets in a scrollable list, optimizing view recycling for performance.",
+          "is_correct": false,
+          "rationale": "`RecyclerView` is a UI component for displaying lists, not for background processing."
+        },
+        {
+          "key": "B",
+          "text": "Employing `LiveData` is an observable data holder class, aware of lifecycle states, typically used for UI updates.",
+          "is_correct": false,
+          "rationale": "`LiveData` is a data holder for UI updates, not for executing long-running tasks."
+        },
+        {
+          "key": "C",
+          "text": "Running tasks on a background thread, like with Kotlin Coroutines, prevents blocking the main UI thread.",
+          "is_correct": true,
+          "rationale": "Executing tasks on a background thread is the correct way to avoid blocking the UI."
+        },
+        {
+          "key": "D",
+          "text": "Implementing `ViewModel` stores and manages UI-related data in a lifecycle-aware manner, surviving configuration changes.",
+          "is_correct": false,
+          "rationale": "`ViewModel` is designed to store and manage UI-related data, not perform background work."
+        },
+        {
+          "key": "E",
+          "text": "Using `Fragment` represents a portion of user interface in an Activity, allowing modular UI design and reuse.",
+          "is_correct": false,
+          "rationale": "A `Fragment` is a reusable part of an application's UI, not a threading mechanism."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "In Kotlin, what is the primary purpose of using the safe call operator (?. ) when accessing properties or functions on a nullable type?",
+      "explanation": "The safe call operator `?.` is crucial for null safety in Kotlin. It allows you to call a method or access a property only if the object is not null, preventing `NullPointerException`s.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It explicitly casts a nullable type to a non-nullable type, potentially throwing a `NullPointerException` if null.",
+          "is_correct": false,
+          "rationale": "This behavior describes the not-null assertion operator (`!!`), which is an unsafe cast."
+        },
+        {
+          "key": "B",
+          "text": "It provides a default value if the nullable expression evaluates to null, using the Elvis operator (?:).",
+          "is_correct": false,
+          "rationale": "This functionality is provided by the Elvis operator (`?:`), not the safe call operator."
+        },
+        {
+          "key": "C",
+          "text": "It executes the operation only if the receiver is not null, returning null if the receiver is indeed null.",
+          "is_correct": true,
+          "rationale": "The safe call operator correctly executes the call only if the object is non-null."
+        },
+        {
+          "key": "D",
+          "text": "It forces the compiler to treat a nullable type as non-nullable, bypassing null checks and risking runtime errors.",
+          "is_correct": false,
+          "rationale": "This describes the not-null assertion operator (`!!`), which forces a non-null type."
+        },
+        {
+          "key": "E",
+          "text": "It declares a variable as nullable, allowing it to hold either a value or explicitly be assigned null at any time.",
+          "is_correct": false,
+          "rationale": "This describes the process of declaring a variable with a nullable type using `?`."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Which Android layout container is most efficient for arranging views in a single row or column, optimizing performance?",
+      "explanation": "LinearLayout is highly efficient for simple linear arrangements, as it performs minimal layout passes. This makes it ideal for straightforward UI designs.",
+      "options": [
+        {
+          "key": "A",
+          "text": "LinearLayout provides efficient arrangement of elements in a single direction, either horizontally or vertically.",
+          "is_correct": true,
+          "rationale": "LinearLayout is highly optimized for simple, single-direction layouts, making it very efficient."
+        },
+        {
+          "key": "B",
+          "text": "ConstraintLayout offers flat view hierarchies and flexible positioning for complex user interfaces.",
+          "is_correct": false,
+          "rationale": "ConstraintLayout is powerful but more complex and less efficient for simple linear arrangements."
+        },
+        {
+          "key": "C",
+          "text": "RelativeLayout positions child views relative to each other or to the parent container's edges.",
+          "is_correct": false,
+          "rationale": "RelativeLayout is for relative positioning, which can be less efficient for simple linear needs."
+        },
+        {
+          "key": "D",
+          "text": "FrameLayout is primarily designed to display a single item, or stack multiple items on top of each other.",
+          "is_correct": false,
+          "rationale": "FrameLayout is designed for stacking views on top of each other, not linear layouts."
+        },
+        {
+          "key": "E",
+          "text": "GridLayout arranges elements in a grid-like structure, useful for displaying items in rows and columns.",
+          "is_correct": false,
+          "rationale": "GridLayout is specifically for arranging items in a grid, not a single row or column."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "When an Android Activity is partially obscured by another transparent activity, which lifecycle method is called?",
+      "explanation": "The onPause() method is called when an activity is losing focus but is still visible to the user. This is crucial for saving temporary data.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The onStart() method is invoked just before the activity becomes visible to the user.",
+          "is_correct": false,
+          "rationale": "onStart() is called when the activity becomes visible, not when partially obscured."
+        },
+        {
+          "key": "B",
+          "text": "The onPause() method is called when the activity is still partially visible but no longer in the foreground.",
+          "is_correct": true,
+          "rationale": "onPause() indicates loss of focus while still visible, allowing temporary data saving."
+        },
+        {
+          "key": "C",
+          "text": "The onResume() method is always invoked when the activity starts interacting with the user.",
+          "is_correct": false,
+          "rationale": "onResume() means the activity is in the foreground and interacting, not partially obscured."
+        },
+        {
+          "key": "D",
+          "text": "The onStop() method is triggered when the activity is no longer visible to the user at all.",
+          "is_correct": false,
+          "rationale": "onStop() is for when the activity is completely hidden, not partially obscured."
+        },
+        {
+          "key": "E",
+          "text": "The onDestroy() method is the final call before the activity instance is completely removed from memory.",
+          "is_correct": false,
+          "rationale": "onDestroy() is the final cleanup call before the activity is completely removed from memory."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Which Android component is best suited for storing small amounts of primitive key-value data persistently and simply?",
+      "explanation": "SharedPreferences are designed for lightweight, private key-value storage, perfect for user preferences, settings, and other small data points that need to persist across app sessions.",
+      "options": [
+        {
+          "key": "A",
+          "text": "SQLite database is excellent for managing large structured datasets requiring complex queries and relationships.",
+          "is_correct": false,
+          "rationale": "SQLite is overkill for simple key-value pairs and is meant for complex, structured data."
+        },
+        {
+          "key": "B",
+          "text": "Internal storage provides a private filesystem for application-specific files that only the app can access.",
+          "is_correct": false,
+          "rationale": "Internal storage is designed for saving files, not for storing simple key-value data pairs."
+        },
+        {
+          "key": "C",
+          "text": "Shared Preferences allows storing simple private key-value pairs, such as user settings or small data.",
+          "is_correct": true,
+          "rationale": "SharedPreferences is ideal for simple, persistent key-value data like user settings."
+        },
+        {
+          "key": "D",
+          "text": "External storage offers public access for larger files, accessible by other applications and the user.",
+          "is_correct": false,
+          "rationale": "External storage is for public, larger files, not private key-value data."
+        },
+        {
+          "key": "E",
+          "text": "Content Providers manage access to structured data, offering a consistent interface for data sharing between applications.",
+          "is_correct": false,
+          "rationale": "Content Providers are for structured data sharing, not simple app-private storage."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "What is the recommended modern approach for performing long-running operations off the main thread in Android using Kotlin?",
+      "explanation": "Kotlin Coroutines provide a structured, efficient, and lightweight way to manage asynchronous operations. They simplify background tasks, making code more readable and maintainable compared to older methods.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using AsyncTask is the traditional way to handle background tasks, but it has significant limitations for modern apps.",
+          "is_correct": false,
+          "rationale": "AsyncTask is now deprecated and is not the recommended approach for modern Android applications."
+        },
+        {
+          "key": "B",
+          "text": "Implementing Thread objects directly provides low-level control over concurrency, but requires careful management.",
+          "is_correct": false,
+          "rationale": "Direct Thread usage is error-prone and less efficient than Coroutines for most tasks."
+        },
+        {
+          "key": "C",
+          "text": "Kotlin Coroutines offer a lightweight solution for asynchronous programming, simplifying background operations.",
+          "is_correct": true,
+          "rationale": "Kotlin Coroutines are the modern, recommended approach for asynchronous tasks in Android."
+        },
+        {
+          "key": "D",
+          "text": "Employing Handler and Looper allows sending messages between threads, but is more verbose for complex tasks.",
+          "is_correct": false,
+          "rationale": "Handlers/Loopers are lower-level and more verbose than Coroutines for general async tasks."
+        },
+        {
+          "key": "E",
+          "text": "Utilizing Service components is ideal for operations that need to run in the background without a UI.",
+          "is_correct": false,
+          "rationale": "Services are for background processes, not specifically for offloading CPU-bound operations."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Which build system is primarily used in Android development to manage project dependencies and configure the build process?",
+      "explanation": "Gradle is the official and widely adopted build system for Android. It handles dependency management, compiles code, and packages the application, providing extensive customization capabilities.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Maven is a widely used build automation tool, often seen in Java projects, but less common for Android.",
+          "is_correct": false,
+          "rationale": "Maven is common in Java, but Gradle is standard for Android."
+        },
+        {
+          "key": "B",
+          "text": "Gradle is the official and most common build system for Android, managing dependencies and build configurations.",
+          "is_correct": true,
+          "rationale": "Gradle is the official and primary build system used in Android development."
+        },
+        {
+          "key": "C",
+          "text": "Ant is an older Java-based build tool, which has largely been superseded by more modern systems like Maven and Gradle.",
+          "is_correct": false,
+          "rationale": "Ant is an outdated build tool, not primarily used for modern Android."
+        },
+        {
+          "key": "D",
+          "text": "npm (Node Package Manager) is primarily used for JavaScript projects and managing front-end web dependencies.",
+          "is_correct": false,
+          "rationale": "npm is the package manager for Node.js and is not used for native Android development."
+        },
+        {
+          "key": "E",
+          "text": "pip is the standard package installer for Python, used to install and manage software packages written in Python.",
+          "is_correct": false,
+          "rationale": "pip is the package installer for Python and is completely unrelated to Android development."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "Which Android Activity lifecycle method is called when the user navigates away from the activity but it might still be visible?",
+      "explanation": "The `onPause()` method is invoked when an activity is partially obscured or is about to lose focus, but it is still potentially visible to the user. This is a critical state for saving transient data.",
+      "options": [
+        {
+          "key": "A",
+          "text": "onCreate() is called only once when the activity is first created, initializing its essential components and UI.",
+          "is_correct": false,
+          "rationale": "onCreate is for initial setup of the activity when it is first launched."
+        },
+        {
+          "key": "B",
+          "text": "onStart() indicates the activity is becoming visible to the user, preparing for interaction and foreground operations.",
+          "is_correct": false,
+          "rationale": "onStart is called when the activity is becoming visible, but is not yet interactive."
+        },
+        {
+          "key": "C",
+          "text": "onPause() is called when the activity is partially obscured or is about to enter the background, saving transient UI state.",
+          "is_correct": true,
+          "rationale": "onPause is called when activity loses focus but is still visible."
+        },
+        {
+          "key": "D",
+          "text": "onStop() is invoked when the activity is no longer visible to the user, releasing resources that are not needed.",
+          "is_correct": false,
+          "rationale": "onStop means the activity is no longer visible to the user."
+        },
+        {
+          "key": "E",
+          "text": "onDestroy() is the final callback before the activity is completely removed from memory, performing final cleanup tasks.",
+          "is_correct": false,
+          "rationale": "onDestroy is the final callback, called when the activity is being completely destroyed."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "What is the primary benefit of using ConstraintLayout for designing complex user interfaces in Android applications?",
+      "explanation": "ConstraintLayout allows for flat and complex UI hierarchies by defining relationships between views and their parent, improving performance compared to nested layouts. It offers flexibility and powerful design capabilities.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It primarily uses a simple linear arrangement of views in a single row or column, which is suitable for basic UIs.",
+          "is_correct": false,
+          "rationale": "This option accurately describes the functionality and use case of a standard LinearLayout."
+        },
+        {
+          "key": "B",
+          "text": "It allows for creating flat and complex view hierarchies by defining flexible relationships between UI elements and the parent.",
+          "is_correct": true,
+          "rationale": "This correctly identifies ConstraintLayout's main benefit of creating flat, performant, and complex UIs."
+        },
+        {
+          "key": "C",
+          "text": "It arranges elements in a grid-like structure, ideal for displaying items uniformly in rows and columns without complex nesting.",
+          "is_correct": false,
+          "rationale": "This option describes the characteristics of GridLayout or TableLayout for structured items."
+        },
+        {
+          "key": "D",
+          "text": "It automatically adjusts view sizes and positions based on available screen space, primarily for responsive web views.",
+          "is_correct": false,
+          "rationale": "This is not the primary benefit of ConstraintLayout for native Android UI development."
+        },
+        {
+          "key": "E",
+          "text": "It facilitates drawing custom graphics and shapes directly onto the canvas, bypassing standard layout mechanisms entirely.",
+          "is_correct": false,
+          "rationale": "This describes custom view drawing, which is not a layout manager's function."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "Which method is most suitable for storing small amounts of private, primitive data in key-value pairs within an Android application?",
+      "explanation": "SharedPreferences is designed for storing small collections of key-value pairs of primitive data types. It's ideal for user preferences and simple application settings.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using a SQLite database is best for structured data requiring complex queries and relationships across multiple tables.",
+          "is_correct": false,
+          "rationale": "SQLite is designed for complex, structured data, not simple key-value pairs for preferences."
+        },
+        {
+          "key": "B",
+          "text": "Storing data in internal storage files is appropriate for larger private data that doesn't need a specific structure.",
+          "is_correct": false,
+          "rationale": "Internal storage is for larger unstructured private files, not key-value pairs."
+        },
+        {
+          "key": "C",
+          "text": "Utilizing SharedPreferences allows for saving private, primitive data in key-value pairs efficiently and simply.",
+          "is_correct": true,
+          "rationale": "SharedPreferences is the correct mechanism for storing small amounts of primitive key-value data."
+        },
+        {
+          "key": "D",
+          "text": "Employing external storage files is suitable for sharing larger public data with other applications or users.",
+          "is_correct": false,
+          "rationale": "External storage is intended for larger, public files that can be shared between applications."
+        },
+        {
+          "key": "E",
+          "text": "Implementing a network API call is necessary for fetching dynamic data from a remote server or cloud service.",
+          "is_correct": false,
+          "rationale": "Network API is for fetching dynamic data from a remote server."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Why is it crucial to perform long-running operations, such as network requests or database queries, on a background thread in Android?",
+      "explanation": "Performing long-running operations on the main thread (UI thread) causes the application to become unresponsive and can lead to an Application Not Responding (ANR) error, degrading user experience.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To prevent the main UI thread from being blocked, ensuring a smooth and responsive user interface for the application.",
+          "is_correct": true,
+          "rationale": "This is the primary reason, as it prevents UI blocking and potential ANR errors."
+        },
+        {
+          "key": "B",
+          "text": "To enhance the application's security by isolating sensitive data processing from the primary user interaction layer.",
+          "is_correct": false,
+          "rationale": "While security is important, background threads are primarily for performance, not for data isolation."
+        },
+        {
+          "key": "C",
+          "text": "To automatically prioritize these operations over UI updates, which is managed by the Android OS scheduler.",
+          "is_correct": false,
+          "rationale": "Thread priority can be managed, but it's not an automatic benefit of background processing."
+        },
+        {
+          "key": "D",
+          "text": "To allow the application to continue running even if the main activity crashes, providing better fault tolerance.",
+          "is_correct": false,
+          "rationale": "Threading does not prevent main activity crashes or provide fault tolerance."
+        },
+        {
+          "key": "E",
+          "text": "To enable real-time data synchronization with cloud services, which specifically requires non-UI thread execution.",
+          "is_correct": false,
+          "rationale": "Real-time sync can use background threads but doesn't require them for functionality."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Which Android component is responsible for running operations in the background without a user interface, even when the application is closed?",
+      "explanation": "A `Service` is an application component that can perform long-running operations in the background, without a user interface. It can continue running even when the user switches to other applications.",
+      "options": [
+        {
+          "key": "A",
+          "text": "An Activity represents a single screen with a user interface, allowing users to interact directly with the application.",
+          "is_correct": false,
+          "rationale": "An Activity always has a user interface and is not for background tasks."
+        },
+        {
+          "key": "B",
+          "text": "A BroadcastReceiver responds to system-wide broadcast announcements, like battery low or incoming calls, without UI.",
+          "is_correct": false,
+          "rationale": "A BroadcastReceiver is meant for responding to short events, not for long-running operations."
+        },
+        {
+          "key": "C",
+          "text": "A ContentProvider manages access to a structured set of data, allowing other applications to query or modify it.",
+          "is_correct": false,
+          "rationale": "A ContentProvider is designed for managing and sharing data, not for executing background tasks."
+        },
+        {
+          "key": "D",
+          "text": "A Service performs long-running operations in the background, potentially without a UI, even when the app is not active.",
+          "is_correct": true,
+          "rationale": "A Service is designed for background operations, even without a visible UI."
+        },
+        {
+          "key": "E",
+          "text": "A Fragment represents a behavior or a portion of user interface in an Activity, supporting modular UI design.",
+          "is_correct": false,
+          "rationale": "A Fragment is part of an Activity's UI and requires an Activity to exist."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "What is the primary benefit of utilizing a `RecyclerView` for displaying lists of items in an Android application?",
+      "explanation": "`RecyclerView` efficiently handles large datasets by recycling views that are no longer visible, significantly reducing memory usage and improving scrolling performance compared to older list views.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It automatically generates all necessary data models and adapters for displaying complex, nested hierarchical data structures.",
+          "is_correct": false,
+          "rationale": "Developers must manually implement the adapter and view holder for a `RecyclerView`."
+        },
+        {
+          "key": "B",
+          "text": "It efficiently recycles and reuses view components as items scroll off-screen, optimizing memory usage and performance.",
+          "is_correct": true,
+          "rationale": "The core benefit of `RecyclerView` is its efficient view recycling mechanism for performance."
+        },
+        {
+          "key": "C",
+          "text": "It provides built-in support for persistent storage of list data directly within the device's internal memory.",
+          "is_correct": false,
+          "rationale": "`RecyclerView` is a UI component and does not handle data persistence or storage."
+        },
+        {
+          "key": "D",
+          "text": "It simplifies the process of creating custom drawing operations and animations for individual list items.",
+          "is_correct": false,
+          "rationale": "While it supports customization, its main purpose is efficient list display, not custom drawing."
+        },
+        {
+          "key": "E",
+          "text": "It automatically synchronizes list data with remote backend servers without requiring additional network code.",
+          "is_correct": false,
+          "rationale": "`RecyclerView` is a UI widget and does not include any built-in data synchronization logic."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "Which `Activity` lifecycle method is called when an activity is no longer visible to the user and is preparing to be destroyed?",
+      "explanation": "The `onDestroy()` method is the final callback before an activity is completely removed from memory. It's used for final cleanup, like releasing resources.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`onPause()` is invoked when the activity is partially obscured or about to lose user focus.",
+          "is_correct": false,
+          "rationale": "`onPause()` is called when the activity loses focus but may still be partially visible."
+        },
+        {
+          "key": "B",
+          "text": "`onStop()` is called when the activity is no longer visible, but it might still reside in memory.",
+          "is_correct": false,
+          "rationale": "`onStop()` is called when the activity is no longer visible, but not yet destroyed."
+        },
+        {
+          "key": "C",
+          "text": "`onRestart()` is triggered when an activity that was stopped is about to be started again by the user.",
+          "is_correct": false,
+          "rationale": "`onRestart()` is called when a stopped activity is about to become visible again."
+        },
+        {
+          "key": "D",
+          "text": "`onDestroy()` is the final call received before the activity is completely removed from the system memory.",
+          "is_correct": true,
+          "rationale": "`onDestroy()` is the correct final callback before the activity is removed from memory."
+        },
+        {
+          "key": "E",
+          "text": "`onDetach()` is specifically used for fragment lifecycle management, not for the activity itself.",
+          "is_correct": false,
+          "rationale": "`onDetach()` is a Fragment lifecycle method, not an Activity method."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "For storing small amounts of primitive data like user preferences in an Android application, which persistence mechanism is most suitable?",
+      "explanation": "`SharedPreferences` provides a simple way to store private primitive data in key-value pairs. It's ideal for user settings and small configuration values that need to persist across app launches.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using an SQLite database is best for complex structured data with relationships, not simple preferences.",
+          "is_correct": false,
+          "rationale": "SQLite is designed for complex, structured data, making it overkill for simple preferences."
+        },
+        {
+          "key": "B",
+          "text": "Storing data in external storage is generally for larger files accessible by other applications.",
+          "is_correct": false,
+          "rationale": "External storage is meant for larger files that can be shared, not private preferences."
+        },
+        {
+          "key": "C",
+          "text": "`SharedPreferences` is specifically designed for saving simple key-value pairs of primitive data types.",
+          "is_correct": true,
+          "rationale": "This is the correct and most efficient mechanism for storing simple user preferences."
+        },
+        {
+          "key": "D",
+          "text": "File storage is suitable for saving large unstructured data or custom file formats, not small preferences.",
+          "is_correct": false,
+          "rationale": "File storage is better suited for larger, unstructured data blobs, not simple key-value pairs."
+        },
+        {
+          "key": "E",
+          "text": "Content Providers are primarily used for sharing data between different applications securely and efficiently.",
+          "is_correct": false,
+          "rationale": "Content Providers are designed for sharing data between apps, not for internal app preferences."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "What is the primary benefit of using Kotlin Coroutines for managing asynchronous operations in modern Android development?",
+      "explanation": "Kotlin Coroutines offer a lightweight and structured approach to asynchronous programming, making complex tasks like network requests and database operations easier to write, read, and maintain without callback hell.",
+      "options": [
+        {
+          "key": "A",
+          "text": "They provide automatic synchronization of data across multiple devices without requiring any network code.",
+          "is_correct": false,
+          "rationale": "Coroutines are for managing concurrency within an app, not for multi-device data synchronization."
+        },
+        {
+          "key": "B",
+          "text": "Coroutines simplify asynchronous code, making it more readable and maintainable by avoiding complex callback structures.",
+          "is_correct": true,
+          "rationale": "This is the core benefit, as they make asynchronous code much simpler and cleaner."
+        },
+        {
+          "key": "C",
+          "text": "They automatically handle all UI layout inflation and view binding processes at runtime efficiently.",
+          "is_correct": false,
+          "rationale": "Coroutines handle background tasks and concurrency, not UI inflation or view binding processes."
+        },
+        {
+          "key": "D",
+          "text": "They enable direct access to hardware components like the camera or GPS without needing permissions.",
+          "is_correct": false,
+          "rationale": "Coroutines do not bypass the standard Android permission model for accessing hardware components."
+        },
+        {
+          "key": "E",
+          "text": "They provide a built-in mechanism for encrypting all data stored on the device's internal storage securely.",
+          "is_correct": false,
+          "rationale": "Coroutines are a concurrency framework and have no built-in features for data encryption."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "How do you typically initiate navigation from one `Activity` to another `Activity` within the same Android application?",
+      "explanation": "To navigate between activities, an explicit `Intent` is used to specify the target `Activity` class. The `startActivity()` method then launches the new activity.",
+      "options": [
+        {
+          "key": "A",
+          "text": "By directly calling the constructor of the target `Activity` class and then invoking its `onCreate()` method.",
+          "is_correct": false,
+          "rationale": "Activities are system components and cannot be instantiated directly by the developer's code."
+        },
+        {
+          "key": "B",
+          "text": "You use an explicit `Intent` to specify the target `Activity` class and then call `startActivity()` method.",
+          "is_correct": true,
+          "rationale": "Using an explicit `Intent` with `startActivity()` is the correct and standard navigation method."
+        },
+        {
+          "key": "C",
+          "text": "By modifying the application's manifest file at runtime to declare the new activity as the main launcher.",
+          "is_correct": false,
+          "rationale": "The manifest is for static app configuration and cannot be modified at runtime for navigation."
+        },
+        {
+          "key": "D",
+          "text": "Through a direct method call on the `Application` context, specifying the destination activity's package name.",
+          "is_correct": false,
+          "rationale": "Navigation between activities is always handled through Intents, not direct context method calls."
+        },
+        {
+          "key": "E",
+          "text": "By creating a custom `FragmentTransaction` and replacing the current activity with the desired one.",
+          "is_correct": false,
+          "rationale": "`FragmentTransaction` is used to manage `Fragment` lifecycles within an `Activity`, not activities themselves."
+        }
+      ]
+    }
+  ]
+}

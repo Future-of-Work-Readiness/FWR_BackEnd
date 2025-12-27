@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "When placing a trade, what is the primary characteristic of a market order for a financial instrument?",
+      "explanation": "A market order is designed for immediate execution at the best available current price. Traders use it when speed of execution is prioritized over achieving a specific price level.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It guarantees execution at a specific predetermined price, even if market conditions change rapidly.",
+          "is_correct": false,
+          "rationale": "This describes a limit order, not a market order."
+        },
+        {
+          "key": "B",
+          "text": "It executes immediately at the best available current price, prioritizing speed over price certainty.",
+          "is_correct": true,
+          "rationale": "Market orders prioritize immediate execution at current prices."
+        },
+        {
+          "key": "C",
+          "text": "It becomes active only when the market price reaches a specific level, then executes as a market order.",
+          "is_correct": false,
+          "rationale": "This describes a stop order, not a general market order."
+        },
+        {
+          "key": "D",
+          "text": "It allows a trader to buy or sell a security only at a price better than the current market price.",
+          "is_correct": false,
+          "rationale": "This describes a limit order to improve price, not a market order."
+        },
+        {
+          "key": "E",
+          "text": "It is an order to buy or sell a security at the closing price of the trading day.",
+          "is_correct": false,
+          "rationale": "This describes a market-on-close order, not a general market order."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "In financial markets, what does the bid-ask spread fundamentally represent to a trader?",
+      "explanation": "The bid-ask spread is the difference between the highest price a buyer is willing to pay (bid) and the lowest price a seller is willing to accept (ask). It represents transaction cost and market liquidity.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It is the profit margin a broker earns from executing a client's buy or sell order.",
+          "is_correct": false,
+          "rationale": "While related to broker revenue, it's primarily a market indicator."
+        },
+        {
+          "key": "B",
+          "text": "It signifies the difference between the highest price a buyer will pay and the lowest price a seller will accept.",
+          "is_correct": true,
+          "rationale": "The bid-ask spread defines the difference between bid and ask prices."
+        },
+        {
+          "key": "C",
+          "text": "It represents the total volume of shares traded for a specific financial instrument during a single day.",
+          "is_correct": false,
+          "rationale": "This describes trading volume, not the bid-ask spread."
+        },
+        {
+          "key": "D",
+          "text": "It indicates the potential future price volatility of a security over the next trading session.",
+          "is_correct": false,
+          "rationale": "This is about volatility, not the bid-ask spread itself."
+        },
+        {
+          "key": "E",
+          "text": "It reflects the total value of all outstanding shares for a particular company on the stock exchange.",
+          "is_correct": false,
+          "rationale": "This describes market capitalization, not the bid-ask spread."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Why is understanding and utilizing stop-loss orders crucial for a junior trader managing risk?",
+      "explanation": "Stop-loss orders are fundamental risk management tools. They automatically close a losing position when a predefined price is hit, limiting potential losses and protecting capital.",
+      "options": [
+        {
+          "key": "A",
+          "text": "They guarantee a specific profit target will be achieved if the market moves favorably for the position.",
+          "is_correct": false,
+          "rationale": "Stop-loss orders are for limiting losses, not guaranteeing profits."
+        },
+        {
+          "key": "B",
+          "text": "They automatically close a losing position when a predefined price level is reached, limiting potential downside risk.",
+          "is_correct": true,
+          "rationale": "Stop-loss orders are used to limit potential losses on a trade."
+        },
+        {
+          "key": "C",
+          "text": "They allow a trader to enter a new position only when the market price is below a certain threshold.",
+          "is_correct": false,
+          "rationale": "This describes a buy limit order, not a stop-loss order."
+        },
+        {
+          "key": "D",
+          "text": "They are primarily used to increase leverage on a trade, thereby maximizing potential returns significantly.",
+          "is_correct": false,
+          "rationale": "Stop-loss orders are for risk reduction, not increasing leverage."
+        },
+        {
+          "key": "E",
+          "text": "They ensure that all trades are executed at the exact midpoint between the current bid and ask prices.",
+          "is_correct": false,
+          "rationale": "This describes midpoint execution, not a stop-loss order."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What does high liquidity in a financial market generally indicate for traders executing orders?",
+      "explanation": "High liquidity means there are many buyers and sellers, allowing for quick execution of large orders with minimal price impact. This reduces slippage and transaction costs for traders.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It suggests that large orders can be executed quickly without significantly impacting the asset's price.",
+          "is_correct": true,
+          "rationale": "High liquidity allows large orders to be filled with minimal price impact."
+        },
+        {
+          "key": "B",
+          "text": "It implies that the market is highly volatile, leading to unpredictable and rapid price fluctuations.",
+          "is_correct": false,
+          "rationale": "High liquidity typically reduces volatility from large orders, not causes it."
+        },
+        {
+          "key": "C",
+          "text": "It means that only small trade sizes are permissible, preventing any single entity from dominating trading activity.",
+          "is_correct": false,
+          "rationale": "High liquidity supports large trade sizes, not restricts them."
+        },
+        {
+          "key": "D",
+          "text": "It indicates a wide bid-ask spread, making it expensive for traders to enter and exit positions quickly.",
+          "is_correct": false,
+          "rationale": "High liquidity typically correlates with a narrow bid-ask spread."
+        },
+        {
+          "key": "E",
+          "text": "It refers to the market's ability to absorb new capital inflows without any subsequent price changes.",
+          "is_correct": false,
+          "rationale": "High liquidity is about ease of trading existing assets, not new capital absorption."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "How do unexpected economic data releases, like inflation reports, typically influence short-term market movements?",
+      "explanation": "Unexpected economic data can cause significant short-term market volatility as traders react to new information that impacts asset valuations and future central bank policy expectations.",
+      "options": [
+        {
+          "key": "A",
+          "text": "They usually have no immediate impact, as markets have already priced in all potential outcomes.",
+          "is_correct": false,
+          "rationale": "Unexpected data causes immediate reactions as it's not priced in."
+        },
+        {
+          "key": "B",
+          "text": "They often lead to increased volatility and rapid price adjustments as traders react to new information.",
+          "is_correct": true,
+          "rationale": "Unexpected economic data causes market volatility and rapid price adjustments."
+        },
+        {
+          "key": "C",
+          "text": "They primarily affect long-term trends, with minimal influence on day-to-day trading decisions.",
+          "is_correct": false,
+          "rationale": "While they can affect long-term, their immediate impact is short-term volatility."
+        },
+        {
+          "key": "D",
+          "text": "They cause a temporary suspension of trading activity until the new data can be fully analyzed.",
+          "is_correct": false,
+          "rationale": "Trading continues, but with increased activity and volatility."
+        },
+        {
+          "key": "E",
+          "text": "They only impact specific sectors directly related to the data, leaving broader market indices unchanged.",
+          "is_correct": false,
+          "rationale": "Major economic data impacts broader markets and indices."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "When executing a market order, what is the primary objective for a trader in a fast-moving market environment?",
+      "explanation": "A market order prioritizes immediate execution over price. Traders use it when they need to enter or exit a position quickly, accepting the prevailing market price at that moment, which is crucial in volatile conditions.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To ensure the trade is executed immediately at the best available current price, regardless of minor fluctuations.",
+          "is_correct": true,
+          "rationale": "Market orders prioritize immediate execution at the current best available price."
+        },
+        {
+          "key": "B",
+          "text": "To place a trade at a specific future price point, only if the market reaches that predetermined level.",
+          "is_correct": false,
+          "rationale": "This describes a limit order, not a market order."
+        },
+        {
+          "key": "C",
+          "text": "To limit potential losses by setting a maximum price for buying or a minimum price for selling an asset.",
+          "is_correct": false,
+          "rationale": "This describes a stop-loss order, not a market order."
+        },
+        {
+          "key": "D",
+          "text": "To guarantee execution within a very narrow price range, even if it means waiting for better liquidity.",
+          "is_correct": false,
+          "rationale": "Market orders prioritize speed over price guarantee or range."
+        },
+        {
+          "key": "E",
+          "text": "To cancel all pending orders if the market moves unfavorably beyond a certain predefined threshold.",
+          "is_correct": false,
+          "rationale": "This describes a stop order or a trailing stop, not a market order."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "What does the bid-ask spread fundamentally represent in financial markets for a trader?",
+      "explanation": "The bid-ask spread is the difference between the highest price a buyer is willing to pay and the lowest price a seller is willing to accept. It represents the cost of executing a trade and the market maker's profit.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It represents the difference between the highest price a buyer will pay and the lowest price a seller will accept.",
+          "is_correct": true,
+          "rationale": "The bid-ask spread is the price difference between buying and selling."
+        },
+        {
+          "key": "B",
+          "text": "It indicates the total trading volume of a specific financial instrument over a defined period.",
+          "is_correct": false,
+          "rationale": "This describes trading volume, not the bid-ask spread."
+        },
+        {
+          "key": "C",
+          "text": "It shows the historical volatility of an asset, reflecting its price fluctuations over time.",
+          "is_correct": false,
+          "rationale": "This describes volatility, not the bid-ask spread."
+        },
+        {
+          "key": "D",
+          "text": "It measures the interest rate differential between two different currencies in the foreign exchange market.",
+          "is_correct": false,
+          "rationale": "This relates to interest rate parity, not the bid-ask spread."
+        },
+        {
+          "key": "E",
+          "text": "It signifies the premium paid for an options contract over its intrinsic value before expiration.",
+          "is_correct": false,
+          "rationale": "This describes an options premium, not the bid-ask spread."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Why is effective risk management considered absolutely crucial for a trader's long-term success and sustainability?",
+      "explanation": "Effective risk management is vital for traders to protect capital, minimize losses, and ensure longevity in the market. It involves setting stop-losses, managing position sizes, and understanding risk-reward ratios to avoid catastrophic outcomes.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It helps to protect trading capital and minimize potential losses from adverse market movements.",
+          "is_correct": true,
+          "rationale": "Risk management protects capital and minimizes losses for traders."
+        },
+        {
+          "key": "B",
+          "text": "It primarily focuses on maximizing short-term profits by taking aggressive, leveraged positions.",
+          "is_correct": false,
+          "rationale": "This describes aggressive trading, not responsible risk management."
+        },
+        {
+          "key": "C",
+          "text": "It ensures compliance with all regulatory requirements, but does not directly impact profitability.",
+          "is_correct": false,
+          "rationale": "Risk management impacts profitability directly, beyond just compliance."
+        },
+        {
+          "key": "D",
+          "text": "It is mainly about identifying new market opportunities for diversification across various asset classes.",
+          "is_correct": false,
+          "rationale": "This describes portfolio diversification, not core risk management."
+        },
+        {
+          "key": "E",
+          "text": "It determines the optimal entry and exit points for trades based on technical analysis indicators.",
+          "is_correct": false,
+          "rationale": "This describes trade execution strategy, not risk management itself."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "How might unexpected positive economic news typically influence the price of a country's currency in forex markets?",
+      "explanation": "Positive economic news, such as strong GDP growth or low unemployment, generally strengthens investor confidence in a country's economy. This increased demand for assets denominated in that currency typically leads to its appreciation.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It would likely cause the currency to appreciate as investors become more confident in the economy.",
+          "is_correct": true,
+          "rationale": "Positive economic news usually strengthens a country's currency."
+        },
+        {
+          "key": "B",
+          "text": "It would typically lead to a depreciation of the currency due to increased inflationary pressures.",
+          "is_correct": false,
+          "rationale": "Inflationary pressure can depreciate, but positive news typically appreciates."
+        },
+        {
+          "key": "C",
+          "text": "It would have no significant impact on the currency, as fundamental news is already priced in.",
+          "is_correct": false,
+          "rationale": "Unexpected news is not always fully priced in and can cause significant moves."
+        },
+        {
+          "key": "D",
+          "text": "It would cause the central bank to immediately intervene by selling large amounts of the currency.",
+          "is_correct": false,
+          "rationale": "Central bank intervention is not the immediate or typical response to positive news."
+        },
+        {
+          "key": "E",
+          "text": "It would primarily affect interest rates, with little direct or immediate influence on currency value.",
+          "is_correct": false,
+          "rationale": "Interest rates are affected, but currency value also responds directly to economic outlook."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "What is the primary function of a trading platform for a retail or institutional trader?",
+      "explanation": "A trading platform provides the interface and tools necessary for traders to execute trades, monitor market data, analyze charts, and manage their portfolios. It's the central hub for all trading activities.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To provide an interface for executing trades, monitoring market data, and managing investment portfolios.",
+          "is_correct": true,
+          "rationale": "Trading platforms enable trade execution, market monitoring, and portfolio management."
+        },
+        {
+          "key": "B",
+          "text": "To offer advanced financial advisory services and personalized wealth management strategies to clients.",
+          "is_correct": false,
+          "rationale": "This describes financial advisors or wealth managers, not a trading platform."
+        },
+        {
+          "key": "C",
+          "text": "To facilitate secure peer-to-peer lending arrangements directly between individual borrowers and lenders.",
+          "is_correct": false,
+          "rationale": "This describes peer-to-peer lending platforms, not general trading platforms."
+        },
+        {
+          "key": "D",
+          "text": "To publish in-depth macroeconomic research reports and detailed fundamental analysis of companies.",
+          "is_correct": false,
+          "rationale": "This describes research providers, not the primary function of a trading platform."
+        },
+        {
+          "key": "E",
+          "text": "To serve as a secure digital wallet for storing various cryptocurrencies and other digital assets.",
+          "is_correct": false,
+          "rationale": "This describes a crypto wallet, not a general financial trading platform."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "What does the 'bid price' represent in the context of a financial instrument's live quotation?",
+      "explanation": "The bid price is fundamental to market microstructure, representing the maximum price an interested buyer is prepared to pay for a security at a given moment. Understanding this helps traders assess liquidity.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It is the highest price a buyer is currently willing to pay for a particular security.",
+          "is_correct": true,
+          "rationale": "The bid price is what buyers offer for a security."
+        },
+        {
+          "key": "B",
+          "text": "It is the lowest price a seller is currently willing to accept for that specific security.",
+          "is_correct": false,
+          "rationale": "This describes the 'ask' or 'offer' price, not the bid."
+        },
+        {
+          "key": "C",
+          "text": "It represents the last traded price of the financial instrument on the exchange.",
+          "is_correct": false,
+          "rationale": "This describes the 'last traded price', not the bid."
+        },
+        {
+          "key": "D",
+          "text": "It indicates the average price at which the security has been traded throughout the day.",
+          "is_correct": false,
+          "rationale": "This describes an average price, not the current bid."
+        },
+        {
+          "key": "E",
+          "text": "It is the price at which new shares are offered during an initial public offering.",
+          "is_correct": false,
+          "rationale": "This describes an IPO price, not the bid price."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Which type of order guarantees execution at the best available current market price?",
+      "explanation": "A market order is designed for immediate execution, prioritizing speed and certainty of execution over a specific price. Traders use it when they want to enter or exit a position quickly.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A limit order specifies a maximum or minimum price, ensuring execution only at that price or better.",
+          "is_correct": false,
+          "rationale": "Limit orders prioritize price over immediate execution."
+        },
+        {
+          "key": "B",
+          "text": "A stop order becomes a market order once a specified trigger price is reached.",
+          "is_correct": false,
+          "rationale": "Stop orders are triggered, then become market orders."
+        },
+        {
+          "key": "C",
+          "text": "A market order executes immediately at the best available price, prioritizing speed of execution.",
+          "is_correct": true,
+          "rationale": "Market orders guarantee execution at the current best price."
+        },
+        {
+          "key": "D",
+          "text": "A stop-limit order combines features of both stop and limit orders for more controlled execution.",
+          "is_correct": false,
+          "rationale": "Stop-limit orders have both a stop and a limit price."
+        },
+        {
+          "key": "E",
+          "text": "A fill-or-kill order demands immediate and complete execution, or it is entirely cancelled.",
+          "is_correct": false,
+          "rationale": "Fill-or-kill orders focus on quantity and immediacy, not price."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "Why might a central bank decide to raise interest rates in a strong economic environment?",
+      "explanation": "Raising interest rates is a common monetary policy tool used by central banks to combat inflation. By making borrowing more expensive, it cools down economic activity and reduces price pressures.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To stimulate economic growth by encouraging businesses to borrow and invest more capital.",
+          "is_correct": false,
+          "rationale": "Lowering rates stimulates growth; raising rates does the opposite."
+        },
+        {
+          "key": "B",
+          "text": "To increase the availability of credit for consumers, thereby boosting retail spending.",
+          "is_correct": false,
+          "rationale": "Higher rates make credit more expensive, reducing availability."
+        },
+        {
+          "key": "C",
+          "text": "To curb inflation by making borrowing more expensive and slowing down overall economic activity.",
+          "is_correct": true,
+          "rationale": "Raising rates is a key tool for fighting inflation."
+        },
+        {
+          "key": "D",
+          "text": "To weaken the national currency, making exports cheaper and more competitive globally.",
+          "is_correct": false,
+          "rationale": "Raising rates typically strengthens a currency, not weakens it."
+        },
+        {
+          "key": "E",
+          "text": "To reduce the national debt by increasing the government's borrowing capacity at lower costs.",
+          "is_correct": false,
+          "rationale": "Raising rates increases government borrowing costs, not lowers them."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "What is the primary purpose of setting a 'stop-loss' order when executing a trade?",
+      "explanation": "A stop-loss order is a crucial risk management tool, designed to limit potential losses on a security position. It automatically triggers a market order when the price reaches a specified level.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To guarantee a specific profit target is met once the security reaches a predetermined higher price.",
+          "is_correct": false,
+          "rationale": "This describes a 'take-profit' order, not a stop-loss."
+        },
+        {
+          "key": "B",
+          "text": "To limit potential losses by automatically selling a security if its price falls to a certain level.",
+          "is_correct": true,
+          "rationale": "Stop-loss orders are used to cap downside risk."
+        },
+        {
+          "key": "C",
+          "text": "To buy additional shares of a security only when its price drops significantly below current levels.",
+          "is_correct": false,
+          "rationale": "This describes a 'buy limit' order at a lower price."
+        },
+        {
+          "key": "D",
+          "text": "To avoid paying capital gains tax on profitable trades by holding the position longer term.",
+          "is_correct": false,
+          "rationale": "Stop-loss orders are for risk management, not tax planning."
+        },
+        {
+          "key": "E",
+          "text": "To alert the trader when a security's price has moved by a certain percentage in either direction.",
+          "is_correct": false,
+          "rationale": "This describes a price alert, not an order type."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Why is it crucial for traders to understand and adhere to regulatory compliance guidelines?",
+      "explanation": "Adhering to regulatory guidelines is paramount for maintaining market integrity, preventing illegal activities like insider trading, and protecting investors. Non-compliance can lead to severe penalties and reputational damage.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To ensure their trading strategies consistently outperform the market without any significant drawdowns.",
+          "is_correct": false,
+          "rationale": "Compliance does not guarantee trading performance."
+        },
+        {
+          "key": "B",
+          "text": "To avoid legal penalties, maintain market integrity, and protect against unethical trading practices.",
+          "is_correct": true,
+          "rationale": "Compliance prevents legal issues and ensures fair markets."
+        },
+        {
+          "key": "C",
+          "text": "To gain exclusive access to proprietary trading algorithms used by the firm's senior traders.",
+          "is_correct": false,
+          "rationale": "Access to algorithms is not directly tied to compliance."
+        },
+        {
+          "key": "D",
+          "text": "To qualify for higher bonuses and increased compensation based on their trading volume metrics.",
+          "is_correct": false,
+          "rationale": "Compensation is based on performance, not just compliance."
+        },
+        {
+          "key": "E",
+          "text": "To predict future market movements accurately by analyzing historical regulatory enforcement actions.",
+          "is_correct": false,
+          "rationale": "Compliance rules do not predict future market movements."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "What does buying a share of common stock in a publicly traded company primarily represent for an investor?",
+      "explanation": "Buying common stock makes you a part-owner, giving you rights to the company's future earnings and assets. It's a fundamental concept for new traders to grasp regarding equity markets.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It grants the investor a proportional ownership stake in the company and potential claims on its assets and earnings.",
+          "is_correct": true,
+          "rationale": "Common stock represents ownership and claims on company assets."
+        },
+        {
+          "key": "B",
+          "text": "It provides a guaranteed fixed interest payment annually, similar to a loan repayment from the company.",
+          "is_correct": false,
+          "rationale": "This describes bonds or preferred stock, not common stock."
+        },
+        {
+          "key": "C",
+          "text": "It represents a short-term loan to the company that must be repaid with interest within a year.",
+          "is_correct": false,
+          "rationale": "This describes a short-term debt instrument, not equity ownership."
+        },
+        {
+          "key": "D",
+          "text": "It gives the investor the exclusive right to purchase goods or services from the company at a discounted price.",
+          "is_correct": false,
+          "rationale": "This is not a typical right associated with common stock ownership."
+        },
+        {
+          "key": "E",
+          "text": "It offers a contractual obligation for the company to repurchase the share at a predetermined higher price.",
+          "is_correct": false,
+          "rationale": "This describes a buyback agreement, not the inherent nature of common stock."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "When a trader places a 'market order' to buy or sell a financial instrument, what is the expected outcome?",
+      "explanation": "A market order is designed for immediate execution, accepting the prevailing market price. It is crucial for traders to understand the trade-offs between speed and price control.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The order will execute immediately at the best available current price, prioritizing speed over price certainty.",
+          "is_correct": true,
+          "rationale": "Market orders prioritize immediate execution at the current best price."
+        },
+        {
+          "key": "B",
+          "text": "The order will only execute if the price reaches a specific, predetermined level set by the trader.",
+          "is_correct": false,
+          "rationale": "This describes a limit order, not a market order."
+        },
+        {
+          "key": "C",
+          "text": "The order will be placed in a queue and executed only at the end of the trading day's closing price.",
+          "is_correct": false,
+          "rationale": "Market orders execute immediately, not at day's end."
+        },
+        {
+          "key": "D",
+          "text": "The order will be cancelled automatically if it cannot be filled within a specified time limit.",
+          "is_correct": false,
+          "rationale": "This describes a time-in-force condition, not a market order's core function."
+        },
+        {
+          "key": "E",
+          "text": "The order guarantees execution at a price no worse than a specified limit, but not necessarily better.",
+          "is_correct": false,
+          "rationale": "This describes a stop-limit or limit order, not a market order."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "Which of the following best describes 'liquidity risk' in the context of trading financial assets?",
+      "explanation": "Liquidity risk is critical for traders, as it affects their ability to enter or exit positions efficiently. Illiquid assets can trap capital or force unfavorable prices.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The risk that an asset cannot be bought or sold quickly enough in the market without significantly impacting its price.",
+          "is_correct": true,
+          "rationale": "Liquidity risk refers to the ease of trading an asset without price impact."
+        },
+        {
+          "key": "B",
+          "text": "The risk that the overall market will decline, leading to losses across a broad range of investments.",
+          "is_correct": false,
+          "rationale": "This describes market risk, which is distinct from liquidity risk."
+        },
+        {
+          "key": "C",
+          "text": "The risk that a company will default on its debt obligations, affecting the value of its bonds.",
+          "is_correct": false,
+          "rationale": "This describes credit risk, which is different from liquidity risk."
+        },
+        {
+          "key": "D",
+          "text": "The risk associated with changes in interest rates, which can impact the value of fixed-income securities.",
+          "is_correct": false,
+          "rationale": "This describes interest rate risk, not liquidity risk."
+        },
+        {
+          "key": "E",
+          "text": "The risk that an investment's value will decrease due to inflation eroding purchasing power over time.",
+          "is_correct": false,
+          "rationale": "This describes inflation risk, which is separate from liquidity risk."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "What is the primary role of the U.S. Securities and Exchange Commission (SEC) in financial markets?",
+      "explanation": "The SEC is a key regulatory body for U.S. financial markets. Understanding its role is fundamental for compliance and maintaining market integrity for traders.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To protect investors, maintain fair and orderly markets, and facilitate capital formation through regulation.",
+          "is_correct": true,
+          "rationale": "The SEC's core mission involves investor protection and market integrity."
+        },
+        {
+          "key": "B",
+          "text": "To manage the nation's monetary policy, control interest rates, and regulate the banking system effectively.",
+          "is_correct": false,
+          "rationale": "This describes the role of the Federal Reserve, not the SEC."
+        },
+        {
+          "key": "C",
+          "text": "To provide insurance for bank deposits, ensuring customer funds are protected against bank failures.",
+          "is_correct": false,
+          "rationale": "This describes the role of the FDIC, not the SEC."
+        },
+        {
+          "key": "D",
+          "text": "To set global accounting standards for public companies, ensuring transparency in financial reporting.",
+          "is_correct": false,
+          "rationale": "This is primarily the role of the FASB, with SEC oversight."
+        },
+        {
+          "key": "E",
+          "text": "To act as a central bank for the European Union, managing its currency and economic stability.",
+          "is_correct": false,
+          "rationale": "This describes the European Central Bank, not the U.S. SEC."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "How might unexpected positive economic news, such as stronger-than-expected GDP growth, typically impact stock prices?",
+      "explanation": "Positive economic news often signals a healthier economy, which typically translates to higher corporate profits and increased investor optimism, driving stock prices up.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Stock prices would generally increase as investor confidence rises and future corporate earnings expectations improve.",
+          "is_correct": true,
+          "rationale": "Positive economic news usually boosts investor confidence and corporate earnings outlook."
+        },
+        {
+          "key": "B",
+          "text": "Stock prices would typically decrease due to concerns about potential future interest rate hikes by the central bank.",
+          "is_correct": false,
+          "rationale": "While possible, the immediate impact is usually positive for equities."
+        },
+        {
+          "key": "C",
+          "text": "Stock prices would likely remain unchanged, as economic data usually has a delayed impact on market sentiment.",
+          "is_correct": false,
+          "rationale": "Unexpected news often causes an immediate market reaction."
+        },
+        {
+          "key": "D",
+          "text": "Stock prices would experience increased volatility without a clear direction, reflecting market uncertainty.",
+          "is_correct": false,
+          "rationale": "Strong positive news usually provides a clear upward direction."
+        },
+        {
+          "key": "E",
+          "text": "Stock prices would primarily affect bond yields, with minimal direct impact on the equity market immediately.",
+          "is_correct": false,
+          "rationale": "Economic news directly impacts equity markets through earnings expectations."
+        }
+      ]
+    }
+  ]
+}

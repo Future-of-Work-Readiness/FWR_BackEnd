@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "What is the most significant trade-off a DBA must consider when adding a new non-clustered index to a heavily transactional table?",
+      "explanation": "Indexes speed up data retrieval (SELECT queries) but must be updated during data modification operations (INSERT, UPDATE, DELETE). This adds overhead, slowing down write performance on heavily transactional tables.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Improved read query performance comes at the cost of slower data modification operations like INSERT, UPDATE, and DELETE.",
+          "is_correct": true,
+          "rationale": "This correctly identifies the classic read-speed vs. write-speed trade-off of indexing."
+        },
+        {
+          "key": "B",
+          "text": "The increase in required disk storage space for the index directly leads to higher network latency for all queries.",
+          "is_correct": false,
+          "rationale": "Disk space and network latency are not directly correlated in this manner."
+        },
+        {
+          "key": "C",
+          "text": "It significantly reduces overall CPU usage during reads but causes a disproportionately large increase in memory consumption.",
+          "is_correct": false,
+          "rationale": "While memory is used, the primary trade-off is write performance, not memory consumption."
+        },
+        {
+          "key": "D",
+          "text": "The database gains enhanced data security for the indexed columns but results in more complex query execution plans.",
+          "is_correct": false,
+          "rationale": "Indexes are for performance and do not inherently add security features."
+        },
+        {
+          "key": "E",
+          "text": "Backups become much simpler to manage and execute, although the time required for a full database restore increases.",
+          "is_correct": false,
+          "rationale": "Indexes can slightly increase backup size and time but do not simplify the process."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "When designing a backup strategy, what is the fundamental difference between a differential backup and a full incremental backup?",
+      "explanation": "A differential backup contains all data that has changed since the last full backup. An incremental backup contains only the data that has changed since the last backup of any type (full or incremental).",
+      "options": [
+        {
+          "key": "A",
+          "text": "A differential backup contains all changes made since the last full backup, requiring only two files for a restore.",
+          "is_correct": true,
+          "rationale": "This correctly defines differential backups and their simple restore chain (full + differential)."
+        },
+        {
+          "key": "B",
+          "text": "Incremental backups copy the entire transaction log, whereas differential backups only copy the changed data pages from disk.",
+          "is_correct": false,
+          "rationale": "This confuses data backups with transaction log backups, which are a different mechanism."
+        },
+        {
+          "key": "C",
+          "text": "Only differential backups can be used for point-in-time recovery, while incremental backups do not support this specific feature.",
+          "is_correct": false,
+          "rationale": "Point-in-time recovery typically relies on transaction log backups, not just differential or incremental."
+        },
+        {
+          "key": "D",
+          "text": "Incremental backups are always much faster to create but require significantly more storage space than a series of differentials.",
+          "is_correct": false,
+          "rationale": "Incremental backups are smaller; differential backups grow larger with each subsequent run."
+        },
+        {
+          "key": "E",
+          "text": "A differential backup copies the entire database every time it is run, making it identical to a full backup.",
+          "is_correct": false,
+          "rationale": "This is incorrect; a differential backup only copies the changes since the last full backup."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "When troubleshooting a slow-running query, what critical information does analyzing the query's execution plan provide to a DBA?",
+      "explanation": "The execution plan details the exact steps the database engine takes to run a query. It reveals operations like table scans, index usage (or lack thereof), and join methods, highlighting performance bottlenecks.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It shows the exact steps and operators the query optimizer uses to access data, revealing inefficiencies like full table scans.",
+          "is_correct": true,
+          "rationale": "This accurately describes the primary purpose and benefit of an execution plan."
+        },
+        {
+          "key": "B",
+          "text": "It provides a complete audit history of all the database users who have previously executed that specific query.",
+          "is_correct": false,
+          "rationale": "This describes auditing or logging features, not the function of an execution plan."
+        },
+        {
+          "key": "C",
+          "text": "It details the physical disk location and fragmentation level of the data blocks being accessed by the query.",
+          "is_correct": false,
+          "rationale": "This information comes from physical storage analysis tools, not the query plan itself."
+        },
+        {
+          "key": "D",
+          "text": "It automatically generates and suggests the optimal index configuration for all the tables involved in the slow query.",
+          "is_correct": false,
+          "rationale": "While some tools do this, the execution plan itself only shows what is happening."
+        },
+        {
+          "key": "E",
+          "text": "It lists the current locking and blocking sessions that are directly preventing the query from completing its execution.",
+          "is_correct": false,
+          "rationale": "This information is found in dynamic management views related to locks and transactions."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "To adhere to the principle of least privilege, what is the most secure method for granting database access to an application?",
+      "explanation": "The principle of least privilege requires granting only the minimum necessary permissions. Creating a specific role with granular permissions on specific objects (tables, views, procedures) is the most secure and manageable approach.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Create a custom database role, grant it specific permissions on necessary objects, and then assign the application's account to that role.",
+          "is_correct": true,
+          "rationale": "This method is granular, manageable, and correctly applies the principle of least privilege."
+        },
+        {
+          "key": "B",
+          "text": "Assign the application's account directly to the built-in db_owner role to ensure it never encounters any permission errors.",
+          "is_correct": false,
+          "rationale": "This violates the principle of least privilege by granting excessive, unnecessary permissions."
+        },
+        {
+          "key": "C",
+          "text": "Grant the public role SELECT, INSERT, and UPDATE permissions on all the tables that the application will need to use.",
+          "is_correct": false,
+          "rationale": "Granting permissions to the public role is a major security risk as it affects all users."
+        },
+        {
+          "key": "D",
+          "text": "Allow the application to connect using a highly privileged system administrator account to simplify connection string management.",
+          "is_correct": false,
+          "rationale": "Using a sysadmin account for an application is an extreme security vulnerability."
+        },
+        {
+          "key": "E",
+          "text": "Grant direct SELECT and EXECUTE permissions to the application's user account on the entire database schema for simplicity.",
+          "is_correct": false,
+          "rationale": "Granting permissions on an entire schema is often too broad and not specific enough."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What is the primary advantage of using asynchronous database replication for a high-availability and disaster recovery solution?",
+      "explanation": "Asynchronous replication does not require the primary server to wait for the replica to confirm a transaction. This minimizes performance impact on the primary server, making it suitable for geographically distant replicas or high-throughput systems.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It minimizes performance impact on the primary database server because transactions can commit without waiting for the replica's acknowledgement.",
+          "is_correct": true,
+          "rationale": "This correctly identifies the key benefit of asynchronous replication: low primary server overhead."
+        },
+        {
+          "key": "B",
+          "text": "It guarantees absolutely zero data loss during a failover event, regardless of the network conditions between the servers.",
+          "is_correct": false,
+          "rationale": "This describes synchronous replication; asynchronous replication has a risk of minor data loss."
+        },
+        {
+          "key": "C",
+          "text": "The replica database can be used for both read and write operations simultaneously with the primary production server.",
+          "is_correct": false,
+          "rationale": "Replicas are typically read-only to avoid data conflicts; multi-master is a different architecture."
+        },
+        {
+          "key": "D",
+          "text": "It completely eliminates the need for any network connectivity between the primary and the secondary replica database servers.",
+          "is_correct": false,
+          "rationale": "Replication fundamentally requires network connectivity to transmit transaction data between the primary and secondary servers."
+        },
+        {
+          "key": "E",
+          "text": "Setting up and configuring asynchronous replication does not require any specialized database administration skills or tools.",
+          "is_correct": false,
+          "rationale": "Configuring any high-availability solution requires significant expertise and careful planning."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "When implementing database sharding for a high-traffic application, what is the most critical factor to consider for the sharding key?",
+      "explanation": "The effectiveness of sharding hinges on the sharding key's ability to distribute data evenly. Poor key selection leads to hotspots, where some shards are overloaded while others are underutilized, negating the benefits of horizontal scaling.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The key's data type, because using integers is always faster for lookups than using any string-based keys.",
+          "is_correct": false,
+          "rationale": "While data type matters for performance, distribution is far more critical to avoid hotspots."
+        },
+        {
+          "key": "B",
+          "text": "The key's cardinality and distribution to ensure data is spread evenly across shards, preventing hotspots and performance bottlenecks.",
+          "is_correct": true,
+          "rationale": "Even data distribution is the primary goal of sharding to ensure scalability and prevent overloaded shards."
+        },
+        {
+          "key": "C",
+          "text": "The physical location of the shards, which should always be in the same data center to minimize network latency.",
+          "is_correct": false,
+          "rationale": "Shards can be geographically distributed for resilience; co-location is not a rule for the key itself."
+        },
+        {
+          "key": "D",
+          "text": "The total number of shards, which should be determined by the initial number of users and never changed later.",
+          "is_correct": false,
+          "rationale": "Shard count should be flexible and planned for future growth, not fixed permanently at the start."
+        },
+        {
+          "key": "E",
+          "text": "The encryption algorithm used for the sharding key, as it directly impacts the security of inter-shard communication.",
+          "is_correct": false,
+          "rationale": "Encryption is a separate security concern and does not influence the effectiveness of the sharding strategy itself."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "What is the primary distinction between a High Availability (HA) solution and a Disaster Recovery (DR) plan for a database system?",
+      "explanation": "HA aims to keep services running with minimal interruption, typically through automated failover within a local or regional scope. DR is a broader strategy for recovering from major outages, often involving failover to a geographically separate site.",
+      "options": [
+        {
+          "key": "A",
+          "text": "High Availability focuses on automated failover within a single geographic region, whereas Disaster Recovery involves restoring service in a different region.",
+          "is_correct": true,
+          "rationale": "This correctly separates HA's local/regional scope from DR's geographically separate scope for major incidents."
+        },
+        {
+          "key": "B",
+          "text": "High Availability exclusively uses synchronous replication for zero data loss, while Disaster Recovery always relies on asynchronous replication methods.",
+          "is_correct": false,
+          "rationale": "Replication methods can vary for both HA and DR depending on RPO/RTO requirements and distance."
+        },
+        {
+          "key": "C",
+          "text": "Disaster Recovery plans are tested quarterly, but High Availability systems are fully automated and therefore require no regular testing.",
+          "is_correct": false,
+          "rationale": "Both HA and DR solutions require rigorous and regular testing to ensure they function as expected."
+        },
+        {
+          "key": "D",
+          "text": "A High Availability setup is primarily concerned with protecting against data corruption, while a Disaster Recovery plan focuses on hardware failures.",
+          "is_correct": false,
+          "rationale": "Both HA and DR protect against various failures, including hardware, software, and network issues."
+        },
+        {
+          "key": "E",
+          "text": "The main goal of High Availability is to achieve a low RTO, while Disaster Recovery prioritizes a low RPO.",
+          "is_correct": false,
+          "rationale": "Both HA and DR are concerned with RTO and RPO, though the specific targets may differ."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "A developer reports a very slow query that involves joining multiple large tables. What is your most effective initial diagnostic step?",
+      "explanation": "The execution plan provides a detailed breakdown of how the database engine processes a query. Analyzing it is the most direct way to find the root cause of poor performance, such as missing indexes or bad join strategies, before making changes.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately add indexes to all foreign key columns involved in the join conditions to see if performance improves.",
+          "is_correct": false,
+          "rationale": "Adding indexes without analysis can be ineffective or even worsen performance for other operations."
+        },
+        {
+          "key": "B",
+          "text": "Analyze the query's execution plan to identify bottlenecks like full table scans or inefficient join methods before creating indexes.",
+          "is_correct": true,
+          "rationale": "The execution plan is the primary diagnostic tool for understanding and resolving query performance issues."
+        },
+        {
+          "key": "C",
+          "text": "Suggest rewriting the query using a different programming language or ORM to avoid potential database-level issues.",
+          "is_correct": false,
+          "rationale": "This deflects the problem; the issue is likely within the database's handling of the query."
+        },
+        {
+          "key": "D",
+          "text": "Increase the server's memory and CPU resources, as hardware limitations are the most common cause of slow queries.",
+          "is_correct": false,
+          "rationale": "Adding hardware without diagnosing the query is expensive and may not solve the underlying inefficiency."
+        },
+        {
+          "key": "E",
+          "text": "Defragment the tables involved in the query, as file system fragmentation is a primary cause of slow data retrieval.",
+          "is_correct": false,
+          "rationale": "While fragmentation can be a factor, it's rarely the primary cause compared to an inefficient query plan."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "When securing a production database, which practice provides the most significant improvement to the security posture against unauthorized internal or external access?",
+      "explanation": "The principle of least privilege is a foundational security concept. It drastically reduces the potential attack surface and limits the damage an attacker can cause if an account is compromised, making it a highly effective preventative measure.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Regularly changing the database administrator's password every 30 days to comply with standard internal security policies.",
+          "is_correct": false,
+          "rationale": "While good practice, it only protects one account. Least privilege protects against misuse of many accounts."
+        },
+        {
+          "key": "B",
+          "text": "Implementing transparent data encryption (TDE) to protect data at rest on the storage media from physical theft.",
+          "is_correct": false,
+          "rationale": "TDE protects data at rest but does not prevent access by authenticated but overly-privileged users."
+        },
+        {
+          "key": "C",
+          "text": "Enforcing the principle of least privilege by granting users and applications only the specific permissions they absolutely need.",
+          "is_correct": true,
+          "rationale": "This fundamentally limits the potential damage from a compromised account, reducing the overall attack surface."
+        },
+        {
+          "key": "D",
+          "text": "Enabling detailed audit logging for all database activities, which helps in forensic analysis after a security breach occurs.",
+          "is_correct": false,
+          "rationale": "Auditing is a detective control used for post-incident analysis, not a preventative measure like least privilege."
+        },
+        {
+          "key": "E",
+          "text": "Restricting database access to a specific IP range using firewall rules to prevent connections from unauthorized network locations.",
+          "is_correct": false,
+          "rationale": "This is a valuable network-level control, but it doesn't protect against attacks from within the allowed range."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "You are defining a backup strategy for a critical OLTP database. Which combination provides the best balance of recovery speed and minimal data loss?",
+      "explanation": "This strategy combines the benefits of each backup type. Full backups provide a solid baseline, differentials reduce daily restore time, and transaction log backups allow for point-in-time recovery, minimizing data loss (low RPO) between other backups.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Performing only full backups once every week because they are the simplest to manage and restore from.",
+          "is_correct": false,
+          "rationale": "This strategy risks up to a week of data loss, which is unacceptable for a critical OLTP system."
+        },
+        {
+          "key": "B",
+          "text": "Using only differential backups taken every hour to minimize the amount of storage space required for the backups.",
+          "is_correct": false,
+          "rationale": "A differential-only strategy is not possible; it requires a full backup as a base for restoration."
+        },
+        {
+          "key": "C",
+          "text": "A combination of weekly full backups, daily differential backups, and frequent transaction log backups for point-in-time recovery.",
+          "is_correct": true,
+          "rationale": "This layered approach provides a strong recovery baseline while minimizing data loss with log backups."
+        },
+        {
+          "key": "D",
+          "text": "Relying solely on storage-level snapshots taken every few hours, as they are the fastest method for capturing state.",
+          "is_correct": false,
+          "rationale": "Snapshots may not guarantee transactional consistency and don't typically allow for true point-in-time recovery."
+        },
+        {
+          "key": "E",
+          "text": "Implementing a strategy of continuous incremental backups without ever performing a full backup to reduce I/O load.",
+          "is_correct": false,
+          "rationale": "An incremental chain becomes very long and slow to restore without periodic full backups to consolidate it."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When planning a zero-downtime migration for a critical production OLTP database, what is the most effective initial strategy to employ?",
+      "explanation": "Using logical replication allows the new database to stay in sync with the old one while applications are still running. This enables a seamless cutover with minimal or no downtime, which is critical for production systems.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Set up logical replication from the source to the target database to keep them synchronized during the transition period.",
+          "is_correct": true,
+          "rationale": "Logical replication enables continuous data synchronization between servers, which is essential for a seamless, zero-downtime cutover."
+        },
+        {
+          "key": "B",
+          "text": "Perform a full backup of the source database and immediately restore it onto the new target server hardware.",
+          "is_correct": false,
+          "rationale": "This common method incurs significant downtime and also misses any data changes that occur after the backup is taken."
+        },
+        {
+          "key": "C",
+          "text": "Schedule a maintenance window to take the application offline and perform a physical data file copy to the new host.",
+          "is_correct": false,
+          "rationale": "This strategy explicitly involves taking the application offline, causing downtime."
+        },
+        {
+          "key": "D",
+          "text": "Use an ETL tool to extract, transform, and load all data tables one by one during off-peak business hours.",
+          "is_correct": false,
+          "rationale": "ETL processes are slow for full migrations and cause data inconsistency."
+        },
+        {
+          "key": "E",
+          "text": "Simply update the application connection strings to point to the new database server without any prior data synchronization.",
+          "is_correct": false,
+          "rationale": "This would result in a complete loss of all existing data."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Your development team needs a recent copy of the production database for testing, but it contains sensitive PII. What is the best approach?",
+      "explanation": "Data masking (or obfuscation) replaces sensitive data with realistic but fictional data. This protects privacy while providing developers with a structurally accurate dataset for testing, ensuring compliance with regulations like GDPR.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Create a sanitized copy using data masking techniques to obfuscate all personally identifiable information before providing access.",
+          "is_correct": true,
+          "rationale": "Data masking is the correct security practice, as it protects sensitive information while maintaining the data's structural utility for testing."
+        },
+        {
+          "key": "B",
+          "text": "Give the development team read-only access directly to the live production database to ensure data is current.",
+          "is_correct": false,
+          "rationale": "Giving direct production access to developers exposes sensitive PII and creates an unacceptable security and compliance risk."
+        },
+        {
+          "key": "C",
+          "text": "Restore a full, unaltered backup of the production database into the development environment for their immediate use.",
+          "is_correct": false,
+          "rationale": "This method exposes unmasked sensitive production data in a less secure development environment, violating privacy principles."
+        },
+        {
+          "key": "D",
+          "text": "Manually delete all rows containing sensitive information from the database copy before handing it over to the team.",
+          "is_correct": false,
+          "rationale": "This alters the data structure and referential integrity, making it useless."
+        },
+        {
+          "key": "E",
+          "text": "Encrypt the entire database copy and provide the developers with the decryption key to use within their environment.",
+          "is_correct": false,
+          "rationale": "This provides no real protection, as the data would be fully exposed once decrypted in the less secure development environment."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "While analyzing a slow query's execution plan, you notice a \"Key Lookup\" operation that consumes most of the cost. What does this indicate?",
+      "explanation": "A Key Lookup (or RID Lookup) happens when the query optimizer uses a non-clustered index but needs additional data from the clustered index (the table itself), causing extra I/O and reducing performance.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The non-clustered index being used does not contain all the columns needed for the query, requiring extra data lookups.",
+          "is_correct": true,
+          "rationale": "This describes a non-covering index, which is the cause of key lookups."
+        },
+        {
+          "key": "B",
+          "text": "The database statistics are completely out of date, causing the query optimizer to choose a suboptimal execution path.",
+          "is_correct": false,
+          "rationale": "Outdated statistics usually lead to table scans or wrong index choices."
+        },
+        {
+          "key": "C",
+          "text": "The query is performing a full table scan because no suitable index was available to satisfy the WHERE clause.",
+          "is_correct": false,
+          "rationale": "A key lookup is an index operation, not a table scan."
+        },
+        {
+          "key": "D",
+          "text": "There is significant index fragmentation on the table, which is causing slow read performance for the specific query.",
+          "is_correct": false,
+          "rationale": "Fragmentation affects performance but is not the direct cause of a lookup."
+        },
+        {
+          "key": "E",
+          "text": "The database server lacks sufficient memory, forcing the query to spill data to tempdb during its execution process.",
+          "is_correct": false,
+          "rationale": "Memory pressure typically results in data spilling to tempdb for sorting, which is a different performance issue."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "What is the primary trade-off when choosing synchronous replication over asynchronous replication for a high-availability database cluster?",
+      "explanation": "Synchronous replication ensures zero data loss by waiting for acknowledgment from the replica before committing the transaction. This guarantee comes at the cost of increased transaction latency, as the primary must wait for the secondary.",
+      "options": [
+        {
+          "key": "A",
+          "text": "You achieve a zero recovery point objective (RPO) at the cost of potentially higher transaction latency for write operations.",
+          "is_correct": true,
+          "rationale": "This correctly identifies the core trade-off: synchronous replication guarantees no data loss (zero RPO) but adds write latency."
+        },
+        {
+          "key": "B",
+          "text": "The recovery time objective (RTO) is significantly improved, but it requires much more network bandwidth between the database nodes.",
+          "is_correct": false,
+          "rationale": "RTO is about failover speed, not a direct trade-off of sync vs. async."
+        },
+        {
+          "key": "C",
+          "text": "It provides better read scalability for reporting workloads but introduces a single point of failure if the replica goes offline.",
+          "is_correct": false,
+          "rationale": "Read scalability is a general benefit of having replicas, not a specific trade-off between synchronous and asynchronous modes."
+        },
+        {
+          "key": "D",
+          "text": "The setup is much simpler and less expensive, but it offers no protection against logical data corruption from user errors.",
+          "is_correct": false,
+          "rationale": "On the contrary, synchronous replication is typically more complex and expensive to implement due to its stricter requirements."
+        },
+        {
+          "key": "E",
+          "text": "It allows for geographic distribution over long distances but cannot guarantee transactional consistency in the event of a failover.",
+          "is_correct": false,
+          "rationale": "Synchronous replication is not suitable for long distances due to latency."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "A business-critical application requires a 99.99% uptime SLA. Which database deployment model on a major cloud provider would be most appropriate?",
+      "explanation": "A multi-AZ (Availability Zone) deployment provides high availability by synchronously replicating data to a standby instance in a different physical datacenter. If the primary AZ fails, failover is automatic, supporting high uptime SLAs.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A managed database service configured for multi-AZ deployment with automatic failover to a standby instance in a separate zone.",
+          "is_correct": true,
+          "rationale": "Multi-AZ deployments with automatic failover are specifically designed by cloud providers to meet high availability SLAs like 99.99%."
+        },
+        {
+          "key": "B",
+          "text": "A single database instance running on the largest available virtual machine size to handle performance spikes and prevent outages.",
+          "is_correct": false,
+          "rationale": "A large single instance is still a single point of failure."
+        },
+        {
+          "key": "C",
+          "text": "A read replica in a different availability zone that can be manually promoted to primary in case of a disaster.",
+          "is_correct": false,
+          "rationale": "Manual promotion is slow and does not meet a 99.99% SLA."
+        },
+        {
+          "key": "D",
+          "text": "A serverless database configuration that automatically scales to zero when there is no active user traffic to save on costs.",
+          "is_correct": false,
+          "rationale": "Serverless database offerings are primarily focused on cost savings and scaling, not on providing guaranteed high availability."
+        },
+        {
+          "key": "E",
+          "text": "A self-managed database cluster deployed on virtual machines within a single availability zone for maximum administrative control.",
+          "is_correct": false,
+          "rationale": "A single AZ deployment cannot meet a 99.99% uptime SLA."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "When implementing database sharding for a high-traffic application, what is the primary advantage of using a hash-based sharding strategy?",
+      "explanation": "Hash-based sharding applies a hash function to the sharding key, which typically results in a more even and random distribution of data across all available shards. This minimizes hotspots and balances write and read loads effectively.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It provides a more uniform data distribution across shards, which helps prevent hotspots and balances the load effectively.",
+          "is_correct": true,
+          "rationale": "The primary benefit of hash-based sharding is its ability to ensure an even, random data spread across all shards."
+        },
+        {
+          "key": "B",
+          "text": "It simplifies range-based queries, allowing for efficient retrieval of data for a specific range of shard keys.",
+          "is_correct": false,
+          "rationale": "This is the primary advantage of range-based sharding, which groups sequential keys together, not hash-based sharding."
+        },
+        {
+          "key": "C",
+          "text": "It allows for easier addition or removal of shards without requiring a complete redistribution of all existing data.",
+          "is_correct": false,
+          "rationale": "This is a challenge with simple hashing; consistent hashing addresses this."
+        },
+        {
+          "key": "D",
+          "text": "It groups related data together on the same shard, which is ideal for applications with strong data locality requirements.",
+          "is_correct": false,
+          "rationale": "This describes directory-based or entity-based sharding, which explicitly groups related data together on the same physical shard."
+        },
+        {
+          "key": "E",
+          "text": "It completely eliminates the need for a routing layer because applications can directly calculate the correct shard location.",
+          "is_correct": false,
+          "rationale": "A routing layer, or query router, is still typically required to manage connections and direct queries to the correct shard."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "You are designing a disaster recovery plan. What is the key difference between a hot standby and a cold standby server?",
+      "explanation": "A hot standby is a redundant system running simultaneously with the primary, receiving continuous updates. This allows for near-instantaneous failover. A cold standby is powered off or not connected until needed, resulting in longer recovery times.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A hot standby is only powered on after a failure, while a cold standby is always running and synchronized.",
+          "is_correct": false,
+          "rationale": "This statement incorrectly reverses the definitions; a hot standby is always on, and a cold standby is typically off."
+        },
+        {
+          "key": "B",
+          "text": "A hot standby is continuously running and synchronized with the primary, allowing for immediate failover with minimal data loss.",
+          "is_correct": true,
+          "rationale": "This correctly defines a hot standby, which is always running, synchronized, and ready for an immediate, automated failover."
+        },
+        {
+          "key": "C",
+          "text": "A cold standby uses synchronous replication for zero data loss, whereas a hot standby uses asynchronous replication methods.",
+          "is_correct": false,
+          "rationale": "The replication method is independent of the standby type; either can use synchronous or asynchronous replication depending on requirements."
+        },
+        {
+          "key": "D",
+          "text": "Both standby types are identical, but the hot standby is located in a different geographical region for better resilience.",
+          "is_correct": false,
+          "rationale": "Location is a DR strategy, but it does not define the difference between a hot and cold standby type."
+        },
+        {
+          "key": "E",
+          "text": "A cold standby is a virtual machine snapshot, while a hot standby must be a physical server for performance.",
+          "is_correct": false,
+          "rationale": "Both standby types can be either physical or virtual; this characteristic is not the primary defining distinction between them."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "In a PostgreSQL database, when would using a partial index be the most effective optimization strategy for a large table?",
+      "explanation": "A partial index is created on a subset of a table's rows, defined by a WHERE clause. This is highly effective when queries target a small, well-defined portion of a large table, reducing index size and improving performance.",
+      "options": [
+        {
+          "key": "A",
+          "text": "When you need to enforce a unique constraint across multiple columns that frequently contain null values in combination.",
+          "is_correct": false,
+          "rationale": "This is a use case for unique indexes, not specifically partial ones."
+        },
+        {
+          "key": "B",
+          "text": "When you are indexing a very small table where the query performance is already considered to be optimal.",
+          "is_correct": false,
+          "rationale": "Partial indexes provide the most benefit on large tables with skewed data, not small, already-performant tables."
+        },
+        {
+          "key": "C",
+          "text": "When a query frequently filters on a specific subset of rows, such as records with a particular status like 'active'.",
+          "is_correct": true,
+          "rationale": "This is the ideal use case, as partial indexes are specifically designed to index only a subset of rows."
+        },
+        {
+          "key": "D",
+          "text": "When you need to index JSONB data types to allow for faster lookups based on keys within the JSON structure.",
+          "is_correct": false,
+          "rationale": "Indexing JSONB data types for internal key lookups typically requires a specialized GIN or JSONB-specific index."
+        },
+        {
+          "key": "E",
+          "text": "When the primary goal is to speed up full table scans by creating a smaller, more compact version of the table.",
+          "is_correct": false,
+          "rationale": "Partial indexes are used to optimize lookups on a subset of data, not to speed up full table scans."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "What is the primary purpose of implementing Transparent Data Encryption (TDE) on a production database server like SQL Server or Oracle?",
+      "explanation": "Transparent Data Encryption (TDE) is a technology used to encrypt the entire database at the file level. It protects data \"at rest,\" meaning it encrypts the data and log files stored on disk, preventing unauthorized access to the raw files.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It encrypts data while it is being transmitted over the network between the client application and the database server.",
+          "is_correct": false,
+          "rationale": "This describes transport layer security (TLS/SSL), which protects data in transit, whereas TDE protects data at rest."
+        },
+        {
+          "key": "B",
+          "text": "It is used to selectively encrypt specific sensitive columns within a table, leaving other columns in plain text.",
+          "is_correct": false,
+          "rationale": "This describes column-level encryption, a more granular approach, whereas TDE encrypts the entire database files transparently."
+        },
+        {
+          "key": "C",
+          "text": "It performs real-time encryption and decryption of the database data and log files at rest on the physical media.",
+          "is_correct": true,
+          "rationale": "This is the core function of TDE, which encrypts the data and log files at rest on the disk."
+        },
+        {
+          "key": "D",
+          "text": "It provides a robust framework for auditing all user access and data modification activities within the database instance.",
+          "is_correct": false,
+          "rationale": "This describes the function of database auditing features, which are separate from encryption technologies like TDE."
+        },
+        {
+          "key": "E",
+          "text": "It encrypts the database backups automatically, ensuring that the backup files cannot be restored on an unauthorized server.",
+          "is_correct": false,
+          "rationale": "This is a benefit, but the primary purpose is data-at-rest encryption."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "When analyzing a query execution plan, what does a \"key lookup\" or \"RID lookup\" operation typically indicate about the query's performance?",
+      "explanation": "A key or RID lookup occurs when a non-clustered index is used to locate a row, but the index does not contain all the columns needed by the query. The engine must then perform an additional lookup into the base table to retrieve the remaining data.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It indicates that the query is using the most optimal non-clustered index available and is performing very efficiently.",
+          "is_correct": false,
+          "rationale": "It indicates an index is used, but the lookup is an extra step."
+        },
+        {
+          "key": "B",
+          "text": "It signifies that the database engine is performing a full table scan because no suitable index could be found.",
+          "is_correct": false,
+          "rationale": "This describes a table scan operation, which is fundamentally different from an index-based key lookup operation."
+        },
+        {
+          "key": "C",
+          "text": "It suggests a non-clustered index is used to find a row, but then must fetch additional columns from the base table.",
+          "is_correct": true,
+          "rationale": "This is the correct definition of a key or RID lookup, which often indicates a potential performance bottleneck."
+        },
+        {
+          "key": "D",
+          "text": "It means the query optimizer has chosen to create a temporary index on the fly to satisfy the query requirements.",
+          "is_correct": false,
+          "rationale": "This is not what a key lookup represents in an execution plan."
+        },
+        {
+          "key": "E",
+          "text": "It shows that all the required data for the query was successfully retrieved directly from the index without accessing the table.",
+          "is_correct": false,
+          "rationale": "This describes a covering index, where all necessary data is in the index, thus avoiding a key lookup."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "A company signs a complex contract with multiple performance obligations. Under IFRS 15, how should the total transaction price be allocated across these obligations?",
+      "explanation": "IFRS 15 requires allocating the transaction price to each performance obligation based on what the entity expects to be entitled to for that specific good or service. This is best achieved using relative standalone selling prices to ensure accurate revenue recognition.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The price is allocated equally among all performance obligations, regardless of their individual market values or fulfillment costs.",
+          "is_correct": false,
+          "rationale": "Equal allocation is not compliant as it ignores the value of each distinct obligation."
+        },
+        {
+          "key": "B",
+          "text": "The transaction price should be allocated based on the relative standalone selling prices of each distinct performance obligation.",
+          "is_correct": true,
+          "rationale": "This method reflects the value contributed by each performance obligation, as required by IFRS 15."
+        },
+        {
+          "key": "C",
+          "text": "Allocation is based on the cost incurred to fulfill each obligation plus a standard, predetermined industry profit margin.",
+          "is_correct": false,
+          "rationale": "Cost-plus is a method but the primary basis under IFRS 15 is standalone selling price."
+        },
+        {
+          "key": "D",
+          "text": "The company's management can use its professional discretion to allocate the price in a way that best smooths revenue.",
+          "is_correct": false,
+          "rationale": "This is a form of earnings management and is explicitly prohibited by the standard."
+        },
+        {
+          "key": "E",
+          "text": "The entire transaction price is recognized immediately upon signing the contract, before any of the obligations are fulfilled.",
+          "is_correct": false,
+          "rationale": "Revenue must be recognized as or when performance obligations are satisfied, not at contract inception."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "When a lessee initially recognizes a new finance lease under IFRS 16, what is the correct measurement basis for the right-of-use asset?",
+      "explanation": "Under IFRS 16, the right-of-use asset is initially measured at the amount of the lease liability, plus any initial direct costs, payments made before commencement, and estimated restoration costs. The lease liability is the primary component of this initial valuation.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The asset is measured at its fair market value on the commencement date, irrespective of the actual lease liability amount.",
+          "is_correct": false,
+          "rationale": "Fair value is a consideration but not the direct measurement basis for the right-of-use asset."
+        },
+        {
+          "key": "B",
+          "text": "It is calculated as the simple sum of all future lease payments, without applying any discounting for time value.",
+          "is_correct": false,
+          "rationale": "Discounting future lease payments to their present value is a mandatory step for the calculation."
+        },
+        {
+          "key": "C",
+          "text": "It is measured at the initial amount of the lease liability, plus any initial direct costs incurred by the lessee.",
+          "is_correct": true,
+          "rationale": "This correctly combines the lease liability with other directly attributable costs as per IFRS 16."
+        },
+        {
+          "key": "D",
+          "text": "The measurement is simply the total cash paid upfront to the lessor before the official lease commencement date.",
+          "is_correct": false,
+          "rationale": "Upfront payments are only one component of the asset's cost, not the entire measurement basis."
+        },
+        {
+          "key": "E",
+          "text": "The asset is recorded at a nominal value of one dollar, with all payments being expensed as they occur.",
+          "is_correct": false,
+          "rationale": "This approach is incorrect and ignores the principle of capitalizing the right to use an asset."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Under IFRS 9, what primary conditions must be met for a debt instrument to be classified and measured at amortised cost?",
+      "explanation": "IFRS 9 requires two specific tests to be met for amortised cost classification: the business model test (holding to collect cash flows) and the SPPI test (cash flows are solely payments of principal and interest). Both conditions are mandatory.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The classification depends exclusively on the credit rating of the issuer as determined by external, independent rating agencies.",
+          "is_correct": false,
+          "rationale": "The credit rating affects impairment calculations (expected credit losses), not the initial classification criteria."
+        },
+        {
+          "key": "B",
+          "text": "The instrument's contractual cash flows must represent solely payments of principal and interest on the principal amount outstanding.",
+          "is_correct": false,
+          "rationale": "This is the SPPI test, which is only one of the two required conditions for this classification."
+        },
+        {
+          "key": "C",
+          "text": "The instrument must be held within a business model whose objective is to hold assets to collect contractual cash flows.",
+          "is_correct": false,
+          "rationale": "This is the business model test, which is only one of the two required conditions."
+        },
+        {
+          "key": "D",
+          "text": "Both the entity's business model test and the contractual cash flow characteristics (SPPI) test must be met.",
+          "is_correct": true,
+          "rationale": "This is the correct answer as both the business model and SPPI tests are required."
+        },
+        {
+          "key": "E",
+          "text": "The decision is based on management's short-term intention to sell the instrument in the near future for profit.",
+          "is_correct": false,
+          "rationale": "This intention would lead to a Fair Value Through Profit or Loss (FVTPL) classification."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Which of the following scenarios would most likely result in the recognition of a deferred tax liability on a company's balance sheet?",
+      "explanation": "A deferred tax liability arises from taxable temporary differences, where accounting income is greater than taxable income. Using accelerated depreciation for tax while using straight-line for books creates this exact situation, leading to higher future tax payments.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A company recognizes a warranty expense in its financial statements before it becomes tax-deductible when claims are paid.",
+          "is_correct": false,
+          "rationale": "This creates a deductible temporary difference, resulting in a deferred tax asset, not a liability."
+        },
+        {
+          "key": "B",
+          "text": "Using an accelerated depreciation method for tax purposes while applying the straight-line method for financial reporting purposes.",
+          "is_correct": true,
+          "rationale": "This creates a taxable temporary difference, as tax expense is lower now but will be higher later."
+        },
+        {
+          "key": "C",
+          "text": "Tax losses from previous years are carried forward to offset future taxable profits and reduce upcoming tax payments.",
+          "is_correct": false,
+          "rationale": "The benefit of tax loss carryforwards results in the creation of a deferred tax asset."
+        },
+        {
+          "key": "D",
+          "text": "The company receives advance payments from customers that are taxed upon receipt but recognized as revenue over time.",
+          "is_correct": false,
+          "rationale": "This situation results in a deferred tax asset because tax is paid before income is recognized."
+        },
+        {
+          "key": "E",
+          "text": "Interest income from municipal bonds is recognized for book purposes but is permanently exempt from taxation by law.",
+          "is_correct": false,
+          "rationale": "This is a permanent difference, not a temporary one, and does not create deferred taxes."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "During a quarterly review, you discover the accounts receivable clerk can both issue credit memos and collect customer cash payments. What does this represent?",
+      "explanation": "This situation is a critical failure of the segregation of duties, a fundamental internal control. Allowing one person to authorize transactions (credit memos) and have custody of assets (cash) creates a high risk of undetected fraud, constituting a material weakness.",
+      "options": [
+        {
+          "key": "A",
+          "text": "An efficient workflow designed to streamline the collections process and improve overall customer service response times.",
+          "is_correct": false,
+          "rationale": "This is a severe control deficiency, not an efficient workflow, due to the high fraud risk."
+        },
+        {
+          "key": "B",
+          "text": "A standard industry practice in smaller finance departments where employees must perform multiple, overlapping job functions.",
+          "is_correct": false,
+          "rationale": "While common in small entities, it is a known control risk, not a recommended standard practice."
+        },
+        {
+          "key": "C",
+          "text": "An operational inefficiency that primarily impacts the speed of cash application rather than the risk of financial fraud.",
+          "is_correct": false,
+          "rationale": "The primary risk is fraudulent activity, such as a lapping scheme, not merely operational speed."
+        },
+        {
+          "key": "D",
+          "text": "A material weakness in internal control because it allows for potential asset misappropriation without timely detection by others.",
+          "is_correct": true,
+          "rationale": "This lack of segregated duties creates a high risk of fraud, which defines a material weakness."
+        },
+        {
+          "key": "E",
+          "text": "A significant deficiency that should be reported to management but does not rise to the level of material weakness.",
+          "is_correct": false,
+          "rationale": "The direct access to cash and ability to conceal theft elevates this beyond a significant deficiency."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Under IFRS 15, what is the correct final step in the five-step model for recognizing revenue from contracts with customers?",
+      "explanation": "The five-step model concludes with recognizing revenue as performance obligations are met. The other options represent earlier steps in the process, such as identifying obligations, determining the price, and allocating that price to the identified obligations.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Identifying all the separate and distinct performance obligations that are promised to the customer in the contract.",
+          "is_correct": false,
+          "rationale": "This is the second step in the model, not the final one."
+        },
+        {
+          "key": "B",
+          "text": "Determining the overall transaction price the entity expects to be entitled to in exchange for transferring promised goods.",
+          "is_correct": false,
+          "rationale": "This is the third step in the model, which occurs before allocation."
+        },
+        {
+          "key": "C",
+          "text": "Allocating the total transaction price to the various performance obligations based on their relative standalone selling prices.",
+          "is_correct": false,
+          "rationale": "This is the fourth step, immediately preceding the final step of recognition."
+        },
+        {
+          "key": "D",
+          "text": "Recognizing revenue when, or as, the entity satisfies each of the identified performance obligations within the contract.",
+          "is_correct": true,
+          "rationale": "This is the fifth and final step of the IFRS 15 revenue recognition model."
+        },
+        {
+          "key": "E",
+          "text": "Identifying the contract with a customer, ensuring it has commercial substance and is enforceable by all parties.",
+          "is_correct": false,
+          "rationale": "This is the very first step in the revenue recognition model."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Which of the following scenarios would most likely result in the creation of a deferred tax liability on a company's balance sheet?",
+      "explanation": "A deferred tax liability arises when taxable income is less than accounting income due to a temporary difference. Using accelerated depreciation for tax creates larger deductions upfront, lowering current tax but creating a future liability.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using an accelerated depreciation method for tax purposes while applying the straight-line method for financial reporting.",
+          "is_correct": true,
+          "rationale": "This temporary difference results in paying less tax now, creating a future liability."
+        },
+        {
+          "key": "B",
+          "text": "Accruing warranty expenses in the financial statements before they are actually paid out and deducted for tax.",
+          "is_correct": false,
+          "rationale": "This creates a deferred tax asset, as tax will be lower in the future."
+        },
+        {
+          "key": "C",
+          "text": "Receiving tax-exempt interest income from municipal bonds which is not included in taxable income calculations.",
+          "is_correct": false,
+          "rationale": "This is a permanent difference and does not create a deferred tax item."
+        },
+        {
+          "key": "D",
+          "text": "Incurring business fines or penalties that are not deductible for tax purposes but are expensed for accounting.",
+          "is_correct": false,
+          "rationale": "This is another example of a permanent difference with no deferred tax impact."
+        },
+        {
+          "key": "E",
+          "text": "Recognizing a loss from a lawsuit settlement in the financial statements that is not yet tax-deductible.",
+          "is_correct": false,
+          "rationale": "This scenario would create a deferred tax asset, not a liability."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "What is the primary objective of implementing segregation of duties as a key internal control within the Sarbanes-Oxley (SOX) framework?",
+      "explanation": "The core principle of segregation of duties is to prevent fraud and error by ensuring no single person has control over all aspects of a transaction. This separation of authorization, custody, and record-keeping is a fundamental control.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To prevent a single individual from being able to both perpetrate and conceal errors or fraudulent activities.",
+          "is_correct": true,
+          "rationale": "This is the fundamental purpose of separating duties in an internal control system."
+        },
+        {
+          "key": "B",
+          "text": "To increase the overall operational efficiency of the finance department by creating highly specialized employee roles.",
+          "is_correct": false,
+          "rationale": "While specialization can occur, efficiency is a secondary benefit, not the primary control objective."
+        },
+        {
+          "key": "C",
+          "text": "To ensure that every single financial transaction is reviewed and approved by at least two separate managers.",
+          "is_correct": false,
+          "rationale": "This describes a specific approval process, not the broader principle of segregating duties."
+        },
+        {
+          "key": "D",
+          "text": "To simplify the process for external auditors by creating a clear and easily traceable transaction approval path.",
+          "is_correct": false,
+          "rationale": "A clear audit trail is a positive outcome, but not the primary reason for the control."
+        },
+        {
+          "key": "E",
+          "text": "To centralize all critical financial responsibilities under a single senior executive to improve accountability and oversight.",
+          "is_correct": false,
+          "rationale": "This is the opposite of segregation of duties and would create a significant control weakness."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "According to the IFRS 9 fair value hierarchy, which input is characteristic of a Level 2 valuation for a financial instrument?",
+      "explanation": "The fair value hierarchy categorizes inputs used in valuation. Level 1 uses quoted prices for identical assets. Level 2 uses other observable inputs (like interest rates). Level 3 uses unobservable inputs requiring significant judgment.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Quoted prices in active markets for identical assets or liabilities that the entity can access at measurement date.",
+          "is_correct": false,
+          "rationale": "This describes Level 1 inputs, which are the most reliable."
+        },
+        {
+          "key": "B",
+          "text": "Using observable inputs other than quoted prices, like interest rates or yield curves for similar instruments.",
+          "is_correct": true,
+          "rationale": "Level 2 inputs are observable market data for similar, not identical, assets."
+        },
+        {
+          "key": "C",
+          "text": "Relying on unobservable inputs developed using the entity's own data, such as internal cash flow projections.",
+          "is_correct": false,
+          "rationale": "This describes Level 3 inputs, which require significant management judgment."
+        },
+        {
+          "key": "D",
+          "text": "The original historical cost of the instrument, adjusted for any subsequent amortization or impairment charges recognized.",
+          "is_correct": false,
+          "rationale": "This describes amortized cost, which is a different measurement basis from fair value."
+        },
+        {
+          "key": "E",
+          "text": "Averaging the last twelve months of trading prices on a non-active market with low transaction volume.",
+          "is_correct": false,
+          "rationale": "Prices from non-active markets are generally considered Level 3 inputs due to their unreliability."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "What is the primary impact on a lessee's balance sheet when transitioning a former operating lease to the IFRS 16 standard?",
+      "explanation": "IFRS 16 eliminated the distinction between operating and finance leases for lessees, requiring nearly all leases to be capitalized on the balance sheet. This is done by recognizing a right-of-use asset and a corresponding lease liability.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The recognition of a new right-of-use asset and a corresponding lease liability on the balance sheet.",
+          "is_correct": true,
+          "rationale": "This capitalization is the core change introduced by IFRS 16 for lessees."
+        },
+        {
+          "key": "B",
+          "text": "A significant decrease in reported operating cash flows due to reclassification of principal lease payments.",
+          "is_correct": false,
+          "rationale": "Operating cash flow typically increases as payments are moved to financing activities."
+        },
+        {
+          "key": "C",
+          "text": "The immediate expensing of the total value of all future lease payments through the income statement.",
+          "is_correct": false,
+          "rationale": "The expense is recognized over the lease term, not immediately upon transition."
+        },
+        {
+          "key": "D",
+          "text": "A reduction in the company's overall debt-to-equity ratio because operating leases are moved off-balance sheet.",
+          "is_correct": false,
+          "rationale": "The ratio worsens because leases are brought onto the balance sheet as liabilities."
+        },
+        {
+          "key": "E",
+          "text": "The elimination of depreciation expense related to leased assets, replaced by a single lease expense line item.",
+          "is_correct": false,
+          "rationale": "The standard introduces depreciation for the ROU asset and interest on the liability."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "Under IFRS 9, when assessing impairment for a portfolio of financial assets, what is the primary determinant for moving from Stage 1 to Stage 2 provisioning?",
+      "explanation": "IFRS 9's impairment model requires moving an asset from Stage 1 (12-month expected credit losses) to Stage 2 (lifetime expected credit losses) when there's a significant increase in credit risk since initial recognition.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The financial asset becomes past due by more than 90 days, which indicates that a default has already occurred.",
+          "is_correct": false,
+          "rationale": "This describes the criteria for Stage 3 (credit-impaired assets), not the trigger for moving to Stage 2."
+        },
+        {
+          "key": "B",
+          "text": "A significant increase in the credit risk of the financial instrument since its initial recognition is observed by management.",
+          "is_correct": true,
+          "rationale": "A significant increase in credit risk is the key trigger for moving from Stage 1 to Stage 2."
+        },
+        {
+          "key": "C",
+          "text": "The company revises its internal budget and forecasts lower than expected cash flows from the entire asset portfolio.",
+          "is_correct": false,
+          "rationale": "Internal budget revisions alone are not a direct trigger for a specific instrument under IFRS 9."
+        },
+        {
+          "key": "D",
+          "text": "A general economic downturn is officially declared by a central banking authority, affecting all assets in the market.",
+          "is_correct": false,
+          "rationale": "While a factor, the assessment must be specific to the instrument's credit risk, not a general declaration."
+        },
+        {
+          "key": "E",
+          "text": "The fair value of the asset falls below its amortized cost for the first time since the initial acquisition.",
+          "is_correct": false,
+          "rationale": "Fair value fluctuations are common and do not automatically trigger a move to Stage 2 impairment."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "A company sells software bundled with a mandatory three-year technical support contract. How should revenue from the support component be recognized according to IFRS 15?",
+      "explanation": "IFRS 15 requires revenue to be recognized as performance obligations are satisfied. A multi-year support contract represents a service provided over time, so revenue must be recognized ratably over that period.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The entire contract value, including the support, should be recognized immediately upon signing the contract with the customer.",
+          "is_correct": false,
+          "rationale": "This violates the principle of recognizing revenue as services are delivered over the contract term."
+        },
+        {
+          "key": "B",
+          "text": "The support revenue should be recognized on a straight-line basis over the three-year term of the support contract.",
+          "is_correct": true,
+          "rationale": "This correctly reflects the continuous delivery of the support service over the contract period."
+        },
+        {
+          "key": "C",
+          "text": "All support revenue should be deferred until the end of the three-year contract and recognized as a lump sum.",
+          "is_correct": false,
+          "rationale": "Deferring all revenue until the end misrepresents the performance delivered in each accounting period."
+        },
+        {
+          "key": "D",
+          "text": "Revenue from the support component should be recognized based on the number of support tickets logged by the customer.",
+          "is_correct": false,
+          "rationale": "This method is not a faithful representation of the obligation to stand ready to provide support."
+        },
+        {
+          "key": "E",
+          "text": "The support revenue is recognized entirely in the first year to match the initial software sale transaction date.",
+          "is_correct": false,
+          "rationale": "This front-loads revenue and does not align with the multi-year service obligation period."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "Under IFRS 16, how should a lessee initially account for a variable lease payment that is directly linked to a consumer price index (CPI)?",
+      "explanation": "IFRS 16 requires the initial measurement of the lease liability to include variable payments that depend on an index or rate, measured using the index or rate as at the commencement date.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Variable lease payments linked to an index are completely excluded from the initial lease liability and right-of-use asset.",
+          "is_correct": false,
+          "rationale": "IFRS 16 specifically requires including these payments in the initial liability calculation, not excluding them."
+        },
+        {
+          "key": "B",
+          "text": "These payments are included in the initial lease liability using the specific index rate at the lease commencement date.",
+          "is_correct": true,
+          "rationale": "The initial liability is measured using the index at commencement; it is remeasured only when adjusted."
+        },
+        {
+          "key": "C",
+          "text": "The lessee must estimate all future index changes and include the full expected payments in the lease liability.",
+          "is_correct": false,
+          "rationale": "Future, unconfirmed changes in an index are not permitted to be included in the initial measurement."
+        },
+        {
+          "key": "D",
+          "text": "Such payments are only recognized as an expense in the income statement as they are incurred each period.",
+          "is_correct": false,
+          "rationale": "This describes accounting for variable payments not based on an index, which are not capitalized."
+        },
+        {
+          "key": "E",
+          "text": "The variable payment component is capitalized as a separate intangible asset apart from the primary right-of-use asset.",
+          "is_correct": false,
+          "rationale": "These payments are an integral part of the lease liability, not a separate intangible asset."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "A company uses an accelerated depreciation method for tax purposes and straight-line for financial reporting. What is the immediate deferred tax impact of this difference?",
+      "explanation": "Using accelerated depreciation for tax purposes results in lower taxable income and lower taxes paid initially. This creates a temporary difference that results in a deferred tax liability, which will reverse over the asset's life.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A deferred tax asset is created because the company will receive larger tax deductions in future accounting periods.",
+          "is_correct": false,
+          "rationale": "Higher tax depreciation now means lower deductions later, creating a liability, not an asset."
+        },
+        {
+          "key": "B",
+          "text": "A deferred tax liability arises because higher tax depreciation reduces current tax payments that must be paid later.",
+          "is_correct": true,
+          "rationale": "The company pays less tax now but will pay more in the future, creating a liability."
+        },
+        {
+          "key": "C",
+          "text": "There is no deferred tax impact because the total depreciation over the asset's life is identical for both methods.",
+          "is_correct": false,
+          "rationale": "The timing difference in when depreciation is recognized is precisely what creates a deferred tax item."
+        },
+        {
+          "key": "D",
+          "text": "A permanent difference is created, which does not result in any deferred tax asset or liability on the books.",
+          "is_correct": false,
+          "rationale": "This is a classic example of a temporary difference that reverses over time, not a permanent one."
+        },
+        {
+          "key": "E",
+          "text": "The impact is recorded directly to retained earnings, bypassing the income statement, as it relates to a capital asset.",
+          "is_correct": false,
+          "rationale": "Deferred tax expense related to operations is typically recognized in the income statement."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "In a business combination, how should an acquirer account for contingent consideration classified as a liability at the acquisition date, according to IFRS 3?",
+      "explanation": "Under IFRS 3, contingent consideration is part of the price paid and must be measured at its fair value on the acquisition date. Subsequent changes in this fair value are typically recognized in profit or loss.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It should be ignored until the contingency is fully resolved, at which point it is expensed immediately.",
+          "is_correct": false,
+          "rationale": "IFRS 3 requires recognition at the acquisition date, not deferral until the contingency is resolved."
+        },
+        {
+          "key": "B",
+          "text": "The contingent consideration must be measured at its fair value and included as part of the consideration transferred.",
+          "is_correct": true,
+          "rationale": "Fair value measurement at the acquisition date is a core requirement of IFRS 3 for contingent consideration."
+        },
+        {
+          "key": "C",
+          "text": "It is recorded as a direct reduction to the goodwill recognized in the business combination transaction itself.",
+          "is_correct": false,
+          "rationale": "It is part of the consideration used to calculate goodwill, not a subsequent reduction of it."
+        },
+        {
+          "key": "D",
+          "text": "The acquirer should recognize it at the maximum possible payout amount to be conservative in its accounting approach.",
+          "is_correct": false,
+          "rationale": "The standard explicitly requires fair value measurement, not the maximum possible or undiscounted amount."
+        },
+        {
+          "key": "E",
+          "text": "It is recognized as a provision only if the payment is probable and can be reliably estimated by management.",
+          "is_correct": false,
+          "rationale": "This applies to provisions under IAS 37, but IFRS 3 mandates fair value for contingent consideration."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "A multinational's subsidiary in a low-tax country sells goods to a subsidiary in a high-tax country. What is the primary regulatory concern for tax authorities?",
+      "explanation": "This scenario involves transfer pricing regulations. Tax authorities scrutinize these transactions to ensure they reflect market rates (the arm's length principle), preventing companies from artificially shifting profits to lower-tax jurisdictions to minimize their overall tax burden.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The transaction must adhere to the arm's length principle to prevent artificial profit shifting between the related entities.",
+          "is_correct": true,
+          "rationale": "This is the core principle of transfer pricing regulations to prevent tax base erosion."
+        },
+        {
+          "key": "B",
+          "text": "The company must ensure the transaction complies with local sales tax and value-added tax regulations in both jurisdictions.",
+          "is_correct": false,
+          "rationale": "While important, this is a secondary concern compared to the income tax and profit shifting issue."
+        },
+        {
+          "key": "C",
+          "text": "The primary concern is whether the goods are properly valued for customs and import duty calculation purposes.",
+          "is_correct": false,
+          "rationale": "Customs valuation is a concern, but the main issue for tax authorities is corporate income tax avoidance."
+        },
+        {
+          "key": "D",
+          "text": "The transaction's impact on consolidated financial statements must be disclosed in the annual report's related-party notes.",
+          "is_correct": false,
+          "rationale": "This is a financial reporting requirement, not the primary regulatory concern from tax authorities."
+        },
+        {
+          "key": "E",
+          "text": "The company needs to focus on hedging the foreign currency exchange risk associated with the cross-border sale.",
+          "is_correct": false,
+          "rationale": "This is a financial risk management activity, not a regulatory compliance issue for tax authorities."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "Under IFRS 16, how should a lessee account for a lease modification that decreases the scope, such as returning one floor of an office?",
+      "explanation": "A decrease in scope requires the lessee to remeasure both the right-of-use asset and the lease liability. The difference between the carrying amount adjustments is recognized as a gain or loss in the profit or loss statement.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The lessee should only adjust future lease payments without changing the existing right-of-use asset or lease liability.",
+          "is_correct": false,
+          "rationale": "This is incorrect; the balance sheet items must be remeasured to reflect the change in scope."
+        },
+        {
+          "key": "B",
+          "text": "The lessee must terminate the original lease and recognize an entirely new lease for the remaining term and scope.",
+          "is_correct": false,
+          "rationale": "This is treated as a modification of the existing lease, not a termination and new lease."
+        },
+        {
+          "key": "C",
+          "text": "The lessee remeasures the lease liability and right-of-use asset, recognizing any resulting gain or loss in profit or loss.",
+          "is_correct": true,
+          "rationale": "This is the correct accounting treatment for a lease modification that decreases the scope of the lease."
+        },
+        {
+          "key": "D",
+          "text": "The modification is treated prospectively, with the change in payments spread evenly over the remaining lease term.",
+          "is_correct": false,
+          "rationale": "This ignores the required remeasurement of the asset and liability and the immediate P&L impact."
+        },
+        {
+          "key": "E",
+          "text": "The right-of-use asset is written off completely, and a new, smaller asset is recognized on the balance sheet.",
+          "is_correct": false,
+          "rationale": "The existing asset is adjusted downwards, not completely written off and replaced by a new one."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "During a financial review, you notice a consistent pattern of unusually high sales returns and allowances immediately after each quarter-end. What might this indicate?",
+      "explanation": "This pattern is a classic red flag for channel stuffing or other revenue manipulation schemes. Companies may ship excess inventory to distributors to inflate sales figures for the period, which are then promptly returned after the reporting date.",
+      "options": [
+        {
+          "key": "A",
+          "text": "This likely indicates a seasonal sales cycle where customers return unwanted items after a major holiday or sales event.",
+          "is_correct": false,
+          "rationale": "Seasonality would not necessarily align perfectly with every quarter-end and would be more predictable."
+        },
+        {
+          "key": "B",
+          "text": "The company may be engaging in channel stuffing to artificially inflate sales figures for the preceding reporting period.",
+          "is_correct": true,
+          "rationale": "The timing of returns immediately after a reporting period is highly indicative of channel stuffing."
+        },
+        {
+          "key": "C",
+          "text": "It suggests a significant product quality issue that was only discovered by customers after the quarter's close.",
+          "is_correct": false,
+          "rationale": "While possible, it is less likely to occur with such consistent timing after every single quarter."
+        },
+        {
+          "key": "D",
+          "text": "The pattern points to inefficient inventory management and poor forecasting of customer demand by the sales team.",
+          "is_correct": false,
+          "rationale": "Poor forecasting would likely result in returns throughout the period, not concentrated right after quarter-end."
+        },
+        {
+          "key": "E",
+          "text": "This is probably a result of a new, more lenient return policy being implemented at the start of the quarter.",
+          "is_correct": false,
+          "rationale": "A new policy would affect returns generally, not just in a spike immediately after a reporting period closes."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "In a business combination under IFRS 3, how is goodwill calculated and what does it represent on the acquirer's balance sheet after the transaction?",
+      "explanation": "Goodwill is the excess of the purchase consideration transferred over the net fair value of the identifiable assets acquired and liabilities assumed. It represents intangible assets like brand reputation and customer loyalty that are not separately identifiable.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Goodwill is the book value of the acquired company's net assets, representing its historical operational success and performance.",
+          "is_correct": false,
+          "rationale": "Goodwill is based on the fair value of net assets, not their historical book value."
+        },
+        {
+          "key": "B",
+          "text": "It is the premium paid over the fair value of identifiable net assets, representing future economic benefits from unidentifiable assets.",
+          "is_correct": true,
+          "rationale": "This correctly defines goodwill as the excess consideration over the fair value of identifiable net assets."
+        },
+        {
+          "key": "C",
+          "text": "Goodwill is calculated as the total fair value of all intangible assets, including patents and trademarks acquired in the deal.",
+          "is_correct": false,
+          "rationale": "Goodwill is separate from identifiable intangible assets like patents, which are recognized individually."
+        },
+        {
+          "key": "D",
+          "text": "It represents the total amount of debt assumed by the acquirer as part of the business combination transaction agreement.",
+          "is_correct": false,
+          "rationale": "Assumed debt is a liability that reduces the value of net assets; it is not goodwill."
+        },
+        {
+          "key": "E",
+          "text": "It is the difference between the purchase price and the acquired company's reported equity on its balance sheet.",
+          "is_correct": false,
+          "rationale": "The calculation uses the fair value of net assets, not the book value of the target's equity."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "An employee authorizes vendor payments, records the journal entries, and also performs the monthly bank reconciliation. Why is this a major internal control weakness?",
+      "explanation": "This situation violates the fundamental principle of segregation of duties. Combining authorization, recording, and custody (reconciliation) allows a single individual to potentially perpetrate and conceal fraudulent activities, such as creating and paying fictitious invoices.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It is highly inefficient for one person to handle all these tasks, which could lead to potential delays in vendor payments.",
+          "is_correct": false,
+          "rationale": "While potentially inefficient, the primary weakness is the risk of fraud, not operational slowness."
+        },
+        {
+          "key": "B",
+          "text": "This structure creates a significant risk of unintentional errors because there is no independent review of the employee's work.",
+          "is_correct": false,
+          "rationale": "Error risk is a concern, but the more severe risk is the opportunity for intentional fraud."
+        },
+        {
+          "key": "C",
+          "text": "It violates segregation of duties, creating an opportunity for an individual to commit and conceal fraudulent activities undetected.",
+          "is_correct": true,
+          "rationale": "This correctly identifies the core internal control failure and its most significant risk: fraud."
+        },
+        {
+          "key": "D",
+          "text": "The employee may lack the specialized expertise required to perform all three distinct functions accurately and effectively.",
+          "is_correct": false,
+          "rationale": "A lack of expertise is a competency issue, not the fundamental control design flaw present here."
+        },
+        {
+          "key": "E",
+          "text": "This approach makes it difficult to properly train a backup employee to cover these duties during an absence.",
+          "is_correct": false,
+          "rationale": "Business continuity is a valid concern, but it is secondary to the immediate risk of financial fraud."
+        }
+      ]
+    }
+  ]
+}

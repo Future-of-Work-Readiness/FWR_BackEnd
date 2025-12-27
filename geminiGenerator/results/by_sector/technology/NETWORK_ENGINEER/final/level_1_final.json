@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "What is the primary function of a network router in a typical local area network environment?",
+      "explanation": "Routers are crucial for connecting different networks and forwarding data packets between them. They use IP addresses to determine the best path for data, enabling communication across various subnets and the internet.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It connects multiple devices within the same network segment and forwards frames based on MAC addresses.",
+          "is_correct": false,
+          "rationale": "This describes the function of a network switch, which operates within a single local network."
+        },
+        {
+          "key": "B",
+          "text": "It allows devices on different network segments to communicate by forwarding packets between them using IP addresses.",
+          "is_correct": true,
+          "rationale": "This is the core function of a router, enabling inter-network communication by using logical IP addresses."
+        },
+        {
+          "key": "C",
+          "text": "It provides wireless connectivity for mobile devices by converting wired signals into radio waves for access.",
+          "is_correct": false,
+          "rationale": "This describes the function of a wireless access point, which handles Wi-Fi connectivity."
+        },
+        {
+          "key": "D",
+          "text": "It filters network traffic based on predefined security rules to protect internal networks from external threats.",
+          "is_correct": false,
+          "rationale": "This describes the function of a firewall, which is a network security device."
+        },
+        {
+          "key": "E",
+          "text": "It distributes power to network devices over Ethernet cables, simplifying deployments in various locations.",
+          "is_correct": false,
+          "rationale": "This describes the function of Power over Ethernet (PoE), often found in switches."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Which essential network service is responsible for translating human-readable domain names into numerical IP addresses?",
+      "explanation": "DNS (Domain Name System) is fundamental to how the internet works, converting domain names like example.com into the IP addresses necessary for computers to locate and connect to servers.",
+      "options": [
+        {
+          "key": "A",
+          "text": "DHCP dynamically assigns IP addresses and other network configuration parameters to devices on a network.",
+          "is_correct": false,
+          "rationale": "DHCP manages IP address assignment, not name resolution, which is a separate but essential service."
+        },
+        {
+          "key": "B",
+          "text": "ARP resolves IP addresses to physical MAC addresses within a local network segment for direct communication.",
+          "is_correct": false,
+          "rationale": "ARP maps IP to MAC addresses on a local segment, not domain names to IP addresses globally."
+        },
+        {
+          "key": "C",
+          "text": "DNS translates domain names into IP addresses, allowing users to access websites without memorizing numbers.",
+          "is_correct": true,
+          "rationale": "DNS is the core service that resolves human-readable names to numerical IP addresses for routing."
+        },
+        {
+          "key": "D",
+          "text": "NTP synchronizes the clocks of computer systems over a network, ensuring accurate timekeeping across devices.",
+          "is_correct": false,
+          "rationale": "NTP is used for time synchronization, which is critical for security but not name resolution."
+        },
+        {
+          "key": "E",
+          "text": "SMTP handles the sending of email messages between servers, facilitating communication across the internet.",
+          "is_correct": false,
+          "rationale": "SMTP is an email protocol and is not involved in the domain name resolution process."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What type of network cable is commonly used for connecting a computer to a wall jack or a switch?",
+      "explanation": "Ethernet cables, specifically twisted-pair cables like Cat5e or Cat6, are the standard for wired local area network connections due to their reliability and widespread compatibility.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Coaxial cable is primarily used for cable television and older internet connections, not typical computer-to-switch links.",
+          "is_correct": false,
+          "rationale": "Coaxial cable is for TV or older internet standards, not modern standard LAN connections."
+        },
+        {
+          "key": "B",
+          "text": "Fiber optic cable transmits data using light signals over long distances, offering high bandwidth for network backbones.",
+          "is_correct": false,
+          "rationale": "Fiber optic is for long distances and high bandwidth, not typical end-device connections."
+        },
+        {
+          "key": "C",
+          "text": "Twisted-pair Ethernet cable, such as Cat5e or Cat6, is the standard for connecting end devices to network switches.",
+          "is_correct": true,
+          "rationale": "Twisted-pair Ethernet is the established standard for connecting computers to local network switches."
+        },
+        {
+          "key": "D",
+          "text": "A serial cable is typically used for console access to network devices or older point-to-point data connections.",
+          "is_correct": false,
+          "rationale": "Serial cables are for direct device management or older legacy connections, not for LAN traffic."
+        },
+        {
+          "key": "E",
+          "text": "A USB cable provides power and data connectivity for peripherals, but not for standard network infrastructure connections.",
+          "is_correct": false,
+          "rationale": "USB cables are designed for connecting peripherals directly to a computer, not for network infrastructure."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What unique numerical identifier is assigned to each device participating in a computer network for routing purposes?",
+      "explanation": "An IP address is a fundamental identifier that allows devices to be located and communicate over a network. It's crucial for routing data packets to the correct destination.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A MAC address is a unique hardware identifier embedded in a network interface card for local network communication.",
+          "is_correct": false,
+          "rationale": "MAC addresses identify hardware locally but are not used for routing across different networks."
+        },
+        {
+          "key": "B",
+          "text": "A hostname is a human-readable label given to a device on a network, often resolved to an IP address.",
+          "is_correct": false,
+          "rationale": "A hostname is a user-friendly label, not the numerical identifier used for routing packets."
+        },
+        {
+          "key": "C",
+          "text": "An IP address uniquely identifies a device on a network, enabling it to send and receive data packets globally.",
+          "is_correct": true,
+          "rationale": "An IP address is the unique numerical identifier used for network-wide communication and routing."
+        },
+        {
+          "key": "D",
+          "text": "A port number identifies a specific application or service running on a device, facilitating process-to-process communication.",
+          "is_correct": false,
+          "rationale": "Port numbers identify specific services or applications on a device, not the device itself."
+        },
+        {
+          "key": "E",
+          "text": "A subnet mask defines the network portion and host portion of an IP address, aiding in network segmentation.",
+          "is_correct": false,
+          "rationale": "A subnet mask helps define network segments; it is not a unique device identifier."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Which command-line utility is commonly used to test the reachability of a host on an Internet Protocol (IP) network?",
+      "explanation": "The `ping` utility sends ICMP echo request packets to a target host and listens for echo replies. This quickly verifies basic network connectivity and response times.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`ipconfig` (Windows) or `ifconfig` (Linux) displays current network configuration settings for a local interface.",
+          "is_correct": false,
+          "rationale": "These commands display local network configuration details, they do not test remote host reachability."
+        },
+        {
+          "key": "B",
+          "text": "`tracert` (Windows) or `traceroute` (Linux) shows the path packets take to reach a destination, including intermediate routers.",
+          "is_correct": false,
+          "rationale": "Traceroute shows the network path, while ping is used for a simpler test of basic reachability."
+        },
+        {
+          "key": "C",
+          "text": "`netstat` displays active network connections, routing tables, and network interface statistics on a system.",
+          "is_correct": false,
+          "rationale": "Netstat shows current connections and statistics, it does not actively test host reachability."
+        },
+        {
+          "key": "D",
+          "text": "`ping` sends ICMP echo requests to a target host, testing basic network connectivity and latency.",
+          "is_correct": true,
+          "rationale": "Ping is the fundamental command-line utility specifically designed to test the reachability of a network host."
+        },
+        {
+          "key": "E",
+          "text": "`nslookup` or `dig` queries the Domain Name System (DNS) to obtain domain name or IP address mapping.",
+          "is_correct": false,
+          "rationale": "Nslookup and dig are used to query DNS records, not to test host connectivity directly."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "What is the primary function of a network switch in a local area network (LAN) environment?",
+      "explanation": "A network switch connects multiple devices on a single LAN, forwarding data frames only to the intended destination device. This enhances network efficiency by reducing unnecessary traffic.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It connects different local area networks together and routes traffic between them using IP addresses.",
+          "is_correct": false,
+          "rationale": "This describes the function of a router, which operates at a higher network layer than a switch."
+        },
+        {
+          "key": "B",
+          "text": "It broadcasts all incoming data frames to every connected device within the same network segment.",
+          "is_correct": false,
+          "rationale": "This describes the function of an older network hub, which is less efficient than a switch."
+        },
+        {
+          "key": "C",
+          "text": "It filters network traffic and enforces security policies to protect the internal network from external threats.",
+          "is_correct": false,
+          "rationale": "This describes the function of a firewall, which is a dedicated network security device."
+        },
+        {
+          "key": "D",
+          "text": "It forwards data frames to specific devices based on their MAC addresses, improving network efficiency.",
+          "is_correct": true,
+          "rationale": "Switches intelligently use MAC addresses to forward data frames only to the intended recipient's port."
+        },
+        {
+          "key": "E",
+          "text": "It assigns dynamic IP addresses to client devices on the network, simplifying network configuration.",
+          "is_correct": false,
+          "rationale": "This describes the function of a DHCP server, which handles automatic IP address assignment."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Which of the following IP addresses is considered a private IP address and cannot be routed directly on the internet?",
+      "explanation": "Private IP addresses, defined in RFC 1918, are reserved for use within private networks and are not globally routable. They are used to conserve public IP address space.",
+      "options": [
+        {
+          "key": "A",
+          "text": "203.0.113.15, which is a public IP address used for general internet communication and documentation examples.",
+          "is_correct": false,
+          "rationale": "This IP address falls within a public, globally routable range designated for documentation."
+        },
+        {
+          "key": "B",
+          "text": "192.168.1.10, commonly used within local networks and not directly accessible from the public internet.",
+          "is_correct": true,
+          "rationale": "The 192.168.0.0/16 block is a standard private IP address range used for local networks."
+        },
+        {
+          "key": "C",
+          "text": "8.8.8.8, a well-known public DNS server address that is provided and managed by Google.",
+          "is_correct": false,
+          "rationale": "This is a famous public IP address, specifically one of Google's public DNS servers."
+        },
+        {
+          "key": "D",
+          "text": "172.32.0.1, which is a public IP address often assigned to various internet-facing servers and services.",
+          "is_correct": false,
+          "rationale": "This IP address falls outside the private 172.16.0.0/12 range and is therefore public."
+        },
+        {
+          "key": "E",
+          "text": "104.24.0.1, a public IP address that is routable on the global internet and used by various services.",
+          "is_correct": false,
+          "rationale": "This IP address falls within a public, globally routable range and is not private."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "What protocol is responsible for translating domain names like www.example.com into numerical IP addresses?",
+      "explanation": "DNS (Domain Name System) is a fundamental protocol that translates human-readable domain names into machine-readable IP addresses, enabling devices to locate resources on the internet.",
+      "options": [
+        {
+          "key": "A",
+          "text": "DHCP, which dynamically assigns IP addresses and other network configuration parameters to connecting devices.",
+          "is_correct": false,
+          "rationale": "DHCP manages IP address assignment for devices, it does not handle domain name resolution."
+        },
+        {
+          "key": "B",
+          "text": "FTP, which is used for transferring files between a client and a server on a computer network.",
+          "is_correct": false,
+          "rationale": "FTP is a protocol specifically for file transfers, not for translating domain names into IPs."
+        },
+        {
+          "key": "C",
+          "text": "DNS, which translates human-readable domain names into numerical IP addresses for network communication.",
+          "is_correct": true,
+          "rationale": "DNS is the core protocol responsible for resolving domain names to their corresponding IP addresses."
+        },
+        {
+          "key": "D",
+          "text": "HTTP, primarily used for transmitting web pages and other hypermedia content over the internet.",
+          "is_correct": false,
+          "rationale": "HTTP is the protocol for web content delivery, it relies on DNS but does not perform resolution."
+        },
+        {
+          "key": "E",
+          "text": "SMTP, which is employed for sending and receiving electronic mail messages between different mail servers.",
+          "is_correct": false,
+          "rationale": "SMTP is an email protocol and is completely unrelated to the domain name resolution process."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "When troubleshooting a network connectivity issue, what is the most basic command to check if a remote host is reachable?",
+      "explanation": "The `ping` command sends ICMP echo request packets to a target host and listens for echo replies. It's a fundamental tool to verify basic network reachability.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`ipconfig`, which is used to display current TCP/IP network configuration values on a Windows system.",
+          "is_correct": false,
+          "rationale": "`ipconfig` shows local network settings but does not test remote host reachability."
+        },
+        {
+          "key": "B",
+          "text": "`tracert`, which shows the path and measures transit times of packets across an IP network.",
+          "is_correct": false,
+          "rationale": "`tracert` shows the network path, whereas `ping` is more basic for testing simple reachability."
+        },
+        {
+          "key": "C",
+          "text": "`ping`, which sends ICMP echo requests to test the reachability of a host on an IP network.",
+          "is_correct": true,
+          "rationale": "`ping` is the fundamental command used by administrators for testing basic host reachability."
+        },
+        {
+          "key": "D",
+          "text": "`netstat`, which is used to display active network connections, routing tables, and interface statistics.",
+          "is_correct": false,
+          "rationale": "`netstat` shows network statistics and current connections, not for testing simple reachability."
+        },
+        {
+          "key": "E",
+          "text": "`nslookup`, which is used for querying the Domain Name System to obtain domain name or IP address mapping.",
+          "is_correct": false,
+          "rationale": "`nslookup` resolves names to IP addresses but does not test if the host is reachable."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Which layer of the OSI model is primarily responsible for the logical addressing and routing of data packets?",
+      "explanation": "The Network Layer (Layer 3) handles logical addressing (IP addresses) and the routing of data packets between different networks. It determines the best path for data.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Physical Layer, which defines the electrical and mechanical specifications for data transmission over a medium.",
+          "is_correct": false,
+          "rationale": "The Physical Layer (Layer 1) handles raw bit transmission, not logical addressing or routing."
+        },
+        {
+          "key": "B",
+          "text": "The Data Link Layer, responsible for reliable data transfer between directly connected network nodes using MAC addresses.",
+          "is_correct": false,
+          "rationale": "The Data Link Layer (Layer 2) handles MAC addressing and frame delivery within a local segment."
+        },
+        {
+          "key": "C",
+          "text": "The Transport Layer, which provides end-to-end communication services for applications across different hosts.",
+          "is_correct": false,
+          "rationale": "The Transport Layer (Layer 4) handles port numbers and end-to-end connection reliability."
+        },
+        {
+          "key": "D",
+          "text": "The Network Layer, responsible for logical addressing, packet routing, and forwarding between different networks.",
+          "is_correct": true,
+          "rationale": "The Network Layer (Layer 3) specifically uses IP addresses for logical addressing and routing."
+        },
+        {
+          "key": "E",
+          "text": "The Application Layer, providing network services directly to end-user applications and various software processes.",
+          "is_correct": false,
+          "rationale": "The Application Layer (Layer 7) provides services directly to applications, not routing functions."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "What is the primary difference between a network switch and an older network hub in terms of data transmission?",
+      "explanation": "A switch learns MAC addresses and forwards frames only to the intended recipient, reducing unnecessary traffic. A hub broadcasts data to all connected devices, leading to more collisions and less efficient network usage.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A switch broadcasts data to all connected devices, while a hub sends data directly to the destination.",
+          "is_correct": false,
+          "rationale": "This statement incorrectly reverses the functionality of switches and hubs; hubs broadcast traffic."
+        },
+        {
+          "key": "B",
+          "text": "A switch learns MAC addresses and forwards data only to the destination port, significantly reducing network congestion.",
+          "is_correct": true,
+          "rationale": "Switches use a MAC address table to forward data efficiently only to specific ports."
+        },
+        {
+          "key": "C",
+          "text": "A hub operates at Layer 3 of the OSI model, whereas a switch operates at Layer 2 for efficient routing.",
+          "is_correct": false,
+          "rationale": "Hubs are Layer 1 devices, and standard switches are Layer 2 devices; neither primarily routes."
+        },
+        {
+          "key": "D",
+          "text": "A hub uses IP addresses for forwarding decisions, while a switch relies solely on logical subnet masks.",
+          "is_correct": false,
+          "rationale": "Neither hubs nor basic switches primarily use IP addresses for their core forwarding functions."
+        },
+        {
+          "key": "E",
+          "text": "A switch performs network address translation (NAT) functions, which a basic network hub cannot effectively provide.",
+          "is_correct": false,
+          "rationale": "NAT is typically a router or firewall function, not a primary function of a network switch."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Which of the following IP address ranges is specifically reserved for use within private networks and cannot be routed on the internet?",
+      "explanation": "Private IP address ranges are defined by RFC 1918 to allow organizations to use IP addresses internally without conflicting with public IP addresses. These addresses are not routable on the public internet.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The 10.0.0.0 to 10.255.255.255 range is a public IP range for large enterprise networks.",
+          "is_correct": false,
+          "rationale": "The 10.0.0.0/8 range is a private IP address range, not a public one."
+        },
+        {
+          "key": "B",
+          "text": "The 172.16.0.0 to 172.31.255.255 range is a private IP range suitable for internal organizational use.",
+          "is_correct": true,
+          "rationale": "This range is one of the three designated private IP address ranges by RFC 1918."
+        },
+        {
+          "key": "C",
+          "text": "The 192.168.0.0 to 192.168.255.255 range is a public IP range used by internet service providers.",
+          "is_correct": false,
+          "rationale": "The 192.168.0.0/16 range is a private IP address range, commonly used in home networks."
+        },
+        {
+          "key": "D",
+          "text": "The 169.254.0.0 to 169.254.255.255 range is a private IP range for DHCP servers.",
+          "is_correct": false,
+          "rationale": "This is the APIPA range, used for self-assigned addresses when DHCP fails, not for DHCP servers."
+        },
+        {
+          "key": "E",
+          "text": "The 127.0.0.0 to 127.255.255.255 range is a private IP range for network management devices.",
+          "is_correct": false,
+          "rationale": "This is the loopback address range, used for testing local network services on a host."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "At which layer of the OSI model do physical connections like cables and connectors primarily operate, handling raw bit transmission?",
+      "explanation": "The Physical Layer (Layer 1) of the OSI model is responsible for the physical transmission and reception of raw unstructured data bits over a physical medium. This includes cabling, connectors, and electrical signals.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Data Link Layer (Layer 2) focuses on framing and error detection within local network segments.",
+          "is_correct": false,
+          "rationale": "Layer 2 handles MAC addressing and framing, not the raw physical bit transmission itself."
+        },
+        {
+          "key": "B",
+          "text": "The Network Layer (Layer 3) handles logical addressing and routing across different network segments.",
+          "is_correct": false,
+          "rationale": "Layer 3 is concerned with IP addressing and routing, not the physical medium itself."
+        },
+        {
+          "key": "C",
+          "text": "The Transport Layer (Layer 4) manages end-to-end communication and reliable data transfer between applications.",
+          "is_correct": false,
+          "rationale": "Layer 4 deals with connection management and reliability for applications, a higher-level function."
+        },
+        {
+          "key": "D",
+          "text": "The Physical Layer (Layer 1) deals with the electrical and mechanical specifications of the network medium.",
+          "is_correct": true,
+          "rationale": "Layer 1 is responsible for the physical aspects of network connectivity and raw data transmission."
+        },
+        {
+          "key": "E",
+          "text": "The Session Layer (Layer 5) establishes, manages, and terminates communication sessions between applications.",
+          "is_correct": false,
+          "rationale": "Layer 5 manages communication sessions, which is much higher level than physical connections."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "What is the main function of the Domain Name System (DNS) in a typical network environment?",
+      "explanation": "DNS translates human-readable domain names (like google.com) into machine-readable IP addresses (like 172.217.160.142). This translation is crucial for users to access websites and other network resources by name.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It provides dynamic IP addresses to devices on the network, simplifying network configuration and management.",
+          "is_correct": false,
+          "rationale": "This describes the function of DHCP (Dynamic Host Configuration Protocol), not DNS."
+        },
+        {
+          "key": "B",
+          "text": "It translates human-readable domain names into numerical IP addresses for network communication and routing.",
+          "is_correct": true,
+          "rationale": "DNS's core function is to resolve domain names to IP addresses for network routing."
+        },
+        {
+          "key": "C",
+          "text": "It encrypts all network traffic between a web browser and a secure server connection for privacy.",
+          "is_correct": false,
+          "rationale": "Encryption is handled by protocols like TLS/SSL, not directly by the DNS service."
+        },
+        {
+          "key": "D",
+          "text": "It manages the flow of data packets to prevent network congestion and ensure quality of service.",
+          "is_correct": false,
+          "rationale": "This describes Quality of Service (QoS) or traffic management, which is not a DNS function."
+        },
+        {
+          "key": "E",
+          "text": "It authenticates users and devices attempting to access network resources, enhancing overall security posture.",
+          "is_correct": false,
+          "rationale": "Authentication is handled by security protocols and services like RADIUS or Kerberos, not DNS."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "A user reports they cannot access any websites, but other users on the same network are working fine. What is the first troubleshooting step you should take?",
+      "explanation": "Checking the user's local network connectivity (cable, Wi-Fi) is the most immediate and common first step for individual user network issues. This quickly rules out simple physical layer problems before investigating deeper.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Reboot the entire network router to clear any potential routing table issues that might be present.",
+          "is_correct": false,
+          "rationale": "This is too broad a step when only one user is affected; it could disrupt others."
+        },
+        {
+          "key": "B",
+          "text": "Check the user's network cable connection or Wi-Fi status to ensure basic local connectivity is established.",
+          "is_correct": true,
+          "rationale": "Verifying local physical connectivity is the most basic and often effective first troubleshooting step."
+        },
+        {
+          "key": "C",
+          "text": "Access the network switch logs to identify any port errors or unusual traffic patterns from the user.",
+          "is_correct": false,
+          "rationale": "While useful, this is a more advanced step after basic local checks have been performed."
+        },
+        {
+          "key": "D",
+          "text": "Verify the DNS server configuration on the user's computer to ensure proper name resolution is working.",
+          "is_correct": false,
+          "rationale": "This is a good next step if local connectivity is confirmed, but not the very first."
+        },
+        {
+          "key": "E",
+          "text": "Ping a public IP address like 8.8.8.8 from a different network segment to test internet reachability.",
+          "is_correct": false,
+          "rationale": "This tests general internet connectivity, but the issue is specific to one user, suggesting a local problem."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "Which of the following IP address ranges is specifically reserved for private network use and not routable on the public internet?",
+      "explanation": "RFC 1918 defines specific IP address ranges for private use, which are not routable on the public internet. The 172.16.0.0/12 range is one of these, commonly used for internal networks.",
+      "options": [
+        {
+          "key": "A",
+          "text": "172.16.0.0 to 172.31.255.255 is a widely used range for internal network addressing schemes.",
+          "is_correct": true,
+          "rationale": "The 172.16.0.0/12 block is a reserved private IP address range defined by RFC 1918."
+        },
+        {
+          "key": "B",
+          "text": "10.0.0.0 to 10.255.255.255 is only used for public-facing servers requiring direct internet accessibility.",
+          "is_correct": false,
+          "rationale": "10.0.0.0/8 is also a private IP range, and the description of its use is incorrect."
+        },
+        {
+          "key": "C",
+          "text": "192.168.0.0 to 192.168.255.255 is exclusively allocated for large enterprise-level data center networks.",
+          "is_correct": false,
+          "rationale": "192.168.0.0/16 is a private IP range, but it is commonly used in SOHO networks."
+        },
+        {
+          "key": "D",
+          "text": "169.254.0.0 to 169.254.255.255 is a range for publicly accessible web servers with static configurations.",
+          "is_correct": false,
+          "rationale": "This is the APIPA range, used for self-assignment when DHCP fails, not for public servers."
+        },
+        {
+          "key": "E",
+          "text": "127.0.0.0 to 127.255.255.255 is primarily used for multicast communication across different subnets.",
+          "is_correct": false,
+          "rationale": "This is the loopback address range, used for local host communication, not for multicast."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "At which layer of the OSI model do network switches primarily operate to forward data frames?",
+      "explanation": "Network switches primarily operate at the Data Link Layer (Layer 2) of the OSI model. They use MAC addresses to forward data frames to specific devices within the same local network segment.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Physical Layer is responsible for the physical transmission of raw bit streams over a network medium.",
+          "is_correct": false,
+          "rationale": "The Physical Layer (Layer 1) deals with raw bit transmission, not intelligent frame forwarding."
+        },
+        {
+          "key": "B",
+          "text": "The Data Link Layer handles error-free transfer of data frames between nodes on the same network segment.",
+          "is_correct": true,
+          "rationale": "Switches operate at Layer 2 (Data Link) and use MAC addresses to forward frames."
+        },
+        {
+          "key": "C",
+          "text": "The Network Layer manages logical addressing and routing of packets across different interconnected networks.",
+          "is_correct": false,
+          "rationale": "The Network Layer (Layer 3) handles IP addressing and routing, which is a router's function."
+        },
+        {
+          "key": "D",
+          "text": "The Transport Layer ensures reliable end-to-end data delivery and manages segment reassembly for applications.",
+          "is_correct": false,
+          "rationale": "The Transport Layer (Layer 4) handles end-to-end communication sessions between hosts."
+        },
+        {
+          "key": "E",
+          "text": "The Application Layer provides network services directly to end-user applications, such as email or web browsing.",
+          "is_correct": false,
+          "rationale": "The Application Layer (Layer 7) provides services to user applications, not hardware forwarding."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "Which type of Ethernet cable is typically used for connecting a computer directly to a router or switch?",
+      "explanation": "A straight-through Ethernet cable is standard for connecting dissimilar devices like a computer to a switch. The cable's pins connect straight through, and the switch's internal wiring handles the necessary signal crossover.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A crossover cable is specifically designed for connecting similar devices, like two computers or two switches directly.",
+          "is_correct": false,
+          "rationale": "Crossover cables are for connecting similar devices, not a computer to a switch or router."
+        },
+        {
+          "key": "B",
+          "text": "A straight-through cable connects dissimilar devices, such as a computer to a hub, switch, or router.",
+          "is_correct": true,
+          "rationale": "Straight-through cables are the standard for connecting dissimilar devices like a computer to a switch."
+        },
+        {
+          "key": "C",
+          "text": "A console cable is used for out-of-band management access to network devices, configuring them locally.",
+          "is_correct": false,
+          "rationale": "A console cable is for device management, not for general network data connectivity."
+        },
+        {
+          "key": "D",
+          "text": "A fiber optic cable uses light pulses for data transmission over long distances with high bandwidth.",
+          "is_correct": false,
+          "rationale": "Fiber optic cables are a different physical medium, not a type of copper Ethernet cable."
+        },
+        {
+          "key": "E",
+          "text": "A coaxial cable is primarily utilized for connecting cable modems or older television antenna systems.",
+          "is_correct": false,
+          "rationale": "Coaxial cables are used for specific purposes like cable TV or older legacy networks."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "What is the very first step a network engineer should take when troubleshooting a reported network connectivity issue?",
+      "explanation": "The initial step in troubleshooting is always to gather information. Understanding the problem's symptoms, its impact, and any recent changes helps in forming a hypothesis and narrowing down potential causes effectively.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately replace the suspected faulty network equipment, assuming a hardware failure is the root cause.",
+          "is_correct": false,
+          "rationale": "Replacing equipment without proper diagnosis is premature, costly, and often ineffective."
+        },
+        {
+          "key": "B",
+          "text": "Gather detailed information about the problem, including symptoms, scope, and recent changes to the network.",
+          "is_correct": true,
+          "rationale": "Gathering information helps define the problem scope and is the first step in any structured methodology."
+        },
+        {
+          "key": "C",
+          "text": "Restart all affected network devices and servers to clear any potential transient software glitches.",
+          "is_correct": false,
+          "rationale": "Restarting can be a valid step, but it should be done after initial information gathering."
+        },
+        {
+          "key": "D",
+          "text": "Analyze network traffic captures using tools like Wireshark to identify specific packet drops or errors.",
+          "is_correct": false,
+          "rationale": "Deep traffic analysis is a diagnostic tool used after understanding the problem's basic nature."
+        },
+        {
+          "key": "E",
+          "text": "Check the physical layer connections, ensuring all cables are securely plugged into the correct ports.",
+          "is_correct": false,
+          "rationale": "Physical checks are important but should be guided by the initial information gathered."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "What is the primary function of the `ping` command when troubleshooting basic network connectivity issues across a local or wide area network?",
+      "explanation": "The `ping` command sends ICMP echo request packets to a target host and listens for echo replies. This helps determine if a host is reachable and measures the latency of the connection, crucial for basic troubleshooting.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It displays the complete routing path taken by packets to a destination network device.",
+          "is_correct": false,
+          "rationale": "This describes the `traceroute` or `tracert` command's function, which maps the path packets take."
+        },
+        {
+          "key": "B",
+          "text": "It tests reachability to a host and measures round-trip time for packets across the network.",
+          "is_correct": true,
+          "rationale": "Ping is fundamental for testing host reachability and latency by sending and receiving ICMP packets."
+        },
+        {
+          "key": "C",
+          "text": "It shows all active network connections and listening ports on a local machine for analysis.",
+          "is_correct": false,
+          "rationale": "This describes the `netstat` command's primary function, which shows network statistics and connections."
+        },
+        {
+          "key": "D",
+          "text": "It resolves domain names to IP addresses using configured DNS servers for network communication.",
+          "is_correct": false,
+          "rationale": "This describes the function of commands like `nslookup` or `dig`, which query DNS servers."
+        },
+        {
+          "key": "E",
+          "text": "It captures and analyzes all network traffic passing through a specific interface for deep inspection.",
+          "is_correct": false,
+          "rationale": "This describes packet capture tools like Wireshark or tcpdump, not the simple ping command."
+        }
+      ]
+    }
+  ]
+}

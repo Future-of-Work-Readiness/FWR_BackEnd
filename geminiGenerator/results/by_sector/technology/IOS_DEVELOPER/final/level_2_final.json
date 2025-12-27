@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "Which fundamental UIKit technology enables iOS developers to create adaptive user interfaces that dynamically adjust to various screen sizes and orientations?",
+      "explanation": "Auto Layout is the foundational constraint-based layout system in UIKit, allowing developers to create flexible and adaptive user interfaces. It automatically adjusts to different screen sizes, orientations, and device types, ensuring a consistent user experience.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Auto Layout defines relationships between UI elements, ensuring adaptable interfaces across various Apple devices and orientations.",
+          "is_correct": true,
+          "rationale": "Auto Layout is UIKit's core system for building adaptive and responsive user interfaces."
+        },
+        {
+          "key": "B",
+          "text": "Storyboards are visual design surfaces that directly dictate fixed positions for all user interface components without dynamic adaptation.",
+          "is_correct": false,
+          "rationale": "Storyboards are visual editors, not the underlying layout technology itself."
+        },
+        {
+          "key": "C",
+          "text": "Core Graphics provides low-level drawing APIs, primarily used for custom rendering rather than general layout management of views.",
+          "is_correct": false,
+          "rationale": "Core Graphics focuses on drawing primitives, not high-level UI layout."
+        },
+        {
+          "key": "D",
+          "text": "Interface Builder is a visual tool specifically for creating static layouts that do not change dynamically at runtime.",
+          "is_correct": false,
+          "rationale": "Interface Builder is a tool; Auto Layout is the underlying technology."
+        },
+        {
+          "key": "E",
+          "text": "SwiftUI is a declarative framework for building user interfaces, but is a newer alternative, not the fundamental UIKit technology.",
+          "is_correct": false,
+          "rationale": "SwiftUI is a modern framework, distinct from fundamental UIKit layout."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "When persisting small amounts of user-specific data or application settings in an iOS app, which common storage mechanism is most appropriate?",
+      "explanation": "UserDefaults is ideal for storing small amounts of non-sensitive data like user preferences or application settings. It provides a simple key-value store for lightweight persistence, making it easy to retrieve and update common values.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Core Data is an object graph management framework best suited for complex data models and large datasets.",
+          "is_correct": false,
+          "rationale": "Core Data is for complex data models, not small settings."
+        },
+        {
+          "key": "B",
+          "text": "Realm is a mobile database that offers a fast, object-oriented alternative for managing structured data efficiently.",
+          "is_correct": false,
+          "rationale": "Realm is a database, overkill for simple user settings."
+        },
+        {
+          "key": "C",
+          "text": "UserDefaults provides a simple key-value store for saving user preferences and small amounts of application configuration data.",
+          "is_correct": true,
+          "rationale": "UserDefaults is designed for lightweight storage of user preferences."
+        },
+        {
+          "key": "D",
+          "text": "Property lists (PList) are XML-based files often used for structured data, but less convenient for simple key-value settings.",
+          "is_correct": false,
+          "rationale": "Property lists are less convenient than UserDefaults for simple key-value pairs."
+        },
+        {
+          "key": "E",
+          "text": "Keychain Services securely stores sensitive information like passwords and cryptographic keys, not general app settings.",
+          "is_correct": false,
+          "rationale": "Keychain is for sensitive data, not general application preferences."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "To perform a long-running task in the background without blocking the main user interface thread in an iOS application, which API should be utilized?",
+      "explanation": "Grand Central Dispatch (GCD) is Apple's low-level API for managing concurrent operations. It allows developers to execute tasks asynchronously on background threads, preventing UI freezes and ensuring a smooth user experience.",
+      "options": [
+        {
+          "key": "A",
+          "text": "NSTimer is primarily used for scheduling code to run at future dates or repeating intervals on a specific thread.",
+          "is_correct": false,
+          "rationale": "NSTimer schedules tasks, but doesn't inherently move them to background."
+        },
+        {
+          "key": "B",
+          "text": "OperationQueues offer more control over dependencies and cancellation of complex concurrent tasks compared to GCD.",
+          "is_correct": false,
+          "rationale": "OperationQueues are higher-level, but GCD is the fundamental API."
+        },
+        {
+          "key": "C",
+          "text": "Grand Central Dispatch (GCD) allows dispatching tasks to background queues, preventing UI freezes during heavy operations.",
+          "is_correct": true,
+          "rationale": "GCD is the primary API for executing background tasks asynchronously."
+        },
+        {
+          "key": "D",
+          "text": "RunLoops manage input sources and events on a thread, but do not directly provide a mechanism for background execution.",
+          "is_correct": false,
+          "rationale": "RunLoops manage events on a thread, not background task execution."
+        },
+        {
+          "key": "E",
+          "text": "Thread.sleep() pauses the execution of the current thread, which would block the main thread if used improperly.",
+          "is_correct": false,
+          "rationale": "Thread.sleep() would block the current thread, including the UI thread."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What mechanism does Swift primarily employ to automatically manage memory for class instances, preventing memory leaks and dangling pointers?",
+      "explanation": "Automatic Reference Counting (ARC) is Swift's memory management system. It automatically tracks and manages memory usage for class instances, deallocating objects when they are no longer strongly referenced, preventing common memory issues.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Garbage Collection automatically reclaims memory by identifying and deleting objects that are no longer reachable by the program.",
+          "is_correct": false,
+          "rationale": "Garbage Collection is used in other languages, not Swift/Objective-C."
+        },
+        {
+          "key": "B",
+          "text": "Manual Reference Counting (MRC) requires developers to explicitly manage retain and release counts for every object instance.",
+          "is_correct": false,
+          "rationale": "MRC was used in Objective-C before ARC, but not Swift."
+        },
+        {
+          "key": "C",
+          "text": "Automatic Reference Counting (ARC) automatically frees up memory for class instances when strong references to them are zero.",
+          "is_correct": true,
+          "rationale": "ARC automatically handles memory for class instances in Swift."
+        },
+        {
+          "key": "D",
+          "text": "Weak references are used to break strong reference cycles, but are part of ARC, not a standalone memory management system.",
+          "is_correct": false,
+          "rationale": "Weak references are a feature of ARC, not the primary mechanism."
+        },
+        {
+          "key": "E",
+          "text": "Memory pools pre-allocate blocks of memory for objects of the same type, optimizing allocation performance.",
+          "is_correct": false,
+          "rationale": "Memory pools are an optimization technique, not the core management system."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "When presenting a stack of view controllers in a hierarchical manner, allowing users to navigate forward and backward, which UIKit container view controller is typically used?",
+      "explanation": "UINavigationController manages a stack of view controllers, providing a navigation bar and facilitating push and pop transitions. It is essential for hierarchical navigation flows common in many iOS applications.",
+      "options": [
+        {
+          "key": "A",
+          "text": "UITabBarController manages multiple distinct workflows, each with its own root view controller, displayed in a tab bar.",
+          "is_correct": false,
+          "rationale": "UITabBarController handles parallel workflows, not a hierarchical stack."
+        },
+        {
+          "key": "B",
+          "text": "UIPageViewController displays content one page at a time, often used for tutorials or photo galleries with swipe gestures.",
+          "is_correct": false,
+          "rationale": "UIPageViewController manages page-based navigation, not a push/pop stack."
+        },
+        {
+          "key": "C",
+          "text": "UINavigationController manages a stack of view controllers, enabling push and pop navigation through a hierarchy.",
+          "is_correct": true,
+          "rationale": "UINavigationController is designed for hierarchical push/pop navigation."
+        },
+        {
+          "key": "D",
+          "text": "UISplitViewController presents a master-detail interface, ideal for iPad apps displaying related content side-by-side.",
+          "is_correct": false,
+          "rationale": "UISplitViewController handles master-detail layouts, not a navigation stack."
+        },
+        {
+          "key": "E",
+          "text": "UIContainerView is a generic view that can embed child view controllers, but doesn't provide navigation logic itself.",
+          "is_correct": false,
+          "rationale": "UIContainerView is for embedding, lacking built-in navigation features."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Which UI component is best suited for displaying a scrollable list of items with varying heights and complex, grid-like layouts?",
+      "explanation": "UICollectionView offers superior flexibility for complex layouts and varying item sizes compared to UITableView. It's ideal for grid-like or custom arrangements of data.",
+      "options": [
+        {
+          "key": "A",
+          "text": "UITableView is primarily designed for displaying simple, uniform lists of data with standard rows and sections.",
+          "is_correct": false,
+          "rationale": "UITableView is for simpler, uniform lists."
+        },
+        {
+          "key": "B",
+          "text": "UICollectionView provides highly flexible and customizable layouts for presenting collections of data items.",
+          "is_correct": true,
+          "rationale": "UICollectionView handles complex, custom layouts effectively."
+        },
+        {
+          "key": "C",
+          "text": "UIScrollView allows users to scroll content that is larger than the visible bounds of the screen.",
+          "is_correct": false,
+          "rationale": "UIScrollView is a general scrolling container, not for lists of items."
+        },
+        {
+          "key": "D",
+          "text": "UIPickerView is used for displaying a set of values from which the user can select a single item.",
+          "is_correct": false,
+          "rationale": "UIPickerView is for selecting from a limited set of choices."
+        },
+        {
+          "key": "E",
+          "text": "UIStackView helps in arranging a collection of views horizontally or vertically, managing their distribution.",
+          "is_correct": false,
+          "rationale": "UIStackView arranges views linearly, not for scrollable lists."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "What is the primary difference between a `struct` and a `class` in Swift regarding their fundamental type behavior?",
+      "explanation": "`Structs` are value types, meaning they are copied when assigned or passed, ensuring each instance is independent. `Classes` are reference types, sharing a single instance.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Structs are reference types, meaning instances share the same memory location when copied or passed.",
+          "is_correct": false,
+          "rationale": "Structs are value types, not reference types."
+        },
+        {
+          "key": "B",
+          "text": "Classes are value types, meaning each instance holds its own unique copy of the data.",
+          "is_correct": false,
+          "rationale": "Classes are reference types, not value types."
+        },
+        {
+          "key": "C",
+          "text": "Structs are value types, creating unique copies when passed or assigned, ensuring data independence.",
+          "is_correct": true,
+          "rationale": "Structs are value types, copied on assignment or pass."
+        },
+        {
+          "key": "D",
+          "text": "Classes are only used for UI elements, while structs are exclusively for data models.",
+          "is_correct": false,
+          "rationale": "Both can be used for UI and data, not exclusive."
+        },
+        {
+          "key": "E",
+          "text": "Both structs and classes are reference types, but structs have more advanced features.",
+          "is_correct": false,
+          "rationale": "Only classes are reference types; structs are value types."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "When is `UserDefaults` the most appropriate data persistence mechanism for an iOS application?",
+      "explanation": "`UserDefaults` is designed for storing small, non-sensitive data like user preferences and settings. It's not suitable for large datasets, complex structures, or sensitive information.",
+      "options": [
+        {
+          "key": "A",
+          "text": "For storing large amounts of structured data like a database of user profiles and transactions.",
+          "is_correct": false,
+          "rationale": "UserDefaults is not suitable for large or structured data."
+        },
+        {
+          "key": "B",
+          "text": "For securely storing sensitive user credentials or financial information that requires encryption.",
+          "is_correct": false,
+          "rationale": "Sensitive data needs Keychain, not UserDefaults."
+        },
+        {
+          "key": "C",
+          "text": "For persisting small amounts of non-sensitive user preferences and application settings quickly.",
+          "is_correct": true,
+          "rationale": "UserDefaults is ideal for simple user preferences."
+        },
+        {
+          "key": "D",
+          "text": "For caching large media files or documents that need to be accessed offline frequently.",
+          "is_correct": false,
+          "rationale": "Large files should use the file system, not UserDefaults."
+        },
+        {
+          "key": "E",
+          "text": "For managing complex object graphs that require relationships and efficient querying capabilities.",
+          "is_correct": false,
+          "rationale": "Complex object graphs require Core Data or Realm."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "What is the main reason to perform all user interface updates exclusively on the main thread?",
+      "explanation": "UIKit is not thread-safe. Performing UI updates on background threads can lead to unpredictable behavior, visual glitches, or crashes, hence the main thread is required for consistency.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To ensure that all network requests are completed synchronously before updating any visual elements.",
+          "is_correct": false,
+          "rationale": "UI updates are separate from network request completion."
+        },
+        {
+          "key": "B",
+          "text": "To prevent deadlocks and race conditions when multiple background threads try to access shared data.",
+          "is_correct": false,
+          "rationale": "This describes general concurrency issues, not specific to UI."
+        },
+        {
+          "key": "C",
+          "text": "To guarantee smooth and consistent user interface responsiveness, avoiding visual glitches or crashes.",
+          "is_correct": true,
+          "rationale": "UIKit is not thread-safe; UI updates must be on the main thread."
+        },
+        {
+          "key": "D",
+          "text": "To minimize memory usage by centralizing all UI-related operations onto a single execution context.",
+          "is_correct": false,
+          "rationale": "Memory usage is not the primary concern for main thread UI."
+        },
+        {
+          "key": "E",
+          "text": "To enable background tasks to continue processing data while the user interacts with the application.",
+          "is_correct": false,
+          "rationale": "This describes background processing, not UI update reasons."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Which common architectural pattern in iOS development separates an application into Model, View, and Controller?",
+      "explanation": "MVC is a fundamental architectural pattern in iOS, separating data (Model), presentation (View), and user interaction logic (Controller) to manage complexity and promote modularity.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Model-View-ViewModel (MVVM) for better testability and separation of concerns using data binding.",
+          "is_correct": false,
+          "rationale": "MVVM introduces a ViewModel layer, not just MVC."
+        },
+        {
+          "key": "B",
+          "text": "Model-View-Presenter (MVP) for delegating presentation logic from the view to a dedicated presenter.",
+          "is_correct": false,
+          "rationale": "MVP uses a Presenter, which is different from MVC."
+        },
+        {
+          "key": "C",
+          "text": "Model-View-Controller (MVC) for structuring an application's data, presentation, and user input logic.",
+          "is_correct": true,
+          "rationale": "MVC explicitly defines Model, View, and Controller roles."
+        },
+        {
+          "key": "D",
+          "text": "Model-View-Intent (MVI) for managing application state through a unidirectional data flow and explicit intents.",
+          "is_correct": false,
+          "rationale": "MVI is a reactive pattern with Intents, not MVC."
+        },
+        {
+          "key": "E",
+          "text": "Redux for predictable state container management, often used with functional programming paradigms.",
+          "is_correct": false,
+          "rationale": "Redux is a state management pattern, not MVC."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "What is the primary role of Automatic Reference Counting (ARC) in modern Swift iOS application development?",
+      "explanation": "ARC automatically handles memory management for class instances, deallocating objects when their strong reference count drops to zero. This significantly reduces the likelihood of memory leaks and simplifies development.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It simplifies asynchronous operations by providing a structured way to execute tasks on different queues efficiently.",
+          "is_correct": false,
+          "rationale": "This describes Grand Central Dispatch (GCD) or similar concurrency mechanisms."
+        },
+        {
+          "key": "B",
+          "text": "It ensures that user interface elements adapt correctly to various screen sizes and device orientations automatically.",
+          "is_correct": false,
+          "rationale": "This describes Auto Layout for UI adaptability."
+        },
+        {
+          "key": "C",
+          "text": "It automatically manages and deallocates memory for class instances when they are no longer strongly referenced, preventing memory leaks.",
+          "is_correct": true,
+          "rationale": "ARC manages memory automatically by deallocating objects when not strongly referenced."
+        },
+        {
+          "key": "D",
+          "text": "It encrypts all sensitive data stored locally on the device, enhancing the overall security posture of the application.",
+          "is_correct": false,
+          "rationale": "This describes data encryption, possibly using Keychain Services."
+        },
+        {
+          "key": "E",
+          "text": "It optimizes network requests by caching frequently accessed data from remote servers to reduce bandwidth usage.",
+          "is_correct": false,
+          "rationale": "This describes network caching mechanisms like URLCache."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "When building an iOS user interface, which Apple framework is primarily used for declarative UI construction in Swift?",
+      "explanation": "SwiftUI is Apple's modern, declarative UI framework for building apps across all its platforms using Swift. It allows developers to describe their UI's state, and the framework handles rendering updates.",
+      "options": [
+        {
+          "key": "A",
+          "text": "UIKit is the foundational framework for constructing traditional imperative user interfaces on iOS using Objective-C or Swift.",
+          "is_correct": false,
+          "rationale": "UIKit is the older, imperative UI framework for iOS."
+        },
+        {
+          "key": "B",
+          "text": "SwiftUI provides a modern, declarative framework for building user interfaces across all Apple platforms with less code.",
+          "is_correct": true,
+          "rationale": "SwiftUI is Apple's declarative UI framework for modern Swift development."
+        },
+        {
+          "key": "C",
+          "text": "CoreData offers a powerful framework for managing and persisting application data using a sophisticated object graph.",
+          "is_correct": false,
+          "rationale": "CoreData is for data persistence, not UI construction."
+        },
+        {
+          "key": "D",
+          "text": "Foundation provides fundamental classes for data types, collections, networking, and other system-level services in Swift.",
+          "is_correct": false,
+          "rationale": "Foundation provides core data types and services, not UI."
+        },
+        {
+          "key": "E",
+          "text": "Grand Central Dispatch (GCD) is a low-level API for managing concurrent operations and executing tasks asynchronously.",
+          "is_correct": false,
+          "rationale": "GCD is for concurrency management, not UI."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "What is the most appropriate way to persistently store small amounts of user preferences or simple application settings on iOS?",
+      "explanation": "UserDefaults provides a simple interface for storing small amounts of user preferences and application settings persistently. It's not suitable for large or sensitive data.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Core Data should be utilized for managing complex object graphs and larger structured datasets that require relationships.",
+          "is_correct": false,
+          "rationale": "Core Data is for complex object graphs and larger data."
+        },
+        {
+          "key": "B",
+          "text": "Using UserDefaults is ideal for storing small, non-sensitive pieces of user data like settings and preferences.",
+          "is_correct": true,
+          "rationale": "UserDefaults is the standard for small user preferences and settings."
+        },
+        {
+          "key": "C",
+          "text": "Storing data directly in a local SQLite database provides robust relational data management for complex queries.",
+          "is_correct": false,
+          "rationale": "SQLite is for structured relational data, more complex than preferences."
+        },
+        {
+          "key": "D",
+          "text": "Saving data to the device's Keychain is specifically designed for securely storing sensitive information, such as passwords.",
+          "is_correct": false,
+          "rationale": "Keychain is for sensitive data like passwords, not general preferences."
+        },
+        {
+          "key": "E",
+          "text": "Writing data to a custom JSON file in the application's Documents directory offers flexible serialization for structured data.",
+          "is_correct": false,
+          "rationale": "JSON files are for custom structured data, more complex than simple preferences."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Which Grand Central Dispatch (GCD) queue should be used for performing UI updates safely and efficiently in an iOS application?",
+      "explanation": "All UI updates in iOS must be performed on the main thread (main queue). Attempting to update UI elements from a background thread will lead to unpredictable behavior, including crashes and visual glitches.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A custom concurrent queue allows multiple tasks to run simultaneously without blocking the main thread, improving responsiveness.",
+          "is_correct": false,
+          "rationale": "Custom concurrent queues are for background tasks, not UI updates."
+        },
+        {
+          "key": "B",
+          "text": "A global background queue is suitable for long-running, non-UI related tasks that do not require immediate user feedback.",
+          "is_correct": false,
+          "rationale": "Global background queues are for non-UI, long-running tasks."
+        },
+        {
+          "key": "C",
+          "text": "The main queue must be used for all UI updates to ensure thread safety and prevent visual inconsistencies or crashes.",
+          "is_correct": true,
+          "rationale": "UI updates must always occur on the main queue to ensure thread safety."
+        },
+        {
+          "key": "D",
+          "text": "A custom serial queue ensures tasks execute one after another in a specific order, preventing race conditions for shared resources.",
+          "is_correct": false,
+          "rationale": "Custom serial queues are for ordered background tasks, not UI."
+        },
+        {
+          "key": "E",
+          "text": "A global utility queue is appropriate for tasks requiring moderate effort, balancing responsiveness with system resource usage.",
+          "is_correct": false,
+          "rationale": "Global utility queues are for moderate background tasks, not UI."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "What is the standard and recommended Apple framework for handling network requests and data transfers in Swift iOS apps?",
+      "explanation": "URLSession is Apple's primary framework for handling all types of network requests, including HTTP/HTTPS, and managing data transfers. It is robust and highly configurable.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Alamofire is a popular third-party library that simplifies networking, offering a more convenient and expressive API than URLSession.",
+          "is_correct": false,
+          "rationale": "Alamofire is a third-party library, not an Apple framework."
+        },
+        {
+          "key": "B",
+          "text": "URLSession is the foundational framework for making HTTP/HTTPS requests and managing data transfer tasks reliably.",
+          "is_correct": true,
+          "rationale": "URLSession is Apple's native and recommended framework for networking."
+        },
+        {
+          "key": "C",
+          "text": "CoreLocation is used for accessing location services, providing GPS coordinates and region monitoring capabilities for applications.",
+          "is_correct": false,
+          "rationale": "CoreLocation is for location services, not general networking."
+        },
+        {
+          "key": "D",
+          "text": "StoreKit facilitates in-app purchases and subscriptions, allowing developers to sell digital content or services within their apps.",
+          "is_correct": false,
+          "rationale": "StoreKit is for in-app purchases, not general networking."
+        },
+        {
+          "key": "E",
+          "text": "SceneKit provides a high-level 3D graphics framework for creating animated scenes and games with powerful rendering capabilities.",
+          "is_correct": false,
+          "rationale": "SceneKit is for 3D graphics, not general networking."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "When building an iOS user interface, what is the primary purpose of using Auto Layout constraints?",
+      "explanation": "Auto Layout is a powerful constraint-based layout system. It ensures UI elements adapt gracefully to different screen sizes, orientations, and dynamic content, providing a consistent user experience across all iOS devices.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To define the exact pixel positions and sizes of UI elements on all device screens.",
+          "is_correct": false,
+          "rationale": "This describes manual frame-based layout, not Auto Layout."
+        },
+        {
+          "key": "B",
+          "text": "To ensure UI elements adapt responsively to different screen sizes and orientations across various iOS devices.",
+          "is_correct": true,
+          "rationale": "Auto Layout enables adaptive and responsive UI design."
+        },
+        {
+          "key": "C",
+          "text": "To manage the lifecycle of view controllers and their associated views efficiently.",
+          "is_correct": false,
+          "rationale": "This relates to view controller lifecycle management."
+        },
+        {
+          "key": "D",
+          "text": "To handle network requests and parse JSON data received from backend services.",
+          "is_correct": false,
+          "rationale": "This describes networking and data parsing tasks."
+        },
+        {
+          "key": "E",
+          "text": "To animate changes in UI element properties smoothly over a specified duration.",
+          "is_correct": false,
+          "rationale": "This describes UI animation techniques and frameworks."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "For storing small, simple user preferences like app settings in an iOS application, which persistence mechanism is most appropriate?",
+      "explanation": "UserDefaults is specifically designed for storing small amounts of user data, such as preferences, settings, and other lightweight key-value pairs. It's simple to use and ideal for non-critical information.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Core Data, because it provides a robust object graph management framework for complex data models.",
+          "is_correct": false,
+          "rationale": "Core Data is for complex data, overkill for simple settings."
+        },
+        {
+          "key": "B",
+          "text": "Realm, as it offers a fast, mobile-first database solution suitable for large datasets.",
+          "is_correct": false,
+          "rationale": "Realm is for larger datasets, not simple user settings."
+        },
+        {
+          "key": "C",
+          "text": "iCloud Key-Value Store, for securely synchronizing user data across multiple Apple devices.",
+          "is_correct": false,
+          "rationale": "iCloud KVS is for syncing, not primary local storage."
+        },
+        {
+          "key": "D",
+          "text": "UserDefaults, as it is designed for lightweight storage of key-value pairs and user settings.",
+          "is_correct": true,
+          "rationale": "UserDefaults is ideal for simple, lightweight user preferences."
+        },
+        {
+          "key": "E",
+          "text": "SQLite directly, allowing for fine-grained control over database schemas and queries.",
+          "is_correct": false,
+          "rationale": "Direct SQLite is too low-level for simple app settings."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "What is the main benefit of using Grand Central Dispatch (GCD) for managing concurrent tasks in an iOS application?",
+      "explanation": "GCD provides a powerful and efficient way to execute tasks concurrently or asynchronously. It abstracts away the complexities of thread management, allowing developers to focus on the logic of their tasks by submitting them to dispatch queues.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It simplifies asynchronous programming by providing a high-level API for executing tasks on dispatch queues.",
+          "is_correct": true,
+          "rationale": "GCD simplifies concurrent task management and execution."
+        },
+        {
+          "key": "B",
+          "text": "It directly manages memory allocation and deallocation for all objects within the application.",
+          "is_correct": false,
+          "rationale": "Automatic Reference Counting (ARC) handles memory management."
+        },
+        {
+          "key": "C",
+          "text": "It enables real-time communication between different iOS applications running simultaneously on the device.",
+          "is_correct": false,
+          "rationale": "This describes inter-process communication, not GCD's primary role."
+        },
+        {
+          "key": "D",
+          "text": "It provides a declarative way to build user interfaces using a component-based approach.",
+          "is_correct": false,
+          "rationale": "This describes UI frameworks like SwiftUI or UIKit."
+        },
+        {
+          "key": "E",
+          "text": "It facilitates secure data storage and retrieval using cryptographic hashing algorithms.",
+          "is_correct": false,
+          "rationale": "This relates to security frameworks, not GCD's purpose."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "After making an API request in Swift, how should an iOS developer typically handle the received JSON data?",
+      "explanation": "The Codable protocol (Encodable & Decodable) in Swift provides a straightforward and safe way to convert JSON data into custom Swift types and vice versa. This allows for structured and type-safe access to the data.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Directly display the raw JSON string to the user for debugging purposes in production builds.",
+          "is_correct": false,
+          "rationale": "Displaying raw JSON is not user-friendly for production applications."
+        },
+        {
+          "key": "B",
+          "text": "Convert the JSON data into native Swift objects using Codable protocols for structured access.",
+          "is_correct": true,
+          "rationale": "Codable protocols provide type-safe and efficient JSON parsing."
+        },
+        {
+          "key": "C",
+          "text": "Store the entire raw JSON response directly into a Core Data entity without any parsing.",
+          "is_correct": false,
+          "rationale": "Core Data entities require structured data, not raw JSON blobs."
+        },
+        {
+          "key": "D",
+          "text": "Manually parse the JSON data using string manipulation and regular expressions for each field.",
+          "is_correct": false,
+          "rationale": "Manual parsing is error-prone and inefficient for complex JSON."
+        },
+        {
+          "key": "E",
+          "text": "Send the raw JSON data to a remote analytics server for immediate processing and storage.",
+          "is_correct": false,
+          "rationale": "While analytics is a step, it's not the primary handling of received data."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "When an iOS application transitions from the foreground to the background, what is a crucial task developers should perform?",
+      "explanation": "Saving the application's state and any unsaved user data is critical. This ensures that when the user returns to the app, they can resume from where they left off, providing a seamless and positive user experience.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately terminate all network connections to conserve battery life and system resources.",
+          "is_correct": false,
+          "rationale": "Some background tasks might require ongoing network connections."
+        },
+        {
+          "key": "B",
+          "text": "Save the current state of the user interface and any unsaved user data to persistent storage.",
+          "is_correct": true,
+          "rationale": "Saving state ensures a seamless user experience upon returning to the app."
+        },
+        {
+          "key": "C",
+          "text": "Request additional memory from the operating system to prepare for potential background processing.",
+          "is_correct": false,
+          "rationale": "The OS manages memory, and requesting more is generally not the first step."
+        },
+        {
+          "key": "D",
+          "text": "Reload all cached images and data from the server to ensure fresh content upon return.",
+          "is_correct": false,
+          "rationale": "Reloading all data wastes resources and is not a crucial background task."
+        },
+        {
+          "key": "E",
+          "text": "Display a full-screen advertisement to the user before the app enters the background state.",
+          "is_correct": false,
+          "rationale": "This is poor user experience and not a standard or crucial task."
+        }
+      ]
+    }
+  ]
+}

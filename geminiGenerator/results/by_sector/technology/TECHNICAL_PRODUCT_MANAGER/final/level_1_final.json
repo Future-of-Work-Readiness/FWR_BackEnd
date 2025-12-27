@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "What is the primary role of a Technical Product Manager in translating user needs into technical specifications?",
+      "explanation": "A Technical Product Manager bridges the gap between business and engineering by understanding user problems and translating them into clear, actionable technical requirements that developers can implement.",
+      "options": [
+        {
+          "key": "A",
+          "text": "They define high-level business goals and strategic objectives for the entire product roadmap.",
+          "is_correct": false,
+          "rationale": "This is typically a broader Product Manager or leadership role."
+        },
+        {
+          "key": "B",
+          "text": "They write detailed code and perform unit testing for new features before releasing them to production.",
+          "is_correct": false,
+          "rationale": "This is the primary responsibility of a software engineer."
+        },
+        {
+          "key": "C",
+          "text": "They translate user stories and business requirements into concrete technical tasks for the engineering team.",
+          "is_correct": true,
+          "rationale": "This is a core function of a Technical Product Manager."
+        },
+        {
+          "key": "D",
+          "text": "They manage the budget and financial forecasts for product development initiatives and marketing campaigns.",
+          "is_correct": false,
+          "rationale": "This falls more under financial planning or strategic product management."
+        },
+        {
+          "key": "E",
+          "text": "They conduct market research and competitive analysis to identify new product opportunities and trends.",
+          "is_correct": false,
+          "rationale": "This is a key activity for general Product Managers or market analysts."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "When gathering technical requirements, which document is most essential for engineering teams to understand system interactions?",
+      "explanation": "An API specification details how different software components communicate, including endpoints, request/response formats, and authentication, which is crucial for integration and development.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A comprehensive marketing plan outlining user acquisition strategies and future promotional activities.",
+          "is_correct": false,
+          "rationale": "This document is for marketing and sales, not system interactions."
+        },
+        {
+          "key": "B",
+          "text": "A detailed API specification document describing endpoints, data formats, and authentication methods for integration.",
+          "is_correct": true,
+          "rationale": "API specifications are crucial for understanding how systems interact technically."
+        },
+        {
+          "key": "C",
+          "text": "An executive summary report summarizing quarterly financial performance and future investment opportunities.",
+          "is_correct": false,
+          "rationale": "This is a high-level financial and strategic business report."
+        },
+        {
+          "key": "D",
+          "text": "A user interface wireframe demonstrating the visual layout and interaction flow of the new feature.",
+          "is_correct": false,
+          "rationale": "This document focuses on user experience and visual design, not system interactions."
+        },
+        {
+          "key": "E",
+          "text": "A legal compliance document detailing regulatory requirements and data privacy policies for the product.",
+          "is_correct": false,
+          "rationale": "This document addresses legal and regulatory aspects, not technical interactions."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What is a common challenge for a Technical Product Manager when collaborating with cross-functional teams?",
+      "explanation": "Bridging the communication gap between technical and non-technical stakeholders is a core TPM responsibility. They must ensure everyone understands the product's technical implications and value.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ensuring alignment on technical feasibility and business value across engineering, design, and marketing teams.",
+          "is_correct": true,
+          "rationale": "Aligning diverse teams on technical and business aspects is a key TPM challenge."
+        },
+        {
+          "key": "B",
+          "text": "Managing the day-to-day operational tasks of the customer support department and handling escalated tickets.",
+          "is_correct": false,
+          "rationale": "This is typically the responsibility of customer support operations."
+        },
+        {
+          "key": "C",
+          "text": "Directly coding new features and fixing bugs identified during the quality assurance testing phase.",
+          "is_correct": false,
+          "rationale": "These are tasks primarily performed by software engineers."
+        },
+        {
+          "key": "D",
+          "text": "Negotiating contracts with third-party vendors for software licenses and infrastructure services.",
+          "is_correct": false,
+          "rationale": "This falls under procurement or vendor management, not a TPM's core role."
+        },
+        {
+          "key": "E",
+          "text": "Conducting in-depth user interviews and usability testing sessions to gather qualitative feedback.",
+          "is_correct": false,
+          "rationale": "This is primarily the role of a UX Researcher or Designer."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Which method is most appropriate for prioritizing a backlog of features with varying technical complexity and business impact?",
+      "explanation": "The RICE scoring model considers Reach, Impact, Confidence, and Effort, providing a quantitative framework to prioritize features based on both business value and technical feasibility.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Implementing a first-in, first-out (FIFO) queue for all incoming requests without any evaluation.",
+          "is_correct": false,
+          "rationale": "FIFO lacks strategic evaluation of impact or effort."
+        },
+        {
+          "key": "B",
+          "text": "Using the RICE scoring model to evaluate Reach, Impact, Confidence, and Effort for each item.",
+          "is_correct": true,
+          "rationale": "RICE provides a balanced, quantitative approach to prioritization."
+        },
+        {
+          "key": "C",
+          "text": "Allowing the most vocal stakeholder to dictate the order of development based on their personal preferences.",
+          "is_correct": false,
+          "rationale": "This is subjective and not a robust prioritization method."
+        },
+        {
+          "key": "D",
+          "text": "Prioritizing solely based on the lowest technical effort required, ignoring potential business value.",
+          "is_correct": false,
+          "rationale": "This ignores the strategic business impact of features."
+        },
+        {
+          "key": "E",
+          "text": "Delegating all prioritization decisions to the engineering lead without any product input or guidance.",
+          "is_correct": false,
+          "rationale": "Prioritization is a core product management responsibility, not solely engineering."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Why is it important for a Technical Product Manager to understand the concept of technical debt?",
+      "explanation": "Technical debt represents future rework caused by taking shortcuts. Understanding it helps TPMs make informed decisions about trade-offs, roadmap planning, and long-term product health.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To directly resolve all legacy code issues and refactor entire system architectures themselves.",
+          "is_correct": false,
+          "rationale": "This is an engineering task, not a direct TPM responsibility."
+        },
+        {
+          "key": "B",
+          "text": "To accurately assess its impact on future development velocity and allocate resources for its reduction.",
+          "is_correct": true,
+          "rationale": "TPMs need to manage technical debt's impact on product delivery and health."
+        },
+        {
+          "key": "C",
+          "text": "To ensure strict adherence to all financial accounting standards for software development costs.",
+          "is_correct": false,
+          "rationale": "This is a finance or compliance function, not directly related to technical debt management."
+        },
+        {
+          "key": "D",
+          "text": "To solely focus on shipping new features quickly, regardless of the underlying code quality implications.",
+          "is_correct": false,
+          "rationale": "This approach typically increases technical debt, which is detrimental long-term."
+        },
+        {
+          "key": "E",
+          "text": "To manage the sales pipeline and generate revenue forecasts for new product launches.",
+          "is_correct": false,
+          "rationale": "This is a sales or business development function, not directly related to technical debt."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "What is the primary responsibility of a Technical Product Manager when gathering requirements for a new software feature?",
+      "explanation": "A TPM's core responsibility involves translating user and business needs into detailed technical specifications. This ensures engineering teams have clear, actionable requirements to build the correct product efficiently.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Writing detailed code for the new feature to demonstrate its technical feasibility to the engineering team.",
+          "is_correct": false,
+          "rationale": "TPMs define technical requirements, they do not write code."
+        },
+        {
+          "key": "B",
+          "text": "Translating user needs and business goals into clear, actionable technical specifications for the development team.",
+          "is_correct": true,
+          "rationale": "Bridging business and technical needs is a core TPM function."
+        },
+        {
+          "key": "C",
+          "text": "Managing the project budget and allocating financial resources for the development and marketing of the feature.",
+          "is_correct": false,
+          "rationale": "This is typically a project manager or financial role."
+        },
+        {
+          "key": "D",
+          "text": "Designing the user interface and user experience flows to ensure the product is intuitive and visually appealing.",
+          "is_correct": false,
+          "rationale": "This is primarily the responsibility of a UX/UI designer."
+        },
+        {
+          "key": "E",
+          "text": "Directly supervising the software engineers, assigning tasks, and conducting daily stand-up meetings for the team.",
+          "is_correct": false,
+          "rationale": "This falls under an engineering manager's responsibilities."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "In an agile development environment, what is the main purpose of a product backlog?",
+      "explanation": "The product backlog is a prioritized list of features, enhancements, bug fixes, and other items that a team might deliver. It represents the product's roadmap and is continuously refined.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It serves as a comprehensive historical record of all completed tasks and features delivered in previous sprints.",
+          "is_correct": false,
+          "rationale": "This describes release notes or project history, not a backlog."
+        },
+        {
+          "key": "B",
+          "text": "It is a prioritized list of all the work that needs to be done for the product, ordered by value and risk.",
+          "is_correct": true,
+          "rationale": "The product backlog is a dynamic, prioritized list of work items."
+        },
+        {
+          "key": "C",
+          "text": "It functions as a detailed technical specification document for every single component within the software architecture.",
+          "is_correct": false,
+          "rationale": "This is too detailed and not the primary purpose of a backlog."
+        },
+        {
+          "key": "D",
+          "text": "It provides a fixed, unchangeable schedule for all development activities throughout the entire product lifecycle.",
+          "is_correct": false,
+          "rationale": "Agile backlogs are dynamic and adaptable, not fixed schedules."
+        },
+        {
+          "key": "E",
+          "text": "It tracks individual team member performance metrics and their contributions to specific features or modules.",
+          "is_correct": false,
+          "rationale": "This relates to performance management, not the product backlog."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Why are Application Programming Interfaces, also known as APIs, so crucial for modern software product development?",
+      "explanation": "APIs define how different software components communicate, enabling integration between systems and allowing third-party developers to build upon existing platforms, fostering innovation and ecosystem growth.",
+      "options": [
+        {
+          "key": "A",
+          "text": "They automatically generate user interface designs based on predefined templates without requiring manual coding efforts.",
+          "is_correct": false,
+          "rationale": "This describes UI builders, not the core function of APIs."
+        },
+        {
+          "key": "B",
+          "text": "They provide a standardized way for different software applications to communicate and exchange data with each other efficiently.",
+          "is_correct": true,
+          "rationale": "APIs enable structured communication and data exchange between systems."
+        },
+        {
+          "key": "C",
+          "text": "They are primarily used for encrypting sensitive user data stored in databases to ensure compliance with privacy regulations.",
+          "is_correct": false,
+          "rationale": "APIs facilitate communication, not primarily encryption."
+        },
+        {
+          "key": "D",
+          "text": "They manage the deployment of software updates to production servers, ensuring minimal downtime for end-users.",
+          "is_correct": false,
+          "rationale": "This describes deployment tools or CI/CD pipelines."
+        },
+        {
+          "key": "E",
+          "text": "They monitor server health and performance metrics, automatically alerting operations teams to potential system failures.",
+          "is_correct": false,
+          "rationale": "This describes monitoring and alerting systems."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "What is the most effective approach for a Technical Product Manager to address technical debt within a product?",
+      "explanation": "Technical debt should be managed proactively, just like new features. Integrating its resolution into regular development cycles prevents it from accumulating and impacting future development speed and product quality.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Completely halting all new feature development until every piece of identified technical debt has been resolved.",
+          "is_correct": false,
+          "rationale": "This is usually impractical and can stop product evolution."
+        },
+        {
+          "key": "B",
+          "text": "Ignoring technical debt completely, focusing solely on delivering new features requested by business stakeholders.",
+          "is_correct": false,
+          "rationale": "Ignoring technical debt leads to slower development and instability."
+        },
+        {
+          "key": "C",
+          "text": "Prioritizing and incorporating technical debt resolution into regular sprint cycles, balancing it with new feature development.",
+          "is_correct": true,
+          "rationale": "A balanced approach is key to sustainable product development and quality."
+        },
+        {
+          "key": "D",
+          "text": "Assigning a dedicated, separate engineering team solely responsible for addressing technical debt in isolation.",
+          "is_correct": false,
+          "rationale": "This can create silos and disconnect from current feature work."
+        },
+        {
+          "key": "E",
+          "text": "Documenting all technical debt in a spreadsheet and reviewing it only once a year during strategic planning sessions.",
+          "is_correct": false,
+          "rationale": "This is too infrequent and reactive for effective management."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "When communicating a complex technical constraint to non-technical stakeholders, what is the best practice?",
+      "explanation": "Translating technical jargon into clear, business-oriented language helps non-technical stakeholders understand the impact of constraints on product delivery, cost, or user experience, facilitating informed decisions.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using highly technical jargon to impress them with the complexity, assuming they will trust the technical expertise.",
+          "is_correct": false,
+          "rationale": "Jargon alienates and confuses non-technical audiences, hindering understanding."
+        },
+        {
+          "key": "B",
+          "text": "Providing a detailed code review document, expecting them to understand the underlying implementation challenges.",
+          "is_correct": false,
+          "rationale": "Code reviews are for engineers, not non-technical stakeholders."
+        },
+        {
+          "key": "C",
+          "text": "Explaining the constraint in simple, business-oriented terms, focusing on its impact on product goals or timelines.",
+          "is_correct": true,
+          "rationale": "Translating technical issues into business impact is crucial for stakeholders."
+        },
+        {
+          "key": "D",
+          "text": "Avoiding the topic entirely, hoping the engineering team can find a workaround without escalating the issue.",
+          "is_correct": false,
+          "rationale": "Hiding issues leads to unexpected problems and erodes trust."
+        },
+        {
+          "key": "E",
+          "text": "Sending a lengthy email with all technical specifications attached, allowing them to read it at their convenience.",
+          "is_correct": false,
+          "rationale": "This is often overwhelming and lacks direct engagement for clarity."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "What is a primary method for a Technical Product Manager to gather initial user requirements for a new feature?",
+      "explanation": "User research, including interviews and surveys, is fundamental for TPMs to deeply understand user needs and validate product ideas before development begins. This direct feedback ensures the product solves real problems.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Conducting in-depth interviews and user surveys with target customers to understand pain points.",
+          "is_correct": true,
+          "rationale": "Direct user feedback is crucial for understanding actual needs."
+        },
+        {
+          "key": "B",
+          "text": "Directly writing comprehensive code specifications for the engineering team based on market trends.",
+          "is_correct": false,
+          "rationale": "TPMs define requirements, but coding specifications are an engineering task."
+        },
+        {
+          "key": "C",
+          "text": "Analyzing competitor product features and directly copying successful implementations into the roadmap.",
+          "is_correct": false,
+          "rationale": "Competitor analysis informs, but direct copying lacks user validation."
+        },
+        {
+          "key": "D",
+          "text": "Relying solely on internal stakeholder opinions and executive mandates for feature definition.",
+          "is_correct": false,
+          "rationale": "Stakeholder input is important, but not the sole source of user requirements."
+        },
+        {
+          "key": "E",
+          "text": "Building a fully functional prototype without any user input to demonstrate potential capabilities.",
+          "is_correct": false,
+          "rationale": "Prototyping without user input risks building the wrong solution."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "How does a Technical Product Manager primarily translate high-level business goals into actionable engineering tasks?",
+      "explanation": "TPMs bridge the gap between business and engineering by defining clear, actionable requirements through user stories and technical specifications, guiding development efforts effectively and efficiently.",
+      "options": [
+        {
+          "key": "A",
+          "text": "By creating detailed user stories, acceptance criteria, and technical specifications for the development team.",
+          "is_correct": true,
+          "rationale": "TPMs define clear requirements for engineering execution."
+        },
+        {
+          "key": "B",
+          "text": "By personally coding the most complex parts of the new feature before handing it over.",
+          "is_correct": false,
+          "rationale": "TPMs typically do not write production code; that is an engineering role."
+        },
+        {
+          "key": "C",
+          "text": "By simply presenting the business case to the engineering team and letting them decide implementation.",
+          "is_correct": false,
+          "rationale": "TPMs provide more detailed guidance than just a business case."
+        },
+        {
+          "key": "D",
+          "text": "By solely focusing on marketing strategies and delegating all technical documentation to architects.",
+          "is_correct": false,
+          "rationale": "TPMs are responsible for technical documentation, not solely marketing."
+        },
+        {
+          "key": "E",
+          "text": "By generating comprehensive financial models to justify the return on investment for every task.",
+          "is_correct": false,
+          "rationale": "Financial models are important, but not the primary translation to engineering tasks."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "In an Agile Scrum framework, what is the primary responsibility of a Technical Product Manager during a sprint review meeting?",
+      "explanation": "The sprint review is where the team showcases completed work to stakeholders. The TPM plays a key role in presenting the increment and collecting feedback for future iterations, ensuring alignment with product goals.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Demonstrating the completed increment to stakeholders and gathering feedback on the delivered features.",
+          "is_correct": true,
+          "rationale": "Presenting sprint increment and gathering feedback is a TPM's key role."
+        },
+        {
+          "key": "B",
+          "text": "Assigning new tasks to individual developers for the upcoming sprint based on their availability.",
+          "is_correct": false,
+          "rationale": "Task assignment is typically handled by the Scrum Master or team, not the TPM."
+        },
+        {
+          "key": "C",
+          "text": "Resolving all technical blockers and architectural challenges encountered during the current sprint.",
+          "is_correct": false,
+          "rationale": "Technical resolution is typically the engineering team's responsibility."
+        },
+        {
+          "key": "D",
+          "text": "Facilitating the daily stand-up meeting to ensure team alignment and progress tracking.",
+          "is_correct": false,
+          "rationale": "The Scrum Master usually facilitates the daily stand-up meeting."
+        },
+        {
+          "key": "E",
+          "text": "Writing all the automated test cases for the newly developed features to ensure quality.",
+          "is_correct": false,
+          "rationale": "Automated test case writing is a responsibility of the QA or development team."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Why is it important for a Technical Product Manager to understand and manage technical debt within a product?",
+      "explanation": "Technical debt, if not managed, accumulates and makes future changes harder, slower, and more expensive. A TPM must balance new features with addressing this debt to maintain product health and development velocity.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Technical debt can significantly slow down future development velocity and increase maintenance costs over time.",
+          "is_correct": true,
+          "rationale": "Unmanaged technical debt impedes development and increases costs."
+        },
+        {
+          "key": "B",
+          "text": "It directly impacts the marketing budget, requiring more spending to promote an inferior product.",
+          "is_correct": false,
+          "rationale": "While it can affect product quality, its direct impact isn't primarily marketing budget."
+        },
+        {
+          "key": "C",
+          "text": "Technical debt is primarily an accounting issue, affecting only the financial reporting of the company.",
+          "is_correct": false,
+          "rationale": "Technical debt is an engineering and product issue, not just accounting."
+        },
+        {
+          "key": "D",
+          "text": "It indicates a lack of creativity in the design team, leading to aesthetically unpleasing user interfaces.",
+          "is_correct": false,
+          "rationale": "Technical debt relates to code quality and architecture, not design creativity."
+        },
+        {
+          "key": "E",
+          "text": "Managing technical debt is solely the responsibility of the Quality Assurance team, not product management.",
+          "is_correct": false,
+          "rationale": "Managing technical debt is a shared responsibility, especially for TPMs."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "When communicating product roadmap updates to diverse stakeholders, what is a key consideration for a Technical Product Manager?",
+      "explanation": "Effective TPMs adapt their communication style and content to different audiences, ensuring that business stakeholders understand strategic impact while technical teams grasp implementation details, fostering clear alignment.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Tailoring the level of technical detail to each audience's understanding and focus areas.",
+          "is_correct": true,
+          "rationale": "Adapting communication to different stakeholder audiences is crucial."
+        },
+        {
+          "key": "B",
+          "text": "Providing the exact same highly technical presentation to all stakeholders regardless of their role.",
+          "is_correct": false,
+          "rationale": "A one-size-fits-all approach can confuse non-technical stakeholders."
+        },
+        {
+          "key": "C",
+          "text": "Only sharing updates with the engineering team, as they are the primary implementers of the roadmap.",
+          "is_correct": false,
+          "rationale": "Stakeholders beyond engineering also need roadmap visibility and context."
+        },
+        {
+          "key": "D",
+          "text": "Avoiding any discussion of potential risks or challenges to maintain a positive outlook.",
+          "is_correct": false,
+          "rationale": "Transparency about risks builds trust and allows for proactive problem-solving."
+        },
+        {
+          "key": "E",
+          "text": "Focusing exclusively on the financial projections and ignoring any feature-level discussions entirely.",
+          "is_correct": false,
+          "rationale": "Both financial and feature details are important, depending on the audience's needs."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "What is the primary role of an API endpoint in a modern software application's architecture?",
+      "explanation": "An API endpoint serves as a specific entry point for client applications to access resources or perform operations on a server. It dictates the URL and the type of HTTP request.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It defines a specific network address and operation that clients can use to interact with a server.",
+          "is_correct": true,
+          "rationale": "Endpoints are specific URLs and operations for client-server interaction."
+        },
+        {
+          "key": "B",
+          "text": "It manages the database connections and executes complex SQL queries for data retrieval.",
+          "is_correct": false,
+          "rationale": "This describes a database connector or ORM, not an API endpoint."
+        },
+        {
+          "key": "C",
+          "text": "It provides a graphical user interface for end-users to interact directly with the system.",
+          "is_correct": false,
+          "rationale": "This describes a front-end UI, not an API endpoint."
+        },
+        {
+          "key": "D",
+          "text": "It handles the deployment of new code changes to production servers automatically.",
+          "is_correct": false,
+          "rationale": "This describes a CI/CD pipeline, not an API endpoint."
+        },
+        {
+          "key": "E",
+          "text": "It stores large volumes of unstructured data for analytical purposes and machine learning models.",
+          "is_correct": false,
+          "rationale": "This describes a data lake or data warehouse, not an API endpoint."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "Which of the following best describes the core principle of an Agile development methodology in product management?",
+      "explanation": "Agile methodologies emphasize iterative development, frequent delivery of working software, and continuous adaptation to changing requirements based on feedback. This promotes flexibility and responsiveness.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Prioritizing strict adherence to an initial, comprehensive project plan over responding to change.",
+          "is_correct": false,
+          "rationale": "This describes a traditional waterfall approach, not Agile."
+        },
+        {
+          "key": "B",
+          "text": "Delivering working software frequently, adapting to evolving requirements through collaborative efforts.",
+          "is_correct": true,
+          "rationale": "Agile focuses on iterative development, frequent delivery, and adapting to change."
+        },
+        {
+          "key": "C",
+          "text": "Minimizing stakeholder involvement to streamline decision-making and accelerate development cycles.",
+          "is_correct": false,
+          "rationale": "Agile encourages continuous stakeholder collaboration and feedback."
+        },
+        {
+          "key": "D",
+          "text": "Focusing primarily on extensive documentation before any code development begins.",
+          "is_correct": false,
+          "rationale": "Agile values working software over comprehensive documentation."
+        },
+        {
+          "key": "E",
+          "text": "Ensuring all features are fully developed and tested before any user feedback is considered.",
+          "is_correct": false,
+          "rationale": "Agile emphasizes early and continuous user feedback for iterative improvements."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "As a Technical Product Manager, what is the most effective approach for prioritizing new product features?",
+      "explanation": "Effective feature prioritization requires balancing multiple factors, including the value it brings to users, its alignment with business goals, and the practicalities of technical implementation. This ensures strategic development.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Implementing all requested features immediately to satisfy every stakeholder's initial demands.",
+          "is_correct": false,
+          "rationale": "This is unsustainable and does not consider strategic value or feasibility."
+        },
+        {
+          "key": "B",
+          "text": "Prioritizing features based on their potential user value, business impact, and technical feasibility.",
+          "is_correct": true,
+          "rationale": "Prioritization considers user value, business impact, and technical feasibility."
+        },
+        {
+          "key": "C",
+          "text": "Allowing the engineering team to choose features they find most interesting to develop.",
+          "is_correct": false,
+          "rationale": "While engineering input is vital, product strategy drives prioritization."
+        },
+        {
+          "key": "D",
+          "text": "Focusing solely on features that are quickest and easiest to implement, regardless of impact.",
+          "is_correct": false,
+          "rationale": "This approach neglects strategic value and user needs for short-term gains."
+        },
+        {
+          "key": "E",
+          "text": "Building features exclusively based on competitor offerings without considering unique user needs.",
+          "is_correct": false,
+          "rationale": "Competitive analysis is important, but not the sole driver for feature prioritization."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "When collaborating with an engineering team, what is the best way to present a new product requirement?",
+      "explanation": "Providing clear and detailed requirements, including the 'what' and 'why,' allows engineering teams to understand the problem fully and design appropriate technical solutions efficiently. This fosters effective collaboration.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Provide only a high-level vision, expecting engineers to derive all technical specifications independently.",
+          "is_correct": false,
+          "rationale": "Engineers need clear requirements to build effectively, not just a high-level vision."
+        },
+        {
+          "key": "B",
+          "text": "Deliver detailed technical specifications and mock-ups, clearly outlining the desired outcome and rationale.",
+          "is_correct": true,
+          "rationale": "Clear requirements and rationale enable engineers to build effective solutions."
+        },
+        {
+          "key": "C",
+          "text": "Send a brief email with a list of desired features, then wait for their questions.",
+          "is_correct": false,
+          "rationale": "This lacks necessary detail and context for effective engineering work."
+        },
+        {
+          "key": "D",
+          "text": "Insist on a specific technical solution, overriding their architectural recommendations and expertise.",
+          "is_correct": false,
+          "rationale": "Product managers define 'what' and 'why'; engineers define 'how'."
+        },
+        {
+          "key": "E",
+          "text": "Present a vague problem statement, hoping they will brainstorm all possible solutions without guidance.",
+          "is_correct": false,
+          "rationale": "Vague statements lead to confusion and inefficient development cycles."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "What is a fundamental consideration for a Technical Product Manager regarding user data privacy in product design?",
+      "explanation": "Data privacy regulations like GDPR and CCPA are critical. Technical Product Managers must design products with privacy by design, ensuring compliance, user consent, and responsible data handling from the very beginning.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Collecting as much user data as possible for future, undefined analytical purposes.",
+          "is_correct": false,
+          "rationale": "This violates privacy principles of data minimization and purpose limitation."
+        },
+        {
+          "key": "B",
+          "text": "Ensuring compliance with relevant data protection regulations like GDPR or CCPA from the outset.",
+          "is_correct": true,
+          "rationale": "Compliance with data protection regulations is a fundamental product design consideration."
+        },
+        {
+          "key": "C",
+          "text": "Delegating all data privacy concerns entirely to the legal department without product input.",
+          "is_correct": false,
+          "rationale": "Product managers must integrate privacy into product design, not solely delegate it."
+        },
+        {
+          "key": "D",
+          "text": "Implementing data collection without explicit user consent for faster feature development.",
+          "is_correct": false,
+          "rationale": "User consent is a cornerstone of most modern data privacy regulations."
+        },
+        {
+          "key": "E",
+          "text": "Storing all user data indefinitely, even if it is no longer required for product functionality.",
+          "is_correct": false,
+          "rationale": "Data retention policies require deleting data when it's no longer needed."
+        }
+      ]
+    }
+  ]
+}

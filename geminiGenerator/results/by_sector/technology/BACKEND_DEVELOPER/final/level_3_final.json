@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "When designing a high-concurrency banking application, which database transaction isolation level is typically chosen to prevent dirty reads, non-repeatable reads, and phantom reads?",
+      "explanation": "Serializable is the highest isolation level. It ensures that concurrent transactions execute as if they were processed serially, one after another, thus preventing all common concurrency anomalies including phantom reads and write skew.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Read Uncommitted, which allows transactions to see uncommitted changes from other transactions, maximizing performance but risking data integrity.",
+          "is_correct": false,
+          "rationale": "This is the weakest level and allows all anomalies."
+        },
+        {
+          "key": "B",
+          "text": "Read Committed, which ensures that a transaction can only read data that has been formally committed, preventing dirty reads.",
+          "is_correct": false,
+          "rationale": "This level still allows non-repeatable and phantom reads."
+        },
+        {
+          "key": "C",
+          "text": "Repeatable Read, which guarantees that rereading a row within the same transaction will yield the same data, preventing non-repeatable reads.",
+          "is_correct": false,
+          "rationale": "This level is strong but still vulnerable to phantom reads."
+        },
+        {
+          "key": "D",
+          "text": "Serializable, which provides the strictest level of isolation by ensuring transactions execute as if they were sequential, preventing all anomalies.",
+          "is_correct": true,
+          "rationale": "This is the strongest isolation level, critical for financial systems."
+        },
+        {
+          "key": "E",
+          "text": "Snapshot Isolation, which lets transactions operate on a consistent database snapshot, but can still result in write skew anomalies.",
+          "is_correct": false,
+          "rationale": "While strong, it is not as strict as Serializable."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Which authentication method is most suitable for securing a public API that allows third-party applications to access user data on their behalf without exposing credentials?",
+      "explanation": "OAuth 2.0 is an authorization framework designed specifically for this use case. It allows a user to grant a third-party application limited access to their data on another service, without sharing their password.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Basic Authentication, which sends user credentials encoded in Base64 with every request, making it simple but insecure over HTTP.",
+          "is_correct": false,
+          "rationale": "Basic Auth is not secure and not suited for delegated access."
+        },
+        {
+          "key": "B",
+          "text": "API Key Authentication, where a unique key is passed with each request, which is good for tracking usage but not for delegated access.",
+          "is_correct": false,
+          "rationale": "API keys don't provide a mechanism for user-delegated access."
+        },
+        {
+          "key": "C",
+          "text": "OAuth 2.0, which provides a delegated authorization framework for third-party apps to obtain limited access to an HTTP service for a user.",
+          "is_correct": true,
+          "rationale": "OAuth 2.0 is the industry standard for delegated authorization."
+        },
+        {
+          "key": "D",
+          "text": "JSON Web Tokens (JWT) used directly for authentication, which is a token format but not a complete delegated authorization protocol itself.",
+          "is_correct": false,
+          "rationale": "JWTs are often used within OAuth 2.0 but aren't the framework."
+        },
+        {
+          "key": "E",
+          "text": "Mutual TLS (mTLS), which authenticates both the client and server using certificates, providing strong security but complex setup for public APIs.",
+          "is_correct": false,
+          "rationale": "mTLS is too complex for typical public third-party app scenarios."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "To reduce read latency on a frequently accessed but infrequently updated product catalog, which caching strategy offers the best balance of performance and data consistency?",
+      "explanation": "The Cache-Aside pattern involves the application code checking the cache first. If data is missing (a cache miss), it queries the database and then populates the cache. This is simple and effective for read-heavy workloads.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Write-Through strategy, where data is written to both the cache and the database simultaneously, ensuring consistency but adding write latency.",
+          "is_correct": false,
+          "rationale": "This is better for write-heavy systems needing strong consistency."
+        },
+        {
+          "key": "B",
+          "text": "The Write-Back strategy, where data is written only to the cache and later flushed to the database, risking data loss on failure.",
+          "is_correct": false,
+          "rationale": "This strategy prioritizes write performance over data safety."
+        },
+        {
+          "key": "C",
+          "text": "The Cache-Aside (or Lazy Loading) pattern, where the application first checks the cache and only queries the database on a miss.",
+          "is_correct": true,
+          "rationale": "This is ideal for read-heavy workloads with infrequent updates."
+        },
+        {
+          "key": "D",
+          "text": "The Read-Through strategy, which is similar to cache-aside but the cache itself is responsible for fetching data from the database.",
+          "is_correct": false,
+          "rationale": "This is a valid but less commonly implemented pattern."
+        },
+        {
+          "key": "E",
+          "text": "A Time-To-Live (TTL) eviction policy only, which manages cache staleness but is not a strategy for loading data into the cache.",
+          "is_correct": false,
+          "rationale": "TTL is a cache invalidation policy, not a loading strategy."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "In a microservices architecture, what is the primary advantage of using an asynchronous message queue for communication over synchronous REST API calls?",
+      "explanation": "Asynchronous communication decouples services. The sending service doesn't need to wait for the receiving service to be available or to process the request, which improves system resilience, fault tolerance, and overall scalability.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It guarantees immediate data consistency across all services because all messages are processed instantly by consumers, which is not true.",
+          "is_correct": false,
+          "rationale": "Asynchronous communication leads to eventual, not immediate, consistency."
+        },
+        {
+          "key": "B",
+          "text": "It simplifies the overall system architecture by removing the need for a separate messaging broker and complex routing logic.",
+          "is_correct": false,
+          "rationale": "It adds a message broker, which can increase architectural complexity."
+        },
+        {
+          "key": "C",
+          "text": "It improves system resilience and fault tolerance by decoupling services, allowing them to operate independently even if others are temporarily unavailable.",
+          "is_correct": true,
+          "rationale": "Decoupling is the key benefit, enhancing resilience and availability."
+        },
+        {
+          "key": "D",
+          "text": "It provides lower latency for individual requests because messages are transmitted over a more efficient protocol than standard HTTP.",
+          "is_correct": false,
+          "rationale": "Asynchronous patterns typically introduce higher end-to-end latency."
+        },
+        {
+          "key": "E",
+          "text": "It allows for easier implementation of complex queries that require aggregating data from several different sources in real-time.",
+          "is_correct": false,
+          "rationale": "Synchronous communication is generally better for real-time data aggregation."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "When managing a complex application with multiple microservices, what is the most significant benefit of using a container orchestration tool like Kubernetes?",
+      "explanation": "Kubernetes excels at automating the deployment, scaling, and management of containerized applications. Its self-healing capabilities, such as restarting failed containers and rescheduling them, ensure high availability and operational efficiency without manual intervention.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It completely eliminates the need for developers to write Dockerfiles, as the orchestrator automatically builds container images from source code.",
+          "is_correct": false,
+          "rationale": "Developers still need to define how to build their container images."
+        },
+        {
+          "key": "B",
+          "text": "It provides a built-in relational database service that is automatically configured and optimized for every deployed microservice within the cluster.",
+          "is_correct": false,
+          "rationale": "Kubernetes does not provide a built-in database service."
+        },
+        {
+          "key": "C",
+          "text": "It automates application scaling, self-healing, and service discovery, which significantly reduces the operational burden of managing distributed systems at scale.",
+          "is_correct": true,
+          "rationale": "Automation of scaling, healing, and discovery is its core function."
+        },
+        {
+          "key": "D",
+          "text": "It enforces a specific programming language and framework for all services, ensuring consistency and simplifying development across all teams.",
+          "is_correct": false,
+          "rationale": "Kubernetes is language-agnostic and supports polyglot environments."
+        },
+        {
+          "key": "E",
+          "text": "It reduces the size of container images by using a proprietary compression algorithm, leading to faster deployment times and lower storage costs.",
+          "is_correct": false,
+          "rationale": "Kubernetes manages containers; it does not optimize image size."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Which database transaction isolation level is most appropriate to prevent dirty reads, non-repeatable reads, and phantom reads in a financial application?",
+      "explanation": "The SERIALIZABLE isolation level is the strictest, preventing all common concurrency issues by executing transactions as if they were running serially. This guarantees the highest data consistency, which is critical for financial systems.",
+      "options": [
+        {
+          "key": "A",
+          "text": "READ UNCOMMITTED, which offers the best performance by allowing transactions to read data that has not yet been committed.",
+          "is_correct": false,
+          "rationale": "This level is the least restrictive and allows all types of read phenomena."
+        },
+        {
+          "key": "B",
+          "text": "READ COMMITTED, which ensures a transaction can only read data that has been formally committed, preventing dirty reads only.",
+          "is_correct": false,
+          "rationale": "This level prevents dirty reads but is still vulnerable to other read anomalies."
+        },
+        {
+          "key": "C",
+          "text": "REPEATABLE READ, which guarantees that rereading a row within the same transaction will yield the same data, preventing non-repeatable reads.",
+          "is_correct": false,
+          "rationale": "This level prevents non-repeatable reads but is still vulnerable to phantom reads."
+        },
+        {
+          "key": "D",
+          "text": "SERIALIZABLE, which provides the highest isolation by ensuring transactions execute sequentially, thus preventing all three read phenomena.",
+          "is_correct": true,
+          "rationale": "This is the strictest level, preventing all concurrency issues at a performance cost."
+        },
+        {
+          "key": "E",
+          "text": "SNAPSHOT, which provides a consistent view of the database at a point in time, avoiding locks but not preventing all anomalies.",
+          "is_correct": false,
+          "rationale": "Snapshot isolation can still suffer from write skew, a form of phantom read."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "You are designing a REST API for a mobile application. Which authentication method provides the best balance of security and statelessness for server-side implementation?",
+      "explanation": "JWTs are ideal for stateless authentication in APIs. They contain self-verifiable user information, eliminating the need for the server to maintain session state, which is crucial for scalability in distributed systems.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using basic authentication with a username and password sent in the header of every single request made to the server.",
+          "is_correct": false,
+          "rationale": "Basic auth is simple but insecure as credentials are sent with every request."
+        },
+        {
+          "key": "B",
+          "text": "Implementing session-based authentication where a session ID is stored in a cookie, requiring stateful server-side storage.",
+          "is_correct": false,
+          "rationale": "This is a stateful approach, which is less scalable for modern APIs."
+        },
+        {
+          "key": "C",
+          "text": "Employing API keys that are generated once for each client and must be included in every API request header.",
+          "is_correct": false,
+          "rationale": "API keys are for identifying applications, not authenticating individual users securely."
+        },
+        {
+          "key": "D",
+          "text": "Utilizing JSON Web Tokens (JWT) which are signed tokens containing claims that can be verified by the server without session state.",
+          "is_correct": true,
+          "rationale": "JWTs are the standard for stateless, secure API authentication for users."
+        },
+        {
+          "key": "E",
+          "text": "Relying on IP whitelisting, where only requests originating from a predefined list of trusted IP addresses are ever accepted.",
+          "is_correct": false,
+          "rationale": "IP whitelisting is not practical for mobile apps with dynamic IP addresses."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "In a high-traffic application, which caching strategy is most effective for handling data that is read frequently but updated infrequently, like user profile information?",
+      "explanation": "The cache-aside pattern is highly effective for read-heavy workloads. It ensures that only requested data is cached, preventing the cache from being filled with unnecessary information and reducing latency for frequent reads.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A write-through cache, where data is written to both the cache and the primary database simultaneously for every update operation.",
+          "is_correct": false,
+          "rationale": "Write-through adds latency to write operations and is better for write-heavy data."
+        },
+        {
+          "key": "B",
+          "text": "A write-back cache, where data is written only to the cache and then asynchronously flushed to the database, risking data loss.",
+          "is_correct": false,
+          "rationale": "Write-back is risky and complex, used when write performance is paramount."
+        },
+        {
+          "key": "C",
+          "text": "A cache-aside pattern, where the application first checks the cache and only queries the database if a cache miss occurs.",
+          "is_correct": true,
+          "rationale": "This is the most common and effective pattern for read-heavy workloads."
+        },
+        {
+          "key": "D",
+          "text": "A write-around cache, where write operations go directly to the database, bypassing the cache entirely to avoid cache pollution.",
+          "is_correct": false,
+          "rationale": "This strategy is for write-heavy workloads where reads of new data are rare."
+        },
+        {
+          "key": "E",
+          "text": "A read-through cache, where the cache itself is responsible for fetching data from the database on a miss, adding complexity.",
+          "is_correct": false,
+          "rationale": "Read-through is similar to cache-aside but couples the cache and database more tightly."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "When would you choose to implement a message queue like RabbitMQ or Kafka in your backend architecture instead of making direct synchronous API calls?",
+      "explanation": "Message queues are used to decouple services and manage asynchronous operations. This allows a primary service to offload tasks without waiting for them to complete, which improves scalability, fault tolerance, and overall system responsiveness.",
+      "options": [
+        {
+          "key": "A",
+          "text": "When you need to guarantee an immediate and consistent response to the client, ensuring the entire transaction is completed before replying.",
+          "is_correct": false,
+          "rationale": "This describes a use case for synchronous API calls, not message queues."
+        },
+        {
+          "key": "B",
+          "text": "For decoupling services and handling long-running, asynchronous tasks that do not require an immediate result, improving system resilience.",
+          "is_correct": true,
+          "rationale": "This is the primary use case for message queues in a microservices architecture."
+        },
+        {
+          "key": "C",
+          "text": "To simplify the architecture by creating tight coupling between services, making the data flow easier to trace and debug.",
+          "is_correct": false,
+          "rationale": "Message queues are specifically used to decouple services, not couple them tightly."
+        },
+        {
+          "key": "D",
+          "text": "When the primary goal is to reduce the memory footprint of the application, as message queues require minimal server-side resources.",
+          "is_correct": false,
+          "rationale": "Message brokers like Kafka can be resource-intensive and add operational overhead."
+        },
+        {
+          "key": "E",
+          "text": "In scenarios where data consistency is the absolute highest priority and all operations must be executed in a single atomic transaction.",
+          "is_correct": false,
+          "rationale": "Distributed transactions are complex with message queues; direct calls are simpler for this."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "What is the primary role of an orchestrator like Kubernetes when managing a containerized application composed of multiple microservices?",
+      "explanation": "Kubernetes automates the operational tasks of running containerized applications at scale. Its main functions include service discovery, load balancing, automated rollouts, self-healing, and scaling, which are essential for managing complex microservice architectures.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To build the container images from a Dockerfile and push them to a private container registry for storage and versioning.",
+          "is_correct": false,
+          "rationale": "This is the role of a CI/CD pipeline and tools like Docker."
+        },
+        {
+          "key": "B",
+          "text": "To automate the deployment, scaling, healing, and networking of containers across a cluster of host machines, ensuring high availability.",
+          "is_correct": true,
+          "rationale": "This accurately describes the core responsibilities of a container orchestrator like Kubernetes."
+        },
+        {
+          "key": "C",
+          "text": "To provide a secure shell (SSH) access point into running containers for real-time debugging and manual intervention by developers.",
+          "is_correct": false,
+          "rationale": "While possible, this is not the primary role; direct access is often discouraged."
+        },
+        {
+          "key": "D",
+          "text": "To write the application logic and define the specific business rules that are executed within each individual microservice container.",
+          "is_correct": false,
+          "rationale": "This is the responsibility of the developer writing the application code."
+        },
+        {
+          "key": "E",
+          "text": "To directly manage the underlying physical hardware, including server provisioning, operating system installation, and network configuration.",
+          "is_correct": false,
+          "rationale": "Kubernetes abstracts the hardware; this is the job of infrastructure management tools."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "In the context of database transactions, which ACID isolation level is specifically designed to prevent phantom reads from occurring?",
+      "explanation": "The SERIALIZABLE isolation level provides the strictest transaction isolation by ensuring that transactions execute as if they were running sequentially. This prevents other transactions from inserting new rows that would match the query's WHERE clause.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The READ UNCOMMITTED level offers the lowest isolation and allows dirty reads, non-repeatable reads, and phantom reads to occur.",
+          "is_correct": false,
+          "rationale": "This is the least strict level and allows all anomalies."
+        },
+        {
+          "key": "B",
+          "text": "The READ COMMITTED level ensures that any data read is committed at that moment, which only prevents dirty reads.",
+          "is_correct": false,
+          "rationale": "This level still allows non-repeatable and phantom reads."
+        },
+        {
+          "key": "C",
+          "text": "The REPEATABLE READ level guarantees that rereading a row within a transaction will return the same initial data values.",
+          "is_correct": false,
+          "rationale": "This prevents non-repeatable reads but not phantom reads."
+        },
+        {
+          "key": "D",
+          "text": "The SERIALIZABLE level executes transactions serially, which is the highest level and prevents dirty, non-repeatable, and phantom reads.",
+          "is_correct": true,
+          "rationale": "This is the strictest level and prevents phantom reads."
+        },
+        {
+          "key": "E",
+          "text": "The SNAPSHOT ISOLATION level uses row versioning to avoid read locks but is not the standard SQL level for this purpose.",
+          "is_correct": false,
+          "rationale": "While it can prevent phantom reads, SERIALIZABLE is the standard answer."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "What is the primary security advantage of using the OAuth 2.0 Authorization Code grant type for a traditional web application?",
+      "explanation": "The Authorization Code grant is more secure because the access token is exchanged on a secure back-channel between the client application and the authorization server. This prevents the token from being exposed in the user's browser history or logs.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It allows the client application to directly handle the user's password, which simplifies the overall authentication workflow for users.",
+          "is_correct": false,
+          "rationale": "OAuth 2.0 is designed to prevent sharing user credentials."
+        },
+        {
+          "key": "B",
+          "text": "It transmits the access token in the URL fragment, which makes it easily accessible for browser-side JavaScript to use.",
+          "is_correct": false,
+          "rationale": "This describes the less secure Implicit grant type."
+        },
+        {
+          "key": "C",
+          "text": "It ensures the access token is not exposed to the user's browser, as it is exchanged on the server-side back-channel.",
+          "is_correct": true,
+          "rationale": "The token is kept off the user agent (browser)."
+        },
+        {
+          "key": "D",
+          "text": "It is specifically designed for mobile and single-page applications that cannot securely store a long-term client secret on a device.",
+          "is_correct": false,
+          "rationale": "This scenario is better suited for the PKCE extension."
+        },
+        {
+          "key": "E",
+          "text": "It provides a permanent refresh token that never expires, which completely eliminates the need for users to log in again.",
+          "is_correct": false,
+          "rationale": "Refresh tokens are long-lived but should be revocable and can expire."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "When implementing a cache-aside (lazy loading) strategy, what is the correct sequence of operations for handling a data read request?",
+      "explanation": "In a cache-aside pattern, the application is responsible for managing the cache. It first looks for an entry in the cache. If it's not found (a miss), the data is read from the database and then added to the cache.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The application first writes the incoming data to the cache and then immediately attempts to retrieve it from the database.",
+          "is_correct": false,
+          "rationale": "This describes an incorrect and illogical data flow."
+        },
+        {
+          "key": "B",
+          "text": "The application always queries the database first and then asynchronously updates the cache with the result for subsequent requests.",
+          "is_correct": false,
+          "rationale": "This bypasses the cache on the initial read."
+        },
+        {
+          "key": "C",
+          "text": "The application first checks the cache for the data; if it's a miss, it queries the database and populates the cache.",
+          "is_correct": true,
+          "rationale": "This is the correct definition of cache-aside."
+        },
+        {
+          "key": "D",
+          "text": "The application sends parallel requests to both the cache and the database, using whichever response returns first to improve speed.",
+          "is_correct": false,
+          "rationale": "This is not a standard pattern and can cause consistency issues."
+        },
+        {
+          "key": "E",
+          "text": "The application only reads from the cache, depending on a separate background job to keep the cache and database synchronized.",
+          "is_correct": false,
+          "rationale": "This describes a different pattern, not cache-aside."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "In a multi-threaded application updating a shared counter, which of the following is the most effective mechanism for preventing race conditions?",
+      "explanation": "A mutex or semaphore provides mutual exclusion, a critical concept in concurrency. It creates a critical section where only one thread can execute code at a time, guaranteeing atomic updates to the shared counter and preventing race conditions.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using a simple boolean flag that is checked by each thread before it proceeds to update the shared counter resource.",
+          "is_correct": false,
+          "rationale": "Checking and setting the flag is not an atomic operation."
+        },
+        {
+          "key": "B",
+          "text": "Increasing the server's CPU cores so that all of the concurrent threads can execute their tasks much more quickly.",
+          "is_correct": false,
+          "rationale": "More speed does not solve the fundamental concurrency issue."
+        },
+        {
+          "key": "C",
+          "text": "Using a synchronization primitive like a mutex or semaphore to ensure exclusive access to the counter during the update operation.",
+          "is_correct": true,
+          "rationale": "Mutexes and semaphores are designed for this exact purpose."
+        },
+        {
+          "key": "D",
+          "text": "Relying on the operating system's thread scheduler to fairly allocate resources and prevent simultaneous access to the shared counter.",
+          "is_correct": false,
+          "rationale": "A scheduler manages execution order but doesn't prevent race conditions."
+        },
+        {
+          "key": "E",
+          "text": "Logging each access attempt and then rolling back any changes if a data conflict is detected after the operation completes.",
+          "is_correct": false,
+          "rationale": "This is a reactive and inefficient approach to the problem."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "What is the primary architectural benefit of introducing a message queue between a producer service and a consumer service in a system?",
+      "explanation": "The primary benefit is decoupling. The message queue acts as a buffer, allowing the producer and consumer to operate asynchronously and independently. This enhances fault tolerance and scalability, as one service's failure or slowness won't halt the other.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It guarantees that all messages are processed in the exact chronological order they were sent, which is essential for auditing.",
+          "is_correct": false,
+          "rationale": "Strict ordering (FIFO) is not always guaranteed, especially with multiple consumers."
+        },
+        {
+          "key": "B",
+          "text": "It tightly couples the services, ensuring that if one service fails, the other will also stop to maintain data consistency.",
+          "is_correct": false,
+          "rationale": "Message queues achieve the opposite; they decouple services."
+        },
+        {
+          "key": "C",
+          "text": "It greatly reduces network latency between the services by establishing a direct, persistent connection for all data transfer operations.",
+          "is_correct": false,
+          "rationale": "A message queue is an intermediary and typically adds latency."
+        },
+        {
+          "key": "D",
+          "text": "It decouples the services, allowing the producer to operate independently of the consumer's availability, load, or processing speed.",
+          "is_correct": true,
+          "rationale": "This decoupling improves system resilience and scalability."
+        },
+        {
+          "key": "E",
+          "text": "It acts as a shared, transactional database for both services, which simplifies data management and complex backup procedures.",
+          "is_correct": false,
+          "rationale": "A message queue is for transient messages, not persistent storage."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "When optimizing a database query that frequently filters on a low-cardinality column, what is the most appropriate indexing strategy to consider for performance?",
+      "explanation": "Bitmap indexes are space-efficient and performant for queries on columns with a small number of distinct values (low cardinality), making them a superior choice over B-tree indexes in such specific scenarios.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A B-tree index is always the best choice for any column because it provides balanced search performance across all data types.",
+          "is_correct": false,
+          "rationale": "B-tree indexes are not optimal for low-cardinality columns compared to other specialized index types."
+        },
+        {
+          "key": "B",
+          "text": "A bitmap index is often more efficient for low-cardinality columns as it uses bit arrays to represent values and perform logical operations.",
+          "is_correct": true,
+          "rationale": "Bitmap indexes are specifically designed and optimized for columns with few distinct values."
+        },
+        {
+          "key": "C",
+          "text": "A full-text index should be used to enable efficient searching of text-based data within the column, regardless of cardinality.",
+          "is_correct": false,
+          "rationale": "Full-text indexes are for searching text content, not for optimizing filters on low-cardinality data."
+        },
+        {
+          "key": "D",
+          "text": "A hash index is superior for this scenario because it provides constant-time lookups for all equality checks on the column.",
+          "is_correct": false,
+          "rationale": "Hash indexes are good for equality but less flexible and not the standard choice for low-cardinality columns."
+        },
+        {
+          "key": "E",
+          "text": "No index should be used on low-cardinality columns as a full table scan will almost always be faster and more efficient.",
+          "is_correct": false,
+          "rationale": "This is a common misconception; an appropriate index can still significantly outperform a full table scan."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "In the context of database transactions, which isolation level is most likely to prevent phantom reads while still allowing non-repeatable reads?",
+      "explanation": "The ANSI SQL standard defines isolation levels hierarchically. Preventing phantom reads requires a higher level of isolation (like Serializable) than preventing non-repeatable reads (Repeatable Read). Therefore, you cannot prevent the former while allowing the latter.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The READ UNCOMMITTED level, which allows dirty reads and provides the lowest level of data consistency available in most databases.",
+          "is_correct": false,
+          "rationale": "This is the lowest level and allows all major concurrency anomalies, including both."
+        },
+        {
+          "key": "B",
+          "text": "The READ COMMITTED level, which prevents dirty reads but allows both non-repeatable and phantom reads to occur during a transaction.",
+          "is_correct": false,
+          "rationale": "This level allows both non-repeatable reads and phantom reads, so it does not meet the criteria."
+        },
+        {
+          "key": "C",
+          "text": "The REPEATABLE READ level, which prevents non-repeatable reads but is still susceptible to phantom reads in many database systems.",
+          "is_correct": false,
+          "rationale": "This prevents non-repeatable reads but allows phantom reads, the opposite of what was asked."
+        },
+        {
+          "key": "D",
+          "text": "The SERIALIZABLE level, which provides the highest isolation by executing transactions sequentially, preventing all concurrency anomalies including these two.",
+          "is_correct": false,
+          "rationale": "This level prevents both phantom reads and non-repeatable reads, failing the condition."
+        },
+        {
+          "key": "E",
+          "text": "This scenario is impossible because any level that prevents phantom reads must, by definition, also prevent non-repeatable reads.",
+          "is_correct": true,
+          "rationale": "Isolation levels are hierarchical; preventing phantom reads implies non-repeatable reads are also prevented."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "When designing a REST API endpoint for deleting a resource, what is the most appropriate combination of HTTP method and status code for a successful operation?",
+      "explanation": "The HTTP DELETE method is semantically correct for resource deletion. A 204 No Content status code is appropriate for a successful deletion where no response body is returned, clearly indicating the action was completed.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using a POST method and returning a 201 Created status code to indicate the resource was processed by the server.",
+          "is_correct": false,
+          "rationale": "POST and 201 Created are standard for resource creation, not deletion."
+        },
+        {
+          "key": "B",
+          "text": "Using a GET method with a query parameter and returning a 200 OK status code upon successful completion of the request.",
+          "is_correct": false,
+          "rationale": "GET methods should be safe and idempotent, meaning they should not have side effects like deletion."
+        },
+        {
+          "key": "C",
+          "text": "Using a DELETE method and returning a 204 No Content status code because the response body is typically empty after deletion.",
+          "is_correct": true,
+          "rationale": "This combination is the standard, idiomatic way to handle resource deletion in REST APIs."
+        },
+        {
+          "key": "D",
+          "text": "Using a PUT method to update the resource's status to 'deleted' and returning a 200 OK with the updated resource.",
+          "is_correct": false,
+          "rationale": "This describes a soft delete via an update, not the conventional method for permanent deletion."
+        },
+        {
+          "key": "E",
+          "text": "Using a DELETE method and returning a 404 Not Found status code to confirm the resource no longer exists on the server.",
+          "is_correct": false,
+          "rationale": "404 indicates the resource was not found to begin with, not that a deletion was successful."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "Which caching strategy involves the application code explicitly loading data into the cache before it is requested, often during application startup or a background job?",
+      "explanation": "Cache warming, or pre-heating, is a proactive strategy where frequently accessed data is loaded into the cache before user requests arrive. This minimizes latency for initial requests and improves the initial performance of the application.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The cache-aside (lazy loading) pattern, where the application checks the cache first and loads data from the database on a miss.",
+          "is_correct": false,
+          "rationale": "Cache-aside is a reactive strategy that loads data on demand, not proactively."
+        },
+        {
+          "key": "B",
+          "text": "The write-through caching pattern, where data is written to both the cache and the database simultaneously to ensure data consistency.",
+          "is_correct": false,
+          "rationale": "This is a write strategy focused on consistency, not on pre-loading data for reads."
+        },
+        {
+          "key": "C",
+          "text": "The write-back (write-behind) pattern, where writes are made to the cache first and then asynchronously flushed to the database.",
+          "is_correct": false,
+          "rationale": "This is a performance-oriented write strategy, not a method for pre-loading read data."
+        },
+        {
+          "key": "D",
+          "text": "The read-through caching pattern, where the cache itself is responsible for fetching data from the database on a cache miss.",
+          "is_correct": false,
+          "rationale": "Read-through is still a reactive, on-miss strategy, even though the cache abstracts the logic."
+        },
+        {
+          "key": "E",
+          "text": "The cache warming (pre-heating) strategy, where data is proactively loaded into the cache to ensure high hit rates for initial requests.",
+          "is_correct": true,
+          "rationale": "Cache warming is the explicit term for proactively loading data into the cache before it's needed."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "In a distributed system using a message queue with at-least-once delivery, why is it critical for message consumers to be designed with idempotency?",
+      "explanation": "Message delivery guarantees like \"at-least-once\" mean a consumer might receive the same message multiple times. An idempotent consumer ensures that reprocessing a duplicate message does not result in duplicate actions or inconsistent state, making the system resilient.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To ensure that messages are always processed in the exact order they were originally sent by the producer application.",
+          "is_correct": false,
+          "rationale": "This describes FIFO (First-In, First-Out) processing, which is a separate concept from idempotency."
+        },
+        {
+          "key": "B",
+          "text": "To guarantee that each message is delivered to the consumer exactly once, preventing any possibility of duplicate deliveries from the broker.",
+          "is_correct": false,
+          "rationale": "Idempotency handles duplicates; it doesn't prevent them. Exactly-once delivery is a broker feature."
+        },
+        {
+          "key": "C",
+          "text": "To allow a message to be safely processed multiple times without causing unintended side effects or creating duplicate data.",
+          "is_correct": true,
+          "rationale": "This is the definition of idempotency; repeated operations yield the same result as the first."
+        },
+        {
+          "key": "D",
+          "text": "To reduce the overall network latency by batching multiple small messages into a single larger message for efficient processing.",
+          "is_correct": false,
+          "rationale": "This describes message batching, a performance optimization unrelated to handling duplicate messages."
+        },
+        {
+          "key": "E",
+          "text": "To enable the consumer to reject messages that do not conform to a predefined schema before attempting any processing.",
+          "is_correct": false,
+          "rationale": "This is schema validation, which is important but distinct from the concept of idempotency."
+        }
+      ]
+    }
+  ]
+}

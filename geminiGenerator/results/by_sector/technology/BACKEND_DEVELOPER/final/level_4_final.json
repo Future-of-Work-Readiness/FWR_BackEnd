@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "When designing a database schema for a high-traffic social media feed, which indexing strategy is most effective for optimizing read performance on user posts?",
+      "explanation": "A composite index on `user_id` and `created_at` allows the database to efficiently filter by user and then retrieve posts in chronological order, directly matching the common query pattern for a feed.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A composite index on `user_id` and `created_at` to efficiently query a specific user's posts sorted chronologically.",
+          "is_correct": true,
+          "rationale": "This index structure directly supports the most common query pattern for a user feed."
+        },
+        {
+          "key": "B",
+          "text": "A single-column index only on the `post_id` primary key, relying on the database to handle all sorting operations in memory.",
+          "is_correct": false,
+          "rationale": "This is inefficient for feed queries, as it requires scanning many posts to sort."
+        },
+        {
+          "key": "C",
+          "text": "A full-text index on the post content to allow for fast keyword searches, which also improves chronological sorting.",
+          "is_correct": false,
+          "rationale": "Full-text search is for content searching, not for optimizing chronological sorting by user."
+        },
+        {
+          "key": "D",
+          "text": "Individual indexes on `user_id` and `created_at` separately, letting the query planner attempt to combine them.",
+          "is_correct": false,
+          "rationale": "A composite index is almost always more performant than index merging for this use case."
+        },
+        {
+          "key": "E",
+          "text": "No indexes should be used on the write-heavy posts table to maximize insertion speed for new content.",
+          "is_correct": false,
+          "rationale": "The severe degradation of read performance would make the application unusable, despite faster writes."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "In a microservices architecture, which asynchronous communication pattern is best for decoupling services and ensuring message delivery even if a consumer is temporarily unavailable?",
+      "explanation": "A message queue acts as an intermediary, persisting messages until the consumer service is available to process them. This decouples the services and builds resilience against temporary downtime or network issues.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using direct synchronous REST API calls between services, which guarantees immediate feedback on the success of the operation.",
+          "is_correct": false,
+          "rationale": "Synchronous calls create tight coupling and will fail if the consumer service is down."
+        },
+        {
+          "key": "B",
+          "text": "Implementing a message queue or broker, where a producer service publishes messages that consumers can process at their own pace.",
+          "is_correct": true,
+          "rationale": "Message queues provide decoupling and durability, ensuring messages are processed eventually."
+        },
+        {
+          "key": "C",
+          "text": "Utilizing a shared database where one service writes data and another service polls the table for new records to process.",
+          "is_correct": false,
+          "rationale": "This pattern creates tight coupling through the database schema and can be inefficient."
+        },
+        {
+          "key": "D",
+          "text": "Employing remote procedure calls (RPC) to create tight coupling and ensure that function calls between services are atomic.",
+          "is_correct": false,
+          "rationale": "RPC is typically synchronous and creates strong coupling, similar to direct API calls."
+        },
+        {
+          "key": "E",
+          "text": "Relying on a service discovery mechanism to find and directly connect to other services for real-time data exchange.",
+          "is_correct": false,
+          "rationale": "Service discovery facilitates connection but doesn't solve the problem of consumer unavailability."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "You are tasked with reducing database load for frequently accessed but rarely updated user profile data. Which caching strategy would be most appropriate?",
+      "explanation": "The cache-aside pattern is ideal for this scenario. The application checks the cache first; if data is missing (a miss), it queries the database and populates the cache for subsequent requests.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A write-through cache that immediately writes data to both the cache and the database, ensuring perfect consistency.",
+          "is_correct": false,
+          "rationale": "This is overly complex for rarely updated data and adds latency to write operations."
+        },
+        {
+          "key": "B",
+          "text": "A cache-aside (lazy loading) strategy where the application first checks the cache and only queries the database on a miss.",
+          "is_correct": true,
+          "rationale": "This is a standard, effective pattern for read-heavy workloads with non-critical data."
+        },
+        {
+          "key": "C",
+          "text": "A write-back cache that only writes to the cache initially and updates the database later, risking data loss on failure.",
+          "is_correct": false,
+          "rationale": "This strategy is too risky for user profile data and is better for write-heavy workloads."
+        },
+        {
+          "key": "D",
+          "text": "Disabling caching entirely to ensure that users always receive the most up-to-date data directly from the primary database.",
+          "is_correct": false,
+          "rationale": "This fails to meet the primary requirement of reducing database load for frequent reads."
+        },
+        {
+          "key": "E",
+          "text": "Implementing a time-to-live (TTL) of one second on all cached items to force frequent revalidation from the database.",
+          "is_correct": false,
+          "rationale": "A very short TTL would cause constant cache misses, defeating the purpose of caching."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "How would you prevent a race condition when multiple concurrent requests attempt to update a single shared resource, like an inventory count?",
+      "explanation": "Optimistic locking is a strategy where you check if the resource has been modified by another process since it was read. If it has, the transaction is aborted and can be retried.",
+      "options": [
+        {
+          "key": "A",
+          "text": "By increasing the number of server instances to distribute the requests, which naturally reduces the chance of simultaneous access.",
+          "is_correct": false,
+          "rationale": "This does not solve the underlying concurrency issue at the resource or database level."
+        },
+        {
+          "key": "B",
+          "text": "Using optimistic locking, where the application checks if the data has changed before committing the update, retrying if necessary.",
+          "is_correct": true,
+          "rationale": "This is a standard and effective pattern for managing concurrent writes with low contention."
+        },
+        {
+          "key": "C",
+          "text": "Implementing a simple `try-catch` block around the database update operation to handle any exceptions that might occur.",
+          "is_correct": false,
+          "rationale": "A `try-catch` block alone does not prevent the race condition; it only handles potential errors."
+        },
+        {
+          "key": "D",
+          "text": "Relying on the client-side application to manage request timing and prevent users from submitting updates too quickly.",
+          "is_correct": false,
+          "rationale": "Client-side controls are unreliable and cannot be trusted to enforce backend data integrity."
+        },
+        {
+          "key": "E",
+          "text": "Caching the resource's value in memory and performing all update operations there before writing back to the database periodically.",
+          "is_correct": false,
+          "rationale": "This would worsen the race condition, as updates would be lost between write-backs."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What is the primary security benefit of using JSON Web Tokens (JWT) for authenticating users in a stateless RESTful API architecture?",
+      "explanation": "JWTs contain all necessary user information in a verifiable payload, allowing the server to authenticate a request without needing to query a database or session store, which is the essence of statelessness.",
+      "options": [
+        {
+          "key": "A",
+          "text": "JWTs completely eliminate the risk of Cross-Site Scripting (XSS) attacks by sanitizing all user input on the server.",
+          "is_correct": false,
+          "rationale": "JWTs are for authentication/authorization, not input sanitization or XSS prevention."
+        },
+        {
+          "key": "B",
+          "text": "They allow the server to verify the user's identity without needing to store session state, enhancing scalability and simplifying architecture.",
+          "is_correct": true,
+          "rationale": "This stateless nature is the core benefit of JWTs in distributed or microservice systems."
+        },
+        {
+          "key": "C",
+          "text": "They encrypt the entire request payload, ensuring that no intermediary can read the data being sent to the API endpoint.",
+          "is_correct": false,
+          "rationale": "JWTs are typically signed, not encrypted. Payload encryption must be handled separately (e.g., via HTTPS)."
+        },
+        {
+          "key": "D",
+          "text": "JWTs are primarily used to manage user authorization and permissions, defining which roles can access specific API resources.",
+          "is_correct": false,
+          "rationale": "While JWTs can contain authorization claims (roles), their primary purpose is authentication."
+        },
+        {
+          "key": "E",
+          "text": "They provide a mechanism for rate limiting API requests by embedding a usage counter directly within the token's payload.",
+          "is_correct": false,
+          "rationale": "Rate limiting is a separate concern; embedding a counter in a client-controlled token is insecure."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "When designing a high-concurrency financial transaction system, which database isolation level provides the strongest consistency guarantees by preventing all concurrency phenomena?",
+      "explanation": "The SERIALIZABLE isolation level is the highest and most strict. It ensures that transactions execute as if they were running sequentially, one after another, thus preventing dirty reads, non-repeatable reads, and phantom reads.",
+      "options": [
+        {
+          "key": "A",
+          "text": "READ UNCOMMITTED, which offers the lowest level of isolation and is susceptible to dirty reads from uncommitted transactions.",
+          "is_correct": false,
+          "rationale": "This is the weakest isolation level, not the strongest."
+        },
+        {
+          "key": "B",
+          "text": "READ COMMITTED, which prevents dirty reads but can still suffer from non-repeatable reads and phantom reads during a transaction.",
+          "is_correct": false,
+          "rationale": "This level does not prevent non-repeatable or phantom reads."
+        },
+        {
+          "key": "C",
+          "text": "REPEATABLE READ, which prevents non-repeatable reads but is still vulnerable to phantom reads where new rows are inserted.",
+          "is_correct": false,
+          "rationale": "This level is strong but still allows phantom reads."
+        },
+        {
+          "key": "D",
+          "text": "SERIALIZABLE, which emulates serial transaction execution, providing the highest level of isolation by preventing all concurrency anomalies including phantom reads.",
+          "is_correct": true,
+          "rationale": "Serializable is the highest standard isolation level, preventing all concurrency issues."
+        },
+        {
+          "key": "E",
+          "text": "SNAPSHOT ISOLATION, which uses multi-version concurrency control to avoid locks but can still suffer from write skew anomalies.",
+          "is_correct": false,
+          "rationale": "While strong, it is not the highest level and has different anomalies."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "In an OAuth 2.0 flow, which grant type is most suitable and secure for a public client like a single-page application?",
+      "explanation": "The Authorization Code Grant with PKCE (Proof Key for Code Exchange) is the current best practice for public clients. It prevents authorization code interception attacks, which is a risk for clients that cannot securely store a secret.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The standard Authorization Code Grant, because it is designed for confidential clients that can safely store a client secret.",
+          "is_correct": false,
+          "rationale": "This is for confidential clients, not public ones like SPAs."
+        },
+        {
+          "key": "B",
+          "text": "The Implicit Grant, because it directly returns an access token to the client, though it is now considered insecure.",
+          "is_correct": false,
+          "rationale": "The Implicit Grant is deprecated due to security vulnerabilities."
+        },
+        {
+          "key": "C",
+          "text": "The Resource Owner Password Credentials Grant, as it directly handles the user's username and password, which is highly discouraged.",
+          "is_correct": false,
+          "rationale": "This grant type exposes user credentials and should be avoided."
+        },
+        {
+          "key": "D",
+          "text": "The Client Credentials Grant, which is intended for machine-to-machine authentication where no end-user is directly involved in the process.",
+          "is_correct": false,
+          "rationale": "This is for M2M communication, not user-facing applications."
+        },
+        {
+          "key": "E",
+          "text": "The Authorization Code Grant with PKCE, as it adds a security layer to protect against authorization code interception attacks.",
+          "is_correct": true,
+          "rationale": "PKCE is the modern standard for securing public clients."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Which common caching strategy involves the application code first checking the cache for data, and only querying the database upon a cache miss?",
+      "explanation": "In the Cache-Aside pattern, the application logic is responsible for managing the cache. It first attempts to retrieve data from the cache and, on a miss, fetches it from the database and then populates the cache.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Write-through caching, where data is written to both the cache and the database in a single transaction.",
+          "is_correct": false,
+          "rationale": "This describes a write strategy, not the read-miss logic."
+        },
+        {
+          "key": "B",
+          "text": "Write-back caching, where data is written to the cache first and then flushed to the database asynchronously later.",
+          "is_correct": false,
+          "rationale": "This is a write-heavy strategy focused on performance."
+        },
+        {
+          "key": "C",
+          "text": "Cache-aside (lazy loading), where the application is responsible for loading data into the cache from the database.",
+          "is_correct": true,
+          "rationale": "This correctly describes the application's role in managing cache misses."
+        },
+        {
+          "key": "D",
+          "text": "Read-through caching, where the cache provider itself handles fetching data from the database on a cache miss transparently.",
+          "is_correct": false,
+          "rationale": "In read-through, the cache abstracts the database lookup."
+        },
+        {
+          "key": "E",
+          "text": "Write-around caching, where data is written directly to the database, bypassing the cache entirely for write operations.",
+          "is_correct": false,
+          "rationale": "This strategy avoids filling the cache with infrequently read data."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Within a Kubernetes cluster, what is the primary function of a Service object when managing a set of running application Pods?",
+      "explanation": "A Kubernetes Service provides a stable network endpoint (a single DNS name and IP address) for a set of Pods. This decouples clients from the individual, ephemeral Pods, which can be created and destroyed dynamically.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It defines the desired state for a set of replica Pods, ensuring a specific number are always running.",
+          "is_correct": false,
+          "rationale": "This describes a Deployment or ReplicaSet, not a Service."
+        },
+        {
+          "key": "B",
+          "text": "It provides a persistent storage volume that can be mounted by one or more Pods within the cluster.",
+          "is_correct": false,
+          "rationale": "This describes a PersistentVolume and PersistentVolumeClaim."
+        },
+        {
+          "key": "C",
+          "text": "It exposes an application running on a set of Pods as a network service with a stable IP address.",
+          "is_correct": true,
+          "rationale": "A Service provides a stable network abstraction for Pods."
+        },
+        {
+          "key": "D",
+          "text": "It securely stores and manages sensitive information, such as passwords, OAuth tokens, and ssh keys for the Pods.",
+          "is_correct": false,
+          "rationale": "This is the function of a Secret object in Kubernetes."
+        },
+        {
+          "key": "E",
+          "text": "It injects environment variables and configuration data into Pods at runtime without rebuilding the container image.",
+          "is_correct": false,
+          "rationale": "This is the primary function of a ConfigMap object."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "When designing a message consumer for an \"at-least-once\" delivery system, why is implementing idempotent operations crucial for ensuring data integrity?",
+      "explanation": "At-least-once delivery guarantees a message will be delivered, but it might be delivered more than once. Idempotent consumers can process the same message multiple times without changing the result beyond the initial application, preventing data corruption.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It ensures that messages are always processed in the exact order they were originally sent by the producer.",
+          "is_correct": false,
+          "rationale": "This describes message ordering (FIFO), not idempotency."
+        },
+        {
+          "key": "B",
+          "text": "It guarantees that each message will be delivered and processed successfully exactly one time without any failures.",
+          "is_correct": false,
+          "rationale": "This describes an 'exactly-once' system, not 'at-least-once'."
+        },
+        {
+          "key": "C",
+          "text": "It allows the consumer to safely re-process the same message multiple times without causing unintended side effects or data corruption.",
+          "is_correct": true,
+          "rationale": "Idempotency ensures that duplicate messages do not cause harm."
+        },
+        {
+          "key": "D",
+          "text": "It reduces the network latency between the message broker and the consumer service for faster message consumption.",
+          "is_correct": false,
+          "rationale": "Idempotency is a correctness pattern, not a performance optimization."
+        },
+        {
+          "key": "E",
+          "text": "It enables the consumer to reject and send invalid messages to a dead-letter queue for manual inspection later.",
+          "is_correct": false,
+          "rationale": "This describes a dead-letter queue (DLQ) pattern for error handling."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When optimizing a complex database query that filters by one column and sorts by another, what is the most effective indexing strategy?",
+      "explanation": "A composite index on `(filter_column, sort_column)` is most effective. The database can use the index to quickly find the filtered rows and then retrieve them in the pre-sorted order, avoiding a costly sorting operation.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Create two separate single-column indexes, one for the filtering column and another one for the sorting column.",
+          "is_correct": false,
+          "rationale": "The optimizer can only use one index per table for a query, making this less efficient."
+        },
+        {
+          "key": "B",
+          "text": "Implement a composite index with the filtering column first, followed by the column used for sorting the results.",
+          "is_correct": true,
+          "rationale": "This allows the database to efficiently filter and then utilize the pre-sorted index order."
+        },
+        {
+          "key": "C",
+          "text": "Create a composite index with the sorting column first, followed by the column used for filtering the data.",
+          "is_correct": false,
+          "rationale": "The index cannot be used effectively for filtering if the filtering column is not the first."
+        },
+        {
+          "key": "D",
+          "text": "Rely on the database's built-in query optimizer to automatically create the necessary temporary indexes during query execution.",
+          "is_correct": false,
+          "rationale": "Optimizers use existing indexes; they do not create permanent ones automatically during query execution."
+        },
+        {
+          "key": "E",
+          "text": "Use a full-text index across both columns, as it is specifically designed for high-performance searching and sorting.",
+          "is_correct": false,
+          "rationale": "Full-text indexes are for word-based searches, not for filtering and sorting on discrete values."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Which API versioning strategy is generally preferred for ensuring long-term client compatibility without cluttering resource URLs with version information?",
+      "explanation": "Using a custom request header, such as `Accept-Version: v2`, is a clean approach that separates versioning concerns from the resource's URL. This allows URLs to remain permanent while the representation can change.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Placing the version number directly into the URL path, for example using a `/api/v1/users` endpoint structure.",
+          "is_correct": false,
+          "rationale": "This approach clutters the URL and violates the principle that a URI should not change."
+        },
+        {
+          "key": "B",
+          "text": "Using a custom request header like `Accept-Version` or the standard `Accept` header to specify the desired API version.",
+          "is_correct": true,
+          "rationale": "This keeps URLs clean and separates the resource from its representation, which is a best practice."
+        },
+        {
+          "key": "C",
+          "text": "Including the API version as a mandatory query parameter in the URL, such as `/api/users?version=1`.",
+          "is_correct": false,
+          "rationale": "Query parameters can be easily omitted and are not ideal for identifying a resource's version."
+        },
+        {
+          "key": "D",
+          "text": "Maintaining completely separate subdomains for each version of the API, like `v1.api.example.com` for version one.",
+          "is_correct": false,
+          "rationale": "This adds significant overhead for DNS management, SSL certificates, and infrastructure deployment."
+        },
+        {
+          "key": "E",
+          "text": "Embedding the version number within the request body payload itself for every single POST or PUT request.",
+          "is_correct": false,
+          "rationale": "This is impractical for GET requests and is not a standardized or conventional versioning method."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "In a multi-threaded application, what is the most appropriate mechanism for preventing race conditions when multiple threads attempt to modify a shared resource?",
+      "explanation": "A mutex (mutual exclusion) or a semaphore is the standard concurrency primitive for this purpose. It acts as a lock, ensuring that only one thread can enter a critical section of code to modify the shared resource at any given time.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using a simple volatile boolean flag that is checked by each thread before it accesses the shared resource.",
+          "is_correct": false,
+          "rationale": "This is not atomic; a thread switch can occur between checking the flag and accessing the resource."
+        },
+        {
+          "key": "B",
+          "text": "Implementing a mutex or a semaphore to ensure that only one thread can access the critical section at a time.",
+          "is_correct": true,
+          "rationale": "These are designed specifically to provide mutual exclusion and prevent race conditions in concurrent programming."
+        },
+        {
+          "key": "C",
+          "text": "Increasing the processing priority of one thread so it always executes before others can access the resource.",
+          "is_correct": false,
+          "rationale": "Thread priority does not guarantee exclusive access and is not a reliable synchronization mechanism."
+        },
+        {
+          "key": "D",
+          "text": "Relying on a try-catch block to handle exceptions that might occur from simultaneous data modification attempts.",
+          "is_correct": false,
+          "rationale": "This only reacts to errors after they happen; it does not prevent the race condition itself."
+        },
+        {
+          "key": "E",
+          "text": "Placing the shared resource inside a static class to ensure there is only a single instance of it.",
+          "is_correct": false,
+          "rationale": "A single instance is what causes the shared resource problem; it does not solve the access control."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "When implementing a distributed caching strategy, which write policy provides the strongest data consistency between the cache and the primary database?",
+      "explanation": "A write-through policy provides the highest consistency because it writes data to both the cache and the database in a single, atomic operation. A write is only considered successful after it is confirmed by both systems, eliminating data discrepancies.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A write-through policy, where data is written to the cache and the database simultaneously in a single transaction.",
+          "is_correct": true,
+          "rationale": "This ensures the cache and database are always in sync, providing strong consistency."
+        },
+        {
+          "key": "B",
+          "text": "A write-around policy, where data is written directly to the database, completely bypassing the cache on write operations.",
+          "is_correct": false,
+          "rationale": "This leads to stale data in the cache until the next read miss occurs."
+        },
+        {
+          "key": "C",
+          "text": "A write-back policy, where data is written to the cache first and then asynchronously flushed to the database later.",
+          "is_correct": false,
+          "rationale": "This prioritizes write performance over consistency and risks data loss on cache failure."
+        },
+        {
+          "key": "D",
+          "text": "A cache-aside policy, where the application code is responsible for writing to the database and then invalidating the cache.",
+          "is_correct": false,
+          "rationale": "A failure between DB write and cache invalidation can lead to inconsistency."
+        },
+        {
+          "key": "E",
+          "text": "A read-through policy, where the cache is only populated or updated when a read operation results in a cache miss.",
+          "is_correct": false,
+          "rationale": "This describes a read strategy, not a write policy for maintaining data consistency."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "For which of the following backend scenarios would implementing a message queue like RabbitMQ or Kafka be the most appropriate architectural solution?",
+      "explanation": "Message queues excel at decoupling services and managing asynchronous tasks. A long-running process like video encoding can be offloaded to a background worker via a queue, allowing the API to respond instantly to the user's upload request.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Handling a user's synchronous login request that requires immediate validation and response from the authentication service.",
+          "is_correct": false,
+          "rationale": "This is a synchronous operation that requires an immediate response, which is not ideal for a queue."
+        },
+        {
+          "key": "B",
+          "text": "Decoupling a long-running video processing task from the initial user upload request to improve API responsiveness.",
+          "is_correct": true,
+          "rationale": "This is a classic use case for message queues to handle asynchronous background processing."
+        },
+        {
+          "key": "C",
+          "text": "Storing active user session data that needs to be accessed with very low latency across multiple application servers.",
+          "is_correct": false,
+          "rationale": "This is a use case for a distributed cache or in-memory data store like Redis."
+        },
+        {
+          "key": "D",
+          "text": "Serving static assets such as images, CSS, and JavaScript files directly to the end-user's web browser.",
+          "is_correct": false,
+          "rationale": "This is the primary function of a web server or a Content Delivery Network (CDN)."
+        },
+        {
+          "key": "E",
+          "text": "Executing a complex, multi-table join query within a relational database to generate an immediate analytical report.",
+          "is_correct": false,
+          "rationale": "This is a core database operation and does not involve inter-service communication or asynchronous tasks."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "When designing a high-concurrency financial system, which database transaction isolation level best prevents dirty reads, non-repeatable reads, and phantom reads?",
+      "explanation": "Serializable is the strictest isolation level. It ensures that concurrent transactions produce the same result as if they were executed one after another, thus preventing dirty, non-repeatable, and phantom reads.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Read Uncommitted, which offers the highest performance by allowing transactions to read uncommitted data from other concurrent transactions.",
+          "is_correct": false,
+          "rationale": "This level is prone to all concurrency anomalies."
+        },
+        {
+          "key": "B",
+          "text": "Read Committed, which ensures that any data read is committed at the moment it is read, preventing only dirty reads.",
+          "is_correct": false,
+          "rationale": "This level still allows non-repeatable and phantom reads."
+        },
+        {
+          "key": "C",
+          "text": "Repeatable Read, which guarantees that rereading a row within the same transaction will yield the same data values.",
+          "is_correct": false,
+          "rationale": "This level prevents non-repeatable reads but not phantom reads."
+        },
+        {
+          "key": "D",
+          "text": "Serializable, which provides the highest level of isolation by executing transactions serially, effectively preventing all concurrency anomalies.",
+          "is_correct": true,
+          "rationale": "This is the only standard level that prevents all three anomalies."
+        },
+        {
+          "key": "E",
+          "text": "Snapshot Isolation, which allows transactions to operate on a consistent snapshot of the database, avoiding most locking issues.",
+          "is_correct": false,
+          "rationale": "While strong, it can still suffer from write skew anomalies."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "For a mobile application accessing a secure API on behalf of a user, which OAuth 2.0 grant type is most recommended for security?",
+      "explanation": "The Authorization Code grant with Proof Key for Code Exchange (PKCE) is the current best practice for mobile and single-page applications, mitigating authorization code interception attacks common in public clients.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Implicit grant type, because it directly returns an access token to the client without an intermediate authorization code.",
+          "is_correct": false,
+          "rationale": "This grant is considered legacy and insecure for public clients."
+        },
+        {
+          "key": "B",
+          "text": "The Resource Owner Password Credentials grant, as it simplifies the flow by directly using the user's username and password.",
+          "is_correct": false,
+          "rationale": "This grant discourages good security practices by handling user credentials."
+        },
+        {
+          "key": "C",
+          "text": "The Client Credentials grant, which is ideal for server-to-server communication where the client is the resource owner itself.",
+          "is_correct": false,
+          "rationale": "This grant is for machine-to-machine auth, not on behalf of a user."
+        },
+        {
+          "key": "D",
+          "text": "The Authorization Code grant with PKCE, as it provides protection against authorization code interception attacks in public clients.",
+          "is_correct": true,
+          "rationale": "PKCE is specifically designed to secure this flow on public clients."
+        },
+        {
+          "key": "E",
+          "text": "The Device Authorization grant, which is designed for input-constrained devices that cannot host a browser for user authentication.",
+          "is_correct": false,
+          "rationale": "This is for a different use case, like smart TVs."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "According to the CAP theorem, what trade-off must a distributed system architect make when a network partition occurs between nodes?",
+      "explanation": "The CAP theorem states that in the event of a network partition (P), a distributed system can only choose one of two guarantees: Consistency (C) or Availability (A). This is a fundamental trade-off.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The system must choose between maintaining high latency or sacrificing data durability by writing to ephemeral storage.",
+          "is_correct": false,
+          "rationale": "Latency and durability are system characteristics, not the core CAP trade-off."
+        },
+        {
+          "key": "B",
+          "text": "The system must decide between ensuring data consistency across all nodes or maintaining availability for read and write operations.",
+          "is_correct": true,
+          "rationale": "This correctly identifies the choice between Consistency and Availability during a Partition."
+        },
+        {
+          "key": "C",
+          "text": "The system must select either horizontal scaling by adding more nodes or vertical scaling by increasing individual node resources.",
+          "is_correct": false,
+          "rationale": "This describes scaling strategies, which are unrelated to the CAP theorem."
+        },
+        {
+          "key": "D",
+          "text": "The system must prioritize either synchronous data replication for strong consistency or asynchronous replication for better performance.",
+          "is_correct": false,
+          "rationale": "This is a related implementation detail but not the theorem itself."
+        },
+        {
+          "key": "E",
+          "text": "The system must balance the need for ACID compliance in transactions against the performance benefits of BASE properties.",
+          "is_correct": false,
+          "rationale": "ACID vs. BASE is a related concept but not the direct trade-off defined by CAP."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "In a read-heavy system displaying user profiles that are updated infrequently, which caching strategy provides the best balance of performance and data freshness?",
+      "explanation": "Cache-aside with a TTL is ideal for read-heavy, infrequently updated data. It avoids loading unused data into the cache, and the TTL ensures that stale data is eventually evicted, balancing performance with eventual consistency.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A write-through cache, where data is written to both the cache and the database simultaneously for maximum consistency.",
+          "is_correct": false,
+          "rationale": "This adds write latency and is better for write-heavy workloads."
+        },
+        {
+          "key": "B",
+          "text": "A write-back cache, which acknowledges the write immediately by caching it and writing to the database later in batches.",
+          "is_correct": false,
+          "rationale": "This is complex and risks data loss on cache failure."
+        },
+        {
+          "key": "C",
+          "text": "A cache-aside (lazy loading) strategy with a Time-To-Live, where data is loaded into the cache only on a miss.",
+          "is_correct": true,
+          "rationale": "This is efficient for read-heavy systems with acceptable data staleness."
+        },
+        {
+          "key": "D",
+          "text": "No caching at all, directly querying the database for every request to ensure the data is always perfectly current.",
+          "is_correct": false,
+          "rationale": "This fails to meet the performance requirement for a read-heavy system."
+        },
+        {
+          "key": "E",
+          "text": "A write-around cache, where writes go directly to the database, bypassing the cache to avoid cache churn from writes.",
+          "is_correct": false,
+          "rationale": "This is useful but is incomplete without a read strategy like cache-aside."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "Within a Kubernetes pod, what is the primary architectural purpose of implementing a sidecar container alongside the main application container?",
+      "explanation": "A sidecar container extends the functionality of the main application container without being part of the application itself. This pattern is used for concerns like logging, monitoring, and service mesh proxies, promoting separation of concerns.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To provide a completely isolated runtime environment for running a secondary, unrelated application within the same network namespace.",
+          "is_correct": false,
+          "rationale": "Sidecars are tightly coupled and related to the main container."
+        },
+        {
+          "key": "B",
+          "text": "To augment or enhance the main container's functionality, such as handling logging, monitoring, or service mesh proxying.",
+          "is_correct": true,
+          "rationale": "This correctly describes the role of a sidecar in offloading tasks."
+        },
+        {
+          "key": "C",
+          "text": "To act as a primary load balancer, distributing incoming traffic between multiple replicas of the main application container.",
+          "is_correct": false,
+          "rationale": "Load balancing is typically handled by Kubernetes Services, not sidecars."
+        },
+        {
+          "key": "D",
+          "text": "To store persistent data volumes for the main application, ensuring that state is preserved even if the pod restarts.",
+          "is_correct": false,
+          "rationale": "This is the function of Persistent Volumes and Persistent Volume Claims."
+        },
+        {
+          "key": "E",
+          "text": "To run health checks and readiness probes against the main container, reporting its status directly to the Kubernetes scheduler.",
+          "is_correct": false,
+          "rationale": "This function is performed by the Kubelet agent on the node."
+        }
+      ]
+    }
+  ]
+}

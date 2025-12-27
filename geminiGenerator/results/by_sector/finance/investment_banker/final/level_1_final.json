@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "Which financial statement provides a snapshot of a company's assets, liabilities, and equity at a specific point in time?",
+      "explanation": "The balance sheet is fundamental for understanding a company's financial health and structure at a given moment, providing the basis for many financial analyses.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The balance sheet clearly presents a company's financial position, detailing what it owns and owes.",
+          "is_correct": true,
+          "rationale": "The balance sheet shows financial position at a specific point."
+        },
+        {
+          "key": "B",
+          "text": "The income statement reports revenues and expenses over a period, showing profitability and performance.",
+          "is_correct": false,
+          "rationale": "The income statement shows a company's financial performance over a specific period."
+        },
+        {
+          "key": "C",
+          "text": "The cash flow statement tracks cash inflows and outflows from operating, investing, and financing activities.",
+          "is_correct": false,
+          "rationale": "The cash flow statement tracks cash movements over a period."
+        },
+        {
+          "key": "D",
+          "text": "The statement of shareholders' equity details changes in equity accounts over a specific period.",
+          "is_correct": false,
+          "rationale": "The equity statement shows changes in ownership equity over time."
+        },
+        {
+          "key": "E",
+          "text": "The annual report provides a comprehensive overview, including all financial statements and management discussion.",
+          "is_correct": false,
+          "rationale": "The annual report is a comprehensive document, not a single statement."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What is the primary purpose of conducting a discounted cash flow (DCF) analysis in investment banking?",
+      "explanation": "DCF is a core valuation method used to determine the fundamental value of an asset or company based on its expected future cash generation.",
+      "options": [
+        {
+          "key": "A",
+          "text": "DCF analysis estimates a company's intrinsic value by projecting its future free cash flows and discounting them back to the present.",
+          "is_correct": true,
+          "rationale": "DCF projects future cash flows to estimate intrinsic value."
+        },
+        {
+          "key": "B",
+          "text": "It determines the historical performance of a company by analyzing past revenue and profit trends.",
+          "is_correct": false,
+          "rationale": "This describes analysis focused on historical financial performance."
+        },
+        {
+          "key": "C",
+          "text": "It calculates the current market capitalization of a publicly traded company using its share price.",
+          "is_correct": false,
+          "rationale": "This describes the calculation of a company's market capitalization."
+        },
+        {
+          "key": "D",
+          "text": "It assesses a company's liquidity and short-term solvency by examining its current assets and liabilities.",
+          "is_correct": false,
+          "rationale": "This describes liquidity analysis, which is distinct from DCF."
+        },
+        {
+          "key": "E",
+          "text": "It evaluates the efficiency of a company's operations by comparing its expenses to its generated revenue.",
+          "is_correct": false,
+          "rationale": "This describes analysis of operational efficiency or profitability."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "When advising a company on a potential acquisition, what is a key initial step for an investment banker?",
+      "explanation": "Initial steps in M&A involve strategic alignment and target identification before detailed valuation or negotiation. This ensures a suitable match for the client.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Identifying potential target companies that align strategically with the client's objectives and financial capabilities is crucial.",
+          "is_correct": true,
+          "rationale": "Identifying strategic targets is a crucial initial step."
+        },
+        {
+          "key": "B",
+          "text": "Executing the definitive merger agreement without prior due diligence is generally not a responsible initial step.",
+          "is_correct": false,
+          "rationale": "Executing the agreement occurs much later in the M&A process."
+        },
+        {
+          "key": "C",
+          "text": "Publicly announcing the acquisition to generate market interest before any negotiations are finalized.",
+          "is_correct": false,
+          "rationale": "Public announcements are premature and carry significant market risk."
+        },
+        {
+          "key": "D",
+          "text": "Immediately integrating the target company's operations into the acquiring firm's existing structure.",
+          "is_correct": false,
+          "rationale": "Operational integration happens after the deal closes, not initially."
+        },
+        {
+          "key": "E",
+          "text": "Valuing the target company solely based on its historical stock price performance without other analyses.",
+          "is_correct": false,
+          "rationale": "Valuation needs comprehensive analysis, not just stock price."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Which of the following best describes the primary function of an Initial Public Offering (IPO) for a private company?",
+      "explanation": "An IPO is the process by which a private company becomes public, offering its shares to institutional investors and the general public for the first time, primarily to raise equity capital.",
+      "options": [
+        {
+          "key": "A",
+          "text": "An IPO allows a private company to raise capital from public investors by selling shares for the very first time.",
+          "is_correct": true,
+          "rationale": "IPO raises capital by selling shares to the public for the first time."
+        },
+        {
+          "key": "B",
+          "text": "It facilitates the trading of existing shares between investors on secondary markets without raising new capital for the company.",
+          "is_correct": false,
+          "rationale": "This describes secondary market trading of existing shares."
+        },
+        {
+          "key": "C",
+          "text": "It involves a company borrowing money directly from banks or other financial institutions through a loan agreement.",
+          "is_correct": false,
+          "rationale": "This describes a form of private debt financing from lenders."
+        },
+        {
+          "key": "D",
+          "text": "It enables a company to repurchase its own outstanding shares from the open market to reduce share count.",
+          "is_correct": false,
+          "rationale": "This describes a company's share repurchase program."
+        },
+        {
+          "key": "E",
+          "text": "It allows a company to issue debt securities, such as bonds, to institutional investors to finance operations.",
+          "is_correct": false,
+          "rationale": "This describes issuing debt securities, which is different from an IPO."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Why is understanding regulatory compliance crucial for an investment banker when structuring financial transactions?",
+      "explanation": "Regulatory compliance is paramount in investment banking to maintain market integrity, prevent illegal activities, and protect all stakeholders from legal and financial repercussions.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Compliance ensures that all transactions adhere to legal frameworks, protecting both the client and the bank from penalties and reputational damage.",
+          "is_correct": true,
+          "rationale": "Compliance protects against legal and reputational risks."
+        },
+        {
+          "key": "B",
+          "text": "It primarily focuses on maximizing short-term profits for the client by bypassing complex legal requirements.",
+          "is_correct": false,
+          "rationale": "Bypassing regulations is unethical and illegal."
+        },
+        {
+          "key": "C",
+          "text": "It is mainly concerned with speeding up transaction timelines, regardless of the specific legal implications involved.",
+          "is_correct": false,
+          "rationale": "Speed is secondary to ensuring full legal and regulatory adherence."
+        },
+        {
+          "key": "D",
+          "text": "It only applies to public companies, with private transactions having fewer regulatory oversight requirements.",
+          "is_correct": false,
+          "rationale": "Compliance applies broadly to all types of financial transactions."
+        },
+        {
+          "key": "E",
+          "text": "It dictates the exact market price at which securities must be traded, ensuring fair valuation for all parties.",
+          "is_correct": false,
+          "rationale": "Regulatory compliance does not dictate specific market prices for securities."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "What is a primary service an investment bank provides to corporate clients seeking to raise capital?",
+      "explanation": "Investment banks assist companies in raising capital through various means, including IPOs and debt offerings. This involves structuring the deal, marketing it to investors, and ensuring regulatory compliance.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Advising on initial public offerings (IPOs) and subsequent equity or debt issuances to fund growth initiatives.",
+          "is_correct": true,
+          "rationale": "Raising capital via IPOs and debt is a core investment banking service."
+        },
+        {
+          "key": "B",
+          "text": "Managing personal wealth portfolios and providing individual financial planning services to high-net-worth clients.",
+          "is_correct": false,
+          "rationale": "This describes wealth management, not core investment banking for corporates."
+        },
+        {
+          "key": "C",
+          "text": "Offering commercial loans and lines of credit to small businesses for their daily operational expenses.",
+          "is_correct": false,
+          "rationale": "This is typically a service offered by commercial banks, not investment banks."
+        },
+        {
+          "key": "D",
+          "text": "Underwriting various insurance policies for individuals and corporations to mitigate financial risks.",
+          "is_correct": false,
+          "rationale": "This describes the insurance industry, separate from investment banking."
+        },
+        {
+          "key": "E",
+          "text": "Auditing financial statements and ensuring compliance with accounting standards for public companies.",
+          "is_correct": false,
+          "rationale": "This describes the role of an independent auditing firm, not an investment bank."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "When valuing a company, which method involves projecting future cash flows and discounting them back to a present value?",
+      "explanation": "DCF is a core valuation method used by investment bankers. It involves forecasting a company's free cash flows and then discounting those future cash flows to their present value using a discount rate.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Discounted Cash Flow (DCF) analysis, which estimates the intrinsic value of an asset based on its expected future cash flows.",
+          "is_correct": true,
+          "rationale": "DCF analysis discounts future cash flows to determine present value."
+        },
+        {
+          "key": "B",
+          "text": "Precedent Transactions analysis, which assesses value by comparing the company to similar businesses recently acquired.",
+          "is_correct": false,
+          "rationale": "Precedent transactions compare historical M&A deals, not future cash flows."
+        },
+        {
+          "key": "C",
+          "text": "Comparable Company Analysis (Comps), which determines value by comparing key metrics of similar publicly traded firms.",
+          "is_correct": false,
+          "rationale": "Comps use current market multiples of similar companies, not discounted cash flows."
+        },
+        {
+          "key": "D",
+          "text": "Liquidation Value analysis, which estimates the value of a company's assets if it were to be immediately sold off.",
+          "is_correct": false,
+          "rationale": "Liquidation value focuses on asset sale value, not future cash flows."
+        },
+        {
+          "key": "E",
+          "text": "Asset-Based Valuation, which sums the fair market value of all tangible and intangible assets owned by the company.",
+          "is_correct": false,
+          "rationale": "Asset-based valuation focuses on asset values, not future cash flows."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "In an M&A transaction, what is the investment bank's primary role for the selling company?",
+      "explanation": "For a selling company, investment banks act as strategic advisors. They help prepare the company for sale, find suitable buyers, manage the bidding process, and negotiate the best possible deal terms.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Advising the seller on strategy, identifying potential buyers, and negotiating transaction terms to maximize shareholder value.",
+          "is_correct": true,
+          "rationale": "Investment banks guide sellers through the entire M&A process to achieve optimal outcomes."
+        },
+        {
+          "key": "B",
+          "text": "Providing post-merger integration services, including combining operations, systems, and company cultures.",
+          "is_correct": false,
+          "rationale": "Integration services are typically provided by consulting firms or internal teams post-deal."
+        },
+        {
+          "key": "C",
+          "text": "Managing the combined entity's daily operations and making strategic decisions for the newly merged business.",
+          "is_correct": false,
+          "rationale": "This is the role of the management team of the acquiring company, not an investment bank."
+        },
+        {
+          "key": "D",
+          "text": "Conducting comprehensive legal due diligence on the seller's behalf to identify any potential liabilities or risks.",
+          "is_correct": false,
+          "rationale": "Legal due diligence is primarily performed by legal counsel, not investment bankers."
+        },
+        {
+          "key": "E",
+          "text": "Arranging all the necessary financing for the acquiring company to complete the purchase of the target firm.",
+          "is_correct": false,
+          "rationale": "While banks can arrange financing, this specifically describes the buyer's side, not the seller's primary role."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Which regulatory body primarily oversees investment banks and securities markets in the United States?",
+      "explanation": "The SEC is crucial for market integrity, ensuring transparency and fairness in the securities industry. It regulates public companies, exchanges, brokers, and investment advisors to protect investors.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Securities and Exchange Commission (SEC), which protects investors and maintains fair, orderly, and efficient markets.",
+          "is_correct": true,
+          "rationale": "The SEC is the primary regulator for securities markets and investment banks."
+        },
+        {
+          "key": "B",
+          "text": "The Federal Reserve (the Fed), responsible for monetary policy, banking supervision, and financial stability.",
+          "is_correct": false,
+          "rationale": "The Fed focuses on monetary policy and broader banking system stability."
+        },
+        {
+          "key": "C",
+          "text": "The Federal Deposit Insurance Corporation (FDIC), which insures deposits and supervises financial institutions.",
+          "is_correct": false,
+          "rationale": "The FDIC primarily insures bank deposits and supervises commercial banks."
+        },
+        {
+          "key": "D",
+          "text": "The Office of the Comptroller of the Currency (OCC), which charters, regulates, and supervises all national banks.",
+          "is_correct": false,
+          "rationale": "The OCC primarily regulates national banks, not investment banks or securities markets."
+        },
+        {
+          "key": "E",
+          "text": "The Consumer Financial Protection Bureau (CFPB), focused on protecting consumers in the financial marketplace.",
+          "is_correct": false,
+          "rationale": "The CFPB focuses on consumer protection in financial services, not investment banking regulation."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Which valuation method primarily relies on analyzing comparable public companies and precedent transactions to determine a company's worth?",
+      "explanation": "Comparable company analysis (CCA) and precedent transaction analysis (PTA) are market-based valuation methods. They involve comparing the target company to similar companies or past deals to derive a valuation multiple.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Discounted Cash Flow (DCF) analysis projects future cash flows and discounts them back to the present value.",
+          "is_correct": false,
+          "rationale": "DCF is an intrinsic valuation method based on future cash flows."
+        },
+        {
+          "key": "B",
+          "text": "Leveraged Buyout (LBO) analysis assesses a company's valuation based on its ability to generate returns for private equity investors.",
+          "is_correct": false,
+          "rationale": "LBO analysis focuses on debt-financed acquisitions and investor returns."
+        },
+        {
+          "key": "C",
+          "text": "Market Multiples analysis determines value by comparing key financial ratios of similar publicly traded companies or recent deals.",
+          "is_correct": true,
+          "rationale": "Market multiples use comparable companies and transactions for valuation."
+        },
+        {
+          "key": "D",
+          "text": "Sum-of-the-Parts (SOTP) valuation aggregates the individual values of a company's distinct business units or assets.",
+          "is_correct": false,
+          "rationale": "SOTP values a company by summing the value of its distinct parts."
+        },
+        {
+          "key": "E",
+          "text": "Asset-based valuation calculates a company's worth by summing the fair market value of all its underlying assets.",
+          "is_correct": false,
+          "rationale": "Asset-based valuation focuses on the fair value of a company's assets."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "What is the primary purpose of a 'pitch book' in investment banking, particularly during initial client engagements?",
+      "explanation": "A pitch book is a crucial marketing document used by investment banks to present their services, demonstrate industry expertise, and propose potential transaction ideas to prospective clients, aiming to secure mandates.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It serves as a legally binding contract outlining the terms and conditions of a financial transaction.",
+          "is_correct": false,
+          "rationale": "A pitch book is a marketing tool, not a legal contract."
+        },
+        {
+          "key": "B",
+          "text": "It is a comprehensive financial model used for detailed valuation and scenario analysis of a target company.",
+          "is_correct": false,
+          "rationale": "Financial models are separate from pitch books, though their outputs may be included."
+        },
+        {
+          "key": "C",
+          "text": "It is a marketing document used to present an investment bank's capabilities and transaction ideas to potential clients.",
+          "is_correct": true,
+          "rationale": "Pitch books are marketing materials to win client mandates."
+        },
+        {
+          "key": "D",
+          "text": "It provides a detailed report on the regulatory compliance status of a company before undertaking a public offering.",
+          "is_correct": false,
+          "rationale": "Regulatory compliance reports are distinct from pitch books."
+        },
+        {
+          "key": "E",
+          "text": "It summarizes the due diligence findings and risks associated with an acquisition target for internal review.",
+          "is_correct": false,
+          "rationale": "Due diligence reports are part of a later stage of a transaction."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "When an investment banker identifies a potential conflict of interest, what is the most appropriate initial action to take?",
+      "explanation": "Identifying and disclosing conflicts of interest is critical for maintaining ethical standards and regulatory compliance in investment banking. Prompt internal reporting allows the firm to manage the conflict appropriately.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately proceed with the transaction, assuming the conflict will not impact the client's best interests.",
+          "is_correct": false,
+          "rationale": "Proceeding without disclosure is unethical and violates compliance standards."
+        },
+        {
+          "key": "B",
+          "text": "Discuss the potential conflict directly with the client to seek their explicit waiver and continue working.",
+          "is_correct": false,
+          "rationale": "Internal reporting should precede client discussion to ensure proper firm protocols are followed."
+        },
+        {
+          "key": "C",
+          "text": "Report the potential conflict to a senior team member or the compliance department for guidance and resolution.",
+          "is_correct": true,
+          "rationale": "Reporting conflicts to compliance or seniors ensures proper handling and adherence to regulations."
+        },
+        {
+          "key": "D",
+          "text": "Ignore the conflict if it seems minor, as reporting every small issue can hinder deal progress unnecessarily.",
+          "is_correct": false,
+          "rationale": "Ignoring conflicts, regardless of perceived size, is a serious compliance breach."
+        },
+        {
+          "key": "E",
+          "text": "Attempt to resolve the conflict independently without involving other team members or compliance personnel.",
+          "is_correct": false,
+          "rationale": "Conflicts of interest require firm-level guidance and resolution, not independent action."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "What is the primary role of an investment banking analyst during the due diligence phase of a merger or acquisition?",
+      "explanation": "During due diligence, analysts play a crucial role in gathering, organizing, and analyzing vast amounts of financial and operational data from the target company. This supports the senior bankers' assessment of the deal.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Negotiating the final terms and conditions of the deal directly with the target company's management team.",
+          "is_correct": false,
+          "rationale": "Negotiations are typically handled by more senior investment bankers."
+        },
+        {
+          "key": "B",
+          "text": "Presenting the valuation models and strategic rationale to the acquiring company's board of directors.",
+          "is_correct": false,
+          "rationale": "Presentations to the board are usually conducted by senior bankers."
+        },
+        {
+          "key": "C",
+          "text": "Conducting in-depth research, data analysis, and preparing supporting documentation for the deal team.",
+          "is_correct": true,
+          "rationale": "Analysts primarily support due diligence by collecting, organizing, and analyzing data."
+        },
+        {
+          "key": "D",
+          "text": "Making the ultimate decision on whether the acquisition target represents a viable investment opportunity.",
+          "is_correct": false,
+          "rationale": "Decision-making authority rests with senior bankers and the client, not analysts."
+        },
+        {
+          "key": "E",
+          "text": "Managing external legal counsel and auditors throughout the entire transaction execution process.",
+          "is_correct": false,
+          "rationale": "Managing external parties is a more senior-level responsibility within the deal team."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "What is the primary purpose of the Statement of Cash Flows for an investment banker evaluating a potential target company?",
+      "explanation": "The Statement of Cash Flows is crucial for understanding a company's liquidity and solvency by detailing cash inflows and outflows from core operations, investments, and financing activities. It provides a clearer picture than accrual-based statements.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To show the company's assets, liabilities, and equity at a specific point in time, indicating financial position.",
+          "is_correct": false,
+          "rationale": "This describes the Balance Sheet, not the Statement of Cash Flows."
+        },
+        {
+          "key": "B",
+          "text": "To report the company's revenues, expenses, and net income over a period, demonstrating profitability.",
+          "is_correct": false,
+          "rationale": "This describes the Income Statement, not the Statement of Cash Flows."
+        },
+        {
+          "key": "C",
+          "text": "To detail how cash is generated and used across operating, investing, and financing activities, assessing liquidity.",
+          "is_correct": true,
+          "rationale": "It clearly shows cash generation and usage across key activities, indicating liquidity."
+        },
+        {
+          "key": "D",
+          "text": "To summarize changes in shareholder equity over a period, including dividends and share issuances.",
+          "is_correct": false,
+          "rationale": "This describes the Statement of Shareholder Equity, not cash flows."
+        },
+        {
+          "key": "E",
+          "text": "To provide a comprehensive overview of the company's strategic goals and operational efficiency for future growth.",
+          "is_correct": false,
+          "rationale": "This describes a business plan or strategy document, not a financial statement."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Which of the following services is a core offering provided by investment banks to their corporate clients?",
+      "explanation": "Investment banks specialize in corporate finance activities such as M&A advisory, capital raising (IPOs, debt issuance), and restructuring. These services help companies grow, optimize, and manage their capital structure.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Managing daily personal checking and savings accounts for individual retail customers.",
+          "is_correct": false,
+          "rationale": "This is a service typically offered by commercial banks, not investment banks."
+        },
+        {
+          "key": "B",
+          "text": "Advising companies on mergers, acquisitions, and divestitures to optimize their corporate structure and growth.",
+          "is_correct": true,
+          "rationale": "M&A advisory is a fundamental service offered by investment banks to corporate clients."
+        },
+        {
+          "key": "C",
+          "text": "Providing short-term loans and credit lines to small businesses for operational expenses and working capital needs.",
+          "is_correct": false,
+          "rationale": "This is a service typically offered by commercial banks, not investment banks."
+        },
+        {
+          "key": "D",
+          "text": "Offering comprehensive insurance policies and risk management solutions for personal property and health coverage.",
+          "is_correct": false,
+          "rationale": "This is a service provided by insurance companies, not investment banks."
+        },
+        {
+          "key": "E",
+          "text": "Directly trading company stocks and bonds on behalf of individual investors in the public markets.",
+          "is_correct": false,
+          "rationale": "This is typically performed by brokerage firms or asset managers for retail clients."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "What is the primary objective of using the Discounted Cash Flow (DCF) valuation method in investment banking?",
+      "explanation": "The DCF method is a fundamental valuation technique that estimates a company's intrinsic value by forecasting its future cash flows and then discounting them to a present value using an appropriate discount rate, such as WACC.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To determine the market value of a public company based on its current stock price and trading volume.",
+          "is_correct": false,
+          "rationale": "This describes market capitalization, not the DCF valuation method."
+        },
+        {
+          "key": "B",
+          "text": "To estimate a company's intrinsic value by projecting its future free cash flows and discounting them back to the present.",
+          "is_correct": true,
+          "rationale": "DCF values a company based on its projected future cash flows, discounted to present value."
+        },
+        {
+          "key": "C",
+          "text": "To compare a company's valuation multiples (e.g., P/E, EV/EBITDA) against those of similar publicly traded companies.",
+          "is_correct": false,
+          "rationale": "This describes Comparable Companies Analysis, not the DCF method."
+        },
+        {
+          "key": "D",
+          "text": "To analyze the historical financial performance of a company over several years, identifying trends and growth patterns.",
+          "is_correct": false,
+          "rationale": "This describes financial statement analysis, not a valuation method."
+        },
+        {
+          "key": "E",
+          "text": "To calculate the liquidation value of a company's assets, assuming an immediate sale of all holdings.",
+          "is_correct": false,
+          "rationale": "This describes liquidation valuation, a different method from DCF."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "What does an Initial Public Offering (IPO) primarily allow a private company to achieve in the financial markets?",
+      "explanation": "An IPO is the process by which a private company offers its shares to the public for the first time. This allows the company to raise significant capital from a broad investor base and become publicly listed.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To merge with another publicly traded company, forming a larger entity with diversified operations.",
+          "is_correct": false,
+          "rationale": "This describes a merger or acquisition, not an Initial Public Offering (IPO)."
+        },
+        {
+          "key": "B",
+          "text": "To raise capital by selling shares to the public for the first time, becoming a publicly traded entity.",
+          "is_correct": true,
+          "rationale": "An IPO is the process of a private company selling shares to the public to raise capital."
+        },
+        {
+          "key": "C",
+          "text": "To acquire a controlling stake in another private company, expanding its market share and product offerings.",
+          "is_correct": false,
+          "rationale": "This describes an acquisition, not an Initial Public Offering (IPO)."
+        },
+        {
+          "key": "D",
+          "text": "To issue new debt instruments to institutional investors, increasing its leverage for strategic investments.",
+          "is_correct": false,
+          "rationale": "This describes debt issuance, which is distinct from an Initial Public Offering (IPO)."
+        },
+        {
+          "key": "E",
+          "text": "To buy back its own shares from the open market, reducing the number of outstanding shares and boosting EPS.",
+          "is_correct": false,
+          "rationale": "This describes a share buyback program, not an Initial Public Offering (IPO)."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "In corporate finance, what does the Weighted Average Cost of Capital (WACC) primarily represent for a company?",
+      "explanation": "WACC represents the average rate of return a company expects to pay to its investors (both debt and equity holders) for financing its assets. It is used as a discount rate in DCF valuation.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The total amount of debt and equity financing a company has raised since its inception.",
+          "is_correct": false,
+          "rationale": "This describes a company's total capitalization, not the Weighted Average Cost of Capital (WACC)."
+        },
+        {
+          "key": "B",
+          "text": "The average rate of return a company expects to earn on its investments and projects over time.",
+          "is_correct": false,
+          "rationale": "This describes the expected return on investment, not the Weighted Average Cost of Capital (WACC)."
+        },
+        {
+          "key": "C",
+          "text": "The average rate of return required by investors to provide capital, weighted by the proportion of each source.",
+          "is_correct": true,
+          "rationale": "WACC is the average cost of all capital sources, weighted by their proportion in the capital structure."
+        },
+        {
+          "key": "D",
+          "text": "The cost associated with issuing new shares of common stock to public investors through an underwriting process.",
+          "is_correct": false,
+          "rationale": "This describes the cost of new equity, which is only one component of WACC."
+        },
+        {
+          "key": "E",
+          "text": "The interest rate charged by banks on short-term loans provided to the company for working capital needs.",
+          "is_correct": false,
+          "rationale": "This describes the cost of short-term debt, which is only one component of WACC."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "When performing financial due diligence for a potential acquisition, what is a crucial reason to analyze the target company's historical working capital trends?",
+      "explanation": "Analyzing working capital trends is crucial in M&A due diligence to understand the target's operational cash needs. Significant fluctuations can indicate underlying issues or require adjustments to the purchase price to reflect normalized operating capital.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To identify any unusual fluctuations or significant changes that could impact the deal's final valuation and future cash flow projections.",
+          "is_correct": true,
+          "rationale": "Working capital analysis directly impacts valuation and cash flow forecasts by revealing the company's operational efficiency and liquidity needs."
+        },
+        {
+          "key": "B",
+          "text": "To determine the historical cost of goods sold for calculating the company's gross profit margins over several different periods.",
+          "is_correct": false,
+          "rationale": "Cost of goods sold is an income statement item and, while important, is not the primary focus of working capital trend analysis."
+        },
+        {
+          "key": "C",
+          "text": "To assess the company's overall compliance with environmental, social, and governance (ESG) standards and reporting requirements effectively.",
+          "is_correct": false,
+          "rationale": "ESG compliance is a separate and distinct due diligence stream, unrelated to the financial analysis of working capital trends."
+        },
+        {
+          "key": "D",
+          "text": "To verify the accuracy of the company's fixed asset depreciation schedules which are used for tax reporting purposes.",
+          "is_correct": false,
+          "rationale": "Fixed asset depreciation is a non-cash charge related to long-term assets, not current assets and liabilities found in working capital."
+        },
+        {
+          "key": "E",
+          "text": "To evaluate the long-term effectiveness of the target company's marketing and sales strategies compared to its main competitors.",
+          "is_correct": false,
+          "rationale": "While sales impact accounts receivable, working capital analysis is a financial assessment, not a direct evaluation of marketing strategy effectiveness."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "An investment banking analyst receives confidential information about an upcoming merger before it is publicly announced. What is the most appropriate action to take immediately?",
+      "explanation": "Receiving material non-public information (MNPI) requires strict adherence to securities laws and firm policies. The analyst must not trade on it or disclose it to anyone without a need-to-know, ensuring legal and ethical conduct.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Refrain from trading any securities related to the companies involved and maintain strict confidentiality regarding all of the sensitive information.",
+          "is_correct": true,
+          "rationale": "Trading on or disclosing material non-public information constitutes illegal insider trading, which is a serious breach of ethics and securities law."
+        },
+        {
+          "key": "B",
+          "text": "Share the information with trusted colleagues in other departments to gather additional insights and unique perspectives on the deal.",
+          "is_correct": false,
+          "rationale": "Sharing MNPI, even internally with individuals who do not have a need-to-know, is a violation of firm policy and securities regulations."
+        },
+        {
+          "key": "C",
+          "text": "Discreetly purchase a small number of shares in the target company through a relative's account, anticipating a significant price increase.",
+          "is_correct": false,
+          "rationale": "This is a clear and direct example of illegal insider trading, which is a criminal offense punishable by fines and imprisonment."
+        },
+        {
+          "key": "D",
+          "text": "Leak the information anonymously to a financial news outlet in order to gauge the market's potential reaction beforehand.",
+          "is_correct": false,
+          "rationale": "Leaking MNPI is highly unethical, illegal, and can cause significant damage to the firm's reputation and the integrity of the deal."
+        },
+        {
+          "key": "E",
+          "text": "Discuss the potential merger details with close family members who have absolutely no direct connection to the financial markets.",
+          "is_correct": false,
+          "rationale": "Disclosing MNPI to anyone outside the deal team, including family, is a serious violation known as 'tipping' and is illegal."
+        }
+      ]
+    }
+  ]
+}

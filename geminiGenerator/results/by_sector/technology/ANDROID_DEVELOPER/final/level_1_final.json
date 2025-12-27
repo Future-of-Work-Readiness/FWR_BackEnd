@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "Which lifecycle method is called when an Android Activity is first created and its UI components are initialized?",
+      "explanation": "The `onCreate()` method is the very first callback in the activity lifecycle, crucial for setting up the layout and initializing essential components. It runs only once.",
+      "options": [
+        {
+          "key": "A",
+          "text": "onCreate() is invoked when the activity is initially created, performing all essential static setup.",
+          "is_correct": true,
+          "rationale": "onCreate() is the first method called upon activity creation."
+        },
+        {
+          "key": "B",
+          "text": "onStart() is called when the activity becomes visible to the user, preparing for interaction.",
+          "is_correct": false,
+          "rationale": "onStart() is called after onCreate(), when the activity is visible."
+        },
+        {
+          "key": "C",
+          "text": "onResume() is executed when the activity begins interacting with the user, becoming the foreground activity.",
+          "is_correct": false,
+          "rationale": "onResume() is called when the activity is in the foreground and interactive."
+        },
+        {
+          "key": "D",
+          "text": "onPause() is triggered when the activity is no longer in the foreground, but still partially visible.",
+          "is_correct": false,
+          "rationale": "onPause() is called when the activity is partially obscured or losing focus."
+        },
+        {
+          "key": "E",
+          "text": "onDestroy() is the final call received before the activity is completely removed from memory.",
+          "is_correct": false,
+          "rationale": "onDestroy() is the final cleanup before the activity is destroyed."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Which Android UI component allows users to input and edit text within an application interface?",
+      "explanation": "`EditText` is specifically designed for user input, allowing them to type and modify text, unlike `TextView` which only displays static text. It provides an interactive text field.",
+      "options": [
+        {
+          "key": "A",
+          "text": "TextView displays static, uneditable text content to the user on the screen.",
+          "is_correct": false,
+          "rationale": "TextView is for displaying static, non-editable text."
+        },
+        {
+          "key": "B",
+          "text": "Button allows users to trigger an action or event when they tap on it.",
+          "is_correct": false,
+          "rationale": "Button is for user interaction to trigger actions."
+        },
+        {
+          "key": "C",
+          "text": "EditText provides an editable text field where users can type and modify information.",
+          "is_correct": true,
+          "rationale": "EditText is the component for user text input and editing."
+        },
+        {
+          "key": "D",
+          "text": "ImageView is used for displaying various types of images or graphics within the layout.",
+          "is_correct": false,
+          "rationale": "ImageView is for displaying images, not text input."
+        },
+        {
+          "key": "E",
+          "text": "ProgressBar visually indicates the progress of an operation to the user.",
+          "is_correct": false,
+          "rationale": "ProgressBar shows progress, not for text input."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What is the primary purpose of an Android Intent when navigating between different application components?",
+      "explanation": "Intents are messaging objects used to request an action from another app component, such as starting an Activity, Service, or broadcasting a message across the system.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It stores persistent application data locally on the device for later retrieval.",
+          "is_correct": false,
+          "rationale": "This describes SharedPreferences or databases, not Intents."
+        },
+        {
+          "key": "B",
+          "text": "It defines the visual layout and structure of user interface elements on the screen.",
+          "is_correct": false,
+          "rationale": "This describes layout XML files, not Intents."
+        },
+        {
+          "key": "C",
+          "text": "It describes an operation to be performed, requesting an action from another app component.",
+          "is_correct": true,
+          "rationale": "Intents are messages for requesting actions from components."
+        },
+        {
+          "key": "D",
+          "text": "It manages the lifecycle of an Activity, handling creation and destruction phases.",
+          "is_correct": false,
+          "rationale": "This describes the Activity class itself, not Intents."
+        },
+        {
+          "key": "E",
+          "text": "It handles background tasks and long-running operations without blocking the main thread.",
+          "is_correct": false,
+          "rationale": "This describes Services or background threads, not Intents."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Which Android layout arranges its child views in a single row or a single column sequentially?",
+      "explanation": "`LinearLayout` is fundamental for organizing UI elements in a linear fashion, either horizontally or vertically. It's a basic and frequently used layout for simple arrangements.",
+      "options": [
+        {
+          "key": "A",
+          "text": "RelativeLayout positions views based on relationships with sibling views or the parent container.",
+          "is_correct": false,
+          "rationale": "RelativeLayout positions views relative to others."
+        },
+        {
+          "key": "B",
+          "text": "FrameLayout is designed to block out an area on the screen to display a single item.",
+          "is_correct": false,
+          "rationale": "FrameLayout stacks views, showing typically one at a time."
+        },
+        {
+          "key": "C",
+          "text": "ConstraintLayout offers flexible and powerful ways to position and size widgets.",
+          "is_correct": false,
+          "rationale": "ConstraintLayout uses constraints for complex, flat hierarchies."
+        },
+        {
+          "key": "D",
+          "text": "LinearLayout arranges all its child views either horizontally or vertically in a single direction.",
+          "is_correct": true,
+          "rationale": "LinearLayout arranges views sequentially in one direction."
+        },
+        {
+          "key": "E",
+          "text": "GridLayout places items in a two-dimensional grid, similar to a table structure.",
+          "is_correct": false,
+          "rationale": "GridLayout arranges views in a grid, not a single row/column."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What is the primary function of the AndroidManifest.xml file in an Android application project?",
+      "explanation": "The `AndroidManifest.xml` file is crucial for declaring the app's structure, components (activities, services), required permissions, and hardware/software features to the Android system.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It stores all the strings, colors, and dimensions used throughout the application's UI.",
+          "is_correct": false,
+          "rationale": "This describes resource files (e.g., strings.xml), not Manifest."
+        },
+        {
+          "key": "B",
+          "text": "It defines the build configuration and dependencies for the project, managed by Gradle.",
+          "is_correct": false,
+          "rationale": "This describes build.gradle files, not Manifest."
+        },
+        {
+          "key": "C",
+          "text": "It declares essential application components, required permissions, and hardware/software features.",
+          "is_correct": true,
+          "rationale": "The Manifest declares app components, permissions, and features."
+        },
+        {
+          "key": "D",
+          "text": "It contains the source code for all the Kotlin or Java classes within the application.",
+          "is_correct": false,
+          "rationale": "This describes source code files (.kt or .java), not Manifest."
+        },
+        {
+          "key": "E",
+          "text": "It provides a mechanism for logging messages and debugging information during development.",
+          "is_correct": false,
+          "rationale": "This describes Logcat or other logging tools, not Manifest."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "What is the primary role of an Android Activity in a typical mobile application?",
+      "explanation": "An Activity is a fundamental component that provides a window for the user interface. It manages the lifecycle of a single screen, handling user interactions and displaying content to the user effectively.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It represents a single screen with a user interface, allowing interaction with the application.",
+          "is_correct": true,
+          "rationale": "An Activity displays a single UI screen."
+        },
+        {
+          "key": "B",
+          "text": "It performs background operations without directly interacting with the visual user interface.",
+          "is_correct": false,
+          "rationale": "This describes a Service, not an Activity."
+        },
+        {
+          "key": "C",
+          "text": "It provides a persistent way to store structured data locally on the device.",
+          "is_correct": false,
+          "rationale": "This describes data storage mechanisms."
+        },
+        {
+          "key": "D",
+          "text": "It handles network requests and responses to fetch data from remote servers.",
+          "is_correct": false,
+          "rationale": "Network operations are typically handled by other components."
+        },
+        {
+          "key": "E",
+          "text": "It broadcasts system-wide messages to other applications or components on the device.",
+          "is_correct": false,
+          "rationale": "This describes a BroadcastReceiver."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Which modern layout container is most suitable for arranging complex UI elements with flexible positioning?",
+      "explanation": "ConstraintLayout is highly flexible, allowing complex UI designs with a flat view hierarchy by defining constraints between elements. This approach significantly improves performance compared to deeply nested layouts.",
+      "options": [
+        {
+          "key": "A",
+          "text": "LinearLayout arranges views in a single row or column, either horizontally or vertically.",
+          "is_correct": false,
+          "rationale": "LinearLayout is simpler and less flexible for complex UIs."
+        },
+        {
+          "key": "B",
+          "text": "FrameLayout is optimized for displaying a single child view or stacking multiple views on top of each other.",
+          "is_correct": false,
+          "rationale": "FrameLayout is for stacking, not complex positioning."
+        },
+        {
+          "key": "C",
+          "text": "ConstraintLayout allows you to create complex and flexible layouts by defining relationships between views.",
+          "is_correct": true,
+          "rationale": "ConstraintLayout is ideal for complex, flat, and flexible UIs."
+        },
+        {
+          "key": "D",
+          "text": "TableLayout organizes views into rows and columns, similar to a spreadsheet, for structured data presentation.",
+          "is_correct": false,
+          "rationale": "TableLayout is for tabular data, not flexible positioning."
+        },
+        {
+          "key": "E",
+          "text": "GridLayout displays items in a two-dimensional scrollable grid, useful for gallery-like interfaces.",
+          "is_correct": false,
+          "rationale": "GridLayout is for grid-based items, not general complex layouts."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "What is the simplest way to store small amounts of primitive data, like user preferences or settings, in an Android application?",
+      "explanation": "SharedPreferences is the recommended and simplest mechanism for storing small collections of key-value pairs of primitive data types. It's ideal for user settings and preferences.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using a SQLite database is ideal for storing large amounts of structured data efficiently.",
+          "is_correct": false,
+          "rationale": "SQLite is for larger, structured data, not simple preferences."
+        },
+        {
+          "key": "B",
+          "text": "Employing Room Persistence Library provides an abstraction layer over SQLite for robust data management.",
+          "is_correct": false,
+          "rationale": "Room is for complex database operations, not simple preferences."
+        },
+        {
+          "key": "C",
+          "text": "Utilizing SharedPreferences allows storing key-value pairs of primitive data types persistently.",
+          "is_correct": true,
+          "rationale": "SharedPreferences is perfect for small, primitive data like settings."
+        },
+        {
+          "key": "D",
+          "text": "Saving data to internal storage files is suitable for private application-specific file data.",
+          "is_correct": false,
+          "rationale": "Internal storage is for files, not primitive key-value pairs."
+        },
+        {
+          "key": "E",
+          "text": "Storing data on external storage is appropriate for files that need to be accessible to other applications.",
+          "is_correct": false,
+          "rationale": "External storage is for files, not primitive key-value pairs."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "How do you typically respond to a user tapping a Button widget in an Android application using Kotlin?",
+      "explanation": "Attaching an OnClickListener to a Button using `setOnClickListener` is the standard and most straightforward way to handle user taps in Android development. It provides a clear callback mechanism.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Implement an OnClickListener interface and assign it to the button using the setOnClickListener method.",
+          "is_correct": true,
+          "rationale": "setOnClickListener is the standard way to handle button clicks."
+        },
+        {
+          "key": "B",
+          "text": "Override the onTouchEvent method within the Activity to capture all touch events on the screen.",
+          "is_correct": false,
+          "rationale": "onTouchEvent is too broad for a specific button click."
+        },
+        {
+          "key": "C",
+          "text": "Define an XML attribute 'android:onClick' directly in the layout file, pointing to a method name.",
+          "is_correct": false,
+          "rationale": "This XML approach is less common in modern Kotlin development."
+        },
+        {
+          "key": "D",
+          "text": "Use a BroadcastReceiver to listen for system-wide click events, then filter for the specific button.",
+          "is_correct": false,
+          "rationale": "BroadcastReceiver is for system broadcasts, not UI events."
+        },
+        {
+          "key": "E",
+          "text": "Attach a GestureDetector to the Button, enabling detection of various complex touch gestures.",
+          "is_correct": false,
+          "rationale": "GestureDetector is for complex gestures, not simple clicks."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "When an Android application crashes unexpectedly, which tool is most helpful for examining the stack trace and identifying the error's origin?",
+      "explanation": "Logcat is an essential debugging tool in Android Studio that displays system messages, including exceptions, errors, and custom log messages, which are crucial for diagnosing application crashes.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Layout Inspector helps visualize and debug the structure and properties of your UI layout.",
+          "is_correct": false,
+          "rationale": "Layout Inspector is for UI layout issues."
+        },
+        {
+          "key": "B",
+          "text": "The Network Inspector monitors network traffic, allowing you to debug API requests and responses.",
+          "is_correct": false,
+          "rationale": "Network Inspector is for network-related issues."
+        },
+        {
+          "key": "C",
+          "text": "Logcat displays system messages, including stack traces for crashes and custom log messages from your code.",
+          "is_correct": true,
+          "rationale": "Logcat shows stack traces, essential for crash diagnosis."
+        },
+        {
+          "key": "D",
+          "text": "The CPU Profiler helps analyze CPU usage and identify performance bottlenecks within your application.",
+          "is_correct": false,
+          "rationale": "CPU Profiler is for performance analysis."
+        },
+        {
+          "key": "E",
+          "text": "The Memory Profiler assists in tracking memory allocations and detecting memory leaks in your application.",
+          "is_correct": false,
+          "rationale": "Memory Profiler is for memory usage and leaks."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "Which Android component provides a single screen with a user interface for user interaction?",
+      "explanation": "An Activity is a fundamental component of Android applications, representing a single screen with a user interface. It is where users interact with the app's features.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A Broadcast Receiver, which handles system-wide announcements and specific application events.",
+          "is_correct": false,
+          "rationale": "Broadcast Receivers handle system-wide events."
+        },
+        {
+          "key": "B",
+          "text": "A Content Provider, which manages access to a structured set of data from other applications.",
+          "is_correct": false,
+          "rationale": "Content Providers manage shared data access."
+        },
+        {
+          "key": "C",
+          "text": "A Service, which performs long-running operations in the background without a user interface.",
+          "is_correct": false,
+          "rationale": "Services perform background operations without UI."
+        },
+        {
+          "key": "D",
+          "text": "An Activity, serving as the entry point for user interaction and displaying the application's UI.",
+          "is_correct": true,
+          "rationale": "An Activity provides a UI screen for user interaction."
+        },
+        {
+          "key": "E",
+          "text": "An Intent, used for messaging between components and requesting actions from other components.",
+          "is_correct": false,
+          "rationale": "Intents are messages, not UI components."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "When designing an Android user interface, what is the primary purpose of using a LinearLayout?",
+      "explanation": "A LinearLayout arranges UI elements in a single row or column. This simple layout is useful for organizing views sequentially, either horizontally or vertically, within your application's UI.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To position UI elements relative to each other or the parent container on the screen.",
+          "is_correct": false,
+          "rationale": "This describes a RelativeLayout's primary function."
+        },
+        {
+          "key": "B",
+          "text": "To arrange UI components in a single row or a single column on the Android screen.",
+          "is_correct": true,
+          "rationale": "LinearLayout arranges items in a single row or column."
+        },
+        {
+          "key": "C",
+          "text": "To display a scrollable list of items that can be dynamically loaded and updated effectively.",
+          "is_correct": false,
+          "rationale": "This describes RecyclerView or ListView functionality."
+        },
+        {
+          "key": "D",
+          "text": "To create complex, flat hierarchies for improved performance and nested view management.",
+          "is_correct": false,
+          "rationale": "This describes ConstraintLayout's performance benefits."
+        },
+        {
+          "key": "E",
+          "text": "To overlay multiple views on top of each other, displaying only one at a time for user selection.",
+          "is_correct": false,
+          "rationale": "This describes a FrameLayout's or ViewFlipper's use."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "What is the primary reason an Android application might request a user's permission, such as CAMERA?",
+      "explanation": "Android applications request permissions to access sensitive user data or system resources. This ensures user privacy and security by requiring explicit consent before accessing features like the camera or contacts.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To improve the overall performance of the application by optimizing resource usage efficiently.",
+          "is_correct": false,
+          "rationale": "Permissions are not for performance optimization."
+        },
+        {
+          "key": "B",
+          "text": "To allow the application to access restricted system resources or sensitive user data.",
+          "is_correct": true,
+          "rationale": "Permissions grant access to restricted resources or data."
+        },
+        {
+          "key": "C",
+          "text": "To enable background processing of tasks even when the application is not actively running.",
+          "is_correct": false,
+          "rationale": "Background processing does not always require explicit permission."
+        },
+        {
+          "key": "D",
+          "text": "To receive push notifications from a remote server and display them to the user.",
+          "is_correct": false,
+          "rationale": "Push notifications typically use a separate permission."
+        },
+        {
+          "key": "E",
+          "text": "To ensure compatibility across different Android device versions and manufacturers effectively.",
+          "is_correct": false,
+          "rationale": "Permissions are not directly for device compatibility."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "In Kotlin, which keyword is primarily used to declare a variable whose value cannot be reassigned after initialization?",
+      "explanation": "In Kotlin, `val` is used for read-only properties or local variables. Once assigned, its value cannot be changed, promoting immutability and safer code, especially in concurrent environments.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The 'var' keyword, which indicates a mutable variable whose value can be changed later.",
+          "is_correct": false,
+          "rationale": "'var' declares a mutable variable."
+        },
+        {
+          "key": "B",
+          "text": "The 'fun' keyword, primarily used for defining functions within the Kotlin programming language.",
+          "is_correct": false,
+          "rationale": "'fun' is for defining functions."
+        },
+        {
+          "key": "C",
+          "text": "The 'val' keyword, which declares a read-only property or local variable that is immutable.",
+          "is_correct": true,
+          "rationale": "'val' declares an immutable variable."
+        },
+        {
+          "key": "D",
+          "text": "The 'class' keyword, used for defining custom classes and their members in object-oriented programming.",
+          "is_correct": false,
+          "rationale": "'class' is for defining classes."
+        },
+        {
+          "key": "E",
+          "text": "The 'const' keyword, used for compile-time constants that are known at compilation.",
+          "is_correct": false,
+          "rationale": "'const' is for compile-time constants, not general variables."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "When an Android application crashes, what is the most common tool used to identify the root cause of the issue?",
+      "explanation": "The Logcat window in Android Studio is indispensable for debugging. It displays system messages, stack traces, and messages printed by your app, which are crucial for diagnosing crashes and unexpected behavior.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Android Emulator's battery usage statistics to observe power consumption patterns.",
+          "is_correct": false,
+          "rationale": "Battery stats are for power issues, not crashes."
+        },
+        {
+          "key": "B",
+          "text": "The Logcat window in Android Studio, which displays error messages and stack traces.",
+          "is_correct": true,
+          "rationale": "Logcat shows error messages and stack traces for crashes."
+        },
+        {
+          "key": "C",
+          "text": "The Layout Inspector tool to examine the hierarchy and properties of UI components.",
+          "is_correct": false,
+          "rationale": "Layout Inspector is for UI layout issues."
+        },
+        {
+          "key": "D",
+          "text": "The Device File Explorer to browse the internal storage of the connected Android device.",
+          "is_correct": false,
+          "rationale": "File Explorer is for inspecting device files."
+        },
+        {
+          "key": "E",
+          "text": "The Network Inspector to monitor all incoming and outgoing network traffic efficiently.",
+          "is_correct": false,
+          "rationale": "Network Inspector is for network-related issues."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "Which method is called when an Android Activity is first created and performs initial setup tasks?",
+      "explanation": "onCreate() is the first callback after the constructor, essential for initializing the activity and its UI. This is where you typically set the content view and initialize variables.",
+      "options": [
+        {
+          "key": "A",
+          "text": "onStart() is invoked when the activity becomes visible to the user, preparing for interaction with the user.",
+          "is_correct": false,
+          "rationale": "onStart() is called after onCreate() when the activity is visible."
+        },
+        {
+          "key": "B",
+          "text": "onResume() is called when the activity starts interacting with the user, becoming the foreground activity.",
+          "is_correct": false,
+          "rationale": "onResume() indicates the activity is in the foreground and interacting."
+        },
+        {
+          "key": "C",
+          "text": "onCreate() is where you perform all your normal static setup, like creating views and binding data.",
+          "is_correct": true,
+          "rationale": "onCreate() initializes the activity and its UI components."
+        },
+        {
+          "key": "D",
+          "text": "onPause() is called when the activity is partially obscured or losing focus, but still visible.",
+          "is_correct": false,
+          "rationale": "onPause() indicates the activity is losing focus but still visible."
+        },
+        {
+          "key": "E",
+          "text": "onStop() is invoked when the activity is no longer visible to the user, perhaps moving to the background.",
+          "is_correct": false,
+          "rationale": "onStop() is called when the activity is no longer visible to the user."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "Which Android layout organizes its child views into a single row or column, either horizontally or vertically?",
+      "explanation": "LinearLayout is a fundamental layout that simplifies arranging UI elements in a linear fashion, making it straightforward for basic designs and sequential content display.",
+      "options": [
+        {
+          "key": "A",
+          "text": "ConstraintLayout helps create complex and adaptive user interfaces with a flat view hierarchy efficiently.",
+          "is_correct": false,
+          "rationale": "ConstraintLayout uses constraints for flexible positioning, not a single row/column."
+        },
+        {
+          "key": "B",
+          "text": "RelativeLayout positions views based on relationships between sibling views or the parent container.",
+          "is_correct": false,
+          "rationale": "RelativeLayout positions views relative to each other or the parent."
+        },
+        {
+          "key": "C",
+          "text": "FrameLayout is designed to block out an area on the screen to display a single item efficiently.",
+          "is_correct": false,
+          "rationale": "FrameLayout displays a single item or stacks items on top of each other."
+        },
+        {
+          "key": "D",
+          "text": "LinearLayout arranges all its children in a single direction, either vertically or horizontally.",
+          "is_correct": true,
+          "rationale": "LinearLayout arranges views in a single row or column direction."
+        },
+        {
+          "key": "E",
+          "text": "TableLayout organizes views into rows and columns, similar to an HTML table structure for display.",
+          "is_correct": false,
+          "rationale": "TableLayout arranges views in a grid of rows and columns."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "How do you typically handle a user clicking a Button widget in an Android application using Kotlin?",
+      "explanation": "Implementing an OnClickListener and assigning it with setOnClickListener is the standard and most flexible way to respond to button clicks in modern Android development, especially with Kotlin lambdas.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Implement an OnClickListener interface and assign it to the button using its setOnClickListener method.",
+          "is_correct": true,
+          "rationale": "setOnClickListener is the standard way to handle button clicks."
+        },
+        {
+          "key": "B",
+          "text": "Override the onTouchEvent method in the Activity to detect specific touch events on the button.",
+          "is_correct": false,
+          "rationale": "onTouchEvent is for lower-level touch events, not simple clicks."
+        },
+        {
+          "key": "C",
+          "text": "Define a public method in the Activity and reference it directly within the button's XML layout using android:onClick.",
+          "is_correct": false,
+          "rationale": "While possible, setOnClickListener is generally preferred for flexibility in Kotlin."
+        },
+        {
+          "key": "D",
+          "text": "Use a GestureDetector to interpret various complex touch gestures, including single taps on the button.",
+          "is_correct": false,
+          "rationale": "GestureDetector is for more complex gestures beyond a simple click."
+        },
+        {
+          "key": "E",
+          "text": "Attach a KeyEvent.Callback to the button to listen for keyboard press events, which is not for clicks.",
+          "is_correct": false,
+          "rationale": "KeyEvent.Callback is for hardware key presses, not screen touch clicks."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "Why is it considered a best practice to define all user-facing strings in the strings.xml file?",
+      "explanation": "Externalizing strings into strings.xml is crucial for supporting multiple languages. Android provides a robust resource system for localization, making translations seamless and efficient without code changes.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It improves application performance by caching string values directly into the device's memory for faster access.",
+          "is_correct": false,
+          "rationale": "Caching is not the primary reason for string externalization."
+        },
+        {
+          "key": "B",
+          "text": "It allows for easy localization of the application into multiple languages without modifying code logic.",
+          "is_correct": true,
+          "rationale": "Externalizing strings enables easy localization into multiple languages."
+        },
+        {
+          "key": "C",
+          "text": "It reduces the overall APK size by compiling strings more efficiently than hardcoded values.",
+          "is_correct": false,
+          "rationale": "APK size reduction is not the primary benefit; maintainability and localization are."
+        },
+        {
+          "key": "D",
+          "text": "It prevents runtime errors that might occur if string literals are directly embedded within Java or Kotlin code.",
+          "is_correct": false,
+          "rationale": "Hardcoded strings don't inherently cause runtime errors, but are bad practice."
+        },
+        {
+          "key": "E",
+          "text": "It enhances security by encrypting sensitive string data, protecting it from unauthorized access or modification.",
+          "is_correct": false,
+          "rationale": "strings.xml does not provide encryption for sensitive data."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "What is the primary function of an Intent in Android development when navigating between different app components?",
+      "explanation": "Intents are messaging objects used to request an action from another app component, such as starting an Activity, a Service, or delivering a broadcast. They are fundamental for component communication and navigation.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To manage the lifecycle callbacks of various application components, ensuring proper state transitions.",
+          "is_correct": false,
+          "rationale": "Component lifecycles are managed by the Android system, not Intents."
+        },
+        {
+          "key": "B",
+          "text": "To carry out asynchronous operations in the background, preventing the main thread from becoming blocked.",
+          "is_correct": false,
+          "rationale": "Async operations are handled by mechanisms like Coroutines or background threads."
+        },
+        {
+          "key": "C",
+          "text": "To describe an operation to be performed, such as starting an Activity or sending a broadcast message.",
+          "is_correct": true,
+          "rationale": "Intents describe operations and facilitate communication between app components."
+        },
+        {
+          "key": "D",
+          "text": "To store persistent application data on the device, ensuring it remains available across app sessions.",
+          "is_correct": false,
+          "rationale": "Persistent data storage uses databases, SharedPreferences, or files, not Intents."
+        },
+        {
+          "key": "E",
+          "text": "To create and manage user interface elements, defining their appearance and behavior on the screen.",
+          "is_correct": false,
+          "rationale": "UI elements are defined in XML layouts and managed by Views/ViewGroups."
+        }
+      ]
+    }
+  ]
+}

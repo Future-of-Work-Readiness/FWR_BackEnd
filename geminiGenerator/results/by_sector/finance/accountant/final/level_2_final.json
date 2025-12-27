@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "What fundamental accounting equation must always remain in balance for a company's financial statements to be accurate?",
+      "explanation": "The accounting equation, Assets = Liabilities + Owner's Equity, is the bedrock of the balance sheet and fundamental to double-entry accounting. It ensures that all financial transactions are recorded in a balanced manner.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Assets = Liabilities + Owner's Equity, representing the financial position of the entity at a specific point in time.",
+          "is_correct": true,
+          "rationale": "This equation forms the basis of the balance sheet, ensuring financial equilibrium."
+        },
+        {
+          "key": "B",
+          "text": "Revenue - Expenses = Net Income, calculating the profitability over a specific accounting period.",
+          "is_correct": false,
+          "rationale": "This describes the income statement, not the fundamental accounting equation."
+        },
+        {
+          "key": "C",
+          "text": "Cash Flow from Operations + Investing + Financing = Net Change in Cash, tracking the movement of cash.",
+          "is_correct": false,
+          "rationale": "This describes the statement of cash flows, not the fundamental accounting equation."
+        },
+        {
+          "key": "D",
+          "text": "Current Assets / Current Liabilities = Current Ratio, assessing the short-term liquidity of the business.",
+          "is_correct": false,
+          "rationale": "This is a financial ratio used for analysis, not the fundamental accounting equation."
+        },
+        {
+          "key": "E",
+          "text": "Sales Revenue - Cost of Goods Sold = Gross Profit, indicating the direct profitability from selling products.",
+          "is_correct": false,
+          "rationale": "This calculates gross profit, a component of the income statement, not the core equation."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Why are strong internal controls crucial for an accountant working within a financial institution?",
+      "explanation": "Strong internal controls are vital for safeguarding assets, ensuring the accuracy and reliability of financial data, and promoting operational efficiency while adhering to regulatory requirements and preventing fraudulent activities.",
+      "options": [
+        {
+          "key": "A",
+          "text": "They help to prevent errors, detect fraud, and ensure compliance with relevant financial regulations and policies.",
+          "is_correct": true,
+          "rationale": "Internal controls prevent errors, detect fraud, and ensure compliance with regulations."
+        },
+        {
+          "key": "B",
+          "text": "They streamline the process of preparing financial statements, reducing the time required for monthly closings.",
+          "is_correct": false,
+          "rationale": "While a benefit, this is not the primary or most crucial reason for internal controls."
+        },
+        {
+          "key": "C",
+          "text": "They primarily focus on optimizing investment portfolios to maximize returns for the institution's clients.",
+          "is_correct": false,
+          "rationale": "This is a function of investment management, not the primary role of internal controls."
+        },
+        {
+          "key": "D",
+          "text": "They are mainly used to calculate complex tax liabilities and prepare accurate tax filings annually.",
+          "is_correct": false,
+          "rationale": "Tax preparation is a separate function, though good controls support accurate tax data."
+        },
+        {
+          "key": "E",
+          "text": "They facilitate faster data entry into accounting software, improving the overall efficiency of daily tasks.",
+          "is_correct": false,
+          "rationale": "Efficiency is a secondary benefit; accuracy and compliance are paramount."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What is the primary purpose of the accounts payable function in a company's financial operations?",
+      "explanation": "Accounts payable is responsible for managing the company's short-term debts to suppliers and vendors. This involves receiving, verifying, and processing invoices, and then making timely payments to avoid penalties and maintain good vendor relationships.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To manage and process all invoices received from vendors, ensuring timely and accurate payments for goods and services.",
+          "is_correct": true,
+          "rationale": "Accounts payable manages vendor invoices and ensures timely payments for goods and services."
+        },
+        {
+          "key": "B",
+          "text": "To record all incoming revenue from sales transactions and manage customer credit limits effectively.",
+          "is_correct": false,
+          "rationale": "This describes the accounts receivable function, not accounts payable."
+        },
+        {
+          "key": "C",
+          "text": "To reconcile bank statements with the general ledger, identifying discrepancies and ensuring cash balance accuracy.",
+          "is_correct": false,
+          "rationale": "This describes the bank reconciliation process, not accounts payable."
+        },
+        {
+          "key": "D",
+          "text": "To prepare payroll for all employees, including calculating wages, deductions, and tax withholdings accurately.",
+          "is_correct": false,
+          "rationale": "This describes the payroll function, which is distinct from accounts payable."
+        },
+        {
+          "key": "E",
+          "text": "To analyze investment opportunities and manage the company's portfolio to achieve optimal financial growth.",
+          "is_correct": false,
+          "rationale": "This describes treasury or investment management, not accounts payable."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "When performing a bank reconciliation, what is the most common reason for a difference between the bank statement balance and the cash account balance?",
+      "explanation": "Outstanding checks and deposits in transit are common timing differences. These items have been recorded by the company but have not yet been processed by the bank by the statement date, causing a temporary discrepancy.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Outstanding checks or deposits in transit that have not yet cleared the bank by the statement date.",
+          "is_correct": true,
+          "rationale": "Timing differences like outstanding checks and deposits in transit are common reconciliation items."
+        },
+        {
+          "key": "B",
+          "text": "Errors made by the company's accounts receivable department in recording customer payments.",
+          "is_correct": false,
+          "rationale": "Company errors are possible but less common than timing differences in reconciliation."
+        },
+        {
+          "key": "C",
+          "text": "Incorrect calculation of depreciation expense for fixed assets in the general ledger.",
+          "is_correct": false,
+          "rationale": "Depreciation expense does not directly impact the cash balance on a bank statement."
+        },
+        {
+          "key": "D",
+          "text": "Unrecorded journal entries for accrued expenses that are due at the end of the accounting period.",
+          "is_correct": false,
+          "rationale": "Accrued expenses affect the income statement and balance sheet, not typically the bank balance directly."
+        },
+        {
+          "key": "E",
+          "text": "Discrepancies arising from the valuation of inventory using different costing methods.",
+          "is_correct": false,
+          "rationale": "Inventory valuation affects cost of goods sold and assets, not the bank cash balance."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Which statement best describes the primary difference in revenue recognition between accrual and cash basis accounting?",
+      "explanation": "Accrual basis accounting records revenues when they are earned and expenses when they are incurred, regardless of when cash changes hands. Cash basis accounting, conversely, only records revenues when cash is received and expenses when cash is paid.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Accrual basis recognizes revenue when earned, while cash basis recognizes it only when cash is actually received.",
+          "is_correct": true,
+          "rationale": "Accrual basis recognizes revenue when earned, while cash basis recognizes revenue upon cash receipt."
+        },
+        {
+          "key": "B",
+          "text": "Cash basis prioritizes matching expenses with revenues, whereas accrual basis focuses on cash flow.",
+          "is_correct": false,
+          "rationale": "Accrual basis uses the matching principle; cash basis focuses on cash flow, not matching."
+        },
+        {
+          "key": "C",
+          "text": "Accrual basis is simpler for small businesses, while cash basis is required for publicly traded companies.",
+          "is_correct": false,
+          "rationale": "Cash basis is simpler for small businesses; accrual is generally required for public companies."
+        },
+        {
+          "key": "D",
+          "text": "Cash basis records non-cash transactions, but accrual basis ignores them for financial reporting purposes.",
+          "is_correct": false,
+          "rationale": "Accrual basis records non-cash transactions (e.g., depreciation); cash basis generally does not."
+        },
+        {
+          "key": "E",
+          "text": "Accrual basis defers expense recognition until cash is paid, unlike the immediate recognition in cash basis.",
+          "is_correct": false,
+          "rationale": "Accrual basis recognizes expenses when incurred, not necessarily when paid."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "When preparing financial statements, which accounting method recognizes revenues when earned, regardless of when cash is received?",
+      "explanation": "The accrual basis is fundamental for GAAP and IFRS, matching revenues with the expenses incurred to generate them, providing a more accurate picture of a company's financial performance over a period.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The accrual basis of accounting records transactions when they occur, matching revenues and expenses effectively.",
+          "is_correct": true,
+          "rationale": "Accrual basis matches revenues and expenses when earned or incurred."
+        },
+        {
+          "key": "B",
+          "text": "The cash basis of accounting records only cash inflows and outflows, often used by smaller entities.",
+          "is_correct": false,
+          "rationale": "Cash basis recognizes revenue only when cash is received."
+        },
+        {
+          "key": "C",
+          "text": "The modified cash basis combines elements of both methods, recognizing some non-cash transactions.",
+          "is_correct": false,
+          "rationale": "Modified cash basis is a hybrid, not pure accrual."
+        },
+        {
+          "key": "D",
+          "text": "The hybrid accounting method blends different approaches to suit specific business operational requirements.",
+          "is_correct": false,
+          "rationale": "Hybrid methods are combinations, not the standard accrual method."
+        },
+        {
+          "key": "E",
+          "text": "The tax basis of accounting primarily focuses on rules for income tax reporting and compliance.",
+          "is_correct": false,
+          "rationale": "Tax basis follows tax regulations, not necessarily GAAP revenue recognition."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Which of the following accounts would typically be classified as a current liability on a company's balance sheet?",
+      "explanation": "Current liabilities are obligations expected to be settled within one year. Accounts Payable fits this definition as it represents short-term debts to suppliers for goods or services.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Accounts Payable represents amounts owed by the company to its suppliers for goods or services purchased on credit.",
+          "is_correct": true,
+          "rationale": "Accounts Payable are short-term obligations due within one year."
+        },
+        {
+          "key": "B",
+          "text": "Retained Earnings represents the accumulated profits of the company that have not been distributed to shareholders.",
+          "is_correct": false,
+          "rationale": "Retained Earnings is an equity account, not a liability."
+        },
+        {
+          "key": "C",
+          "text": "Property, Plant, and Equipment includes long-term tangible assets used in the business operations for more than one year.",
+          "is_correct": false,
+          "rationale": "Property, Plant, and Equipment are long-term assets, not liabilities."
+        },
+        {
+          "key": "D",
+          "text": "Common Stock represents the ownership shares issued by a corporation, indicating equity capital contributed by investors.",
+          "is_correct": false,
+          "rationale": "Common Stock is an equity account, representing ownership."
+        },
+        {
+          "key": "E",
+          "text": "Long-term Debt includes financial obligations that are not due for payment within the next twelve months.",
+          "is_correct": false,
+          "rationale": "Long-term Debt is a non-current liability, not a current one."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "A company purchases office supplies on credit. How should this transaction be recorded using the double-entry accounting system?",
+      "explanation": "Purchasing supplies on credit increases the asset (Office Supplies) and creates a liability (Accounts Payable). Debiting assets and crediting liabilities correctly reflects this transaction.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Debit Office Supplies (asset) and credit Accounts Payable (liability) to reflect the increase in assets and liabilities.",
+          "is_correct": true,
+          "rationale": "Increases to assets are debits; increases to liabilities are credits."
+        },
+        {
+          "key": "B",
+          "text": "Debit Cash (asset) and credit Office Supplies Expense (expense) to show a cash outlay for supplies.",
+          "is_correct": false,
+          "rationale": "This entry implies a cash payment and immediate expensing, which is incorrect."
+        },
+        {
+          "key": "C",
+          "text": "Debit Accounts Payable (liability) and credit Cash (asset) to indicate a payment made for prior purchases.",
+          "is_correct": false,
+          "rationale": "This entry records a payment, not a purchase on credit."
+        },
+        {
+          "key": "D",
+          "text": "Debit Office Supplies Expense (expense) and credit Revenue (revenue) to record an expense related to income.",
+          "is_correct": false,
+          "rationale": "This entry incorrectly pairs an expense with revenue and doesn't reflect the purchase."
+        },
+        {
+          "key": "E",
+          "text": "Debit Equipment (asset) and credit Notes Payable (liability) for a long-term asset acquisition.",
+          "is_correct": false,
+          "rationale": "This entry is for equipment, not supplies, and uses a different liability account."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "What is the primary objective of performing a monthly bank reconciliation for a business?",
+      "explanation": "Bank reconciliation ensures that the cash balance in the accounting records matches the bank's records, identifying discrepancies like outstanding checks or deposits in transit, and bank errors, thereby ensuring accuracy.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To identify and explain differences between the cash balance in the company's records and the bank statement balance.",
+          "is_correct": true,
+          "rationale": "Reconciliation matches company cash records with bank statements, finding discrepancies."
+        },
+        {
+          "key": "B",
+          "text": "To prepare the company's annual income tax return by accurately categorizing all revenue and expense items.",
+          "is_correct": false,
+          "rationale": "Tax preparation is a broader process, not the primary goal of bank reconciliation."
+        },
+        {
+          "key": "C",
+          "text": "To calculate the total amount of sales tax owed to the government based on monthly sales transactions.",
+          "is_correct": false,
+          "rationale": "Sales tax calculation is separate from reconciling cash balances."
+        },
+        {
+          "key": "D",
+          "text": "To forecast future cash flows and liquidity needs for strategic business planning and investment decisions.",
+          "is_correct": false,
+          "rationale": "Cash flow forecasting is a separate financial analysis activity."
+        },
+        {
+          "key": "E",
+          "text": "To verify the accuracy of accounts receivable aging reports and follow up on overdue customer invoices.",
+          "is_correct": false,
+          "rationale": "Accounts receivable management is distinct from bank reconciliation."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Why is adherence to Generally Accepted Accounting Principles (GAAP) crucial for financial reporting in the finance sector?",
+      "explanation": "GAAP provides a common set of accounting standards, ensuring financial information is reliable and comparable across different companies, which is vital for investors, creditors, and regulators in the finance sector for informed decision-making.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It ensures consistency, comparability, and transparency in financial statements, allowing stakeholders to make informed decisions.",
+          "is_correct": true,
+          "rationale": "GAAP ensures financial statement consistency, comparability, and transparency for stakeholders."
+        },
+        {
+          "key": "B",
+          "text": "It primarily dictates the maximum allowable tax deductions a company can claim each fiscal year.",
+          "is_correct": false,
+          "rationale": "Tax laws (e.g., IRS code) dictate tax deductions, not GAAP."
+        },
+        {
+          "key": "C",
+          "text": "It serves as a guideline for internal budgeting processes and departmental expenditure allocations within the organization.",
+          "is_correct": false,
+          "rationale": "Internal budgeting follows management policies, not strictly GAAP."
+        },
+        {
+          "key": "D",
+          "text": "It establishes specific rules for calculating employee payroll and benefits, ensuring fair compensation practices.",
+          "is_correct": false,
+          "rationale": "Payroll rules are governed by labor laws and internal HR policies."
+        },
+        {
+          "key": "E",
+          "text": "It provides a framework for managing customer relationships and optimizing sales strategies for market growth.",
+          "is_correct": false,
+          "rationale": "Customer relationship management is a sales and marketing function, not GAAP."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "In accrual basis accounting, when is revenue recognized, regardless of when cash is actually received?",
+      "explanation": "Accrual basis accounting dictates that revenues are recognized when earned, not necessarily when cash changes hands. This provides a more accurate picture of a company's financial performance over time.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Revenue is recognized when it is earned, typically when goods or services are delivered to the customer.",
+          "is_correct": true,
+          "rationale": "Revenue is recognized when earned, providing a true picture of performance."
+        },
+        {
+          "key": "B",
+          "text": "Revenue is recognized only when the cash payment for the goods or services has been physically received.",
+          "is_correct": false,
+          "rationale": "This describes cash basis accounting, not accrual basis."
+        },
+        {
+          "key": "C",
+          "text": "Revenue is recognized at the end of the fiscal year, after all expenses have been fully accounted for.",
+          "is_correct": false,
+          "rationale": "Revenue recognition is tied to earning, not year-end closing."
+        },
+        {
+          "key": "D",
+          "text": "Revenue is recognized when the purchase order is initially placed by the customer, not upon delivery.",
+          "is_correct": false,
+          "rationale": "Revenue is recognized upon delivery, not just order placement."
+        },
+        {
+          "key": "E",
+          "text": "Revenue is recognized when the company's financial statements are officially prepared and audited.",
+          "is_correct": false,
+          "rationale": "Financial statement preparation is after recognition, not the trigger."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Which depreciation method allocates an equal amount of an asset's cost over its entire useful life?",
+      "explanation": "The straight-line depreciation method is the simplest and most common, spreading the cost evenly over an asset's useful life. It results in the same depreciation expense each period.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The straight-line method systematically distributes the asset's depreciable cost uniformly over its estimated useful life.",
+          "is_correct": true,
+          "rationale": "Straight-line method allocates equal depreciation expense annually."
+        },
+        {
+          "key": "B",
+          "text": "The declining balance method applies a constant depreciation rate to the asset's decreasing book value each year.",
+          "is_correct": false,
+          "rationale": "This method results in higher depreciation in earlier years."
+        },
+        {
+          "key": "C",
+          "text": "The units of production method depreciates an asset based on its actual usage or output during the period.",
+          "is_correct": false,
+          "rationale": "This method varies depreciation based on usage, not time."
+        },
+        {
+          "key": "D",
+          "text": "The sum-of-the-years' digits method accelerates depreciation, recognizing more expense in earlier years.",
+          "is_correct": false,
+          "rationale": "This is another accelerated depreciation method, not equal."
+        },
+        {
+          "key": "E",
+          "text": "The activity-based method allocates depreciation expense according to specific operational metrics.",
+          "is_correct": false,
+          "rationale": "This method ties depreciation to activity, not a fixed annual amount."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "What is the primary purpose of maintaining a comprehensive chart of accounts within an accounting system?",
+      "explanation": "A chart of accounts is fundamental for organizing and categorizing all financial transactions. It ensures consistency in recording and reporting, which is crucial for accurate financial statements and analysis.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It provides a structured list of all financial accounts used by the organization to record transactions.",
+          "is_correct": true,
+          "rationale": "Organizes and categorizes all financial transactions for accurate reporting."
+        },
+        {
+          "key": "B",
+          "text": "It outlines the company's strategic marketing plans for the upcoming fiscal quarter.",
+          "is_correct": false,
+          "rationale": "This is a marketing document, not an accounting chart of accounts."
+        },
+        {
+          "key": "C",
+          "text": "It details the specific responsibilities of each employee within the finance department.",
+          "is_correct": false,
+          "rationale": "This is an organizational chart or job description, not a chart of accounts."
+        },
+        {
+          "key": "D",
+          "text": "It serves as a legal document for filing corporate taxes with government regulatory bodies.",
+          "is_correct": false,
+          "rationale": "Tax filings use data from accounts, but the chart itself is not the filing."
+        },
+        {
+          "key": "E",
+          "text": "It tracks individual customer purchasing habits and payment histories for sales analysis.",
+          "is_correct": false,
+          "rationale": "This describes a CRM or sales ledger, not the chart of accounts."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "What is the main objective of regularly reconciling the Accounts Receivable subsidiary ledger to the general ledger?",
+      "explanation": "Reconciling the Accounts Receivable subsidiary ledger with the general ledger control account is vital for accuracy. It identifies discrepancies, ensuring that the sum of individual customer balances equals the aggregate total, preventing errors in financial reporting.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To ensure that the total balance of individual customer accounts matches the control account in the general ledger.",
+          "is_correct": true,
+          "rationale": "Ensures individual customer balances match the general ledger control account."
+        },
+        {
+          "key": "B",
+          "text": "To calculate the company's overall profitability by comparing revenues against all incurred expenses.",
+          "is_correct": false,
+          "rationale": "Profitability is assessed through the income statement, not AR reconciliation."
+        },
+        {
+          "key": "C",
+          "text": "To determine the exact amount of inventory available for sale in the company's warehouses.",
+          "is_correct": false,
+          "rationale": "Inventory counts and records manage inventory, not AR reconciliation."
+        },
+        {
+          "key": "D",
+          "text": "To verify the accuracy of payroll disbursements and employee benefit deductions for the period.",
+          "is_correct": false,
+          "rationale": "Payroll reconciliation is a separate process, unrelated to AR."
+        },
+        {
+          "key": "E",
+          "text": "To prepare the annual budget forecasts for the upcoming fiscal year's operational activities.",
+          "is_correct": false,
+          "rationale": "Budgeting is a planning process, not a reconciliation task."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Which internal control measure is most effective for safeguarding cash and preventing theft or misuse?",
+      "explanation": "Segregation of duties is a cornerstone of internal control. By dividing responsibilities for cash handling, recording, and reconciliation among different individuals, it significantly reduces the risk of fraud and error, enhancing accountability.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Implementing segregation of duties, where different individuals handle cash receipts, recording, and reconciliation.",
+          "is_correct": true,
+          "rationale": "Segregation of duties prevents a single person from controlling an entire transaction."
+        },
+        {
+          "key": "B",
+          "text": "Conducting monthly employee performance reviews to assess individual productivity levels.",
+          "is_correct": false,
+          "rationale": "Performance reviews are for management, not direct cash safeguarding."
+        },
+        {
+          "key": "C",
+          "text": "Relying solely on a single, trusted employee to manage all cash handling responsibilities.",
+          "is_correct": false,
+          "rationale": "This increases fraud risk by concentrating control in one person."
+        },
+        {
+          "key": "D",
+          "text": "Storing all cash in an unlocked desk drawer within the accounting department office.",
+          "is_correct": false,
+          "rationale": "This practice makes cash highly vulnerable to theft and loss."
+        },
+        {
+          "key": "E",
+          "text": "Minimizing the frequency of bank deposits to reduce administrative tasks and processing fees.",
+          "is_correct": false,
+          "rationale": "Infrequent deposits increase the risk of cash loss or theft."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "What is the main objective of conducting a monthly bank reconciliation process for a company's financial records?",
+      "explanation": "Bank reconciliation ensures that the cash balance in the company's books matches the balance reported by the bank. It helps identify discrepancies, errors, and unrecorded transactions, ensuring the accuracy of cash accounts.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To identify and resolve discrepancies between the cash balance in the company's ledger and the bank statement.",
+          "is_correct": true,
+          "rationale": "Bank reconciliation primarily identifies and resolves discrepancies."
+        },
+        {
+          "key": "B",
+          "text": "To calculate the total amount of outstanding checks that have not yet cleared the bank account.",
+          "is_correct": false,
+          "rationale": "This is a step within reconciliation, not the main objective."
+        },
+        {
+          "key": "C",
+          "text": "To prepare the annual financial statements, including the balance sheet and income statement accurately.",
+          "is_correct": false,
+          "rationale": "Reconciliation supports financial statements, but is not their preparation."
+        },
+        {
+          "key": "D",
+          "text": "To ensure compliance with all relevant tax regulations and reporting requirements for cash transactions.",
+          "is_correct": false,
+          "rationale": "Tax compliance is a separate, though related, objective."
+        },
+        {
+          "key": "E",
+          "text": "To forecast future cash inflows and outflows for effective financial planning and budgeting activities.",
+          "is_correct": false,
+          "rationale": "Cash flow forecasting is a distinct financial management activity."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "Which statement accurately describes the fundamental difference between an accrued expense and a deferred expense in accounting?",
+      "explanation": "Accrued expenses are expenses incurred but not yet paid, while deferred expenses are expenses paid in advance but not yet incurred. Both are critical for accurate financial reporting.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Accrued expenses are paid in advance, whereas deferred expenses have been incurred but not yet paid.",
+          "is_correct": false,
+          "rationale": "This statement incorrectly reverses the definitions of the two terms."
+        },
+        {
+          "key": "B",
+          "text": "Accrued expenses are incurred but not yet paid, while deferred expenses are paid in advance for future benefits.",
+          "is_correct": true,
+          "rationale": "This correctly defines accrued expenses as liabilities and deferred expenses as assets."
+        },
+        {
+          "key": "C",
+          "text": "Deferred expenses represent revenue earned but not yet received, unlike accrued expenses which are liabilities.",
+          "is_correct": false,
+          "rationale": "Deferred revenue is different from deferred expense; this is incorrect."
+        },
+        {
+          "key": "D",
+          "text": "Both accrued and deferred expenses are always recorded as current assets on the company's balance sheet.",
+          "is_correct": false,
+          "rationale": "Accrued expenses are liabilities; deferred expenses are assets."
+        },
+        {
+          "key": "E",
+          "text": "Accrued expenses relate only to interest, and deferred expenses relate only to rent payments specifically.",
+          "is_correct": false,
+          "rationale": "These terms apply to various types of expenses, not just specific ones."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "Under which circumstances is the straight-line method of depreciation generally considered the most appropriate choice for an asset?",
+      "explanation": "Straight-line depreciation allocates an equal amount of an asset's cost to each accounting period over its useful life. It is suitable when an asset's usage or economic benefit is consistent throughout its life.",
+      "options": [
+        {
+          "key": "A",
+          "text": "When an asset is expected to generate higher revenues in its earlier years and less in later periods.",
+          "is_correct": false,
+          "rationale": "This scenario suggests an accelerated depreciation method would be more appropriate."
+        },
+        {
+          "key": "B",
+          "text": "When the asset's economic benefits are expected to be consumed evenly over its entire useful life.",
+          "is_correct": true,
+          "rationale": "Straight-line is best when an asset's utility is consistent over time."
+        },
+        {
+          "key": "C",
+          "text": "When the company aims to maximize tax deductions in the initial years of the asset's service.",
+          "is_correct": false,
+          "rationale": "Accelerated methods are typically used for maximizing early tax deductions."
+        },
+        {
+          "key": "D",
+          "text": "When the asset's usage is directly proportional to the units of production or activity levels.",
+          "is_correct": false,
+          "rationale": "The units-of-production method would be more suitable in this situation."
+        },
+        {
+          "key": "E",
+          "text": "When the asset has a very short useful life and a significant salvage value at the end.",
+          "is_correct": false,
+          "rationale": "Asset life and salvage value are inputs, not determinants for straight-line suitability."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "What is the primary purpose of implementing segregation of duties within an organization's accounting functions?",
+      "explanation": "Segregation of duties is a key internal control designed to minimize the risk of fraud and error. By dividing responsibilities, no single individual has complete control over a transaction from start to finish.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To ensure that no single employee has complete control over all aspects of a financial transaction.",
+          "is_correct": true,
+          "rationale": "Segregation of duties prevents fraud and errors by dividing tasks."
+        },
+        {
+          "key": "B",
+          "text": "To accelerate the financial reporting process by allowing faster data entry and reconciliation tasks.",
+          "is_correct": false,
+          "rationale": "Segregation of duties may sometimes increase processing time, not accelerate it."
+        },
+        {
+          "key": "C",
+          "text": "To reduce the overall operating costs by optimizing staffing levels in various departments.",
+          "is_correct": false,
+          "rationale": "Cost reduction is not the primary goal; control is the main objective."
+        },
+        {
+          "key": "D",
+          "text": "To centralize all critical financial decision-making authority under a single senior manager.",
+          "is_correct": false,
+          "rationale": "This is the opposite of segregation of duties, which promotes decentralization of control."
+        },
+        {
+          "key": "E",
+          "text": "To exclusively comply with external audit requirements, without impacting internal operational efficiency.",
+          "is_correct": false,
+          "rationale": "It's for both internal control and audit compliance, impacting efficiency positively."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "What is the primary benefit of preparing an Accounts Receivable aging schedule for a business?",
+      "explanation": "An Accounts Receivable aging schedule categorizes outstanding invoices by the length of time they have been unpaid. This helps assess the collectibility of receivables and estimate potential bad debts.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To identify overdue customer accounts and estimate the potential amount of uncollectible bad debts.",
+          "is_correct": true,
+          "rationale": "Aging schedules help assess collectibility and estimate bad debt expense effectively."
+        },
+        {
+          "key": "B",
+          "text": "To calculate the total revenue generated from credit sales during a specific accounting period.",
+          "is_correct": false,
+          "rationale": "Revenue is recorded at the time of sale, not primarily through aging schedules."
+        },
+        {
+          "key": "C",
+          "text": "To determine the precise interest charges to apply to all customer invoices that are past due.",
+          "is_correct": false,
+          "rationale": "While related, this is not the primary benefit of an aging schedule."
+        },
+        {
+          "key": "D",
+          "text": "To forecast future sales trends based on historical customer payment behaviors and patterns.",
+          "is_correct": false,
+          "rationale": "Sales forecasting uses broader data than just AR aging for future trends."
+        },
+        {
+          "key": "E",
+          "text": "To reconcile customer payments received with the corresponding invoices on a daily basis.",
+          "is_correct": false,
+          "rationale": "This describes cash application, which is a separate process from AR aging."
+        }
+      ]
+    }
+  ]
+}

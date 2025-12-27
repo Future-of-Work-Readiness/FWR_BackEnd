@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "When optimizing initial page load, what is the primary benefit of inlining Critical CSS directly into the HTML document's head?",
+      "explanation": "Inlining Critical CSS eliminates a render-blocking request for the main stylesheet, allowing the browser to paint pixels for the visible part of the page much faster. This directly improves metrics like First Contentful Paint.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It allows the browser to render above-the-fold content immediately without waiting for an external stylesheet to download and parse.",
+          "is_correct": true,
+          "rationale": "This directly improves First Contentful Paint by removing a render-blocking resource."
+        },
+        {
+          "key": "B",
+          "text": "This technique significantly reduces the total size of the CSS bundle that must be downloaded by the client during the session.",
+          "is_correct": false,
+          "rationale": "It does not reduce total size; it prioritizes the loading of essential styles."
+        },
+        {
+          "key": "C",
+          "text": "It ensures that all JavaScript event listeners are attached before the user can interact with the page elements.",
+          "is_correct": false,
+          "rationale": "This is unrelated to CSS inlining and is handled by JavaScript execution."
+        },
+        {
+          "key": "D",
+          "text": "Inlining CSS is the only method to guarantee consistent styling across all modern web browsers and their different rendering engines.",
+          "is_correct": false,
+          "rationale": "Styling consistency is achieved through writing valid CSS, not inlining it."
+        },
+        {
+          "key": "E",
+          "text": "It automatically removes unused CSS selectors from the entire application, which improves runtime performance during complex animations.",
+          "is_correct": false,
+          "rationale": "This describes CSS purging or tree-shaking, a different optimization technique."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "In the JavaScript event loop, how does the browser prioritize executing microtasks (like `Promise.then`) versus macrotasks (like `setTimeout`)?",
+      "explanation": "The event loop model specifies that after a macrotask finishes, the entire microtask queue is drained before the next macrotask is picked from its queue. This ensures promise resolutions happen promptly before other events.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The browser executes all pending microtasks in the queue after the current macrotask completes, before starting the next macrotask.",
+          "is_correct": true,
+          "rationale": "Microtasks run to completion between macrotasks, ensuring prompt promise handling."
+        },
+        {
+          "key": "B",
+          "text": "Macrotasks are always given higher priority and will interrupt any currently executing microtask queues to run immediately.",
+          "is_correct": false,
+          "rationale": "This is incorrect; microtasks have higher priority and run before the next macrotask."
+        },
+        {
+          "key": "C",
+          "text": "Microtasks and macrotasks are placed in the same queue and are executed strictly in the order they were added.",
+          "is_correct": false,
+          "rationale": "They are handled in separate queues with a specific execution order."
+        },
+        {
+          "key": "D",
+          "text": "The browser alternates between executing one microtask and one macrotask to ensure fairness between different asynchronous operations.",
+          "is_correct": false,
+          "rationale": "This is not how the event loop works; all microtasks are cleared first."
+        },
+        {
+          "key": "E",
+          "text": "Only one microtask is processed between each macrotask to prevent the event loop from being blocked by promises.",
+          "is_correct": false,
+          "rationale": "The entire microtask queue is drained, not just a single task."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "When building a large-scale React application, when is using the Context API more appropriate than a global state library like Redux?",
+      "explanation": "Context API is excellent for passing data through the component tree without prop drilling, especially for state that changes infrequently. Redux offers more powerful tools like middleware and devtools for complex, high-frequency global state.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Context is ideal for managing low-frequency, localized state like theming or user authentication that doesn't require complex middleware.",
+          "is_correct": true,
+          "rationale": "Context is suited for localized, low-frequency state, avoiding Redux boilerplate."
+        },
+        {
+          "key": "B",
+          "text": "Redux should always be preferred for any application state because it provides better performance through its centralized store architecture.",
+          "is_correct": false,
+          "rationale": "This is an overgeneralization; Context can be more performant for certain use cases."
+        },
+        {
+          "key": "C",
+          "text": "The Context API is better for managing high-frequency updates, such as form input values, across the entire application.",
+          "is_correct": false,
+          "rationale": "This is a common anti-pattern that can cause significant performance issues."
+        },
+        {
+          "key": "D",
+          "text": "You should use Context for server-side state caching and Redux for all client-side UI state management needs.",
+          "is_correct": false,
+          "rationale": "This is an arbitrary distinction; both can be used for client-side state."
+        },
+        {
+          "key": "E",
+          "text": "Global state libraries are deprecated in modern React, so the Context API should be used for all state management needs.",
+          "is_correct": false,
+          "rationale": "This is false; libraries like Redux are still widely used and maintained."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "How should a developer use ARIA attributes to make a dynamically updated region, like a live notification feed, accessible to screen readers?",
+      "explanation": "The `aria-live` attribute is specifically designed for live regions. It allows developers to control how screen readers announce changes, such as new notifications, without interrupting the user's current task or changing their focus.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apply the `aria-live` attribute to the container element, which instructs assistive technologies to announce content changes without shifting focus.",
+          "is_correct": true,
+          "rationale": "`aria-live` is the correct WAI-ARIA mechanism for announcing dynamic content changes."
+        },
+        {
+          "key": "B",
+          "text": "Use the `aria-hidden='true'` attribute on all new notifications to prevent the screen reader from becoming overwhelmed with updates.",
+          "is_correct": false,
+          "rationale": "This would hide the new content from screen readers, making it inaccessible."
+        },
+        {
+          "key": "C",
+          "text": "Add a `tabindex='0'` to every new notification so the user can manually navigate to each update using the keyboard.",
+          "is_correct": false,
+          "rationale": "This creates a poor user experience by polluting the tab order."
+        },
+        {
+          "key": "D",
+          "text": "Wrap the entire feed in a `role='alert'` to ensure that every single message is announced with maximum priority.",
+          "is_correct": false,
+          "rationale": "The 'alert' role is for urgent, assertive messages and is too disruptive for a feed."
+        },
+        {
+          "key": "E",
+          "text": "The `aria-label` attribute should be dynamically updated on the container to describe the content of the most recent notification.",
+          "is_correct": false,
+          "rationale": "This is not the correct use of `aria-label`, which should provide a static name."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What is the primary mechanism by which a modern module bundler like Webpack performs 'tree shaking' to optimize the final bundle size?",
+      "explanation": "Tree shaking is a dead-code elimination process that leverages the static structure of ES modules. By analyzing `import` and `export` statements without running the code, the bundler can safely determine and remove unreferenced code.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It relies on static analysis of ES6 module syntax (`import` and `export`) to detect and eliminate any unused code exports.",
+          "is_correct": true,
+          "rationale": "Tree shaking is a static analysis process based on ES6 module syntax."
+        },
+        {
+          "key": "B",
+          "text": "It dynamically analyzes the application's runtime behavior in a headless browser to identify code paths that are never executed.",
+          "is_correct": false,
+          "rationale": "This describes runtime analysis, which is different from static tree shaking."
+        },
+        {
+          "key": "C",
+          "text": "Tree shaking works by compressing all the code modules into a single file, which reduces HTTP request overhead during load.",
+          "is_correct": false,
+          "rationale": "This describes the core function of bundling, not tree shaking specifically."
+        },
+        {
+          "key": "D",
+          "text": "It automatically converts large third-party libraries into smaller, more efficient WebAssembly modules for faster browser parsing and execution.",
+          "is_correct": false,
+          "rationale": "This is not related to tree shaking, which deals with JavaScript modules."
+        },
+        {
+          "key": "E",
+          "text": "The bundler removes all comments and whitespace from the source code, a process also known as minification, to shrink files.",
+          "is_correct": false,
+          "rationale": "This describes minification, another optimization that is distinct from tree shaking."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "How would you most effectively diagnose and resolve a high Cumulative Layout Shift (CLS) score reported in Core Web Vitals?",
+      "explanation": "CLS measures visual stability. The most common cause is content loading and shifting the layout. Reserving space for images, ads, and embeds with explicit dimensions prevents this unexpected movement.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Minify CSS and JavaScript files to reduce their overall size, which primarily improves the initial page load time.",
+          "is_correct": false,
+          "rationale": "This optimization affects loading speed (LCP/FCP), not layout stability."
+        },
+        {
+          "key": "B",
+          "text": "Implement server-side rendering to ensure the initial HTML is fully formed before it even reaches the browser.",
+          "is_correct": false,
+          "rationale": "SSR helps with First Contentful Paint but doesn't inherently prevent layout shifts from client-side assets."
+        },
+        {
+          "key": "C",
+          "text": "Specify explicit size attributes like width and height on images and video elements to reserve their space during rendering.",
+          "is_correct": true,
+          "rationale": "This is the primary method to prevent layout shifts caused by unsized media."
+        },
+        {
+          "key": "D",
+          "text": "Use a Content Delivery Network (CDN) to serve static assets from locations that are geographically closer to the user.",
+          "is_correct": false,
+          "rationale": "A CDN improves asset delivery speed but does not address the root cause of layout instability."
+        },
+        {
+          "key": "E",
+          "text": "Defer the loading of non-critical JavaScript using the async or defer attributes on the script tags.",
+          "is_correct": false,
+          "rationale": "This improves interactivity and load performance, but not directly CLS unless the scripts cause layout shifts."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "What is the primary security benefit of implementing a strict Content Security Policy (CSP) on a modern web application?",
+      "explanation": "CSP is a crucial security layer that helps detect and mitigate attacks like Cross-Site Scripting (XSS) and data injection. It provides control by letting developers declare which dynamic resources are allowed to load.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It enforces HTTPS by automatically redirecting all HTTP requests to their secure HTTPS counterparts for enhanced security.",
+          "is_correct": false,
+          "rationale": "This describes HTTP Strict Transport Security (HSTS), not Content Security Policy."
+        },
+        {
+          "key": "B",
+          "text": "It prevents cross-site scripting (XSS) attacks by specifying which sources of content are trusted and can be executed.",
+          "is_correct": true,
+          "rationale": "This is the core purpose of CSP: to control script and resource execution sources."
+        },
+        {
+          "key": "C",
+          "text": "It protects against cross-site request forgery (CSRF) by requiring a unique token for every state-changing server request.",
+          "is_correct": false,
+          "rationale": "This describes the function of anti-CSRF tokens, a different security mechanism."
+        },
+        {
+          "key": "D",
+          "text": "It secures cookies by restricting them to first-party contexts, mitigating tracking and potential information leakage across sites.",
+          "is_correct": false,
+          "rationale": "This functionality is handled by the SameSite attribute on cookies, not CSP."
+        },
+        {
+          "key": "E",
+          "text": "It encrypts sensitive user data stored in the browser's local storage to prevent any unauthorized direct access.",
+          "is_correct": false,
+          "rationale": "CSP does not provide encryption for client-side storage; that must be handled separately."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "When designing a complex application's state management, what is a key advantage of using a library like Zustand over React's built-in Context API?",
+      "explanation": "Zustand's core optimization is that components subscribe to specific state slices via selectors. When an unrelated part of the state updates, these components do not re-render, leading to better performance out-of-the-box.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Zustand completely eliminates the need for using any React hooks, which greatly simplifies the component logic.",
+          "is_correct": false,
+          "rationale": "This is incorrect; Zustand is a hook-based state management library."
+        },
+        {
+          "key": "B",
+          "text": "It prevents unnecessary re-renders in components that consume only parts of the state, without requiring manual memoization.",
+          "is_correct": true,
+          "rationale": "This is Zustand's main performance benefit, known as the 'zombie-child' problem solver."
+        },
+        {
+          "key": "C",
+          "text": "The Context API is inherently unable to share state between sibling components without resorting to complex prop drilling.",
+          "is_correct": false,
+          "rationale": "This is false; the Context API was specifically designed to prevent prop drilling."
+        },
+        {
+          "key": "D",
+          "text": "Zustand provides built-in middleware for handling asynchronous API calls, a feature entirely absent from React's core capabilities.",
+          "is_correct": false,
+          "rationale": "React's useEffect hook can handle async operations, though Zustand's middleware offers more structure."
+        },
+        {
+          "key": "E",
+          "text": "It is the only state management solution that offers official and stable integration with the TypeScript language.",
+          "is_correct": false,
+          "rationale": "Many libraries, including Redux Toolkit and Context API, have excellent TypeScript support."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "In a micro-frontend architecture, what specific problem does Webpack's Module Federation primarily aim to solve for development teams?",
+      "explanation": "Module Federation enables separately built and deployed applications to share code at runtime as if they were a single application, reducing bundle size and ensuring dependency consistency without tight coupling.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It enforces a consistent code style and linting rules across all independently developed micro-frontend applications.",
+          "is_correct": false,
+          "rationale": "This is the responsibility of tools like ESLint and Prettier, not a bundler feature."
+        },
+        {
+          "key": "B",
+          "text": "It allows different applications to dynamically share code and dependencies at runtime, avoiding code duplication and version conflicts.",
+          "is_correct": true,
+          "rationale": "This is the core value proposition of Module Federation for micro-frontends."
+        },
+        {
+          "key": "C",
+          "text": "It provides a centralized server for deploying and hosting multiple micro-frontend applications under a single domain name.",
+          "is_correct": false,
+          "rationale": "This describes a deployment or infrastructure concern, not what Module Federation itself does."
+        },
+        {
+          "key": "D",
+          "text": "It automatically generates type definitions from JavaScript code, enabling better integration between different micro-frontends.",
+          "is_correct": false,
+          "rationale": "This is a function of TypeScript or JSDoc, not Webpack's Module Federation."
+        },
+        {
+          "key": "E",
+          "text": "It bundles all micro-frontends into a single, monolithic JavaScript file for faster initial page load performance.",
+          "is_correct": false,
+          "rationale": "This is the opposite of the micro-frontend philosophy, which favors independent deployments."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "When is it most appropriate to use WAI-ARIA roles and attributes on an HTML element to improve application accessibility?",
+      "explanation": "The first rule of ARIA is to use native HTML elements with correct semantics whenever possible. ARIA should only be used to enhance accessibility when native semantics are insufficient, especially for custom JavaScript widgets.",
+      "options": [
+        {
+          "key": "A",
+          "text": "They should be applied to every single HTML element on the page to provide maximum information to screen readers.",
+          "is_correct": false,
+          "rationale": "This is an anti-pattern known as ARIA overuse and can make accessibility worse."
+        },
+        {
+          "key": "B",
+          "text": "ARIA attributes are only necessary for websites that are specifically designed for users with certain visual impairments.",
+          "is_correct": false,
+          "rationale": "Accessibility should be universal and is not limited to a specific user group."
+        },
+        {
+          "key": "C",
+          "text": "When you need to create a custom interactive component that has no native HTML semantic equivalent for its behavior.",
+          "is_correct": true,
+          "rationale": "ARIA bridges the semantic gap for custom widgets like tabs, carousels, or combo boxes."
+        },
+        {
+          "key": "D",
+          "text": "They are used primarily to add custom styling hooks for CSS that cannot be achieved with standard classes or IDs.",
+          "is_correct": false,
+          "rationale": "This confuses ARIA's purpose with CSS selectors; ARIA is for semantics, not styling."
+        },
+        {
+          "key": "E",
+          "text": "ARIA is a deprecated standard that has been fully replaced by the new structural elements introduced in HTML5.",
+          "is_correct": false,
+          "rationale": "ARIA is actively maintained and works alongside HTML5 to provide enhanced semantics."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When optimizing the Critical Rendering Path, what is the most effective initial strategy for reducing the First Contentful Paint (FCP) time?",
+      "explanation": "Prioritizing the loading of critical CSS by inlining it in the `<head>` ensures the browser can start rendering the above-the-fold content immediately, without waiting for an external stylesheet to download and parse.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Deferring all JavaScript execution until after the document's `load` event fires to completely unblock the main thread.",
+          "is_correct": false,
+          "rationale": "This helps Time to Interactive, but render-blocking CSS is a more direct cause of slow FCP."
+        },
+        {
+          "key": "B",
+          "text": "Inlining all critical CSS required for above-the-fold content directly within the HTML document's `<head>` tag.",
+          "is_correct": true,
+          "rationale": "This prevents a network request for render-blocking CSS, allowing the browser to paint pixels sooner."
+        },
+        {
+          "key": "C",
+          "text": "Compressing all image assets using modern formats like WebP before any other optimizations are applied to the page.",
+          "is_correct": false,
+          "rationale": "Image optimization is important for LCP, but CSS blocking is the primary bottleneck for the initial paint."
+        },
+        {
+          "key": "D",
+          "text": "Implementing a service worker to cache all static assets aggressively after the user's very first visit to the site.",
+          "is_correct": false,
+          "rationale": "This improves performance on subsequent visits but does not affect the initial FCP for a new user."
+        },
+        {
+          "key": "E",
+          "text": "Asynchronously loading all custom web fonts to prevent them from blocking the initial page rendering process.",
+          "is_correct": false,
+          "rationale": "This is a good practice, but render-blocking CSS has a more significant impact on FCP than fonts."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "In a large-scale React application, what is the primary architectural advantage of using a micro-frontend approach over a traditional monolithic structure?",
+      "explanation": "Micro-frontends allow independent teams to develop, test, and deploy their parts of the application autonomously. This decoupling accelerates development cycles and reduces coordination overhead, which is a major benefit in large organizations.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It guarantees a smaller initial bundle size by automatically code-splitting every component into its own separate chunk.",
+          "is_correct": false,
+          "rationale": "Bundle size is not guaranteed to be smaller and depends heavily on the implementation and shared dependencies."
+        },
+        {
+          "key": "B",
+          "text": "It allows multiple independent teams to develop, test, and deploy their features autonomously without complex coordination.",
+          "is_correct": true,
+          "rationale": "This organizational scaling and team autonomy is the core benefit of adopting a micro-frontend architecture."
+        },
+        {
+          "key": "C",
+          "text": "It completely eliminates the need for a shared component library, as each team builds its own UI from scratch.",
+          "is_correct": false,
+          "rationale": "Maintaining a consistent UI often still requires a shared component library, even with micro-frontends."
+        },
+        {
+          "key": "D",
+          "text": "It enforces the use of a single global state management solution like Redux across all application parts.",
+          "is_correct": false,
+          "rationale": "This contradicts the principle of autonomy; each micro-frontend can choose its own internal state management."
+        },
+        {
+          "key": "E",
+          "text": "It simplifies the local development setup because developers only need to run one single service for the entire application.",
+          "is_correct": false,
+          "rationale": "Local setup often becomes more complex, requiring orchestration to run multiple independent frontends together."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "What is the primary purpose of implementing tree shaking in a modern JavaScript build process using a tool like Webpack or Rollup?",
+      "explanation": "Tree shaking is a dead-code elimination process. It analyzes the `import` and `export` statements to detect which code modules are not actually being used and excludes them from the final production bundle.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To automatically convert modern JavaScript syntax into a backwards-compatible version that can run in older web browsers.",
+          "is_correct": false,
+          "rationale": "This process is called transpilation and is typically handled by tools like Babel, not tree shaking."
+        },
+        {
+          "key": "B",
+          "text": "To combine multiple JavaScript files into a single file to reduce the total number of HTTP requests made.",
+          "is_correct": false,
+          "rationale": "This is the definition of bundling, which is a separate concept from dead-code elimination."
+        },
+        {
+          "key": "C",
+          "text": "To eliminate unused code from the final bundle by statically analyzing module dependencies during the build process.",
+          "is_correct": true,
+          "rationale": "This correctly describes tree shaking, which removes exported code that was never imported by the application."
+        },
+        {
+          "key": "D",
+          "text": "To dynamically split the application's code into smaller chunks that are loaded on demand by the browser.",
+          "is_correct": false,
+          "rationale": "This describes code splitting, another optimization technique, but it is distinct from tree shaking."
+        },
+        {
+          "key": "E",
+          "text": "To minify and compress the final JavaScript bundle by renaming variables and removing whitespace characters.",
+          "is_correct": false,
+          "rationale": "This process is known as minification or uglification, which reduces file size but doesn't remove unused modules."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "What is the most effective role of a Content Security Policy (CSP) in mitigating Cross-Site Scripting (XSS) vulnerabilities on a web application?",
+      "explanation": "A well-configured CSP acts as a powerful defense-in-depth mechanism. By defining an allowlist of trusted sources for scripts, styles, and other resources, it instructs the browser to block any inline scripts or scripts from unauthorized domains.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It encrypts all sensitive user data stored in browser cookies to prevent session hijacking from malicious third-party scripts.",
+          "is_correct": false,
+          "rationale": "Cookie security is managed by attributes like HttpOnly and Secure, not by the Content Security Policy."
+        },
+        {
+          "key": "B",
+          "text": "It validates and sanitizes all user-submitted input on the server-side before it is rendered back to the browser.",
+          "is_correct": false,
+          "rationale": "This is a crucial server-side security measure, but it is not the function of a CSP header."
+        },
+        {
+          "key": "C",
+          "text": "It instructs the browser to only execute scripts from an explicitly defined allowlist of trusted domains, blocking inline scripts.",
+          "is_correct": true,
+          "rationale": "This is the primary function of CSP for XSS mitigation, preventing the execution of unauthorized scripts."
+        },
+        {
+          "key": "D",
+          "text": "It automatically adds the `rel=\"noopener noreferrer\"` attribute to all external links to prevent tabnabbing security exploits.",
+          "is_correct": false,
+          "rationale": "This is a good security practice for links but is not a function performed by the CSP."
+        },
+        {
+          "key": "E",
+          "text": "It enforces the use of HTTPS across the entire site by automatically upgrading all insecure HTTP requests.",
+          "is_correct": false,
+          "rationale": "This is the function of the HTTP Strict Transport Security (HSTS) header, not the CSP header."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "When developing a complex, interactive component, what is the most appropriate scenario for applying the ARIA attribute `role=\"application\"` to a container element?",
+      "explanation": "The `role=\"application\"` should be used sparingly. It signals to assistive technologies to pass most standard keyboard commands directly to the web application, which is necessary for components that mimic desktop application behavior with custom keyboard shortcuts.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It should be applied to the `<body>` tag of every page to ensure the entire website is fully accessible.",
+          "is_correct": false,
+          "rationale": "This is a common anti-pattern that can break accessibility for standard navigation and screen reader features."
+        },
+        {
+          "key": "B",
+          "text": "When the component contains standard web content like headings and links that require normal browser navigation.",
+          "is_correct": false,
+          "rationale": "This is the opposite of its purpose; it would interfere with standard screen reader navigation."
+        },
+        {
+          "key": "C",
+          "text": "For a widget that uses non-standard keyboard shortcuts to control its functionality, overriding default browser key bindings.",
+          "is_correct": true,
+          "rationale": "This is the correct use case, allowing custom keyboard interactions like in a spreadsheet or code editor."
+        },
+        {
+          "key": "D",
+          "text": "It is used on any container element that holds a form with standard input fields, buttons, and labels.",
+          "is_correct": false,
+          "rationale": "Standard form elements have their own implicit roles and do not require the `application` role."
+        },
+        {
+          "key": "E",
+          "text": "To visually group a set of related interactive elements, such as a toolbar with several distinct buttons.",
+          "is_correct": false,
+          "rationale": "The `role=\"toolbar\"` or `role=\"group\"` would be more semantically appropriate for this specific purpose."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "When would you implement a WebAssembly module instead of a highly optimized JavaScript library for a computationally intensive task?",
+      "explanation": "WebAssembly excels at CPU-intensive tasks like complex calculations, simulations, or media processing, offering performance close to native code. It is the ideal choice when JavaScript's performance limitations become a bottleneck for such operations.",
+      "options": [
+        {
+          "key": "A",
+          "text": "When the task involves heavy, low-level computations like video encoding or 3D rendering that benefit from near-native performance.",
+          "is_correct": true,
+          "rationale": "WASM is designed for CPU-intensive tasks requiring near-native speed."
+        },
+        {
+          "key": "B",
+          "text": "When the primary goal is to minimize the initial application bundle size for faster page loads on mobile devices.",
+          "is_correct": false,
+          "rationale": "WASM modules can be large; bundle size is not its primary benefit."
+        },
+        {
+          "key": "C",
+          "text": "When you need to directly manipulate the DOM and handle complex user interface events with maximum efficiency.",
+          "is_correct": false,
+          "rationale": "WebAssembly cannot directly access the DOM; it requires JavaScript bridging."
+        },
+        {
+          "key": "D",
+          "text": "When the application requires frequent, small updates to its logic, and a simple deployment process is the top priority.",
+          "is_correct": false,
+          "rationale": "JavaScript is generally easier and faster to iterate on and deploy."
+        },
+        {
+          "key": "E",
+          "text": "When the task requires extensive network requests and asynchronous data fetching from multiple external API endpoints.",
+          "is_correct": false,
+          "rationale": "JavaScript is better suited for I/O-bound operations like network requests."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "What is the most effective Content Security Policy (CSP) directive for mitigating the risk of cross-site scripting (XSS) attacks?",
+      "explanation": "The `script-src` directive is fundamental to preventing XSS because it controls which script sources are considered trustworthy. By setting it to `'self'`, you block inline scripts and scripts from untrusted domains, which are common XSS attack vectors.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The `frame-ancestors 'none'` directive, which prevents the page from being embedded in iframes on other sites.",
+          "is_correct": false,
+          "rationale": "This directive is primarily used to prevent clickjacking attacks."
+        },
+        {
+          "key": "B",
+          "text": "The `upgrade-insecure-requests` directive, which instructs browsers to treat all of a site's insecure URLs as secure.",
+          "is_correct": false,
+          "rationale": "This prevents mixed content issues, not cross-site scripting."
+        },
+        {
+          "key": "C",
+          "text": "The `script-src 'self'` directive, which restricts executable scripts to only those originating from the same domain, preventing inline scripts.",
+          "is_correct": true,
+          "rationale": "This directly limits script execution sources, a core XSS defense."
+        },
+        {
+          "key": "D",
+          "text": "The `object-src 'none'` directive, which completely blocks the use of plugins like Flash that have known vulnerabilities.",
+          "is_correct": false,
+          "rationale": "While a good security practice, it's less central to modern XSS prevention."
+        },
+        {
+          "key": "E",
+          "text": "The `report-uri` directive, which sends violation reports to a specified URL for monitoring potential security breaches.",
+          "is_correct": false,
+          "rationale": "This is for reporting violations, not for preventing them directly."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "You are building a data visualization dashboard that freezes the UI when processing large datasets. What is the best approach to fix this?",
+      "explanation": "Web Workers are designed to run scripts in a background thread, separate from the main execution thread. This allows for long-running, computationally intensive tasks to be performed without blocking the UI, ensuring a responsive user experience.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using `requestAnimationFrame` to schedule the data processing work in small chunks during the browser's repaint cycle.",
+          "is_correct": false,
+          "rationale": "This can help but may not be sufficient for very heavy computation."
+        },
+        {
+          "key": "B",
+          "text": "Implementing `setTimeout` with a zero-millisecond delay to move the processing task to the end of the event loop queue.",
+          "is_correct": false,
+          "rationale": "This only delays the blocking task, it does not prevent it."
+        },
+        {
+          "key": "C",
+          "text": "Offloading the entire data processing logic to a Web Worker to run it on a separate background thread.",
+          "is_correct": true,
+          "rationale": "This is the canonical solution for running heavy tasks off the main thread."
+        },
+        {
+          "key": "D",
+          "text": "Caching the processed data in `localStorage` so that the heavy computation only needs to run one time per session.",
+          "is_correct": false,
+          "rationale": "This improves subsequent loads but doesn't solve the initial UI freeze."
+        },
+        {
+          "key": "E",
+          "text": "Utilizing server-side rendering to pre-process the data and send the complete visualization markup directly to the client.",
+          "is_correct": false,
+          "rationale": "This moves the problem to the server, not solving client-side processing."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "When evaluating a micro-frontend architecture, what is a primary trade-off that your team must carefully consider before adopting this pattern?",
+      "explanation": "While micro-frontends enable team autonomy and independent deployments, they introduce significant operational and organizational complexity. Managing shared dependencies, routing, and ensuring a consistent UX across independently developed parts of the application becomes a major challenge.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A significant reduction in the overall application bundle size, which can dramatically improve initial page load times for all users.",
+          "is_correct": false,
+          "rationale": "This architecture can often lead to larger bundles due to duplication."
+        },
+        {
+          "key": "B",
+          "text": "The simplification of state management, as each micro-frontend operates in a completely isolated global state without any need for coordination.",
+          "is_correct": false,
+          "rationale": "Coordinating state between micro-frontends is a significant challenge."
+        },
+        {
+          "key": "C",
+          "text": "A decrease in the need for robust CI/CD pipelines because deployments become less frequent and much simpler to manage.",
+          "is_correct": false,
+          "rationale": "CI/CD becomes more complex to manage independent deployment pipelines."
+        },
+        {
+          "key": "D",
+          "text": "Increased organizational complexity and potential for duplicated dependencies, which must be managed to maintain a consistent user experience.",
+          "is_correct": true,
+          "rationale": "This is the key trade-off: team autonomy vs. operational complexity."
+        },
+        {
+          "key": "E",
+          "text": "The inability to use different JavaScript frameworks, forcing technology standardization across all teams to ensure compatibility.",
+          "is_correct": false,
+          "rationale": "A primary benefit is allowing different teams to use different frameworks."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "In what scenario is it appropriate to use ARIA attributes to enhance accessibility instead of relying solely on native semantic HTML elements?",
+      "explanation": "ARIA (Accessible Rich Internet Applications) should be used to bridge accessibility gaps in HTML, particularly for complex, JavaScript-driven widgets that have no semantic equivalent. It adds roles, states, and properties that assistive technologies can understand.",
+      "options": [
+        {
+          "key": "A",
+          "text": "When creating a simple static content page with basic headings, paragraphs, and lists that have no interactive elements.",
+          "is_correct": false,
+          "rationale": "Native semantic HTML is sufficient and preferred in this case."
+        },
+        {
+          "key": "B",
+          "text": "When building a standard HTML form that uses native `<input>`, `<label>`, and `<button>` elements for user data submission.",
+          "is_correct": false,
+          "rationale": "Native form elements are already accessible by default if used correctly."
+        },
+        {
+          "key": "C",
+          "text": "When developing a complex, dynamic UI component like a tabbed interface or an autocomplete widget that lacks a native HTML equivalent.",
+          "is_correct": true,
+          "rationale": "ARIA is essential for making custom, dynamic components accessible."
+        },
+        {
+          "key": "D",
+          "text": "When styling visual elements with CSS to create a unique brand identity that differs from the browser's default styles.",
+          "is_correct": false,
+          "rationale": "ARIA defines semantics and behavior, not visual presentation or styling."
+        },
+        {
+          "key": "E",
+          "text": "When you need to add a `click` event handler to a `<div>` element to make it behave like a button.",
+          "is_correct": false,
+          "rationale": "The first rule of ARIA is to use a native element (`<button>`) instead."
+        }
+      ]
+    }
+  ]
+}

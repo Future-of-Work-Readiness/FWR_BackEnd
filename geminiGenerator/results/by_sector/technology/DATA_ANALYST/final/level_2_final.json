@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "When preparing a dataset for analysis, what is the most effective approach to handle missing numerical values?",
+      "explanation": "Imputing missing numerical values with the mean or median is a common and often effective strategy. It helps preserve the dataset's size and can reduce bias compared to simply deleting rows, especially for Level 2 analysis.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Delete all rows containing any missing values, ensuring a complete and clean dataset for consistent analysis.",
+          "is_correct": false,
+          "rationale": "Deleting rows can lead to significant data loss and introduce bias."
+        },
+        {
+          "key": "B",
+          "text": "Replace missing values with the mean or median of the respective column to preserve data points and minimize bias.",
+          "is_correct": true,
+          "rationale": "Mean/median imputation is a standard method to handle missing numerical data."
+        },
+        {
+          "key": "C",
+          "text": "Impute missing values using a complex machine learning model, even for simple exploratory data analysis tasks.",
+          "is_correct": false,
+          "rationale": "Complex imputation is often overkill for Level 2 analysis and can be computationally expensive."
+        },
+        {
+          "key": "D",
+          "text": "Convert missing numerical values into a categorical label like \"Unknown\" for easier handling during data processing.",
+          "is_correct": false,
+          "rationale": "Converting numerical to categorical for missing values is generally inappropriate and can distort analysis."
+        },
+        {
+          "key": "E",
+          "text": "Leave all missing values as they are, allowing downstream analytical tools to automatically manage the inconsistencies.",
+          "is_correct": false,
+          "rationale": "Leaving missing values often causes errors or incorrect results in many analytical tools."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Which SQL clause is primarily used to filter rows based on conditions applied to aggregated group results?",
+      "explanation": "The HAVING clause is specifically designed to filter groups based on conditions applied to aggregate functions (e.g., SUM, COUNT, AVG). The WHERE clause filters individual rows before aggregation.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The WHERE clause, which filters individual rows before any grouping or aggregation operations are performed.",
+          "is_correct": false,
+          "rationale": "WHERE filters individual rows, not aggregated groups."
+        },
+        {
+          "key": "B",
+          "text": "The GROUP BY clause, which groups rows that have the same values in specified columns into summary rows.",
+          "is_correct": false,
+          "rationale": "GROUP BY creates groups, it does not filter them based on aggregated results."
+        },
+        {
+          "key": "C",
+          "text": "The HAVING clause, which filters groups of rows after aggregation, based on conditions applied to the aggregated values.",
+          "is_correct": true,
+          "rationale": "HAVING filters groups after aggregation, unlike WHERE which filters individual rows."
+        },
+        {
+          "key": "D",
+          "text": "The ORDER BY clause, which sorts the result-set of a query in ascending or descending order for presentation.",
+          "is_correct": false,
+          "rationale": "ORDER BY sorts the output, it does not filter rows or groups."
+        },
+        {
+          "key": "E",
+          "text": "The SELECT clause, which specifies the columns to be returned in the result set from the queried tables.",
+          "is_correct": false,
+          "rationale": "SELECT specifies output columns, it does not filter rows or groups."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "When creating a data visualization to compare sales performance across different product categories, what chart type is generally most effective?",
+      "explanation": "Bar charts are highly effective for comparing discrete categories. Their visual length directly represents the magnitude, making comparisons straightforward and intuitive for sales performance across categories.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A pie chart, because it clearly shows the proportion of each category relative to the total sales volume.",
+          "is_correct": false,
+          "rationale": "Pie charts are poor for comparing categories, especially with many slices, and distort proportions."
+        },
+        {
+          "key": "B",
+          "text": "A scatter plot, as it is excellent for showing relationships between two continuous variables and identifying trends.",
+          "is_correct": false,
+          "rationale": "Scatter plots are for relationships between continuous variables, not category comparisons."
+        },
+        {
+          "key": "C",
+          "text": "A bar chart, which allows for easy comparison of discrete categories and their corresponding numerical values.",
+          "is_correct": true,
+          "rationale": "Bar charts are ideal for comparing distinct categories and their corresponding values."
+        },
+        {
+          "key": "D",
+          "text": "A line chart, which is best suited for displaying trends or changes in data over a continuous period, like time.",
+          "is_correct": false,
+          "rationale": "Line charts are for time-series or sequential data, not for comparing distinct categories."
+        },
+        {
+          "key": "E",
+          "text": "A heatmap, useful for visualizing the magnitude of a phenomenon as color in a two-dimensional matrix.",
+          "is_correct": false,
+          "rationale": "Heatmaps are for showing magnitude across two categorical dimensions, not simple category comparison."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "A marketing team wants to know if a new advertisement campaign significantly increased website conversion rates. What statistical concept would a data analyst use?",
+      "explanation": "Hypothesis testing, often through A/B testing, is the correct approach to determine if the observed increase in conversion rates after a campaign is statistically significant or merely random variation.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Regression analysis, to model the relationship between multiple independent variables and a dependent variable.",
+          "is_correct": false,
+          "rationale": "Regression models relationships but isn't the primary tool for testing campaign impact significance."
+        },
+        {
+          "key": "B",
+          "text": "Hypothesis testing, to determine if observed differences between groups are statistically significant or due to chance.",
+          "is_correct": true,
+          "rationale": "Hypothesis testing determines if observed differences are statistically significant."
+        },
+        {
+          "key": "C",
+          "text": "Clustering, to group similar data points together based on their inherent characteristics without labels.",
+          "is_correct": false,
+          "rationale": "Clustering is for finding inherent groups, not for assessing the impact of a campaign."
+        },
+        {
+          "key": "D",
+          "text": "Principal Component Analysis (PCA), for dimensionality reduction by transforming variables into a smaller set.",
+          "is_correct": false,
+          "rationale": "PCA reduces dimensions, it does not assess the statistical significance of a campaign's effect."
+        },
+        {
+          "key": "E",
+          "text": "Time series forecasting, to predict future values based on historical data patterns and trends over time.",
+          "is_correct": false,
+          "rationale": "Time series forecasting predicts future values, it doesn't directly assess current campaign impact."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "When presenting analytical findings to non-technical stakeholders, what is the most crucial aspect for a data analyst to prioritize?",
+      "explanation": "Non-technical stakeholders primarily care about what the data means for their business and what actions they can take. Focusing on clear, actionable insights is paramount for effective communication.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Including all the complex statistical models and technical jargon used during the data analysis process.",
+          "is_correct": false,
+          "rationale": "Technical jargon can confuse non-technical stakeholders and obscure key messages."
+        },
+        {
+          "key": "B",
+          "text": "Focusing on the business implications and actionable insights derived from the data, clearly and concisely.",
+          "is_correct": true,
+          "rationale": "Stakeholders need clear, actionable insights, not technical details."
+        },
+        {
+          "key": "C",
+          "text": "Presenting every single data point and intermediate calculation to demonstrate thoroughness and effort.",
+          "is_correct": false,
+          "rationale": "Overwhelming stakeholders with raw data and calculations detracts from the main insights."
+        },
+        {
+          "key": "D",
+          "text": "Using highly intricate and interactive dashboards that require significant technical understanding to navigate effectively.",
+          "is_correct": false,
+          "rationale": "Complex dashboards can hinder understanding if stakeholders lack technical proficiency."
+        },
+        {
+          "key": "E",
+          "text": "Emphasizing the advanced tools and programming languages utilized for the analysis, showcasing technical proficiency.",
+          "is_correct": false,
+          "rationale": "Stakeholders are interested in business value, not the specific tools used for analysis."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "When preparing a dataset for analysis, what is the most appropriate initial action for handling missing numerical values?",
+      "explanation": "Imputation with the mean or median is a common and appropriate initial step for handling missing numerical values, as it helps preserve data and maintain statistical power for analysis.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Impute missing values with the mean or median to maintain dataset size and statistical power for analysis.",
+          "is_correct": true,
+          "rationale": "Mean/median imputation is a standard method to handle missing numerical data."
+        },
+        {
+          "key": "B",
+          "text": "Immediately remove all rows containing any missing values to ensure data integrity and avoid errors.",
+          "is_correct": false,
+          "rationale": "Removing rows can lead to significant data loss and biased results."
+        },
+        {
+          "key": "C",
+          "text": "Replace all missing entries with a placeholder string like 'N/A' for easier identification during visualization.",
+          "is_correct": false,
+          "rationale": "Replacing numerical data with strings can corrupt the data type and analysis."
+        },
+        {
+          "key": "D",
+          "text": "Always use a complex machine learning model to predict and fill in the missing numerical data points.",
+          "is_correct": false,
+          "rationale": "Complex models are not always necessary and can introduce bias if misused."
+        },
+        {
+          "key": "E",
+          "text": "Directly proceed with analysis, as most modern tools automatically ignore missing data without issues.",
+          "is_correct": false,
+          "rationale": "Ignoring missing data without consideration can lead to incorrect or incomplete results."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Which SQL clause is primarily used to filter the results of aggregate functions, such as COUNT or SUM, in a query?",
+      "explanation": "The HAVING clause is specifically designed to filter groups of rows after aggregate functions have been applied, distinguishing it from the WHERE clause which filters individual rows before aggregation.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The WHERE clause filters individual rows before any aggregation takes place, affecting the initial dataset.",
+          "is_correct": false,
+          "rationale": "WHERE filters individual rows, not aggregated results."
+        },
+        {
+          "key": "B",
+          "text": "The HAVING clause specifically filters groups of rows after aggregate functions have been applied to them.",
+          "is_correct": true,
+          "rationale": "HAVING filters aggregated results; WHERE filters individual rows."
+        },
+        {
+          "key": "C",
+          "text": "The GROUP BY clause organizes rows into summary groups based on specified columns for aggregation.",
+          "is_correct": false,
+          "rationale": "GROUP BY creates groups, it does not filter them."
+        },
+        {
+          "key": "D",
+          "text": "The ORDER BY clause sorts the final result set of a query based on one or more specified columns.",
+          "is_correct": false,
+          "rationale": "ORDER BY sorts the output, it does not filter groups."
+        },
+        {
+          "key": "E",
+          "text": "The SELECT clause specifies which columns will be returned in the result set, including calculated values.",
+          "is_correct": false,
+          "rationale": "SELECT determines columns, it does not filter aggregated data."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "When creating a dashboard to show sales performance over time, which chart type is generally most effective?",
+      "explanation": "Line charts are ideal for visualizing trends over time as they effectively show continuous data progression and changes, making it easy to identify patterns and shifts.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A bar chart is best for comparing discrete categories or showing distributions at a single point in time.",
+          "is_correct": false,
+          "rationale": "Bar charts are better for discrete comparisons, not continuous time trends."
+        },
+        {
+          "key": "B",
+          "text": "A scatter plot effectively displays relationships between two numerical variables and identifies potential correlations.",
+          "is_correct": false,
+          "rationale": "Scatter plots show relationships, not typically time-series trends."
+        },
+        {
+          "key": "C",
+          "text": "A line chart clearly illustrates trends and changes in data points across a continuous time series.",
+          "is_correct": true,
+          "rationale": "Line charts clearly show trends and changes over continuous time."
+        },
+        {
+          "key": "D",
+          "text": "A pie chart is suitable for showing proportions of a whole, but not for displaying trends over time.",
+          "is_correct": false,
+          "rationale": "Pie charts show parts of a whole, not trends over time."
+        },
+        {
+          "key": "E",
+          "text": "A histogram visualizes the distribution of a single numerical variable by dividing it into bins.",
+          "is_correct": false,
+          "rationale": "Histograms show distribution of one variable, not trends over time."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "What does a low p-value (e.g., less than 0.05) typically indicate in the context of hypothesis testing?",
+      "explanation": "A low p-value suggests that the observed results are statistically significant, making it unlikely they occurred by random chance alone if the null hypothesis were truly correct.",
+      "options": [
+        {
+          "key": "A",
+          "text": "There is strong evidence to support the null hypothesis, suggesting no significant effect or relationship exists.",
+          "is_correct": false,
+          "rationale": "A low p-value indicates evidence against, not for, the null hypothesis."
+        },
+        {
+          "key": "B",
+          "text": "The observed data is unlikely to have occurred by random chance alone if the null hypothesis were true.",
+          "is_correct": true,
+          "rationale": "A low p-value means observed data is unlikely under the null hypothesis."
+        },
+        {
+          "key": "C",
+          "text": "The sample size used for the analysis was too small, leading to unreliable and inconclusive statistical results.",
+          "is_correct": false,
+          "rationale": "P-value doesn't directly indicate sample size inadequacy."
+        },
+        {
+          "key": "D",
+          "text": "A Type II error has definitively occurred, meaning a false negative conclusion was drawn from the data.",
+          "is_correct": false,
+          "rationale": "P-value relates to Type I error; Type II is about failing to reject a false null."
+        },
+        {
+          "key": "E",
+          "text": "The statistical model used for testing is perfectly fitted to the data, ensuring high predictive accuracy.",
+          "is_correct": false,
+          "rationale": "P-value assesses hypothesis significance, not model fit or accuracy."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Before starting a new analytical project, why is it crucial for a Data Analyst to define the business objective clearly?",
+      "explanation": "Clearly defining the business objective ensures the analytical work is focused, relevant, and delivers actionable insights that directly address specific business needs and questions.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It ensures the project strictly adheres to the predetermined budget, preventing any cost overruns or delays.",
+          "is_correct": false,
+          "rationale": "While related, budget adherence is not the primary analytical reason."
+        },
+        {
+          "key": "B",
+          "text": "A clear objective guides data collection, analysis methods, and ensures the insights are relevant and actionable.",
+          "is_correct": true,
+          "rationale": "Clear objectives guide analysis, ensuring relevance and actionable insights."
+        },
+        {
+          "key": "C",
+          "text": "This step primarily helps in selecting the most advanced machine learning algorithms for complex pattern recognition.",
+          "is_correct": false,
+          "rationale": "Objective definition precedes and informs algorithm selection, it's not the primary goal."
+        },
+        {
+          "key": "D",
+          "text": "It is mainly a formality required by project management, having little direct impact on the analytical process itself.",
+          "is_correct": false,
+          "rationale": "Defining objectives is fundamental, not a mere formality for effective analysis."
+        },
+        {
+          "key": "E",
+          "text": "Defining the objective early allows for immediate deployment of the final analytical model into production systems.",
+          "is_correct": false,
+          "rationale": "Deployment is a later stage; objective definition focuses on problem understanding first."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When preparing a dataset for analysis, what is the most appropriate action to handle missing values in a critical numerical column?",
+      "explanation": "Imputation is often the most appropriate method for handling missing values in critical numerical columns, as it attempts to preserve the dataset's integrity by estimating the missing data.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Impute the missing values using the column's mean or median to maintain dataset size and statistical power.",
+          "is_correct": true,
+          "rationale": "Imputation with mean/median is a common strategy for numerical missing data."
+        },
+        {
+          "key": "B",
+          "text": "Delete all rows containing any missing values, which ensures data quality but might reduce the sample size significantly.",
+          "is_correct": false,
+          "rationale": "Deleting rows can lead to significant data loss, often not ideal."
+        },
+        {
+          "key": "C",
+          "text": "Replace all missing values with a placeholder like 'N/A' or 'Unknown' to indicate their absence clearly.",
+          "is_correct": false,
+          "rationale": "This is suitable for categorical data, not typically for critical numerical columns."
+        },
+        {
+          "key": "D",
+          "text": "Ignore the missing values entirely and proceed with the analysis, letting the tools handle them as default.",
+          "is_correct": false,
+          "rationale": "Ignoring missing values can lead to inaccurate or biased analysis results."
+        },
+        {
+          "key": "E",
+          "text": "Recollect the entire dataset from the source system to ensure complete and accurate information is available.",
+          "is_correct": false,
+          "rationale": "Recollecting data is often impractical and time-consuming for analysis."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Which SQL clause is primarily used to filter rows from a result set based on conditions applied to aggregated data?",
+      "explanation": "The HAVING clause is specifically designed to filter groups of rows that have been aggregated by a GROUP BY clause, applying conditions to the aggregate functions themselves.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The WHERE clause, used for filtering individual rows before any grouping or aggregation occurs in the query.",
+          "is_correct": false,
+          "rationale": "WHERE filters individual rows, not aggregated groups."
+        },
+        {
+          "key": "B",
+          "text": "The GROUP BY clause, which groups rows that have the same values in specified columns into summary rows.",
+          "is_correct": false,
+          "rationale": "GROUP BY creates groups, it does not filter aggregated data."
+        },
+        {
+          "key": "C",
+          "text": "The ORDER BY clause, which sorts the result set based on one or more specified columns in ascending or descending order.",
+          "is_correct": false,
+          "rationale": "ORDER BY sorts the output, it does not filter."
+        },
+        {
+          "key": "D",
+          "text": "The HAVING clause, specifically designed to filter groups based on conditions applied to aggregate functions.",
+          "is_correct": true,
+          "rationale": "HAVING is used to filter results after aggregation functions have been applied."
+        },
+        {
+          "key": "E",
+          "text": "The JOIN clause, used to combine rows from two or more tables based on a related column between them.",
+          "is_correct": false,
+          "rationale": "JOIN combines tables, it does not filter aggregated data."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "What is the primary benefit of using interactive dashboards for presenting data analysis results to stakeholders?",
+      "explanation": "Interactive dashboards allow stakeholders to explore data dynamically, drill down into details, and customize views, fostering deeper understanding and more informed decision-making compared to static reports.",
+      "options": [
+        {
+          "key": "A",
+          "text": "They allow stakeholders to dynamically explore the data, filter information, and drill down into specific details.",
+          "is_correct": true,
+          "rationale": "Interactive dashboards enable dynamic data exploration and self-service insights."
+        },
+        {
+          "key": "B",
+          "text": "They ensure the data remains static and unchangeable, providing a consistent historical record for auditing purposes.",
+          "is_correct": false,
+          "rationale": "Static reports provide consistency, but interactive dashboards offer dynamic exploration."
+        },
+        {
+          "key": "C",
+          "text": "They automatically store vast amounts of raw data, acting as a primary data warehouse for all organizational information.",
+          "is_correct": false,
+          "rationale": "Dashboards visualize data; they are not primary data storage solutions."
+        },
+        {
+          "key": "D",
+          "text": "They automatically generate and send alerts via email when predefined data thresholds are exceeded in real-time.",
+          "is_correct": false,
+          "rationale": "Alerting is a feature of monitoring systems, not the primary benefit of interactivity."
+        },
+        {
+          "key": "E",
+          "text": "They perform complex statistical modeling and machine learning predictions directly within the visualization interface.",
+          "is_correct": false,
+          "rationale": "Dashboards visualize results; complex modeling is typically done beforehand."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "What does a p-value less than 0.05 typically indicate in the context of a statistical hypothesis test?",
+      "explanation": "A p-value below 0.05, a common significance level, indicates that the observed data is unlikely to have occurred if the null hypothesis were true, leading to its rejection.",
+      "options": [
+        {
+          "key": "A",
+          "text": "There is sufficient evidence to reject the null hypothesis, suggesting the observed effect is statistically significant.",
+          "is_correct": true,
+          "rationale": "A p-value < 0.05 typically means rejecting the null hypothesis."
+        },
+        {
+          "key": "B",
+          "text": "There is strong evidence to accept the null hypothesis, indicating no significant difference or relationship.",
+          "is_correct": false,
+          "rationale": "A low p-value suggests rejecting the null, not accepting it."
+        },
+        {
+          "key": "C",
+          "text": "The data contains errors or outliers that are skewing the statistical test results significantly.",
+          "is_correct": false,
+          "rationale": "A p-value doesn't directly indicate data errors, but statistical significance."
+        },
+        {
+          "key": "D",
+          "text": "The sample size used for the analysis is too small, making the results unreliable and inconclusive.",
+          "is_correct": false,
+          "rationale": "While sample size matters, a p-value < 0.05 indicates significance given the sample."
+        },
+        {
+          "key": "E",
+          "text": "The chosen significance level (alpha) for the test was set too high, requiring a smaller p-value for rejection.",
+          "is_correct": false,
+          "rationale": "A p-value < 0.05 means it meets the common 0.05 alpha level."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Which Python library is most commonly used by data analysts for efficient data manipulation and analysis with tabular data structures?",
+      "explanation": "Pandas is an indispensable Python library for data analysts, providing powerful and flexible data structures like DataFrames, which are ideal for handling and manipulating tabular data efficiently.",
+      "options": [
+        {
+          "key": "A",
+          "text": "NumPy, which primarily supports numerical operations on multi-dimensional arrays and matrices effectively.",
+          "is_correct": false,
+          "rationale": "NumPy is for numerical arrays; Pandas builds on it for tabular data."
+        },
+        {
+          "key": "B",
+          "text": "Matplotlib, primarily used for creating static, interactive, and animated visualizations in Python.",
+          "is_correct": false,
+          "rationale": "Matplotlib is for visualization, not primary data manipulation."
+        },
+        {
+          "key": "C",
+          "text": "Pandas, which provides high-performance, easy-to-use data structures and data analysis tools, especially DataFrames.",
+          "is_correct": true,
+          "rationale": "Pandas DataFrames are the standard for tabular data manipulation in Python."
+        },
+        {
+          "key": "D",
+          "text": "Scikit-learn, a robust machine learning library offering various classification, regression, and clustering algorithms.",
+          "is_correct": false,
+          "rationale": "Scikit-learn is for machine learning, not core data manipulation."
+        },
+        {
+          "key": "E",
+          "text": "Seaborn, a statistical data visualization library based on Matplotlib, providing a high-level interface.",
+          "is_correct": false,
+          "rationale": "Seaborn is for visualization, offering a higher-level interface than Matplotlib."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "When preparing a dataset for analysis, what is the most appropriate action for handling missing values in a critical numerical column?",
+      "explanation": "Imputing missing values with the mean or median is a common and often effective strategy for numerical data, especially when the missingness is not random or too extensive, preventing data loss.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Remove all rows containing any missing values to ensure data integrity and avoid potential analytical biases.",
+          "is_correct": false,
+          "rationale": "Removing rows can lead to significant data loss and reduced sample size."
+        },
+        {
+          "key": "B",
+          "text": "Impute missing values with the mean or median of the column to maintain sample size and statistical power.",
+          "is_correct": true,
+          "rationale": "Mean/median imputation maintains sample size effectively."
+        },
+        {
+          "key": "C",
+          "text": "Replace all missing entries with a placeholder string like 'N/A' to explicitly mark them for later categorical analysis.",
+          "is_correct": false,
+          "rationale": "Using strings for numerical data can cause errors in calculations."
+        },
+        {
+          "key": "D",
+          "text": "Leave missing values as they are, expecting most analytical tools to automatically handle them during processing.",
+          "is_correct": false,
+          "rationale": "Many tools do not handle missing values automatically, leading to errors."
+        },
+        {
+          "key": "E",
+          "text": "Fill missing values with a random number within the column's range to introduce variability and prevent bias.",
+          "is_correct": false,
+          "rationale": "Random imputation can introduce artificial noise and distort the data's true distribution."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "Which SQL clause is best suited for filtering rows based on aggregate conditions after grouping data?",
+      "explanation": "The `HAVING` clause is specifically designed to filter groups of rows based on conditions applied to aggregate functions, distinguishing it from `WHERE` which filters individual rows.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The `WHERE` clause, as it filters individual records before any grouping or aggregation takes place.",
+          "is_correct": false,
+          "rationale": "`WHERE` filters individual rows before aggregation."
+        },
+        {
+          "key": "B",
+          "text": "The `GROUP BY` clause, which organizes rows into summary groups based on specified column values.",
+          "is_correct": false,
+          "rationale": "`GROUP BY` groups rows, but does not filter aggregate results."
+        },
+        {
+          "key": "C",
+          "text": "The `ORDER BY` clause, used for sorting the final result set in ascending or descending order for presentation.",
+          "is_correct": false,
+          "rationale": "`ORDER BY` sorts the results, but does not filter aggregates."
+        },
+        {
+          "key": "D",
+          "text": "The `HAVING` clause, specifically designed to filter the results of aggregate functions applied to grouped data.",
+          "is_correct": true,
+          "rationale": "`HAVING` filters aggregated groups after `GROUP BY`."
+        },
+        {
+          "key": "E",
+          "text": "The `SELECT` clause, responsible for specifying which columns or expressions will be returned in the query output.",
+          "is_correct": false,
+          "rationale": " `SELECT` specifies output columns, not filtering conditions for aggregates."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "To effectively compare the distribution of a numerical variable across several distinct categories, which chart type is most appropriate?",
+      "explanation": "Box plots are excellent for visualizing the distribution (median, quartiles, outliers) of a numerical variable for multiple categories simultaneously, allowing for easy comparison of their spread and central tendency.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A bar chart, because it effectively displays categorical data counts or sums, making comparisons straightforward.",
+          "is_correct": false,
+          "rationale": "Bar charts show counts/sums, not detailed distributions."
+        },
+        {
+          "key": "B",
+          "text": "A scatter plot, useful for showing relationships between two numerical variables and identifying correlations.",
+          "is_correct": false,
+          "rationale": "Scatter plots show relationships between two numerical variables."
+        },
+        {
+          "key": "C",
+          "text": "A box plot, as it clearly illustrates the median, quartiles, and potential outliers for each category.",
+          "is_correct": true,
+          "rationale": "Box plots show distribution across categories well."
+        },
+        {
+          "key": "D",
+          "text": "A line chart, primarily used for visualizing trends over time or ordered sequences of data points.",
+          "is_correct": false,
+          "rationale": "Line charts are best for showing trends over time or ordered data."
+        },
+        {
+          "key": "E",
+          "text": "A pie chart, which represents parts of a whole but becomes difficult to interpret with many categories.",
+          "is_correct": false,
+          "rationale": "Pie charts show proportions of a whole, not distributions."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "A stakeholder reports a discrepancy between two dashboards showing the same metric. What is your initial approach to investigate?",
+      "explanation": "The most logical first step is to trace the data sources and transformation logic for both dashboards. Discrepancies often arise from different definitions, filters, or calculation methods used.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately rebuild both dashboards from scratch to ensure consistency, assuming underlying data issues.",
+          "is_correct": false,
+          "rationale": "Rebuilding immediately is premature without understanding the root cause."
+        },
+        {
+          "key": "B",
+          "text": "Ask the stakeholder to provide screenshots and then escalate the issue to the data engineering team directly.",
+          "is_correct": false,
+          "rationale": "Escalating without initial investigation is not the first step for a data analyst."
+        },
+        {
+          "key": "C",
+          "text": "Compare the data sources, filtering criteria, and calculation logic used in each dashboard to identify differences.",
+          "is_correct": true,
+          "rationale": "Investigating data sources and logic helps pinpoint dashboard discrepancies."
+        },
+        {
+          "key": "D",
+          "text": "Assume one dashboard is correct and advise the stakeholder to only use that one for future decision-making.",
+          "is_correct": false,
+          "rationale": "This avoids solving the problem and doesn't address the underlying inconsistency."
+        },
+        {
+          "key": "E",
+          "text": "Run a new query on the raw data to generate the metric independently and compare it against both dashboards.",
+          "is_correct": false,
+          "rationale": "While useful, understanding existing dashboard logic is usually the first diagnostic step."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "When analyzing user engagement data, you find a small group of users with extremely high activity. What is the most appropriate initial approach to take?",
+      "explanation": "Outliers in user behavior often represent significant insights, not just noise. Investigating their root cause is critical for understanding user segments, identifying potential bugs, or uncovering new usage patterns that can inform product strategy.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately remove these data points from the dataset to prevent skewing statistical measures and model training results going forward.",
+          "is_correct": false,
+          "rationale": "Removing outliers without investigation can discard valuable information about power users or system anomalies."
+        },
+        {
+          "key": "B",
+          "text": "Investigate the underlying reasons for their exceptional activity, as they might represent a unique user segment or a data collection anomaly.",
+          "is_correct": true,
+          "rationale": "Investigation is the crucial first step to understand the true nature and potential value of extreme data points."
+        },
+        {
+          "key": "C",
+          "text": "Apply a robust statistical transformation, such as a log transformation, to normalize the distribution before any further analysis is conducted.",
+          "is_correct": false,
+          "rationale": "Transformation might obscure important insights; a thorough investigation should always precede any data manipulation."
+        },
+        {
+          "key": "D",
+          "text": "Replace the outlier values with the median or mean of the entire dataset to ensure data consistency and reduce overall variance.",
+          "is_correct": false,
+          "rationale": "Imputation without understanding the cause of the outliers can significantly distort the meaning of the data."
+        },
+        {
+          "key": "E",
+          "text": "Flag these observations for further review but proceed with analysis on the main dataset, while simply noting the potential biases.",
+          "is_correct": false,
+          "rationale": "Proceeding with analysis without understanding the outliers can lead to flawed conclusions and misguided business decisions."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "What is the primary role of a Scrum Master within an Agile development team?",
+      "explanation": "The Scrum Master is a servant-leader responsible for promoting and supporting Scrum. They facilitate events, coach the team, and remove impediments to ensure smooth progress and adherence to Scrum principles.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Scrum Master facilitates all Scrum events and removes impediments for the development team.",
+          "is_correct": true,
+          "rationale": "This accurately describes the core responsibilities of a Scrum Master."
+        },
+        {
+          "key": "B",
+          "text": "The Scrum Master defines product vision, manages the backlog, and prioritizes features for upcoming sprints.",
+          "is_correct": false,
+          "rationale": "These are primary responsibilities of the Product Owner role."
+        },
+        {
+          "key": "C",
+          "text": "The Scrum Master writes code, performs testing, and ensures the technical quality of the software product.",
+          "is_correct": false,
+          "rationale": "These are responsibilities of the Development Team members."
+        },
+        {
+          "key": "D",
+          "text": "The Scrum Master manages external stakeholders and reports project status directly to senior management.",
+          "is_correct": false,
+          "rationale": "While involved, this is not their primary or exclusive role."
+        },
+        {
+          "key": "E",
+          "text": "The Scrum Master allocates tasks to team members and monitors their daily progress against deadlines.",
+          "is_correct": false,
+          "rationale": "Scrum teams are self-organizing; the Scrum Master does not assign tasks."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "How should a Scrum Master primarily address an external dependency blocking a development team's progress?",
+      "explanation": "A Scrum Master's role includes removing impediments. For external dependencies, this often involves facilitating communication and collaboration with the external party to resolve the blocking issue effectively.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Scrum Master should immediately reassign the blocked task to another team member who might resolve it faster.",
+          "is_correct": false,
+          "rationale": "Reassigning might not resolve the external dependency itself."
+        },
+        {
+          "key": "B",
+          "text": "The Scrum Master should facilitate communication with the external team to understand and mitigate the dependency issue.",
+          "is_correct": true,
+          "rationale": "Facilitating communication is key to resolving external blockers."
+        },
+        {
+          "key": "C",
+          "text": "The Scrum Master should escalate the issue directly to senior management for their immediate intervention and resolution.",
+          "is_correct": false,
+          "rationale": "Escalation is a last resort, not the primary first step."
+        },
+        {
+          "key": "D",
+          "text": "The Scrum Master should instruct the development team to work on a different, lower-priority backlog item instead.",
+          "is_correct": false,
+          "rationale": "This avoids the problem rather than addressing the root cause."
+        },
+        {
+          "key": "E",
+          "text": "The Scrum Master should document the impediment and wait for the Product Owner to provide a clear resolution path.",
+          "is_correct": false,
+          "rationale": "The Scrum Master is proactive in removing impediments, not passive."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "During Sprint Planning, what is the main goal for the development team to achieve?",
+      "explanation": "Sprint Planning involves the team collaborating to select Product Backlog items and define a plan for delivering a 'Done' increment. This ensures a clear focus for the upcoming sprint.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The team commits to delivering every single item from the entire product backlog during the upcoming sprint.",
+          "is_correct": false,
+          "rationale": "This is unrealistic and goes against the iterative nature of Scrum."
+        },
+        {
+          "key": "B",
+          "text": "The team selects backlog items and plans how to deliver a potentially shippable increment by sprint end.",
+          "is_correct": true,
+          "rationale": "This defines the core objective of Sprint Planning effectively."
+        },
+        {
+          "key": "C",
+          "text": "The team allocates specific tasks to individual members, ensuring everyone has an equal workload distribution.",
+          "is_correct": false,
+          "rationale": "While tasks are broken down, self-organization dictates allocation, not equal distribution."
+        },
+        {
+          "key": "D",
+          "text": "The team reviews the completed work from the previous sprint and gathers feedback from stakeholders.",
+          "is_correct": false,
+          "rationale": "This activity happens during the Sprint Review, not Sprint Planning."
+        },
+        {
+          "key": "E",
+          "text": "The team updates the project roadmap and re-estimates the total effort required for the entire product.",
+          "is_correct": false,
+          "rationale": "This is more related to product vision and long-term planning, not a single sprint."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What does the \"Definition of Done\" (DoD) signify within a Scrum framework?",
+      "explanation": "The Definition of Done ensures transparency and quality. It provides a clear, shared understanding of what it means for work to be complete, helping the team produce a high-quality, shippable increment.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It is a detailed list of all technical requirements that must be met before a feature can be released to users.",
+          "is_correct": false,
+          "rationale": "DoD is broader than just technical requirements; it includes quality standards."
+        },
+        {
+          "key": "B",
+          "text": "It is a shared understanding of the quality standards and criteria that completed product backlog items must satisfy.",
+          "is_correct": true,
+          "rationale": "DoD establishes the quality and completeness criteria for increment delivery."
+        },
+        {
+          "key": "C",
+          "text": "It represents the final stage of user acceptance testing, confirming the product is ready for production deployment.",
+          "is_correct": false,
+          "rationale": "DoD applies to each increment, not just the final release testing."
+        },
+        {
+          "key": "D",
+          "text": "It outlines the specific tasks each team member needs to complete before the end of the current sprint cycle.",
+          "is_correct": false,
+          "rationale": "This describes individual task breakdown, not the overall 'Done' criteria."
+        },
+        {
+          "key": "E",
+          "text": "It defines the budget and resource allocation limits for each user story before development work begins.",
+          "is_correct": false,
+          "rationale": "DoD focuses on quality and completeness, not financial or resource limits."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Why is effective communication considered a crucial skill for a Technical Project Manager acting as a Scrum Master?",
+      "explanation": "Effective communication is fundamental for a Scrum Master. It enables them to facilitate team interactions, manage stakeholder expectations, resolve conflicts, and ensure transparency, all critical for project success.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To ensure all team members exclusively report technical issues directly to the Scrum Master for resolution.",
+          "is_correct": false,
+          "rationale": "Team members should communicate directly; Scrum Master facilitates, not centralizes."
+        },
+        {
+          "key": "B",
+          "text": "To facilitate clear information flow, manage expectations, and resolve conflicts among team members and stakeholders.",
+          "is_correct": true,
+          "rationale": "Effective communication is vital for all these Scrum Master responsibilities."
+        },
+        {
+          "key": "C",
+          "text": "To primarily document all technical specifications and architectural decisions for future reference and compliance.",
+          "is_correct": false,
+          "rationale": "While important, this is not the primary communication focus for a Scrum Master."
+        },
+        {
+          "key": "D",
+          "text": "To strictly control access to project information, ensuring only authorized personnel view sensitive data.",
+          "is_correct": false,
+          "rationale": "Transparency is a Scrum value; strict control contradicts this principle."
+        },
+        {
+          "key": "E",
+          "text": "To regularly update the project timeline and budget, reporting deviations only to the Product Owner.",
+          "is_correct": false,
+          "rationale": "Communication is broader than just reporting to the Product Owner."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "What is the primary responsibility of a Scrum Master within an agile software development team?",
+      "explanation": "The Scrum Master acts as a servant-leader, facilitating the Scrum process, removing impediments, and coaching the team and Product Owner on agile practices to maximize value delivery and improve team effectiveness.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ensuring the development team strictly follows all defined project deadlines and budget constraints.",
+          "is_correct": false,
+          "rationale": "This is more a traditional project manager role, not a Scrum Master."
+        },
+        {
+          "key": "B",
+          "text": "Facilitating Scrum events, coaching the team, and removing impediments to help the team succeed.",
+          "is_correct": true,
+          "rationale": "This accurately describes the core servant-leader responsibilities of a Scrum Master."
+        },
+        {
+          "key": "C",
+          "text": "Defining the product backlog, prioritizing features, and representing stakeholder interests to the team.",
+          "is_correct": false,
+          "rationale": "This describes the primary responsibilities of a Product Owner."
+        },
+        {
+          "key": "D",
+          "text": "Writing code, conducting unit tests, and designing the technical architecture for the software product.",
+          "is_correct": false,
+          "rationale": "This describes the responsibilities of a development team member."
+        },
+        {
+          "key": "E",
+          "text": "Managing external vendor relationships and negotiating contracts for necessary software tools and services.",
+          "is_correct": false,
+          "rationale": "This is typically handled by procurement or a higher-level project manager."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "During which Scrum event does the Development Team commit to completing a set of Product Backlog items?",
+      "explanation": "Sprint Planning is the event where the Development Team selects items from the Product Backlog to include in the upcoming Sprint and defines how they will achieve the Sprint Goal.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Daily Scrum meeting, where progress is discussed and impediments are identified by the team members.",
+          "is_correct": false,
+          "rationale": "The Daily Scrum is for daily progress, not commitment to Sprint Backlog."
+        },
+        {
+          "key": "B",
+          "text": "The Sprint Review, where the completed increment is inspected and feedback is gathered from stakeholders.",
+          "is_correct": false,
+          "rationale": "Sprint Review is for inspecting the increment and adapting the Product Backlog."
+        },
+        {
+          "key": "C",
+          "text": "The Sprint Retrospective, focused on inspecting the past Sprint and identifying improvements for future Sprints.",
+          "is_correct": false,
+          "rationale": "Sprint Retrospective is for process improvement, not committing to work."
+        },
+        {
+          "key": "D",
+          "text": "The Sprint Planning meeting, where the team forecasts what can be delivered and plans the work for the Sprint.",
+          "is_correct": true,
+          "rationale": "Sprint Planning is where the team commits to the Sprint Goal and selects backlog items."
+        },
+        {
+          "key": "E",
+          "text": "The Product Backlog Refinement session, which helps in detailing, estimating, and ordering backlog items.",
+          "is_correct": false,
+          "rationale": "Backlog Refinement prepares items, but the commitment happens in Sprint Planning."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Which of the following best describes the Agile principle of \"Individuals and interactions over processes and tools\"?",
+      "explanation": "This Agile Manifesto principle emphasizes that while processes and tools are useful, the people and their collaboration are more crucial for successful project delivery and adaptability.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Always prioritize using the latest software tools and automated processes for every project task.",
+          "is_correct": false,
+          "rationale": "This misinterprets the principle by prioritizing tools, not people."
+        },
+        {
+          "key": "B",
+          "text": "Focus on effective communication and collaboration among team members rather than strict adherence to rigid processes.",
+          "is_correct": true,
+          "rationale": "This correctly highlights the importance of human interaction and collaboration."
+        },
+        {
+          "key": "C",
+          "text": "Ensure all project documentation is comprehensive and meticulously maintained before any development work begins.",
+          "is_correct": false,
+          "rationale": "This leans towards heavy documentation, contrary to agile values."
+        },
+        {
+          "key": "D",
+          "text": "Implement a highly structured approval hierarchy to ensure every decision is thoroughly reviewed by management.",
+          "is_correct": false,
+          "rationale": "This promotes rigid processes and hierarchy, not agile flexibility."
+        },
+        {
+          "key": "E",
+          "text": "Develop detailed project plans and schedules that are strictly followed without any deviations throughout the project lifecycle.",
+          "is_correct": false,
+          "rationale": "This describes a rigid, plan-driven approach, not an agile one."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "What is the most effective way for a Scrum Master to address a persistent technical impediment blocking the development team?",
+      "explanation": "A Scrum Master's role involves removing impediments. Escalating to appropriate technical experts or management is crucial when the team cannot resolve it internally, ensuring progress.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Instruct the development team to work extra hours until they find a solution themselves.",
+          "is_correct": false,
+          "rationale": "This is not a sustainable or effective way to resolve persistent impediments."
+        },
+        {
+          "key": "B",
+          "text": "Document the impediment and wait for the Product Owner to prioritize its resolution in a future Sprint.",
+          "is_correct": false,
+          "rationale": "Waiting for a future Sprint delays resolution and impacts the current Sprint Goal."
+        },
+        {
+          "key": "C",
+          "text": "Escalate the issue to relevant technical experts or management for support and resources to resolve it.",
+          "is_correct": true,
+          "rationale": "Escalation is key for persistent issues beyond the team's immediate control."
+        },
+        {
+          "key": "D",
+          "text": "Reassign the affected team members to different tasks that are not impacted by the current technical blocker.",
+          "is_correct": false,
+          "rationale": "This avoids the problem rather than resolving it and might delay critical work."
+        },
+        {
+          "key": "E",
+          "text": "Suggest the team ignore the impediment and focus on other user stories that are not currently blocked.",
+          "is_correct": false,
+          "rationale": "Ignoring impediments can lead to accumulating technical debt and further issues."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Which of the following is a key purpose of maintaining a Sprint Burndown Chart in Scrum?",
+      "explanation": "The Sprint Burndown Chart visually tracks the remaining work in a Sprint, allowing the team to monitor its progress towards the Sprint Goal and identify potential issues early.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To track the total budget spent on the project against the initial financial estimates.",
+          "is_correct": false,
+          "rationale": "This is typically handled by financial tracking, not a Sprint Burndown Chart."
+        },
+        {
+          "key": "B",
+          "text": "To visualize the remaining work in the current Sprint and forecast if the team will meet its Sprint Goal.",
+          "is_correct": true,
+          "rationale": "The Sprint Burndown Chart helps visualize progress and predict Sprint completion."
+        },
+        {
+          "key": "C",
+          "text": "To prioritize and order items within the Product Backlog based on business value and risk assessment.",
+          "is_correct": false,
+          "rationale": "This is the responsibility of the Product Owner, often with team input."
+        },
+        {
+          "key": "D",
+          "text": "To document all technical specifications and architectural decisions made during the software development process.",
+          "is_correct": false,
+          "rationale": "This relates to technical documentation, not a burndown chart."
+        },
+        {
+          "key": "E",
+          "text": "To record and analyze individual team member performance metrics and identify areas for improvement.",
+          "is_correct": false,
+          "rationale": "Scrum focuses on team performance, and burndown charts are not for individual metrics."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "Which Scrum role is primarily responsible for maximizing the value of the product resulting from the work of the Development Team?",
+      "explanation": "The Product Owner is accountable for defining and prioritizing the Product Backlog items to ensure the team delivers the most valuable features to stakeholders and users, thereby maximizing product value.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Scrum Master facilitates agile ceremonies and shields the development team from external interruptions.",
+          "is_correct": false,
+          "rationale": "The Scrum Master coaches and removes impediments, not maximizes product value directly."
+        },
+        {
+          "key": "B",
+          "text": "The Development Team builds the product increments and ensures the quality of the delivered software.",
+          "is_correct": false,
+          "rationale": "The Development Team builds the product, but the Product Owner defines its value."
+        },
+        {
+          "key": "C",
+          "text": "The Product Owner defines and prioritizes the Product Backlog to maximize product value for stakeholders.",
+          "is_correct": true,
+          "rationale": "Maximizing product value is the core accountability of the Product Owner."
+        },
+        {
+          "key": "D",
+          "text": "The Stakeholders provide essential feedback on product increments and approve the final release decision.",
+          "is_correct": false,
+          "rationale": "Stakeholders provide input, but the Product Owner is accountable for value."
+        },
+        {
+          "key": "E",
+          "text": "The Project Manager controls the overall project budget and manages resource allocation across multiple teams.",
+          "is_correct": false,
+          "rationale": "This role is not part of the core Scrum framework and focuses on budget."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "What is the primary purpose of the Daily Scrum meeting for the Development Team during a Sprint?",
+      "explanation": "The Daily Scrum is a short, daily meeting for the Development Team to synchronize activities, inspect progress toward the Sprint Goal, and adapt their plan for the next 24 hours to achieve it.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To provide a detailed status report to stakeholders and senior management about project progress.",
+          "is_correct": false,
+          "rationale": "The Daily Scrum is for the Development Team, not primarily for stakeholders."
+        },
+        {
+          "key": "B",
+          "text": "To discuss and resolve technical design issues that require immediate attention from architects.",
+          "is_correct": false,
+          "rationale": "While technical issues might arise, it's not the primary purpose."
+        },
+        {
+          "key": "C",
+          "text": "To synchronize activities and create a plan for the next 24 hours, inspecting progress towards the Sprint Goal.",
+          "is_correct": true,
+          "rationale": "The Daily Scrum's main goal is to align the team and plan for the immediate future."
+        },
+        {
+          "key": "D",
+          "text": "To review completed work with the Product Owner and get formal approval for new features.",
+          "is_correct": false,
+          "rationale": "This describes the Sprint Review, not the Daily Scrum meeting."
+        },
+        {
+          "key": "E",
+          "text": "To assign new tasks to team members for the day and update the project management tool.",
+          "is_correct": false,
+          "rationale": "Tasks are self-assigned by the team, not assigned by a single person."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "Which statement best describes the primary characteristic of a well-maintained Product Backlog in Scrum?",
+      "explanation": "A well-maintained Product Backlog is dynamic, continuously refined, and ordered by the Product Owner to reflect the most valuable items. It is not static but evolves with new insights.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It is a static, unchanging list of all features planned for the entire product lifecycle.",
+          "is_correct": false,
+          "rationale": "The Product Backlog is dynamic and constantly evolving, not static."
+        },
+        {
+          "key": "B",
+          "text": "It is a dynamic, ordered list of product requirements, continuously refined and prioritized by the Product Owner.",
+          "is_correct": true,
+          "rationale": "This accurately describes a well-maintained Product Backlog's dynamic and ordered nature."
+        },
+        {
+          "key": "C",
+          "text": "It is a detailed technical specification document created by the Development Team before any coding begins.",
+          "is_correct": false,
+          "rationale": "The Product Backlog focuses on 'what' to build, not detailed 'how' technical specifications."
+        },
+        {
+          "key": "D",
+          "text": "It is a repository of all bug reports and technical debt items, managed solely by the QA team.",
+          "is_correct": false,
+          "rationale": "While it can contain these, it's primarily for product requirements and managed by the Product Owner."
+        },
+        {
+          "key": "E",
+          "text": "It is a project plan with fixed deadlines and assigned resources for every single task.",
+          "is_correct": false,
+          "rationale": "The Product Backlog is not a fixed project plan with specific resource assignments."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "As a Scrum Master, what is your primary responsibility when the Development Team encounters an impediment?",
+      "explanation": "The Scrum Master serves the team by removing impediments that hinder their progress. This ensures the team can maintain its focus and achieve the Sprint Goal efficiently without unnecessary blockers.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To immediately reassign the task to another team member who might be able to resolve it faster.",
+          "is_correct": false,
+          "rationale": "Reassigning tasks is not the primary responsibility; removing the impediment is."
+        },
+        {
+          "key": "B",
+          "text": "To document the impediment and wait for the Product Owner to prioritize its resolution.",
+          "is_correct": false,
+          "rationale": "Waiting for the Product Owner can cause delays; proactive resolution is key."
+        },
+        {
+          "key": "C",
+          "text": "To actively work to remove the impediment, or facilitate the team's effort to do so effectively.",
+          "is_correct": true,
+          "rationale": "The Scrum Master actively works to remove or facilitate the removal of impediments."
+        },
+        {
+          "key": "D",
+          "text": "To escalate the issue to senior management for them to provide a definitive solution.",
+          "is_correct": false,
+          "rationale": "Escalation is a last resort; the Scrum Master should first attempt to resolve it."
+        },
+        {
+          "key": "E",
+          "text": "To instruct the team to work around the impediment and continue with other tasks.",
+          "is_correct": false,
+          "rationale": "Working around impediments can lead to technical debt or incomplete work."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Which of the following Agile Manifesto principles emphasizes delivering valuable software frequently to customers?",
+      "explanation": "The Agile Manifesto principle, 'Our highest priority is to satisfy the customer through early and continuous delivery of valuable software,' directly addresses frequent delivery and customer satisfaction as core tenets.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Individuals and interactions are valued over processes and tools, fostering better team collaboration.",
+          "is_correct": false,
+          "rationale": "This principle focuses on people and communication, not frequent delivery."
+        },
+        {
+          "key": "B",
+          "text": "Working software is prioritized over comprehensive documentation, focusing on functional deliverables.",
+          "is_correct": false,
+          "rationale": "This principle prioritizes functional software but doesn't explicitly state 'frequently'."
+        },
+        {
+          "key": "C",
+          "text": "Customer collaboration is preferred over contract negotiation, ensuring continuous feedback loops.",
+          "is_correct": false,
+          "rationale": "This principle emphasizes customer involvement, not the frequency of delivery."
+        },
+        {
+          "key": "D",
+          "text": "Responding to change is valued over following a plan, embracing adaptability in development.",
+          "is_correct": false,
+          "rationale": "This principle focuses on flexibility and adaptation, not frequent delivery itself."
+        },
+        {
+          "key": "E",
+          "text": "Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.",
+          "is_correct": true,
+          "rationale": "This principle directly states the importance of early and continuous (frequent) delivery."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "What is the primary purpose of the Daily Scrum event in an Agile Scrum framework?",
+      "explanation": "The Daily Scrum is a crucial event for the Development Team to synchronize their activities, inspect progress toward the Sprint Goal, and adapt their plan for the next 24 hours. It promotes self-organization and collaboration.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To allow the Development Team to synchronize activities and plan work for the next 24 hours effectively.",
+          "is_correct": true,
+          "rationale": "The Daily Scrum focuses on team synchronization and planning for the day."
+        },
+        {
+          "key": "B",
+          "text": "To assign new tasks to individual team members based on their specific skill sets and availability.",
+          "is_correct": false,
+          "rationale": "Tasks are self-assigned by the Development Team, not assigned by a Scrum Master."
+        },
+        {
+          "key": "C",
+          "text": "To review all completed sprint backlog items with the Product Owner for formal acceptance.",
+          "is_correct": false,
+          "rationale": "This describes the Sprint Review, not the Daily Scrum event."
+        },
+        {
+          "key": "D",
+          "text": "To allow the Scrum Master to report daily progress directly to senior management stakeholders.",
+          "is_correct": false,
+          "rationale": "The Daily Scrum is for the Development Team, not for reporting to management."
+        },
+        {
+          "key": "E",
+          "text": "To refine the product backlog and estimate new user stories for upcoming sprint planning sessions.",
+          "is_correct": false,
+          "rationale": "This describes Backlog Refinement, which is an ongoing activity."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "As a Scrum Master, how should you primarily address an impediment blocking the Development Team?",
+      "explanation": "A Scrum Master's role is to serve the team by removing impediments. This involves understanding the issue and facilitating its resolution, often by collaborating with the team and other stakeholders.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately reassign the blocked task to another available team member to maintain sprint velocity.",
+          "is_correct": false,
+          "rationale": "Reassigning without addressing the root cause is not the primary approach."
+        },
+        {
+          "key": "B",
+          "text": "Escalate the issue directly to senior management for swift resolution and necessary intervention.",
+          "is_correct": false,
+          "rationale": "Escalation is a last resort; direct facilitation is preferred first."
+        },
+        {
+          "key": "C",
+          "text": "Work collaboratively with the Development Team to understand the impediment and facilitate its removal promptly.",
+          "is_correct": true,
+          "rationale": "The Scrum Master facilitates impediment removal, empowering the team."
+        },
+        {
+          "key": "D",
+          "text": "Document the impediment in a formal report and patiently wait until the next Sprint Review meeting.",
+          "is_correct": false,
+          "rationale": "Impediments require immediate attention to prevent delays, not waiting."
+        },
+        {
+          "key": "E",
+          "text": "Instruct the Development Team to find their own solution independently without any external assistance.",
+          "is_correct": false,
+          "rationale": "The Scrum Master's role is to help remove impediments, not avoid them."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "According to Scrum principles, which of the following characteristics best describes a well-maintained Product Backlog?",
+      "explanation": "A well-maintained Product Backlog is dynamic, ordered by value, and continuously refined. This ensures the team always works on the most important items, adapting to new information and changing priorities.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It contains only user stories that are fully detailed and completely ready for immediate development.",
+          "is_correct": false,
+          "rationale": "Not all items are fully detailed; only those for upcoming sprints are 'ready'."
+        },
+        {
+          "key": "B",
+          "text": "It is a static, unchanging list of requirements defined exclusively at the project's initial inception phase.",
+          "is_correct": false,
+          "rationale": "The Product Backlog is dynamic and evolves throughout the project lifecycle."
+        },
+        {
+          "key": "C",
+          "text": "It is ordered by business value, size, and dependencies, and continuously refined by the Product Owner.",
+          "is_correct": true,
+          "rationale": "A well-maintained Product Backlog is ordered and continuously refined by the Product Owner."
+        },
+        {
+          "key": "D",
+          "text": "It is primarily managed and updated by the Development Team during their daily scrum event.",
+          "is_correct": false,
+          "rationale": "The Product Owner is primarily responsible for managing and updating the Product Backlog."
+        },
+        {
+          "key": "E",
+          "text": "It lists all technical tasks, bugs, and infrastructure work without any clear prioritization from the business.",
+          "is_correct": false,
+          "rationale": "The Product Backlog should be prioritized based on value, not just a list."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "What is a key responsibility of a Scrum Master when it comes to fostering team self-organization?",
+      "explanation": "A Scrum Master acts as a servant leader, coaching the Development Team to become self-organizing and cross-functional. This involves fostering an environment where the team can make decisions and manage its own work.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Scrum Master assigns specific tasks to individual team members to ensure efficient workflow.",
+          "is_correct": false,
+          "rationale": "The Development Team is self-organizing and assigns tasks themselves."
+        },
+        {
+          "key": "B",
+          "text": "The Scrum Master dictates the technical solutions and architectural decisions for the product implementation.",
+          "is_correct": false,
+          "rationale": "Technical decisions are made by the Development Team, not the Scrum Master."
+        },
+        {
+          "key": "C",
+          "text": "The Scrum Master coaches the team to become self-organizing and cross-functional, removing their impediments.",
+          "is_correct": true,
+          "rationale": "Coaching self-organization and removing impediments are core Scrum Master duties."
+        },
+        {
+          "key": "D",
+          "text": "The Scrum Master ensures strict adherence to the project plan, making all critical decisions.",
+          "is_correct": false,
+          "rationale": "This describes a traditional project manager, not an Agile Scrum Master."
+        },
+        {
+          "key": "E",
+          "text": "The Scrum Master primarily acts as a traditional project manager, reporting progress to external stakeholders.",
+          "is_correct": false,
+          "rationale": "The Scrum Master is a servant leader, not a traditional project manager."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "Which of the following best represents a core principle of the Agile Manifesto?",
+      "explanation": "The Agile Manifesto emphasizes valuing individuals and their interactions over rigid processes and tools. This principle promotes collaboration, communication, and adaptability within development teams and with stakeholders.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Comprehensive documentation over working software, ensuring all requirements are captured thoroughly.",
+          "is_correct": false,
+          "rationale": "Agile values working software over comprehensive documentation."
+        },
+        {
+          "key": "B",
+          "text": "Following a strict, unchangeable plan over responding to change, to maintain project scope and deadlines.",
+          "is_correct": false,
+          "rationale": "Agile values responding to change over following a strict plan."
+        },
+        {
+          "key": "C",
+          "text": "Individuals and interactions over processes and tools, fostering collaboration and communication effectively.",
+          "is_correct": true,
+          "rationale": "This is one of the four core values of the Agile Manifesto."
+        },
+        {
+          "key": "D",
+          "text": "Contract negotiation over customer collaboration, to protect the interests of all parties involved.",
+          "is_correct": false,
+          "rationale": "Agile values customer collaboration over contract negotiation."
+        },
+        {
+          "key": "E",
+          "text": "Extensive upfront design over continuous delivery of valuable software increments to end users.",
+          "is_correct": false,
+          "rationale": "Agile promotes continuous delivery and iterative development, not extensive upfront design."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "When managing a growth-oriented portfolio during a period of high market volatility, what is the most prudent rebalancing strategy?",
+      "explanation": "Tolerance band rebalancing is a disciplined yet flexible approach. It avoids excessive trading costs from calendar rebalancing while preventing significant portfolio drift, which is crucial in volatile markets where asset classes can diverge quickly from their targets.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Rebalance based on predefined tolerance bands around target asset allocations, executing trades only when a band is breached.",
+          "is_correct": true,
+          "rationale": "This balances discipline with flexibility, avoiding excessive trading while managing risk."
+        },
+        {
+          "key": "B",
+          "text": "Implement a strict calendar-based rebalancing schedule, such as quarterly, regardless of market conditions to maintain discipline.",
+          "is_correct": false,
+          "rationale": "A strict calendar can force trades at inopportune times in a volatile market."
+        },
+        {
+          "key": "C",
+          "text": "Liquidate all high-beta stocks and move into cash equivalents until the market stabilizes to avoid further losses.",
+          "is_correct": false,
+          "rationale": "This is an extreme, reactive measure that abandons the long-term growth objective."
+        },
+        {
+          "key": "D",
+          "text": "Increase the allocation to the best-performing assets to capitalize on momentum and ride the current market trends.",
+          "is_correct": false,
+          "rationale": "This is performance chasing, which increases concentration risk and deviates from strategic allocation."
+        },
+        {
+          "key": "E",
+          "text": "Cease all rebalancing activities entirely to avoid realizing losses and wait for a full market recovery cycle.",
+          "is_correct": false,
+          "rationale": "This allows the portfolio's risk profile to drift significantly from its intended target."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What is the most critical factor to consider when evaluating a private equity fund for inclusion in a diversified client portfolio?",
+      "explanation": "For illiquid, long-term investments like private equity, the quality and experience of the management team is the most significant determinant of future success. Their ability to source deals, add value, and exit investments is critical.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The fund manager's track record, investment strategy, and historical performance across multiple economic cycles are paramount.",
+          "is_correct": true,
+          "rationale": "The manager's skill is the primary driver of returns in private equity."
+        },
+        {
+          "key": "B",
+          "text": "The fund's stated management fee and carried interest structure, as lower fees always lead to better net returns.",
+          "is_correct": false,
+          "rationale": "Fees are important, but secondary to the manager's ability to generate strong gross returns."
+        },
+        {
+          "key": "C",
+          "text": "The fund's geographic focus, prioritizing domestic investments to avoid complex currency hedging and geopolitical risks.",
+          "is_correct": false,
+          "rationale": "A global focus can provide diversification and access to unique opportunities."
+        },
+        {
+          "key": "D",
+          "text": "The number of high-profile institutional investors already committed to the fund, as this indicates guaranteed success.",
+          "is_correct": false,
+          "rationale": "This can be a positive signal but is not a guarantee of future performance."
+        },
+        {
+          "key": "E",
+          "text": "The fund's recent marketing materials and presentations, as they provide the most up-to-date performance projections.",
+          "is_correct": false,
+          "rationale": "Marketing materials are not a substitute for rigorous, independent due diligence."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "A portfolio heavily weighted in large-cap US equities faces downside risk from a potential market correction. Which hedging strategy is most appropriate?",
+      "explanation": "Buying put options on a broad market index provides a direct, cost-effective way to hedge against systematic market risk. It acts as an insurance policy, where the maximum loss is the premium paid, while preserving the upside potential.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Purchasing out-of-the-money put options on a broad market index like the S&P 500 to protect against a downturn.",
+          "is_correct": true,
+          "rationale": "This provides downside protection against systematic risk for a known, limited cost."
+        },
+        {
+          "key": "B",
+          "text": "Selling uncovered call options on individual holdings to generate premium income that will offset potential capital losses.",
+          "is_correct": false,
+          "rationale": "Selling uncovered calls exposes the portfolio to unlimited risk and is highly speculative."
+        },
+        {
+          "key": "C",
+          "text": "Increasing leverage by using futures contracts to double down on the existing equity positions, anticipating a quick rebound.",
+          "is_correct": false,
+          "rationale": "Increasing leverage magnifies both potential gains and losses, significantly increasing portfolio risk."
+        },
+        {
+          "key": "D",
+          "text": "Shifting the entire portfolio into long-duration government bonds, which are considered a traditional safe-haven asset class.",
+          "is_correct": false,
+          "rationale": "This is a complete portfolio reallocation, not a hedging strategy for the existing positions."
+        },
+        {
+          "key": "E",
+          "text": "Writing deep in-the-money covered calls against the largest positions to maximize the premium collected before the correction.",
+          "is_correct": false,
+          "rationale": "Deep ITM calls offer little downside protection and cap upside potential significantly."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "When conducting a Brinson-style performance attribution analysis, what does a positive allocation effect indicate for a specific sector?",
+      "explanation": "The allocation effect measures the impact of a manager's decision to overweight or underweight sectors relative to the benchmark. A positive effect means the manager correctly overweighted an outperforming sector or underweighted an underperforming one, adding value through asset allocation.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The portfolio was overweighted in a sector that outperformed the benchmark, contributing positively to the overall portfolio return.",
+          "is_correct": true,
+          "rationale": "This is the definition of a positive allocation effect for an overweighted sector."
+        },
+        {
+          "key": "B",
+          "text": "The specific stocks selected within that sector performed better than the average stock in the sector's benchmark index.",
+          "is_correct": false,
+          "rationale": "This describes the selection effect, which measures the impact of individual stock picking."
+        },
+        {
+          "key": "C",
+          "text": "The portfolio manager successfully timed the market by moving into the sector right before it experienced a significant rally.",
+          "is_correct": false,
+          "rationale": "This describes market timing, which is a component of the allocation decision but not the definition."
+        },
+        {
+          "key": "D",
+          "text": "The interaction effect between allocation and selection for that sector was positive, meaning both decisions were beneficial together.",
+          "is_correct": false,
+          "rationale": "This describes the interaction effect, a separate component of the Brinson model."
+        },
+        {
+          "key": "E",
+          "text": "The portfolio was underweighted in a sector that underperformed the benchmark, which also positively impacts relative performance.",
+          "is_correct": false,
+          "rationale": "While true, this option is incomplete; the question asks what a positive effect indicates."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "A long-term client's risk tolerance has significantly decreased due to an unexpected life event. What is your required first action?",
+      "explanation": "A change in a client's risk tolerance is a material event requiring a formal review. The Investment Policy Statement (IPS) is the portfolio's governing document and must be updated to reflect new circumstances before any strategic changes are made.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Schedule an immediate meeting to formally reassess their risk profile and update their Investment Policy Statement (IPS).",
+          "is_correct": true,
+          "rationale": "This is the compliant and client-centric first step to update the governing investment document."
+        },
+        {
+          "key": "B",
+          "text": "Immediately sell all high-risk assets in their portfolio to cash before consulting them to prevent any further losses.",
+          "is_correct": false,
+          "rationale": "Making trades without an updated IPS and client consent is a serious compliance violation."
+        },
+        {
+          "key": "C",
+          "text": "Send them a standard questionnaire by email to update their risk score in the system for compliance records.",
+          "is_correct": false,
+          "rationale": "An email questionnaire is too impersonal and insufficient for a significant change in circumstances."
+        },
+        {
+          "key": "D",
+          "text": "Reassure the client that their long-term strategy is sound and that they should avoid making emotional investment decisions.",
+          "is_correct": false,
+          "rationale": "This dismisses the client's valid concerns and fails to meet fiduciary duty obligations."
+        },
+        {
+          "key": "E",
+          "text": "Suggest a temporary hedge using derivatives while waiting for their emotional state to stabilize over the next few months.",
+          "is_correct": false,
+          "rationale": "This implements a strategy without first formally reassessing the client's goals and risk profile."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "When a portfolio underperforms its benchmark, which component of Brinson attribution analysis isolates the impact of sector weighting decisions?",
+      "explanation": "The allocation effect specifically measures the contribution of asset allocation decisions, such as sector or country weights, to the portfolio's relative performance against a benchmark. It isolates this specific decision from the impact of individual security selection.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The allocation effect, which measures the manager's decision to over- or underweight specific sectors relative to the benchmark.",
+          "is_correct": true,
+          "rationale": "Allocation effect directly measures the impact of weighting decisions, separating it from security selection skill."
+        },
+        {
+          "key": "B",
+          "text": "The selection effect, which quantifies the value added by choosing individual securities that outperform within each sector.",
+          "is_correct": false,
+          "rationale": "This measures the manager's stock-picking ability within a sector, not the decision to be in that sector."
+        },
+        {
+          "key": "C",
+          "text": "The interaction effect, which captures the combined impact of both allocation and selection decisions made simultaneously.",
+          "is_correct": false,
+          "rationale": "This is a combined effect, not the isolated impact of the weighting decision alone, which is the allocation effect."
+        },
+        {
+          "key": "D",
+          "text": "The currency effect, which accounts for gains or losses resulting from fluctuations in foreign exchange rates.",
+          "is_correct": false,
+          "rationale": "This is relevant for international portfolios but does not measure the impact of domestic sector allocation decisions."
+        },
+        {
+          "key": "E",
+          "text": "The market timing effect, which evaluates the manager's ability to shift the portfolio's beta based on market forecasts.",
+          "is_correct": false,
+          "rationale": "This measures shifts in overall market exposure (beta), not the relative weighting of specific sectors within the portfolio."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "How would a portfolio manager most effectively hedge a large, diversified equity portfolio against a significant, broad market downturn?",
+      "explanation": "Buying put options on a broad market index provides direct downside protection. As the market falls, the value of the puts increases, offsetting losses in the equity portfolio. This is a common and effective hedging strategy for systematic risk.",
+      "options": [
+        {
+          "key": "A",
+          "text": "By purchasing out-of-the-money call options on a few of the portfolio's largest individual stock holdings.",
+          "is_correct": false,
+          "rationale": "Call options are bullish and would increase losses in a downturn."
+        },
+        {
+          "key": "B",
+          "text": "By selling short a basket of individual stocks that are perceived to be significantly overvalued by the market.",
+          "is_correct": false,
+          "rationale": "This strategy hedges company-specific (idiosyncratic) risk, not the broad, systematic market risk affecting the entire portfolio."
+        },
+        {
+          "key": "C",
+          "text": "By purchasing put options on a broad market index, such as the S&P 500, to profit from a market decline.",
+          "is_correct": true,
+          "rationale": "Index puts provide a direct and efficient hedge against systematic risk."
+        },
+        {
+          "key": "D",
+          "text": "By increasing the portfolio's overall allocation to high-beta growth stocks to capture any potential market rebound.",
+          "is_correct": false,
+          "rationale": "This strategy is the opposite of hedging; it significantly increases portfolio risk and potential losses in a downturn."
+        },
+        {
+          "key": "E",
+          "text": "By writing covered calls against existing long positions to generate additional income from option premiums received.",
+          "is_correct": false,
+          "rationale": "This offers very limited downside protection, only up to the premium."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Given two bonds with identical duration and yield to maturity, which bond would experience a greater price increase if interest rates fall significantly?",
+      "explanation": "Convexity measures the curvature of the price-yield relationship. For a given large drop in rates, a bond with higher convexity will have a larger price increase than a bond with lower convexity, even if their durations are identical.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The bond that has a lower convexity measure, as it is less sensitive to large interest rate shifts.",
+          "is_correct": false,
+          "rationale": "Lower convexity means less price appreciation in a falling rate environment."
+        },
+        {
+          "key": "B",
+          "text": "The bond that possesses a higher convexity, as it provides greater upside price appreciation for a given rate drop.",
+          "is_correct": true,
+          "rationale": "Higher convexity leads to greater price gains when rates fall, providing more upside than duration alone would suggest."
+        },
+        {
+          "key": "C",
+          "text": "The callable bond, because the issuer is more likely to redeem it, capping the potential price appreciation.",
+          "is_correct": false,
+          "rationale": "A call feature creates negative convexity, which actively limits the potential for price gains as rates fall."
+        },
+        {
+          "key": "D",
+          "text": "The putable bond, since the holder has the option to sell it back to the issuer at par value.",
+          "is_correct": false,
+          "rationale": "A put feature provides downside protection against rising rates but does not enhance upside price appreciation."
+        },
+        {
+          "key": "E",
+          "text": "Both bonds will perform in an identical manner because their duration, the primary measure of rate sensitivity, is the same.",
+          "is_correct": false,
+          "rationale": "Duration is only a linear approximation; convexity captures the non-linear relationship, which is crucial for large rate changes."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "A manager continues holding a significantly underperforming asset, ignoring new negative data, because they are reluctant to realize a loss. What behavioral bias is this?",
+      "explanation": "The disposition effect, a key concept in behavioral finance, describes the tendency to hold onto losing investments for too long and sell winning investments too soon. This is driven by an aversion to realizing losses and regret.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Confirmation bias, which is the tendency to favor information that confirms pre-existing beliefs or investment theses.",
+          "is_correct": false,
+          "rationale": "Confirmation bias is about seeking affirming data, not the emotional difficulty of realizing a financial loss on paper."
+        },
+        {
+          "key": "B",
+          "text": "Hindsight bias, which is the inclination to see past events as having been more predictable than they actually were.",
+          "is_correct": false,
+          "rationale": "Hindsight bias relates to judging past decisions with the benefit of new information, not holding current losing positions."
+        },
+        {
+          "key": "C",
+          "text": "Anchoring bias, where the manager is overly reliant on the initial purchase price as a reference point for value.",
+          "is_correct": false,
+          "rationale": "While related, the core issue here is the reluctance to sell losers."
+        },
+        {
+          "key": "D",
+          "text": "The disposition effect, which is the tendency for investors to sell winning assets too early and hold losing assets too long.",
+          "is_correct": true,
+          "rationale": "This directly describes the behavior of holding losers due to loss aversion."
+        },
+        {
+          "key": "E",
+          "text": "Herding behavior, where the manager follows the actions of a larger group of other investors, ignoring their own analysis.",
+          "is_correct": false,
+          "rationale": "This bias involves following others, not an individual's reluctance to sell."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "What is a fundamental requirement for an investment firm claiming compliance with the Global Investment Performance Standards (GIPS)?",
+      "explanation": "GIPS requires firms to include all actual, fee-paying, discretionary portfolios in at least one composite. This ensures a fair, complete, and representative presentation of performance, preventing firms from cherry-picking their best accounts to show prospective clients.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The firm must only present performance results for its single best-performing composite to all prospective clients.",
+          "is_correct": false,
+          "rationale": "This is a form of cherry-picking, which GIPS standards explicitly prohibit to ensure fair representation of performance."
+        },
+        {
+          "key": "B",
+          "text": "The firm is permitted to exclude any portfolios that were terminated during the reporting period from its composites.",
+          "is_correct": false,
+          "rationale": "Terminated accounts must be included up to their termination date to avoid survivorship bias, a key GIPS principle."
+        },
+        {
+          "key": "C",
+          "text": "The firm must include all actual, fee-paying, discretionary portfolios in at least one appropriate composite.",
+          "is_correct": true,
+          "rationale": "This core GIPS principle ensures a complete and fair representation of the firm's performance to prospective clients."
+        },
+        {
+          "key": "D",
+          "text": "The firm can select any market benchmark it chooses, even if it does not reflect the composite's investment strategy.",
+          "is_correct": false,
+          "rationale": "GIPS requires that any presented benchmarks must be relevant and appropriate for the composite's specific investment strategy."
+        },
+        {
+          "key": "E",
+          "text": "The firm may present hypothetical model performance data as long as it is clearly labeled as such for clients.",
+          "is_correct": false,
+          "rationale": "GIPS standards apply to the performance of actual assets under management, not hypothetical or back-tested model performance."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When integrating ESG factors into a growth-oriented equity portfolio, what is the most effective initial screening approach to balance financial returns with sustainability goals?",
+      "explanation": "A negative screening approach is often the first step as it efficiently eliminates entire industries or companies with poor ESG records, creating a baseline universe of acceptable investments before applying more nuanced positive screening or integration techniques.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Employ a negative screening process to exclude companies involved in controversial sectors like tobacco, thermal coal, and certain weapons manufacturing.",
+          "is_correct": true,
+          "rationale": "This is a foundational ESG strategy that quickly narrows the investment universe based on clear exclusionary criteria."
+        },
+        {
+          "key": "B",
+          "text": "Focus exclusively on best-in-class companies that lead their respective industries in ESG ratings, regardless of the sector they operate within.",
+          "is_correct": false,
+          "rationale": "This is a positive screening approach, often used after negative screening, but can be too restrictive initially."
+        },
+        {
+          "key": "C",
+          "text": "Prioritize shareholder activism and engagement to force existing portfolio companies to improve their current ESG practices over time.",
+          "is_correct": false,
+          "rationale": "Activism is a valid strategy but is not an initial screening method for portfolio construction."
+        },
+        {
+          "key": "D",
+          "text": "Allocate capital solely based on thematic investing in sectors like renewable energy and clean water without considering broader market diversification.",
+          "is_correct": false,
+          "rationale": "Thematic investing can be part of an ESG strategy but ignoring diversification increases portfolio risk significantly."
+        },
+        {
+          "key": "E",
+          "text": "Use a full ESG integration model where analysts manually adjust financial forecasts for every potential company based on ESG risks.",
+          "is_correct": false,
+          "rationale": "This is a highly advanced and resource-intensive step, typically not the initial screening approach."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "During a sudden 15% market correction, what is the most prudent immediate action for a portfolio manager overseeing discretionary client accounts with long-term horizons?",
+      "explanation": "The primary role during a downturn is to provide context, manage emotions, and reinforce the long-term strategy. Proactive communication prevents panicked client decisions that could permanently impair capital, while tactical rebalancing can capitalize on dislocations.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately sell all high-beta equity positions to de-risk the portfolio and move the proceeds into cash or short-term government bonds.",
+          "is_correct": false,
+          "rationale": "This is a reactive, market-timing decision that can lock in losses and deviate from the long-term strategy."
+        },
+        {
+          "key": "B",
+          "text": "Proactively communicate with clients to provide market context, reiterate the long-term strategy, and manage emotional responses to the volatility.",
+          "is_correct": true,
+          "rationale": "Client communication and strategic discipline are paramount during market stress to prevent poor, emotionally-driven decisions."
+        },
+        {
+          "key": "C",
+          "text": "Increase leverage by using derivatives to purchase more equities at lower prices, anticipating a rapid market rebound in the short term.",
+          "is_correct": false,
+          "rationale": "Increasing leverage during a correction significantly amplifies risk and is generally inappropriate for most discretionary accounts."
+        },
+        {
+          "key": "D",
+          "text": "Wait for the market to stabilize for several weeks before taking any action or communicating with clients to avoid causing unnecessary alarm.",
+          "is_correct": false,
+          "rationale": "A lack of communication can increase client anxiety and lead to them making rash decisions independently."
+        },
+        {
+          "key": "E",
+          "text": "Double down on the portfolio's highest conviction holdings, significantly increasing their weights to capitalize on the market dip without client consultation.",
+          "is_correct": false,
+          "rationale": "Making significant, uncommunicated changes deviates from the agreed-upon risk profile and investment policy statement."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "When evaluating tail risk, how does Conditional Value at Risk (CVaR) at a 95% confidence level provide a more comprehensive measure than standard VaR?",
+      "explanation": "While VaR indicates the maximum potential loss at a certain confidence level, it doesn't specify the magnitude of losses beyond that point. CVaR, or Expected Shortfall, quantifies the average loss in the worst-case scenarios, offering a better view of tail risk.",
+      "options": [
+        {
+          "key": "A",
+          "text": "CVaR calculates the single worst possible loss scenario, whereas VaR only provides a probable range of potential investment outcomes.",
+          "is_correct": false,
+          "rationale": "CVaR is an average of worst-case losses, not the single worst possible loss."
+        },
+        {
+          "key": "B",
+          "text": "It measures the expected loss in the tail of the distribution, specifically for outcomes that exceed the Value at Risk threshold.",
+          "is_correct": true,
+          "rationale": "This is the precise definition of CVaR (Expected Shortfall), capturing the severity of tail-end losses."
+        },
+        {
+          "key": "C",
+          "text": "CVaR is a simpler metric that only considers historical volatility, making it easier to calculate and communicate to clients.",
+          "is_correct": false,
+          "rationale": "CVaR is more complex than VaR and incorporates more information than just historical volatility."
+        },
+        {
+          "key": "D",
+          "text": "It focuses on the upside potential during extreme market events, which VaR completely ignores in its risk calculation framework.",
+          "is_correct": false,
+          "rationale": "Both VaR and CVaR are downside risk measures; they do not measure upside potential."
+        },
+        {
+          "key": "E",
+          "text": "CVaR is primarily used for regulatory capital calculations under Basel III, while VaR is used for internal risk management purposes.",
+          "is_correct": false,
+          "rationale": "Both can be used for internal and regulatory purposes, but CVaR provides a more complete risk picture."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "According to GIPS standards, which of the following practices is mandatory when presenting investment performance to prospective clients to ensure fair representation and full disclosure?",
+      "explanation": "GIPS standards require firms to present performance records of actual, fee-paying, discretionary portfolios grouped into composites with similar strategies. This prevents firms from cherry-picking their best-performing accounts to mislead prospective clients about their capabilities.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Including the performance of at least one non-fee-paying, non-discretionary model portfolio to demonstrate the strategy's theoretical potential.",
+          "is_correct": false,
+          "rationale": "GIPS requires the inclusion of actual, fee-paying, discretionary accounts, not model portfolios."
+        },
+        {
+          "key": "B",
+          "text": "Presenting a single, asset-weighted composite performance record for all of the firm's investment strategies combined into one track record.",
+          "is_correct": false,
+          "rationale": "GIPS requires separate composites for each distinct investment strategy to ensure a like-for-like comparison."
+        },
+        {
+          "key": "C",
+          "text": "Showing a minimum of five years of annual investment performance, or performance since the composite's inception if shorter than five years.",
+          "is_correct": true,
+          "rationale": "This is a core GIPS requirement to provide a meaningful historical track record for evaluation."
+        },
+        {
+          "key": "D",
+          "text": "Guaranteeing that past performance is indicative of future results, provided the same portfolio management team remains in place for the client.",
+          "is_correct": false,
+          "rationale": "GIPS explicitly prohibits any claims that past performance guarantees future results, as this is misleading."
+        },
+        {
+          "key": "E",
+          "text": "Only disclosing gross-of-fees performance returns to make the firm's results appear more competitive against peer benchmarks and other managers.",
+          "is_correct": false,
+          "rationale": "GIPS requires the disclosure of both gross-of-fees and net-of-fees performance to provide a complete picture."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "When considering a structured note linked to emerging market equities for a conservative portfolio, what is the most critical risk factor to evaluate?",
+      "explanation": "The most significant risk in structured notes is the creditworthiness of the issuing financial institution. If the issuer defaults, the investor could lose their entire principal, regardless of the performance of the underlying assets. This counterparty risk supersedes market or liquidity risk.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The historical volatility of the underlying basket of equities, as this will determine the potential upside participation rate for the note.",
+          "is_correct": false,
+          "rationale": "While important for potential returns, the underlying volatility is secondary to the risk of principal loss from default."
+        },
+        {
+          "key": "B",
+          "text": "The liquidity of the note in the secondary market, which could make it difficult to sell the investment prior to its maturity date.",
+          "is_correct": false,
+          "rationale": "Liquidity is a concern, but the complete loss of principal from issuer default is a more critical risk."
+        },
+        {
+          "key": "C",
+          "text": "The credit risk of the issuing investment bank, as a default by the issuer could result in a total loss of principal.",
+          "is_correct": true,
+          "rationale": "Structured notes are unsecured debt obligations; therefore, the issuer's creditworthiness is the paramount risk factor."
+        },
+        {
+          "key": "D",
+          "text": "The currency exchange rate risk between the investor's home currency and the currencies of the underlying emerging market equities.",
+          "is_correct": false,
+          "rationale": "Currency risk affects returns but is typically manageable and less severe than the risk of issuer default."
+        },
+        {
+          "key": "E",
+          "text": "The complexity of the payoff formula, which may obscure the true expected return and make the product difficult to value accurately.",
+          "is_correct": false,
+          "rationale": "Complexity is a risk, but it does not pose the same threat of total principal loss as counterparty default."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "When a portfolio's return exceeds its benchmark, what does a positive allocation effect primarily indicate about your investment decisions?",
+      "explanation": "The allocation effect in Brinson-Fachler attribution isolates the impact of sector or asset class weighting decisions. A positive effect means the manager successfully tilted the portfolio toward outperforming areas, contributing to the excess return.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Your individual security selections within each sector outperformed the benchmark's securities in those same sectors.",
+          "is_correct": false,
+          "rationale": "This describes the selection effect, which is a separate component of performance attribution."
+        },
+        {
+          "key": "B",
+          "text": "You correctly overweighted sectors that outperformed the benchmark and underweighted sectors that underperformed the benchmark.",
+          "is_correct": true,
+          "rationale": "This is the correct definition of a positive allocation effect in performance attribution."
+        },
+        {
+          "key": "C",
+          "text": "The overall market beta was higher than anticipated, leading to unexpectedly high returns across all asset classes.",
+          "is_correct": false,
+          "rationale": "This relates to market risk (beta), not the specific decisions isolated by attribution analysis."
+        },
+        {
+          "key": "D",
+          "text": "The portfolio's transaction costs were significantly lower than the benchmark's, which artificially inflated the net return.",
+          "is_correct": false,
+          "rationale": "This is an aspect of implementation efficiency, not the allocation effect itself."
+        },
+        {
+          "key": "E",
+          "text": "Currency fluctuations favorably impacted the portfolio's unhedged foreign assets more than the benchmark's foreign holdings.",
+          "is_correct": false,
+          "rationale": "This describes the currency effect, another distinct component of performance attribution analysis."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "A portfolio has a 95% one-day Value at Risk (VaR) of $1 million. How should this figure be correctly interpreted?",
+      "explanation": "VaR is a statistical measure of potential loss. A 95% VaR of $1M means there's a 5% chance of losing at least that amount. It does not represent a maximum or guaranteed loss, but rather quantifies downside risk.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The portfolio is guaranteed to lose exactly $1 million on one out of every twenty trading days.",
+          "is_correct": false,
+          "rationale": "VaR is a probability, not a guarantee of a specific loss frequency or amount."
+        },
+        {
+          "key": "B",
+          "text": "The maximum possible loss the portfolio could experience on any given trading day is exactly $1 million.",
+          "is_correct": false,
+          "rationale": "VaR is not the maximum possible loss; actual losses can and do exceed the VaR amount."
+        },
+        {
+          "key": "C",
+          "text": "There is a 5% probability that the portfolio will lose at least $1 million over the next day.",
+          "is_correct": true,
+          "rationale": "This is the correct statistical interpretation of a 95% VaR figure."
+        },
+        {
+          "key": "D",
+          "text": "The average daily loss for the portfolio is expected to be approximately $1 million over the long term.",
+          "is_correct": false,
+          "rationale": "VaR is a tail risk measure, not an average expected loss or daily return."
+        },
+        {
+          "key": "E",
+          "text": "The portfolio will certainly lose less than $1 million on 95% of all upcoming trading days.",
+          "is_correct": false,
+          "rationale": "VaR is probabilistic and does not provide certainty about future outcomes or performance."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "During a significant market downturn, a long-term client calls in a panic. What is your most appropriate initial response?",
+      "explanation": "The best response is to empathize, provide context, and anchor the conversation in the established long-term plan and risk profile. This builds trust and discourages emotional, short-sighted decisions that could harm their financial goals.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately recommend selling volatile assets to cash to prevent any further losses and wait for a market recovery.",
+          "is_correct": false,
+          "rationale": "This is a reactive, emotional decision that likely deviates from the long-term strategy."
+        },
+        {
+          "key": "B",
+          "text": "Acknowledge their concerns, reaffirm the long-term strategy, and review how their portfolio is aligned with their risk tolerance.",
+          "is_correct": true,
+          "rationale": "This approach is empathetic, strategic, and reinforces the established financial plan."
+        },
+        {
+          "key": "C",
+          "text": "Send them a detailed performance report showing exactly how much the portfolio has declined compared to the benchmark.",
+          "is_correct": false,
+          "rationale": "This is purely factual and may increase panic without providing necessary context or reassurance."
+        },
+        {
+          "key": "D",
+          "text": "Suggest they avoid looking at their portfolio for a few weeks until the market volatility has subsided.",
+          "is_correct": false,
+          "rationale": "This is dismissive of the client's valid concerns and avoids the core advisory responsibility."
+        },
+        {
+          "key": "E",
+          "text": "Explain that market downturns are normal and that their portfolio will likely recover all losses within a year.",
+          "is_correct": false,
+          "rationale": "Making guarantees about market recovery is unprofessional and potentially non-compliant with regulations."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "Your firm claims GIPS compliance. What is a fundamental requirement for presenting performance to a prospective client under these standards?",
+      "explanation": "GIPS requires firms to present a minimum of five years of performance, or performance since the composite's inception if shorter. This prevents firms from cherry-picking favorable short-term periods to mislead prospective clients about long-term results.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Only showing the performance of the single best-performing composite that aligns with the prospect's general interests.",
+          "is_correct": false,
+          "rationale": "Cherry-picking the best composite is a direct violation of GIPS principles of fair representation."
+        },
+        {
+          "key": "B",
+          "text": "Presenting at least five years of annual performance history, or since inception if the composite is younger.",
+          "is_correct": true,
+          "rationale": "This is a core requirement for fair representation and comparability over time under GIPS."
+        },
+        {
+          "key": "C",
+          "text": "Excluding the performance of any terminated accounts from the composite to show the results of current strategies.",
+          "is_correct": false,
+          "rationale": "Excluding terminated accounts creates survivorship bias, which is strictly prohibited under GIPS."
+        },
+        {
+          "key": "D",
+          "text": "Using hypothetical or back-tested performance data as long as it is clearly labeled as such for the client.",
+          "is_correct": false,
+          "rationale": "GIPS prohibits the inclusion of hypothetical or back-tested performance in compliant composite presentations."
+        },
+        {
+          "key": "E",
+          "text": "Adjusting the historical performance data to reflect your firm's current, lower fee schedule for all past periods.",
+          "is_correct": false,
+          "rationale": "Performance must be shown net of actual fees, not retroactively adjusted for current fee schedules."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "When incorporating private equity into a traditional equity and bond portfolio, what is the primary diversification benefit you are seeking?",
+      "explanation": "Private equity's main diversification benefit comes from its low correlation to public markets and the potential to earn an illiquidity premium—an excess return to compensate investors for holding illiquid, long-term assets.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The high daily liquidity of private equity funds provides a cash buffer during public market downturns and volatility.",
+          "is_correct": false,
+          "rationale": "Private equity is characterized by its long-term illiquidity, not high daily liquidity."
+        },
+        {
+          "key": "B",
+          "text": "The guaranteed annual returns offered by most private equity funds help to stabilize the portfolio's overall income stream.",
+          "is_correct": false,
+          "rationale": "Private equity returns are highly variable, follow a J-curve, and are never guaranteed."
+        },
+        {
+          "key": "C",
+          "text": "The low correlation with public markets and access to a different risk premium, known as the illiquidity premium.",
+          "is_correct": true,
+          "rationale": "This correctly identifies the key diversification benefits: low correlation and illiquidity premium."
+        },
+        {
+          "key": "D",
+          "text": "The transparent and frequent pricing of private equity assets which allows for precise daily risk management and rebalancing.",
+          "is_correct": false,
+          "rationale": "Private equity assets are valued infrequently and are not transparently priced on a daily basis."
+        },
+        {
+          "key": "E",
+          "text": "The ability to easily short private equity positions to hedge against potential losses in the broader equity market.",
+          "is_correct": false,
+          "rationale": "Shorting private equity positions is extremely difficult, if not impossible, for most investors."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "A critical report query with multiple joins and a WHERE clause on a non-indexed column is running slowly. What is the most effective initial step?",
+      "explanation": "Creating a composite index directly addresses the query's bottleneck by allowing the database to efficiently locate rows based on the join and filter conditions, which drastically improves performance.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Create a composite index on the columns used in the JOIN and WHERE clauses to optimize data retrieval.",
+          "is_correct": true,
+          "rationale": "A composite index is the most direct and effective way to speed up this specific query."
+        },
+        {
+          "key": "B",
+          "text": "Increase the server's available RAM to allow for more data to be cached in memory for faster access.",
+          "is_correct": false,
+          "rationale": "While helpful, this is a general hardware fix and less targeted than creating a proper index."
+        },
+        {
+          "key": "C",
+          "text": "Rewrite the query to use subqueries instead of joins, which might simplify the database's execution plan.",
+          "is_correct": false,
+          "rationale": "This often results in a less efficient execution plan and poorer performance compared to well-written joins."
+        },
+        {
+          "key": "D",
+          "text": "Defragment all tables involved in the query to improve the physical data layout on the storage disk.",
+          "is_correct": false,
+          "rationale": "Defragmentation typically provides only a marginal performance improvement compared to proper indexing for a slow query."
+        },
+        {
+          "key": "E",
+          "text": "Advise the development team to schedule this report to run only during off-peak business hours.",
+          "is_correct": false,
+          "rationale": "This is a workaround that avoids fixing the root performance problem rather than solving it directly."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "You must restore a production database to its state just before an erroneous transaction occurred at 2:15 PM. What is the correct procedure?",
+      "explanation": "Point-in-Time Recovery requires restoring the most recent full backup and then sequentially applying transaction log backups up to the specific moment before the data corruption event occurred.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Restore the latest full backup and then apply all transaction logs up to the point just before 2:15 PM.",
+          "is_correct": true,
+          "rationale": "This is the standard and correct procedure for performing a point-in-time recovery (PITR)."
+        },
+        {
+          "key": "B",
+          "text": "Restore the latest full backup and then manually revert the specific erroneous transaction using a compensating transaction.",
+          "is_correct": false,
+          "rationale": "This is risky, error-prone, and may not account for all cascading changes made by the transaction."
+        },
+        {
+          "key": "C",
+          "text": "Restore only the latest differential backup, as it contains all changes since the last full backup was taken.",
+          "is_correct": false,
+          "rationale": "A differential backup alone does not allow for recovery to a specific point in time."
+        },
+        {
+          "key": "D",
+          "text": "Use database snapshots to instantly revert the entire database to the state it was in at 2:00 PM.",
+          "is_correct": false,
+          "rationale": "Snapshots may not be available or offer the required temporal granularity for a precise recovery time."
+        },
+        {
+          "key": "E",
+          "text": "Replay the entire transaction log from the beginning of time until the desired recovery point is reached.",
+          "is_correct": false,
+          "rationale": "This is highly impractical and inefficient; recovery must start from a full backup as a baseline."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "When designing a high availability solution for a critical OLTP database, what is the primary advantage of using synchronous replication over asynchronous replication?",
+      "explanation": "Synchronous replication ensures that a transaction is committed to both the primary and secondary replicas before acknowledging success to the client. This guarantees no data loss upon a primary failure (RPO=0).",
+      "options": [
+        {
+          "key": "A",
+          "text": "It provides a zero data loss guarantee because transactions must commit on the secondary before acknowledging the primary.",
+          "is_correct": true,
+          "rationale": "This guarantees data durability across nodes, achieving a Recovery Point Objective (RPO) of zero."
+        },
+        {
+          "key": "B",
+          "text": "It introduces significantly less network latency between the primary and secondary servers, improving application response time.",
+          "is_correct": false,
+          "rationale": "Synchronous replication actually increases latency because the primary must wait for the secondary's acknowledgement."
+        },
+        {
+          "key": "C",
+          "text": "It allows the secondary replica to be used for read-heavy reporting workloads without impacting the primary server.",
+          "is_correct": false,
+          "rationale": "Both synchronous and asynchronous replication can support readable secondaries; this is not a unique advantage."
+        },
+        {
+          "key": "D",
+          "text": "It requires less network bandwidth compared to asynchronous replication because data is sent in smaller, frequent batches.",
+          "is_correct": false,
+          "rationale": "Bandwidth requirements are generally similar or higher due to the constant communication and acknowledgements needed."
+        },
+        {
+          "key": "E",
+          "text": "The failover process to the secondary server is significantly faster and more automated than with asynchronous methods.",
+          "is_correct": false,
+          "rationale": "Failover speed is determined by the clustering technology, not the replication mode itself."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "To minimize the attack surface of a production database server, which security principle is most crucial to implement for application service accounts?",
+      "explanation": "The principle of least privilege is a foundational security concept. By granting service accounts only the exact permissions they need, you limit the potential damage if that account is ever compromised.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Granting the service account the principle of least privilege, providing only the minimum necessary permissions on specific objects.",
+          "is_correct": true,
+          "rationale": "This directly limits what a compromised account can do, minimizing potential damage to the database."
+        },
+        {
+          "key": "B",
+          "text": "Enforcing a complex password policy that requires frequent rotation for all application service accounts connecting to the database.",
+          "is_correct": false,
+          "rationale": "While important, a strong password doesn't limit the damage if the account is eventually compromised."
+        },
+        {
+          "key": "C",
+          "text": "Encrypting all data at rest using Transparent Data Encryption to protect the underlying physical database files from theft.",
+          "is_correct": false,
+          "rationale": "This protects against physical theft of files, not against unauthorized actions from a compromised account."
+        },
+        {
+          "key": "D",
+          "text": "Auditing all successful and failed login attempts to the database server and sending alerts for suspicious activity.",
+          "is_correct": false,
+          "rationale": "This is a detective control that identifies an attack after it happens, not a preventative one."
+        },
+        {
+          "key": "E",
+          "text": "Isolating the database server on a separate network VLAN with strict firewall rules controlling inbound and outbound traffic.",
+          "is_correct": false,
+          "rationale": "This is a network-level control; least privilege is a more granular and critical application-level control."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "A transaction needs to read data that is consistent and not affected by other concurrent transactions. Which isolation level prevents non-repeatable reads and phantom reads?",
+      "explanation": "The SERIALIZABLE isolation level is the highest and most restrictive level. It guarantees that concurrent transactions produce the same result as if they were executed serially, preventing all concurrency phenomena like phantom reads.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The SERIALIZABLE isolation level, which ensures that transactions execute as if they were running one after another.",
+          "is_correct": true,
+          "rationale": "Serializable is the strictest level, preventing dirty, non-repeatable, and phantom reads by locking data ranges."
+        },
+        {
+          "key": "B",
+          "text": "The READ COMMITTED isolation level, which only prevents dirty reads by ensuring transactions read committed data.",
+          "is_correct": false,
+          "rationale": "Read Committed is a common default but is vulnerable to both non-repeatable and phantom reads."
+        },
+        {
+          "key": "C",
+          "text": "The READ UNCOMMITTED isolation level, which provides the highest concurrency but allows dirty reads to occur.",
+          "is_correct": false,
+          "rationale": "This is the least restrictive level and provides virtually no protection against concurrency issues."
+        },
+        {
+          "key": "D",
+          "text": "The REPEATABLE READ isolation level, which prevents non-repeatable reads but can still allow for phantom reads.",
+          "is_correct": false,
+          "rationale": "Repeatable Read locks rows that are read but does not prevent new rows from being inserted."
+        },
+        {
+          "key": "E",
+          "text": "The SNAPSHOT isolation level, which uses row versioning but is not considered the strictest ANSI standard level.",
+          "is_correct": false,
+          "rationale": "While effective, Serializable is the standard SQL answer for guaranteeing the prevention of these phenomena."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "When implementing database sharding for a large-scale application, what is the most critical factor to consider for the sharding key?",
+      "explanation": "The primary goal of sharding is to distribute data and workload evenly. A poorly chosen shard key leads to hotspots, where some shards are overloaded while others are idle, negating the benefits of horizontal scaling.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The key must ensure even data distribution and avoid hotspots to maintain a balanced load across all shards.",
+          "is_correct": true,
+          "rationale": "Even data distribution is the primary goal of sharding to prevent performance bottlenecks on specific shards."
+        },
+        {
+          "key": "B",
+          "text": "The key must be a globally unique identifier that is sequentially generated to simplify data insertion operations.",
+          "is_correct": false,
+          "rationale": "Sequential keys often create hotspots on the most recent shard, which is a significant performance issue."
+        },
+        {
+          "key": "C",
+          "text": "The key should be based on a user's geographic location to comply with data residency regulations like GDPR.",
+          "is_correct": false,
+          "rationale": "While useful for geo-sharding, this is a specific use case, not the most critical factor for all sharding."
+        },
+        {
+          "key": "D",
+          "text": "The key should be an encrypted value to enhance the overall security posture of the distributed database system.",
+          "is_correct": false,
+          "rationale": "Encryption is a security concern, not a primary consideration for choosing a performant and balanced sharding key."
+        },
+        {
+          "key": "E",
+          "text": "The key must be a foreign key reference from another table to maintain referential integrity across all shards.",
+          "is_correct": false,
+          "rationale": "Maintaining referential integrity across shards is complex and often avoided; it's not a key selection driver."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "You are configuring log shipping for disaster recovery. What is the primary limitation of this method compared to Always On Availability Groups?",
+      "explanation": "Log shipping operates on a delay, as transaction logs are backed up, copied, and restored. This inherent latency means any transactions committed since the last restored log will be lost if a disaster occurs.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Log shipping requires significantly more network bandwidth for transferring transaction log backups between the primary and secondary servers.",
+          "is_correct": false,
+          "rationale": "Bandwidth usage is often comparable or even less than synchronous mirroring depending on the workload and configuration."
+        },
+        {
+          "key": "B",
+          "text": "There is a potential for data loss because the secondary is only as current as the last restored transaction log.",
+          "is_correct": true,
+          "rationale": "The inherent delay in the backup-copy-restore process creates a non-zero Recovery Point Objective (RPO)."
+        },
+        {
+          "key": "C",
+          "text": "The secondary database remains completely inaccessible for read-only queries, preventing its use for any reporting workloads.",
+          "is_correct": false,
+          "rationale": "The secondary database can be configured in a standby or read-only state, allowing for read-only access."
+        },
+        {
+          "key": "D",
+          "text": "It does not support automatic failover, requiring manual intervention to bring the secondary server online during a disaster.",
+          "is_correct": false,
+          "rationale": "While true, the potential for data loss is a more fundamental limitation concerning data integrity than failover automation."
+        },
+        {
+          "key": "E",
+          "text": "Log shipping cannot be configured across different physical data centers, limiting its effectiveness for geographic redundancy.",
+          "is_correct": false,
+          "rationale": "Log shipping is specifically well-suited for disaster recovery scenarios involving geographically separate data centers."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "A critical query is suffering from poor performance due to a full table scan. Which action is the most effective first step?",
+      "explanation": "A table scan indicates the database cannot efficiently locate the required rows. Creating indexes on the columns used for filtering (WHERE) and joining (JOIN) allows the engine to perform a much faster index seek or scan.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Increasing the memory allocated to the database server's buffer pool to cache more data pages from the table.",
+          "is_correct": false,
+          "rationale": "This may help performance but does not address the root cause, which is the inefficient table scan operation."
+        },
+        {
+          "key": "B",
+          "text": "Defragmenting the underlying storage disk where the table's data files are located to improve overall I/O performance.",
+          "is_correct": false,
+          "rationale": "This provides marginal benefits and is less effective than creating a proper index to avoid the scan."
+        },
+        {
+          "key": "C",
+          "text": "Analyzing the query's execution plan and creating appropriate indexes on columns used in the WHERE clause and JOIN conditions.",
+          "is_correct": true,
+          "rationale": "This directly addresses the root cause by providing the optimizer an efficient path to retrieve the data."
+        },
+        {
+          "key": "D",
+          "text": "Rewriting the query to use temporary tables to break down the complex logic into smaller, more manageable steps.",
+          "is_correct": false,
+          "rationale": "This can sometimes help, but analyzing and adding indexes is a more direct and standard first step."
+        },
+        {
+          "key": "E",
+          "text": "Updating the table's statistics with a full scan to ensure the query optimizer has accurate data distribution information.",
+          "is_correct": false,
+          "rationale": "While important, updated statistics cannot help the optimizer if a necessary index does not exist in the first place."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "To comply with security policies, you must implement the principle of least privilege. What is the best way to apply this?",
+      "explanation": "The principle of least privilege dictates that an account should only have the exact permissions required to perform its function. Creating a custom role with granular permissions is the most effective and manageable way to enforce this.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Granting the service account the db_owner role on the database to ensure it never encounters permission errors during operation.",
+          "is_correct": false,
+          "rationale": "This is the opposite of least privilege, as it grants far more permissions than are likely needed."
+        },
+        {
+          "key": "B",
+          "text": "Creating a custom database role with specific EXECUTE, SELECT, INSERT, UPDATE, or DELETE permissions on required objects only.",
+          "is_correct": true,
+          "rationale": "This method precisely grants only the necessary permissions, which is the definition of the principle of least privilege."
+        },
+        {
+          "key": "C",
+          "text": "Adding the service account to the sysadmin fixed server role to allow it to manage its own permissions dynamically.",
+          "is_correct": false,
+          "rationale": "This is extremely dangerous, granting unrestricted access to the entire server instance, a severe security risk."
+        },
+        {
+          "key": "D",
+          "text": "Using Windows Authentication for the service account, as it is inherently more secure than using SQL Server Authentication.",
+          "is_correct": false,
+          "rationale": "The authentication method is separate from authorization; least privilege must be applied regardless of the authentication type."
+        },
+        {
+          "key": "E",
+          "text": "Encrypting all data in the database using Transparent Data Encryption to protect the service account's access to data.",
+          "is_correct": false,
+          "rationale": "TDE protects data at rest from offline attacks but does not control the permissions of active database users."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Your organization requires a recovery point objective (RPO) of 15 minutes. Which backup strategy would be most appropriate to meet this requirement?",
+      "explanation": "Transaction log backups capture all transactions since the last log backup. Taking them every 10-15 minutes allows for point-in-time recovery, ensuring that a maximum of 15 minutes of data could be lost in a disaster, thus meeting the RPO.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Performing a full database backup every night and differential backups every four hours during business hours.",
+          "is_correct": false,
+          "rationale": "This strategy would result in a potential data loss of up to four hours, far exceeding the RPO."
+        },
+        {
+          "key": "B",
+          "text": "Configuring daily full backups combined with hourly differential backups to minimize the size of the backup files.",
+          "is_correct": false,
+          "rationale": "An hourly differential backup means the RPO would be up to one hour, which does not meet the requirement."
+        },
+        {
+          "key": "C",
+          "text": "Implementing a strategy of daily full backups supplemented with transaction log backups taken every 10-15 minutes.",
+          "is_correct": true,
+          "rationale": "Frequent transaction log backups are the standard method for achieving a low RPO for point-in-time recovery."
+        },
+        {
+          "key": "D",
+          "text": "Relying solely on storage-level snapshots taken every 15 minutes, as they are faster than native database backups.",
+          "is_correct": false,
+          "rationale": "Storage snapshots may not be transactionally consistent unless they are properly coordinated with the database system."
+        },
+        {
+          "key": "E",
+          "text": "Using only weekly full backups and enabling simple recovery model to reduce the overhead of transaction log management.",
+          "is_correct": false,
+          "rationale": "Simple recovery model does not support transaction log backups, making a 15-minute RPO impossible to achieve."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When implementing Transparent Data Encryption (TDE) on a production SQL Server, what is the most critical prerequisite step to ensure data recoverability?",
+      "explanation": "Without the master key and certificate backup, you cannot restore the database on another server or recover it after a server failure, rendering the data permanently inaccessible. This backup is paramount.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ensuring all user accounts have been granted the appropriate permissions to access the newly encrypted database files.",
+          "is_correct": false,
+          "rationale": "Permissions are important for access but not for disaster recovery of the encrypted data itself."
+        },
+        {
+          "key": "B",
+          "text": "Backing up the database master key and the server certificate used for encryption to a secure, off-server location.",
+          "is_correct": true,
+          "rationale": "Losing the encryption keys means losing the data permanently upon server failure or migration."
+        },
+        {
+          "key": "C",
+          "text": "Immediately encrypting the transaction log file after the primary data files have been successfully encrypted by the system.",
+          "is_correct": false,
+          "rationale": "TDE encrypts the entire database, including the transaction log, automatically; this is not a separate step."
+        },
+        {
+          "key": "D",
+          "text": "Performing a full database integrity check using DBCC CHECKDB to validate the physical consistency of the database pages.",
+          "is_correct": false,
+          "rationale": "While a good practice, this does not protect the ability to restore the encrypted database elsewhere."
+        },
+        {
+          "key": "E",
+          "text": "Increasing the size of the tempdb database to accommodate the additional overhead required by encryption and decryption operations.",
+          "is_correct": false,
+          "rationale": "Tempdb is also encrypted by TDE, but resizing it is a performance consideration, not a recovery prerequisite."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "A critical stored procedure is suffering from parameter sniffing issues, causing inconsistent performance. What is the most effective remediation technique for this problem?",
+      "explanation": "Assigning incoming parameter values to local variables prevents the optimizer from \"sniffing\" the initial parameter value. This forces it to generate a more generalized, and typically more stable, execution plan based on average statistics.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Rebuilding all indexes on the tables referenced by the procedure to ensure the statistics are completely up to date.",
+          "is_correct": false,
+          "rationale": "While helpful, this doesn't prevent the optimizer from creating a bad plan based on an atypical parameter."
+        },
+        {
+          "key": "B",
+          "text": "Using the `WITH RECOMPILE` query hint, which forces the query optimizer to create a new plan for every execution.",
+          "is_correct": false,
+          "rationale": "This fixes the issue but often introduces unacceptable CPU overhead due to constant recompilations."
+        },
+        {
+          "key": "C",
+          "text": "Implementing local variables within the procedure to assign parameter values, which obscures the original parameter from the optimizer.",
+          "is_correct": true,
+          "rationale": "This forces the optimizer to use average density statistics, creating a more stable, generalized plan."
+        },
+        {
+          "key": "D",
+          "text": "Increasing the server's maximum memory allocation to provide more resources for caching a wider variety of execution plans.",
+          "is_correct": false,
+          "rationale": "Adding memory does not address the root cause of the query optimizer choosing a suboptimal plan."
+        },
+        {
+          "key": "E",
+          "text": "Clearing the entire procedure cache for the database instance to remove the poorly performing cached execution plan.",
+          "is_correct": false,
+          "rationale": "This is a temporary fix; the bad plan will likely be cached again with the next problematic execution."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "When designing a high-availability solution for a mission-critical OLTP database, what is a key advantage of using Always On Availability Groups over Log Shipping?",
+      "explanation": "The primary benefit of Always On Availability Groups is their ability to perform an automatic failover to a secondary replica in seconds, ensuring business continuity. Log shipping requires a manual failover process, which is much slower.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Log Shipping is significantly easier to configure and manage, requiring less specialized knowledge of Windows Server Failover Clustering.",
+          "is_correct": false,
+          "rationale": "This is an advantage of Log Shipping, not Availability Groups, and focuses on simplicity over capability."
+        },
+        {
+          "key": "B",
+          "text": "Availability Groups offer automatic, rapid failover capabilities with minimal data loss, making them ideal for high-uptime requirements.",
+          "is_correct": true,
+          "rationale": "Automatic failover is the core advantage of AGs for maintaining high availability with minimal downtime."
+        },
+        {
+          "key": "C",
+          "text": "The recovery time objective (RTO) for Log Shipping is generally much lower than for a typical Availability Group configuration.",
+          "is_correct": false,
+          "rationale": "This is incorrect; Availability Groups have a much lower RTO due to automatic and faster failover."
+        },
+        {
+          "key": "D",
+          "text": "Log Shipping provides a built-in listener service that automatically redirects application connections after a failover event occurs.",
+          "is_correct": false,
+          "rationale": "The listener is a feature of Availability Groups, not Log Shipping, which requires manual connection string changes."
+        },
+        {
+          "key": "E",
+          "text": "Log Shipping allows for multiple readable secondary databases that can be used to offload heavy reporting workloads.",
+          "is_correct": false,
+          "rationale": "Both technologies support readable secondaries, but AGs offer real-time access, which is often superior."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "You are planning a database migration to a cloud platform with minimal downtime. Which strategy is most suitable for a large, actively used OLTP system?",
+      "explanation": "Transactional replication or a continuous data migration service allows the source database to remain online while changes are replicated to the target. This minimizes the final downtime window to only the time needed for the final cutover.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A simple backup and restore method, where you take the database offline, copy the backup file, and restore it.",
+          "is_correct": false,
+          "rationale": "This method incurs significant downtime, making it unsuitable for an actively used OLTP system."
+        },
+        {
+          "key": "B",
+          "text": "Using bulk copy program (BCP) or SQL Server Integration Services (SSIS) to export and then import all table data.",
+          "is_correct": false,
+          "rationale": "This is a high-downtime approach that doesn't capture changes made during the export/import process."
+        },
+        {
+          "key": "C",
+          "text": "Setting up transactional replication or using a database migration service that continuously synchronizes changes until the final cutover.",
+          "is_correct": true,
+          "rationale": "This approach keeps the source and target in sync, allowing for a very brief cutover window."
+        },
+        {
+          "key": "D",
+          "text": "Detaching the database files from the on-premises server, uploading them to cloud storage, and then re-attaching them.",
+          "is_correct": false,
+          "rationale": "This requires extended downtime for the detach and upload process and is often not supported in PaaS environments."
+        },
+        {
+          "key": "E",
+          "text": "Performing a full export of the database schema and data into a series of SQL scripts for execution later.",
+          "is_correct": false,
+          "rationale": "This is extremely slow for large databases and results in a long period of application downtime."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "A large reporting query performs poorly because it only needs a small subset of rows from a massive table. Which indexing strategy is most appropriate here?",
+      "explanation": "A filtered index is smaller and more efficient because it only contains entries for rows that meet a specific condition. This is ideal for queries that target a well-defined subset of data, reducing storage and maintenance overhead.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Creating a clustered index on the primary key column to physically order the data on disk for faster retrieval.",
+          "is_correct": false,
+          "rationale": "A clustered index affects the entire table and may not be optimal for a query targeting a small subset."
+        },
+        {
+          "key": "B",
+          "text": "Implementing a full-text index on all character-based columns to enable advanced linguistic search capabilities for the query.",
+          "is_correct": false,
+          "rationale": "Full-text indexes are for word-based searches, not for optimizing queries with standard predicates like date ranges or status codes."
+        },
+        {
+          "key": "C",
+          "text": "Adding a non-clustered index that includes all columns from the table to cover every possible query permutation.",
+          "is_correct": false,
+          "rationale": "This would be excessively large, slow down data modifications, and is an inefficient way to solve the problem."
+        },
+        {
+          "key": "D",
+          "text": "Creating a filtered non-clustered index with a WHERE clause that matches the predicate used by the reporting query.",
+          "is_correct": true,
+          "rationale": "This creates a small, highly efficient index containing pointers to only the relevant rows for the query."
+        },
+        {
+          "key": "E",
+          "text": "Building an XML index on a specific column that contains structured document data to improve its parsing performance.",
+          "is_correct": false,
+          "rationale": "This is only relevant if the query is specifically targeting data within an XML data type column."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "You are tasked with implementing encryption for a large financial database to meet compliance requirements. Which approach provides the most comprehensive protection for data at rest?",
+      "explanation": "Transparent Data Encryption (TDE) encrypts the physical data and log files on disk without requiring application changes. It's a standard and effective method for protecting data at rest, addressing many compliance mandates like GDPR and PCI-DSS.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Implementing Transparent Data Encryption (TDE) to encrypt the entire database's data and log files directly on the storage media.",
+          "is_correct": true,
+          "rationale": "TDE encrypts data files at rest, providing comprehensive protection without application code changes."
+        },
+        {
+          "key": "B",
+          "text": "Using column-level encryption only for tables that contain personally identifiable information (PII) to minimize performance overhead.",
+          "is_correct": false,
+          "rationale": "Column-level encryption is useful but less comprehensive than TDE for full data-at-rest protection."
+        },
+        {
+          "key": "C",
+          "text": "Encrypting the network traffic between the application servers and the database server using SSL/TLS certificates.",
+          "is_correct": false,
+          "rationale": "This protects data in transit, not data at rest, which is the primary goal here."
+        },
+        {
+          "key": "D",
+          "text": "Relying solely on full disk encryption provided by the underlying operating system or storage area network (SAN).",
+          "is_correct": false,
+          "rationale": "This doesn't protect against privileged OS user access or media theft if keys are compromised."
+        },
+        {
+          "key": "E",
+          "text": "Implementing application-level encryption where the application code handles all encryption and decryption logic before writing to the database.",
+          "is_correct": false,
+          "rationale": "This is complex, error-prone, and makes database operations like searching on encrypted data very difficult."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "When designing a high-availability solution for a critical OLTP database with minimal data loss tolerance (RPO of zero), which replication strategy is most appropriate?",
+      "explanation": "Synchronous replication ensures that a transaction is committed on both the primary and replica nodes before returning success to the client. This guarantees zero data loss (RPO=0) at the cost of potentially higher transaction latency.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Implementing synchronous replication where transactions must be committed on the secondary replica before acknowledging success to the primary node.",
+          "is_correct": true,
+          "rationale": "Synchronous replication provides the highest data consistency and zero data loss, ideal for critical OLTP systems."
+        },
+        {
+          "key": "B",
+          "text": "Using asynchronous replication to send transaction logs to the replica after the primary commit to minimize write latency.",
+          "is_correct": false,
+          "rationale": "Asynchronous replication has a risk of data loss if the primary fails before logs are sent."
+        },
+        {
+          "key": "C",
+          "text": "Configuring log shipping to periodically copy and restore transaction log backups from the primary server to a secondary server.",
+          "is_correct": false,
+          "rationale": "Log shipping has higher latency and potential data loss compared to synchronous replication."
+        },
+        {
+          "key": "D",
+          "text": "Setting up a snapshot-based replication that creates point-in-time copies of the database on a scheduled basis.",
+          "is_correct": false,
+          "rationale": "Snapshots are for backups or reporting, not real-time high availability, and involve significant data loss."
+        },
+        {
+          "key": "E",
+          "text": "Relying on a shared-disk clustering solution where multiple nodes access the same storage, without any data replication.",
+          "is_correct": false,
+          "rationale": "This provides instance high availability but creates a single point of failure for the storage itself."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "Your team is migrating a 10TB on-premise SQL Server database to AWS. What is the most effective AWS service for a lift-and-shift migration with minimal downtime?",
+      "explanation": "AWS Database Migration Service (DMS) with Change Data Capture (CDC) allows for an initial full load followed by continuous replication of changes. This enables a cutover with minimal downtime once the source and target systems are synchronized.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Performing a full backup on-premise, uploading it to an S3 bucket, and then restoring it to an EC2 instance.",
+          "is_correct": false,
+          "rationale": "This method incurs significant downtime during the backup, upload, and restore phases."
+        },
+        {
+          "key": "B",
+          "text": "Utilizing the AWS Database Migration Service (DMS) with Change Data Capture (CDC) to replicate data continuously to RDS.",
+          "is_correct": true,
+          "rationale": "DMS with CDC is a managed service designed for migrations with near-zero downtime."
+        },
+        {
+          "key": "C",
+          "text": "Using AWS Snowball Edge to physically ship the database files to an AWS data center for ingestion into RDS.",
+          "is_correct": false,
+          "rationale": "Snowball is for large-scale data transfer but doesn't handle ongoing changes, leading to downtime."
+        },
+        {
+          "key": "D",
+          "text": "Scripting a bulk export of all tables to CSV files and then using a bulk import utility on the target database.",
+          "is_correct": false,
+          "rationale": "This approach is slow, complex, error-prone for large databases, and causes extensive downtime."
+        },
+        {
+          "key": "E",
+          "text": "Setting up native transactional replication from the on-premise instance to a new RDS instance over a VPN connection.",
+          "is_correct": false,
+          "rationale": "While possible, DMS is a purpose-built, managed service that simplifies this exact migration scenario more effectively."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "You observe persistently high `CXPACKET` wait times on a production SQL Server. What is the most appropriate initial step to diagnose the underlying issue?",
+      "explanation": "High `CXPACKET` waits often indicate parallelism issues, but they can be a symptom of other problems like I/O bottlenecks or outdated statistics. Investigating the specific queries associated with these waits is the correct first diagnostic step.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately increasing the 'max degree of parallelism' (MAXDOP) server configuration setting to a higher value to allow more threads.",
+          "is_correct": false,
+          "rationale": "Blindly increasing MAXDOP can worsen the problem by increasing contention and resource usage."
+        },
+        {
+          "key": "B",
+          "text": "Disabling parallelism entirely by setting the 'max degree of parallelism' (MAXDOP) configuration to 1 for the entire server.",
+          "is_correct": false,
+          "rationale": "This is a drastic measure that can severely degrade performance for queries that benefit from parallelism."
+        },
+        {
+          "key": "C",
+          "text": "Identifying the specific queries causing the high `CXPACKET` waits and analyzing their execution plans for potential inefficiencies.",
+          "is_correct": true,
+          "rationale": "This targets the root cause by analyzing the queries themselves before changing server-wide settings."
+        },
+        {
+          "key": "D",
+          "text": "Upgrading the server's CPU to a model with more cores, assuming the issue is a lack of processing power.",
+          "is_correct": false,
+          "rationale": "This is an expensive hardware solution that may not address the underlying query or index problem."
+        },
+        {
+          "key": "E",
+          "text": "Reducing the 'cost threshold for parallelism' setting to force more queries to run in serial execution mode.",
+          "is_correct": false,
+          "rationale": "This can prevent beneficial parallelism and is a server-wide change made without diagnosing the specific query."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "When managing database infrastructure as code, what is the primary advantage of using a declarative tool like Terraform over an imperative tool like Ansible?",
+      "explanation": "Declarative tools like Terraform focus on the desired end state. You define what infrastructure you want, and the tool determines the necessary API calls to create, update, or destroy resources to achieve that state, preventing configuration drift.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Declarative tools provide more granular, step-by-step control over the sequence of commands executed to provision the database server.",
+          "is_correct": false,
+          "rationale": "This describes imperative tools like Ansible, not declarative ones like Terraform."
+        },
+        {
+          "key": "B",
+          "text": "Declarative tools are better suited for executing one-off administrative scripts and ad-hoc configuration changes on existing database instances.",
+          "is_correct": false,
+          "rationale": "This is a primary use case for imperative configuration management tools like Ansible or Chef."
+        },
+        {
+          "key": "C",
+          "text": "You define the desired final state of the database infrastructure, and the tool determines the necessary actions to achieve it.",
+          "is_correct": true,
+          "rationale": "This is the core principle of declarative tools, focusing on the \"what\" rather than the \"how.\""
+        },
+        {
+          "key": "D",
+          "text": "Declarative tools require less initial setup and have a much simpler syntax for writing the infrastructure provisioning code.",
+          "is_correct": false,
+          "rationale": "Simplicity is subjective; the key difference is the declarative versus imperative approach, not syntax complexity."
+        },
+        {
+          "key": "E",
+          "text": "Declarative tools integrate more natively with CI/CD pipelines for automating application deployments rather than infrastructure provisioning.",
+          "is_correct": false,
+          "rationale": "Both tool types integrate well with CI/CD; the distinction lies in their core operational paradigm."
+        }
+      ]
+    }
+  ]
+}

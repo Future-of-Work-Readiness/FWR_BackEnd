@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "What is the correct way to link an external CSS stylesheet to an HTML document for proper styling?",
+      "explanation": "Linking an external CSS file using the `<link>` tag within the `<head>` section is the standard and most efficient method for applying styles to web pages, separating structure from presentation.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`<link rel=\"stylesheet\" href=\"styles.css\">` placed inside the `<head>` section of the HTML document.",
+          "is_correct": true,
+          "rationale": "This is the standard HTML tag for linking external stylesheets."
+        },
+        {
+          "key": "B",
+          "text": "`<style src=\"styles.css\"></style>` placed within the `<body>` section to load styles dynamically.",
+          "is_correct": false,
+          "rationale": "The `<style>` tag is for internal CSS, not external links."
+        },
+        {
+          "key": "C",
+          "text": "`<script href=\"styles.css\"></script>` located at the end of the `<body>` for better performance.",
+          "is_correct": false,
+          "rationale": "The `<script>` tag is for JavaScript, not CSS stylesheets."
+        },
+        {
+          "key": "D",
+          "text": "`<css link=\"styles.css\">` placed anywhere in the document to apply styles globally across pages.",
+          "is_correct": false,
+          "rationale": "There is no `<css>` tag for linking stylesheets in HTML."
+        },
+        {
+          "key": "E",
+          "text": "`@import url(\"styles.css\");` used directly inside an inline style attribute on a specific element.",
+          "is_correct": false,
+          "rationale": "This is a CSS `@import` rule, not an HTML linking method."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "How do you correctly select an HTML element with the ID 'main-content' in CSS to apply specific styling?",
+      "explanation": "In CSS, the hash symbol (`#`) is used to target elements by their unique ID attribute. This ensures that the styles are applied precisely to the intended element.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`.main-content` selects elements based on their class attribute, which is different from an ID.",
+          "is_correct": false,
+          "rationale": "This is a class selector, not an ID selector."
+        },
+        {
+          "key": "B",
+          "text": "`main-content` selects elements based on their tag name, not a specific unique ID.",
+          "is_correct": false,
+          "rationale": "This is a tag selector, not an ID selector."
+        },
+        {
+          "key": "C",
+          "text": "`#main-content` selects the unique element that possesses the ID attribute 'main-content'.",
+          "is_correct": true,
+          "rationale": "The hash symbol selects an element by its unique ID."
+        },
+        {
+          "key": "D",
+          "text": "`*main-content` selects all elements whose names contain 'main-content', which is not standard.",
+          "is_correct": false,
+          "rationale": "The universal selector `*` doesn't work this way for IDs."
+        },
+        {
+          "key": "E",
+          "text": "`[id='main-content']` selects elements with the specified ID, but `#` is more common.",
+          "is_correct": false,
+          "rationale": "This is an attribute selector; the ID selector `#` is more direct."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What is the correct JavaScript method to display the message 'Hello, Frontend!' in the browser's developer console?",
+      "explanation": "The `console.log()` method is a fundamental debugging tool in JavaScript, allowing developers to output messages and variable values to the browser's developer console for inspection.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`window.alert(\"Hello, Frontend!\");` shows a simple modal dialog box to the user, not logging output to the developer console.",
+          "is_correct": false,
+          "rationale": "This shows a popup alert, not console output."
+        },
+        {
+          "key": "B",
+          "text": "`document.write(\"Hello, Frontend!\");` writes content directly into the HTML document, potentially overwriting existing page content.",
+          "is_correct": false,
+          "rationale": "This writes to the document, not the console."
+        },
+        {
+          "key": "C",
+          "text": "`console.log(\"Hello, Frontend!\");` outputs the specified message directly into the developer console.",
+          "is_correct": true,
+          "rationale": "This is the standard method for console output."
+        },
+        {
+          "key": "D",
+          "text": "`print(\"Hello, Frontend!\");` is not a standard JavaScript function for console output.",
+          "is_correct": false,
+          "rationale": "This is not a standard JavaScript console method."
+        },
+        {
+          "key": "E",
+          "text": "`return \"Hello, Frontend!\";` is used to return a value from a function, not for display.",
+          "is_correct": false,
+          "rationale": "This returns a value from a function, not for display."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Which JavaScript method is typically used to retrieve a specific HTML element from the Document Object Model using its unique ID?",
+      "explanation": "`document.getElementById()` is the most direct and efficient way to access a single HTML element when its unique ID is known. It returns the element object.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`document.getElementsByClassName('myClass')` returns a collection of elements with a specific class name.",
+          "is_correct": false,
+          "rationale": "This selects by class name, not by ID."
+        },
+        {
+          "key": "B",
+          "text": "`document.querySelector('#myElement')` returns the first element matching a CSS selector, which could be an ID.",
+          "is_correct": false,
+          "rationale": "This uses CSS selectors; `getElementById` is more direct for IDs."
+        },
+        {
+          "key": "C",
+          "text": "`document.getElementById('myElement')` directly returns the single element that has the specified unique ID.",
+          "is_correct": true,
+          "rationale": "This method specifically targets elements by their unique ID."
+        },
+        {
+          "key": "D",
+          "text": "`document.getElementsByTagName('div')` returns a collection of all elements with a particular tag name.",
+          "is_correct": false,
+          "rationale": "This selects by tag name, not by ID."
+        },
+        {
+          "key": "E",
+          "text": "`document.querySelectorAll('input')` returns all elements matching a CSS selector, not a single ID.",
+          "is_correct": false,
+          "rationale": "This selects all elements matching a CSS selector."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Why is using semantic HTML elements like `<header>`, `<nav>`, and `<footer>` considered a crucial best practice for web development?",
+      "explanation": "Semantic HTML elements provide meaningful structure to web content, improving accessibility for screen readers and enhancing SEO by giving search engines better context about the page's layout and content.",
+      "options": [
+        {
+          "key": "A",
+          "text": "They automatically apply beautiful default styles without requiring any additional CSS code.",
+          "is_correct": false,
+          "rationale": "Semantic tags don't inherently provide complex styling."
+        },
+        {
+          "key": "B",
+          "text": "They make the HTML document load significantly faster in all modern web browsers.",
+          "is_correct": false,
+          "rationale": "Performance benefits are negligible for semantic tags alone."
+        },
+        {
+          "key": "C",
+          "text": "They improve accessibility for screen readers and provide better context for search engine optimization.",
+          "is_correct": true,
+          "rationale": "Semantic elements enhance both accessibility and SEO."
+        },
+        {
+          "key": "D",
+          "text": "They are primarily used for creating complex animations and interactive user interface components.",
+          "is_correct": false,
+          "rationale": "Animation is typically handled by CSS/JS, not semantic HTML."
+        },
+        {
+          "key": "E",
+          "text": "They only work correctly when JavaScript is enabled in the user's web browser settings.",
+          "is_correct": false,
+          "rationale": "Semantic HTML is independent of JavaScript functionality."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Which HTML tag is correctly used to define the main content area of a webpage, excluding headers, footers, or sidebars?",
+      "explanation": "The `<main>` tag is a semantic HTML5 element specifically designed to represent the dominant content of the `<body>` of a document. It helps improve document structure and accessibility.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The `<section>` tag is used for grouping related content, but it is not specifically for the primary page content.",
+          "is_correct": false,
+          "rationale": "`<section>` groups related content, not the main page content."
+        },
+        {
+          "key": "B",
+          "text": "The `<article>` tag represents a self-contained composition, which could be part of the main content but not the whole.",
+          "is_correct": false,
+          "rationale": "`<article>` is for self-contained content, not the overall main area."
+        },
+        {
+          "key": "C",
+          "text": "The `<main>` tag semantically represents the dominant content of the `<body>` of a document, unique to each page.",
+          "is_correct": true,
+          "rationale": "The `<main>` tag defines the dominant content of the document."
+        },
+        {
+          "key": "D",
+          "text": "The `<div>` tag is a generic container with no semantic meaning, generally used for styling or scripting purposes.",
+          "is_correct": false,
+          "rationale": "The `<div>` tag is a generic container without semantic meaning."
+        },
+        {
+          "key": "E",
+          "text": "The `<span>` tag is an inline element used to apply styles to a small piece of text or a group of inline elements.",
+          "is_correct": false,
+          "rationale": "The `<span>` tag is an inline element for styling small text parts."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "What is the primary purpose of using the CSS `display: flex;` property on a container element for its direct children?",
+      "explanation": "The `display: flex;` property enables a flex context for all direct children, allowing for flexible box layout. This makes it easy to align items, distribute space, and control their order within the container.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It arranges items horizontally in a single line, allowing flexible sizing and alignment within the container.",
+          "is_correct": true,
+          "rationale": "Flexbox primarily provides flexible alignment and distribution of items."
+        },
+        {
+          "key": "B",
+          "text": "It makes the container's direct child elements appear as block-level elements, taking full available width.",
+          "is_correct": false,
+          "rationale": "This describes `display: block;`, not `display: flex;`."
+        },
+        {
+          "key": "C",
+          "text": "It hides the container and all its child elements completely from the visual layout and accessibility tree.",
+          "is_correct": false,
+          "rationale": "This describes `display: none;`, not `display: flex;`."
+        },
+        {
+          "key": "D",
+          "text": "It positions elements absolutely relative to their closest positioned ancestor, removing them from normal flow.",
+          "is_correct": false,
+          "rationale": "This describes `position: absolute;`, not `display: flex;`."
+        },
+        {
+          "key": "E",
+          "text": "It applies a grid-based layout system, enabling precise two-dimensional positioning of child elements.",
+          "is_correct": false,
+          "rationale": "This describes `display: grid;`, not `display: flex;`."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Which JavaScript keyword is used for declaring a variable whose value can be reassigned later in the program's execution?",
+      "explanation": "The `let` keyword declares a block-scoped local variable, and its value can be reassigned. This is a key feature that distinguishes it from `const`.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The `const` keyword declares a constant, block-scoped variable whose value cannot be reassigned after initialization.",
+          "is_correct": false,
+          "rationale": "`const` variables cannot be reassigned."
+        },
+        {
+          "key": "B",
+          "text": "The `let` keyword declares a block-scoped local variable that can be reassigned a new value during execution.",
+          "is_correct": true,
+          "rationale": "`let` variables are block-scoped and can be reassigned."
+        },
+        {
+          "key": "C",
+          "text": "The `var` keyword declares a function-scoped variable, which can be reassigned, but `let` is preferred in modern JavaScript.",
+          "is_correct": false,
+          "rationale": "`var` is function-scoped and has hoisting issues; `let` is preferred."
+        },
+        {
+          "key": "D",
+          "text": "The `static` keyword is not used for declaring variables in the global or function scope in standard JavaScript.",
+          "is_correct": false,
+          "rationale": "`static` is not a standard variable declaration keyword in JavaScript."
+        },
+        {
+          "key": "E",
+          "text": "The `typeof` operator is used to determine the data type of a variable, not to declare a new one.",
+          "is_correct": false,
+          "rationale": "`typeof` is an operator, not for variable declaration."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "When a web browser renders an HTML document, what crucial process occurs to construct the visual representation?",
+      "explanation": "Browsers parse HTML to build the DOM tree and CSS to build the CSSOM tree. These two trees are combined to form the render tree, which is then used to paint pixels on the screen.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It executes server-side scripts to dynamically generate new HTML content before displaying anything.",
+          "is_correct": false,
+          "rationale": "Server-side scripts run on the server, not in the browser's rendering process."
+        },
+        {
+          "key": "B",
+          "text": "It parses the HTML and CSS to build the Document Object Model (DOM) and CSS Object Model (CSSOM).",
+          "is_correct": true,
+          "rationale": "Parsing HTML/CSS to build DOM/CSSOM is the first step in rendering."
+        },
+        {
+          "key": "C",
+          "text": "It uploads all local user files to a remote server for processing and storage.",
+          "is_correct": false,
+          "rationale": "Browsers download content, they do not automatically upload user files."
+        },
+        {
+          "key": "D",
+          "text": "It compiles the JavaScript code into machine-level instructions for direct execution by the CPU.",
+          "is_correct": false,
+          "rationale": "JavaScript is interpreted or compiled by a JS engine, separate from rendering HTML/CSS."
+        },
+        {
+          "key": "E",
+          "text": "It compresses all image and video assets to reduce file sizes before downloading them from the network.",
+          "is_correct": false,
+          "rationale": "Compression typically happens on the server or during asset optimization, not by the browser during rendering."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Why is it important for frontend developers to include descriptive `alt` attributes for all image elements?",
+      "explanation": "Descriptive `alt` attributes are crucial for web accessibility. They provide textual alternatives for images, which screen readers use to convey information to visually impaired users, ensuring content is understandable.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It helps search engine optimization (SEO) by providing keywords for image indexing and ranking.",
+          "is_correct": false,
+          "rationale": "While `alt` text can help SEO, its primary purpose is accessibility."
+        },
+        {
+          "key": "B",
+          "text": "It provides alternative text for screen readers, allowing visually impaired users to understand image content.",
+          "is_correct": true,
+          "rationale": "`alt` attributes are essential for screen readers and web accessibility."
+        },
+        {
+          "key": "C",
+          "text": "It directly reduces the file size of images, leading to faster page load times for all users.",
+          "is_correct": false,
+          "rationale": "`alt` attributes are text and do not affect image file size."
+        },
+        {
+          "key": "D",
+          "text": "It defines the image's dimensions, ensuring consistent sizing across different screen resolutions.",
+          "is_correct": false,
+          "rationale": "Image dimensions are defined by `width` and `height` attributes or CSS."
+        },
+        {
+          "key": "E",
+          "text": "It automatically generates captions for images when they are displayed in a gallery or slideshow component.",
+          "is_correct": false,
+          "rationale": "Captions are typically provided by `<figcaption>` or other dedicated elements."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "What is the correct HTML tag used for linking an external CSS stylesheet to an HTML document, ensuring proper styling?",
+      "explanation": "The <link> tag is used within the <head> section of an HTML document to link external resources, most commonly CSS stylesheets, by specifying the rel and href attributes.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`<link rel=\"stylesheet\" href=\"styles.css\">` is the standard method for including an external CSS file.",
+          "is_correct": true,
+          "rationale": "The `<link>` tag with `rel=\"stylesheet\"` correctly links external CSS files."
+        },
+        {
+          "key": "B",
+          "text": "`<style src=\"styles.css\"></style>` is not a valid HTML syntax for linking an external stylesheet.",
+          "is_correct": false,
+          "rationale": "This syntax is incorrect for linking external CSS files."
+        },
+        {
+          "key": "C",
+          "text": "`<css link=\"styles.css\"></css>` represents an incorrect and non-standard HTML tag for CSS inclusion.",
+          "is_correct": false,
+          "rationale": "This is an invalid and non-standard HTML tag."
+        },
+        {
+          "key": "D",
+          "text": "`<script href=\"styles.css\"></script>` is used for JavaScript files, not for applying external CSS styles.",
+          "is_correct": false,
+          "rationale": "The `<script>` tag is used for JavaScript, not CSS."
+        },
+        {
+          "key": "E",
+          "text": "`<stylesheet url=\"styles.css\"></stylesheet>` is an invented tag and does not exist in standard HTML.",
+          "is_correct": false,
+          "rationale": "This is not a valid HTML tag for stylesheets."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "How can a frontend developer horizontally center a block-level element within its parent container using standard CSS properties?",
+      "explanation": "Setting `margin-left` and `margin-right` to `auto` on a block-level element with a defined width is the standard and most reliable way to achieve horizontal centering in CSS.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Apply `margin: 0 auto;` to the block-level element, provided it has a specified width.",
+          "is_correct": true,
+          "rationale": "`margin: 0 auto;` centers a block with a set width."
+        },
+        {
+          "key": "B",
+          "text": "Use `text-align: center;` on the block-level element itself to center its content horizontally.",
+          "is_correct": false,
+          "rationale": "`text-align: center;` centers inline content, not block elements."
+        },
+        {
+          "key": "C",
+          "text": "Set `float: center;` on the element, which is not a valid CSS property for horizontal centering.",
+          "is_correct": false,
+          "rationale": "`float` is for positioning, and `center` is not a valid value."
+        },
+        {
+          "key": "D",
+          "text": "Employ `position: absolute; left: 50%; transform: translateX(-50%);` for its parent container.",
+          "is_correct": false,
+          "rationale": "This centers an absolutely positioned element, not its parent."
+        },
+        {
+          "key": "E",
+          "text": "Define `display: flex; justify-content: center;` on the child element, not the parent.",
+          "is_correct": false,
+          "rationale": "Flexbox properties for centering are applied to the parent container."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "What is the primary purpose of using the `document.getElementById()` method in JavaScript for web development tasks?",
+      "explanation": "`document.getElementById()` is a fundamental DOM manipulation method that allows developers to precisely select and interact with a specific HTML element based on its unique ID attribute, enabling dynamic content updates.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It retrieves a reference to the first HTML element found in the document with a matching ID attribute.",
+          "is_correct": true,
+          "rationale": "This method selects a unique HTML element by its ID."
+        },
+        {
+          "key": "B",
+          "text": "It selects all HTML elements that have the same class name assigned to them in the document.",
+          "is_correct": false,
+          "rationale": "This describes `getElementsByClassName()`, not `getElementById()`."
+        },
+        {
+          "key": "C",
+          "text": "It creates a brand new HTML element and then appends it to the existing document structure.",
+          "is_correct": false,
+          "rationale": "This describes methods like `createElement()` and `appendChild()`."
+        },
+        {
+          "key": "D",
+          "text": "It changes the styling properties of an element based on its specific tag name.",
+          "is_correct": false,
+          "rationale": "This method does not directly change styles based on tag name."
+        },
+        {
+          "key": "E",
+          "text": "It sends an asynchronous request to a server to fetch data from a specified API endpoint.",
+          "is_correct": false,
+          "rationale": "This describes methods like `fetch()` or `XMLHttpRequest`."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Which specific tab within browser developer tools is most effective for inspecting and modifying a webpage's HTML structure and applied CSS styles?",
+      "explanation": "The 'Elements' (or 'Inspector') tab in browser developer tools provides a live, interactive view of the page's DOM, allowing developers to examine and edit HTML and CSS in real-time for debugging and styling adjustments.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The 'Elements' tab (sometimes called 'Inspector') allows direct manipulation of the DOM and styles.",
+          "is_correct": true,
+          "rationale": "The 'Elements' tab is crucial for inspecting and modifying HTML and CSS."
+        },
+        {
+          "key": "B",
+          "text": "The 'Console' tab is primarily used for executing JavaScript code and viewing log messages.",
+          "is_correct": false,
+          "rationale": "The 'Console' is for JavaScript execution and logging."
+        },
+        {
+          "key": "C",
+          "text": "The 'Network' tab monitors all network requests and responses made by the webpage.",
+          "is_correct": false,
+          "rationale": "The 'Network' tab monitors HTTP requests and responses."
+        },
+        {
+          "key": "D",
+          "text": "The 'Sources' tab is utilized for debugging JavaScript code and setting breakpoints.",
+          "is_correct": false,
+          "rationale": "The 'Sources' tab is used for debugging JavaScript code."
+        },
+        {
+          "key": "E",
+          "text": "The 'Performance' tab helps analyze the loading and runtime performance of the web application.",
+          "is_correct": false,
+          "rationale": "The 'Performance' tab analyzes webpage loading and runtime."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Why is using semantic HTML elements like `<header>`, `<nav>`, and `<main>` considered a crucial best practice for modern web development?",
+      "explanation": "Semantic HTML elements provide meaningful structure to web content, which significantly improves accessibility for screen readers and other assistive technologies, and also aids SEO by giving context to search engines.",
+      "options": [
+        {
+          "key": "A",
+          "text": "They provide meaningful structure to content, improving accessibility for screen readers and SEO.",
+          "is_correct": true,
+          "rationale": "Semantic HTML improves accessibility and search engine optimization by adding meaning."
+        },
+        {
+          "key": "B",
+          "text": "They automatically apply specific visual styles to elements without needing any extra CSS code.",
+          "is_correct": false,
+          "rationale": "Semantic HTML does not automatically apply specific visual styles."
+        },
+        {
+          "key": "C",
+          "text": "They are primarily used for creating complex animations and interactive user interface components.",
+          "is_correct": false,
+          "rationale": "Semantic HTML is not primarily for animations or complex UI components."
+        },
+        {
+          "key": "D",
+          "text": "They reduce the total file size of the HTML document, leading to faster page loading times.",
+          "is_correct": false,
+          "rationale": "Semantic HTML does not inherently reduce file size for faster loading."
+        },
+        {
+          "key": "E",
+          "text": "They are specifically designed for embedding third-party content securely within a webpage.",
+          "is_correct": false,
+          "rationale": "Embedding third-party content typically uses iframes or specific APIs."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "What is the primary purpose of using semantic HTML elements like <header> or <nav> in web development?",
+      "explanation": "Semantic HTML elements provide meaning to the content, which is crucial for accessibility tools like screen readers and for search engine optimization (SEO). They help structure the document logically.",
+      "options": [
+        {
+          "key": "A",
+          "text": "They automatically apply specific visual styles to content without needing CSS, making development faster.",
+          "is_correct": false,
+          "rationale": "CSS handles visual styling, not semantic HTML elements."
+        },
+        {
+          "key": "B",
+          "text": "They improve accessibility and SEO by providing meaningful structure to content for browsers and screen readers.",
+          "is_correct": true,
+          "rationale": "Semantic HTML enhances accessibility and SEO."
+        },
+        {
+          "key": "C",
+          "text": "They are primarily used for creating complex animations and interactive user interface components on a website.",
+          "is_correct": false,
+          "rationale": "Animations and interactivity are typically handled by CSS and JavaScript."
+        },
+        {
+          "key": "D",
+          "text": "They define server-side logic and data processing operations for dynamic content generation, improving performance.",
+          "is_correct": false,
+          "rationale": "HTML is client-side structure; server-side logic uses other languages."
+        },
+        {
+          "key": "E",
+          "text": "They allow developers to embed JavaScript code directly into the HTML document for immediate execution.",
+          "is_correct": false,
+          "rationale": "The <script> tag is used for embedding JavaScript code."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "Which CSS property is commonly used to change the background color of an HTML element on a webpage?",
+      "explanation": "The `background-color` CSS property is specifically designed and widely used to set the background color of an HTML element, providing clear visual styling.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The `font-color` property is used to adjust the primary text color within the selected HTML element.",
+          "is_correct": false,
+          "rationale": "`font-color` is not a standard CSS property; `color` is for text."
+        },
+        {
+          "key": "B",
+          "text": "The `background-image` property is specifically designed for setting a solid color as the element's background.",
+          "is_correct": false,
+          "rationale": "`background-image` sets an image, not a solid color background."
+        },
+        {
+          "key": "C",
+          "text": "The `color` property is used to modify the background tint, but it also affects foreground text color.",
+          "is_correct": false,
+          "rationale": "The `color` property sets the text color, not the background color."
+        },
+        {
+          "key": "D",
+          "text": "The `background-color` property is the correct and standard way to apply a solid color to an element's background.",
+          "is_correct": true,
+          "rationale": "`background-color` sets the element's background color."
+        },
+        {
+          "key": "E",
+          "text": "The `element-fill` property allows developers to specify the fill color for any HTML element's entire area.",
+          "is_correct": false,
+          "rationale": "`element-fill` is not a standard CSS property for background color."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "How can you select an HTML element with the ID \"myButton\" using plain JavaScript in the browser?",
+      "explanation": "The `document.getElementById()` method is the standard and most efficient way to access a single HTML element directly by its unique ID attribute, ensuring precise selection.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`document.getElementByTagName(\"myButton\")` will retrieve all elements that match the specified tag name.",
+          "is_correct": false,
+          "rationale": "This method selects elements by their tag name, not by ID."
+        },
+        {
+          "key": "B",
+          "text": "`document.getElementsByClassName(\"myButton\")` returns a collection of elements sharing the same class name.",
+          "is_correct": false,
+          "rationale": "This method selects elements by their class name, not by ID."
+        },
+        {
+          "key": "C",
+          "text": "`document.querySelector(\"#myButton\")` is a versatile method that uses CSS selectors to find the first matching element.",
+          "is_correct": false,
+          "rationale": "`querySelector` works, but `getElementById` is more direct for IDs."
+        },
+        {
+          "key": "D",
+          "text": "`document.getElementById(\"myButton\")` is the most direct and efficient method for selecting a single element by its unique ID.",
+          "is_correct": true,
+          "rationale": "`getElementById` directly selects an element by its unique ID."
+        },
+        {
+          "key": "E",
+          "text": "`document.findAll(\"myButton\")` attempts to locate all elements containing the given string within their content.",
+          "is_correct": false,
+          "rationale": "There is no standard `document.findAll` method in JavaScript."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "What is the primary purpose of using Git for version control in a frontend development project?",
+      "explanation": "Git is a distributed version control system that helps developers track changes in their codebase, collaborate effectively, and manage different versions of the project history.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It automatically deploys code changes to production servers, ensuring continuous delivery without manual steps.",
+          "is_correct": false,
+          "rationale": "CI/CD tools handle deployment, not Git's primary function."
+        },
+        {
+          "key": "B",
+          "text": "It tracks changes to code, allows collaboration among developers, and enables reverting to previous versions if needed.",
+          "is_correct": true,
+          "rationale": "Git tracks code changes, facilitates collaboration, and manages project versions."
+        },
+        {
+          "key": "C",
+          "text": "It compiles JavaScript code into machine-readable bytecode for faster execution in web browsers.",
+          "is_correct": false,
+          "rationale": "Compilers or transpilers handle code compilation, not Git."
+        },
+        {
+          "key": "D",
+          "text": "It encrypts sensitive user data before sending it over the network to protect against cyber threats.",
+          "is_correct": false,
+          "rationale": "Security protocols like HTTPS handle data encryption, not Git."
+        },
+        {
+          "key": "E",
+          "text": "It optimizes image files and other assets to reduce their size, improving website loading performance.",
+          "is_correct": false,
+          "rationale": "Build tools or image optimizers handle asset optimization, not Git."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "Which feature of browser developer tools is most helpful for inspecting and modifying an element's CSS styles in real-time?",
+      "explanation": "The \"Elements\" tab in browser developer tools provides a powerful interface to inspect the HTML structure (DOM) and view, add, or modify the CSS rules applied to any selected element in real-time.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The \"Network\" tab displays all HTTP requests and responses, helping to analyze loading performance.",
+          "is_correct": false,
+          "rationale": "The Network tab focuses on network requests and responses."
+        },
+        {
+          "key": "B",
+          "text": "The \"Console\" tab is primarily used for executing JavaScript code and viewing runtime errors or messages.",
+          "is_correct": false,
+          "rationale": "The Console tab is for JavaScript execution and logging."
+        },
+        {
+          "key": "C",
+          "text": "The \"Elements\" tab allows direct inspection of the DOM structure and real-time editing of HTML and CSS properties.",
+          "is_correct": true,
+          "rationale": "The Elements tab allows real-time HTML/CSS inspection and modification."
+        },
+        {
+          "key": "D",
+          "text": "The \"Sources\" tab helps developers debug JavaScript code by setting breakpoints and stepping through execution.",
+          "is_correct": false,
+          "rationale": "The Sources tab is primarily for debugging JavaScript code."
+        },
+        {
+          "key": "E",
+          "text": "The \"Performance\" tab provides detailed insights into a webpage's loading and runtime performance metrics.",
+          "is_correct": false,
+          "rationale": "The Performance tab analyzes webpage loading and runtime performance."
+        }
+      ]
+    }
+  ]
+}

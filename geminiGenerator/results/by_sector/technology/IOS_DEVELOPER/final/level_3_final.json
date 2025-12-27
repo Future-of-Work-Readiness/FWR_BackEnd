@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "When using a closure that captures `self`, what is the primary purpose of declaring `[weak self]` in the capture list?",
+      "explanation": "`[weak self]` creates a weak reference to `self`, breaking a potential retain cycle. When a class instance holds a strong reference to a closure, and the closure captures `self` strongly, neither can be deallocated, causing a memory leak.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It prevents a strong reference cycle between the object and the closure, which would otherwise cause a significant memory leak.",
+          "is_correct": true,
+          "rationale": "This correctly identifies the prevention of strong reference cycles as the main purpose."
+        },
+        {
+          "key": "B",
+          "text": "It ensures the closure is always executed on a background thread to avoid blocking the main user interface thread.",
+          "is_correct": false,
+          "rationale": "This confuses memory management with concurrency and thread management."
+        },
+        {
+          "key": "C",
+          "text": "It automatically converts the `self` reference into an optional type that must be unwrapped before its properties can be accessed.",
+          "is_correct": false,
+          "rationale": "This describes a side effect of using `weak`, not its primary purpose."
+        },
+        {
+          "key": "D",
+          "text": "It allows the closure to modify the properties of `self` even if they were originally declared using the `let` keyword.",
+          "is_correct": false,
+          "rationale": "This incorrectly links capture lists with mutability rules."
+        },
+        {
+          "key": "E",
+          "text": "It provides a performance optimization by telling the compiler that `self` will not be deallocated during the closure's execution.",
+          "is_correct": false,
+          "rationale": "This is incorrect; `[weak self]` implies `self` *can* be deallocated."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "In Grand Central Dispatch (GCD), what is the key difference between submitting a task using `async` versus `sync` on a concurrent queue?",
+      "explanation": "The `async` function returns control to the calling thread immediately after dispatching the block. In contrast, `sync` blocks the calling thread, waiting for the dispatched block to complete its execution before returning control to the caller.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`async` returns immediately without waiting for the task to finish, while `sync` blocks the current thread until the submitted task is complete.",
+          "is_correct": true,
+          "rationale": "This accurately describes the blocking vs. non-blocking nature of sync and async."
+        },
+        {
+          "key": "B",
+          "text": "`async` guarantees the task will run on a background thread, whereas `sync` always executes the task on the main thread.",
+          "is_correct": false,
+          "rationale": "The execution thread depends on the queue, not just the submission method."
+        },
+        {
+          "key": "C",
+          "text": "`sync` tasks are given a higher priority by the system scheduler than tasks that are submitted using the `async` function.",
+          "is_correct": false,
+          "rationale": "Priority is determined by Quality of Service (QoS), not the sync/async call."
+        },
+        {
+          "key": "D",
+          "text": "`async` allows multiple tasks to run in parallel on the queue, while `sync` forces all tasks to execute serially one after another.",
+          "is_correct": false,
+          "rationale": "Parallelism is a property of the queue (concurrent vs. serial), not the submission method."
+        },
+        {
+          "key": "E",
+          "text": "Using `sync` is deprecated in modern Swift and has been completely replaced by the new async/await pattern for all use cases.",
+          "is_correct": false,
+          "rationale": "`sync` is still a valid and necessary API in GCD for specific use cases."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What is the primary role of the Content Hugging Priority in Auto Layout when determining the size of a UI element?",
+      "explanation": "Content Hugging Priority is a constraint that pulls a view inward, making it \"hug\" its content. A higher priority means the view is more resistant to growing beyond its intrinsic size to fill available space in the layout.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It determines a view's resistance to growing larger than its intrinsic content size when there is extra space in the layout.",
+          "is_correct": true,
+          "rationale": "This correctly defines Content Hugging as resistance to expansion."
+        },
+        {
+          "key": "B",
+          "text": "It sets the absolute minimum size that a view is allowed to shrink to before its content becomes truncated or clipped.",
+          "is_correct": false,
+          "rationale": "This describes a minimum width or height constraint, not hugging priority."
+        },
+        {
+          "key": "C",
+          "text": "It defines how strongly a view resists being compressed smaller than its intrinsic content size during layout calculations.",
+          "is_correct": false,
+          "rationale": "This describes Content Compression Resistance Priority, the opposite of hugging."
+        },
+        {
+          "key": "D",
+          "text": "It specifies the order in which constraints are evaluated by the Auto Layout engine to resolve ambiguous layout configurations.",
+          "is_correct": false,
+          "rationale": "This confuses constraint priority with the general evaluation order of the engine."
+        },
+        {
+          "key": "E",
+          "text": "It is a property used exclusively by UIStackView to manage the distribution of its arranged subviews along its primary axis.",
+          "is_correct": false,
+          "rationale": "While UIStackView uses it, this property is a fundamental part of Auto Layout for all views."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "In the Model-View-ViewModel (MVVM) architecture, what is the recommended way for the ViewModel to communicate updates back to the View?",
+      "explanation": "MVVM promotes decoupling. Data binding (e.g., via Combine, RxSwift, or simple closures) allows the View to reactively update when the ViewModel's data changes, without the ViewModel needing a direct reference to the View.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using a data binding mechanism, such as Combine publishers or closures, allowing the View to observe changes in the ViewModel's properties.",
+          "is_correct": true,
+          "rationale": "Data binding is the canonical method for communication from ViewModel to View in MVVM."
+        },
+        {
+          "key": "B",
+          "text": "The ViewModel should hold a direct, strong reference to the View and call its methods directly to update the UI elements.",
+          "is_correct": false,
+          "rationale": "This creates tight coupling, which MVVM is designed to prevent."
+        },
+        {
+          "key": "C",
+          "text": "Sending notifications through NotificationCenter that the View must subscribe to in order to receive updates from the ViewModel.",
+          "is_correct": false,
+          "rationale": "While possible, this is not the recommended pattern and can lead to unmanageable code."
+        },
+        {
+          "key": "D",
+          "text": "Employing the Delegate pattern where the View sets itself as a delegate of the ViewModel to receive state change notifications.",
+          "is_correct": false,
+          "rationale": "Delegation creates a tight one-to-one coupling, which is less flexible than binding."
+        },
+        {
+          "key": "E",
+          "text": "The View should periodically poll the ViewModel's properties using a timer to check for any changes that need to be displayed.",
+          "is_correct": false,
+          "rationale": "Polling is inefficient and not a reactive approach, which is a key benefit of MVVM."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What is a key advantage of using protocol composition over relying solely on class inheritance for polymorphism in Swift?",
+      "explanation": "Protocols in Swift can be adopted by classes, structs, and enums. This is a major advantage over class inheritance, which is restricted to classes only, providing greater flexibility in designing abstract interfaces for different data types.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It enables value types like structs and enums to conform to a shared interface, which is not possible with class-based inheritance.",
+          "is_correct": true,
+          "rationale": "Protocols support value types (structs, enums), while class inheritance does not."
+        },
+        {
+          "key": "B",
+          "text": "It provides a default implementation for all required methods, which must be overridden by any conforming class or struct.",
+          "is_correct": false,
+          "rationale": "Default implementations are optional via protocol extensions, not mandatory."
+        },
+        {
+          "key": "C",
+          "text": "It allows a single type to inherit from multiple superclasses, effectively enabling multiple inheritance which is otherwise unsupported in Swift.",
+          "is_correct": false,
+          "rationale": "A type can conform to multiple protocols, but this is not the same as multiple inheritance."
+        },
+        {
+          "key": "D",
+          "text": "It is significantly more performant because all method calls are resolved at compile-time, completely avoiding dynamic dispatch overhead.",
+          "is_correct": false,
+          "rationale": "Protocols can still involve dynamic dispatch (existentials), so this is not guaranteed."
+        },
+        {
+          "key": "E",
+          "text": "It automatically synthesizes conformance for common functionalities like Equatable and Hashable without requiring any additional code implementation.",
+          "is_correct": false,
+          "rationale": "Synthesis is a feature of the compiler for specific protocols, not a general benefit of protocols."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "When using Grand Central Dispatch, what is the primary purpose of assigning a Quality of Service (QoS) class to a dispatch queue?",
+      "explanation": "QoS classes help the system prioritize work. By assigning a QoS, you inform iOS about the task's nature, such as user-interactive versus background, allowing it to intelligently manage system resources like CPU time and I/O.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It guarantees that all tasks submitted to the queue will execute in a strict first-in, first-out (FIFO) order.",
+          "is_correct": false,
+          "rationale": "This describes a serial queue's behavior, not the purpose of QoS."
+        },
+        {
+          "key": "B",
+          "text": "It indicates the task's importance, influencing its priority for system resources like CPU cycles and I/O operations.",
+          "is_correct": true,
+          "rationale": "QoS directly informs the system scheduler about the task's priority."
+        },
+        {
+          "key": "C",
+          "text": "It automatically cancels the task if the application enters the background state for an extended period of time.",
+          "is_correct": false,
+          "rationale": "This is related to background task management, not directly a function of QoS."
+        },
+        {
+          "key": "D",
+          "text": "It specifies the exact CPU core on which the task must be executed for performance-critical operations.",
+          "is_correct": false,
+          "rationale": "GCD and the operating system manage thread and core allocation automatically."
+        },
+        {
+          "key": "E",
+          "text": "It ensures that the task has exclusive access to a shared resource, preventing race conditions without using locks.",
+          "is_correct": false,
+          "rationale": "This is a characteristic of serial queues, not a function of QoS."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "When breaking a strong reference cycle with a closure capture list, when is it appropriate to use `unowned self` instead of `weak self`?",
+      "explanation": "`unowned` is a non-owning reference that, unlike `weak`, is assumed to always have a value. Using it implies a guarantee that the instance will not be deallocated before the closure is called, avoiding optional unwrapping.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It should be used whenever the captured `self` is an optional type, as it simplifies the syntax for unwrapping.",
+          "is_correct": false,
+          "rationale": "This is incorrect; `weak` is used for optionals."
+        },
+        {
+          "key": "B",
+          "text": "It is appropriate only when you can guarantee the closure will be deallocated before the `self` instance is.",
+          "is_correct": false,
+          "rationale": "The guarantee is the other way around; self must outlive the closure's call."
+        },
+        {
+          "key": "C",
+          "text": "You should use it when you can guarantee `self` will not be nil at the moment the closure is called.",
+          "is_correct": true,
+          "rationale": "`unowned` assumes the reference is always valid, crashing if it's not."
+        },
+        {
+          "key": "D",
+          "text": "It is the preferred choice for any closures that are executed on a background thread to improve performance.",
+          "is_correct": false,
+          "rationale": "The choice between weak and unowned is unrelated to the execution thread."
+        },
+        {
+          "key": "E",
+          "text": "It is required when capturing value types like structs to prevent them from being copied into the closure.",
+          "is_correct": false,
+          "rationale": "This is for reference types; value types are copied by default."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "What is a primary advantage of using Auto Layout for UI design over manually calculating and setting view frames?",
+      "explanation": "Auto Layout's main strength is its declarative nature, allowing developers to define rules and relationships between views. This enables the UI to adapt to various environments, such as different device sizes and languages, automatically.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It results in significantly faster view rendering performance, especially in complex and deeply nested view hierarchies.",
+          "is_correct": false,
+          "rationale": "Auto Layout can have a higher performance cost than manual frame calculation."
+        },
+        {
+          "key": "B",
+          "text": "It allows user interfaces to dynamically adapt to different screen sizes, orientations, and localization changes with less code.",
+          "is_correct": true,
+          "rationale": "Adaptivity is the core benefit of using a constraint-based layout system."
+        },
+        {
+          "key": "C",
+          "text": "It provides direct access to the underlying Core Animation layers, enabling more complex custom animations and transitions.",
+          "is_correct": false,
+          "rationale": "Access to Core Animation layers is independent of the layout system used."
+        },
+        {
+          "key": "D",
+          "text": "It completely eliminates the possibility of creating ambiguous or unsatisfiable layout constraints during the development process.",
+          "is_correct": false,
+          "rationale": "Constraint conflicts are a common issue that developers must resolve."
+        },
+        {
+          "key": "E",
+          "text": "It reduces the application's final binary size by compiling layout rules into a more efficient machine code format.",
+          "is_correct": false,
+          "rationale": "Auto Layout rules do not significantly impact the final application binary size."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "In the Model-View-ViewModel (MVVM) architecture, what is the primary responsibility of the ViewModel layer?",
+      "explanation": "The ViewModel acts as an intermediary. It takes raw data from the Model and applies presentation logic, exposing properties and commands that the View can bind to, keeping the View simple and testable.",
+      "options": [
+        {
+          "key": "A",
+          "text": "To directly manipulate UIKit components and handle user touch events originating from the View layer.",
+          "is_correct": false,
+          "rationale": "This is the responsibility of the View or View Controller."
+        },
+        {
+          "key": "B",
+          "text": "To contain the application's core data structures and business logic, independent of the user interface.",
+          "is_correct": false,
+          "rationale": "This is the responsibility of the Model layer."
+        },
+        {
+          "key": "C",
+          "text": "To manage all network requests and persist data to a local database or the device's file system.",
+          "is_correct": false,
+          "rationale": "This is typically handled by dedicated service or repository layers."
+        },
+        {
+          "key": "D",
+          "text": "To transform and provide data from the Model into a display-ready format for the View to consume.",
+          "is_correct": true,
+          "rationale": "The ViewModel prepares data for presentation, decoupling the View from the Model."
+        },
+        {
+          "key": "E",
+          "text": "To observe changes in the Model and immediately trigger a full reload of the entire user interface.",
+          "is_correct": false,
+          "rationale": "It provides data for the View to observe and update itself accordingly."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "You are using the Time Profiler instrument to diagnose a performance issue. What does a wide, flat top in the call tree indicate?",
+      "explanation": "In Time Profiler's call tree, the width of a bar represents the percentage of total execution time spent in that function. A wide, flat top signifies a 'heavy' function that is a bottleneck itself.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A function that is executing very quickly but is being called an excessive number of times.",
+          "is_correct": false,
+          "rationale": "This would appear as a narrow, tall spike in the call stack."
+        },
+        {
+          "key": "B",
+          "text": "A significant amount of time is being spent executing the code within that specific function or method.",
+          "is_correct": true,
+          "rationale": "The width of the bar directly corresponds to the time spent in the function."
+        },
+        {
+          "key": "C",
+          "text": "The application is experiencing a high number of memory leaks originating from that particular function call.",
+          "is_correct": false,
+          "rationale": "This would be diagnosed using the Leaks or Allocations instruments."
+        },
+        {
+          "key": "D",
+          "text": "A recursive function has entered an infinite loop, causing a stack overflow and crashing the application.",
+          "is_correct": false,
+          "rationale": "This would appear as a very deep, repeating call stack."
+        },
+        {
+          "key": "E",
+          "text": "The main thread is blocked by a synchronous network request, making the user interface unresponsive.",
+          "is_correct": false,
+          "rationale": "This would show time spent in system libraries, not a flat top in your code."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "When managing memory in Swift, what is the key difference between using a `weak` versus an `unowned` reference for a captured variable in a closure?",
+      "explanation": "`weak` references are optional because the object they point to can become nil, preventing retain cycles. `unowned` assumes the object will always exist, leading to a crash if it's deallocated, making it slightly more performant but less safe.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A `weak` reference becomes `nil` when its instance is deallocated, while an `unowned` reference expects a value and will crash if nil.",
+          "is_correct": true,
+          "rationale": "Weak is optional and nillable; unowned is non-optional and crashes if the object is gone."
+        },
+        {
+          "key": "B",
+          "text": "An `unowned` reference increases the retain count of an object, while a `weak` reference does not affect the object's retain count at all.",
+          "is_correct": false,
+          "rationale": "Neither weak nor unowned references increase the retain count; that is the purpose of a strong reference."
+        },
+        {
+          "key": "C",
+          "text": "Both `weak` and `unowned` references can only be applied to instances of a class, not to any value types like structs.",
+          "is_correct": false,
+          "rationale": "Both weak and unowned references can only be applied to instances of a class, not value types like structs."
+        },
+        {
+          "key": "D",
+          "text": "The compiler automatically manages `weak` references for memory safety, but `unowned` references require manual memory management using `malloc` and `free` calls.",
+          "is_correct": false,
+          "rationale": "Both are managed by Swift's Automatic Reference Counting (ARC) and do not require manual memory management."
+        },
+        {
+          "key": "E",
+          "text": "Using a `weak` reference is significantly faster than an `unowned` reference because it avoids runtime safety checks before accessing the underlying object.",
+          "is_correct": false,
+          "rationale": "The opposite is true; unowned is slightly faster because it omits the nil-checking overhead present with weak references."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "What is the primary advantage of using `Operation` and `OperationQueue` over Grand Central Dispatch (GCD) for complex, long-running background tasks in iOS?",
+      "explanation": "`Operation` provides a more object-oriented approach to concurrency. It allows for complex dependencies between tasks, cancellation, and monitoring of state (e.g., isFinished, isExecuting), which is harder to manage with GCD's block-based API.",
+      "options": [
+        {
+          "key": "A",
+          "text": "`Operation` allows for establishing complex dependencies between tasks, making it easier to control execution order and manage cancellation for related background work.",
+          "is_correct": true,
+          "rationale": "Operations excel at managing dependencies, state, and cancellation, which is ideal for complex workflows."
+        },
+        {
+          "key": "B",
+          "text": "`OperationQueue` is guaranteed to execute tasks on the main thread, which makes it inherently safer for all types of user interface updates.",
+          "is_correct": false,
+          "rationale": "OperationQueue can run on any thread; `OperationQueue.main` is specifically for the main thread, similar to `DispatchQueue.main`."
+        },
+        {
+          "key": "C",
+          "text": "Using `Operation` results in significantly lower memory overhead and faster execution speeds compared to dispatching blocks of code directly with GCD.",
+          "is_correct": false,
+          "rationale": "GCD is a lightweight, C-based API and generally has lower overhead than the object-oriented Operation framework."
+        },
+        {
+          "key": "D",
+          "text": "Grand Central Dispatch is a fundamental API, not deprecated, and is often used alongside the higher-level `Operation` and `OperationQueue` frameworks.",
+          "is_correct": false,
+          "rationale": "GCD is not deprecated; it is a fundamental concurrency framework in iOS and macOS, often used alongside newer APIs like Swift Concurrency."
+        },
+        {
+          "key": "E",
+          "text": "`Operation` provides built-in, automatic support for persisting task state across application launches, which is not possible with the GCD framework.",
+          "is_correct": false,
+          "rationale": "Neither framework provides automatic state persistence across app launches; this must be implemented manually by the developer."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "You are tasked with diagnosing a severe memory leak in an existing iOS application. Which tool within the Instruments suite is most appropriate for this specific task?",
+      "explanation": "The Leaks instrument is specifically designed to detect and pinpoint retain cycles and abandoned memory allocations. It graphically shows where memory is being allocated but never deallocated, helping developers find the source of leaks.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Leaks instrument is the primary tool for detecting memory that has been allocated but is no longer referenced by any active objects.",
+          "is_correct": true,
+          "rationale": "The Leaks instrument is purpose-built for identifying memory that is allocated but no longer reachable (leaked)."
+        },
+        {
+          "key": "B",
+          "text": "The Time Profiler should be used first, as it shows CPU usage and helps identify which functions are consuming the most processing power.",
+          "is_correct": false,
+          "rationale": "Time Profiler is for analyzing CPU performance and execution time, not for diagnosing memory leaks directly."
+        },
+        {
+          "key": "C",
+          "text": "The Network instrument is the best choice because memory leaks are most often caused by unclosed network connections holding onto large data buffers.",
+          "is_correct": false,
+          "rationale": "While network requests can cause leaks, the Network instrument monitors network traffic, not memory allocation graphs."
+        },
+        {
+          "key": "D",
+          "text": "The Core Animation instrument helps track frame rates and rendering performance, which is directly correlated with memory consumption issues in the application.",
+          "is_correct": false,
+          "rationale": "This instrument is for debugging UI performance, dropped frames, and rendering issues, not memory leaks."
+        },
+        {
+          "key": "E",
+          "text": "The Zombies instrument is used to find objects messaged after deallocation, which is a use-after-free bug, not a memory leak.",
+          "is_correct": false,
+          "rationale": "Zombies help find use-after-free bugs (crashes), whereas Leaks finds memory that is never freed at all."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "When preparing an iOS app for the App Store, what is the primary purpose of App Thinning, specifically the \"Slicing\" mechanism provided by Apple?",
+      "explanation": "Slicing is a key part of App Thinning. The App Store creates and delivers device-specific variants of the app bundle, containing only the executable architecture and resources needed for the target device, reducing the download size.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Slicing creates and delivers device-specific variants of the app, including only the necessary assets and architecture, which significantly reduces the final installation size.",
+          "is_correct": true,
+          "rationale": "Slicing delivers a tailored app variant for each device model, minimizing the download and install footprint."
+        },
+        {
+          "key": "B",
+          "text": "It automatically obfuscates the application's source code to make it more difficult for malicious actors to reverse-engineer the app binary after its release.",
+          "is_correct": false,
+          "rationale": "Code obfuscation is a separate security practice and is not a function of App Thinning or Slicing."
+        },
+        {
+          "key": "C",
+          "text": "This process encrypts all user data stored locally on the device using a unique key derived from the user's iCloud account credentials.",
+          "is_correct": false,
+          "rationale": "This describes data protection or encryption, which is a separate security feature of iOS, unrelated to App Thinning."
+        },
+        {
+          "key": "D",
+          "text": "Slicing is a debugging feature allowing developers to remotely execute code on a user's device to diagnose live production issues.",
+          "is_correct": false,
+          "rationale": "This describes remote debugging or feature flagging, which are not related to the App Store's Slicing mechanism."
+        },
+        {
+          "key": "E",
+          "text": "It is a performance optimization that pre-compiles all shaders and SwiftUI views into a binary format for faster rendering on the device's GPU.",
+          "is_correct": false,
+          "rationale": "While pre-compilation is a performance optimization, Slicing is focused on reducing asset and binary size, not pre-rendering UI."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "In Apple's Combine framework, what is the fundamental role of a `Subscriber` and how does it interact with a `Publisher` to manage data flow?",
+      "explanation": "In Combine's declarative model, a `Publisher` emits values over time. A `Subscriber` attaches to a `Publisher` to receive these values. The subscriber controls the demand (backpressure), telling the publisher how many values it is ready to receive.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The `Subscriber` attaches to a `Publisher` to receive values and can control the rate of delivery through a mechanism known as backpressure.",
+          "is_correct": true,
+          "rationale": "The subscriber's key roles are to receive values and manage demand (backpressure) from the publisher."
+        },
+        {
+          "key": "B",
+          "text": "A `Subscriber` is responsible for creating and emitting new values, while the `Publisher` is the component that consumes and processes these emitted values.",
+          "is_correct": false,
+          "rationale": "This inverts the roles; Publishers emit values, and Subscribers consume or receive those values."
+        },
+        {
+          "key": "C",
+          "text": "The `Subscriber` acts as a long-term storage mechanism, caching all values emitted by a `Publisher` to disk for later retrieval by the application.",
+          "is_correct": false,
+          "rationale": "A subscriber is a consumer in a data stream; it does not inherently provide persistence or caching functionality."
+        },
+        {
+          "key": "D",
+          "text": "A `Subscriber`'s main function is transforming the data stream from one type to another, similar to how the `map` operator functions.",
+          "is_correct": false,
+          "rationale": "This describes the role of an `Operator` (like map, filter, etc.), not a `Subscriber`."
+        },
+        {
+          "key": "E",
+          "text": "The `Subscriber` is an error-handling object that only activates when a `Publisher` emits a failure, at which point it logs the error.",
+          "is_correct": false,
+          "rationale": "A subscriber handles both successful values (input) and failures (completion), it is not solely an error handler."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "How would you correctly manage multiple asynchronous network calls that must all complete before updating the UI with their combined results?",
+      "explanation": "A DispatchGroup allows you to aggregate a set of tasks and synchronize behaviors on the group. By entering before each call and leaving on completion, the notify method provides a perfect callback for UI updates.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use a DispatchGroup, entering for each task and leaving in its completion handler, then using its notify method for the UI update.",
+          "is_correct": true,
+          "rationale": "DispatchGroup is the idiomatic GCD tool for synchronizing multiple asynchronous tasks."
+        },
+        {
+          "key": "B",
+          "text": "Chain the network calls together using nested completion handlers, which ensures they execute sequentially before the final UI update occurs.",
+          "is_correct": false,
+          "rationale": "This creates a 'pyramid of doom' and runs calls serially, not concurrently."
+        },
+        {
+          "key": "C",
+          "text": "Use a DispatchSemaphore with a value of one to ensure that only one network call can be active at any given time.",
+          "is_correct": false,
+          "rationale": "This would serialize the calls, defeating the purpose of running them concurrently."
+        },
+        {
+          "key": "D",
+          "text": "Create an OperationQueue and set up dependencies between each network operation so they execute in a specific, required order before updating.",
+          "is_correct": false,
+          "rationale": "This is overly complex for this use case; DispatchGroup is more lightweight."
+        },
+        {
+          "key": "E",
+          "text": "Dispatch all network calls to the main queue using DispatchQueue.main.async to ensure they are synchronized with UI updates.",
+          "is_correct": false,
+          "rationale": "This would block the main thread, leading to an unresponsive user interface."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "What is the most effective way to prevent a strong reference cycle when a class property closure captures `self`?",
+      "explanation": "Using a capture list like `[weak self]` is the standard Swift mechanism to prevent strong reference cycles with closures. It makes the captured reference to `self` weak, allowing the instance to be deallocated.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Explicitly set the closure property to nil within the class's deinit method to manually break the retain cycle before deallocation.",
+          "is_correct": false,
+          "rationale": "The deinit method may never be called if a retain cycle already exists."
+        },
+        {
+          "key": "B",
+          "text": "Use a capture list like `[weak self]` or `[unowned self]` within the closure's definition to break the strong reference cycle.",
+          "is_correct": true,
+          "rationale": "This is the correct Swift pattern for breaking closure-based retain cycles."
+        },
+        {
+          "key": "C",
+          "text": "Refactor the class into a struct, as value types do not use reference counting and are therefore immune to reference cycles.",
+          "is_correct": false,
+          "rationale": "Changing the type is not always feasible and doesn't solve the underlying class issue."
+        },
+        {
+          "key": "D",
+          "text": "Declare the closure property as a static variable, which prevents it from capturing an instance-specific reference to `self`.",
+          "is_correct": false,
+          "rationale": "A static closure cannot access instance members, making it unsuitable for many tasks."
+        },
+        {
+          "key": "E",
+          "text": "Wrap the reference to `self` inside an autoreleasepool block within the closure to manage its memory automatically without creating a cycle.",
+          "is_correct": false,
+          "rationale": "Autoreleasepool manages autoreleased objects, it does not affect strong reference cycles."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "In SwiftUI, which approach is best for minimizing view re-computations when a single property of a complex model object changes frequently?",
+      "explanation": "By making the model an ObservableObject and publishing individual properties, SwiftUI can intelligently track dependencies. Views that only read specific properties will only re-render when those exact properties change, optimizing performance and preventing unnecessary UI updates.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Pass the entire model object using `@State` and trigger updates for the whole view hierarchy whenever any single property changes.",
+          "is_correct": false,
+          "rationale": "This is inefficient and causes the entire view body to be re-evaluated unnecessarily."
+        },
+        {
+          "key": "B",
+          "text": "Use `@EnvironmentObject` to inject the model, which will cause all dependent views in the entire hierarchy to update simultaneously.",
+          "is_correct": false,
+          "rationale": "This is also inefficient for localized changes and causes widespread view updates."
+        },
+        {
+          "key": "C",
+          "text": "Use `@Published` on model properties within an `ObservableObject` and ensure views only depend on the specific properties they need.",
+          "is_correct": true,
+          "rationale": "This allows SwiftUI to track dependencies precisely and minimize view re-computations."
+        },
+        {
+          "key": "D",
+          "text": "Create a separate `@State` variable in the view for every property from the model to manage them independently.",
+          "is_correct": false,
+          "rationale": "This creates excessive boilerplate and breaks the single source of truth principle."
+        },
+        {
+          "key": "E",
+          "text": "Use `NotificationCenter` to post changes and manually trigger view updates by changing a dedicated state variable in the view.",
+          "is_correct": false,
+          "rationale": "This is an imperative approach that fights against SwiftUI's declarative nature."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "You are tasked with diagnosing a noticeable stutter during scrolling in a complex `UICollectionView`. Which Instrument would be most appropriate for this investigation?",
+      "explanation": "A scrolling stutter is typically caused by too much work being done on the main thread. The Time Profiler instrument samples running processes to identify which functions and methods are consuming the most CPU time.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Leaks instrument, which is primarily used for finding and diagnosing abandoned memory allocations that are no longer referenced.",
+          "is_correct": false,
+          "rationale": "Leaks finds memory leaks, not performance bottlenecks causing UI stutter."
+        },
+        {
+          "key": "B",
+          "text": "The Allocations instrument, which tracks all memory allocations and heap growth to identify excessive memory usage or churn over time.",
+          "is_correct": false,
+          "rationale": "While related to memory, it doesn't directly pinpoint CPU-bound scrolling issues."
+        },
+        {
+          "key": "C",
+          "text": "The Network instrument, which is used for monitoring and analyzing network requests and would not be relevant for a UI scrolling issue.",
+          "is_correct": false,
+          "rationale": "Network activity is unrelated to UI rendering performance during a local scroll."
+        },
+        {
+          "key": "D",
+          "text": "The Time Profiler instrument, which samples the call stack on all threads to identify methods that are consuming excessive CPU time.",
+          "is_correct": true,
+          "rationale": "Time Profiler is the correct tool for identifying CPU bottlenecks on the main thread."
+        },
+        {
+          "key": "E",
+          "text": "The Core Data instrument, which is specifically designed for debugging performance and data integrity issues within a Core Data stack.",
+          "is_correct": false,
+          "rationale": "This is too specific unless the stutter is known to be from Core Data fetches."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "When designing a complex feature with intricate navigation logic and many user interactions, which architecture provides the most explicit separation of concerns?",
+      "explanation": "VIPER (View, Interactor, Presenter, Entity, Router) is designed for maximum separation of concerns. By explicitly defining a Router for navigation and an Interactor for business logic, it prevents components like the ViewController from becoming bloated.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The standard MVC (Model-View-Controller) pattern, which often leads to 'Massive View Controllers' that handle too many responsibilities.",
+          "is_correct": false,
+          "rationale": "MVC often has poor separation of concerns in complex iOS applications."
+        },
+        {
+          "key": "B",
+          "text": "The MVVM (Model-View-ViewModel) pattern, which offers better separation than MVC but doesn't explicitly define a router for navigation logic.",
+          "is_correct": false,
+          "rationale": "MVVM improves on MVC but navigation logic is not an explicit component."
+        },
+        {
+          "key": "C",
+          "text": "The Singleton pattern, which is a creational design pattern for ensuring a single instance, not a full application architecture.",
+          "is_correct": false,
+          "rationale": "A Singleton is a design pattern, not a comprehensive application architecture."
+        },
+        {
+          "key": "D",
+          "text": "The Coordinator pattern, which focuses solely on navigation flow but is not a complete application architecture on its own.",
+          "is_correct": false,
+          "rationale": "Coordinator pattern only solves navigation, it's not a full architecture."
+        },
+        {
+          "key": "E",
+          "text": "The VIPER architecture, which explicitly separates the View, Interactor, Presenter, Entity, and Router, providing maximum modularity for complex screens.",
+          "is_correct": true,
+          "rationale": "VIPER provides the most granular separation of concerns, including a dedicated Router."
+        }
+      ]
+    }
+  ]
+}

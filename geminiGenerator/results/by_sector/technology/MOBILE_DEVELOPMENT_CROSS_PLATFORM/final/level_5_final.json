@@ -1,0 +1,744 @@
+{
+  "quiz_pool": [
+    {
+      "id": 1,
+      "question": "When architecting a large-scale, offline-first cross-platform application, what is the most robust strategy for managing complex state and data synchronization?",
+      "explanation": "This approach decouples the UI from the data layer, provides structured local storage, and handles background synchronization efficiently, ensuring data consistency and a seamless user experience even with intermittent connectivity.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Implement a local database like SQLite, combined with a repository pattern and a background service for syncing with a remote API.",
+          "is_correct": true,
+          "rationale": "A local database with a repository and background synchronization is a robust and scalable solution for offline-first applications."
+        },
+        {
+          "key": "B",
+          "text": "Rely solely on a Redux or MobX store, persisting the entire state tree to the device's local storage on every change.",
+          "is_correct": false,
+          "rationale": "Persisting the entire state tree on every change is highly inefficient and does not scale well with complex data."
+        },
+        {
+          "key": "C",
+          "text": "Use WebSocket connections to maintain a constant real-time data flow, disabling features entirely when the connection is lost.",
+          "is_correct": false,
+          "rationale": "Disabling features when offline directly contradicts the fundamental requirement of an offline-first application architecture."
+        },
+        {
+          "key": "D",
+          "text": "Store all application data in encrypted flat files and manually manage diffing and merging logic during synchronization events.",
+          "is_correct": false,
+          "rationale": "Manually managing data diffing and merging is extremely complex, error-prone, and inefficient for large-scale applications."
+        },
+        {
+          "key": "E",
+          "text": "Cache API responses using a simple key-value store and refresh the cache only when the user manually triggers a refresh action.",
+          "is_correct": false,
+          "rationale": "Relying on manual refresh actions provides a poor user experience and fails to meet modern offline-first expectations."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "You are debugging severe animation jank in a React Native app during complex list rendering. What is the most effective architectural change to resolve this?",
+      "explanation": "The JavaScript thread is a common bottleneck in React Native. Moving heavy computations or complex UI rendering to the native side bypasses this bottleneck, allowing animations to run smoothly on the main UI thread.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Offload the complex data processing and animation logic from the JavaScript thread to a dedicated native UI component or module.",
+          "is_correct": true,
+          "rationale": "Moving intensive work to the native side directly addresses the JavaScript thread bottleneck, which is the root cause of jank."
+        },
+        {
+          "key": "B",
+          "text": "Increase the JavaScript thread priority within the application's manifest file to ensure it receives more CPU time from the operating system.",
+          "is_correct": false,
+          "rationale": "Developers cannot directly change the JavaScript thread priority in the manifest files; this is managed by the OS."
+        },
+        {
+          "key": "C",
+          "text": "Replace all functional components with class components because their lifecycle methods offer better performance tuning for complex rendering scenarios.",
+          "is_correct": false,
+          "rationale": "The choice between class and functional components is not the root cause of animation jank in this context."
+        },
+        {
+          "key": "D",
+          "text": "Implement a global state management solution like Redux to ensure all component data is derived from a single predictable source.",
+          "is_correct": false,
+          "rationale": "The choice of state management library does not directly solve animation performance issues related to thread contention."
+        },
+        {
+          "key": "E",
+          "text": "Use the InteractionManager API to delay all non-essential operations until after the animations have fully completed their transitions.",
+          "is_correct": false,
+          "rationale": "This only delays the work but does not solve the underlying performance issue causing the animation jank itself."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "How would you design a CI/CD pipeline to manage releases for a Flutter app with separate feature flags and release schedules for different enterprise clients?",
+      "explanation": "Build flavors or schemes are the standard, scalable mechanism for creating distinct application variants from a single codebase. This allows for customized configurations, assets, and feature sets without maintaining separate, divergent code branches.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Utilize build flavors or schemes to create distinct app binaries, managed by a centralized configuration service that toggles features per build target.",
+          "is_correct": true,
+          "rationale": "Build flavors are the standard, scalable, and maintainable way to manage distinct application variants from a single codebase."
+        },
+        {
+          "key": "B",
+          "text": "Maintain separate Git branches for each client, manually merging core updates and cherry-picking features into each client's dedicated branch before release.",
+          "is_correct": false,
+          "rationale": "Maintaining separate branches for each client is difficult to scale and inevitably leads to complex merge conflicts."
+        },
+        {
+          "key": "C",
+          "text": "Deploy a single application binary to all clients and control feature visibility using hardcoded conditional logic based on the user's login credentials.",
+          "is_correct": false,
+          "rationale": "Hardcoding this logic is inflexible, difficult to maintain, and requires a new app release for any configuration changes."
+        },
+        {
+          "key": "D",
+          "text": "Use a third-party A/B testing service to remotely configure the entire application's feature set for each client after the app is installed.",
+          "is_correct": false,
+          "rationale": "A/B testing tools are designed for experiments, not for managing core application configurations and release schedules."
+        },
+        {
+          "key": "E",
+          "text": "Create completely separate codebases for each client, duplicating the core logic and only modifying the client-specific features in each distinct project.",
+          "is_correct": false,
+          "rationale": "Maintaining separate codebases is extremely inefficient, unmaintainable, and defeats the purpose of using a cross-platform framework."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What is the most secure method for a cross-platform application to store and share sensitive credentials, like API tokens, with a native module?",
+      "explanation": "Using the platform's native secure storage (Android Keystore, iOS Keychain) is the industry standard. It leverages hardware-backed security features, providing the highest level of protection against unauthorized access on non-rooted devices.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Store the credentials in the platform's native secure storage (Keystore/Keychain) and access them via a custom native bridge method when required.",
+          "is_correct": true,
+          "rationale": "Native secure storage is the industry standard, providing hardware-backed protection for the most sensitive application credentials."
+        },
+        {
+          "key": "B",
+          "text": "Encrypt the credentials using a JavaScript library and store them directly in the device's standard, non-secure local storage file.",
+          "is_correct": false,
+          "rationale": "Standard local storage is not secure and can be easily accessed, making it unsuitable for sensitive credentials."
+        },
+        {
+          "key": "C",
+          "text": "Hardcode the sensitive credentials as constants directly within the cross-platform application's source code for easy access across the entire application.",
+          "is_correct": false,
+          "rationale": "Hardcoding credentials directly into the source code is a major security vulnerability and should always be avoided."
+        },
+        {
+          "key": "D",
+          "text": "Pass the credentials as launch arguments to the application from a server-side script each time the user opens the application.",
+          "is_correct": false,
+          "rationale": "This approach is impractical for mobile apps and exposes sensitive credentials during the application launch process."
+        },
+        {
+          "key": "E",
+          "text": "Store the credentials in a remote, cloud-based database and fetch them over the network every time the application needs to use them.",
+          "is_correct": false,
+          "rationale": "Constantly fetching credentials over the network is inefficient, creates unnecessary dependencies, and introduces additional security risks."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "A Flutter application is experiencing memory leaks that are not detectable by Dart DevTools. What is the most effective next step for diagnosing the issue?",
+      "explanation": "When framework-specific tools fail, the leak is often in the native layer (e.g., unreleased platform views or plugins). Using native profilers like Instruments or Android Studio Profiler is essential for diagnosing these platform-specific memory issues.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use platform-native tools like Android Studio's Profiler or Xcode's Instruments to analyze the app's memory heap for unreleased native resources.",
+          "is_correct": true,
+          "rationale": "Native profilers are the correct tools for diagnosing memory leaks that originate in the native layer, beyond Dart's visibility."
+        },
+        {
+          "key": "B",
+          "text": "Add print() statements throughout the Dart code to manually track object creation and disposal, looking for objects that are not garbage collected.",
+          "is_correct": false,
+          "rationale": "Using print statements is an inefficient and unreliable method for finding complex memory leaks, especially those in native code."
+        },
+        {
+          "key": "C",
+          "text": "Refactor the entire application to use a simpler state management pattern, assuming the current one is too complex and causing the leak.",
+          "is_correct": false,
+          "rationale": "Refactoring the entire application without a proper diagnosis is a guess and likely a significant waste of development effort."
+        },
+        {
+          "key": "D",
+          "text": "Increase the device's available RAM by closing all other running applications, as the issue is likely related to overall system memory pressure.",
+          "is_correct": false,
+          "rationale": "This only masks the underlying problem rather than helping to identify and fix the root cause of the memory leak."
+        },
+        {
+          "key": "E",
+          "text": "Re-install all project dependencies and clear the build cache, as the leak is most likely caused by a corrupted library or build artifact.",
+          "is_correct": false,
+          "rationale": "While corrupted dependencies can cause issues, they are a much less likely cause of a persistent memory leak."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "When architecting state management for a large-scale Flutter application with complex, interdependent features, which approach offers the best scalability and testability?",
+      "explanation": "A feature-based BLoC pattern with dependency injection promotes separation of concerns and modularity, which is crucial for scalability and maintainability in large, complex applications. It makes testing individual features much easier.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Employing a feature-based BLoC pattern with dependency injection to isolate state logic, ensuring modules are decoupled and independently testable.",
+          "is_correct": true,
+          "rationale": "This pattern provides excellent separation of concerns, which directly enhances the application's scalability and overall testability."
+        },
+        {
+          "key": "B",
+          "text": "Using a single global Provider at the root of the widget tree to manage all application state for simplicity and easy access.",
+          "is_correct": false,
+          "rationale": "A single global provider quickly becomes unmanageable, inefficient, and difficult to test in large-scale, complex applications."
+        },
+        {
+          "key": "C",
+          "text": "Relying exclusively on StatefulWidget's `setState` for all state changes to minimize external dependencies and boilerplate code across the project.",
+          "is_correct": false,
+          "rationale": "This basic approach leads to poor state management practices and tightly coupled UI logic that is not scalable."
+        },
+        {
+          "key": "D",
+          "text": "Implementing a custom Redux-like architecture with a single store, which centralizes state but can create performance bottlenecks in large applications.",
+          "is_correct": false,
+          "rationale": "A single, monolithic store can become a performance bottleneck and often introduces a significant amount of boilerplate code."
+        },
+        {
+          "key": "E",
+          "text": "Utilizing GetX for its all-in-one solution, which simplifies development but can lead to tight coupling with the framework's ecosystem.",
+          "is_correct": false,
+          "rationale": "While simple, GetX can lead to service locator anti-patterns and creates a tight coupling to its specific ecosystem."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "In a complex React Native application, what is the most effective strategy for optimizing list rendering performance with frequently changing data?",
+      "explanation": "FlatList is designed for performance with large datasets by virtualizing rows. Combining it with memoized components and stable keys minimizes re-renders, which is the most effective way to handle frequently changing data.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Implementing `FlatList` with `PureComponent` or `React.memo` for list items and providing a stable `keyExtractor` prop to prevent unnecessary re-renders.",
+          "is_correct": true,
+          "rationale": "This combination correctly leverages both list virtualization and component memoization for the most optimal rendering performance."
+        },
+        {
+          "key": "B",
+          "text": "Using a standard `ScrollView` component and mapping over the data array to render all items at once for simplicity.",
+          "is_correct": false,
+          "rationale": "This approach causes major performance issues by attempting to render every single item in the list simultaneously."
+        },
+        {
+          "key": "C",
+          "text": "Storing the entire list data within a global Redux store and re-rendering the entire list whenever any part of the store changes.",
+          "is_correct": false,
+          "rationale": "This naive approach would trigger excessive and completely unnecessary re-renders of the entire list, harming performance."
+        },
+        {
+          "key": "D",
+          "text": "Disabling virtualization on the list component to ensure all items are always present in the view hierarchy for faster interaction.",
+          "is_correct": false,
+          "rationale": "Disabling virtualization is a known anti-pattern that severely degrades list performance, especially with large data sets."
+        },
+        {
+          "key": "E",
+          "text": "Frequently calling `forceUpdate` on the parent component to ensure the list always reflects the most current data from the source.",
+          "is_correct": false,
+          "rationale": "Using `forceUpdate` is considered a bad practice that bypasses standard React lifecycle methods and performance optimizations."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "When creating a custom native UI component for a React Native app, what is the primary role of the `ViewManager` on Android?",
+      "explanation": "The `ViewManager` (or `SimpleViewManager`) is the bridge component on Android that instantiates the native UI view and maps its properties, commands, and events so they can be manipulated from JavaScript in React Native.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It is responsible for creating and managing instances of the native view and exposing its properties to the JavaScript side.",
+          "is_correct": true,
+          "rationale": "This correctly and succinctly describes the core function of a ViewManager in the React Native Android bridge."
+        },
+        {
+          "key": "B",
+          "text": "It directly handles all the JavaScript logic and state updates for the component, bypassing the React component lifecycle entirely.",
+          "is_correct": false,
+          "rationale": "The ViewManager operates entirely on the native side of the bridge, not the JavaScript side where React logic lives."
+        },
+        {
+          "key": "C",
+          "text": "Its sole purpose is to compile the Java or Kotlin code into a format that can be directly executed by the JavaScript engine.",
+          "is_correct": false,
+          "rationale": "This describes the job of a compiler during the build process, not the runtime role of a ViewManager."
+        },
+        {
+          "key": "D",
+          "text": "It manages the network requests made by the native component, ensuring they are properly batched with other application API calls.",
+          "is_correct": false,
+          "rationale": "Network requests are typically handled by dedicated native modules, not by the ViewManager responsible for UI components."
+        },
+        {
+          "key": "E",
+          "text": "It exclusively handles the layout and styling of the native component using CSS-in-JS properties translated from the JavaScript thread.",
+          "is_correct": false,
+          "rationale": "The ViewManager exposes properties for styling, but the native view itself is responsible for the actual rendering and layout."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "To secure sensitive user data stored locally in a cross-platform application, which strategy provides the most robust, platform-agnostic protection against unauthorized access?",
+      "explanation": "Leveraging the platform's native, hardware-backed secure storage (iOS Keychain, Android Keystore) via a trusted library provides the strongest security. It protects data even on rooted or jailbroken devices, unlike simple file-based encryption.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Using a reputable encrypted storage library that leverages native Keychain on iOS and Keystore services on Android for hardware-backed security.",
+          "is_correct": true,
+          "rationale": "This utilizes the most secure, hardware-backed storage available on each platform, which is the industry best practice."
+        },
+        {
+          "key": "B",
+          "text": "Storing the data in plain text within a local SQLite database, relying solely on the operating system's default file permissions.",
+          "is_correct": false,
+          "rationale": "Plain text storage is inherently insecure and can be easily compromised on rooted or jailbroken devices."
+        },
+        {
+          "key": "C",
+          "text": "Manually encrypting the data with a hardcoded key within the application's source code before writing it to a standard file.",
+          "is_correct": false,
+          "rationale": "Hardcoded keys are easily extracted from the application binary, making this method of encryption fundamentally insecure."
+        },
+        {
+          "key": "D",
+          "text": "Placing the sensitive information directly into `SharedPreferences` or `UserDefaults` without any additional layers of encryption for quick access.",
+          "is_correct": false,
+          "rationale": "These standard storage methods are unencrypted by default and are not suitable for storing any sensitive user data."
+        },
+        {
+          "key": "E",
+          "text": "Obfuscating the data using a simple Base64 encoding scheme, which prevents casual viewing but offers no real cryptographic security.",
+          "is_correct": false,
+          "rationale": "Base64 is an encoding format, not a method of encryption, and it can be trivially reversed."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "When designing a CI/CD pipeline for a Flutter application targeting both iOS and Android, what is a critical architectural consideration for build agents?",
+      "explanation": "Building an iOS application requires Xcode, which only runs on macOS. Therefore, a CI/CD pipeline must use a macOS agent for iOS builds, while a Linux or Windows agent can handle Android builds, necessitating separate environments.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Maintaining separate build agents for each platform, such as a macOS agent for iOS builds and a Linux agent for Android builds.",
+          "is_correct": true,
+          "rationale": "This is a fundamental requirement because iOS applications can only be compiled and signed on a macOS machine."
+        },
+        {
+          "key": "B",
+          "text": "Using a single Windows-based build agent to compile both the iOS and Android application artifacts simultaneously for efficiency.",
+          "is_correct": false,
+          "rationale": "A Windows or Linux-based agent cannot build iOS applications due to the strict dependency on Xcode and macOS."
+        },
+        {
+          "key": "C",
+          "text": "Ensuring all build agents have direct physical access to a variety of mobile devices to run integration tests before deployment.",
+          "is_correct": false,
+          "rationale": "This is impractical and not scalable; pipelines use simulators, emulators, or cloud-based device farms for automated testing."
+        },
+        {
+          "key": "D",
+          "text": "Configuring the pipeline to build the application in debug mode only, as release builds are too slow for an automated process.",
+          "is_correct": false,
+          "rationale": "CI/CD pipelines must create release-signed builds for distribution to the App Store and Google Play Store."
+        },
+        {
+          "key": "E",
+          "text": "Relying exclusively on cloud-based IDEs for all build and deployment tasks, completely removing the need for dedicated build agents.",
+          "is_correct": false,
+          "rationale": "Cloud IDEs are primarily for development; CI/CD systems still require underlying build agents to execute the pipeline jobs."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "How would you architect state management for a large-scale cross-platform application with complex, interdependent data flows and multiple contributing feature teams?",
+      "explanation": "A hybrid approach offers the best of both worlds, providing a single source of truth for global data while empowering feature teams with local state management, enhancing scalability and maintainability in a large organization.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Enforce a single, monolithic global state container like Redux or Bloc for all application features to maintain strict unidirectional data flow.",
+          "is_correct": false,
+          "rationale": "This approach often leads to performance bottlenecks and reduces team autonomy in very large-scale, multi-team applications."
+        },
+        {
+          "key": "B",
+          "text": "Rely exclusively on component-level state management to maximize encapsulation and prevent any dependencies between different feature modules.",
+          "is_correct": false,
+          "rationale": "This is not scalable for sharing complex, cross-cutting state like user authentication or global application settings."
+        },
+        {
+          "key": "C",
+          "text": "Adopt a hybrid model combining a global store for shared data with localized state management solutions within independent feature modules.",
+          "is_correct": true,
+          "rationale": "This balances global consistency with feature team autonomy, which is the ideal and most scalable approach for large projects."
+        },
+        {
+          "key": "D",
+          "text": "Implement a federated system where each feature module manages its own state and communicates with others exclusively through a shared event bus.",
+          "is_correct": false,
+          "rationale": "While modular, this can lead to complex and hard-to-trace data flows without a central source of truth."
+        },
+        {
+          "key": "E",
+          "text": "Mandate that all state logic must be handled directly through backend API calls to ensure a single, authoritative source of truth.",
+          "is_correct": false,
+          "rationale": "This creates significant network latency and a poor user experience by completely eliminating any form of client-side state."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "When designing a CI/CD pipeline for a cross-platform application, what is the most secure and scalable strategy for managing code signing credentials?",
+      "explanation": "Using a dedicated secret management service is the industry best practice. It provides robust security, access control, and auditing capabilities, which are crucial for protecting sensitive code signing credentials in an automated pipeline.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Store the signing keys and provisioning profiles directly within the source code repository for easy access by all developers and build agents.",
+          "is_correct": false,
+          "rationale": "This is highly insecure as it exposes critical credentials directly in the version control history for anyone to see."
+        },
+        {
+          "key": "B",
+          "text": "Manually upload the signing credentials to the CI/CD server's local file system and reference them using static file paths in build scripts.",
+          "is_correct": false,
+          "rationale": "This is not scalable, is prone to human error, and poses a security risk if the build server is compromised."
+        },
+        {
+          "key": "C",
+          "text": "Encrypt the credentials with a password, commit the file to the repository, and store the decryption password in the CI server's environment variables.",
+          "is_correct": false,
+          "rationale": "This is better than plaintext but still couples the encrypted secret to the code and relies on CI variable security."
+        },
+        {
+          "key": "D",
+          "text": "Use a dedicated secret management service like AWS Secrets Manager or HashiCorp Vault to securely store and inject credentials during the build process.",
+          "is_correct": true,
+          "rationale": "This provides centralized, secure, and auditable access to secrets without exposing them in code or on build servers."
+        },
+        {
+          "key": "E",
+          "text": "Have each developer maintain their own local signing keys and require a lead developer to manually sign all release builds on their machine.",
+          "is_correct": false,
+          "rationale": "This creates a significant bottleneck, is not automated, and does not scale for a professional development team."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "You are tasked with resolving severe animation jank in a React Native application. What is the most effective architectural change to ensure smooth animations?",
+      "explanation": "Using the native driver (`useNativeDriver: true`) is the most critical optimization for React Native animations. It moves the animation computation off the potentially blocked JavaScript thread and onto the native UI thread, resulting in smoother performance.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Implement extensive memoization using `React.memo` and `useCallback` across all components involved in the animation sequence to reduce re-renders.",
+          "is_correct": false,
+          "rationale": "While good practice, this does not solve the underlying issue of animations being blocked by the JavaScript thread."
+        },
+        {
+          "key": "B",
+          "text": "Refactor all animations to use the native driver, which offloads the animation logic from the JavaScript thread directly to the native UI thread.",
+          "is_correct": true,
+          "rationale": "This directly addresses the primary bottleneck for animations by bypassing the JS bridge and running on the UI thread."
+        },
+        {
+          "key": "C",
+          "text": "Increase the frequency of state updates using `setInterval` to force the UI to refresh more often during the animation's duration.",
+          "is_correct": false,
+          "rationale": "This would likely worsen performance by flooding the JavaScript thread with even more work, causing more dropped frames."
+        },
+        {
+          "key": "D",
+          "text": "Move all animation-related state logic into a global Redux store to centralize updates and ensure a consistent rendering cycle for components.",
+          "is_correct": false,
+          "rationale": "This can introduce overhead and cause unnecessary re-renders, potentially making the animation performance even worse."
+        },
+        {
+          "key": "E",
+          "text": "Replace all functional components with class components because their lifecycle methods provide more granular control over rendering and updates.",
+          "is_correct": false,
+          "rationale": "Component type is irrelevant; the performance bottleneck is the JavaScript thread, not the component's implementation."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "For a large cross-platform application suite, what is the most effective strategy for maximizing code reuse and ensuring architectural consistency across multiple teams?",
+      "explanation": "A monorepo simplifies dependency management, promotes code sharing, and enables atomic commits across multiple packages or apps. This structure is highly effective for maintaining consistency and facilitating collaboration in large-scale projects with multiple teams.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Rely on developers to manually copy and paste shared utility functions and components between different project repositories as needed.",
+          "is_correct": false,
+          "rationale": "This is highly inefficient, error-prone, and makes it impossible to propagate updates or bug fixes effectively."
+        },
+        {
+          "key": "B",
+          "text": "Create a shared component library and publish it as a private package, allowing teams to import it as a versioned dependency.",
+          "is_correct": false,
+          "rationale": "This is a good approach but can lead to versioning conflicts and overhead when managing dependencies across many projects."
+        },
+        {
+          "key": "C",
+          "text": "Enforce a strict monorepo structure where all application code, shared libraries, and components reside in a single managed repository.",
+          "is_correct": true,
+          "rationale": "A monorepo provides the best tooling for code sharing, dependency management, and large-scale refactoring across teams."
+        },
+        {
+          "key": "D",
+          "text": "Develop a micro-frontends architecture where each feature is a completely independent application loaded into a main shell container app.",
+          "is_correct": false,
+          "rationale": "This pattern is overly complex for most mobile applications and introduces significant runtime performance overhead."
+        },
+        {
+          "key": "E",
+          "text": "Mandate the use of a specific design pattern like MVVM but allow teams complete freedom in code implementation and repository structure.",
+          "is_correct": false,
+          "rationale": "This ensures pattern consistency but does nothing to promote the actual reuse of shared code or components."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "When integrating a complex native SDK into a Flutter application, what is the most performant approach for handling frequent, high-throughput data streams?",
+      "explanation": "`EventChannel` is the idiomatic and performant solution in Flutter for handling streams of data from native code. It avoids the overhead of setting up a new call for each event, making it ideal for continuous data flows like sensor data or location updates.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use a `MethodChannel` for all communication, serializing data for each individual event being sent from the native side to Dart.",
+          "is_correct": false,
+          "rationale": "This has high serialization and invocation overhead, making it unsuitable for frequent, high-throughput data streams."
+        },
+        {
+          "key": "B",
+          "text": "Implement an `EventChannel` to establish a persistent connection, allowing the native side to stream events directly to a Dart listener.",
+          "is_correct": true,
+          "rationale": "This is the designed mechanism for native-to-Dart streams, offering the best balance of performance and ease of use."
+        },
+        {
+          "key": "C",
+          "text": "Write the streaming data to a temporary file on the native side and use a `MethodChannel` to notify Dart to read it.",
+          "is_correct": false,
+          "rationale": "This introduces significant I/O latency and complexity, making it a very poor choice for real-time data streams."
+        },
+        {
+          "key": "D",
+          "text": "Expose the native data stream directly to Dart using FFI and pointers, enabling zero-copy data access between the two runtimes.",
+          "is_correct": false,
+          "rationale": "While theoretically fastest, this is extremely complex, unsafe, and not the idiomatic approach for typical event streaming."
+        },
+        {
+          "key": "E",
+          "text": "Utilize a `BasicMessageChannel` with a custom codec to optimize the serialization and deserialization process for every single message.",
+          "is_correct": false,
+          "rationale": "While more flexible than MethodChannel, EventChannel is still the superior, purpose-built solution for streaming data."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "When architecting a complex cross-platform application with heavy animations and data lists, what is the most effective long-term performance optimization strategy?",
+      "explanation": "This strategy addresses both CPU-bound tasks (background threads) and UI rendering bottlenecks (virtualization), providing a comprehensive solution for complex, high-performance applications instead of focusing on a single aspect.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Prioritize offloading intensive computations to background threads or isolates and implement virtualization for long lists to minimize main thread workload.",
+          "is_correct": true,
+          "rationale": "This holistic approach correctly addresses both computational and rendering bottlenecks for the best overall performance improvement."
+        },
+        {
+          "key": "B",
+          "text": "Rely exclusively on memoization and component purity to prevent unnecessary re-renders across the entire application's component tree.",
+          "is_correct": false,
+          "rationale": "Memoization is helpful but insufficient for handling heavy computations or optimizing the rendering of very long lists."
+        },
+        {
+          "key": "C",
+          "text": "Increase the application's memory allocation limits on both iOS and Android to handle larger data sets more effectively.",
+          "is_correct": false,
+          "rationale": "This is a temporary fix that masks underlying issues, not a sustainable or effective long-term optimization strategy."
+        },
+        {
+          "key": "D",
+          "text": "Convert all UI components to use native platform-specific views instead of the framework's abstracted components for better performance.",
+          "is_correct": false,
+          "rationale": "This extreme approach undermines the core benefit of using a cross-platform development framework in the first place."
+        },
+        {
+          "key": "E",
+          "text": "Implement aggressive code splitting and lazy loading for all features, assuming network latency is the primary performance bottleneck.",
+          "is_correct": false,
+          "rationale": "This only addresses the application's initial load time, not the runtime rendering performance of animations and lists."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "When integrating a third-party native module for sensitive data processing, what is the most critical security consideration for the cross-platform bridge?",
+      "explanation": "The bridge is a trust boundary. Failing to validate and sanitize data on the native side can expose native APIs to malicious payloads from the potentially less secure JavaScript/Dart environment, leading to vulnerabilities.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ensure all data passed over the bridge is strictly validated and sanitized on the native side to prevent injection attacks.",
+          "is_correct": true,
+          "rationale": "Validating all data at this trust boundary is a fundamental security principle to prevent vulnerabilities and exploits."
+        },
+        {
+          "key": "B",
+          "text": "Guarantee the native module is compiled using the latest available SDKs and build tools for both target platforms.",
+          "is_correct": false,
+          "rationale": "While this is a good security practice, it does not secure the bridge interface itself from malicious data."
+        },
+        {
+          "key": "C",
+          "text": "Encrypt all data before it crosses the bridge, even though the communication is happening entirely within the same device process.",
+          "is_correct": false,
+          "rationale": "This adds unnecessary performance overhead for in-process communication and does not solve the data validation problem."
+        },
+        {
+          "key": "D",
+          "text": "Implement a custom bridge mechanism instead of using the framework's default bridge to achieve better performance and control.",
+          "is_correct": false,
+          "rationale": "A custom bridge does not inherently improve security and may introduce new risks if not implemented correctly."
+        },
+        {
+          "key": "E",
+          "text": "Log every single transaction that occurs across the bridge to a secure, remote server for auditing purposes.",
+          "is_correct": false,
+          "rationale": "This is a reactive auditing measure that helps detect attacks, not a preventative security control to stop them."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "For a large-scale cross-platform application with multiple teams contributing, which state management architecture provides the best scalability and maintainability?",
+      "explanation": "A federated model allows teams to work on features in isolation without creating conflicts in a single global store. It scales well by keeping state concerns separated, improving maintainability and reducing complexity.",
+      "options": [
+        {
+          "key": "A",
+          "text": "A federated approach using multiple, domain-specific state stores that communicate via a centralized event bus or coordinator.",
+          "is_correct": true,
+          "rationale": "This modular approach scales well with multiple teams and complex features by promoting separation of concerns."
+        },
+        {
+          "key": "B",
+          "text": "A single, monolithic global state store that holds the entire application state to ensure a single source of truth.",
+          "is_correct": false,
+          "rationale": "A monolithic store becomes a development bottleneck and is extremely difficult to maintain in a large, multi-team project."
+        },
+        {
+          "key": "C",
+          "text": "Relying solely on local component state and passing data down through props to avoid external state management dependencies.",
+          "is_correct": false,
+          "rationale": "This is not a scalable solution for applications that have complex, shared state across different feature domains."
+        },
+        {
+          "key": "D",
+          "text": "Using a persistent, on-device SQL database as the primary application state management solution for all UI data.",
+          "is_correct": false,
+          "rationale": "This incorrectly conflates UI state with data persistence, which often leads to significant performance and complexity issues."
+        },
+        {
+          "key": "E",
+          "text": "Implementing a micro-frontend architecture where each feature manages its state completely independently with no shared data layer.",
+          "is_correct": false,
+          "rationale": "This is too extreme for most applications, as some global state like authentication is almost always necessary."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "How should you design a CI/CD pipeline to manage releases for a cross-platform app with platform-specific hotfixes and staggered feature rollouts?",
+      "explanation": "Feature flags provide granular control over feature visibility post-deployment, while separate hotfix workflows allow for rapid patching of production issues without disrupting the main development and release cadence. This offers maximum flexibility.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use feature flags to decouple deployment from release and maintain separate, automated build workflows for hotfixes that target specific versions.",
+          "is_correct": true,
+          "rationale": "This combination provides maximum flexibility for both controlled, staggered feature rollouts and urgent production fixes."
+        },
+        {
+          "key": "B",
+          "text": "Create a separate Git branch for every single feature and hotfix, manually merging them into a release branch before each deployment.",
+          "is_correct": false,
+          "rationale": "This complex branching strategy quickly becomes unmanageable and is highly prone to difficult and time-consuming merge conflicts."
+        },
+        {
+          "key": "C",
+          "text": "Mandate that all code, including hotfixes, must go through the main development branch and a full regression testing cycle.",
+          "is_correct": false,
+          "rationale": "This process is far too slow and rigid for deploying urgent hotfixes to production in a timely manner."
+        },
+        {
+          "key": "D",
+          "text": "Automate the build and deployment process to both app stores simultaneously, forcing all features and fixes to be released together.",
+          "is_correct": false,
+          "rationale": "This lacks the necessary flexibility for staggered rollouts or deploying platform-specific hotfixes to only iOS or Android."
+        },
+        {
+          "key": "E",
+          "text": "Rely on over-the-air (OTA) update services for all changes, including native code modifications and critical security patches.",
+          "is_correct": false,
+          "rationale": "Over-the-air update services cannot be used for native code changes, which often require a full app store release."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "In a React Native or Flutter application, what is a common cause of memory leaks that are notoriously difficult to debug?",
+      "explanation": "Leaks across the native-to-managed code bridge are hard to trace because standard memory profiling tools for one environment (e.g., JS heap) may not see the dangling reference held by the other (native code).",
+      "options": [
+        {
+          "key": "A",
+          "text": "Unreleased listeners or subscriptions in native modules that are not correctly tied to the JavaScript or Dart component lifecycle.",
+          "is_correct": true,
+          "rationale": "These cross-runtime leaks are notoriously difficult to trace because standard debugging tools often only see one side."
+        },
+        {
+          "key": "B",
+          "text": "Storing large amounts of static asset data, like images and JSON files, directly within the application's compiled binary.",
+          "is_correct": false,
+          "rationale": "This increases the application's binary size but does not cause a runtime memory leak from unreleased objects."
+        },
+        {
+          "key": "C",
+          "text": "Creating too many stateless functional components instead of class-based components, leading to excessive function object creation.",
+          "is_correct": false,
+          "rationale": "This can impact performance slightly but is handled correctly by the garbage collector and does not cause leaks."
+        },
+        {
+          "key": "D",
+          "text": "Failing to properly dispose of controllers or streams within a single widget's state, which is usually caught by framework analyzers.",
+          "is_correct": false,
+          "rationale": "This is a common but relatively easy type of leak to find and fix using standard framework analysis tools."
+        },
+        {
+          "key": "E",
+          "text": "Using anonymous functions for event handlers within the UI layer, which prevents proper garbage collection of the component's scope.",
+          "is_correct": false,
+          "rationale": "This is a common misconception; modern JavaScript and Dart engines handle garbage collection for these closures correctly."
+        }
+      ]
+    }
+  ]
+}
